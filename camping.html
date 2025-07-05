@@ -2658,6 +2658,18 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 </footer>
+
+<!-- 画像拡大モーダル -->
+<div id="image-modal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center p-4" style="z-index: 9999;">
+    <div class="relative max-w-7xl max-h-full">
+        <button id="close-modal" class="absolute -top-10 right-0 bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold hover:bg-gray-200 transition-colors duration-200 z-20">&times;</button>
+        <img id="modal-image" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+        <div id="modal-caption" class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-70 p-4 rounded-b-lg">
+            <h3 id="modal-title" class="text-xl font-bold mb-2"></h3>
+            <p id="modal-description" class="text-gray-200"></p>
+        </div>
+    </div>
+</div>
 <script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
 const menuButton = document.getElementById('mobile-menu-toggle');
@@ -3107,6 +3119,98 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Gallery elements not found');
   }
 });
+</script>
+
+<script id="image-modal-script">
+// 遅延実行でギャラリーフィルターの後に実行
+setTimeout(function() {
+    console.log('Image modal script loaded');
+    
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.getElementById('close-modal');
+    
+    if (!modal) {
+        console.error('Modal not found');
+        return;
+    }
+    
+    // ギャラリー画像にクリックイベントを追加
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    console.log('Found gallery images:', galleryImages.length);
+    
+    galleryImages.forEach((img, index) => {
+        // カーソルスタイルを追加
+        img.style.cursor = 'pointer';
+        
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Image clicked:', index);
+            
+            // 画像の情報を取得
+            const imgSrc = this.src;
+            const imgAlt = this.alt;
+            
+            // タイトルと説明を親要素から取得
+            const parentItem = this.closest('.gallery-item');
+            const titleElement = parentItem ? parentItem.querySelector('h3') : null;
+            const descElement = parentItem ? parentItem.querySelector('p') : null;
+            
+            const title = titleElement ? titleElement.textContent : imgAlt;
+            const description = descElement ? descElement.textContent : '';
+            
+            console.log('Image info:', { title, description, src: imgSrc });
+            
+            // モーダルに情報を設定
+            modalImage.src = imgSrc;
+            modalImage.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            
+            // モーダルを表示
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            console.log('Modal should be visible now');
+        });
+    });
+    
+    // モーダルを閉じる機能
+    function closeImageModal() {
+        console.log('Closing modal');
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // 閉じるボタンのクリック
+    if (closeModal) {
+        closeModal.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeImageModal();
+        });
+    }
+    
+    // モーダル背景のクリック
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+    
+    // ESCキーで閉じる
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeImageModal();
+        }
+    });
+}, 1000); // 1秒遅延
 </script>
 </body>
 </html>
