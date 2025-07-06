@@ -55,6 +55,15 @@
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
 font-family: 'Noto Sans JP', sans-serif;
+overscroll-behavior-x: none;
+touch-action: pan-y pinch-zoom;
+}
+
+/* スクロール許可コンテナ */
+.tiktok-scroll-container,
+.gallery-scroll-container {
+touch-action: pan-x pan-y pinch-zoom;
+overscroll-behavior-x: contain;
 }
 .hero-section {
 position: relative;
@@ -2656,99 +2665,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </section>
 
-<script>
-// TikTok動画の自動再生制御
-document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer のオプション
-    const observerOptions = {
-        root: null, // ビューポートを基準
-        rootMargin: '0px',
-        threshold: 0.3 // 30%以上表示されたら再生開始
-    };
-
-    // 動画の再生状態を管理
-    const videoStates = new Map();
-
-    // TikTok iframe の親要素を取得
-    const tiktokEmbeds = document.querySelectorAll('.tiktok-embed');
-    
-    // 各動画にユニークIDを付与
-    tiktokEmbeds.forEach((embed, index) => {
-        const videoId = `tiktok-video-${index}`;
-        embed.setAttribute('data-video-index', index);
-        
-        const iframe = embed.querySelector('iframe');
-        if (iframe) {
-            iframe.setAttribute('id', videoId);
-            videoStates.set(index, { 
-                isPlaying: false, 
-                hasStarted: false,
-                iframe: iframe,
-                originalSrc: iframe.src
-            });
-        }
-    });
-
-    // Intersection Observer を作成
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const embed = entry.target;
-            const videoIndex = parseInt(embed.getAttribute('data-video-index'));
-            const videoState = videoStates.get(videoIndex);
-            
-            if (!videoState) return;
-
-            if (entry.isIntersecting) {
-                // 画面に表示された場合
-                if (!videoState.isPlaying) {
-                    // iframe の src を更新して最初から再生
-                    const baseUrl = videoState.originalSrc.split('?')[0];
-                    const newSrc = `${baseUrl}?autoplay=1&muted=0&loop=1&t=${Date.now()}`;
-                    
-                    videoState.iframe.src = newSrc;
-                    videoState.isPlaying = true;
-                    videoState.hasStarted = true;
-                    
-                    console.log(`TikTok動画 ${videoIndex + 1} が再生開始されました`);
-                }
-            } else {
-                // 画面外に出た場合
-                if (videoState.isPlaying) {
-                    // iframe の src を空にして停止
-                    const baseUrl = videoState.originalSrc.split('?')[0];
-                    videoState.iframe.src = baseUrl; // パラメータを削除して停止
-                    
-                    videoState.isPlaying = false;
-                    
-                    console.log(`TikTok動画 ${videoIndex + 1} が停止されました`);
-                }
-            }
-        });
-    }, observerOptions);
-
-    // 全ての TikTok embed を監視対象に追加
-    tiktokEmbeds.forEach(embed => {
-        observer.observe(embed);
-    });
-
-    // 初期状態で全ての動画を停止状態にする
-    tiktokEmbeds.forEach((embed, index) => {
-        const iframe = embed.querySelector('iframe');
-        if (iframe) {
-            const currentSrc = iframe.src;
-            const baseUrl = currentSrc.split('?')[0];
-            iframe.src = baseUrl; // autoplay パラメータを削除
-        }
-    });
-
-    // ページアンロード時にオブザーバーを破棄
-    window.addEventListener('beforeunload', () => {
-        observer.disconnect();
-    });
-
-    console.log(`TikTok動画制御システムが初期化されました。監視対象: ${tiktokEmbeds.length}本の動画`);
-});
-</script>
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
@@ -2844,53 +2760,6 @@ menuIcon.classList.add('ri-close-line');
 }
 });
 }
-});
-</script>
-<script id="tiktok-autoplay-script">
-document.addEventListener('DOMContentLoaded', function() {
-const tiktokEmbeds = document.querySelectorAll('.tiktok-embed');
-const videoState = new Map();
-
-// Initialize video states
-tiktokEmbeds.forEach((embed, index) => {
-const iframe = embed.querySelector('iframe');
-if (iframe) {
-const baseUrl = iframe.src.split('?')[0];
-videoState.set(embed, {
-iframe: iframe,
-baseUrl: baseUrl,
-isVisible: false
-});
-}
-});
-
-const observerOptions = {
-threshold: 0.3,
-rootMargin: '0px 0px -30% 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-const state = videoState.get(entry.target);
-if (!state) return;
-
-if (entry.isIntersecting && !state.isVisible) {
-// Video comes into view - restart from beginning
-state.isVisible = true;
-const newSrc = `${state.baseUrl}?autoplay=1&muted=0&loop=1&t=${Date.now()}`;
-state.iframe.src = newSrc;
-} else if (!entry.isIntersecting && state.isVisible) {
-// Video goes out of view - stop playback
-state.isVisible = false;
-state.iframe.src = state.baseUrl; // Reset to base URL to stop video
-}
-});
-}, observerOptions);
-
-// Observe all TikTok embeds
-tiktokEmbeds.forEach(embed => {
-observer.observe(embed);
-});
 });
 </script>
 <script id="form-validation-script">
@@ -3368,7 +3237,7 @@ setTimeout(function() {
 }, 1000); // 1秒遅延
 </script>
 
-<!-- スワイプ制御とTikTok自動再生スクリプト -->
+<!-- 強化版スワイプ制御とTikTok自動再生スクリプト -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // モバイルでのページ全体スワイプを防止し、特定のコンテナのみスワイプ可能にする
@@ -3378,119 +3247,113 @@ document.addEventListener('DOMContentLoaded', function() {
         const galleryContainer = document.querySelector('.gallery-scroll-container');
         const scrollContainers = [tiktokContainer, galleryContainer];
         
-        // body要素のタッチイベントを制御
-        let startX = 0;
-        let startY = 0;
-        let isScrolling = false;
+        // グローバル変数でタッチ状態を管理
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartElement = null;
+        let isInAllowedContainer = false;
         
-        document.body.addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            isScrolling = false;
-        }, { passive: true });
+        // タッチ開始時の処理
+        function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            touchStartElement = e.target;
+            
+            // タッチ開始点がスクロール許可コンテナ内かチェック
+            isInAllowedContainer = false;
+            for (let container of scrollContainers) {
+                if (container && (container.contains(touchStartElement) || container === touchStartElement)) {
+                    isInAllowedContainer = true;
+                    break;
+                }
+            }
+        }
         
-        document.body.addEventListener('touchmove', function(e) {
-            if (isScrolling) return;
+        // タッチ移動時の処理
+        function handleTouchMove(e) {
+            // タッチ情報がない場合は何もしない
+            if (!e.touches || e.touches.length === 0) return;
             
             const currentX = e.touches[0].clientX;
             const currentY = e.touches[0].clientY;
-            const deltaX = Math.abs(currentX - startX);
-            const deltaY = Math.abs(currentY - startY);
+            const deltaX = Math.abs(currentX - touchStartX);
+            const deltaY = Math.abs(currentY - touchStartY);
             
-            // 水平スワイプの場合
-            if (deltaX > deltaY && deltaX > 10) {
-                // スワイプ開始点がスクロールコンテナ内かチェック
-                const target = document.elementFromPoint(startX, startY);
-                let isInScrollContainer = false;
-                
-                for (let container of scrollContainers) {
-                    if (container && container.contains(target)) {
-                        isInScrollContainer = true;
-                        break;
-                    }
-                }
-                
-                // スクロールコンテナ外でのページスワイプを防止
-                if (!isInScrollContainer) {
+            // 水平スワイプの判定（縦スワイプより横スワイプが大きい）
+            const isHorizontalSwipe = deltaX > deltaY && deltaX > 5;
+            
+            if (isHorizontalSwipe) {
+                // 許可されたコンテナ外での水平スワイプを完全に防止
+                if (!isInAllowedContainer) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    return false;
                 }
-                isScrolling = true;
             }
-        }, { passive: false });
+        }
         
-        // スクロールコンテナ内でのタッチイベント伝播を制御
+        // body全体にイベントリスナーを追加（capture: true で確実にキャッチ）
+        document.body.addEventListener('touchstart', handleTouchStart, { passive: true, capture: true });
+        document.body.addEventListener('touchmove', handleTouchMove, { passive: false, capture: true });
+        
+        // 許可されたスクロールコンテナにのみ特別な処理を適用
         scrollContainers.forEach(container => {
             if (container) {
+                // コンテナ内でのタッチは許可
                 container.addEventListener('touchstart', function(e) {
-                    e.stopPropagation();
+                    isInAllowedContainer = true;
                 }, { passive: true });
                 
                 container.addEventListener('touchmove', function(e) {
+                    // コンテナ内でのスクロールは許可し、外部への伝播を停止
                     e.stopPropagation();
+                }, { passive: true });
+                
+                // コンテナから離れた時の処理
+                container.addEventListener('touchend', function(e) {
+                    // タッチ終了時にリセット
+                    isInAllowedContainer = false;
                 }, { passive: true });
             }
         });
+        
+        // document全体に対する水平スワイプの完全な防止
+        document.addEventListener('touchmove', function(e) {
+            if (e.touches && e.touches.length > 0) {
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const deltaX = Math.abs(currentX - touchStartX);
+                const deltaY = Math.abs(currentY - touchStartY);
+                
+                // 水平スワイプで、かつ許可されたコンテナ外の場合
+                if (deltaX > deltaY && deltaX > 3 && !isInAllowedContainer) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        }, { passive: false, capture: true });
     }
     
-    // TikTok動画の自動再生制御
+    // TikTok動画の自動再生制御（apps.htmlと同じシンプルな方式）
     function setupTikTokAutoplay() {
-        const tiktokIframes = document.querySelectorAll('iframe[src*="tiktok.com/embed"]');
-        
-        // Intersection Observer for TikTok videos
-        const tiktokObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const iframe = entry.target;
-                const videoId = iframe.src.match(/embed\/(\d+)/)?.[1];
-                
                 if (entry.isIntersecting) {
-                    // 表示された時: 自動再生開始
-                    try {
-                        // TikTokの埋め込みiframeに自動再生メッセージを送信
-                        iframe.contentWindow?.postMessage({
-                            type: 'play',
-                            autoplay: true,
-                            muted: false
-                        }, '*');
-                        
-                        // 代替方法: iframeのsrcを再設定して自動再生を有効化
-                        const originalSrc = iframe.src;
-                        if (!originalSrc.includes('autoplay=1')) {
-                            const separator = originalSrc.includes('?') ? '&' : '?';
-                            iframe.src = originalSrc + separator + 'autoplay=1&muted=0';
-                        }
-                    } catch (error) {
-                        console.log('TikTok autoplay setup:', error);
-                    }
+                    const currentSrc = iframe.src;
+                    iframe.src = currentSrc;
                 } else {
-                    // 画面から消えた時: 停止
-                    try {
-                        iframe.contentWindow?.postMessage({
-                            type: 'pause'
-                        }, '*');
-                        
-                        // 完全にリセットするため、srcを一度クリアして再設定
-                        const originalSrc = iframe.src.replace(/[?&](autoplay=1|muted=0)/g, '');
-                        iframe.src = '';
-                        setTimeout(() => {
-                            iframe.src = originalSrc;
-                        }, 100);
-                    } catch (error) {
-                        console.log('TikTok pause:', error);
-                    }
+                    const currentSrc = iframe.src;
+                    iframe.src = '';
+                    iframe.src = currentSrc;
                 }
             });
         }, {
-            threshold: 0.5, // 50%以上表示された時に発火
-            rootMargin: '0px'
+            threshold: 0.5
         });
         
-        // 全てのTikTok iframeを監視
-        tiktokIframes.forEach(iframe => {
-            // 音声再生を許可するための属性を追加
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-            iframe.setAttribute('allowfullscreen', '');
-            
-            tiktokObserver.observe(iframe);
+        document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+            observer.observe(iframe);
         });
     }
     
@@ -3638,6 +3501,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ]
 }
+</script>
+
+<!-- Simple TikTok Autoplay Script (apps.html style) -->
+<script id="tiktok-video-control">
+document.addEventListener('DOMContentLoaded', function() {
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const iframe = entry.target;
+if (entry.isIntersecting) {
+const currentSrc = iframe.src;
+iframe.src = currentSrc;
+} else {
+const currentSrc = iframe.src;
+iframe.src = '';
+iframe.src = currentSrc;
+}
+});
+}, {
+threshold: 0.5
+});
+document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+observer.observe(iframe);
+});
+});
 </script>
 </body>
 </html>
