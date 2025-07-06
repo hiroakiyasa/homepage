@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrailFusion AI - 革新的なアプリケーション</title>
 <!-- Favicon and Apple Touch Icon -->
-<link rel="icon" type="image/png" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
+<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
 <meta name="apple-mobile-web-app-title" content="TrailFusion AI">
 <meta name="application-name" content="TrailFusion AI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,55 @@ scroll-margin-top: 100px;
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 transition: transform 0.3s ease;
 }
+/* 動画の再生ボタンを非表示 - Safari対応強化版 */
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+video::-webkit-media-controls-timeline {
+    display: none !important;
+}
+video::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+}
+/* Safari iOS対応 */
+video {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-playsinline: true;
+}
+video::before {
+    display: none !important;
+}
+video::after {
+    display: none !important;
+}
+
 .screenshot:hover {
 transform: scale(1.05);
 }
@@ -61,13 +110,23 @@ margin: 0;
     <div class="container mx-auto px-4 py-4">
         <!-- スマホ・タブレット表示 -->
         <div class="flex items-center justify-between lg:hidden">
-            <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-                <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
+            <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+                <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
                 <div class="text-sm sm:text-base font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
             </a>
-            <button id="mobile-menu-toggle" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300">
-                <i class="ri-menu-line ri-xl"></i>
-            </button>
+            
+            <!-- スマホでも表示するメインボタン -->
+            <div class="flex items-center gap-2">
+                <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-sm sm:text-base font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
+                    キャンピングカー製作
+                </a>
+                <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-sm sm:text-base font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap">
+                    アプリ紹介
+                </a>
+                <button id="mobile-menu-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 ml-1">
+                    <i class="ri-menu-line text-lg sm:text-xl"></i>
+                </button>
+            </div>
         </div>
         
         <!-- モバイルメニュー -->
@@ -90,12 +149,12 @@ margin: 0;
         
         <!-- デスクトップ表示 -->
         <div class="hidden lg:flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-4 xl:space-x-6 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-                <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-10 xl:h-12 hover:scale-105 transition-transform duration-300">
-                <div class="text-lg xl:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
+            <a href="index.html" class="flex items-center space-x-2 xl:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+                <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-8 xl:h-10 hover:scale-105 transition-transform duration-300">
+                <div class="text-base xl:text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
             </a>
             
-            <nav class="flex items-center space-x-2 xl:space-x-4">
+            <nav class="flex items-center space-x-1 xl:space-x-2">
                 <a href="index.html" class="relative overflow-hidden bg-gray-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
                     <span class="relative z-10">ホーム</span>
                     <div class="absolute inset-0 bg-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -110,7 +169,7 @@ margin: 0;
                 </a>
                 
                 <!-- SNS（大画面のみ表示） -->
-                <div class="hidden xl:flex items-center space-x-2">
+                <div class="hidden xl:flex items-center space-x-1 ml-2">
                     <a href="https://www.youtube.com/@van_oasis" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-red-500 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/50">
                         <i class="ri-youtube-fill text-sm xl:ri-xl"></i>
                     </a>
@@ -165,7 +224,7 @@ margin: 0;
 <!-- ヒーローセクション -->
 <section class="relative">
 <div class="w-full h-[300px] sm:h-[400px] md:h-[600px] relative overflow-hidden">
-<video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+<video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline controls="false">
 <source src="assets/videos/hero-background-video.mp4" type="video/mp4">
 </video>
 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
@@ -200,7 +259,7 @@ margin: 0;
 <img src="assets/images/gp-teachers-screenshot2.jpg" alt="GP Teachers スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/gp-teachers-screenshot3.png" alt="GP Teachers スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/gp-teachers-screenshot3.jpg" alt="GP Teachers スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -316,7 +375,7 @@ margin: 0;
 <img src="assets/images/wood-golem-screenshot2.jpg" alt="Wood Golem スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/wood-golem-screenshot3.png" alt="Wood Golem スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/wood-golem-screenshot3.jpg" alt="Wood Golem スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -336,13 +395,13 @@ margin: 0;
 <div>
 <div class="grid grid-cols-2 gap-4">
 <div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/voicelink-screenshot1.png" alt="VoiceLink スクリーンショット 1" class="w-full h-auto object-top">
+<img src="assets/images/voicelink-screenshot1.jpg" alt="VoiceLink スクリーンショット 1" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/voicelink-screenshot2.png" alt="VoiceLink スクリーンショット 2" class="w-full h-auto object-top">
+<img src="assets/images/voicelink-screenshot2.jpg" alt="VoiceLink スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/voicelink-screenshot3.png" alt="VoiceLink スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/voicelink-screenshot3.jpg" alt="VoiceLink スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -453,10 +512,10 @@ margin: 0;
 <img src="assets/images/word-blaster-screenshot1.jpg" alt="Word Blaster スクリーンショット 1" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/word-blaster-screenshot2.png" alt="Word Blaster スクリーンショット 2" class="w-full h-auto object-top">
+<img src="assets/images/word-blaster-screenshot2.jpg" alt="Word Blaster スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/word-blaster-screenshot3.png" alt="Word Blaster スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/word-blaster-screenshot3.jpg" alt="Word Blaster スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -482,7 +541,7 @@ margin: 0;
 <img src="assets/images/debate-master-screenshot2.jpg" alt="Debate Master スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/debate-master-screenshot3.png" alt="Debate Master スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/debate-master-screenshot3.jpg" alt="Debate Master スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -586,7 +645,7 @@ margin: 0;
 <img src="assets/images/hacking-timer-screenshot2.jpg" alt="Hacking Timer スクリーンショット 2" class="w-full h-auto object-top">
 </div>
 <div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/hacking-timer-screenshot3.png" alt="Hacking Timer スクリーンショット 3" class="w-full h-auto object-top">
+<img src="assets/images/hacking-timer-screenshot3.jpg" alt="Hacking Timer スクリーンショット 3" class="w-full h-auto object-top">
 </div>
 </div>
 </div>
@@ -612,7 +671,7 @@ margin: 0;
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
 <a href="index.html" class="flex items-center gap-4 mb-4 hover:opacity-80 transition-opacity duration-300">
-<img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-12">
+<img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12">
 <span class="text-2xl text-white">TrailFusion AI</span>
 </a>
 <p class="text-gray-400 mb-4">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>

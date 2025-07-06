@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ハイエース DIYキャンピングカー製作ガイド</title>
 <!-- Favicon and Apple Touch Icon -->
-<link rel="icon" type="image/png" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
+<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
 <meta name="apple-mobile-web-app-title" content="TrailFusion AI">
 <meta name="application-name" content="TrailFusion AI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +89,55 @@ box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 
 
 .icon-bounce {
 animation: iconBounce 2s infinite;
+}
+
+/* 動画の再生ボタンを非表示 - Safari対応強化版 */
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+video::-webkit-media-controls-timeline {
+    display: none !important;
+}
+video::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+}
+/* Safari iOS対応 */
+video {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-playsinline: true;
+}
+video::before {
+    display: none !important;
+}
+video::after {
+    display: none !important;
 }
 
 @keyframes iconBounce {
@@ -256,13 +305,23 @@ grid-row: span 1;
   <div class="container mx-auto px-4 py-4">
       <!-- スマホ・タブレット表示 -->
       <div class="flex items-center justify-between lg:hidden">
-          <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
+          <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
               <div class="text-sm sm:text-base font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
           </a>
-          <button id="mobile-menu-toggle" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300">
-              <i class="ri-menu-line ri-xl"></i>
-          </button>
+          
+          <!-- スマホでも表示するメインボタン -->
+          <div class="flex items-center gap-2">
+              <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-sm sm:text-base font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
+                  キャンピングカー製作
+              </a>
+              <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-sm sm:text-base font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap">
+                  アプリ紹介
+              </a>
+              <button id="mobile-menu-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 ml-1">
+                  <i class="ri-menu-line text-lg sm:text-xl"></i>
+              </button>
+          </div>
       </div>
       
       <!-- モバイルメニュー -->
@@ -285,12 +344,12 @@ grid-row: span 1;
       
       <!-- デスクトップ表示 -->
       <div class="hidden lg:flex items-center justify-between">
-          <a href="index.html" class="flex items-center space-x-4 xl:space-x-6 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-10 xl:h-12 hover:scale-105 transition-transform duration-300">
-              <div class="text-lg xl:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
+          <a href="index.html" class="flex items-center space-x-2 xl:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-8 xl:h-10 hover:scale-105 transition-transform duration-300">
+              <div class="text-base xl:text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
           </a>
           
-          <nav class="flex items-center space-x-2 xl:space-x-4">
+          <nav class="flex items-center space-x-1 xl:space-x-2">
               <a href="index.html" class="relative overflow-hidden bg-gray-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
                   <span class="relative z-10">ホーム</span>
                   <div class="absolute inset-0 bg-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -305,7 +364,7 @@ grid-row: span 1;
               </a>
               
               <!-- SNS（大画面のみ表示） -->
-              <div class="hidden xl:flex items-center space-x-2">
+              <div class="hidden xl:flex items-center space-x-1 ml-2">
                   <a href="https://www.youtube.com/@van_oasis" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-red-500 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/50">
                       <i class="ri-youtube-fill text-sm xl:ri-xl"></i>
                   </a>
@@ -327,14 +386,14 @@ grid-row: span 1;
 </header>
 <!-- Hero Section -->
 <section class="hero-section w-full py-60">
-      <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <video autoplay loop muted playsinline controls="false" style="width: 100%; height: 100%; object-fit: cover;">
         <source src="assets/videos/a2ecd24a-6985-40d3-8cc8-8d3a0f0beb0c.mp4" type="video/mp4">
         お使いのブラウザは動画再生をサポートしていません。
       </video>
 <div class="container mx-auto px-4 w-full">
 <div class="max-w-2xl">
 <div class="flex items-center gap-4 mb-6">
-<img src="assets/images/322b6cc29b9b3322b94e233ac567cfcb.png" alt="ひろ" class="w-20 h-20 rounded-full object-cover">
+<img src="assets/images/322b6cc29b9b3322b94e233ac567cfcb.jpg" alt="ひろ" class="w-20 h-20 rounded-full object-cover">
 <div>
 <h2 class="text-2xl font-bold text-gray-900">ひろのDIYキャンピングカー</h2>
 <p class="text-gray-600">バンライフクリエイター / DIY愛好家</p>
@@ -342,9 +401,50 @@ grid-row: span 1;
 </div>
 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">ハイエース スーパーロング<br>DIY キャンピングカー製作<br>完全ガイド</h1>
 <p class="text-lg text-gray-700 mb-8">プロ級の仕上がりを実現する、科学的根拠に基づいた DIY キャンピングカー製作の全工程を解説。初心者でも理解できる詳細なステップバイステップガイド。</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button id="contact-button" class="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap hover:bg-red-600 transition">お問い合わせ</button>
-<button onclick="document.getElementById('guide').scrollIntoView({behavior: 'smooth'})" class="bg-white text-primary border border-primary px-6 py-3 rounded-button whitespace-nowrap hover:bg-gray-50 transition">詳細を見る</button>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <a href="#tiktok" class="group relative overflow-hidden bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="relative z-10 flex items-center">
+      <i class="ri-play-circle-fill text-2xl mr-3 group-hover:animate-pulse"></i>
+      <div>
+        <div class="font-semibold">動画で見る</div>
+        <div class="text-sm opacity-90">DIY製作の全工程</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="#gallery" class="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="relative z-10 flex items-center">
+      <i class="ri-image-fill text-2xl mr-3 group-hover:animate-bounce"></i>
+      <div>
+        <div class="font-semibold">ギャラリー</div>
+        <div class="text-sm opacity-90">完成例を見る</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="#guide" class="group relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+    <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="relative z-10 flex items-center">
+      <i class="ri-book-open-fill text-2xl mr-3 group-hover:animate-pulse"></i>
+      <div>
+        <div class="font-semibold">製作ガイド</div>
+        <div class="text-sm opacity-90">詳細な手順を見る</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="キャンピングカー〈8ナンバー〉構造要件チェックリスト.pdf" target="_blank" class="group relative overflow-hidden bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="relative z-10 flex items-center">
+      <i class="ri-file-pdf-2-fill text-2xl mr-3 group-hover:animate-bounce"></i>
+      <div>
+        <div class="font-semibold">構造要件</div>
+        <div class="text-sm opacity-90">PDFをダウンロード</div>
+      </div>
+    </div>
+  </a>
 </div>
 </div>
 </div>
@@ -1573,7 +1673,7 @@ LED スポットライト 10個
           
           <div class="gallery-item exterior" data-category="exterior">
               <div class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2">
-                  <img src="assets/images/camper/camper_blue_sky_fields.png" alt="広大な農地" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                  <img src="assets/images/camper/camper_blue_sky_fields.jpg" alt="広大な農地" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <h3 class="text-lg font-bold mb-2">広大な農地</h3>
@@ -2607,7 +2707,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
 <a href="index.html" class="flex items-center gap-4 mb-4 hover:opacity-80 transition-opacity duration-300">
-<img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png" alt="TrailFusion AI" class="h-12">
+<img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12">
 <span class="text-2xl text-white">TrailFusion AI</span>
 </a>
 <p class="text-gray-400 mb-4">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
