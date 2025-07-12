@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "homepage2"
+		"liveServer.settings.multiRootWorkspaceName": "homepage2",
+		"liveServer.settings.port": 5501
 	}
 }
