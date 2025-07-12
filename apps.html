@@ -536,8 +536,8 @@ margin: 0;
 </a>
 </div>
 <div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7506530494054436103" data-video-id="7506530494054436103">
-<iframe src="https://www.tiktok.com/embed/7506530494054436103" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7456950409228307719" data-video-id="7456950409228307719">
+<iframe src="https://www.tiktok.com/embed/7456950409228307719" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </blockquote>
 </div>
 </div>
@@ -787,32 +787,41 @@ document.addEventListener('DOMContentLoaded', function() {
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 const iframe = entry.target;
+const videoId = iframe.src.match(/embed\/(\d+)/)?.[1] || 'unknown';
+console.log(`TikTok Video ${videoId}: ${entry.isIntersecting ? 'VISIBLE' : 'HIDDEN'}, ratio: ${entry.intersectionRatio}`);
+
 if (entry.isIntersecting) {
 // iframeが表示領域に入った時
 if (!iframe.hasAttribute('data-loaded')) {
+console.log(`Loading TikTok Video ${videoId}`);
 const currentSrc = iframe.src;
 iframe.src = '';
 setTimeout(() => {
 iframe.src = currentSrc;
 iframe.setAttribute('data-loaded', 'true');
+console.log(`TikTok Video ${videoId} loaded`);
 }, 100);
 }
 } else {
 // iframeが表示領域から出た時
 if (iframe.hasAttribute('data-loaded')) {
+console.log(`Unloading TikTok Video ${videoId}`);
 const currentSrc = iframe.src;
 iframe.src = '';
 iframe.removeAttribute('data-loaded');
 setTimeout(() => {
 iframe.src = currentSrc;
+console.log(`TikTok Video ${videoId} reloaded for next viewing`);
 }, 100);
 }
 }
 });
 }, {
-threshold: 0.5
+threshold: 0.3
 });
-document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+document.querySelectorAll('.tiktok-embed iframe').forEach((iframe, index) => {
+const videoId = iframe.src.match(/embed\/(\d+)/)?.[1] || 'unknown';
+console.log(`Observing TikTok Video ${index + 1}: ${videoId}`);
 observer.observe(iframe);
 });
 });
