@@ -790,12 +790,25 @@ const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 const iframe = entry.target;
 if (entry.isIntersecting) {
-const currentSrc = iframe.src;
-iframe.src = currentSrc;
-} else {
+// iframeが表示領域に入った時
+if (!iframe.hasAttribute('data-loaded')) {
 const currentSrc = iframe.src;
 iframe.src = '';
+setTimeout(() => {
 iframe.src = currentSrc;
+iframe.setAttribute('data-loaded', 'true');
+}, 100);
+}
+} else {
+// iframeが表示領域から出た時
+if (iframe.hasAttribute('data-loaded')) {
+const currentSrc = iframe.src;
+iframe.src = '';
+iframe.removeAttribute('data-loaded');
+setTimeout(() => {
+iframe.src = currentSrc;
+}, 100);
+}
 }
 });
 }, {
