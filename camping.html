@@ -3707,7 +3707,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 const currentSrc = iframe.src;
                 iframe.src = '';
-                iframe.src = currentSrc;
+                setTimeout(() => {
+                    iframe.src = currentSrc;
+                }, 100);
             }
         });
     }, {
