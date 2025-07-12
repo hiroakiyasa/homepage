@@ -3698,27 +3698,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- TikTok Autoplay Script (apps.html style) -->
 <script id="tiktok-video-control">
 document.addEventListener('DOMContentLoaded', function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const iframe = entry.target;
-            if (entry.isIntersecting) {
-                const currentSrc = iframe.src;
-                iframe.src = currentSrc;
-            } else {
-                const currentSrc = iframe.src;
-                iframe.src = '';
-                setTimeout(() => {
-                    iframe.src = currentSrc;
-                }, 100);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    
-    document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
-        observer.observe(iframe);
-    });
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const iframe = entry.target;
+if (entry.isIntersecting) {
+const currentSrc = iframe.src;
+iframe.src = currentSrc;
+} else {
+const currentSrc = iframe.src;
+iframe.src = '';
+iframe.src = currentSrc;
+}
+});
+}, {
+threshold: 0.5
+});
+document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+observer.observe(iframe);
+});
 });
 </script>
 </body>
