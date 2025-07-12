@@ -716,7 +716,7 @@ grid-row: span 1;
   
   <div class="text-center mt-12">
   <p class="text-gray-600 mb-8">製作の様子は TikTok で詳しく公開しています。フォローして最新の投稿をチェックしてください！</p>
-  <a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-button hover:from-pink-600 hover:to-purple-600 transition">
+  <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-button hover:from-pink-600 hover:to-purple-600 transition">
   <i class="ri-tiktok-fill mr-2"></i>
   TikTok をフォロー
   </a>
@@ -3363,9 +3363,11 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 const iframe = entry.target;
                 if (entry.isIntersecting) {
+                    // 動画が画面に表示されたらiframeを再読み込みして自動再生
                     const currentSrc = iframe.src;
                     iframe.src = currentSrc;
                 } else {
+                    // 動画が画面から消えたら一時停止
                     const currentSrc = iframe.src;
                     iframe.src = '';
                     iframe.src = currentSrc;
@@ -3693,27 +3695,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Simple TikTok Autoplay Script (apps.html style) -->
+<!-- TikTok Autoplay Script (apps.html style) -->
 <script id="tiktok-video-control">
 document.addEventListener('DOMContentLoaded', function() {
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-const iframe = entry.target;
-if (entry.isIntersecting) {
-const currentSrc = iframe.src;
-iframe.src = currentSrc;
-} else {
-const currentSrc = iframe.src;
-iframe.src = '';
-iframe.src = currentSrc;
-}
-});
-}, {
-threshold: 0.5
-});
-document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
-observer.observe(iframe);
-});
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const iframe = entry.target;
+            if (entry.isIntersecting) {
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            } else {
+                const currentSrc = iframe.src;
+                iframe.src = '';
+                iframe.src = currentSrc;
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+        observer.observe(iframe);
+    });
 });
 </script>
 </body>
