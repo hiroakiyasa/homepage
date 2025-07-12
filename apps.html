@@ -536,8 +536,8 @@ margin: 0;
 </a>
 </div>
 <div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7456950409228307719" data-video-id="7456950409228307719">
-<iframe src="https://www.tiktok.com/embed/7456950409228307719" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7506530494054436103" data-video-id="7506530494054436103">
+<iframe src="https://www.tiktok.com/embed/7506530494054436103" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </blockquote>
 </div>
 </div>
@@ -796,11 +796,16 @@ if (!iframe.hasAttribute('data-loaded')) {
 console.log(`Loading TikTok Video ${videoId}`);
 const currentSrc = iframe.src;
 iframe.src = '';
+
+// 特定の動画ID（Word Blaster）には長い遅延を適用
+const isWordBlasterVideo = videoId === '7506530494054436103';
+const delay = isWordBlasterVideo ? 500 : 100;
+
 setTimeout(() => {
 iframe.src = currentSrc;
 iframe.setAttribute('data-loaded', 'true');
-console.log(`TikTok Video ${videoId} loaded`);
-}, 100);
+console.log(`TikTok Video ${videoId} loaded with ${delay}ms delay`);
+}, delay);
 }
 } else {
 // iframeが表示領域から出た時
