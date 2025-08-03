@@ -13,7 +13,8 @@ class I18N {
             'pt': { name: 'Português', flag: '🇵🇹' },
             'hi': { name: 'हिन्दी', flag: '🇮🇳' },
             'de': { name: 'Deutsch', flag: '🇩🇪' },
-            'es': { name: 'Español', flag: '🇪🇸' }
+            'es': { name: 'Español', flag: '🇪🇸' },
+            'ru': { name: 'Русский', flag: '🇷🇺' }
         };
         this.init();
     }
@@ -137,7 +138,8 @@ class I18N {
                 'pt': 'pt_BR',
                 'hi': 'hi_IN',
                 'de': 'de_DE',
-                'es': 'es_ES'
+                'es': 'es_ES',
+                'ru': 'ru_RU'
             };
             ogLocale.content = localeMap[this.currentLang] || 'ja_JP';
         }
@@ -213,7 +215,24 @@ class I18N {
                     learnMore: "詳しく見る",
                     getStarted: "始める",
                     tryNow: "今すぐ試す",
-                    download: "ダウンロード"
+                    download: "ダウンロード",
+                    register: "登録する",
+                    send: "送信する",
+                    viewApps: "アプリを見る",
+                    viewGuide: "ガイドを見る",
+                    seeDetails: "詳細を見る"
+                },
+                index: {
+                    hero: {
+                        line1: "自由な旅と",
+                        line2: "革新的なAI体験",
+                        line3: "を創造する",
+                        description: "キャンピングカーDIYとAIアプリケーションで、あなたの夢を現実に"
+                    },
+                    services: {
+                        title: "TrailFusion AI のサービス",
+                        subtitle: "DIYの専門知識と最先端のAI技術を組み合わせ、ユーザーの夢の実現をサポートします"
+                    }
                 }
             },
             en: {
@@ -231,7 +250,24 @@ class I18N {
                     learnMore: "Learn More",
                     getStarted: "Get Started",
                     tryNow: "Try Now",
-                    download: "Download"
+                    download: "Download",
+                    register: "Register",
+                    send: "Send",
+                    viewApps: "View Apps",
+                    viewGuide: "View Guide",
+                    seeDetails: "See Details"
+                },
+                index: {
+                    hero: {
+                        line1: "Free Travel and",
+                        line2: "Innovative AI Experience",
+                        line3: "Creating",
+                        description: "Make your dreams come true with camper DIY and AI applications"
+                    },
+                    services: {
+                        title: "TrailFusion AI Services",
+                        subtitle: "Combining DIY expertise with cutting-edge AI technology to support users in realizing their dreams"
+                    }
                 }
             },
             zh: {
@@ -358,6 +394,41 @@ class I18N {
                     getStarted: "Empezar",
                     tryNow: "Probar ahora",
                     download: "Descargar"
+                }
+            },
+            ru: {
+                meta: {
+                    title: "TrailFusion AI - DIY Кемпер и Разработка AI Приложений",
+                    description: "От создания DIY кемпера до разработки AI приложений. Практическое руководство по переоборудованию HiAce в самодельный кемпер и представление инновационных AI приложений."
+                },
+                nav: {
+                    home: "Главная",
+                    apps: "AI Приложения",
+                    camping: "DIY Кемпер",
+                    contact: "Контакты"
+                },
+                common: {
+                    learnMore: "Узнать больше",
+                    getStarted: "Начать",
+                    tryNow: "Попробовать сейчас",
+                    download: "Скачать",
+                    register: "Зарегистрироваться",
+                    send: "Отправить",
+                    viewApps: "Посмотреть приложения",
+                    viewGuide: "Посмотреть руководство",
+                    seeDetails: "Подробности"
+                },
+                index: {
+                    hero: {
+                        line1: "Свободные путешествия и",
+                        line2: "Инновационный AI опыт",
+                        line3: "Создание",
+                        description: "Воплотите свои мечты в реальность с DIY кемпером и AI приложениями"
+                    },
+                    services: {
+                        title: "Услуги TrailFusion AI",
+                        subtitle: "Сочетая экспертизу DIY с передовыми AI технологиями для поддержки пользователей в реализации их мечт"
+                    }
                 }
             }
         };
