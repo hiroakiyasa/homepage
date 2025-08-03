@@ -146,15 +146,25 @@ class I18N {
     }
 
     translatePage() {
+        // Translate text content
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.dataset.i18n;
             const translation = this.getTranslation(key);
             if (translation) {
-                if (element.tagName === 'INPUT' && element.type === 'text') {
+                if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'email')) {
                     element.placeholder = translation;
                 } else {
-                    element.textContent = translation;
+                    element.innerHTML = translation;
                 }
+            }
+        });
+
+        // Translate placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.dataset.i18nPlaceholder;
+            const translation = this.getTranslation(key);
+            if (translation) {
+                element.placeholder = translation;
             }
         });
 
@@ -202,15 +212,15 @@ class I18N {
         // Load comprehensive translations from external file
         try {
             const script = document.createElement('script');
-            script.src = 'assets/js/translations-index.js';
+            script.src = 'assets/js/translations-complete.js';
             await new Promise((resolve, reject) => {
                 script.onload = resolve;
                 script.onerror = reject;
                 document.head.appendChild(script);
             });
             
-            if (typeof indexTranslations !== 'undefined') {
-                this.translations = indexTranslations;
+            if (typeof completeTranslations !== 'undefined') {
+                this.translations = completeTranslations;
                 return;
             }
         } catch (error) {
