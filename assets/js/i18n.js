@@ -19,8 +19,8 @@ class I18N {
         this.init();
     }
 
-    init() {
-        this.loadTranslations();
+    async init() {
+        await this.loadTranslations();
         this.detectBrowserLanguage();
         this.createLanguageSelector();
         this.translatePage();
@@ -198,7 +198,26 @@ class I18N {
         return typeof translation === 'string' ? translation : null;
     }
 
-    loadTranslations() {
+    async loadTranslations() {
+        // Load comprehensive translations from external file
+        try {
+            const script = document.createElement('script');
+            script.src = 'assets/js/translations-index.js';
+            await new Promise((resolve, reject) => {
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+            
+            if (typeof indexTranslations !== 'undefined') {
+                this.translations = indexTranslations;
+                return;
+            }
+        } catch (error) {
+            console.error('Failed to load translations file:', error);
+        }
+        
+        // Fallback to basic translations
         this.translations = {
             ja: {
                 meta: {
@@ -436,6 +455,6 @@ class I18N {
 }
 
 // Initialize i18n system when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     window.i18n = new I18N();
 });
