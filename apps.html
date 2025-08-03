@@ -139,6 +139,7 @@ input[type="number"]::-webkit-outer-spin-button {
 margin: 0;
 }
 </style>
+<script src="assets/js/i18n.js"></script>
 </head>
 <body class="bg-gray-50">
 <!-- ヘッダー -->
@@ -192,15 +193,15 @@ margin: 0;
             
             <nav class="flex items-center space-x-1 xl:space-x-2">
                 <a href="index.html" class="relative overflow-hidden bg-gray-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                    <span class="relative z-10">ホーム</span>
+                    <span class="relative z-10" data-i18n="nav.home">ホーム</span>
                     <div class="absolute inset-0 bg-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </a>
                 <a href="camping.html" class="relative overflow-hidden bg-blue-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                    <span class="relative z-10">キャンピングカー製作</span>
+                    <span class="relative z-10" data-i18n="nav.camping">キャンピングカー製作</span>
                     <div class="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </a>
                 <a href="apps.html" class="relative overflow-hidden bg-green-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                    <span class="relative z-10">アプリ紹介</span>
+                    <span class="relative z-10" data-i18n="nav.apps">アプリ紹介</span>
                     <div class="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </a>
                 
@@ -217,8 +218,11 @@ margin: 0;
                     </a>
                 </div>
                 
+                <!-- Language Selector -->
+                <div id="language-selector" class="ml-2"></div>
+                
                 <a href="#contact" class="relative overflow-hidden bg-primary text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-button text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                    <span class="relative z-10">お問い合わせ</span>
+                    <span class="relative z-10" data-i18n="nav.contact">お問い合わせ</span>
                     <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </a>
             </nav>
