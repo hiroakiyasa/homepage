@@ -222,10 +222,10 @@ transform: scale(1.1);
           
           <!-- スマホでも表示するメインボタン -->
           <div class="flex items-center gap-1 sm:gap-2">
-              <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
+              <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap" data-i18n="mobileNav.camping">
                   キャンピングカー製作
               </a>
-              <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap">
+              <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap" data-i18n="mobileNav.apps">
                   アプリ紹介
               </a>
               <button id="mobile-menu-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 ml-1">
@@ -237,16 +237,16 @@ transform: scale(1.1);
       <!-- モバイルメニュー -->
       <nav id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
           <div class="flex flex-col space-y-3">
-              <a href="index.html" class="bg-gray-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-gray-600 transition-colors duration-300">
+              <a href="index.html" class="bg-gray-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-gray-600 transition-colors duration-300" data-i18n="mobileNav.home">
                   ホーム
               </a>
-              <a href="camping.html" class="bg-blue-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-blue-600 transition-colors duration-300">
+              <a href="camping.html" class="bg-blue-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-blue-600 transition-colors duration-300" data-i18n="mobileNav.camping">
                   キャンピングカー製作
               </a>
-              <a href="apps.html" class="bg-green-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-green-600 transition-colors duration-300">
+              <a href="apps.html" class="bg-green-500 text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-green-600 transition-colors duration-300" data-i18n="mobileNav.apps">
                   アプリ紹介
               </a>
-              <a href="#contact" class="bg-primary text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-red-600 transition-colors duration-300">
+              <a href="#contact" class="bg-primary text-white px-4 py-2.5 rounded-button text-sm font-medium text-center hover:bg-red-600 transition-colors duration-300" data-i18n="mobileNav.contact">
                   お問い合わせ
               </a>
           </div>
@@ -308,11 +308,11 @@ transform: scale(1.1);
 <div class="flex flex-col md:flex-row items-center">
 <div class="md:w-1/2 text-white mb-10 md:mb-0">
 <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-<span class="block" data-i18n="index.hero.line1">自由な旅と</span>
-<span class="block text-primary" data-i18n="index.hero.line2">革新的なAI体験</span>
-<span class="block" data-i18n="index.hero.line3">を創造する</span>
+<span class="block" data-i18n="hero.line1">自由な旅と</span>
+<span class="block text-primary" data-i18n="hero.line2">革新的なAI体験</span>
+<span class="block" data-i18n="hero.line3">を創造する</span>
 </h1>
-<p class="text-xl md:text-2xl mb-8 opacity-90" data-i18n="index.hero.description">キャンピングカーDIYとAIアプリケーションで、あなたの夢を現実に</p>
+<p class="text-xl md:text-2xl mb-8 opacity-90" data-i18n="hero.description">キャンピングカーDIYとAIアプリケーションで、あなたの夢を現実に</p>
 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
 <a href="camping.html" class="bg-blue-500 text-white px-8 py-3 !rounded-button text-lg font-medium hover:bg-blue-600 transition-all duration-300 text-center whitespace-nowrap btn-primary" data-i18n="hero.campingButton">
 キャンピングカー製作
@@ -327,7 +327,7 @@ transform: scale(1.1);
 </div>
 <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
 <a href="#services" class="text-white flex flex-col items-center">
-<span class="text-sm mb-2" data-i18n="common.seeDetails">詳細を見る</span>
+<span class="text-sm mb-2" data-i18n="hero.scrollText">詳細を見る</span>
 <i class="ri-arrow-down-line text-2xl"></i>
 </a>
 </div>
@@ -338,9 +338,9 @@ transform: scale(1.1);
 <div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background_12370.jpg'); background-size: cover; background-position: center; opacity: 0.2; transform: scale(1.1); filter: blur(0px);"></div>
 <div class="container mx-auto px-6 relative z-10">
 <div class="text-center mb-16 fade-in">
-<h2 class="text-4xl font-bold mb-4" data-i18n="index.services.title">TrailFusion AI の<br>
+<h2 class="text-4xl font-bold mb-4" data-i18n="services.title">TrailFusion AI の<br>
   <span class="text-primary">サービス</span></h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="index.services.subtitle">DIYの専門知識と最先端のAI技術を組み合わせ、ユーザーの夢の実現をサポートします</p>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="services.subtitle">DIYの専門知識と最先端のAI技術を組み合わせ、ユーザーの夢の実現をサポートします</p>
 </div>
 <div class="flex flex-col md:flex-row gap-8 md:gap-12">
 <div class="md:w-1/2 service-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
@@ -471,66 +471,66 @@ transform: scale(1.1);
               たった一人、部屋に隔離された1週間。死の恐怖と隣り合わせの状況で、私の頭をよぎったのはたった一つの想いでした。<br>
               <strong class="text-cyan-400 font-semibold">「やりたいと思ったことは、今すぐやらなければ後悔する。人生は、あまりにも短い」</strong>
             </p>
-            <p>
+            <p data-i18n="about.story.p5">
               部屋から出られるようになったその日、私の第二の人生が始まりました。隔離されていたわずか1週間で、私はキャンピングカーを自作するための全ての計画を立て終えていたのです。
             </p>
-            <p>
+            <p data-i18n="about.story.p6">
               ベース車両の選定、4人家族が眠れるスライドベッドの設計、仕事もできるデスクの配置、法規をクリアするための8ナンバー登録の要件洗い出し、サブバッテリーシステムの構築、そして内装に使う木材の調達先まで。頭の中の設計図は、すっかり完成していました。
             </p>
-            <p>
+            <p data-i18n="about.story.p7">
               すぐさま、2008年式のハイエース スーパーロング（救急車と同サイズ！）を170万円で即決購入。そこから2ヶ月間、平日の仕事終わり、週末、リモートワークの休憩時間など、使える時間はすべてDIYに捧げました。
             </p>
-            <p>
+            <p data-i18n="about.story.p8">
               そして、目標としていた夏休み。家族との初めての車中泊旅行を前に、世界に一台だけのオリジナルキャンピングカーは、ついに完成したのです。
             </p>
-            <p>
+            <p data-i18n="about.story.p9">
               その旅は、想像を絶するほど感動的なものでした。満室のホテルを横目に、青森ねぶた祭や長岡花火大会の熱狂を最前線で体感する。夏の北海道では、高騰する宿代を気にすることなく10日間も大自然を満喫し、子供たちの満面の笑みに包まれる。
             </p>
-            <p>
+            <p data-i18n="about.story.p10">
               この経験を通じて、私は確信しました。<strong class="text-white">「一台のクルマが、これほどまでに人生を豊かにしてくれるのか」</strong>と。
             </p>
-            <p>
+            <p data-i18n="about.additionalStory.p11">
               そして、この自由な旅は、私に次なる、そして生涯を懸けた夢を与えてくれました。それは、このキャンピングカーを<strong class="text-cyan-400">「世界を旅する開発拠点」</strong>とし、場所に縛られることなく、世界中の文化や人々と触れ合いながら、新しい価値を創造することです。
             </p>
-            <p>
+            <p data-i18n="about.additionalStory.p12">
               具体的には、AI技術を活用した革新的なアプリケーションを開発し、Appleプラットフォームを通じて世界中のユーザーに届けること。旅先で得たインスピレーションをリアルタイムで開発に注ぎ込み、人々の生活をより便利で、より豊かにする。そんな貢献の形を、私は見つけました。
             </p>
-            <p>
+            <p data-i18n="about.additionalStory.p13">
               この壮大なビジョンを実現するための旗印、それが<strong class="text-white">「Trail❌fusion❌AI」</strong>です。
             </p>
             <div class="bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-white/10 space-y-4">
-              <p><strong class="text-cyan-400">Trail（道）：</strong>キャンピングカーで世界を旅する物理的な「道」であり、誰も歩んだことのない生き方へと続く人生の「道」。</p>
-              <p><strong class="text-cyan-400">Fusion（融合）：</strong>旅というリアルな体験と、AIアプリ開発というデジタルな創造。そして、世界中のユーザーと私たちの想いを「融合」させる。</p>
-              <p><strong class="text-cyan-400">AI：</strong>私たちの未来を切り拓き、無限の可能性を生み出す事業の核。</p>
+              <p data-i18n="about.additionalStory.p14"><strong class="text-cyan-400">Trail（道）：</strong>キャンピングカーで世界を旅する物理的な「道」であり、誰も歩んだことのない生き方へと続く人生の「道」。</p>
+              <p data-i18n="about.additionalStory.p15"><strong class="text-cyan-400">Fusion（融合）：</strong>旅というリアルな体験と、AIアプリ開発というデジタルな創造。そして、世界中のユーザーと私たちの想いを「融合」させる。</p>
+              <p data-i18n="about.additionalStory.p16"><strong class="text-cyan-400">AI：</strong>私たちの未来を切り拓き、無限の可能性を生み出す事業の核。</p>
             </div>
-            <p>
+            <p data-i18n="about.additionalStory.p17">
               サラリーマンとして諦めかけた夢。しかし、一度きりの人生、もう後悔はしたくない。世界中を旅し、価値を創造し、出会いを楽しみ尽くす。そしていつか、人生の最期を迎えたときに「最高の人生だった」と心から笑いたい。「TrailfusionAI」は、その誓いの名です。
             </p>
           </div>
 
           <div class="mt-12 bg-gradient-to-r from-cyan-500 to-fuchsia-600 p-8 rounded-2xl text-white text-center font-bold text-xl shadow-lg">
-            <p>さあ、あなたも私たちと一緒に、<br class="sm:hidden">後悔しない人生という名の冒険へ出発しませんか？</p>
+            <p data-i18n="about.additionalStory.finalCta">さあ、あなたも私たちと一緒に、<br class="sm:hidden">後悔しない人生という名の冒険へ出発しませんか？</p>
           </div>
 
           <div class="mt-12 pt-8 border-t border-white/20">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
               <div class="text-center md:text-left">
-                <h4 class="text-xl font-bold text-white mb-4">趣味・興味</h4>
+                <h4 class="text-xl font-bold text-white mb-4" data-i18n="about.interests">趣味・興味</h4>
                 <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">剣道</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">キャンピングカー</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">DIY制作</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">日本一周</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">グルメ</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">温泉</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">アプリ開発</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">マラソン</span>
-                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium">山登り</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.0">剣道</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.1">キャンピングカー</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.2">DIY制作</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.3">日本一周</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.4">グルメ</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.5">温泉</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.6">アプリ開発</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.7">マラソン</span>
+                  <span class="bg-slate-700 text-slate-200 px-4 py-2 rounded-full text-sm font-medium" data-i18n="about.tags.8">山登り</span>
                 </div>
               </div>
               
               <div class="text-center md:text-right">
-                <h4 class="text-xl font-bold text-white mb-4">Follow Me</h4>
+                <h4 class="text-xl font-bold text-white mb-4" data-i18n="about.followMe">Follow Me</h4>
                 <div class="flex space-x-4 justify-center md:justify-end">
                   <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl hover:bg-red-700 transition-all duration-300 transform hover:scale-110">
                     <i class="ri-youtube-fill"></i>
@@ -571,35 +571,35 @@ transform: scale(1.1);
 <input type="text" id="name" name="name" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="山田 太郎" required>
 </div>
 <div>
-<label for="email" class="block text-sm font-medium text-gray-300 mb-1">メールアドレス</label>
-<input type="email" id="email" name="email" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" placeholder="example@mail.com" required>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="contact.form.email">メールアドレス</label>
+<input type="email" id="email" name="email" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" data-i18n-placeholder="contact.form.emailPlaceholder" placeholder="example@mail.com" required>
 </div>
 <div>
-<label for="subject" class="block text-sm font-medium text-gray-300 mb-1">件名</label>
-<input type="text" id="subject" name="subject" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" placeholder="お問い合わせ内容の件名" required>
+<label for="subject" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="contact.form.subject">件名</label>
+<input type="text" id="subject" name="subject" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" data-i18n-placeholder="contact.form.subjectPlaceholder" placeholder="お問い合わせ内容の件名" required>
 </div>
 <div>
-<label for="message" class="block text-sm font-medium text-gray-300 mb-1">メッセージ</label>
-<textarea id="message" name="message" rows="5" maxlength="500" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
+<label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="contact.form.message">メッセージ</label>
+<textarea id="message" name="message" rows="5" maxlength="500" class="custom-input w-full px-4 py-3 rounded-lg text-gray-800 border-none" data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
 <div class="text-sm text-gray-400 mt-1">
-<span id="charCount">0</span>/500文字
+<span id="charCount">0</span>/500<span data-i18n="contact.form.charCount">文字</span>
 </div>
 </div>
-<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap" data-i18n="contact.form.submit">
 送信する
 </button>
 </form>
 </div>
 <div class="md:w-1/2">
 <div class="bg-gray-900 bg-opacity-80 backdrop-blur-sm p-8 rounded-lg">
-<h3 class="text-2xl font-bold mb-6">お問い合わせ先</h3>
+<h3 class="text-2xl font-bold mb-6" data-i18n="contact.info.title">お問い合わせ先</h3>
 <div class="space-y-6">
 <div class="flex items-start">
 <div class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full mr-4">
 <i class="ri-mail-line text-primary"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-300 mb-1">メールアドレス</h4>
+<h4 class="font-medium text-gray-300 mb-1" data-i18n="contact.info.email">メールアドレス</h4>
 <p>trailfusionai@gmail.com</p>
 </div>
 </div>
@@ -608,8 +608,8 @@ transform: scale(1.1);
 <i class="ri-youtube-line text-primary"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-300 mb-1">YouTube</h4>
-<p>TrailFusion AI チャンネル</p>
+<h4 class="font-medium text-gray-300 mb-1" data-i18n="footer.info.youtube">YouTube</h4>
+<p data-i18n="contact.info.youtube">TrailFusion AI チャンネル</p>
 </div>
 </a>
 <a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="flex items-start hover:bg-gray-800 p-2 rounded-lg transition-colors duration-300">
@@ -617,7 +617,7 @@ transform: scale(1.1);
 <i class="ri-tiktok-line text-primary"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-300 mb-1">TikTok</h4>
+<h4 class="font-medium text-gray-300 mb-1" data-i18n="footer.info.tiktok">TikTok</h4>
 <p>@trailfusionai</p>
 </div>
 </a>
@@ -626,7 +626,7 @@ transform: scale(1.1);
 <i class="ri-twitter-x-line text-primary"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-300 mb-1">X (旧Twitter)</h4>
+<h4 class="font-medium text-gray-300 mb-1" data-i18n="footer.info.twitter">X (旧Twitter)</h4>
 <p>@trailfusionai</p>
 </div>
 </a>
@@ -650,7 +650,7 @@ transform: scale(1.1);
 <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12">
 <span class="text-2xl text-white">TrailFusion AI</span>
 </a>
-<p class="text-gray-400 mb-4">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+<p class="text-gray-400 mb-4" data-i18n="footer.description">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
 <div class="flex space-x-3">
 <a href="https://www.youtube.com/@van_oasis" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition">
 <i class="ri-youtube-fill"></i>
@@ -664,16 +664,16 @@ transform: scale(1.1);
 </div>
 </div>
 <div>
-<a href="camping.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block">キャンピングカー</a>
+<a href="camping.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block" data-i18n="footer.camping.title">キャンピングカー</a>
 <ul class="space-y-2">
-<li><a href="camping.html#tiktok" class="text-gray-400 hover:text-white transition">DIY 製作の全工程を動画で公開</a></li>
-<li><a href="camping.html#gallery" class="text-gray-400 hover:text-white transition">完成例ギャラリー</a></li>
-<li><a href="camping.html#guide" class="text-gray-400 hover:text-white transition">DIY キャンピングカー製作ガイド</a></li>
-<li><a href="キャンピングカー〈8ナンバー〉構造要件チェックリスト.pdf" class="text-gray-400 hover:text-white transition">キャンピングカー構造要件</a></li>
+<li><a href="camping.html#tiktok" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.videos">DIY 製作の全工程を動画で公開</a></li>
+<li><a href="camping.html#gallery" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.gallery">完成例ギャラリー</a></li>
+<li><a href="camping.html#guide" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.guide">DIY キャンピングカー製作ガイド</a></li>
+<li><a href="キャンピングカー〈8ナンバー〉構造要件チェックリスト.pdf" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.requirements">キャンピングカー構造要件</a></li>
 </ul>
 </div>
 <div>
-<a href="apps.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block">AIアプリ</a>
+<a href="apps.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block" data-i18n="footer.apps">AIアプリ</a>
 <ul class="space-y-2">
 <li><a href="apps.html#gp-teachers" class="text-gray-400 hover:text-white transition">GP Teachers</a></li>
 <li><a href="apps.html#wood-golem" class="text-gray-400 hover:text-white transition">Wood Golem</a></li>
@@ -684,7 +684,7 @@ transform: scale(1.1);
 </ul>
 </div>
 <div>
-<h4 class="text-lg font-bold mb-4">お問い合わせ</h4>
+<h4 class="text-lg font-bold mb-4" data-i18n="footer.contact">お問い合わせ</h4>
 <ul class="space-y-2">
 
 
