@@ -23,6 +23,7 @@ class I18N {
         await this.loadTranslations();
         this.detectBrowserLanguage();
         this.createLanguageSelector();
+        this.createMobileLanguageSelector();
         this.translatePage();
     }
 
@@ -69,6 +70,30 @@ class I18N {
         this.attachLanguageSelectorEvents();
     }
 
+    createMobileLanguageSelector() {
+        const mobileSelector = document.getElementById('mobile-language-selector');
+        if (!mobileSelector) return;
+
+        const currentLangInfo = this.supportedLanguages[this.currentLang];
+        mobileSelector.innerHTML = `
+            <div class="relative">
+                <button id="mobile-lang-button" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300">
+                    <span class="text-base sm:text-lg">${currentLangInfo.flag}</span>
+                </button>
+                <div id="mobile-lang-dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-50 max-h-64 overflow-y-auto">
+                    ${Object.entries(this.supportedLanguages).map(([code, info]) => `
+                        <button class="mobile-lang-option w-full text-left px-3 py-2 text-sm hover:bg-gray-100 flex items-center space-x-2 ${code === this.currentLang ? 'bg-gray-50' : ''}" data-lang="${code}">
+                            <span class="text-base">${info.flag}</span>
+                            <span class="text-xs">${info.name}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
+        this.attachMobileLanguageSelectorEvents();
+    }
+
     attachLanguageSelectorEvents() {
         const button = document.getElementById('lang-button');
         const dropdown = document.getElementById('lang-dropdown');
@@ -94,6 +119,32 @@ class I18N {
         });
     }
 
+    attachMobileLanguageSelectorEvents() {
+        const mobileButton = document.getElementById('mobile-lang-button');
+        const mobileDropdown = document.getElementById('mobile-lang-dropdown');
+        const mobileLangOptions = document.querySelectorAll('.mobile-lang-option');
+
+        if (!mobileButton || !mobileDropdown) return;
+
+        mobileButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileDropdown.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', () => {
+            mobileDropdown.classList.add('hidden');
+        });
+
+        mobileLangOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const lang = option.dataset.lang;
+                this.setLanguage(lang);
+                mobileDropdown.classList.add('hidden');
+            });
+        });
+    }
+
     setLanguage(lang) {
         if (!this.supportedLanguages[lang]) return;
         
@@ -102,6 +153,7 @@ class I18N {
         
         this.translatePage();
         this.updateLanguageSelector();
+        this.updateMobileLanguageSelector();
         this.updateMetaTags();
     }
 
@@ -120,6 +172,21 @@ class I18N {
 
         // Update active state in dropdown
         document.querySelectorAll('.lang-option').forEach(option => {
+            option.classList.toggle('bg-gray-50', option.dataset.lang === this.currentLang);
+        });
+    }
+
+    updateMobileLanguageSelector() {
+        const currentLangInfo = this.supportedLanguages[this.currentLang];
+        const mobileButton = document.getElementById('mobile-lang-button');
+        if (mobileButton) {
+            mobileButton.innerHTML = `
+                <span class="text-base sm:text-lg">${currentLangInfo.flag}</span>
+            `;
+        }
+
+        // Update mobile options selected state
+        document.querySelectorAll('.mobile-lang-option').forEach(option => {
             option.classList.toggle('bg-gray-50', option.dataset.lang === this.currentLang);
         });
     }
