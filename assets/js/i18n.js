@@ -9,12 +9,12 @@ class I18N {
             'en': { name: 'English', flag: '🇺🇸' },
             'zh': { name: '中文', flag: '🇨🇳' },
             'ko': { name: '한국어', flag: '🇰🇷' },
-            'fr': { name: 'Français', flag: '🇫🇷' },
-            'pt': { name: 'Português', flag: '🇵🇹' },
-            'hi': { name: 'हिन्दी', flag: '🇮🇳' },
-            'de': { name: 'Deutsch', flag: '🇩🇪' },
             'es': { name: 'Español', flag: '🇪🇸' },
-            'ru': { name: 'Русский', flag: '🇷🇺' }
+            'fr': { name: 'Français', flag: '🇫🇷' },
+            'de': { name: 'Deutsch', flag: '🇩🇪' },
+            'pt': { name: 'Português', flag: '🇧🇷' },
+            'ru': { name: 'Русский', flag: '🇷🇺' },
+            'hi': { name: 'हिन्दी', flag: '🇮🇳' }
         };
         this.init();
     }
@@ -209,7 +209,32 @@ class I18N {
     }
 
     async loadTranslations() {
-        // Load comprehensive translations from external file
+        // Load translations from individual JSON files
+        try {
+            const translations = {};
+            
+            // Load all language files
+            for (const langCode of Object.keys(this.supportedLanguages)) {
+                try {
+                    const response = await fetch(`assets/locales/${langCode}.json`);
+                    if (response.ok) {
+                        translations[langCode] = await response.json();
+                    }
+                } catch (error) {
+                    console.warn(`Failed to load ${langCode} translations:`, error);
+                }
+            }
+            
+            // If we have at least some translations, use them
+            if (Object.keys(translations).length > 0) {
+                this.translations = translations;
+                return;
+            }
+        } catch (error) {
+            console.error('Failed to load translation files:', error);
+        }
+        
+        // Legacy fallback: try to load from the old complete file
         try {
             const script = document.createElement('script');
             script.src = 'assets/js/translations-complete.js';
@@ -224,7 +249,7 @@ class I18N {
                 return;
             }
         } catch (error) {
-            console.error('Failed to load translations file:', error);
+            console.error('Failed to load legacy translations file:', error);
         }
         
         // Fallback to basic translations

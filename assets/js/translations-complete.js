@@ -107,6 +107,113 @@ const completeTranslations = {
             }
         },
         
+        // Apps page content
+        apps: {
+            // Meta tags
+            meta: {
+                title: "TrailFusion AI - 革新的なAIアプリケーション開発・紹介サイト",
+                description: "最新のAI技術を活用した革新的なアプリケーションを開発・紹介。ディベートマスター、ウッドゴーレム、VoiceLink、WordBlasterなど多彩なAIアプリを実際にお試しできます。"
+            },
+            
+            // Hero section
+            hero: {
+                title: "革新的なアプリで<br>あなたの可能性を広げる",
+                description: "TrailFusion AI は、AI 技術を活用した革新的なアプリケーションを開発しています。言語学習、ゲーム、生産性向上など、様々な分野で最先端のソリューションを提供しています。",
+                cta: "アプリを見る"
+            },
+            
+            // GP Teachers section
+            gpTeachers: {
+                badge: "AI 英語学習",
+                title: "AI と一緒に英語を学ぼう",
+                description: "AI 英語パートナーとリアルな練習ができる革新的な英語学習アプリです。いつでもどこでも、ユニークな先生たちと対話しながら実践的な英会話能力を高め、英語力を向上させましょう。",
+                features: [
+                    "ユニークな性格を持つ AI 英語教師と自然な会話",
+                    "発音評価と詳細なフィードバック機能",
+                    "日常会話からビジネス英語まで幅広いシチュエーション",
+                    "楽しく続けられる英単語ゲームと学習トラッキング"
+                ]
+            },
+            
+            // Wood Golem section
+            woodGolem: {
+                badge: "ストラテジーゲーム",
+                title: "森の冒険で論理的思考力を鍛える",
+                description: "棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムと一緒に棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。",
+                features: [
+                    "美しい森の世界を舞台にした棒取りパズル",
+                    "100 以上のレベルと増加する難易度",
+                    "かわいいウッドゴーレムキャラクターとストーリー",
+                    "論理的思考力と戦略的思考を育む教育的要素"
+                ]
+            },
+            
+            // VoiceLink section
+            voiceLink: {
+                badge: "AI 通訳",
+                title: "言語の壁を取り払うAI通訳",
+                description: "最新 AI を搭載したリアルタイム音声翻訳アプリです。10 言語に対応し、自然で正確な翻訳を瞬時に実現。文脈を理解する高精度な音声認識と会話の要約機能も備えています。",
+                features: [
+                    "10 言語に対応したリアルタイム音声翻訳",
+                    "文脈を理解する高精度 AI 翻訳エンジン",
+                    "会話の要約機能とテキスト保存",
+                    "オフラインモードと旅行に便利な機能"
+                ]
+            },
+            
+            // Word Blaster section
+            wordBlaster: {
+                badge: "英単語ゲーム",
+                title: "宇宙で英単語を撃ち落とせ！",
+                description: "宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。楽しみながらエキサイティングに英単語力を向上させることができます。",
+                features: [
+                    "宇宙を舞台にしたエキサイティングなシューティングゲーム",
+                    "初級から上級まで、レベル別の英単語学習",
+                    "ランキングシステムで友達と競争",
+                    "単語の発音と意味を学びながらゲームを楽しめる"
+                ]
+            },
+            
+            // Debate Master section
+            debateMaster: {
+                badge: "AI ディベート",
+                title: "AIと議論して論理的思考力を鍛える",
+                description: "AI 論破王に挑戦し、最強のディベートスキルを手に入れるためのアプリです。様々なトピックで AI と議論を交わし、論理的思考力と説得力を鍛えましょう。",
+                features: [
+                    "高度な AI による議論相手",
+                    "100 以上の多様なディベートトピック",
+                    "詳細な分析とフィードバック機能",
+                    "論理的思考力と説得力を鍛える実践的なトレーニング"
+                ]
+            },
+            
+            // Hacking Timer section
+            hackingTimer: {
+                badge: "生産性向上",
+                title: "時間管理を最適化する Apple Watch アプリ",
+                description: "Apple Watch で集中力をハックするためのカスタマイズ可能なインターバルタイマーです。生産性を最大化し、効率的な時間管理を実現します。",
+                features: [
+                    "カスタマイズ可能なインターバルタイマー",
+                    "Apple Watch 完全対応",
+                    "詳細な生産性分析とレポート",
+                    "ポモドーロテクニックなど様々な時間管理手法に対応"
+                ]
+            },
+            
+            // CTA section
+            cta: {
+                title: "革新的なアプリで可能性を広げよう",
+                description: "TrailFusion AI のアプリケーションは、AI 技術を活用して言語学習、ゲーム、生産性向上など様々な分野で革新的なソリューションを提供しています。新しいアプリの情報をいち早くお届けします。",
+                emailPlaceholder: "メールアドレスを入力",
+                registerButton: "登録する"
+            }
+        },
+        
+        // Common elements
+        common: {
+            comingSoon: "準備中"
+        },
+        
         // Footer
         footer: {
             description: "革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。",
@@ -259,6 +366,113 @@ const completeTranslations = {
             success: "We have received your inquiry. Thank you.",
             error: "An error occurred. Please try again.",
             charCount: "characters"
+        },
+        
+        // Apps page content
+        apps: {
+            // Meta tags
+            meta: {
+                title: "TrailFusion AI - Innovative AI Application Development & Showcase",
+                description: "Develop and showcase innovative applications using the latest AI technology. Try various AI apps including Debate Master, Wood Golem, VoiceLink, Word Blaster, and more."
+            },
+            
+            // Hero section
+            hero: {
+                title: "Expand Your Possibilities<br>with Innovative Apps",
+                description: "TrailFusion AI develops innovative applications utilizing AI technology. We provide cutting-edge solutions in various fields including language learning, games, and productivity enhancement.",
+                cta: "View Apps"
+            },
+            
+            // GP Teachers section
+            gpTeachers: {
+                badge: "AI English Learning",
+                title: "Learn English Together with AI",
+                description: "An innovative English learning app that allows you to practice realistically with AI English partners. Anytime, anywhere, engage in conversations with unique teachers to enhance your practical English conversation skills and improve your English proficiency.",
+                features: [
+                    "Natural conversations with AI English teachers who have unique personalities",
+                    "Pronunciation evaluation and detailed feedback features",
+                    "Wide range of situations from daily conversations to business English",
+                    "Fun and engaging English vocabulary games with learning tracking"
+                ]
+            },
+            
+            // Wood Golem section
+            woodGolem: {
+                badge: "Strategy Game",
+                title: "Train Logical Thinking with Forest Adventures",
+                description: "Embark on a great forest adventure with the stick-taking strategy game \"Wood Golem\". Set in a beautiful forest, challenge stick-taking puzzles together with a small Wood Golem. It's a fun strategy game that trains logical thinking skills.",
+                features: [
+                    "Stick-taking puzzles set in a beautiful forest world",
+                    "Over 100 levels with increasing difficulty",
+                    "Cute Wood Golem characters and storyline",
+                    "Educational elements that foster logical and strategic thinking"
+                ]
+            },
+            
+            // VoiceLink section
+            voiceLink: {
+                badge: "AI Interpreter",
+                title: "AI Interpreter that Breaks Down Language Barriers",
+                description: "A real-time voice translation app equipped with the latest AI. Supporting 10 languages, it instantly delivers natural and accurate translations. It also features high-precision voice recognition that understands context and conversation summarization functionality.",
+                features: [
+                    "Real-time voice translation supporting 10 languages",
+                    "High-precision AI translation engine that understands context",
+                    "Conversation summarization and text saving features",
+                    "Offline mode and travel-friendly features"
+                ]
+            },
+            
+            // Word Blaster section
+            wordBlaster: {
+                badge: "English Vocabulary Game",
+                title: "Shoot Down English Words in Space!",
+                description: "A level-based vocabulary learning shooting game set in space where you shoot down English words. You can improve your English vocabulary skills in an exciting and fun way.",
+                features: [
+                    "Exciting shooting game set in space",
+                    "Level-based English vocabulary learning from beginner to advanced",
+                    "Compete with friends through ranking system",
+                    "Enjoy games while learning word pronunciation and meanings"
+                ]
+            },
+            
+            // Debate Master section
+            debateMaster: {
+                badge: "AI Debate",
+                title: "Train Logical Thinking by Debating with AI",
+                description: "An app for challenging the AI debate champion and acquiring the strongest debate skills. Engage in discussions with AI on various topics to train your logical thinking and persuasive abilities.",
+                features: [
+                    "Advanced AI debate opponent",
+                    "Over 100 diverse debate topics",
+                    "Detailed analysis and feedback features",
+                    "Practical training to develop logical thinking and persuasive skills"
+                ]
+            },
+            
+            // Hacking Timer section
+            hackingTimer: {
+                badge: "Productivity Enhancement",
+                title: "Apple Watch App for Optimizing Time Management",
+                description: "A customizable interval timer for hacking focus with Apple Watch. Maximize productivity and achieve efficient time management.",
+                features: [
+                    "Customizable interval timer",
+                    "Full Apple Watch support",
+                    "Detailed productivity analysis and reports",
+                    "Support for various time management techniques including Pomodoro Technique"
+                ]
+            },
+            
+            // CTA section
+            cta: {
+                title: "Expand Your Possibilities with Innovative Apps",
+                description: "TrailFusion AI applications provide innovative solutions in various fields including language learning, games, and productivity enhancement using AI technology. Get the latest information about new apps first.",
+                emailPlaceholder: "Enter email address",
+                registerButton: "Register"
+            }
+        },
+        
+        // Common elements
+        common: {
+            comingSoon: "Coming Soon"
         },
         
         // Footer

@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "TrailFusion AI - DIY de Autocaravana y Desarrollo de Aplicaciones IA",
+    "description": "Desde la creación DIY de autocaravanas hasta el desarrollo de aplicaciones IA. Guía práctica para convertir un HiAce en autocaravana casera y presentación de aplicaciones IA innovadoras."
+  },
+  "nav": {
+    "home": "Inicio",
+    "apps": "Apps IA",
+    "camping": "Fabricación de Autocaravana",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "line1": "Viaje libre y",
+    "line2": "Experiencia IA innovadora",
+    "line3": "Creación",
+    "description": "Haz realidad tus sueños con DIY de autocaravana y aplicaciones IA",
+    "campingButton": "Fabricación de Autocaravana",
+    "appsButton": "Apps IA",
+    "scrollText": "Ver detalles"
+  },
+  "services": {
+    "title": "Servicios TrailFusion AI",
+    "subtitle": "Combinando experiencia DIY con tecnología IA de vanguardia para apoyar la realización de los sueños de los usuarios",
+    "camping": {
+      "title": "Guía DIY Camping HiAce",
+      "description": "Proporcionamos guías completas para que incluso los principiantes puedan construir autocaravanas de nivel profesional. Nos enfocamos particularmente en modificaciones HiAce y proporcionamos soporte completo hasta el registro de número 8.",
+      "features": {
+        "f1": "Manual de construcción detallado",
+        "f2": "Lista de materiales y herramientas necesarias",
+        "f3": "Lista de verificación de requisitos estructurales",
+        "f4": "Galería de ejemplos completados"
+      },
+      "cta": "Ver guía de camping"
+    },
+    "ai": {
+      "title": "Aplicaciones IA innovadoras",
+      "description": "Desarrollamos y proporcionamos 6 aplicaciones impulsadas por IA para enriquecer la vida diaria y el aprendizaje. Usando la última tecnología IA, hacemos la vida de los usuarios más conveniente y rica.",
+      "features": {
+        "f1": "GP Teachers: App de aprendizaje de inglés IA",
+        "f2": "VoiceLink AI Intérprete: App de traducción en tiempo real",
+        "f3": "Word Blaster: Juego de aprendizaje de vocabulario inglés",
+        "f4": "Otros incluyen práctica de debate y temporizadores de trabajo"
+      },
+      "cta": "Ver aplicaciones"
+    }
+  },
+  "about": {
+    "title": "Presentación del representante",
+    "motto": "La vida siempre se puede cambiar",
+    "subtitle": "La determinación de hacer lo que quieres ahora, no en la vejez",
+    "callToAction": "Ahora, ¿no se unirán a nosotros en una aventura llamada vida sin arrepentimientos?",
+    "followMe": "Sígueme",
+    "interests": "Pasatiempos e Intereses",
+    "tags": ["Kendo", "Autocaravana", "Fabricación DIY", "Tour por Japón", "Gastronomía", "Aguas Termales", "Desarrollo de Apps", "Maratón", "Montañismo"]
+  },
+  "mobileNav": {
+    "home": "Inicio",
+    "camping": "Fabricación de Autocaravana",
+    "apps": "Apps IA",
+    "contact": "Contacto"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Si tienes alguna pregunta o consulta, no dudes en contactarnos.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Dirección de correo electrónico",
+      "emailPlaceholder": "example@mail.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "Asunto de tu consulta",
+      "message": "Mensaje",
+      "messagePlaceholder": "Por favor escribe tus preguntas o contenido de consulta",
+      "charCount": "caracteres",
+      "submit": "Enviar"
+    },
+    "info": {
+      "title": "Información de contacto",
+      "email": "Dirección de correo electrónico",
+      "youtube": "Canal TrailFusion AI"
+    },
+    "messages": {
+      "success": "Hemos recibido tu consulta. Gracias.",
+      "error": "Ocurrió un error. Por favor inténtalo de nuevo.",
+      "sending": "Enviando...",
+      "charCount": "caracteres"
+    }
+  },
+  "form": {
+    "sending": "Enviando...",
+    "success": "Hemos recibido tu consulta. Gracias.",
+    "error": "Ocurrió un error. Por favor inténtalo de nuevo.",
+    "charCount": "caracteres"
+  },
+  "apps": {
+    "meta": {
+      "title": "TrailFusion AI - Desarrollo y Vitrina de Aplicaciones IA Innovadoras",
+      "description": "Desarrollar y mostrar aplicaciones innovadoras usando la última tecnología IA. Prueba varias aplicaciones IA incluyendo Debate Master, Wood Golem, VoiceLink, Word Blaster y más."
+    },
+    "hero": {
+      "title": "Expande Tus Posibilidades<br>con Aplicaciones Innovadoras",
+      "description": "TrailFusion AI desarrolla aplicaciones innovadoras utilizando tecnología IA. Proporcionamos soluciones de vanguardia en varios campos incluyendo aprendizaje de idiomas, juegos y mejora de productividad.",
+      "cta": "Ver Aplicaciones"
+    },
+    "gpTeachers": {
+      "badge": "Aprendizaje de Inglés IA",
+      "title": "Aprender Inglés Junto con IA",
+      "description": "Una aplicación innovadora de aprendizaje de inglés que te permite practicar de manera realista con compañeros ingleses IA. En cualquier momento, en cualquier lugar, participa en conversaciones con profesores únicos.",
+      "features": [
+        "Conversaciones naturales con profesores de inglés IA que tienen personalidades únicas",
+        "Evaluación de pronunciación y características de retroalimentación detallada",
+        "Amplio rango de situaciones desde conversaciones diarias hasta inglés de negocios",
+        "Juegos de vocabulario inglés divertidos y atractivos con seguimiento de aprendizaje"
+      ]
+    },
+    "woodGolem": {
+      "badge": "Juego de Estrategia",
+      "title": "Entrenar Pensamiento Lógico con Aventuras del Bosque",
+      "description": "Embárcate en una gran aventura del bosque con el juego de estrategia de tomar palos \"Wood Golem\". Ambientado en un hermoso bosque, desafía rompecabezas de tomar palos junto con un pequeño Wood Golem.",
+      "features": [
+        "Rompecabezas de tomar palos ambientados en un hermoso mundo del bosque",
+        "Más de 100 niveles con dificultad creciente",
+        "Personajes Wood Golem lindos e historia",
+        "Elementos educativos que fomentan el pensamiento lógico y estratégico"
+      ]
+    },
+    "voiceLink": {
+      "badge": "Intérprete IA",
+      "title": "Intérprete IA que Derriba Barreras Lingüísticas",
+      "description": "Una aplicación de traducción de voz en tiempo real equipada con la última IA. Soportando 10 idiomas, entrega instantáneamente traducciones naturales y precisas.",
+      "features": [
+        "Traducción de voz en tiempo real soportando 10 idiomas",
+        "Motor de traducción IA de alta precisión que entiende el contexto",
+        "Características de resumen de conversación y guardado de texto",
+        "Modo sin conexión y características amigables para viajes"
+      ]
+    },
+    "wordBlaster": {
+      "badge": "Juego de Vocabulario Inglés",
+      "title": "¡Derriba Palabras Inglesas en el Espacio!",
+      "description": "Un juego de disparos de aprendizaje de vocabulario basado en niveles ambientado en el espacio donde derribas palabras inglesas. Puedes mejorar tus habilidades de vocabulario inglés de manera emocionante y divertida.",
+      "features": [
+        "Juego de disparos emocionante ambientado en el espacio",
+        "Aprendizaje de vocabulario inglés basado en niveles desde principiante hasta avanzado",
+        "Compite con amigos a través del sistema de clasificación",
+        "Disfruta juegos mientras aprendes pronunciación y significados de palabras"
+      ]
+    },
+    "debateMaster": {
+      "badge": "Debate IA",
+      "title": "Entrenar Pensamiento Lógico Debatiendo con IA",
+      "description": "Una aplicación para desafiar al campeón de debate IA y adquirir las habilidades de debate más fuertes. Participa en discusiones con IA sobre varios temas.",
+      "features": [
+        "Oponente de debate IA avanzado",
+        "Más de 100 temas de debate diversos",
+        "Características de análisis detallado y retroalimentación",
+        "Entrenamiento práctico para desarrollar pensamiento lógico y habilidades persuasivas"
+      ]
+    },
+    "hackingTimer": {
+      "badge": "Mejora de Productividad",
+      "title": "Aplicación Apple Watch para Optimizar Gestión del Tiempo",
+      "description": "Un temporizador de intervalo personalizable para hackear el enfoque con Apple Watch. Maximiza la productividad y logra una gestión eficiente del tiempo.",
+      "features": [
+        "Temporizador de intervalo personalizable",
+        "Soporte completo de Apple Watch",
+        "Análisis de productividad detallado y reportes",
+        "Soporte para varias técnicas de gestión del tiempo incluyendo Técnica Pomodoro"
+      ]
+    },
+    "cta": {
+      "title": "Expande Tus Posibilidades con Aplicaciones Innovadoras",
+      "description": "Las aplicaciones TrailFusion AI proporcionan soluciones innovadoras en varios campos incluyendo aprendizaje de idiomas, juegos y mejora de productividad usando tecnología IA.",
+      "emailPlaceholder": "Ingresa dirección de correo electrónico",
+      "registerButton": "Registrarse"
+    }
+  },
+  "camping": {
+    "meta": {
+      "title": "Guía de Construcción DIY Autocaravana HiAce - Manual Completo de Autocaravana Casera",
+      "description": "Guía detallada para convertir un HiAce en autocaravana casera. Explicación completa de procedimientos de trabajo específicos, materiales y herramientas necesarias, costos y precauciones basadas en experiencia real."
+    },
+    "hero": {
+      "authorName": "Autocaravana DIY de Hiro",
+      "authorRole": "Creador de Vida en Furgoneta / Entusiasta DIY",
+      "title": "Construcción DIY Autocaravana HiAce Super Larga<br>Guía Completa",
+      "description": "Explica todo el proceso de construcción de autocaravana DIY basado científicamente para lograr resultados de nivel profesional.",
+      "buttons": {
+        "video": "Ver Videos",
+        "gallery": "Galería",
+        "guide": "Guía de Construcción",
+        "requirements": "Requisitos"
+      }
+    },
+    "tiktok": {
+      "badge": "TikTok",
+      "title": "Proceso Completo de Construcción DIY Publicado en Videos"
+    },
+    "cta": {
+      "title": "Construye Tu Propia<br>Autocaravana",
+      "description": "¿Sigue esta guía para construir tu autocaravana única?"
+    },
+    "pillars": {
+      "title": "4 Pilares de la Autocaravana DIY"
+    },
+    "guide": {
+      "title": "Guía de Construcción DIY Autocaravana"
+    }
+  },
+  "common": {
+    "comingSoon": "Próximamente"
+  },
+  "footer": {
+    "description": "Expande tus posibilidades con aplicaciones IA innovadoras y guías de construcción de autocaravana DIY.",
+    "camping": {
+      "title": "Autocaravana",
+      "items": {
+        "videos": "Proceso completo de fabricación DIY publicado en videos",
+        "gallery": "Galería de ejemplos completados",
+        "guide": "Guía de construcción de autocaravana DIY",
+        "requirements": "Requisitos estructurales de autocaravana"
+      }
+    },
+    "apps": "Apps IA",
+    "contact": "Contacto",
+    "info": {
+      "title": "Información de contacto",
+      "email": "Dirección de correo electrónico",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "twitter": "X (anteriormente Twitter)"
+    }
+  }
+}
