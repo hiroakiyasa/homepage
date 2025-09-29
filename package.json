@@ -1,0 +1,24 @@
+{
+  "name": "camping-spot-publisher",
+  "version": "1.0.0",
+  "description": "AI-powered camping spot recommendation system with automatic note.com publishing",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --test",
+    "publish-once": "node src/main.js --once",
+    "dev": "node src/main.js"
+  },
+  "keywords": ["camping", "car-camping", "note", "supabase", "ai"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "geolib": "^3.3.4",
+    "node-cron": "^4.2.1",
+    "node-fetch": "^2.7.0",
+    "sharp": "^0.34.4"
+  }
+}
