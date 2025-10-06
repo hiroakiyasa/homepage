@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+    }
+    .custom-popup {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .custom-popup h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    .custom-popup p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // 地図の初期化
+    const map = L.map('map').setView([43.1907, 140.9947], 14);
+
+    // OpenStreetMapタイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // 縮尺コントロールを追加（メートル・マイル両方表示）
+    L.control.scale({
+      position: 'bottomleft',
+      metric: true,
+      imperial: false,
+      maxWidth: 200
+    }).addTo(map);
+
+    // マーカー管理用オブジェクト（外部からアクセス可能）
+    window.markers = {};
+
+    // 絵文字アイコン作成関数
+    function createEmojiIcon(emoji, size = 40) {
+      return L.divIcon({
+        html: '<div style="font-size: ' + size + 'px; text-align: center; line-height: 1;">' + emoji + '</div>',
+        iconSize: [size, size],
+        iconAnchor: [size/2, size],
+        popupAnchor: [0, -size],
+        className: 'emoji-icon'
+      });
+    }
+
+    // コンビニロゴアイコン作成関数（画像アイコン）
+    function createConvenienceIcon(brand) {
+      const logos = {
+        seven: 'logos/seveneleven.png',
+        lawson: 'logos/LAWSON.png',
+        familymart: 'logos/Famiolymart.png',
+        ministop: 'logos/ministop.png',
+        seicomart: 'logos/Seikomart.png',
+        dailyyamazaki: 'logos/Dailyyamazaki.png'
+      };
+      const logoUrl = logos[brand] || logos.seven;
+      return L.icon({
+        iconUrl: logoUrl,
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40],
+        className: 'convenience-logo-icon'
+      });
+    }
+
+    // お祭りアイコンを目立つ大きなマーカーに
+    const festivalIcon = L.divIcon({
+      html: '<div style="background: linear-gradient(135deg, #FF1744 0%, #FF6B00 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 4px 12px rgba(255,23,68,0.5); border: 4px solid white; position: relative; z-index: 1000;">🎉</div>',
+      iconSize: [60, 60],
+      iconAnchor: [30, 60],
+      popupAnchor: [0, -60],
+      className: 'festival-icon'
+    });
+
+    const parkingIcon = createEmojiIcon('🅿️', 40);
+    const toiletIcon = createEmojiIcon('🚻', 35);
+    const onsenIcon = createEmojiIcon('♨️', 40);
+
+    // 会場マーカー（デフォルトでポップアップを開く、最前面に表示）
+    const festivalMarker = L.marker([43.1907, 140.9947], {
+      icon: festivalIcon,
+      zIndexOffset: 10000  // 最前面に表示
+    })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>小樽雪あかりの路</h3>
+          <p>小樽運河や歴史的建造物をろうそくの灯りで彩る冬の風物詩</p>
+        </div>
+      `);
+    festivalMarker.openPopup(); // デフォルトで開く
+    window.markers['festival'] = festivalMarker;
+
+    // 駐車場マーカー
+    
+    window.markers['parking_0'] = L.marker([43.1879, 140.9933], { icon: parkingIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>小樽公園</h3>
+          <p></p>
+        </div>
+      `);
+    
+    window.markers['parking_1'] = L.marker([43.192096, 141.000098], { icon: parkingIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>パラカ小樽市花園第４</h3>
+          <p></p>
+        </div>
+      `);
+    
+    window.markers['parking_2'] = L.marker([43.193012, 140.999076], { icon: parkingIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>パラカ小樽市花園第２</h3>
+          <p></p>
+        </div>
+      `);
+    
+    window.markers['parking_3'] = L.marker([43.192629, 140.999812], { icon: parkingIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>パラカ小樽市花園第１</h3>
+          <p></p>
+        </div>
+      `);
+    
+    window.markers['parking_4'] = L.marker([43.193887, 140.999012], { icon: parkingIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>ノルテパーク花園１丁目</h3>
+          <p></p>
+        </div>
+      `);
+    
+    window.markers['convenience_63547'] = L.marker([43.1905806, 140.9966449], { icon: createConvenienceIcon('seven') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>セブンイレブン小樽花園2丁目店</h3>
+          <p>24時間営業</p>
+        </div>
+      `);
+      
+    window.markers['onsen_28'] = L.marker([43.188284, 140.997927], { icon: onsenIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>大正湯温泉</h3>
+          <p>¥500 日帰り入浴施設</p>
+        </div>
+      `);
+      
+    window.markers['convenience_28'] = L.marker([43.1917889, 141.0004139], { icon: createConvenienceIcon('lawson') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>ローソン小樽花園一丁目店</h3>
+          <p>24時間営業</p>
+        </div>
+      `);
+      
+    window.markers['toilet_28'] = L.marker([43.189556531451, 141.00101051483], { icon: toiletIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>花園グリーンロード公園トイレ①</h3>
+          <p></p>
+        </div>
+      `);
+      
+    window.markers['convenience_27'] = L.marker([43.1956608, 140.9985193], { icon: createConvenienceIcon('lawson') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>ローソン小樽稲穂店</h3>
+          <p>24時間営業</p>
+        </div>
+      `);
+      
+    window.markers['toilet_27'] = L.marker([43.192232062286, 141.00432379426], { icon: toiletIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>水天宮公衆トイレ</h3>
+          <p></p>
+        </div>
+      `);
+      
+    window.markers['onsen_27'] = L.marker([43.1982224, 141.0018823], { icon: onsenIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div class="custom-popup">
+          <h3>運河の宿 おたるふる川</h3>
+          <p>要確認 温泉施設</p>
+        </div>
+      `);
+      
+    // お祭りを中心に表示（縦方向約1kmになるようにズームレベル15.5を使用）
+    // ズームレベル15.5で縦方向が約1km相当になる
+    map.setView([43.1907, 140.9947], 15.5);
+
+    // 外部から呼び出し可能な関数：マーカーを表示してポップアップを開く
+    window.showMarker = function(markerKey) {
+      const marker = window.markers[markerKey];
+      if (marker) {
+        map.setView(marker.getLatLng(), 16);
+        marker.openPopup();
+      }
+    };
+
+    // レスポンシブ対応：ウィンドウリサイズ時に地図を再調整
+    window.addEventListener('resize', function() {
+      map.invalidateSize();
+    });
+  </script>
+</body>
+</html>
