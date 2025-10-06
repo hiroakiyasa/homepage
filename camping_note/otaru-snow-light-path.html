@@ -67,18 +67,65 @@
 
 
 <style>
-  .parking-map-fullwidth { width: 100%; max-width: 100%; background: #f8f9fa; }
-  .map-layout-container { display: flex; gap: 0; width: 100%; }
-  .map-layout-left { flex: 0 0 70%; min-width: 0; height: 700px; }
-  .map-layout-right { flex: 0 0 30%; min-width: 0; max-height: 700px; overflow-y: auto; background: white; padding: 20px; }
-  .map-layout-left iframe { width: 100%; height: 100%; border: none; display: block; }
+  .parking-map-fullwidth {
+    width: 100%;
+    max-width: 100%;
+    background: #f8f9fa;
+    margin: 20px 0;
+  }
+  .map-layout-container {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    min-height: 600px;
+  }
+  .map-layout-left {
+    flex: 1 1 70%;
+    min-width: 0;
+    height: auto;
+    min-height: 600px;
+  }
+  .map-layout-right {
+    flex: 1 1 30%;
+    min-width: 280px;
+    max-height: 700px;
+    overflow-y: auto;
+    background: white;
+    padding: 20px;
+  }
+  .map-layout-left iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border: none;
+    display: block;
+  }
   @media (max-width: 1200px) {
-    .map-layout-container { flex-direction: column; min-height: auto; }
-    .map-layout-left { flex: 0 0 100%; height: 500px; }
-    .map-layout-right { flex: 0 0 100%; max-height: none; }
+    .map-layout-container {
+      flex-direction: column;
+      min-height: auto;
+    }
+    .map-layout-left {
+      width: 100%;
+      height: 500px;
+      min-height: 500px;
+    }
+    .map-layout-left iframe {
+      min-height: 500px;
+    }
+    .map-layout-right {
+      width: 100%;
+      max-height: none;
+    }
   }
   @media (max-width: 768px) {
-    .map-layout-left { height: 400px; }
+    .map-layout-left {
+      height: 400px;
+      min-height: 400px;
+    }
+    .map-layout-left iframe {
+      min-height: 400px;
+    }
   }
 </style>
 <div class="parking-map-fullwidth">
@@ -237,7 +284,7 @@ function scrollToMap(markerKey) {
 
 
 
-<div class="wp-block-cover alignfull" style="min-height:400px;aspect-ratio:unset;"><img loading="lazy" decoding="async" width="640" height="426" class="wp-block-cover__image-background wp-image-61" alt="" src="wp-content/uploads/2025/10/yuki-akari-1.jpg" data-object-fit="cover" srcset="wp-content/uploads/2025/10/yuki-akari-1.jpg 640w, wp-content/uploads/2025/10/yuki-akari-1-300x200.jpg 300w" sizes="auto, (max-width: 640px) 100vw, 640px" /><span aria-hidden="true" class="wp-block-cover__background has-bg-background-color has-background-dim-90 has-background-dim"></span><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+<div class="wp-block-cover alignfull" style="min-height:400px;aspect-ratio:unset;"><img loading="lazy" decoding="async" width="640" height="426" class="wp-block-cover__image-background wp-image-61" alt="小樽雪あかりの路" src="images/yuki-akari-1.jpg" data-object-fit="cover" /><span aria-hidden="true" class="wp-block-cover__background has-bg-background-color has-background-dim-90 has-background-dim"></span><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
 <h2 class="wp-block-heading has-text-align-center has-fg-color has-text-color has-xl-font-size">✨ まとめ</h2>
 
 
