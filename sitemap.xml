@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- トップページ -->
+  <url>
+    <loc>https://trailfusionai.com/</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- キャンピングカー製作ページ -->
+  <url>
+    <loc>https://trailfusionai.com/camping.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AIアプリ紹介ページ -->
+  <url>
+    <loc>https://trailfusionai.com/apps.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- お祭り車中泊ガイド - トップ -->
+  <url>
+    <loc>https://trailfusionai.com/camping_note/index.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 小樽雪あかりの路 駐車場ガイド -->
+  <url>
+    <loc>https://trailfusionai.com/camping_note/otaru-snow-light-path.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://trailfusionai.com/camping_note/images/yuki-akari-1.jpg</image:loc>
+      <image:title>小樽雪あかりの路</image:title>
+    </image:image>
+  </url>
+
+</urlset>
