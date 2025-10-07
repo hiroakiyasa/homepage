@@ -14,7 +14,7 @@
       background: #f5f5f5;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
       background: white;
@@ -26,7 +26,52 @@
     img { max-width: 100%; height: auto; }
     a { color: #3B82F6; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    
+
+    #map {
+      width: 100%;
+      height: 600px;
+      margin: 30px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .festival-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .festival-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .festival-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+
+    .festival-card h3 {
+      margin-top: 0;
+      color: #FF6B35;
+      font-size: 1.2em;
+    }
+
+    .festival-date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .festival-location {
+      color: #888;
+      font-size: 0.85em;
+    }
   </style>
 </head>
 <body>
@@ -36,23 +81,131 @@
       <p><a href="../index.html">← トップページに戻る</a> | <a href="https://trailfusionai.com">TrailFusion AI</a></p>
     </header>
     <main>
-      
-        <h2>🎉 お祭り車中泊ガイド一覧</h2>
-        <p>全国のお祭りイベントでの車中泊におすすめの駐車場を紹介します。</p>
-        <ul style="list-style: none; padding: 0;">
-          
-            <li style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-              <h3 style="margin-top: 0;"><a href="otaru-snow-light-path.html">【小樽雪あかりの路】車中泊におすすめの駐車場ガイド</a></h3>
-              <p style="color: #666; font-size: 0.9em;">更新日: 2025/10/7</p>
-            </li>
-          
-        </ul>
-      
+      <h2>🎉 全国お祭り車中泊マップ</h2>
+      <p>日本全国のお祭りと車中泊スポットを地図上で確認できます。マーカーをクリックして詳細を見る。</p>
+
+      <!-- 日本地図 -->
+      <div id="map"></div>
+
+      <h2 style="margin-top: 50px;">📍 お祭り一覧</h2>
+      <div class="festival-list" id="festival-list">
+        <!-- お祭りカードがJavaScriptで動的に生成されます -->
+      </div>
     </main>
     <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #eee; text-align: center; color: #666;">
       <p>&copy; 2025 TrailFusion AI - Camping Note</p>
     </footer>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // お祭りデータ（今後Supabaseから取得予定）
+    const festivals = [
+      {
+        id: 1,
+        name: '小樽雪あかりの路',
+        slug: 'otaru-snow-light-path',
+        lat: 43.1907,
+        lng: 140.9947,
+        date: '2026年2月上旬',
+        location: '北海道小樽市',
+        description: '小樽運河や歴史的建造物をろうそくの灯りで彩る冬の風物詩'
+      },
+      {
+        id: 2,
+        name: 'さっぽろ雪まつり',
+        slug: 'sapporo-snow-festival',
+        lat: 43.0642,
+        lng: 141.3469,
+        date: '2026年2月上旬',
+        location: '北海道札幌市',
+        description: '世界的に有名な雪と氷の祭典'
+      },
+      {
+        id: 3,
+        name: '青森ねぶた祭',
+        slug: 'aomori-nebuta',
+        lat: 40.8246,
+        lng: 140.7470,
+        date: '2026年8月2日〜7日',
+        location: '青森県青森市',
+        description: '巨大な人形灯籠が街を練り歩く東北三大祭り'
+      },
+      {
+        id: 4,
+        name: '仙台七夕まつり',
+        slug: 'sendai-tanabata',
+        lat: 38.2682,
+        lng: 140.8694,
+        date: '2026年8月6日〜8日',
+        location: '宮城県仙台市',
+        description: '豪華絢爛な七夕飾りが商店街を彩る'
+      },
+      {
+        id: 5,
+        name: '秋田竿燈まつり',
+        slug: 'akita-kanto',
+        lat: 39.7186,
+        lng: 140.1024,
+        date: '2026年8月3日〜6日',
+        location: '秋田県秋田市',
+        description: '竿燈を手のひらや額に乗せる妙技が見どころ'
+      }
+    ];
+
+    // 地図の初期化（日本全体を表示）
+    const map = L.map('map').setView([37.5, 138.0], 5);
+
+    // OpenStreetMapタイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // お祭りアイコン
+    const festivalIcon = L.divIcon({
+      html: '<div style="background: linear-gradient(135deg, #FF1744 0%, #FF6B00 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 12px rgba(255,23,68,0.5); border: 3px solid white;">🎉</div>',
+      iconSize: [40, 40],
+      iconAnchor: [20, 40],
+      popupAnchor: [0, -40],
+      className: 'festival-icon'
+    });
+
+    // マーカーとカードを生成
+    const festivalListEl = document.getElementById('festival-list');
+
+    festivals.forEach(festival => {
+      // 地図上にマーカーを追加
+      const marker = L.marker([festival.lat, festival.lng], { icon: festivalIcon })
+        .addTo(map)
+        .bindPopup(`
+          <div style="min-width: 200px;">
+            <h3 style="margin: 0 0 10px 0; color: #FF6B35; font-size: 1.1em;">${festival.name}</h3>
+            <p style="margin: 5px 0; color: #666; font-size: 0.9em;">📅 ${festival.date}</p>
+            <p style="margin: 5px 0; color: #666; font-size: 0.9em;">📍 ${festival.location}</p>
+            <p style="margin: 10px 0; font-size: 0.9em;">${festival.description}</p>
+            <a href="${festival.slug}.html" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #FF6B35; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em;">詳細を見る</a>
+          </div>
+        `);
+
+      // お祭りカードを生成
+      const card = document.createElement('div');
+      card.className = 'festival-card';
+      card.innerHTML = `
+        <h3>${festival.name}</h3>
+        <div class="festival-date">📅 ${festival.date}</div>
+        <div class="festival-location">📍 ${festival.location}</div>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">${festival.description}</p>
+      `;
+
+      // カードクリックで地図の該当位置へ移動してポップアップを開く
+      card.addEventListener('click', () => {
+        map.setView([festival.lat, festival.lng], 14);
+        marker.openPopup();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      festivalListEl.appendChild(card);
+    });
+  </script>
 </body>
 </html>
