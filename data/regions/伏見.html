@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伏見 - 車中泊おすすめスポット</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #1976d2;
+      background-size: cover;
+      background-position: center;
+      padding: 50px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .header h1 {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    .header p {
+      color: #fff;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .restaurant-section {
+      margin-top: 30px;
+    }
+    .restaurant-section h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+    .restaurant-card {
+      background: #fff8e1;
+      border-radius: 6px;
+      padding: 12px;
+      border-left: 4px solid #ff9800;
+    }
+    .restaurant-card h3 {
+      color: #ff9800;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .restaurant-genre {
+      background: #ff9800;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .restaurant-address {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    @media (max-width: 1200px) {
+      .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .restaurant-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚗 伏見</h1>
+      <p>周辺のおすすめレストラン情報</p>
+    </div>
+
+    <!-- レストランセクション -->
+    <div class="restaurant-section">
+      <h2>🍴 おすすめレストラントップ5</h2>
+      <div class="restaurant-grid">
+        <div class="restaurant-card">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
+          <h3>バー・バーンズ</h3>
+          <span class="restaurant-genre">バー</span>
+          <div class="restaurant-address">📍 愛知県名古屋市中区栄2-3-32 アマノビル　Ｂ１Ｆ</div>
+        </div>
+        <div class="restaurant-card">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
+          <h3>あま木</h3>
+          <span class="restaurant-genre">寿司</span>
+          <div class="restaurant-address">📍 愛知県名古屋市中区錦1-19-30 名古屋観光ホテル 18F</div>
+        </div>
+        <div class="restaurant-card">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <h3>Maison DIA Mizuguchi</h3>
+          <span class="restaurant-genre">フレンチ</span>
+          <div class="restaurant-address">📍 愛知県名古屋市中区栄2-1-21 サンシャイン伏見ビル 1F</div>
+        </div>
+        <div class="restaurant-card">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+          <h3>レストラン ラ・フロレゾン・ドゥ・タケウチ</h3>
+          <span class="restaurant-genre">フレンチ</span>
+          <div class="restaurant-address">📍 愛知県名古屋市中区栄2-12-12 アーク栄白川パークビル 1F</div>
+        </div>
+        <div class="restaurant-card">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+          <h3>山猫軒</h3>
+          <span class="restaurant-genre">創作料理</span>
+          <div class="restaurant-address">📍 愛知県名古屋市中区丸の内1-5-17 渋谷ビル 2Ｆ</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

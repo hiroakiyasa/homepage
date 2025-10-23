@@ -18,7 +18,8 @@
     "omoromachi-all": "npm run update-omoromachi && npm run generate-omoromachi-map && npm run generate-omoromachi-html",
     "extract-regions": "node extract-region-data.js",
     "generate-index": "node generate-index-html.js",
-    "build-index": "npm run extract-regions && npm run generate-index"
+    "build-index": "npm run extract-regions && npm run generate-index",
+    "generate-all-regions": "node generate-all-regions.js"
   },
   "keywords": ["camping", "car-camping", "note", "supabase", "ai"],
   "author": "",
