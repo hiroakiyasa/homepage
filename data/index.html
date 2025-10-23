@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Note - 全国車中泊スポットマップ</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1, h2, h3 { margin-top: 1.5em; margin-bottom: 0.5em; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        p { margin-bottom: 1em; }
+        a { color: #3B82F6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        #map {
+            width: 100%;
+            height: 600px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .region-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .region-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .region-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .region-card h3 {
+            margin-top: 0;
+            color: #1976d2;
+            font-size: 1.1em;
+        }
+
+        .region-info {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><a href="../index.html">← トップページに戻る</a> | <a href="https://trailfusionai.com">TrailFusion AI</a></p>
+
+        <h1>🚗 全国車中泊スポットマップ</h1>
+        <p>日本全国の車中泊スポットを地図上で確認できます。マーカーをクリックして各地域の詳細ページへ。</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">298</div>
+                <div class="stat-label">対応地域</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">19,027</div>
+                <div class="stat-label">レストラン情報</div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <h2>📍 地域一覧</h2>
+        <div id="region-list" class="region-list"></div>
+
+        <footer>
+            © 2025 TrailFusion AI - Camping Note
+        </footer>
+    </div>
+
+    <script>
+        // 地域データ
+        const regions = [
+        {
+                "name": "おもろまち駅",
+                "lat": 26.218347040667744,
+                "lng": 127.6975647389371,
+                "restaurantCount": 8,
+                "fileName": "おもろまち駅",
+                "url": "おもろまち駅.html"
+        },
+        {
+                "name": "すすきの",
+                "lat": 43.054976506544044,
+                "lng": 141.35237670104846,
+                "restaurantCount": 50,
+                "fileName": "すすきの",
+                "url": "すすきの.html"
+        },
+        {
+                "name": "みなとみらい",
+                "lat": 35.45675539514023,
+                "lng": 139.63202547027296,
+                "restaurantCount": 33,
+                "fileName": "みなとみらい",
+                "url": "みなとみらい.html"
+        },
+        {
+                "name": "一宮",
+                "lat": 35.29945481444755,
+                "lng": 136.7942141800322,
+                "restaurantCount": 20,
+                "fileName": "一宮",
+                "url": "一宮.html"
+        },
+        {
+                "name": "三宮",
+                "lat": 34.69519776612317,
+                "lng": 135.19190406075637,
+                "restaurantCount": 305,
+                "fileName": "三宮",
+                "url": "三宮.html"
+        },
+        {
+                "name": "三島",
+                "lat": 35.11541730112983,
+                "lng": 138.9155028194928,
+                "restaurantCount": 29,
+                "fileName": "三島",
+                "url": "三島.html"
+        },
+        {
+                "name": "上大岡",
+                "lat": 35.40690140757946,
+                "lng": 139.59509235129147,
+                "restaurantCount": 12,
+                "fileName": "上大岡",
+                "url": "上大岡.html"
+        },
+        {
+                "name": "上田",
+                "lat": 36.389773799903246,
+                "lng": 138.23414599947193,
+                "restaurantCount": 16,
+                "fileName": "上田",
+                "url": "上田.html"
+        },
+        {
+                "name": "上越",
+                "lat": 37.11403179032301,
+                "lng": 138.22710497888374,
+                "restaurantCount": 10,
+                "fileName": "上越",
+                "url": "上越.html"
+        },
+        {
+                "name": "上野",
+                "lat": 35.71089259428247,
+                "lng": 139.7774076189482,
+                "restaurantCount": 30,
+                "fileName": "上野",
+                "url": "上野.html"
+        },
+        {
+                "name": "下北沢",
+                "lat": 35.66114841396874,
+                "lng": 139.66796490001437,
+                "restaurantCount": 63,
+                "fileName": "下北沢",
+                "url": "下北沢.html"
+        },
+        {
+                "name": "下田",
+                "lat": 34.672685539620524,
+                "lng": 138.9459708191044,
+                "restaurantCount": 10,
+                "fileName": "下田",
+                "url": "下田.html"
+        },
+        {
+                "name": "中津",
+                "lat": 33.579340077250265,
+                "lng": 131.1857420482234,
+                "restaurantCount": 5,
+                "fileName": "中津",
+                "url": "中津.html"
+        },
+        {
+                "name": "中津川",
+                "lat": 35.52093698295562,
+                "lng": 137.4997702777027,
+                "restaurantCount": 11,
+                "fileName": "中津川",
+                "url": "中津川.html"
+        },
+        {
+                "name": "中洲",
+                "lat": 33.59347390877638,
+                "lng": 130.40638624455372,
+                "restaurantCount": 86,
+                "fileName": "中洲",
+                "url": "中洲.html"
+        },
+        {
+                "name": "中目黒",
+                "lat": 35.64379679612849,
+                "lng": 139.6969370463194,
+                "restaurantCount": 148,
+                "fileName": "中目黒",
+                "url": "中目黒.html"
+        },
+        {
+                "name": "丸の内",
+                "lat": 35.681754039167174,
+                "lng": 139.76586970061308,
+                "restaurantCount": 200,
+                "fileName": "丸の内",
+                "url": "丸の内.html"
+        },
+        {
+                "name": "久留米",
+                "lat": 33.31119977002406,
+                "lng": 130.52819253559932,
+                "restaurantCount": 37,
+                "fileName": "久留米",
+                "url": "久留米.html"
+        },
+        {
+                "name": "久米島",
+                "lat": 26.342367239701844,
+                "lng": 126.7663233980042,
+                "restaurantCount": 3,
+                "fileName": "久米島",
+                "url": "久米島.html"
+        },
+        {
+                "name": "亀山",
+                "lat": 34.866754387372325,
+                "lng": 136.4517504523192,
+                "restaurantCount": 4,
+                "fileName": "亀山",
+                "url": "亀山.html"
+        },
+        {
+                "name": "亀岡",
+                "lat": 35.02627778699184,
+                "lng": 135.575155829545,
+                "restaurantCount": 2,
+                "fileName": "亀岡",
+                "url": "亀岡.html"
+        },
+        {
+                "name": "五反田",
+                "lat": 35.626453925599904,
+                "lng": 139.72443426889248,
+                "restaurantCount": 81,
+                "fileName": "五反田",
+                "url": "五反田.html"
+        },
+        {
+                "name": "五稜郭",
+                "lat": 41.79145842351339,
+                "lng": 140.75155819753812,
+                "restaurantCount": 9,
+                "fileName": "五稜郭",
+                "url": "五稜郭.html"
+        },
+        {
+                "name": "京橋",
+                "lat": 34.69595987933577,
+                "lng": 135.53252233639085,
+                "restaurantCount": 71,
+                "fileName": "京橋",
+                "url": "京橋.html"
+        },
+        {
+                "name": "京田辺",
+                "lat": 34.83315963716333,
+                "lng": 135.72847987748682,
+                "restaurantCount": 1,
+                "fileName": "京田辺",
+                "url": "京田辺.html"
+        },
+        {
+                "name": "人吉",
+                "lat": 32.20321311764113,
+                "lng": 130.7483921601528,
+                "restaurantCount": 6,
+                "fileName": "人吉",
+                "url": "人吉.html"
+        },
+        {
+                "name": "今池",
+                "lat": 35.1697710774925,
+                "lng": 136.93853180055277,
+                "restaurantCount": 89,
+                "fileName": "今池",
+                "url": "今池.html"
+        },
+        {
+                "name": "代官山",
+                "lat": 35.64984164148272,
+                "lng": 139.70288459587076,
+                "restaurantCount": 59,
+                "fileName": "代官山",
+                "url": "代官山.html"
+        },
+        {
+                "name": "伊万里",
+                "lat": 33.2729705637956,
+                "lng": 129.88177355348884,
+                "restaurantCount": 6,
+                "fileName": "伊万里",
+                "url": "伊万里.html"
+        },
+        {
+                "name": "伊丹",
+                "lat": 34.78184597159008,
+                "lng": 135.4132883651349,
+                "restaurantCount": 16,
+                "fileName": "伊丹",
+                "url": "伊丹.html"
+        },
+        {
+                "name": "伊勢",
+                "lat": 34.48657622250935,
+                "lng": 136.710240935226,
+                "restaurantCount": 47,
+                "fileName": "伊勢",
+                "url": "伊勢.html"
+        },
+        {
+                "name": "伊東",
+                "lat": 34.93350036893137,
+                "lng": 139.0987850110241,
+                "restaurantCount": 40,
+                "fileName": "伊東",
+                "url": "伊東.html"
+        },
+        {
+                "name": "伊賀",
+                "lat": 34.77914395309481,
+                "lng": 136.1320583823447,
+                "restaurantCount": 9,
+                "fileName": "伊賀",
+                "url": "伊賀.html"
+        },
+        {
+                "name": "伏見",
+                "lat": 35.16976943748142,
+                "lng": 136.8976002837386,
+                "restaurantCount": 120,
+                "fileName": "伏見",
+                "url": "伏見.html"
+        },
+        {
+                "name": "住吉",
+                "lat": 34.718254219497986,
+                "lng": 135.25909292078163,
+                "restaurantCount": 27,
+                "fileName": "住吉",
+                "url": "住吉.html"
+        },
+        {
+                "name": "佐世保",
+                "lat": 33.15823558560199,
+                "lng": 129.7393180156691,
+                "restaurantCount": 25,
+                "fileName": "佐世保",
+                "url": "佐世保.html"
+        },
+        {
+                "name": "佐久",
+                "lat": 36.250229779978646,
+                "lng": 138.42325106134018,
+                "restaurantCount": 7,
+                "fileName": "佐久",
+                "url": "佐久.html"
+        },
+        {
+                "name": "佐伯",
+                "lat": 32.929201904393864,
+                "lng": 131.91739120564753,
+                "restaurantCount": 4,
+                "fileName": "佐伯",
+                "url": "佐伯.html"
+        },
+        {
+                "name": "佐渡",
+                "lat": 38.03122729656749,
+                "lng": 138.38427795263652,
+                "restaurantCount": 4,
+                "fileName": "佐渡",
+                "url": "佐渡.html"
+        },
+        {
+                "name": "佐賀市",
+                "lat": 33.281255285368964,
+                "lng": 130.29566063880327,
+                "restaurantCount": 31,
+                "fileName": "佐賀市",
+                "url": "佐賀市.html"
+        },
+        {
+                "name": "佐賀駅",
+                "lat": 33.26198396143226,
+                "lng": 130.29948019042212,
+                "restaurantCount": 8,
+                "fileName": "佐賀駅",
+                "url": "佐賀駅.html"
+        },
+        {
+                "name": "元町・中華街",
+                "lat": 35.44185636312998,
+                "lng": 139.64738166357276,
+                "restaurantCount": 88,
+                "fileName": "元町・中華街",
+                "url": "元町・中華街.html"
+        },
+        {
+                "name": "全国のお店",
+                "lat": 35.57982637256252,
+                "lng": 137.20161280991815,
+                "restaurantCount": 570,
+                "fileName": "全国のお店",
+                "url": "全国のお店.html"
+        },
+        {
+                "name": "八代",
+                "lat": 32.50024263701187,
+                "lng": 130.60036235751687,
+                "restaurantCount": 2,
+                "fileName": "八代",
+                "url": "八代.html"
+        },
+        {
+                "name": "八王子",
+                "lat": 35.656891064316724,
+                "lng": 139.33862225961855,
+                "restaurantCount": 23,
+                "fileName": "八王子",
+                "url": "八王子.html"
+        },
+        {
+                "name": "六本木",
+                "lat": 35.66223217611374,
+                "lng": 139.7312019239331,
+                "restaurantCount": 321,
+                "fileName": "六本木",
+                "url": "六本木.html"
+        },
+        {
+                "name": "六甲道",
+                "lat": 34.71438541545205,
+                "lng": 135.2389203135362,
+                "restaurantCount": 39,
+                "fileName": "六甲道",
+                "url": "六甲道.html"
+        },
+        {
+                "name": "函館",
+                "lat": 41.78078266254211,
+                "lng": 140.74068616027927,
+                "restaurantCount": 30,
+                "fileName": "函館",
+                "url": "函館.html"
+        },
+        {
+                "name": "刈谷",
+                "lat": 34.9928687077543,
+                "lng": 137.00795009112292,
+                "restaurantCount": 1,
+                "fileName": "刈谷",
+                "url": "刈谷.html"
+        },
+        {
+                "name": "別府",
+                "lat": 33.29279086764729,
+                "lng": 131.49206741982886,
+                "restaurantCount": 45,
+                "fileName": "別府",
+                "url": "別府.html"
+        },
+        {
+                "name": "加古川",
+                "lat": 34.75982071522334,
+                "lng": 134.85283847289753,
+                "restaurantCount": 10,
+                "fileName": "加古川",
+                "url": "加古川.html"
+        },
+        {
+                "name": "北九州",
+                "lat": 33.87913236957668,
+                "lng": 130.8526869819869,
+                "restaurantCount": 127,
+                "fileName": "北九州",
+                "url": "北九州.html"
+        },
+        {
+                "name": "北千住",
+                "lat": 35.749818025960415,
+                "lng": 139.80300790530802,
+                "restaurantCount": 60,
+                "fileName": "北千住",
+                "url": "北千住.html"
+        },
+        {
+                "name": "北新地",
+                "lat": 34.69773404733344,
+                "lng": 135.49775861000424,
+                "restaurantCount": 119,
+                "fileName": "北新地",
+                "url": "北新地.html"
+        },
+        {
+                "name": "十日町",
+                "lat": 37.11817066083898,
+                "lng": 138.67244807646446,
+                "restaurantCount": 5,
+                "fileName": "十日町",
+                "url": "十日町.html"
+        },
+        {
+                "name": "千歳",
+                "lat": 42.81102187638208,
+                "lng": 141.67411031047783,
+                "restaurantCount": 20,
+                "fileName": "千歳",
+                "url": "千歳.html"
+        },
+        {
+                "name": "半田",
+                "lat": 34.896223118189816,
+                "lng": 136.92433137921464,
+                "restaurantCount": 11,
+                "fileName": "半田",
+                "url": "半田.html"
+        },
+        {
+                "name": "南草津",
+                "lat": 35.00204958337504,
+                "lng": 135.94746358513038,
+                "restaurantCount": 10,
+                "fileName": "南草津",
+                "url": "南草津.html"
+        },
+        {
+                "name": "原宿",
+                "lat": 35.669288638760406,
+                "lng": 139.70685054942277,
+                "restaurantCount": 54,
+                "fileName": "原宿",
+                "url": "原宿.html"
+        },
+        {
+                "name": "可児",
+                "lat": 35.4264297510636,
+                "lng": 137.0347692601797,
+                "restaurantCount": 6,
+                "fileName": "可児",
+                "url": "可児.html"
+        },
+        {
+                "name": "各務原",
+                "lat": 35.40335773057156,
+                "lng": 136.87292216503826,
+                "restaurantCount": 14,
+                "fileName": "各務原",
+                "url": "各務原.html"
+        },
+        {
+                "name": "吉祥寺",
+                "lat": 35.70374307907572,
+                "lng": 139.57870290368948,
+                "restaurantCount": 95,
+                "fileName": "吉祥寺",
+                "url": "吉祥寺.html"
+        },
+        {
+                "name": "吉野",
+                "lat": 34.369884487498915,
+                "lng": 135.8583425227163,
+                "restaurantCount": 2,
+                "fileName": "吉野",
+                "url": "吉野.html"
+        },
+        {
+                "name": "名古屋",
+                "lat": 35.166533464067314,
+                "lng": 136.9132454180135,
+                "restaurantCount": 1200,
+                "fileName": "名古屋",
+                "url": "名古屋.html"
+        },
+        {
+                "name": "名古屋駅",
+                "lat": 35.171501436538875,
+                "lng": 136.88424976212002,
+                "restaurantCount": 193,
+                "fileName": "名古屋駅",
+                "url": "名古屋駅.html"
+        },
+        {
+                "name": "名張",
+                "lat": 34.59756664227995,
+                "lng": 136.09774942731065,
+                "restaurantCount": 4,
+                "fileName": "名張",
+                "url": "名張.html"
+        },
+        {
+                "name": "名護",
+                "lat": 26.57847371948402,
+                "lng": 127.96921081644363,
+                "restaurantCount": 21,
+                "fileName": "名護",
+                "url": "名護.html"
+        },
+        {
+                "name": "呉",
+                "lat": 34.24732156881478,
+                "lng": 132.56547651809646,
+                "restaurantCount": 9,
+                "fileName": "呉",
+                "url": "呉.html"
+        },
+        {
+                "name": "和歌山市",
+                "lat": 34.22824988386169,
+                "lng": 135.18197612943297,
+                "restaurantCount": 69,
+                "fileName": "和歌山市",
+                "url": "和歌山市.html"
+        },
+        {
+                "name": "和歌山市駅",
+                "lat": 34.2347143864557,
+                "lng": 135.170073833114,
+                "restaurantCount": 11,
+                "fileName": "和歌山市駅",
+                "url": "和歌山市駅.html"
+        },
+        {
+                "name": "和歌山駅",
+                "lat": 34.23247996637172,
+                "lng": 135.18798991890057,
+                "restaurantCount": 26,
+                "fileName": "和歌山駅",
+                "url": "和歌山駅.html"
+        },
+        {
+                "name": "品川",
+                "lat": 35.6303120583208,
+                "lng": 139.73922863813624,
+                "restaurantCount": 32,
+                "fileName": "品川",
+                "url": "品川.html"
+        },
+        {
+                "name": "唐津",
+                "lat": 33.460227379669035,
+                "lng": 129.96063225327558,
+                "restaurantCount": 29,
+                "fileName": "唐津",
+                "url": "唐津.html"
+        },
+        {
+                "name": "垂水",
+                "lat": 34.62851243719324,
+                "lng": 135.05362442169618,
+                "restaurantCount": 2,
+                "fileName": "垂水",
+                "url": "垂水.html"
+        },
+        {
+                "name": "堺",
+                "lat": 34.55978103036254,
+                "lng": 135.48604819474485,
+                "restaurantCount": 98,
+                "fileName": "堺",
+                "url": "堺.html"
+        },
+        {
+                "name": "塚口",
+                "lat": 34.752505416761124,
+                "lng": 135.41556533201623,
+                "restaurantCount": 15,
+                "fileName": "塚口",
+                "url": "塚口.html"
+        },
+        {
+                "name": "塩尻",
+                "lat": 36.10445578707285,
+                "lng": 137.97977923875,
+                "restaurantCount": 2,
+                "fileName": "塩尻",
+                "url": "塩尻.html"
+        },
+        {
+                "name": "多治見",
+                "lat": 35.340539148111354,
+                "lng": 137.12042813093018,
+                "restaurantCount": 22,
+                "fileName": "多治見",
+                "url": "多治見.html"
+        },
+        {
+                "name": "大分市",
+                "lat": 33.23301227514939,
+                "lng": 131.62051373799127,
+                "restaurantCount": 34,
+                "fileName": "大分市",
+                "url": "大分市.html"
+        },
+        {
+                "name": "大分駅",
+                "lat": 33.23792135699344,
+                "lng": 131.6062053191922,
+                "restaurantCount": 18,
+                "fileName": "大分駅",
+                "url": "大分駅.html"
+        },
+        {
+                "name": "大名",
+                "lat": 33.587642578284765,
+                "lng": 130.39344912774706,
+                "restaurantCount": 57,
+                "fileName": "大名",
+                "url": "大名.html"
+        },
+        {
+                "name": "大垣",
+                "lat": 35.361633893540244,
+                "lng": 136.62028500104083,
+                "restaurantCount": 18,
+                "fileName": "大垣",
+                "url": "大垣.html"
+        },
+        {
+                "name": "大曽根",
+                "lat": 35.189717370293785,
+                "lng": 136.93451356549883,
+                "restaurantCount": 11,
+                "fileName": "大曽根",
+                "url": "大曽根.html"
+        },
+        {
+                "name": "大村",
+                "lat": 32.9177239865447,
+                "lng": 129.9660017121785,
+                "restaurantCount": 4,
+                "fileName": "大村",
+                "url": "大村.html"
+        },
+        {
+                "name": "大津",
+                "lat": 35.02016324657961,
+                "lng": 135.8918535235363,
+                "restaurantCount": 69,
+                "fileName": "大津",
+                "url": "大津.html"
+        },
+        {
+                "name": "大津駅",
+                "lat": 35.005327258920765,
+                "lng": 135.86510949711234,
+                "restaurantCount": 11,
+                "fileName": "大津駅",
+                "url": "大津駅.html"
+        },
+        {
+                "name": "大牟田",
+                "lat": 33.07678193660324,
+                "lng": 130.4670251301006,
+                "restaurantCount": 3,
+                "fileName": "大牟田",
+                "url": "大牟田.html"
+        },
+        {
+                "name": "大船",
+                "lat": 35.35229933345267,
+                "lng": 139.5328888590645,
+                "restaurantCount": 23,
+                "fileName": "大船",
+                "url": "大船.html"
+        },
+        {
+                "name": "大須",
+                "lat": 35.15960160137333,
+                "lng": 136.90352228357733,
+                "restaurantCount": 42,
+                "fileName": "大須",
+                "url": "大須.html"
+        },
+        {
+                "name": "天文館",
+                "lat": 31.58988580618038,
+                "lng": 130.5545196362716,
+                "restaurantCount": 72,
+                "fileName": "天文館",
+                "url": "天文館.html"
+        },
+        {
+                "name": "天満",
+                "lat": 34.70315824126743,
+                "lng": 135.51092257103696,
+                "restaurantCount": 281,
+                "fileName": "天満",
+                "url": "天満.html"
+        },
+        {
+                "name": "天理",
+                "lat": 34.60011223323234,
+                "lng": 135.8330860762987,
+                "restaurantCount": 5,
+                "fileName": "天理",
+                "url": "天理.html"
+        },
+        {
+                "name": "天神",
+                "lat": 33.58785736233788,
+                "lng": 130.40420487036235,
+                "restaurantCount": 236,
+                "fileName": "天神",
+                "url": "天神.html"
+        },
+        {
+                "name": "天草",
+                "lat": 32.44342749690637,
+                "lng": 130.15576211725465,
+                "restaurantCount": 15,
+                "fileName": "天草",
+                "url": "天草.html"
+        },
+        {
+                "name": "太田",
+                "lat": 36.295143535973125,
+                "lng": 139.3804492462365,
+                "restaurantCount": 4,
+                "fileName": "太田",
+                "url": "太田.html"
+        },
+        {
+                "name": "太田駅",
+                "lat": 36.29273682837399,
+                "lng": 139.37867673363007,
+                "restaurantCount": 4,
+                "fileName": "太田駅",
+                "url": "太田駅.html"
+        },
+        {
+                "name": "奈良市",
+                "lat": 34.683549512149014,
+                "lng": 135.8130068591306,
+                "restaurantCount": 162,
+                "fileName": "奈良市",
+                "url": "奈良市.html"
+        },
+        {
+                "name": "奈良駅",
+                "lat": 34.68107481351557,
+                "lng": 135.8215778816693,
+                "restaurantCount": 27,
+                "fileName": "奈良駅",
+                "url": "奈良駅.html"
+        },
+        {
+                "name": "姫路",
+                "lat": 34.83350426132812,
+                "lng": 134.69121900042342,
+                "restaurantCount": 33,
+                "fileName": "姫路",
+                "url": "姫路.html"
+        },
+        {
+                "name": "姶良",
+                "lat": 31.735572987512747,
+                "lng": 130.64814489975953,
+                "restaurantCount": 2,
+                "fileName": "姶良",
+                "url": "姶良.html"
+        },
+        {
+                "name": "嬉野",
+                "lat": 33.09301184512056,
+                "lng": 129.98352369895437,
+                "restaurantCount": 6,
+                "fileName": "嬉野",
+                "url": "嬉野.html"
+        },
+        {
+                "name": "宇治",
+                "lat": 34.892271680612374,
+                "lng": 135.80814970087505,
+                "restaurantCount": 16,
+                "fileName": "宇治",
+                "url": "宇治.html"
+        },
+        {
+                "name": "守山",
+                "lat": 35.056699472646926,
+                "lng": 135.9910543203392,
+                "restaurantCount": 14,
+                "fileName": "守山",
+                "url": "守山.html"
+        },
+        {
+                "name": "安城",
+                "lat": 34.960983620054954,
+                "lng": 137.0683488660568,
+                "restaurantCount": 10,
+                "fileName": "安城",
+                "url": "安城.html"
+        },
+        {
+                "name": "安曇野",
+                "lat": 36.35302633852432,
+                "lng": 137.8563488192788,
+                "restaurantCount": 8,
+                "fileName": "安曇野",
+                "url": "安曇野.html"
+        },
+        {
+                "name": "宗像",
+                "lat": 33.83679771715022,
+                "lng": 130.532120386132,
+                "restaurantCount": 7,
+                "fileName": "宗像",
+                "url": "宗像.html"
+        },
+        {
+                "name": "宝塚",
+                "lat": 34.80215254893333,
+                "lng": 135.35927230507156,
+                "restaurantCount": 13,
+                "fileName": "宝塚",
+                "url": "宝塚.html"
+        },
+        {
+                "name": "宮古島",
+                "lat": 24.79491202695655,
+                "lng": 125.27704997508944,
+                "restaurantCount": 43,
+                "fileName": "宮古島",
+                "url": "宮古島.html"
+        },
+        {
+                "name": "宮崎市",
+                "lat": 31.913769148121972,
+                "lng": 131.425170476013,
+                "restaurantCount": 152,
+                "fileName": "宮崎市",
+                "url": "宮崎市.html"
+        },
+        {
+                "name": "宮崎駅",
+                "lat": 31.91565025770964,
+                "lng": 131.42569019442442,
+                "restaurantCount": 24,
+                "fileName": "宮崎駅",
+                "url": "宮崎駅.html"
+        },
+        {
+                "name": "富士",
+                "lat": 35.23755838985831,
+                "lng": 138.6283840773193,
+                "restaurantCount": 9,
+                "fileName": "富士",
+                "url": "富士.html"
+        },
+        {
+                "name": "富士吉田",
+                "lat": 35.48239542798576,
+                "lng": 138.80275348989662,
+                "restaurantCount": 10,
+                "fileName": "富士吉田",
+                "url": "富士吉田.html"
+        },
+        {
+                "name": "富士宮",
+                "lat": 35.29222237143502,
+                "lng": 138.59316525612053,
+                "restaurantCount": 5,
+                "fileName": "富士宮",
+                "url": "富士宮.html"
+        },
+        {
+                "name": "富山市",
+                "lat": 36.69374792900543,
+                "lng": 137.21698502211026,
+                "restaurantCount": 103,
+                "fileName": "富山市",
+                "url": "富山市.html"
+        },
+        {
+                "name": "富良野",
+                "lat": 43.33484229281136,
+                "lng": 142.3953884630875,
+                "restaurantCount": 10,
+                "fileName": "富良野",
+                "url": "富良野.html"
+        },
+        {
+                "name": "小倉",
+                "lat": 33.880835300341296,
+                "lng": 130.8821414199422,
+                "restaurantCount": 81,
+                "fileName": "小倉",
+                "url": "小倉.html"
+        },
+        {
+                "name": "小松",
+                "lat": 36.375585795470286,
+                "lng": 136.46531695272333,
+                "restaurantCount": 11,
+                "fileName": "小松",
+                "url": "小松.html"
+        },
+        {
+                "name": "小樽",
+                "lat": 43.1956116803206,
+                "lng": 141.00210999919332,
+                "restaurantCount": 30,
+                "fileName": "小樽",
+                "url": "小樽.html"
+        },
+        {
+                "name": "小淵沢",
+                "lat": 35.84617613574222,
+                "lng": 138.3730087693524,
+                "restaurantCount": 40,
+                "fileName": "小淵沢",
+                "url": "小淵沢.html"
+        },
+        {
+                "name": "小牧",
+                "lat": 35.29305390082304,
+                "lng": 136.92453430461987,
+                "restaurantCount": 7,
+                "fileName": "小牧",
+                "url": "小牧.html"
+        },
+        {
+                "name": "小田原",
+                "lat": 35.25617476249068,
+                "lng": 139.15808447443618,
+                "restaurantCount": 47,
+                "fileName": "小田原",
+                "url": "小田原.html"
+        },
+        {
+                "name": "尼崎",
+                "lat": 34.74246613725159,
+                "lng": 135.40829026404754,
+                "restaurantCount": 71,
+                "fileName": "尼崎",
+                "url": "尼崎.html"
+        },
+        {
+                "name": "山中湖",
+                "lat": 35.43412429036307,
+                "lng": 138.8777498528156,
+                "restaurantCount": 9,
+                "fileName": "山中湖",
+                "url": "山中湖.html"
+        },
+        {
+                "name": "山科",
+                "lat": 34.982895962095,
+                "lng": 135.81257582894034,
+                "restaurantCount": 4,
+                "fileName": "山科",
+                "url": "山科.html"
+        },
+        {
+                "name": "山鹿",
+                "lat": 33.04649204949892,
+                "lng": 130.7035972696485,
+                "restaurantCount": 4,
+                "fileName": "山鹿",
+                "url": "山鹿.html"
+        },
+        {
+                "name": "岐阜市",
+                "lat": 35.41914247020202,
+                "lng": 136.76032606399465,
+                "restaurantCount": 111,
+                "fileName": "岐阜市",
+                "url": "岐阜市.html"
+        },
+        {
+                "name": "岡崎",
+                "lat": 34.947876959750694,
+                "lng": 137.16705669636997,
+                "restaurantCount": 36,
+                "fileName": "岡崎",
+                "url": "岡崎.html"
+        },
+        {
+                "name": "島原",
+                "lat": 32.789435750061216,
+                "lng": 130.36384967061718,
+                "restaurantCount": 5,
+                "fileName": "島原",
+                "url": "島原.html"
+        },
+        {
+                "name": "嵐山",
+                "lat": 35.01385483713488,
+                "lng": 135.67826241317493,
+                "restaurantCount": 31,
+                "fileName": "嵐山",
+                "url": "嵐山.html"
+        },
+        {
+                "name": "川崎",
+                "lat": 35.52981520724682,
+                "lng": 139.69958841776625,
+                "restaurantCount": 43,
+                "fileName": "川崎",
+                "url": "川崎.html"
+        },
+        {
+                "name": "川西",
+                "lat": 34.84241783654972,
+                "lng": 135.41443355307075,
+                "restaurantCount": 7,
+                "fileName": "川西",
+                "url": "川西.html"
+        },
+        {
+                "name": "平塚",
+                "lat": 35.32769347952762,
+                "lng": 139.34842883681256,
+                "restaurantCount": 13,
+                "fileName": "平塚",
+                "url": "平塚.html"
+        },
+        {
+                "name": "広島市",
+                "lat": 34.39419518481917,
+                "lng": 132.4606379823218,
+                "restaurantCount": 127,
+                "fileName": "広島市",
+                "url": "広島市.html"
+        },
+        {
+                "name": "広島駅",
+                "lat": 34.396365060293355,
+                "lng": 132.4743793740701,
+                "restaurantCount": 21,
+                "fileName": "広島駅",
+                "url": "広島駅.html"
+        },
+        {
+                "name": "延岡",
+                "lat": 32.576879072873005,
+                "lng": 131.67096329297146,
+                "restaurantCount": 11,
+                "fileName": "延岡",
+                "url": "延岡.html"
+        },
+        {
+                "name": "彦根",
+                "lat": 35.26206236299822,
+                "lng": 136.2488582695491,
+                "restaurantCount": 25,
+                "fileName": "彦根",
+                "url": "彦根.html"
+        },
+        {
+                "name": "御坊",
+                "lat": 33.90027568757314,
+                "lng": 135.15487596846594,
+                "restaurantCount": 2,
+                "fileName": "御坊",
+                "url": "御坊.html"
+        },
+        {
+                "name": "御殿場",
+                "lat": 35.29492418441015,
+                "lng": 138.94594354305963,
+                "restaurantCount": 18,
+                "fileName": "御殿場",
+                "url": "御殿場.html"
+        },
+        {
+                "name": "御茶ノ水",
+                "lat": 35.69789304420421,
+                "lng": 139.763651418665,
+                "restaurantCount": 223,
+                "fileName": "御茶ノ水",
+                "url": "御茶ノ水.html"
+        },
+        {
+                "name": "恩納村",
+                "lat": 26.48852039977848,
+                "lng": 127.85548234717493,
+                "restaurantCount": 16,
+                "fileName": "恩納村",
+                "url": "恩納村.html"
+        },
+        {
+                "name": "恵比寿",
+                "lat": 35.646560846684906,
+                "lng": 139.7113710714387,
+                "restaurantCount": 257,
+                "fileName": "恵比寿",
+                "url": "恵比寿.html"
+        },
+        {
+                "name": "恵那",
+                "lat": 35.38187472202259,
+                "lng": 137.4103740639595,
+                "restaurantCount": 3,
+                "fileName": "恵那",
+                "url": "恵那.html"
+        },
+        {
+                "name": "指宿",
+                "lat": 31.254473987811036,
+                "lng": 130.62532861991596,
+                "restaurantCount": 4,
+                "fileName": "指宿",
+                "url": "指宿.html"
+        },
+        {
+                "name": "掛川",
+                "lat": 34.7744112277516,
+                "lng": 138.0180070244786,
+                "restaurantCount": 9,
+                "fileName": "掛川",
+                "url": "掛川.html"
+        },
+        {
+                "name": "新宮",
+                "lat": 33.728324671280696,
+                "lng": 135.98701276614577,
+                "restaurantCount": 3,
+                "fileName": "新宮",
+                "url": "新宮.html"
+        },
+        {
+                "name": "新宿",
+                "lat": 35.69243048057798,
+                "lng": 139.70054288529818,
+                "restaurantCount": 313,
+                "fileName": "新宿",
+                "url": "新宿.html"
+        },
+        {
+                "name": "新札幌",
+                "lat": 43.03889273378065,
+                "lng": 141.47151802301332,
+                "restaurantCount": 3,
+                "fileName": "新札幌",
+                "url": "新札幌.html"
+        },
+        {
+                "name": "新栄",
+                "lat": 35.17303944424709,
+                "lng": 136.91781161360282,
+                "restaurantCount": 163,
+                "fileName": "新栄",
+                "url": "新栄.html"
+        },
+        {
+                "name": "新横浜",
+                "lat": 35.50980337735926,
+                "lng": 139.61572315495178,
+                "restaurantCount": 8,
+                "fileName": "新横浜",
+                "url": "新横浜.html"
+        },
+        {
+                "name": "新橋",
+                "lat": 35.666782753374,
+                "lng": 139.75787213759182,
+                "restaurantCount": 227,
+                "fileName": "新橋",
+                "url": "新橋.html"
+        },
+        {
+                "name": "新潟市",
+                "lat": 37.90331208558405,
+                "lng": 139.0424467876609,
+                "restaurantCount": 141,
+                "fileName": "新潟市",
+                "url": "新潟市.html"
+        },
+        {
+                "name": "新発田",
+                "lat": 37.90770091635336,
+                "lng": 139.31673694602728,
+                "restaurantCount": 5,
+                "fileName": "新発田",
+                "url": "新発田.html"
+        },
+        {
+                "name": "日向",
+                "lat": 32.42588841395447,
+                "lng": 131.62471086814895,
+                "restaurantCount": 1,
+                "fileName": "日向",
+                "url": "日向.html"
+        },
+        {
+                "name": "日本橋",
+                "lat": 35.683462920226226,
+                "lng": 139.77337099864263,
+                "restaurantCount": 171,
+                "fileName": "日本橋",
+                "url": "日本橋.html"
+        },
+        {
+                "name": "日田",
+                "lat": 33.31440500326844,
+                "lng": 130.93634693217186,
+                "restaurantCount": 6,
+                "fileName": "日田",
+                "url": "日田.html"
+        },
+        {
+                "name": "旭川",
+                "lat": 43.76946807310922,
+                "lng": 142.36765584182203,
+                "restaurantCount": 27,
+                "fileName": "旭川",
+                "url": "旭川.html"
+        },
+        {
+                "name": "明石",
+                "lat": 34.653593319749135,
+                "lng": 134.9814722088913,
+                "restaurantCount": 45,
+                "fileName": "明石",
+                "url": "明石.html"
+        },
+        {
+                "name": "春吉",
+                "lat": 33.58781815763191,
+                "lng": 130.4069176951062,
+                "restaurantCount": 63,
+                "fileName": "春吉",
+                "url": "春吉.html"
+        },
+        {
+                "name": "春日井",
+                "lat": 35.248250891018145,
+                "lng": 136.9696397768821,
+                "restaurantCount": 25,
+                "fileName": "春日井",
+                "url": "春日井.html"
+        },
+        {
+                "name": "有楽町",
+                "lat": 35.67415658491629,
+                "lng": 139.76107077514885,
+                "restaurantCount": 81,
+                "fileName": "有楽町",
+                "url": "有楽町.html"
+        },
+        {
+                "name": "本厚木",
+                "lat": 35.43939003493382,
+                "lng": 139.3657329973658,
+                "restaurantCount": 13,
+                "fileName": "本厚木",
+                "url": "本厚木.html"
+        },
+        {
+                "name": "札幌",
+                "lat": 43.05250183819094,
+                "lng": 141.34765217354294,
+                "restaurantCount": 60,
+                "fileName": "札幌",
+                "url": "札幌.html"
+        },
+        {
+                "name": "札幌駅",
+                "lat": 43.066699817601254,
+                "lng": 141.35141505853105,
+                "restaurantCount": 60,
+                "fileName": "札幌駅",
+                "url": "札幌駅.html"
+        },
+        {
+                "name": "東京駅",
+                "lat": 35.68000954100449,
+                "lng": 139.76764578077783,
+                "restaurantCount": 348,
+                "fileName": "東京駅",
+                "url": "東京駅.html"
+        },
+        {
+                "name": "松本",
+                "lat": 36.231317209288186,
+                "lng": 137.96872837103447,
+                "restaurantCount": 49,
+                "fileName": "松本",
+                "url": "松本.html"
+        },
+        {
+                "name": "松阪",
+                "lat": 34.569210256716254,
+                "lng": 136.525018558086,
+                "restaurantCount": 40,
+                "fileName": "松阪",
+                "url": "松阪.html"
+        },
+        {
+                "name": "枚方",
+                "lat": 34.81880852607595,
+                "lng": 135.66385058651127,
+                "restaurantCount": 15,
+                "fileName": "枚方",
+                "url": "枚方.html"
+        },
+        {
+                "name": "柏崎",
+                "lat": 37.36441363645603,
+                "lng": 138.55565640107307,
+                "restaurantCount": 1,
+                "fileName": "柏崎",
+                "url": "柏崎.html"
+        },
+        {
+                "name": "柳川",
+                "lat": 33.16441597020519,
+                "lng": 130.41353370828853,
+                "restaurantCount": 5,
+                "fileName": "柳川",
+                "url": "柳川.html"
+        },
+        {
+                "name": "栄",
+                "lat": 35.16947927106024,
+                "lng": 136.90732968506197,
+                "restaurantCount": 278,
+                "fileName": "栄",
+                "url": "栄.html"
+        },
+        {
+                "name": "栗東",
+                "lat": 35.01997800379363,
+                "lng": 135.98686381252608,
+                "restaurantCount": 3,
+                "fileName": "栗東",
+                "url": "栗東.html"
+        },
+        {
+                "name": "桐生",
+                "lat": 36.40523313228117,
+                "lng": 139.3266786673927,
+                "restaurantCount": 8,
+                "fileName": "桐生",
+                "url": "桐生.html"
+        },
+        {
+                "name": "桑名",
+                "lat": 35.06883436491172,
+                "lng": 136.6860789825968,
+                "restaurantCount": 17,
+                "fileName": "桑名",
+                "url": "桑名.html"
+        },
+        {
+                "name": "桜木町",
+                "lat": 35.45141623737195,
+                "lng": 139.62680229678872,
+                "restaurantCount": 121,
+                "fileName": "桜木町",
+                "url": "桜木町.html"
+        },
+        {
+                "name": "梅田",
+                "lat": 34.70069524230091,
+                "lng": 135.49851735711246,
+                "restaurantCount": 719,
+                "fileName": "梅田",
+                "url": "梅田.html"
+        },
+        {
+                "name": "横浜",
+                "lat": 35.46466785838226,
+                "lng": 139.61808099238664,
+                "restaurantCount": 842,
+                "fileName": "横浜",
+                "url": "横浜.html"
+        },
+        {
+                "name": "横浜駅",
+                "lat": 35.46594860872204,
+                "lng": 139.62129684482557,
+                "restaurantCount": 113,
+                "fileName": "横浜駅",
+                "url": "横浜駅.html"
+        },
+        {
+                "name": "橿原",
+                "lat": 34.50724199022733,
+                "lng": 135.78967890930474,
+                "restaurantCount": 22,
+                "fileName": "橿原",
+                "url": "橿原.html"
+        },
+        {
+                "name": "武庫之荘",
+                "lat": 34.750505505833694,
+                "lng": 135.39312120232762,
+                "restaurantCount": 18,
+                "fileName": "武庫之荘",
+                "url": "武庫之荘.html"
+        },
+        {
+                "name": "武蔵小杉",
+                "lat": 35.577913557493446,
+                "lng": 139.66007174570242,
+                "restaurantCount": 38,
+                "fileName": "武蔵小杉",
+                "url": "武蔵小杉.html"
+        },
+        {
+                "name": "武雄",
+                "lat": 33.18616225904836,
+                "lng": 130.02064618282017,
+                "restaurantCount": 9,
+                "fileName": "武雄",
+                "url": "武雄.html"
+        },
+        {
+                "name": "池袋",
+                "lat": 35.73037073027695,
+                "lng": 139.7118014173204,
+                "restaurantCount": 135,
+                "fileName": "池袋",
+                "url": "池袋.html"
+        },
+        {
+                "name": "沖縄市",
+                "lat": 26.335381390035817,
+                "lng": 127.80106651387496,
+                "restaurantCount": 6,
+                "fileName": "沖縄市",
+                "url": "沖縄市.html"
+        },
+        {
+                "name": "河口湖",
+                "lat": 35.497744908032665,
+                "lng": 138.75487708819438,
+                "restaurantCount": 16,
+                "fileName": "河口湖",
+                "url": "河口湖.html"
+        },
+        {
+                "name": "沼津",
+                "lat": 35.09135741596016,
+                "lng": 138.85848191122224,
+                "restaurantCount": 34,
+                "fileName": "沼津",
+                "url": "沼津.html"
+        },
+        {
+                "name": "沼田",
+                "lat": 36.669179069010454,
+                "lng": 139.08414997284785,
+                "restaurantCount": 4,
+                "fileName": "沼田",
+                "url": "沼田.html"
+        },
+        {
+                "name": "津",
+                "lat": 34.72282279035246,
+                "lng": 136.4971998920573,
+                "restaurantCount": 36,
+                "fileName": "津",
+                "url": "津.html"
+        },
+        {
+                "name": "流川",
+                "lat": 34.390809503539344,
+                "lng": 132.4640487602359,
+                "restaurantCount": 33,
+                "fileName": "流川",
+                "url": "流川.html"
+        },
+        {
+                "name": "浅草",
+                "lat": 35.71359743525323,
+                "lng": 139.79476238518941,
+                "restaurantCount": 179,
+                "fileName": "浅草",
+                "url": "浅草.html"
+        },
+        {
+                "name": "浜松",
+                "lat": 34.722430218176896,
+                "lng": 137.7169126119548,
+                "restaurantCount": 94,
+                "fileName": "浜松",
+                "url": "浜松.html"
+        },
+        {
+                "name": "浦添",
+                "lat": 26.254691678905992,
+                "lng": 127.71557868540287,
+                "restaurantCount": 5,
+                "fileName": "浦添",
+                "url": "浦添.html"
+        },
+        {
+                "name": "海老名",
+                "lat": 35.453526827242364,
+                "lng": 139.39202771317355,
+                "restaurantCount": 8,
+                "fileName": "海老名",
+                "url": "海老名.html"
+        },
+        {
+                "name": "淀屋橋",
+                "lat": 34.69463081061011,
+                "lng": 135.50011561396968,
+                "restaurantCount": 200,
+                "fileName": "淀屋橋",
+                "url": "淀屋橋.html"
+        },
+        {
+                "name": "淡路島",
+                "lat": 34.40515197241655,
+                "lng": 134.8690024020434,
+                "restaurantCount": 37,
+                "fileName": "淡路島",
+                "url": "淡路島.html"
+        },
+        {
+                "name": "清水",
+                "lat": 35.033361383016555,
+                "lng": 138.4958339332384,
+                "restaurantCount": 14,
+                "fileName": "清水",
+                "url": "清水.html"
+        },
+        {
+                "name": "渋川",
+                "lat": 36.49886792532444,
+                "lng": 138.9575077701771,
+                "restaurantCount": 11,
+                "fileName": "渋川",
+                "url": "渋川.html"
+        },
+        {
+                "name": "渋谷",
+                "lat": 35.65884476759946,
+                "lng": 139.69949232004137,
+                "restaurantCount": 289,
+                "fileName": "渋谷",
+                "url": "渋谷.html"
+        },
+        {
+                "name": "湯布院",
+                "lat": 33.26725840760293,
+                "lng": 131.35967277763908,
+                "restaurantCount": 28,
+                "fileName": "湯布院",
+                "url": "湯布院.html"
+        },
+        {
+                "name": "溝の口",
+                "lat": 35.60065748327538,
+                "lng": 139.6126259158761,
+                "restaurantCount": 23,
+                "fileName": "溝の口",
+                "url": "溝の口.html"
+        },
+        {
+                "name": "焼津",
+                "lat": 34.86273972987323,
+                "lng": 138.31370459508227,
+                "restaurantCount": 11,
+                "fileName": "焼津",
+                "url": "焼津.html"
+        },
+        {
+                "name": "熊本市",
+                "lat": 32.800339393217435,
+                "lng": 130.7123997892087,
+                "restaurantCount": 142,
+                "fileName": "熊本市",
+                "url": "熊本市.html"
+        },
+        {
+                "name": "熊本駅",
+                "lat": 32.78972976242055,
+                "lng": 130.69164965923906,
+                "restaurantCount": 10,
+                "fileName": "熊本駅",
+                "url": "熊本駅.html"
+        },
+        {
+                "name": "燕三条",
+                "lat": 37.66317646496368,
+                "lng": 138.93834501544427,
+                "restaurantCount": 13,
+                "fileName": "燕三条",
+                "url": "燕三条.html"
+        },
+        {
+                "name": "片町",
+                "lat": 36.56024289380435,
+                "lng": 136.65171261547684,
+                "restaurantCount": 45,
+                "fileName": "片町",
+                "url": "片町.html"
+        },
+        {
+                "name": "狸小路",
+                "lat": 43.055853722141826,
+                "lng": 141.35232887395043,
+                "restaurantCount": 30,
+                "fileName": "狸小路",
+                "url": "狸小路.html"
+        },
+        {
+                "name": "玉名",
+                "lat": 32.928195402443905,
+                "lng": 130.5606925409648,
+                "restaurantCount": 2,
+                "fileName": "玉名",
+                "url": "玉名.html"
+        },
+        {
+                "name": "琴似",
+                "lat": 43.07587748710549,
+                "lng": 141.3058207505975,
+                "restaurantCount": 15,
+                "fileName": "琴似",
+                "url": "琴似.html"
+        },
+        {
+                "name": "生駒",
+                "lat": 34.70097994984083,
+                "lng": 135.7061352638126,
+                "restaurantCount": 8,
+                "fileName": "生駒",
+                "url": "生駒.html"
+        },
+        {
+                "name": "田辺",
+                "lat": 33.751862909355076,
+                "lng": 135.49021049464835,
+                "restaurantCount": 12,
+                "fileName": "田辺",
+                "url": "田辺.html"
+        },
+        {
+                "name": "甲子園",
+                "lat": 34.724164998676635,
+                "lng": 135.3683053551716,
+                "restaurantCount": 4,
+                "fileName": "甲子園",
+                "url": "甲子園.html"
+        },
+        {
+                "name": "甲府",
+                "lat": 35.66211658496308,
+                "lng": 138.56489337786965,
+                "restaurantCount": 54,
+                "fileName": "甲府",
+                "url": "甲府.html"
+        },
+        {
+                "name": "町田",
+                "lat": 35.54334780800044,
+                "lng": 139.44770087573528,
+                "restaurantCount": 34,
+                "fileName": "町田",
+                "url": "町田.html"
+        },
+        {
+                "name": "登戸",
+                "lat": 35.61945748869223,
+                "lng": 139.56623048749523,
+                "restaurantCount": 11,
+                "fileName": "登戸",
+                "url": "登戸.html"
+        },
+        {
+                "name": "白浜",
+                "lat": 33.70989455166185,
+                "lng": 135.40651944766051,
+                "restaurantCount": 31,
+                "fileName": "白浜",
+                "url": "白浜.html"
+        },
+        {
+                "name": "白馬",
+                "lat": 36.7274508570977,
+                "lng": 137.87835687140313,
+                "restaurantCount": 5,
+                "fileName": "白馬",
+                "url": "白馬.html"
+        },
+        {
+                "name": "相模大野",
+                "lat": 35.53118780470102,
+                "lng": 139.43414453213362,
+                "restaurantCount": 6,
+                "fileName": "相模大野",
+                "url": "相模大野.html"
+        },
+        {
+                "name": "知立",
+                "lat": 35.001394536701156,
+                "lng": 137.04400392653199,
+                "restaurantCount": 1,
+                "fileName": "知立",
+                "url": "知立.html"
+        },
+        {
+                "name": "石垣島",
+                "lat": 24.35474758464277,
+                "lng": 124.16805934314375,
+                "restaurantCount": 44,
+                "fileName": "石垣島",
+                "url": "石垣島.html"
+        },
+        {
+                "name": "磐田",
+                "lat": 34.69966533792132,
+                "lng": 137.84237382465665,
+                "restaurantCount": 2,
+                "fileName": "磐田",
+                "url": "磐田.html"
+        },
+        {
+                "name": "祇園",
+                "lat": 35.004395211292795,
+                "lng": 135.77626015994764,
+                "restaurantCount": 271,
+                "fileName": "祇園",
+                "url": "祇園.html"
+        },
+        {
+                "name": "神戸駅",
+                "lat": 34.68214235312502,
+                "lng": 135.17847399040716,
+                "restaurantCount": 41,
+                "fileName": "神戸駅",
+                "url": "神戸駅.html"
+        },
+        {
+                "name": "神楽坂",
+                "lat": 35.70248617793683,
+                "lng": 139.73886693208962,
+                "restaurantCount": 270,
+                "fileName": "神楽坂",
+                "url": "神楽坂.html"
+        },
+        {
+                "name": "福岡市",
+                "lat": 33.58566100556339,
+                "lng": 130.39786262905238,
+                "restaurantCount": 833,
+                "fileName": "福岡市",
+                "url": "福岡市.html"
+        },
+        {
+                "name": "福知山",
+                "lat": 35.28940529326232,
+                "lng": 135.1445605712521,
+                "restaurantCount": 6,
+                "fileName": "福知山",
+                "url": "福知山.html"
+        },
+        {
+                "name": "秋葉原",
+                "lat": 35.699283135295325,
+                "lng": 139.77522599821086,
+                "restaurantCount": 38,
+                "fileName": "秋葉原",
+                "url": "秋葉原.html"
+        },
+        {
+                "name": "立川",
+                "lat": 35.697492817788316,
+                "lng": 139.41472747696676,
+                "restaurantCount": 15,
+                "fileName": "立川",
+                "url": "立川.html"
+        },
+        {
+                "name": "築地",
+                "lat": 35.66808088157722,
+                "lng": 139.77215694777647,
+                "restaurantCount": 113,
+                "fileName": "築地",
+                "url": "築地.html"
+        },
+        {
+                "name": "糸島",
+                "lat": 33.54864611071482,
+                "lng": 130.1733294928082,
+                "restaurantCount": 19,
+                "fileName": "糸島",
+                "url": "糸島.html"
+        },
+        {
+                "name": "糸満",
+                "lat": 26.112171449046933,
+                "lng": 127.66116280981271,
+                "restaurantCount": 5,
+                "fileName": "糸満",
+                "url": "糸満.html"
+        },
+        {
+                "name": "美濃加茂",
+                "lat": 35.46098413717678,
+                "lng": 137.02279633292116,
+                "restaurantCount": 2,
+                "fileName": "美濃加茂",
+                "url": "美濃加茂.html"
+        },
+        {
+                "name": "能登",
+                "lat": 37.341780682556404,
+                "lng": 137.05421053026416,
+                "restaurantCount": 9,
+                "fileName": "能登",
+                "url": "能登.html"
+        },
+        {
+                "name": "自由が丘",
+                "lat": 35.608611624818906,
+                "lng": 139.66848794889412,
+                "restaurantCount": 73,
+                "fileName": "自由が丘",
+                "url": "自由が丘.html"
+        },
+        {
+                "name": "舞鶴",
+                "lat": 35.443164036648405,
+                "lng": 135.32817978392904,
+                "restaurantCount": 1,
+                "fileName": "舞鶴",
+                "url": "舞鶴.html"
+        },
+        {
+                "name": "芦屋",
+                "lat": 34.73212391888628,
+                "lng": 135.3072120732887,
+                "restaurantCount": 58,
+                "fileName": "芦屋",
+                "url": "芦屋.html"
+        },
+        {
+                "name": "茶屋町",
+                "lat": 34.707616312169954,
+                "lng": 135.49891800137965,
+                "restaurantCount": 4,
+                "fileName": "茶屋町",
+                "url": "茶屋町.html"
+        },
+        {
+                "name": "草津",
+                "lat": 35.01411565453141,
+                "lng": 135.95767458991293,
+                "restaurantCount": 45,
+                "fileName": "草津",
+                "url": "草津.html"
+        },
+        {
+                "name": "草津駅",
+                "lat": 35.02134912551667,
+                "lng": 135.9627336773129,
+                "restaurantCount": 24,
+                "fileName": "草津駅",
+                "url": "草津駅.html"
+        },
+        {
+                "name": "藤枝",
+                "lat": 34.86681557156094,
+                "lng": 138.24448594876415,
+                "restaurantCount": 8,
+                "fileName": "藤枝",
+                "url": "藤枝.html"
+        },
+        {
+                "name": "藤沢",
+                "lat": 35.33745484663741,
+                "lng": 139.48791729252915,
+                "restaurantCount": 39,
+                "fileName": "藤沢",
+                "url": "藤沢.html"
+        },
+        {
+                "name": "行橋",
+                "lat": 33.73008391134998,
+                "lng": 130.97467254467705,
+                "restaurantCount": 4,
+                "fileName": "行橋",
+                "url": "行橋.html"
+        },
+        {
+                "name": "表参道",
+                "lat": 35.66407780272763,
+                "lng": 139.71324356182703,
+                "restaurantCount": 120,
+                "fileName": "表参道",
+                "url": "表参道.html"
+        },
+        {
+                "name": "西大寺",
+                "lat": 34.69423749005548,
+                "lng": 135.78155999447688,
+                "restaurantCount": 4,
+                "fileName": "西大寺",
+                "url": "西大寺.html"
+        },
+        {
+                "name": "西宮",
+                "lat": 34.74791163294721,
+                "lng": 135.34107314741678,
+                "restaurantCount": 128,
+                "fileName": "西宮",
+                "url": "西宮.html"
+        },
+        {
+                "name": "西新",
+                "lat": 33.58232992732398,
+                "lng": 130.3585567389151,
+                "restaurantCount": 26,
+                "fileName": "西新",
+                "url": "西新.html"
+        },
+        {
+                "name": "諏訪",
+                "lat": 36.04518671638548,
+                "lng": 138.12327968809964,
+                "restaurantCount": 12,
+                "fileName": "諏訪",
+                "url": "諏訪.html"
+        },
+        {
+                "name": "諫早",
+                "lat": 32.839238307213044,
+                "lng": 130.04869757947378,
+                "restaurantCount": 5,
+                "fileName": "諫早",
+                "url": "諫早.html"
+        },
+        {
+                "name": "豊岡",
+                "lat": 35.55524219348135,
+                "lng": 134.8324867636084,
+                "restaurantCount": 8,
+                "fileName": "豊岡",
+                "url": "豊岡.html"
+        },
+        {
+                "name": "豊川",
+                "lat": 34.831841022850355,
+                "lng": 137.3817828124088,
+                "restaurantCount": 4,
+                "fileName": "豊川",
+                "url": "豊川.html"
+        },
+        {
+                "name": "豊橋",
+                "lat": 34.762473050761535,
+                "lng": 137.38771060282815,
+                "restaurantCount": 34,
+                "fileName": "豊橋",
+                "url": "豊橋.html"
+        },
+        {
+                "name": "豊田市駅",
+                "lat": 35.08440603477569,
+                "lng": 137.1549963528686,
+                "restaurantCount": 5,
+                "fileName": "豊田市駅",
+                "url": "豊田市駅.html"
+        },
+        {
+                "name": "赤坂",
+                "lat": 35.67259207498947,
+                "lng": 139.73647932978423,
+                "restaurantCount": 80,
+                "fileName": "赤坂",
+                "url": "赤坂.html"
+        },
+        {
+                "name": "軽井沢",
+                "lat": 36.345000917363755,
+                "lng": 138.60069080042263,
+                "restaurantCount": 92,
+                "fileName": "軽井沢",
+                "url": "軽井沢.html"
+        },
+        {
+                "name": "輪島",
+                "lat": 37.39206882088884,
+                "lng": 136.9031306330795,
+                "restaurantCount": 2,
+                "fileName": "輪島",
+                "url": "輪島.html"
+        },
+        {
+                "name": "近江八幡",
+                "lat": 35.12575149664389,
+                "lng": 136.0996044651138,
+                "restaurantCount": 5,
+                "fileName": "近江八幡",
+                "url": "近江八幡.html"
+        },
+        {
+                "name": "近鉄奈良駅",
+                "lat": 34.681795139946054,
+                "lng": 135.8291541783127,
+                "restaurantCount": 71,
+                "fileName": "近鉄奈良駅",
+                "url": "近鉄奈良駅.html"
+        },
+        {
+                "name": "那覇",
+                "lat": 26.215904107320263,
+                "lng": 127.68416029369747,
+                "restaurantCount": 150,
+                "fileName": "那覇",
+                "url": "那覇.html"
+        },
+        {
+                "name": "那覇空港",
+                "lat": 26.206711926807756,
+                "lng": 127.65065575698347,
+                "restaurantCount": 4,
+                "fileName": "那覇空港",
+                "url": "那覇空港.html"
+        },
+        {
+                "name": "都城",
+                "lat": 31.726516559854165,
+                "lng": 131.06870544982252,
+                "restaurantCount": 11,
+                "fileName": "都城",
+                "url": "都城.html"
+        },
+        {
+                "name": "野沢温泉",
+                "lat": 36.925009736700055,
+                "lng": 138.44560609671183,
+                "restaurantCount": 1,
+                "fileName": "野沢温泉",
+                "url": "野沢温泉.html"
+        },
+        {
+                "name": "金山",
+                "lat": 35.14374936078077,
+                "lng": 136.9018168147337,
+                "restaurantCount": 42,
+                "fileName": "金山",
+                "url": "金山.html"
+        },
+        {
+                "name": "金沢",
+                "lat": 36.56614230968604,
+                "lng": 136.6539106589689,
+                "restaurantCount": 276,
+                "fileName": "金沢",
+                "url": "金沢.html"
+        },
+        {
+                "name": "鈴鹿",
+                "lat": 34.86374046699107,
+                "lng": 136.56280180279515,
+                "restaurantCount": 21,
+                "fileName": "鈴鹿",
+                "url": "鈴鹿.html"
+        },
+        {
+                "name": "銀座",
+                "lat": 35.67098820855756,
+                "lng": 139.76471529253922,
+                "restaurantCount": 518,
+                "fileName": "銀座",
+                "url": "銀座.html"
+        },
+        {
+                "name": "銚子",
+                "lat": 35.73388994589308,
+                "lng": 140.83790008103307,
+                "restaurantCount": 6,
+                "fileName": "銚子",
+                "url": "銚子.html"
+        },
+        {
+                "name": "錦糸町",
+                "lat": 35.69751758747064,
+                "lng": 139.81382785644922,
+                "restaurantCount": 56,
+                "fileName": "錦糸町",
+                "url": "錦糸町.html"
+        },
+        {
+                "name": "鎌倉",
+                "lat": 35.317380703424064,
+                "lng": 139.54512016787461,
+                "restaurantCount": 165,
+                "fileName": "鎌倉",
+                "url": "鎌倉.html"
+        },
+        {
+                "name": "長岡",
+                "lat": 37.42780996653609,
+                "lng": 138.8341413527284,
+                "restaurantCount": 28,
+                "fileName": "長岡",
+                "url": "長岡.html"
+        },
+        {
+                "name": "長岡京",
+                "lat": 34.92256980376572,
+                "lng": 135.70500451173973,
+                "restaurantCount": 3,
+                "fileName": "長岡京",
+                "url": "長岡京.html"
+        },
+        {
+                "name": "長崎市",
+                "lat": 32.747019337985414,
+                "lng": 129.8753014569412,
+                "restaurantCount": 62,
+                "fileName": "長崎市",
+                "url": "長崎市.html"
+        },
+        {
+                "name": "長崎駅",
+                "lat": 32.75168883676397,
+                "lng": 129.87115119140924,
+                "restaurantCount": 9,
+                "fileName": "長崎駅",
+                "url": "長崎駅.html"
+        },
+        {
+                "name": "長浜",
+                "lat": 35.379914856987895,
+                "lng": 136.26801731263134,
+                "restaurantCount": 10,
+                "fileName": "長浜",
+                "url": "長浜.html"
+        },
+        {
+                "name": "関",
+                "lat": 35.512719487105876,
+                "lng": 136.89385741186032,
+                "restaurantCount": 15,
+                "fileName": "関",
+                "url": "関.html"
+        },
+        {
+                "name": "関内",
+                "lat": 35.44633742061122,
+                "lng": 139.63398332070864,
+                "restaurantCount": 208,
+                "fileName": "関内",
+                "url": "関内.html"
+        },
+        {
+                "name": "阿蘇",
+                "lat": 32.98802852675782,
+                "lng": 131.09292027171838,
+                "restaurantCount": 32,
+                "fileName": "阿蘇",
+                "url": "阿蘇.html"
+        },
+        {
+                "name": "難波",
+                "lat": 34.66653884095084,
+                "lng": 135.50262158521932,
+                "restaurantCount": 227,
+                "fileName": "難波",
+                "url": "難波.html"
+        },
+        {
+                "name": "霧島",
+                "lat": 31.807547230809956,
+                "lng": 130.78865939244085,
+                "restaurantCount": 20,
+                "fileName": "霧島",
+                "url": "霧島.html"
+        },
+        {
+                "name": "静岡市",
+                "lat": 34.98513256107235,
+                "lng": 138.4027797388611,
+                "restaurantCount": 83,
+                "fileName": "静岡市",
+                "url": "静岡市.html"
+        },
+        {
+                "name": "飯塚",
+                "lat": 33.6326654556217,
+                "lng": 130.67520042636275,
+                "restaurantCount": 5,
+                "fileName": "飯塚",
+                "url": "飯塚.html"
+        },
+        {
+                "name": "飯田",
+                "lat": 35.51565228208826,
+                "lng": 137.8239651737563,
+                "restaurantCount": 5,
+                "fileName": "飯田",
+                "url": "飯田.html"
+        },
+        {
+                "name": "飯田橋",
+                "lat": 35.69727107437048,
+                "lng": 139.73419121768936,
+                "restaurantCount": 447,
+                "fileName": "飯田橋",
+                "url": "飯田橋.html"
+        },
+        {
+                "name": "館林",
+                "lat": 36.23500341683921,
+                "lng": 139.53188074256653,
+                "restaurantCount": 8,
+                "fileName": "館林",
+                "url": "館林.html"
+        },
+        {
+                "name": "香林坊",
+                "lat": 36.56442014193694,
+                "lng": 136.6523514434686,
+                "restaurantCount": 5,
+                "fileName": "香林坊",
+                "url": "香林坊.html"
+        },
+        {
+                "name": "香芝",
+                "lat": 34.53299998734897,
+                "lng": 135.71281852446592,
+                "restaurantCount": 2,
+                "fileName": "香芝",
+                "url": "香芝.html"
+        },
+        {
+                "name": "駒ヶ根",
+                "lat": 35.72471664275655,
+                "lng": 137.9033523965717,
+                "restaurantCount": 5,
+                "fileName": "駒ヶ根",
+                "url": "駒ヶ根.html"
+        },
+        {
+                "name": "高山",
+                "lat": 36.146834502741825,
+                "lng": 137.26624785422288,
+                "restaurantCount": 40,
+                "fileName": "高山",
+                "url": "高山.html"
+        },
+        {
+                "name": "高崎",
+                "lat": 36.33316895166247,
+                "lng": 139.00764601765852,
+                "restaurantCount": 66,
+                "fileName": "高崎",
+                "url": "高崎.html"
+        },
+        {
+                "name": "高崎駅",
+                "lat": 36.322938770410296,
+                "lng": 139.010186860501,
+                "restaurantCount": 24,
+                "fileName": "高崎駅",
+                "url": "高崎駅.html"
+        },
+        {
+                "name": "魚津",
+                "lat": 36.82482169984344,
+                "lng": 137.40858644202365,
+                "restaurantCount": 5,
+                "fileName": "魚津",
+                "url": "魚津.html"
+        },
+        {
+                "name": "鳥取市",
+                "lat": 35.496170002931855,
+                "lng": 134.23053611856722,
+                "restaurantCount": 3,
+                "fileName": "鳥取市",
+                "url": "鳥取市.html"
+        },
+        {
+                "name": "鳥栖",
+                "lat": 33.38998539925629,
+                "lng": 130.51403059181882,
+                "restaurantCount": 15,
+                "fileName": "鳥栖",
+                "url": "鳥栖.html"
+        },
+        {
+                "name": "鳥羽",
+                "lat": 34.46908206540835,
+                "lng": 136.86268451679803,
+                "restaurantCount": 23,
+                "fileName": "鳥羽",
+                "url": "鳥羽.html"
+        },
+        {
+                "name": "鹿児島中央駅",
+                "lat": 31.583848973168394,
+                "lng": 130.54309202060486,
+                "restaurantCount": 17,
+                "fileName": "鹿児島中央駅",
+                "url": "鹿児島中央駅.html"
+        },
+        {
+                "name": "鹿児島市",
+                "lat": 31.58660034226206,
+                "lng": 130.55112017842055,
+                "restaurantCount": 107,
+                "fileName": "鹿児島市",
+                "url": "鹿児島市.html"
+        },
+        {
+                "name": "鹿屋",
+                "lat": 31.385067339687602,
+                "lng": 130.8375737793525,
+                "restaurantCount": 4,
+                "fileName": "鹿屋",
+                "url": "鹿屋.html"
+        },
+        {
+                "name": "麻布十番",
+                "lat": 35.65560852932169,
+                "lng": 139.7352600800399,
+                "restaurantCount": 158,
+                "fileName": "麻布十番",
+                "url": "麻布十番.html"
+        },
+        {
+                "name": "麻生",
+                "lat": 43.10793201852734,
+                "lng": 141.34005140982765,
+                "restaurantCount": 4,
+                "fileName": "麻生",
+                "url": "麻生.html"
+        },
+        {
+                "name": "黒崎",
+                "lat": 33.86432668953228,
+                "lng": 130.76813333784446,
+                "restaurantCount": 15,
+                "fileName": "黒崎",
+                "url": "黒崎.html"
+        },
+        {
+                "name": "黒部",
+                "lat": 36.87078363641922,
+                "lng": 137.45561889685803,
+                "restaurantCount": 1,
+                "fileName": "黒部",
+                "url": "黒部.html"
+        }
+];
+
+        // 地図初期化
+        const map = L.map('map').setView([37.5, 138.0], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // 地域マーカーアイコン
+        const regionIcon = L.divIcon({
+            html: '<div style="background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(25,118,210,0.5); border: 3px solid white;">🚗</div>',
+            iconSize: [35, 35],
+            iconAnchor: [17, 35],
+            popupAnchor: [0, -35],
+            className: 'region-icon'
+        });
+
+        const regionListEl = document.getElementById('region-list');
+
+        // マーカーとカードを作成
+        regions.forEach(region => {
+            // マーカー追加
+            const marker = L.marker([region.lat, region.lng], { icon: regionIcon })
+                .addTo(map)
+                .bindPopup(`
+                    <div style="min-width: 200px;">
+                        <h3 style="margin: 0 0 10px 0; color: #1976d2; font-size: 1.1em;">${region.name}</h3>
+                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">🍴 レストラン: ${region.restaurantCount}店</p>
+                        <a href="${region.url}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #1976d2; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em;">車中泊スポットを見る</a>
+                    </div>
+                `);
+
+            // 地域カード追加
+            const card = document.createElement('div');
+            card.className = 'region-card';
+            card.innerHTML = `
+                <h3>${region.name}</h3>
+                <div class="region-info">🍴 レストラン: ${region.restaurantCount}店</div>
+            `;
+            card.addEventListener('click', () => {
+                map.setView([region.lat, region.lng], 13);
+                marker.openPopup();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            regionListEl.appendChild(card);
+        });
+    </script>
+</body>
+</html>

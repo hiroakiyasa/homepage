@@ -15,7 +15,10 @@
     "update-omoromachi": "node update-omoromachi-data.js",
     "generate-omoromachi-html": "node generate-omoromachi-html.js",
     "generate-omoromachi-map": "node generate-omoromachi-map.js",
-    "omoromachi-all": "npm run update-omoromachi && npm run generate-omoromachi-map && npm run generate-omoromachi-html"
+    "omoromachi-all": "npm run update-omoromachi && npm run generate-omoromachi-map && npm run generate-omoromachi-html",
+    "extract-regions": "node extract-region-data.js",
+    "generate-index": "node generate-index-html.js",
+    "build-index": "npm run extract-regions && npm run generate-index"
   },
   "keywords": ["camping", "car-camping", "note", "supabase", "ai"],
   "author": "",
