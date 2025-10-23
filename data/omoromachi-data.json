@@ -1,0 +1,1540 @@
+{
+  "area": {
+    "lat": 26.2188,
+    "lng": 127.696,
+    "name": "おもろまち駅周辺",
+    "description": "那覇市の中心部、ショッピングやグルメが楽しめるエリア"
+  },
+  "parkingSpots": [
+    {
+      "id": 75857,
+      "name": "タイムズ壺屋やちむん通り",
+      "latitude": 26.211117,
+      "longitude": 127.692683,
+      "elevation": 16,
+      "rates": [
+        {
+          "type": "base",
+          "price": 330,
+          "minutes": 60
+        },
+        {
+          "type": "max",
+          "price": 400,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "9",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 400,
+      "rank": 1,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_FM_083912",
+        "name": "ファミリーマート　那覇神里原通り店",
+        "distance_m": 311
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013710",
+        "name": "サウナの珠湯",
+        "distance_m": 593
+      },
+      "nearest_toilet": {
+        "id": 26312,
+        "name": "与儀公園トイレ",
+        "distance_m": 357
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.211117,
+      "lng": 127.692683,
+      "distance_to_center": 917,
+      "walking_minutes": 12,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [],
+        "hot_springs": [
+          {
+            "id": "HOT_013710",
+            "name": "サウナの珠湯",
+            "lat": 26.214161,
+            "lng": 127.687805,
+            "price": "¥1,300",
+            "address": "那覇市松尾2-11-1",
+            "operating_hours": "10:00〜22:00",
+            "holiday_info": "無休",
+            "price_info": "平日1,300円土日1,500円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 593
+          },
+          {
+            "id": "HOT_013638",
+            "name": "ゆんたくあしび温泉 りっかりっか湯",
+            "lat": 26.217926,
+            "lng": 127.68852,
+            "price": "¥1,650",
+            "address": "那覇市牧志2-16-36",
+            "operating_hours": "6:00〜23:00",
+            "holiday_info": "年中無休",
+            "price_info": "平日 大人1,650円 小人1,050円土日 大人1,800円 小人1,200円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 865
+          },
+          {
+            "id": "HOT_013714",
+            "name": "沖縄ホテル",
+            "lat": 26.218201,
+            "lng": 127.700226,
+            "price": "¥1,000",
+            "address": "那覇市大道35",
+            "operating_hours": "6:00〜11:00, 15:00〜24:00",
+            "holiday_info": "―",
+            "price_info": "大人1,000円 小人500円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 1091
+          }
+        ]
+      }
+    },
+    {
+      "id": 75912,
+      "name": "那覇中央郵便局駐車場（ノース）",
+      "latitude": 26.200781,
+      "longitude": 127.681367,
+      "elevation": 9,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30
+        },
+        {
+          "type": "max",
+          "price": 400,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "10",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 400,
+      "rank": 2,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_LS_083990",
+        "name": "ローソン 那覇古波蔵三丁目店",
+        "distance_m": 356
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013645",
+        "name": "CABIN & HOTEL ReTIME",
+        "distance_m": 1337
+      },
+      "nearest_toilet": {
+        "id": 26305,
+        "name": "漫湖公園（古波蔵側）トイレ",
+        "distance_m": 94
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.200781,
+      "lng": 127.681367,
+      "distance_to_center": 2482,
+      "walking_minutes": 32,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [
+          {
+            "id": 26305,
+            "name": "漫湖公園（古波蔵側）トイレ",
+            "address": "沖縄県那覇市古波蔵３－２３",
+            "lat": 26.200411253266,
+            "lng": 127.68220925071,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 94
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013645",
+            "name": "CABIN & HOTEL ReTIME",
+            "lat": 26.210546,
+            "lng": 127.673549,
+            "price": "¥1,200",
+            "address": "那覇市東町14-10",
+            "operating_hours": "6:00〜10:00, 12(火13):00〜24:00",
+            "holiday_info": "―",
+            "price_info": "3,150円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 1338
+          },
+          {
+            "id": "HOT_013704",
+            "name": "ホテルサン沖縄",
+            "lat": 26.214064,
+            "lng": 127.67749,
+            "price": "¥2,200",
+            "address": "那覇市久茂地1-5-15",
+            "operating_hours": "10:00〜21:00",
+            "holiday_info": "日曜日",
+            "price_info": "2,200円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 1529
+          },
+          {
+            "id": "HOT_013636",
+            "name": "ワイズキャビン&ホテル 那覇国際通り",
+            "lat": 26.214583,
+            "lng": 127.681468,
+            "price": "¥800",
+            "address": "那覇市久茂地3-9-18",
+            "operating_hours": "5:00〜10:00, 16:00〜24:00",
+            "holiday_info": "年中無休",
+            "price_info": "2,880円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 1536
+          }
+        ]
+      }
+    },
+    {
+      "id": 75913,
+      "name": "那覇中央郵便局駐車場（サウス）",
+      "latitude": 26.201369,
+      "longitude": 127.680775,
+      "elevation": 0,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30
+        },
+        {
+          "type": "max",
+          "price": 400,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "30",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 400,
+      "rank": 3,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_LS_083950",
+        "name": "ローソン那覇壺川店",
+        "distance_m": 384
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013645",
+        "name": "CABIN & HOTEL ReTIME",
+        "distance_m": 1249
+      },
+      "nearest_toilet": {
+        "id": 26305,
+        "name": "漫湖公園（古波蔵側）トイレ",
+        "distance_m": 178
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.201369,
+      "lng": 127.680775,
+      "distance_to_center": 2465,
+      "walking_minutes": 31,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [
+          {
+            "id": 26305,
+            "name": "漫湖公園（古波蔵側）トイレ",
+            "address": "沖縄県那覇市古波蔵３－２３",
+            "lat": 26.200411253266,
+            "lng": 127.68220925071,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 179
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013645",
+            "name": "CABIN & HOTEL ReTIME",
+            "lat": 26.210546,
+            "lng": 127.673549,
+            "price": "¥1,200",
+            "address": "那覇市東町14-10",
+            "operating_hours": "6:00〜10:00, 12(火13):00〜24:00",
+            "holiday_info": "―",
+            "price_info": "3,150円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 1251
+          },
+          {
+            "id": "HOT_013704",
+            "name": "ホテルサン沖縄",
+            "lat": 26.214064,
+            "lng": 127.67749,
+            "price": "¥2,200",
+            "address": "那覇市久茂地1-5-15",
+            "operating_hours": "10:00〜21:00",
+            "holiday_info": "日曜日",
+            "price_info": "2,200円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 1451
+          },
+          {
+            "id": "HOT_013636",
+            "name": "ワイズキャビン&ホテル 那覇国際通り",
+            "lat": 26.214583,
+            "lng": 127.681468,
+            "price": "¥800",
+            "address": "那覇市久茂地3-9-18",
+            "operating_hours": "5:00〜10:00, 16:00〜24:00",
+            "holiday_info": "年中無休",
+            "price_info": "2,880円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 1473
+          }
+        ]
+      }
+    },
+    {
+      "id": 75858,
+      "name": "タイムズコザ信用金庫安里支店",
+      "latitude": 26.218094,
+      "longitude": 127.694164,
+      "elevation": 17,
+      "rates": [
+        {
+          "type": "base",
+          "price": 220,
+          "minutes": 60,
+          "time_range": "8:00～20:00"
+        },
+        {
+          "type": "base",
+          "price": 330,
+          "minutes": 20,
+          "time_range": "20:00～8:00"
+        },
+        {
+          "type": "max",
+          "price": 550,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "9",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 550,
+      "rank": 4,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_FM_084026",
+        "name": "ファミリーマート　さいおんスクエア店",
+        "distance_m": 72
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013638",
+        "name": "ゆんたくあしび温泉 りっかりっか湯",
+        "distance_m": 563
+      },
+      "nearest_toilet": {
+        "id": 26301,
+        "name": "牧志公園トイレ",
+        "distance_m": 224
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.218094,
+      "lng": 127.694164,
+      "distance_to_center": 199,
+      "walking_minutes": 3,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_FM_084026",
+            "name": "ファミリーマート　さいおんスクエア店",
+            "lat": 26.217782363102,
+            "lng": 127.69352763678,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市安里二丁目1番1号",
+            "phone_number": "098-860-8020",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:33.098702+00:00",
+            "updated_at": "2025-08-15T12:59:33.098702+00:00",
+            "distance": 72
+          },
+          {
+            "id": "CVS_FM_084017",
+            "name": "ファミリーマート　国際通り牧志駅前店",
+            "lat": 26.217340367149,
+            "lng": 127.69206377618,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市牧志3丁目13-23",
+            "phone_number": "098-917-6288",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:32.018473+00:00",
+            "updated_at": "2025-08-15T12:59:32.018473+00:00",
+            "distance": 226
+          }
+        ],
+        "toilets": [
+          {
+            "id": 26301,
+            "name": "牧志公園トイレ",
+            "address": "沖縄県那覇市牧志２－２７０－３",
+            "lat": 26.217929050382,
+            "lng": 127.69192925204,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 224
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013638",
+            "name": "ゆんたくあしび温泉 りっかりっか湯",
+            "lat": 26.217926,
+            "lng": 127.68852,
+            "price": "¥1,650",
+            "address": "那覇市牧志2-16-36",
+            "operating_hours": "6:00〜23:00",
+            "holiday_info": "年中無休",
+            "price_info": "平日 大人1,650円 小人1,050円土日 大人1,800円 小人1,200円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 564
+          },
+          {
+            "id": "HOT_013714",
+            "name": "沖縄ホテル",
+            "lat": 26.218201,
+            "lng": 127.700226,
+            "price": "¥1,000",
+            "address": "那覇市大道35",
+            "operating_hours": "6:00〜11:00, 15:00〜24:00",
+            "holiday_info": "―",
+            "price_info": "大人1,000円 小人500円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 606
+          },
+          {
+            "id": "HOT_013661",
+            "name": "The Naha Terrace ザ・ナハテラス",
+            "lat": 26.223797,
+            "lng": 127.691802,
+            "price": "¥2,500",
+            "address": "那覇市おもろまち2-14-1",
+            "operating_hours": "12:00〜20:00",
+            "holiday_info": "（要事前問合せ）",
+            "price_info": "31,875円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:09.417333+00:00",
+            "updated_at": "2025-08-15T13:03:09.417333+00:00",
+            "distance": 677
+          }
+        ]
+      }
+    },
+    {
+      "id": 75891,
+      "name": "タイムズ前島",
+      "latitude": 26.21755,
+      "longitude": 127.6875,
+      "elevation": 15,
+      "rates": [
+        {
+          "type": "base",
+          "price": 220,
+          "minutes": 60,
+          "time_range": "8:00～20:00"
+        },
+        {
+          "type": "base",
+          "price": 330,
+          "minutes": 20,
+          "time_range": "20:00～8:00"
+        },
+        {
+          "type": "max",
+          "price": 550,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "9",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 550,
+      "rank": 5,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_FM_083957",
+        "name": "ファミリーマート　那覇沖映通り店",
+        "distance_m": 139
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013638",
+        "name": "ゆんたくあしび温泉 りっかりっか湯",
+        "distance_m": 110
+      },
+      "nearest_toilet": {
+        "id": 26307,
+        "name": "緑ヶ丘公園トイレ",
+        "distance_m": 85
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.21755,
+      "lng": 127.6875,
+      "distance_to_center": 860,
+      "walking_minutes": 11,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_FM_083957",
+            "name": "ファミリーマート　那覇沖映通り店",
+            "lat": 26.218235055335,
+            "lng": 127.68633108383,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市牧志一丁目4-33",
+            "phone_number": "098-860-2286",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:32.018473+00:00",
+            "updated_at": "2025-08-15T12:59:32.018473+00:00",
+            "distance": 139
+          },
+          {
+            "id": "CVS_OT_084096",
+            "name": "セブン‐イレブン 那覇牧志店",
+            "lat": 26.21912634,
+            "lng": 127.68830281,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "その他",
+            "address": "沖縄県那覇市牧志２丁目２０－２３",
+            "phone_number": "098-862-4004",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 193
+          },
+          {
+            "id": "CVS_FM_083934",
+            "name": "ファミリーマート牧志二丁目店",
+            "lat": 26.2192783,
+            "lng": 127.6881464,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市牧志2丁目20-20",
+            "phone_number": "098-860-9536",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 203
+          }
+        ],
+        "toilets": [
+          {
+            "id": 26307,
+            "name": "緑ヶ丘公園トイレ",
+            "address": "沖縄県那覇市牧志１－４－４９",
+            "lat": 26.217565517586,
+            "lng": 127.68665196129,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 85
+          },
+          {
+            "id": 26285,
+            "name": "希望ヶ丘公園トイレ",
+            "address": "沖縄県那覇市牧志３－２－１５",
+            "lat": 26.215869732929,
+            "lng": 127.68947174709,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 272
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013638",
+            "name": "ゆんたくあしび温泉 りっかりっか湯",
+            "lat": 26.217926,
+            "lng": 127.68852,
+            "price": "¥1,650",
+            "address": "那覇市牧志2-16-36",
+            "operating_hours": "6:00〜23:00",
+            "holiday_info": "年中無休",
+            "price_info": "平日 大人1,650円 小人1,050円土日 大人1,800円 小人1,200円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 110
+          },
+          {
+            "id": "HOT_013710",
+            "name": "サウナの珠湯",
+            "lat": 26.214161,
+            "lng": 127.687805,
+            "price": "¥1,300",
+            "address": "那覇市松尾2-11-1",
+            "operating_hours": "10:00〜22:00",
+            "holiday_info": "無休",
+            "price_info": "平日1,300円土日1,500円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 378
+          },
+          {
+            "id": "HOT_013636",
+            "name": "ワイズキャビン&ホテル 那覇国際通り",
+            "lat": 26.214583,
+            "lng": 127.681468,
+            "price": "¥800",
+            "address": "那覇市久茂地3-9-18",
+            "operating_hours": "5:00〜10:00, 16:00〜24:00",
+            "holiday_info": "年中無休",
+            "price_info": "2,880円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 687
+          }
+        ]
+      }
+    },
+    {
+      "id": 75906,
+      "name": "タイムズ松山１丁目第３",
+      "latitude": 26.216572,
+      "longitude": 127.677983,
+      "elevation": 18,
+      "rates": [
+        {
+          "type": "base",
+          "price": 220,
+          "minutes": 60
+        },
+        {
+          "type": "max",
+          "price": 550,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "8",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 550,
+      "rank": 6,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_7E_083946",
+        "name": "セブンイレブン明治安田生命沖縄ビル店",
+        "distance_m": 77
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013704",
+        "name": "ホテルサン沖縄",
+        "distance_m": 283
+      },
+      "nearest_toilet": {
+        "id": 26303,
+        "name": "松山公園トイレ",
+        "distance_m": 253
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.216572,
+      "lng": 127.677983,
+      "distance_to_center": 1816,
+      "walking_minutes": 23,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_7E_083946",
+            "name": "セブンイレブン明治安田生命沖縄ビル店",
+            "lat": 26.2158979,
+            "lng": 127.6781392,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "セブン-イレブン",
+            "address": "沖縄県那覇市久米2丁目4-13",
+            "phone_number": "098-867-1511",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 77
+          },
+          {
+            "id": "CVS_LS_083942",
+            "name": "ローソン タイムスビル店",
+            "lat": 26.21581209,
+            "lng": 127.67901485,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "沖縄県那覇市久茂地２丁目２－２",
+            "phone_number": "098-866-0800",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 133
+          },
+          {
+            "id": "CVS_FM_083899",
+            "name": "ファミリーマートリースビル店",
+            "lat": 26.2151924,
+            "lng": 127.6780864,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市久茂地1丁目7-1",
+            "phone_number": "098-861-2977",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 154
+          }
+        ],
+        "toilets": [
+          {
+            "id": 26303,
+            "name": "松山公園トイレ",
+            "address": "沖縄県那覇市松山１－１７",
+            "lat": 26.218165314235,
+            "lng": 127.67617747608,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 253
+          },
+          {
+            "id": 26306,
+            "name": "美栄橋公園トイレ",
+            "address": "沖縄県那覇市久茂地３－１９－１",
+            "lat": 26.21509386019,
+            "lng": 127.68048490675,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 299
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013704",
+            "name": "ホテルサン沖縄",
+            "lat": 26.214064,
+            "lng": 127.67749,
+            "price": "¥2,200",
+            "address": "那覇市久茂地1-5-15",
+            "operating_hours": "10:00〜21:00",
+            "holiday_info": "日曜日",
+            "price_info": "2,200円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 283
+          },
+          {
+            "id": "HOT_013641",
+            "name": "オキナワ ナハナホテル&スパ",
+            "lat": 26.214472,
+            "lng": 127.676327,
+            "price": "¥2,000",
+            "address": "那覇市久米2-1-5",
+            "operating_hours": "16:00〜23:00",
+            "holiday_info": "―",
+            "price_info": "13,689円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 286
+          },
+          {
+            "id": "HOT_013636",
+            "name": "ワイズキャビン&ホテル 那覇国際通り",
+            "lat": 26.214583,
+            "lng": 127.681468,
+            "price": "¥800",
+            "address": "那覇市久茂地3-9-18",
+            "operating_hours": "5:00〜10:00, 16:00〜24:00",
+            "holiday_info": "年中無休",
+            "price_info": "2,880円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 413
+          }
+        ]
+      }
+    },
+    {
+      "id": 75909,
+      "name": "タイムズ若狭２丁目第２",
+      "latitude": 26.215525,
+      "longitude": 127.678597,
+      "elevation": 18,
+      "rates": [
+        {
+          "type": "base",
+          "price": 220,
+          "minutes": 60
+        },
+        {
+          "type": "max",
+          "price": 550,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "11",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 550,
+      "rank": 7,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_LS_083942",
+        "name": "ローソン タイムスビル店",
+        "distance_m": 53
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013704",
+        "name": "ホテルサン沖縄",
+        "distance_m": 196
+      },
+      "nearest_toilet": {
+        "id": 26306,
+        "name": "美栄橋公園トイレ",
+        "distance_m": 194
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.215525,
+      "lng": 127.678597,
+      "distance_to_center": 1776,
+      "walking_minutes": 23,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_083942",
+            "name": "ローソン タイムスビル店",
+            "lat": 26.21581209,
+            "lng": 127.67901485,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "沖縄県那覇市久茂地２丁目２－２",
+            "phone_number": "098-866-0800",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 53
+          },
+          {
+            "id": "CVS_7E_083946",
+            "name": "セブンイレブン明治安田生命沖縄ビル店",
+            "lat": 26.2158979,
+            "lng": 127.6781392,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "セブン-イレブン",
+            "address": "沖縄県那覇市久米2丁目4-13",
+            "phone_number": "098-867-1511",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 62
+          },
+          {
+            "id": "CVS_FM_083899",
+            "name": "ファミリーマートリースビル店",
+            "lat": 26.2151924,
+            "lng": 127.6780864,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市久茂地1丁目7-1",
+            "phone_number": "098-861-2977",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:30.978187+00:00",
+            "updated_at": "2025-08-15T12:59:30.978187+00:00",
+            "distance": 63
+          }
+        ],
+        "toilets": [
+          {
+            "id": 26306,
+            "name": "美栄橋公園トイレ",
+            "address": "沖縄県那覇市久茂地３－１９－１",
+            "lat": 26.21509386019,
+            "lng": 127.68048490675,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 195
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013704",
+            "name": "ホテルサン沖縄",
+            "lat": 26.214064,
+            "lng": 127.67749,
+            "price": "¥2,200",
+            "address": "那覇市久茂地1-5-15",
+            "operating_hours": "10:00〜21:00",
+            "holiday_info": "日曜日",
+            "price_info": "2,200円補足 ▼",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:10.598616+00:00",
+            "updated_at": "2025-08-15T13:03:10.598616+00:00",
+            "distance": 197
+          },
+          {
+            "id": "HOT_013641",
+            "name": "オキナワ ナハナホテル&スパ",
+            "lat": 26.214472,
+            "lng": 127.676327,
+            "price": "¥2,000",
+            "address": "那覇市久米2-1-5",
+            "operating_hours": "16:00〜23:00",
+            "holiday_info": "―",
+            "price_info": "13,689円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 255
+          },
+          {
+            "id": "HOT_013636",
+            "name": "ワイズキャビン&ホテル 那覇国際通り",
+            "lat": 26.214583,
+            "lng": 127.681468,
+            "price": "¥800",
+            "address": "那覇市久茂地3-9-18",
+            "operating_hours": "5:00〜10:00, 16:00〜24:00",
+            "holiday_info": "年中無休",
+            "price_info": "2,880円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 305
+          }
+        ]
+      }
+    },
+    {
+      "id": 75911,
+      "name": "タイムズ壺川２丁目",
+      "latitude": 26.19465,
+      "longitude": 127.6875,
+      "elevation": 0,
+      "rates": [
+        {
+          "type": "base",
+          "price": 220,
+          "minutes": 60
+        },
+        {
+          "type": "max",
+          "price": 550,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "17",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間入出庫可"
+      },
+      "calculated_fee": 550,
+      "rank": 8,
+      "address": null,
+      "type": null,
+      "nearest_convenience_store": {
+        "id": "CVS_7E_083847",
+        "name": "セブンイレブン那覇古波蔵2丁目店",
+        "distance_m": 449
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013710",
+        "name": "サウナの珠湯",
+        "distance_m": 2170
+      },
+      "nearest_toilet": {
+        "id": 26304,
+        "name": "漫湖公園（鏡原側）トイレ",
+        "distance_m": 776
+      },
+      "total_spots_in_region": 146,
+      "lat": 26.19465,
+      "lng": 127.6875,
+      "distance_to_center": 2819,
+      "walking_minutes": 36,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [],
+        "hot_springs": []
+      }
+    },
+    {
+      "id": 62937,
+      "name": "Ｄパーキングおもろまち",
+      "latitude": 26.226585,
+      "longitude": 127.689947,
+      "elevation": 35,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30,
+          "day_type": "月～金",
+          "time_range": "7:00～19:00"
+        },
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 60,
+          "day_type": "月～金",
+          "time_range": "19:00～7:00"
+        },
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 60,
+          "day_type": "土日祝"
+        },
+        {
+          "type": "max",
+          "price": 600,
+          "minutes": 1440,
+          "day_type": "月～金"
+        }
+      ],
+      "capacity": "20",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "calculated_fee": 600,
+      "rank": 9,
+      "address": null,
+      "type": "平面駐車場",
+      "nearest_convenience_store": {
+        "id": "CVS_FM_083992",
+        "distance_m": 146
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013697",
+        "distance_m": 276
+      },
+      "nearest_toilet": null,
+      "total_spots_in_region": 146,
+      "lat": 26.226585,
+      "lng": 127.689947,
+      "distance_to_center": 1057,
+      "walking_minutes": 14,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_FM_083992",
+            "name": "ファミリーマート那覇第2地方合同庁舎／S店",
+            "lat": 26.2275663,
+            "lng": 127.6909261,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県 > 那覇市 > ファミリーマート那覇第2地方合同庁舎／S店",
+            "phone_number": "098-860-6135",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:32.018473+00:00",
+            "updated_at": "2025-08-15T12:59:32.018473+00:00",
+            "distance": 147
+          }
+        ],
+        "toilets": [
+          {
+            "id": 26286,
+            "name": "黄金森公園トイレ",
+            "address": "沖縄県那覇市おもろまち２－７－１",
+            "lat": 26.225376172598,
+            "lng": 127.69081697466,
+            "created_at": "2025-09-28T03:43:54.99618+00:00",
+            "updated_at": "2025-09-28T03:43:54.99618+00:00",
+            "distance": 160
+          }
+        ],
+        "hot_springs": [
+          {
+            "id": "HOT_013697",
+            "name": "HOTEL StoRK 那覇新都心",
+            "lat": 26.225162,
+            "lng": 127.692208,
+            "price": "¥1,300",
+            "address": "那覇市おもろまち2-6-40",
+            "operating_hours": "（楽天サイトで確認）",
+            "holiday_info": "（楽天サイトで確認）",
+            "price_info": "3,660円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:09.417333+00:00",
+            "updated_at": "2025-08-15T13:03:09.417333+00:00",
+            "distance": 276
+          },
+          {
+            "id": "HOT_013661",
+            "name": "The Naha Terrace ザ・ナハテラス",
+            "lat": 26.223797,
+            "lng": 127.691802,
+            "price": "¥2,500",
+            "address": "那覇市おもろまち2-14-1",
+            "operating_hours": "12:00〜20:00",
+            "holiday_info": "（要事前問合せ）",
+            "price_info": "31,875円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:09.417333+00:00",
+            "updated_at": "2025-08-15T13:03:09.417333+00:00",
+            "distance": 361
+          },
+          {
+            "id": "HOT_013638",
+            "name": "ゆんたくあしび温泉 りっかりっか湯",
+            "lat": 26.217926,
+            "lng": 127.68852,
+            "price": "¥1,650",
+            "address": "那覇市牧志2-16-36",
+            "operating_hours": "6:00〜23:00",
+            "holiday_info": "年中無休",
+            "price_info": "平日 大人1,650円 小人1,050円土日 大人1,800円 小人1,200円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:03:07.010401+00:00",
+            "updated_at": "2025-08-15T13:03:07.010401+00:00",
+            "distance": 974
+          }
+        ]
+      }
+    },
+    {
+      "id": 62955,
+      "name": "アップルパーク仲井真第１",
+      "latitude": 26.196238,
+      "longitude": 127.707996,
+      "elevation": 11,
+      "rates": [
+        {
+          "type": "base",
+          "price": 300,
+          "minutes": 40
+        },
+        {
+          "type": "max",
+          "price": 600,
+          "minutes": 1440
+        }
+      ],
+      "capacity": "46",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "calculated_fee": 600,
+      "rank": 10,
+      "address": null,
+      "type": "平面駐車場",
+      "nearest_convenience_store": {
+        "id": "CVS_FM_083888",
+        "distance_m": 187
+      },
+      "nearest_hotspring": {
+        "id": "HOT_013714",
+        "distance_m": 2562
+      },
+      "nearest_toilet": null,
+      "total_spots_in_region": 146,
+      "lat": 26.196238,
+      "lng": 127.707996,
+      "distance_to_center": 2783,
+      "walking_minutes": 35,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_FM_083888",
+            "name": "ファミリーマート　仲井真小学校前店",
+            "lat": 26.197144275502,
+            "lng": 127.70641746503,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ファミリーマート",
+            "address": "沖縄県那覇市字仲井真122-5",
+            "phone_number": "098-840-4150",
+            "operating_hours": "24時間営業",
+            "prefecture": "沖縄県",
+            "area_name": "那覇市",
+            "created_at": "2025-08-15T12:59:29.686311+00:00",
+            "updated_at": "2025-08-15T12:59:29.686311+00:00",
+            "distance": 187
+          }
+        ],
+        "toilets": [],
+        "hot_springs": []
+      }
+    }
+  ],
+  "topRestaurants": [
+    {
+      "name": "ゆうなみ 坂下店",
+      "score": 3.68,
+      "reviewCount": null,
+      "restaurantId": "47013540",
+      "genre": "沖縄そば",
+      "dinnerBudget": "～￥999",
+      "lunchBudget": "～￥999",
+      "closedDays": null,
+      "latitude": 26.21817124007876,
+      "longitude": 127.70214349609371,
+      "address": "沖縄県那覇市松川301-15 テラス坂下 1F",
+      "reservation": null,
+      "inquiry": "098-887-5080",
+      "parking": "有\n                  \n                    店舗前・裏　に有ります。　土日祝日は店舗横ゆいまーる駐車場利用可",
+      "businessHours": [
+        "11:00 - 21:00"
+      ],
+      "sourceType": "area",
+      "sourceName": "おもろまち駅"
+    },
+    {
+      "name": "鶴千",
+      "score": 3.58,
+      "reviewCount": null,
+      "restaurantId": "47017306",
+      "genre": "居酒屋",
+      "dinnerBudget": "￥4,000～￥4,999",
+      "lunchBudget": "-",
+      "closedDays": "日曜日",
+      "latitude": 26.219033940880934,
+      "longitude": 127.69382719727007,
+      "address": "沖縄県那覇市安里1-6-8 ハッピービル 1F",
+      "reservation": null,
+      "inquiry": "098-861-2266",
+      "parking": "無",
+      "businessHours": [
+        "月・火・水・木・金・土 17:00 - 00:00 日 定休日"
+      ],
+      "sourceType": "area",
+      "sourceName": "おもろまち駅"
+    },
+    {
+      "name": "GLOUTON SHURI",
+      "score": 3.58,
+      "reviewCount": null,
+      "restaurantId": "47031248",
+      "genre": "フレンチ",
+      "dinnerBudget": "￥15,000～￥19,999",
+      "lunchBudget": "-",
+      "closedDays": "水曜日",
+      "latitude": 26.219382399303313,
+      "longitude": 127.705162847564,
+      "address": "沖縄県那覇市松川402 コテージジャム 2F",
+      "reservation": null,
+      "inquiry": "070-8918-9964",
+      "parking": "有\n                  \n                    2台駐車スペース有",
+      "businessHours": [
+        "月・火・日 13:00 - 15:00 L.O. 料理13:00 18:00 - 23:00 L.O. 料理19:30 木・金・土 18:00 - 23:00 L.O. 料理19:30 水 定休日",
+        "■定休日水曜日・その他不定休あり◆2025年9月より19：00一斉スタートになります"
+      ],
+      "sourceType": "area",
+      "sourceName": "おもろまち駅"
+    },
+    {
+      "name": "El Lequio",
+      "score": 3.56,
+      "reviewCount": null,
+      "restaurantId": "47028764",
+      "genre": "バー",
+      "dinnerBudget": "￥4,000～￥4,999",
+      "lunchBudget": "-",
+      "closedDays": null,
+      "latitude": 26.21875304007587,
+      "longitude": 127.69423759610513,
+      "address": "沖縄県那覇市安里1-3-3 安里ビル",
+      "reservation": null,
+      "inquiry": "098-975-9674",
+      "parking": "無",
+      "businessHours": [
+        "19:00 - 02:00",
+        "■ 定休日：なし年末年始の営業についてはInstagramをご覧ください。"
+      ],
+      "sourceType": "area",
+      "sourceName": "おもろまち駅"
+    },
+    {
+      "name": "削りたてカツオ節専門店 出汁ダシ",
+      "score": 3.56,
+      "reviewCount": null,
+      "restaurantId": "47031411",
+      "genre": "日本料理",
+      "dinnerBudget": "-",
+      "lunchBudget": "～￥999",
+      "closedDays": "日曜日",
+      "latitude": 26.21724978477246,
+      "longitude": 127.69724658617311,
+      "address": "沖縄県那覇市安里379",
+      "reservation": null,
+      "inquiry": "090-8293-1943",
+      "parking": "無\n                  \n                    近隣にコインパーキングがあります",
+      "businessHours": [
+        "月・火・水・木・金・土 08:00 - 14:00 日 定休日"
+      ],
+      "sourceType": "area",
+      "sourceName": "おもろまち駅"
+    }
+  ],
+  "generatedAt": "2025-10-23T00:31:47.793Z"
+}

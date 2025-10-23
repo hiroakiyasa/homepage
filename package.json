@@ -7,7 +7,15 @@
     "start": "node src/main.js",
     "test": "node src/main.js --test",
     "publish-once": "node src/main.js --once",
-    "dev": "node src/main.js"
+    "dev": "node src/main.js",
+    "area-master": "node generate-area-master.js",
+    "update-otaru": "node update-otaru-data.js",
+    "generate-otaru-html": "node generate-otaru-html.js",
+    "generate-otaru-map": "node generate-otaru-map.js",
+    "update-omoromachi": "node update-omoromachi-data.js",
+    "generate-omoromachi-html": "node generate-omoromachi-html.js",
+    "generate-omoromachi-map": "node generate-omoromachi-map.js",
+    "omoromachi-all": "npm run update-omoromachi && npm run generate-omoromachi-map && npm run generate-omoromachi-html"
   },
   "keywords": ["camping", "car-camping", "note", "supabase", "ai"],
   "author": "",

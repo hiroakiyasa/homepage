@@ -1,0 +1,1169 @@
+{
+  "event": {
+    "name": "小樽雪あかりの路",
+    "lat": 43.1907,
+    "lon": 140.9947
+  },
+  "parkingSpots": [
+    {
+      "id": 63547,
+      "name": "小樽公園",
+      "lat": 43.1879,
+      "lng": 140.9933,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "max",
+          "price": 0,
+          "minutes": 1440
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:49.871692+00:00",
+      "updated_at": "2025-09-27T14:49:49.871692+00:00",
+      "elevation": 50,
+      "nearest_convenience_store": "{\"id\":\"CVS_7E_001652\",\"distance_m\":403}",
+      "nearest_hotspring": "{\"id\":\"HOT_000157\",\"distance_m\":378}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間利用可能"
+      },
+      "type": "車中泊・キャンプ場",
+      "capacity": null,
+      "nearest_toilet": null,
+      "distance_to_event": 332,
+      "overnight_fee": 0,
+      "walking_minutes": 5,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [
+          {
+            "id": 967,
+            "name": "小樽公園見晴台トイレ",
+            "address": "北海道小樽市花園５－３",
+            "lat": 43.188232591016,
+            "lng": 140.9927094936,
+            "created_at": "2025-09-28T03:43:43.91086+00:00",
+            "updated_at": "2025-09-28T03:43:43.91086+00:00",
+            "distance": 61
+          },
+          {
+            "id": 965,
+            "name": "小樽公園旧こどもの国トイレ",
+            "address": "北海道小樽市花園５－３",
+            "lat": 43.18691554905,
+            "lng": 140.99417318675,
+            "created_at": "2025-09-28T03:43:43.91086+00:00",
+            "updated_at": "2025-09-28T03:43:43.91086+00:00",
+            "distance": 131
+          },
+          {
+            "id": 966,
+            "name": "小樽公園テニスコート上トイレ",
+            "address": "北海道小樽市花園５－３",
+            "lat": 43.188916141121,
+            "lng": 140.99425980778,
+            "created_at": "2025-09-28T03:43:43.91086+00:00",
+            "updated_at": "2025-09-28T03:43:43.91086+00:00",
+            "distance": 137
+          },
+          {
+            "id": 968,
+            "name": "小樽公園ゆったりトイレ",
+            "address": "北海道小樽市花園５－３",
+            "lat": 43.188002548416,
+            "lng": 140.99052546109,
+            "created_at": "2025-09-28T03:43:43.91086+00:00",
+            "updated_at": "2025-09-28T03:43:43.91086+00:00",
+            "distance": 225
+          }
+        ],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 1
+    },
+    {
+      "id": 22,
+      "name": "ネクステップ小樽緑１丁目パーキング",
+      "lat": 43.189879,
+      "lng": 140.985888,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "max",
+          "price": 400,
+          "minutes": 720
+        },
+        {
+          "type": "max",
+          "price": 500,
+          "minutes": 1440
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 76,
+      "nearest_convenience_store": "{\"id\":\"CVS_7E_001654\",\"distance_m\":551}",
+      "nearest_hotspring": "{\"id\":\"HOT_000398\",\"distance_m\":424}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 17,
+      "nearest_toilet": {
+        "id": 1021,
+        "name": "みどり公園トイレ",
+        "distance_m": 125
+      },
+      "distance_to_event": 721,
+      "overnight_fee": 0,
+      "walking_minutes": 10,
+      "facilities": {
+        "convenience_stores": [],
+        "toilets": [
+          {
+            "id": 1021,
+            "name": "みどり公園トイレ",
+            "address": "北海道小樽市緑１－３１",
+            "lat": 43.190803694803,
+            "lng": 140.98500705627,
+            "created_at": "2025-09-28T03:43:44.157228+00:00",
+            "updated_at": "2025-09-28T03:43:44.157228+00:00",
+            "distance": 125
+          }
+        ],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 2
+    },
+    {
+      "id": 19,
+      "name": "小樽市駅前広場駐車場",
+      "lat": 43.198112,
+      "lng": 140.994137,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 0,
+          "minutes": 30,
+          "time_range": "8:00～22:00"
+        },
+        {
+          "type": "progressive",
+          "price": 100,
+          "minutes": 20,
+          "time_range": "8:00～22:00",
+          "apply_after": 30
+        },
+        {
+          "type": "base",
+          "price": 50,
+          "minutes": 60,
+          "time_range": "22:00～8:00"
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 24,
+      "nearest_convenience_store": "{\"id\":\"CVS_OT_001688\",\"distance_m\":62}",
+      "nearest_hotspring": "{\"id\":\"HOT_014473\",\"distance_m\":60}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 20,
+      "nearest_toilet": {
+        "id": 1025,
+        "name": "やまびこ公園トイレ",
+        "distance_m": 540
+      },
+      "distance_to_event": 826,
+      "overnight_fee": 0,
+      "walking_minutes": 11,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_OT_001688",
+            "name": "セブン‐イレブン 北海道ST小樽",
+            "lat": 43.19765809,
+            "lng": 140.99369796,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "その他",
+            "address": "北海道小樽市稲穂２丁目２２－１５",
+            "phone_number": "0134-22-7241",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.797238+00:00",
+            "updated_at": "2025-08-15T12:50:44.797238+00:00",
+            "distance": 62
+          },
+          {
+            "id": "CVS_LS_001672",
+            "name": "ローソン小樽駅前店",
+            "lat": 43.1985494,
+            "lng": 140.9953776,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市稲穂3丁目7-4",
+            "phone_number": "0134-65-7891",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 112
+          },
+          {
+            "id": "CVS_SM_001674",
+            "name": "セイコーマートなかた店",
+            "lat": 43.19938587,
+            "lng": 140.99627296,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "セイコーマート",
+            "address": "北海道小樽市稲穂３丁目４－１７",
+            "phone_number": "0134-22-3947",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 224
+          }
+        ],
+        "toilets": [],
+        "hot_springs": [
+          {
+            "id": "HOT_014473",
+            "name": "天然温泉灯の湯ドーミーインPREMIUM小樽",
+            "lat": 43.198278,
+            "lng": 140.994839,
+            "price": "要確認",
+            "address": "",
+            "operating_hours": "",
+            "holiday_info": "",
+            "price_info": "要確認",
+            "facility_type": "温泉施設",
+            "created_at": "2025-08-15T13:03:21.250922+00:00",
+            "updated_at": "2025-08-15T13:03:21.250922+00:00",
+            "distance": 60
+          },
+          {
+            "id": "HOT_000793",
+            "name": "THE GREEN OTARU 小樽グリーンホテル本館",
+            "lat": 43.198963,
+            "lng": 140.996429,
+            "price": "¥1,300",
+            "address": "小樽市稲穂3-5-14",
+            "operating_hours": "9(月金15):00〜24:00",
+            "holiday_info": "（要事前問合せ）",
+            "price_info": "6,500円〜宿泊ページ",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:00:15.105213+00:00",
+            "updated_at": "2025-08-15T13:00:15.105213+00:00",
+            "distance": 209
+          },
+          {
+            "id": "HOT_000168",
+            "name": "柳川湯",
+            "lat": 43.200028,
+            "lng": 140.995153,
+            "price": "¥500",
+            "address": "小樽市稲穂3-16-16",
+            "operating_hours": "14:30〜22:00",
+            "holiday_info": "月・金曜日",
+            "price_info": "大人500円 小学生150円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:00:07.172194+00:00",
+            "updated_at": "2025-08-15T13:00:07.172194+00:00",
+            "distance": 229
+          }
+        ]
+      },
+      "restaurants": [],
+      "rank": 3
+    },
+    {
+      "id": 3,
+      "name": "小樽セイコーマート入船１丁目店",
+      "lat": 43.18883,
+      "lng": 141.005776,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 0,
+          "minutes": 20
+        },
+        {
+          "type": "progressive",
+          "price": 100,
+          "minutes": 20,
+          "apply_after": 20
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 12,
+      "nearest_convenience_store": "{\"id\":\"CVS_SM_001660\",\"distance_m\":14}",
+      "nearest_hotspring": "{\"id\":\"HOT_000076\",\"distance_m\":256}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 13,
+      "nearest_toilet": {
+        "id": 1011,
+        "name": "花園グリーンロード公園トイレ①",
+        "distance_m": 395
+      },
+      "distance_to_event": 923,
+      "overnight_fee": 0,
+      "walking_minutes": 12,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_SM_001660",
+            "name": "セイコーマート入船1丁目店",
+            "lat": 43.1887143,
+            "lng": 141.0058416,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "セイコーマート",
+            "address": "北海道 > 小樽市 > セイコーマート入船1丁目店",
+            "phone_number": "0134-65-8577",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 14
+          },
+          {
+            "id": "CVS_7E_001659",
+            "name": "セブンイレブン小樽入船1丁目店",
+            "lat": 43.1871144,
+            "lng": 141.0040835,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "セブン-イレブン",
+            "address": "北海道 > 小樽市 > セブンイレブン小樽入船1丁目店",
+            "phone_number": "0134-23-1202",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 235
+          }
+        ],
+        "toilets": [],
+        "hot_springs": [
+          {
+            "id": "HOT_000076",
+            "name": "神仏湯温泉",
+            "lat": 43.186786,
+            "lng": 141.004323,
+            "price": "¥500",
+            "address": "小樽市住ノ江1-5-1",
+            "operating_hours": "12:30〜25:00",
+            "holiday_info": "月曜日",
+            "price_info": "大人500円 小学生150円",
+            "facility_type": "日帰り入浴施設",
+            "created_at": "2025-08-15T13:00:06.241673+00:00",
+            "updated_at": "2025-08-15T13:00:06.241673+00:00",
+            "distance": 256
+          }
+        ]
+      },
+      "restaurants": [],
+      "rank": 4
+    },
+    {
+      "id": 28,
+      "name": "パラカ小樽市花園第１",
+      "lat": 43.192629,
+      "lng": 140.999812,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 60
+        },
+        {
+          "type": "max",
+          "price": 250,
+          "minutes": 840,
+          "time_range": "19:00～9:00"
+        },
+        {
+          "type": "max",
+          "price": 400,
+          "minutes": 720
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 27,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001643\",\"distance_m\":105}",
+      "nearest_hotspring": "{\"id\":\"HOT_000157\",\"distance_m\":507}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 7,
+      "nearest_toilet": {
+        "id": 1011,
+        "name": "花園グリーンロード公園トイレ①",
+        "distance_m": 355
+      },
+      "distance_to_event": 467,
+      "overnight_fee": 250,
+      "walking_minutes": 6,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001643",
+            "name": "ローソン小樽花園一丁目店",
+            "lat": 43.1917889,
+            "lng": 141.0004139,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市花園1丁目11-6",
+            "phone_number": "0134-26-6030",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 106
+          }
+        ],
+        "toilets": [],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 5
+    },
+    {
+      "id": 30,
+      "name": "パラカ小樽市花園第４",
+      "lat": 43.192096,
+      "lng": 141.000098,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 100,
+          "minutes": 20
+        },
+        {
+          "type": "max",
+          "price": 500,
+          "minutes": 1440
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 27,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001643\",\"distance_m\":43}",
+      "nearest_hotspring": "{\"id\":\"HOT_000157\",\"distance_m\":459}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 7,
+      "nearest_toilet": {
+        "id": 1011,
+        "name": "花園グリーンロード公園トイレ①",
+        "distance_m": 292
+      },
+      "distance_to_event": 465,
+      "overnight_fee": 500,
+      "walking_minutes": 6,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001643",
+            "name": "ローソン小樽花園一丁目店",
+            "lat": 43.1917889,
+            "lng": 141.0004139,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市花園1丁目11-6",
+            "phone_number": "0134-26-6030",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 43
+          }
+        ],
+        "toilets": [
+          {
+            "id": 1011,
+            "name": "花園グリーンロード公園トイレ①",
+            "address": "北海道小樽市花園３－１４",
+            "lat": 43.189556531451,
+            "lng": 141.00101051483,
+            "created_at": "2025-09-28T03:43:44.157228+00:00",
+            "updated_at": "2025-09-28T03:43:44.157228+00:00",
+            "distance": 292
+          }
+        ],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 6
+    },
+    {
+      "id": 29,
+      "name": "パラカ小樽市花園第２",
+      "lat": 43.193012,
+      "lng": 140.999076,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 100,
+          "minutes": 20
+        },
+        {
+          "type": "max",
+          "price": 700,
+          "minutes": 1440
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 27,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001643\",\"distance_m\":174}",
+      "nearest_hotspring": "{\"id\":\"HOT_000157\",\"distance_m\":534}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 8,
+      "nearest_toilet": {
+        "id": 1011,
+        "name": "花園グリーンロード公園トイレ①",
+        "distance_m": 415
+      },
+      "distance_to_event": 439,
+      "overnight_fee": 700,
+      "walking_minutes": 6,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001643",
+            "name": "ローソン小樽花園一丁目店",
+            "lat": 43.1917889,
+            "lng": 141.0004139,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市花園1丁目11-6",
+            "phone_number": "0134-26-6030",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 174
+          },
+          {
+            "id": "CVS_LS_001633",
+            "name": "ローソン小樽稲穂店",
+            "lat": 43.1956608,
+            "lng": 140.9985193,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市稲穂1丁目3-10",
+            "phone_number": "0134-32-5152",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 298
+          }
+        ],
+        "toilets": [],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 7
+    },
+    {
+      "id": 4,
+      "name": "ナビパーク小樽堺町第１",
+      "lat": 43.195046,
+      "lng": 141.004511,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30,
+          "time_range": "8:00～22:00"
+        },
+        {
+          "type": "base",
+          "price": 100,
+          "minutes": 60,
+          "time_range": "22:00～8:00"
+        },
+        {
+          "type": "max",
+          "price": 800,
+          "minutes": 1440,
+          "day_type": "月～金"
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 15,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001664\",\"distance_m\":135}",
+      "nearest_hotspring": "{\"id\":\"HOT_014429\",\"distance_m\":413}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 13,
+      "nearest_toilet": {
+        "id": 958,
+        "name": "運河公衆トイレ",
+        "distance_m": 200
+      },
+      "distance_to_event": 932,
+      "overnight_fee": 800,
+      "walking_minutes": 12,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001664",
+            "name": "ローソン 小樽堺町店",
+            "lat": 43.19546366,
+            "lng": 141.00294459,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市堺町２－８",
+            "phone_number": "0134-34-3770",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 135
+          }
+        ],
+        "toilets": [
+          {
+            "id": 958,
+            "name": "運河公衆トイレ",
+            "address": "北海道小樽市港町６（堺町１）",
+            "lat": 43.196836514167,
+            "lng": 141.00474447664,
+            "created_at": "2025-09-28T03:43:43.91086+00:00",
+            "updated_at": "2025-09-28T03:43:43.91086+00:00",
+            "distance": 200
+          }
+        ],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 8
+    },
+    {
+      "id": 15,
+      "name": "ユニカ小樽稲穂第２",
+      "lat": 43.195712,
+      "lng": 140.996587,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30
+        },
+        {
+          "type": "max",
+          "price": 1000,
+          "minutes": 1440
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 30,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001633\",\"distance_m\":157}",
+      "nearest_hotspring": "{\"id\":\"HOT_014473\",\"distance_m\":319}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 6,
+      "nearest_toilet": {
+        "id": 960,
+        "name": "運河周辺地区公衆トイレ②",
+        "distance_m": 582
+      },
+      "distance_to_event": 579,
+      "overnight_fee": 1000,
+      "walking_minutes": 8,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001633",
+            "name": "ローソン小樽稲穂店",
+            "lat": 43.1956608,
+            "lng": 140.9985193,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市稲穂1丁目3-10",
+            "phone_number": "0134-32-5152",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 157
+          },
+          {
+            "id": "CVS_LS_001641",
+            "name": "ローソン 小樽富岡一丁目店",
+            "lat": 43.19430531,
+            "lng": 140.99422574,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市富岡１丁目５－２５",
+            "phone_number": "0134-34-8680",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 247
+          }
+        ],
+        "toilets": [],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 9
+    },
+    {
+      "id": 6,
+      "name": "ザ・パーク小樽市山田町",
+      "lat": 43.194262,
+      "lng": 141.000487,
+      "original_fees": null,
+      "rates": [
+        {
+          "type": "base",
+          "price": 200,
+          "minutes": 30
+        },
+        {
+          "type": "max",
+          "price": 1000,
+          "minutes": 1440
+        },
+        {
+          "type": "max",
+          "price": 500,
+          "minutes": 840,
+          "time_range": "18:00～8:00"
+        }
+      ],
+      "address": null,
+      "prefecture": null,
+      "area_name": null,
+      "phone_number": null,
+      "operating_hours": null,
+      "total_spots": null,
+      "spot_type": null,
+      "height_limit": null,
+      "width_limit": null,
+      "length_limit": null,
+      "special_notes": null,
+      "created_at": "2025-09-27T14:49:27.390119+00:00",
+      "updated_at": "2025-09-27T14:49:27.390119+00:00",
+      "elevation": 17,
+      "nearest_convenience_store": "{\"id\":\"CVS_LS_001633\",\"distance_m\":223}",
+      "nearest_hotspring": "{\"id\":\"HOT_014429\",\"distance_m\":455}",
+      "hours": {
+        "hours": "24:00",
+        "is_24h": true,
+        "holidays": [
+          "無休"
+        ],
+        "schedules": [
+          {
+            "days": [
+              "毎日"
+            ],
+            "time": "24:00"
+          }
+        ],
+        "access_24h": true,
+        "closed_days": [],
+        "restrictions": [],
+        "operating_days": [
+          "毎日"
+        ],
+        "original_hours": "24時間営業, 定休日: 無休"
+      },
+      "type": "平面駐車場",
+      "capacity": 5,
+      "nearest_toilet": {
+        "id": 990,
+        "name": "水天宮公衆トイレ",
+        "distance_m": 384
+      },
+      "distance_to_event": 615,
+      "overnight_fee": 1000,
+      "walking_minutes": 8,
+      "facilities": {
+        "convenience_stores": [
+          {
+            "id": "CVS_LS_001633",
+            "name": "ローソン小樽稲穂店",
+            "lat": 43.1956608,
+            "lng": 140.9985193,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市稲穂1丁目3-10",
+            "phone_number": "0134-32-5152",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 223
+          },
+          {
+            "id": "CVS_LS_001664",
+            "name": "ローソン 小樽堺町店",
+            "lat": 43.19546366,
+            "lng": 141.00294459,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市堺町２－８",
+            "phone_number": "0134-34-3770",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 240
+          },
+          {
+            "id": "CVS_LS_001643",
+            "name": "ローソン小樽花園一丁目店",
+            "lat": 43.1917889,
+            "lng": 141.0004139,
+            "category": "convenience_stores",
+            "type": "コンビニエンスストア",
+            "sub_type": "ローソン",
+            "address": "北海道小樽市花園1丁目11-6",
+            "phone_number": "0134-26-6030",
+            "operating_hours": "24時間営業",
+            "prefecture": "北海道",
+            "area_name": "小樽市",
+            "created_at": "2025-08-15T12:50:44.3767+00:00",
+            "updated_at": "2025-08-15T12:50:44.3767+00:00",
+            "distance": 275
+          }
+        ],
+        "toilets": [],
+        "hot_springs": []
+      },
+      "restaurants": [],
+      "rank": 10
+    }
+  ],
+  "topRestaurants": [],
+  "generatedAt": "2025-10-08T22:28:49.761Z"
+}
