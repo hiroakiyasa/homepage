@@ -85,6 +85,50 @@
             min-height: 600px;
             margin: 0;
             border: none;
+            position: relative;
+        }
+
+        .elevation-legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 0.85em;
+        }
+
+        .elevation-legend h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .elevation-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .elevation-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .elevation-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .elevation-label {
+            color: #666;
+            font-size: 0.9em;
         }
 
         footer {
@@ -124,7 +168,41 @@
         </div>
 
         <div class="map-container">
-            <div id="map"></div>
+            <div id="map">
+                <div class="elevation-legend">
+                    <h4>標高</h4>
+                    <div class="elevation-scale">
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FF0000;"></div>
+                            <span class="elevation-label">1000m+</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FF8000;"></div>
+                            <span class="elevation-label">750m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FFFF00;"></div>
+                            <span class="elevation-label">500m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #80FF00;"></div>
+                            <span class="elevation-label">250m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #00FFFF;"></div>
+                            <span class="elevation-label">100m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #0080FF;"></div>
+                            <span class="elevation-label">50m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #0000FF;"></div>
+                            <span class="elevation-label">0m</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -142,6 +220,7 @@
                 "lng": 127.6975647389371,
                 "restaurantCount": 8,
                 "fileName": "おもろまち駅",
+                "elevation": 15,
                 "url": "regions/おもろまち駅.html"
         },
         {
@@ -150,6 +229,7 @@
                 "lng": 141.35237670104846,
                 "restaurantCount": 50,
                 "fileName": "すすきの",
+                "elevation": 40,
                 "url": "regions/すすきの.html"
         },
         {
@@ -158,6 +238,7 @@
                 "lng": 139.63202547027296,
                 "restaurantCount": 33,
                 "fileName": "みなとみらい",
+                "elevation": 7,
                 "url": "regions/みなとみらい.html"
         },
         {
@@ -166,6 +247,7 @@
                 "lng": 136.7942141800322,
                 "restaurantCount": 20,
                 "fileName": "一宮",
+                "elevation": 9,
                 "url": "regions/一宮.html"
         },
         {
@@ -174,6 +256,7 @@
                 "lng": 135.19190406075637,
                 "restaurantCount": 305,
                 "fileName": "三宮",
+                "elevation": 21,
                 "url": "regions/三宮.html"
         },
         {
@@ -182,6 +265,7 @@
                 "lng": 138.9155028194928,
                 "restaurantCount": 29,
                 "fileName": "三島",
+                "elevation": 23,
                 "url": "regions/三島.html"
         },
         {
@@ -190,6 +274,7 @@
                 "lng": 139.59509235129147,
                 "restaurantCount": 12,
                 "fileName": "上大岡",
+                "elevation": 14,
                 "url": "regions/上大岡.html"
         },
         {
@@ -198,6 +283,7 @@
                 "lng": 138.23414599947193,
                 "restaurantCount": 16,
                 "fileName": "上田",
+                "elevation": 442,
                 "url": "regions/上田.html"
         },
         {
@@ -206,6 +292,7 @@
                 "lng": 138.22710497888374,
                 "restaurantCount": 10,
                 "fileName": "上越",
+                "elevation": 22,
                 "url": "regions/上越.html"
         },
         {
@@ -214,6 +301,7 @@
                 "lng": 139.7774076189482,
                 "restaurantCount": 30,
                 "fileName": "上野",
+                "elevation": 14,
                 "url": "regions/上野.html"
         },
         {
@@ -222,6 +310,7 @@
                 "lng": 139.66796490001437,
                 "restaurantCount": 63,
                 "fileName": "下北沢",
+                "elevation": 45,
                 "url": "regions/下北沢.html"
         },
         {
@@ -230,6 +319,7 @@
                 "lng": 138.9459708191044,
                 "restaurantCount": 10,
                 "fileName": "下田",
+                "elevation": 4,
                 "url": "regions/下田.html"
         },
         {
@@ -238,6 +328,7 @@
                 "lng": 131.1857420482234,
                 "restaurantCount": 5,
                 "fileName": "中津",
+                "elevation": 14,
                 "url": "regions/中津.html"
         },
         {
@@ -246,6 +337,7 @@
                 "lng": 137.4997702777027,
                 "restaurantCount": 11,
                 "fileName": "中津川",
+                "elevation": 363,
                 "url": "regions/中津川.html"
         },
         {
@@ -254,6 +346,7 @@
                 "lng": 130.40638624455372,
                 "restaurantCount": 86,
                 "fileName": "中洲",
+                "elevation": 14,
                 "url": "regions/中洲.html"
         },
         {
@@ -262,6 +355,7 @@
                 "lng": 139.6969370463194,
                 "restaurantCount": 148,
                 "fileName": "中目黒",
+                "elevation": 17,
                 "url": "regions/中目黒.html"
         },
         {
@@ -270,6 +364,7 @@
                 "lng": 139.76586970061308,
                 "restaurantCount": 200,
                 "fileName": "丸の内",
+                "elevation": 14,
                 "url": "regions/丸の内.html"
         },
         {
@@ -278,6 +373,7 @@
                 "lng": 130.52819253559932,
                 "restaurantCount": 37,
                 "fileName": "久留米",
+                "elevation": 11,
                 "url": "regions/久留米.html"
         },
         {
@@ -286,6 +382,7 @@
                 "lng": 126.7663233980042,
                 "restaurantCount": 3,
                 "fileName": "久米島",
+                "elevation": 32,
                 "url": "regions/久米島.html"
         },
         {
@@ -294,6 +391,7 @@
                 "lng": 136.4517504523192,
                 "restaurantCount": 4,
                 "fileName": "亀山",
+                "elevation": 75,
                 "url": "regions/亀山.html"
         },
         {
@@ -302,6 +400,7 @@
                 "lng": 135.575155829545,
                 "restaurantCount": 2,
                 "fileName": "亀岡",
+                "elevation": 89,
                 "url": "regions/亀岡.html"
         },
         {
@@ -310,6 +409,7 @@
                 "lng": 139.72443426889248,
                 "restaurantCount": 81,
                 "fileName": "五反田",
+                "elevation": 15,
                 "url": "regions/五反田.html"
         },
         {
@@ -318,6 +418,7 @@
                 "lng": 140.75155819753812,
                 "restaurantCount": 9,
                 "fileName": "五稜郭",
+                "elevation": 20,
                 "url": "regions/五稜郭.html"
         },
         {
@@ -326,6 +427,7 @@
                 "lng": 135.53252233639085,
                 "restaurantCount": 71,
                 "fileName": "京橋",
+                "elevation": 14,
                 "url": "regions/京橋.html"
         },
         {
@@ -334,6 +436,7 @@
                 "lng": 135.72847987748682,
                 "restaurantCount": 1,
                 "fileName": "京田辺",
+                "elevation": 72,
                 "url": "regions/京田辺.html"
         },
         {
@@ -342,6 +445,7 @@
                 "lng": 130.7483921601528,
                 "restaurantCount": 6,
                 "fileName": "人吉",
+                "elevation": 113,
                 "url": "regions/人吉.html"
         },
         {
@@ -350,6 +454,7 @@
                 "lng": 136.93853180055277,
                 "restaurantCount": 89,
                 "fileName": "今池",
+                "elevation": 21,
                 "url": "regions/今池.html"
         },
         {
@@ -358,6 +463,7 @@
                 "lng": 139.70288459587076,
                 "restaurantCount": 59,
                 "fileName": "代官山",
+                "elevation": 37,
                 "url": "regions/代官山.html"
         },
         {
@@ -366,6 +472,7 @@
                 "lng": 129.88177355348884,
                 "restaurantCount": 6,
                 "fileName": "伊万里",
+                "elevation": 8,
                 "url": "regions/伊万里.html"
         },
         {
@@ -374,6 +481,7 @@
                 "lng": 135.4132883651349,
                 "restaurantCount": 16,
                 "fileName": "伊丹",
+                "elevation": 21,
                 "url": "regions/伊丹.html"
         },
         {
@@ -382,6 +490,7 @@
                 "lng": 136.710240935226,
                 "restaurantCount": 47,
                 "fileName": "伊勢",
+                "elevation": 3,
                 "url": "regions/伊勢.html"
         },
         {
@@ -390,6 +499,7 @@
                 "lng": 139.0987850110241,
                 "restaurantCount": 40,
                 "fileName": "伊東",
+                "elevation": 178,
                 "url": "regions/伊東.html"
         },
         {
@@ -398,6 +508,7 @@
                 "lng": 136.1320583823447,
                 "restaurantCount": 9,
                 "fileName": "伊賀",
+                "elevation": 134,
                 "url": "regions/伊賀.html"
         },
         {
@@ -406,6 +517,7 @@
                 "lng": 136.8976002837386,
                 "restaurantCount": 120,
                 "fileName": "伏見",
+                "elevation": 20,
                 "url": "regions/伏見.html"
         },
         {
@@ -414,6 +526,7 @@
                 "lng": 135.25909292078163,
                 "restaurantCount": 27,
                 "fileName": "住吉",
+                "elevation": 25,
                 "url": "regions/住吉.html"
         },
         {
@@ -422,6 +535,7 @@
                 "lng": 129.7393180156691,
                 "restaurantCount": 25,
                 "fileName": "佐世保",
+                "elevation": 26,
                 "url": "regions/佐世保.html"
         },
         {
@@ -430,6 +544,7 @@
                 "lng": 138.42325106134018,
                 "restaurantCount": 7,
                 "fileName": "佐久",
+                "elevation": 631,
                 "url": "regions/佐久.html"
         },
         {
@@ -438,6 +553,7 @@
                 "lng": 131.91739120564753,
                 "restaurantCount": 4,
                 "fileName": "佐伯",
+                "elevation": 75,
                 "url": "regions/佐伯.html"
         },
         {
@@ -446,6 +562,7 @@
                 "lng": 138.38427795263652,
                 "restaurantCount": 4,
                 "fileName": "佐渡",
+                "elevation": 12,
                 "url": "regions/佐渡.html"
         },
         {
@@ -454,6 +571,7 @@
                 "lng": 130.29566063880327,
                 "restaurantCount": 31,
                 "fileName": "佐賀市",
+                "elevation": 3,
                 "url": "regions/佐賀市.html"
         },
         {
@@ -462,6 +580,7 @@
                 "lng": 130.29948019042212,
                 "restaurantCount": 8,
                 "fileName": "佐賀駅",
+                "elevation": 10,
                 "url": "regions/佐賀駅.html"
         },
         {
@@ -470,6 +589,7 @@
                 "lng": 139.64738166357276,
                 "restaurantCount": 88,
                 "fileName": "元町・中華街",
+                "elevation": 8,
                 "url": "regions/元町・中華街.html"
         },
         {
@@ -478,6 +598,7 @@
                 "lng": 137.20161280991815,
                 "restaurantCount": 570,
                 "fileName": "全国のお店",
+                "elevation": 244,
                 "url": "regions/全国のお店.html"
         },
         {
@@ -486,6 +607,7 @@
                 "lng": 130.60036235751687,
                 "restaurantCount": 2,
                 "fileName": "八代",
+                "elevation": 2,
                 "url": "regions/八代.html"
         },
         {
@@ -494,6 +616,7 @@
                 "lng": 139.33862225961855,
                 "restaurantCount": 23,
                 "fileName": "八王子",
+                "elevation": 133,
                 "url": "regions/八王子.html"
         },
         {
@@ -502,6 +625,7 @@
                 "lng": 139.7312019239331,
                 "restaurantCount": 321,
                 "fileName": "六本木",
+                "elevation": 39,
                 "url": "regions/六本木.html"
         },
         {
@@ -510,6 +634,7 @@
                 "lng": 135.2389203135362,
                 "restaurantCount": 39,
                 "fileName": "六甲道",
+                "elevation": 23,
                 "url": "regions/六甲道.html"
         },
         {
@@ -518,6 +643,7 @@
                 "lng": 140.74068616027927,
                 "restaurantCount": 30,
                 "fileName": "函館",
+                "elevation": 4,
                 "url": "regions/函館.html"
         },
         {
@@ -526,6 +652,7 @@
                 "lng": 137.00795009112292,
                 "restaurantCount": 1,
                 "fileName": "刈谷",
+                "elevation": 16,
                 "url": "regions/刈谷.html"
         },
         {
@@ -534,6 +661,7 @@
                 "lng": 131.49206741982886,
                 "restaurantCount": 45,
                 "fileName": "別府",
+                "elevation": 47,
                 "url": "regions/別府.html"
         },
         {
@@ -542,6 +670,7 @@
                 "lng": 134.85283847289753,
                 "restaurantCount": 10,
                 "fileName": "加古川",
+                "elevation": 7,
                 "url": "regions/加古川.html"
         },
         {
@@ -550,6 +679,7 @@
                 "lng": 130.8526869819869,
                 "restaurantCount": 127,
                 "fileName": "北九州",
+                "elevation": 30,
                 "url": "regions/北九州.html"
         },
         {
@@ -558,6 +688,7 @@
                 "lng": 139.80300790530802,
                 "restaurantCount": 60,
                 "fileName": "北千住",
+                "elevation": 9,
                 "url": "regions/北千住.html"
         },
         {
@@ -566,6 +697,7 @@
                 "lng": 135.49775861000424,
                 "restaurantCount": 119,
                 "fileName": "北新地",
+                "elevation": 14,
                 "url": "regions/北新地.html"
         },
         {
@@ -574,6 +706,7 @@
                 "lng": 138.67244807646446,
                 "restaurantCount": 5,
                 "fileName": "十日町",
+                "elevation": 349,
                 "url": "regions/十日町.html"
         },
         {
@@ -582,6 +715,7 @@
                 "lng": 141.67411031047783,
                 "restaurantCount": 20,
                 "fileName": "千歳",
+                "elevation": 21,
                 "url": "regions/千歳.html"
         },
         {
@@ -590,6 +724,7 @@
                 "lng": 136.92433137921464,
                 "restaurantCount": 11,
                 "fileName": "半田",
+                "elevation": 13,
                 "url": "regions/半田.html"
         },
         {
@@ -598,6 +733,7 @@
                 "lng": 135.94746358513038,
                 "restaurantCount": 10,
                 "fileName": "南草津",
+                "elevation": 99,
                 "url": "regions/南草津.html"
         },
         {
@@ -606,6 +742,7 @@
                 "lng": 139.70685054942277,
                 "restaurantCount": 54,
                 "fileName": "原宿",
+                "elevation": 30,
                 "url": "regions/原宿.html"
         },
         {
@@ -614,6 +751,7 @@
                 "lng": 137.0347692601797,
                 "restaurantCount": 6,
                 "fileName": "可児",
+                "elevation": 77,
                 "url": "regions/可児.html"
         },
         {
@@ -622,6 +760,7 @@
                 "lng": 136.87292216503826,
                 "restaurantCount": 14,
                 "fileName": "各務原",
+                "elevation": 44,
                 "url": "regions/各務原.html"
         },
         {
@@ -630,6 +769,7 @@
                 "lng": 139.57870290368948,
                 "restaurantCount": 95,
                 "fileName": "吉祥寺",
+                "elevation": 69,
                 "url": "regions/吉祥寺.html"
         },
         {
@@ -638,6 +778,7 @@
                 "lng": 135.8583425227163,
                 "restaurantCount": 2,
                 "fileName": "吉野",
+                "elevation": 323,
                 "url": "regions/吉野.html"
         },
         {
@@ -646,6 +787,7 @@
                 "lng": 136.9132454180135,
                 "restaurantCount": 1200,
                 "fileName": "名古屋",
+                "elevation": 14,
                 "url": "regions/名古屋.html"
         },
         {
@@ -654,6 +796,7 @@
                 "lng": 136.88424976212002,
                 "restaurantCount": 193,
                 "fileName": "名古屋駅",
+                "elevation": 28,
                 "url": "regions/名古屋駅.html"
         },
         {
@@ -662,6 +805,7 @@
                 "lng": 136.09774942731065,
                 "restaurantCount": 4,
                 "fileName": "名張",
+                "elevation": 314,
                 "url": "regions/名張.html"
         },
         {
@@ -670,6 +814,7 @@
                 "lng": 127.96921081644363,
                 "restaurantCount": 21,
                 "fileName": "名護",
+                "elevation": 0,
                 "url": "regions/名護.html"
         },
         {
@@ -678,6 +823,7 @@
                 "lng": 132.56547651809646,
                 "restaurantCount": 9,
                 "fileName": "呉",
+                "elevation": 10,
                 "url": "regions/呉.html"
         },
         {
@@ -686,6 +832,7 @@
                 "lng": 135.18197612943297,
                 "restaurantCount": 69,
                 "fileName": "和歌山市",
+                "elevation": 4,
                 "url": "regions/和歌山市.html"
         },
         {
@@ -694,6 +841,7 @@
                 "lng": 135.170073833114,
                 "restaurantCount": 11,
                 "fileName": "和歌山市駅",
+                "elevation": 6,
                 "url": "regions/和歌山市駅.html"
         },
         {
@@ -702,6 +850,7 @@
                 "lng": 135.18798991890057,
                 "restaurantCount": 26,
                 "fileName": "和歌山駅",
+                "elevation": 6,
                 "url": "regions/和歌山駅.html"
         },
         {
@@ -710,6 +859,7 @@
                 "lng": 139.73922863813624,
                 "restaurantCount": 32,
                 "fileName": "品川",
+                "elevation": 12,
                 "url": "regions/品川.html"
         },
         {
@@ -718,6 +868,7 @@
                 "lng": 129.96063225327558,
                 "restaurantCount": 29,
                 "fileName": "唐津",
+                "elevation": 4,
                 "url": "regions/唐津.html"
         },
         {
@@ -726,6 +877,7 @@
                 "lng": 135.05362442169618,
                 "restaurantCount": 2,
                 "fileName": "垂水",
+                "elevation": 7,
                 "url": "regions/垂水.html"
         },
         {
@@ -734,6 +886,7 @@
                 "lng": 135.48604819474485,
                 "restaurantCount": 98,
                 "fileName": "堺",
+                "elevation": 18,
                 "url": "regions/堺.html"
         },
         {
@@ -742,6 +895,7 @@
                 "lng": 135.41556533201623,
                 "restaurantCount": 15,
                 "fileName": "塚口",
+                "elevation": 7,
                 "url": "regions/塚口.html"
         },
         {
@@ -750,6 +904,7 @@
                 "lng": 137.97977923875,
                 "restaurantCount": 2,
                 "fileName": "塩尻",
+                "elevation": 753,
                 "url": "regions/塩尻.html"
         },
         {
@@ -758,6 +913,7 @@
                 "lng": 137.12042813093018,
                 "restaurantCount": 22,
                 "fileName": "多治見",
+                "elevation": 98,
                 "url": "regions/多治見.html"
         },
         {
@@ -766,6 +922,7 @@
                 "lng": 131.62051373799127,
                 "restaurantCount": 34,
                 "fileName": "大分市",
+                "elevation": 7,
                 "url": "regions/大分市.html"
         },
         {
@@ -774,6 +931,7 @@
                 "lng": 131.6062053191922,
                 "restaurantCount": 18,
                 "fileName": "大分駅",
+                "elevation": 15,
                 "url": "regions/大分駅.html"
         },
         {
@@ -782,6 +940,7 @@
                 "lng": 130.39344912774706,
                 "restaurantCount": 57,
                 "fileName": "大名",
+                "elevation": 11,
                 "url": "regions/大名.html"
         },
         {
@@ -790,6 +949,7 @@
                 "lng": 136.62028500104083,
                 "restaurantCount": 18,
                 "fileName": "大垣",
+                "elevation": 8,
                 "url": "regions/大垣.html"
         },
         {
@@ -798,6 +958,7 @@
                 "lng": 136.93451356549883,
                 "restaurantCount": 11,
                 "fileName": "大曽根",
+                "elevation": 11,
                 "url": "regions/大曽根.html"
         },
         {
@@ -806,6 +967,7 @@
                 "lng": 129.9660017121785,
                 "restaurantCount": 4,
                 "fileName": "大村",
+                "elevation": 29,
                 "url": "regions/大村.html"
         },
         {
@@ -814,6 +976,7 @@
                 "lng": 135.8918535235363,
                 "restaurantCount": 69,
                 "fileName": "大津",
+                "elevation": 81,
                 "url": "regions/大津.html"
         },
         {
@@ -822,6 +985,7 @@
                 "lng": 135.86510949711234,
                 "restaurantCount": 11,
                 "fileName": "大津駅",
+                "elevation": 98,
                 "url": "regions/大津駅.html"
         },
         {
@@ -830,6 +994,7 @@
                 "lng": 130.4670251301006,
                 "restaurantCount": 3,
                 "fileName": "大牟田",
+                "elevation": 14,
                 "url": "regions/大牟田.html"
         },
         {
@@ -838,6 +1003,7 @@
                 "lng": 139.5328888590645,
                 "restaurantCount": 23,
                 "fileName": "大船",
+                "elevation": 16,
                 "url": "regions/大船.html"
         },
         {
@@ -846,6 +1012,7 @@
                 "lng": 136.90352228357733,
                 "restaurantCount": 42,
                 "fileName": "大須",
+                "elevation": 15,
                 "url": "regions/大須.html"
         },
         {
@@ -854,6 +1021,7 @@
                 "lng": 130.5545196362716,
                 "restaurantCount": 72,
                 "fileName": "天文館",
+                "elevation": 16,
                 "url": "regions/天文館.html"
         },
         {
@@ -862,6 +1030,7 @@
                 "lng": 135.51092257103696,
                 "restaurantCount": 281,
                 "fileName": "天満",
+                "elevation": 13,
                 "url": "regions/天満.html"
         },
         {
@@ -870,6 +1039,7 @@
                 "lng": 135.8330860762987,
                 "restaurantCount": 5,
                 "fileName": "天理",
+                "elevation": 67,
                 "url": "regions/天理.html"
         },
         {
@@ -878,6 +1048,7 @@
                 "lng": 130.40420487036235,
                 "restaurantCount": 236,
                 "fileName": "天神",
+                "elevation": 12,
                 "url": "regions/天神.html"
         },
         {
@@ -886,6 +1057,7 @@
                 "lng": 130.15576211725465,
                 "restaurantCount": 15,
                 "fileName": "天草",
+                "elevation": 264,
                 "url": "regions/天草.html"
         },
         {
@@ -894,6 +1066,7 @@
                 "lng": 139.3804492462365,
                 "restaurantCount": 4,
                 "fileName": "太田",
+                "elevation": 45,
                 "url": "regions/太田.html"
         },
         {
@@ -902,6 +1075,7 @@
                 "lng": 139.37867673363007,
                 "restaurantCount": 4,
                 "fileName": "太田駅",
+                "elevation": 49,
                 "url": "regions/太田駅.html"
         },
         {
@@ -910,6 +1084,7 @@
                 "lng": 135.8130068591306,
                 "restaurantCount": 162,
                 "fileName": "奈良市",
+                "elevation": 72,
                 "url": "regions/奈良市.html"
         },
         {
@@ -918,6 +1093,7 @@
                 "lng": 135.8215778816693,
                 "restaurantCount": 27,
                 "fileName": "奈良駅",
+                "elevation": 72,
                 "url": "regions/奈良駅.html"
         },
         {
@@ -926,6 +1102,7 @@
                 "lng": 134.69121900042342,
                 "restaurantCount": 33,
                 "fileName": "姫路",
+                "elevation": 16,
                 "url": "regions/姫路.html"
         },
         {
@@ -934,6 +1111,7 @@
                 "lng": 130.64814489975953,
                 "restaurantCount": 2,
                 "fileName": "姶良",
+                "elevation": 11,
                 "url": "regions/姶良.html"
         },
         {
@@ -942,6 +1120,7 @@
                 "lng": 129.98352369895437,
                 "restaurantCount": 6,
                 "fileName": "嬉野",
+                "elevation": 78,
                 "url": "regions/嬉野.html"
         },
         {
@@ -950,6 +1129,7 @@
                 "lng": 135.80814970087505,
                 "restaurantCount": 16,
                 "fileName": "宇治",
+                "elevation": 16,
                 "url": "regions/宇治.html"
         },
         {
@@ -958,6 +1138,7 @@
                 "lng": 135.9910543203392,
                 "restaurantCount": 14,
                 "fileName": "守山",
+                "elevation": 97,
                 "url": "regions/守山.html"
         },
         {
@@ -966,6 +1147,7 @@
                 "lng": 137.0683488660568,
                 "restaurantCount": 10,
                 "fileName": "安城",
+                "elevation": 18,
                 "url": "regions/安城.html"
         },
         {
@@ -974,6 +1156,7 @@
                 "lng": 137.8563488192788,
                 "restaurantCount": 8,
                 "fileName": "安曇野",
+                "elevation": 554,
                 "url": "regions/安曇野.html"
         },
         {
@@ -982,6 +1165,7 @@
                 "lng": 130.532120386132,
                 "restaurantCount": 7,
                 "fileName": "宗像",
+                "elevation": 37,
                 "url": "regions/宗像.html"
         },
         {
@@ -990,6 +1174,7 @@
                 "lng": 135.35927230507156,
                 "restaurantCount": 13,
                 "fileName": "宝塚",
+                "elevation": 30,
                 "url": "regions/宝塚.html"
         },
         {
@@ -998,6 +1183,7 @@
                 "lng": 125.27704997508944,
                 "restaurantCount": 43,
                 "fileName": "宮古島",
+                "elevation": 37,
                 "url": "regions/宮古島.html"
         },
         {
@@ -1006,6 +1192,7 @@
                 "lng": 131.425170476013,
                 "restaurantCount": 152,
                 "fileName": "宮崎市",
+                "elevation": 7,
                 "url": "regions/宮崎市.html"
         },
         {
@@ -1014,6 +1201,7 @@
                 "lng": 131.42569019442442,
                 "restaurantCount": 24,
                 "fileName": "宮崎駅",
+                "elevation": 14,
                 "url": "regions/宮崎駅.html"
         },
         {
@@ -1022,6 +1210,7 @@
                 "lng": 138.6283840773193,
                 "restaurantCount": 9,
                 "fileName": "富士",
+                "elevation": 195,
                 "url": "regions/富士.html"
         },
         {
@@ -1030,6 +1219,7 @@
                 "lng": 138.80275348989662,
                 "restaurantCount": 10,
                 "fileName": "富士吉田",
+                "elevation": 802,
                 "url": "regions/富士吉田.html"
         },
         {
@@ -1038,6 +1228,7 @@
                 "lng": 138.59316525612053,
                 "restaurantCount": 5,
                 "fileName": "富士宮",
+                "elevation": 395,
                 "url": "regions/富士宮.html"
         },
         {
@@ -1046,6 +1237,7 @@
                 "lng": 137.21698502211026,
                 "restaurantCount": 103,
                 "fileName": "富山市",
+                "elevation": 9,
                 "url": "regions/富山市.html"
         },
         {
@@ -1054,6 +1246,7 @@
                 "lng": 142.3953884630875,
                 "restaurantCount": 10,
                 "fileName": "富良野",
+                "elevation": 171,
                 "url": "regions/富良野.html"
         },
         {
@@ -1062,6 +1255,7 @@
                 "lng": 130.8821414199422,
                 "restaurantCount": 81,
                 "fileName": "小倉",
+                "elevation": 4,
                 "url": "regions/小倉.html"
         },
         {
@@ -1070,6 +1264,7 @@
                 "lng": 136.46531695272333,
                 "restaurantCount": 11,
                 "fileName": "小松",
+                "elevation": 4,
                 "url": "regions/小松.html"
         },
         {
@@ -1078,6 +1273,7 @@
                 "lng": 141.00210999919332,
                 "restaurantCount": 30,
                 "fileName": "小樽",
+                "elevation": 30,
                 "url": "regions/小樽.html"
         },
         {
@@ -1086,6 +1282,7 @@
                 "lng": 138.3730087693524,
                 "restaurantCount": 40,
                 "fileName": "小淵沢",
+                "elevation": 798,
                 "url": "regions/小淵沢.html"
         },
         {
@@ -1094,6 +1291,7 @@
                 "lng": 136.92453430461987,
                 "restaurantCount": 7,
                 "fileName": "小牧",
+                "elevation": 22,
                 "url": "regions/小牧.html"
         },
         {
@@ -1102,6 +1300,7 @@
                 "lng": 139.15808447443618,
                 "restaurantCount": 47,
                 "fileName": "小田原",
+                "elevation": 21,
                 "url": "regions/小田原.html"
         },
         {
@@ -1110,6 +1309,7 @@
                 "lng": 135.40829026404754,
                 "restaurantCount": 71,
                 "fileName": "尼崎",
+                "elevation": 3,
                 "url": "regions/尼崎.html"
         },
         {
@@ -1118,6 +1318,7 @@
                 "lng": 138.8777498528156,
                 "restaurantCount": 9,
                 "fileName": "山中湖",
+                "elevation": 1116,
                 "url": "regions/山中湖.html"
         },
         {
@@ -1126,6 +1327,7 @@
                 "lng": 135.81257582894034,
                 "restaurantCount": 4,
                 "fileName": "山科",
+                "elevation": 48,
                 "url": "regions/山科.html"
         },
         {
@@ -1134,6 +1336,7 @@
                 "lng": 130.7035972696485,
                 "restaurantCount": 4,
                 "fileName": "山鹿",
+                "elevation": 146,
                 "url": "regions/山鹿.html"
         },
         {
@@ -1142,6 +1345,7 @@
                 "lng": 136.76032606399465,
                 "restaurantCount": 111,
                 "fileName": "岐阜市",
+                "elevation": 22,
                 "url": "regions/岐阜市.html"
         },
         {
@@ -1150,6 +1354,7 @@
                 "lng": 137.16705669636997,
                 "restaurantCount": 36,
                 "fileName": "岡崎",
+                "elevation": 48,
                 "url": "regions/岡崎.html"
         },
         {
@@ -1158,6 +1363,7 @@
                 "lng": 130.36384967061718,
                 "restaurantCount": 5,
                 "fileName": "島原",
+                "elevation": 22,
                 "url": "regions/島原.html"
         },
         {
@@ -1166,6 +1372,7 @@
                 "lng": 135.67826241317493,
                 "restaurantCount": 31,
                 "fileName": "嵐山",
+                "elevation": 32,
                 "url": "regions/嵐山.html"
         },
         {
@@ -1174,6 +1381,7 @@
                 "lng": 139.69958841776625,
                 "restaurantCount": 43,
                 "fileName": "川崎",
+                "elevation": 16,
                 "url": "regions/川崎.html"
         },
         {
@@ -1182,6 +1390,7 @@
                 "lng": 135.41443355307075,
                 "restaurantCount": 7,
                 "fileName": "川西",
+                "elevation": 77,
                 "url": "regions/川西.html"
         },
         {
@@ -1190,6 +1399,7 @@
                 "lng": 139.34842883681256,
                 "restaurantCount": 13,
                 "fileName": "平塚",
+                "elevation": 17,
                 "url": "regions/平塚.html"
         },
         {
@@ -1198,6 +1408,7 @@
                 "lng": 132.4606379823218,
                 "restaurantCount": 127,
                 "fileName": "広島市",
+                "elevation": 18,
                 "url": "regions/広島市.html"
         },
         {
@@ -1206,6 +1417,7 @@
                 "lng": 132.4743793740701,
                 "restaurantCount": 21,
                 "fileName": "広島駅",
+                "elevation": 13,
                 "url": "regions/広島駅.html"
         },
         {
@@ -1214,6 +1426,7 @@
                 "lng": 131.67096329297146,
                 "restaurantCount": 11,
                 "fileName": "延岡",
+                "elevation": 7,
                 "url": "regions/延岡.html"
         },
         {
@@ -1222,6 +1435,7 @@
                 "lng": 136.2488582695491,
                 "restaurantCount": 25,
                 "fileName": "彦根",
+                "elevation": 91,
                 "url": "regions/彦根.html"
         },
         {
@@ -1230,6 +1444,7 @@
                 "lng": 135.15487596846594,
                 "restaurantCount": 2,
                 "fileName": "御坊",
+                "elevation": 8,
                 "url": "regions/御坊.html"
         },
         {
@@ -1238,6 +1453,7 @@
                 "lng": 138.94594354305963,
                 "restaurantCount": 18,
                 "fileName": "御殿場",
+                "elevation": 452,
                 "url": "regions/御殿場.html"
         },
         {
@@ -1246,6 +1462,7 @@
                 "lng": 139.763651418665,
                 "restaurantCount": 223,
                 "fileName": "御茶ノ水",
+                "elevation": 20,
                 "url": "regions/御茶ノ水.html"
         },
         {
@@ -1254,6 +1471,7 @@
                 "lng": 127.85548234717493,
                 "restaurantCount": 16,
                 "fileName": "恩納村",
+                "elevation": 39,
                 "url": "regions/恩納村.html"
         },
         {
@@ -1262,6 +1480,7 @@
                 "lng": 139.7113710714387,
                 "restaurantCount": 257,
                 "fileName": "恵比寿",
+                "elevation": 35,
                 "url": "regions/恵比寿.html"
         },
         {
@@ -1270,6 +1489,7 @@
                 "lng": 137.4103740639595,
                 "restaurantCount": 3,
                 "fileName": "恵那",
+                "elevation": 549,
                 "url": "regions/恵那.html"
         },
         {
@@ -1278,6 +1498,7 @@
                 "lng": 130.62532861991596,
                 "restaurantCount": 4,
                 "fileName": "指宿",
+                "elevation": 8,
                 "url": "regions/指宿.html"
         },
         {
@@ -1286,6 +1507,7 @@
                 "lng": 138.0180070244786,
                 "restaurantCount": 9,
                 "fileName": "掛川",
+                "elevation": 27,
                 "url": "regions/掛川.html"
         },
         {
@@ -1294,6 +1516,7 @@
                 "lng": 135.98701276614577,
                 "restaurantCount": 3,
                 "fileName": "新宮",
+                "elevation": 7,
                 "url": "regions/新宮.html"
         },
         {
@@ -1302,6 +1525,7 @@
                 "lng": 139.70054288529818,
                 "restaurantCount": 313,
                 "fileName": "新宿",
+                "elevation": 55,
                 "url": "regions/新宿.html"
         },
         {
@@ -1310,6 +1534,7 @@
                 "lng": 141.47151802301332,
                 "restaurantCount": 3,
                 "fileName": "新札幌",
+                "elevation": 28,
                 "url": "regions/新札幌.html"
         },
         {
@@ -1318,6 +1543,7 @@
                 "lng": 136.91781161360282,
                 "restaurantCount": 163,
                 "fileName": "新栄",
+                "elevation": 18,
                 "url": "regions/新栄.html"
         },
         {
@@ -1326,6 +1552,7 @@
                 "lng": 139.61572315495178,
                 "restaurantCount": 8,
                 "fileName": "新横浜",
+                "elevation": 29,
                 "url": "regions/新横浜.html"
         },
         {
@@ -1334,6 +1561,7 @@
                 "lng": 139.75787213759182,
                 "restaurantCount": 227,
                 "fileName": "新橋",
+                "elevation": 17,
                 "url": "regions/新橋.html"
         },
         {
@@ -1342,6 +1570,7 @@
                 "lng": 139.0424467876609,
                 "restaurantCount": 141,
                 "fileName": "新潟市",
+                "elevation": -2,
                 "url": "regions/新潟市.html"
         },
         {
@@ -1350,6 +1579,7 @@
                 "lng": 139.31673694602728,
                 "restaurantCount": 5,
                 "fileName": "新発田",
+                "elevation": 22,
                 "url": "regions/新発田.html"
         },
         {
@@ -1358,6 +1588,7 @@
                 "lng": 131.62471086814895,
                 "restaurantCount": 1,
                 "fileName": "日向",
+                "elevation": 9,
                 "url": "regions/日向.html"
         },
         {
@@ -1366,6 +1597,7 @@
                 "lng": 139.77337099864263,
                 "restaurantCount": 171,
                 "fileName": "日本橋",
+                "elevation": 23,
                 "url": "regions/日本橋.html"
         },
         {
@@ -1374,6 +1606,7 @@
                 "lng": 130.93634693217186,
                 "restaurantCount": 6,
                 "fileName": "日田",
+                "elevation": 87,
                 "url": "regions/日田.html"
         },
         {
@@ -1382,6 +1615,7 @@
                 "lng": 142.36765584182203,
                 "restaurantCount": 27,
                 "fileName": "旭川",
+                "elevation": 112,
                 "url": "regions/旭川.html"
         },
         {
@@ -1390,6 +1624,7 @@
                 "lng": 134.9814722088913,
                 "restaurantCount": 45,
                 "fileName": "明石",
+                "elevation": 2,
                 "url": "regions/明石.html"
         },
         {
@@ -1398,6 +1633,7 @@
                 "lng": 130.4069176951062,
                 "restaurantCount": 63,
                 "fileName": "春吉",
+                "elevation": 4,
                 "url": "regions/春吉.html"
         },
         {
@@ -1406,6 +1642,7 @@
                 "lng": 136.9696397768821,
                 "restaurantCount": 25,
                 "fileName": "春日井",
+                "elevation": 23,
                 "url": "regions/春日井.html"
         },
         {
@@ -1414,6 +1651,7 @@
                 "lng": 139.76107077514885,
                 "restaurantCount": 81,
                 "fileName": "有楽町",
+                "elevation": 19,
                 "url": "regions/有楽町.html"
         },
         {
@@ -1422,6 +1660,7 @@
                 "lng": 139.3657329973658,
                 "restaurantCount": 13,
                 "fileName": "本厚木",
+                "elevation": 32,
                 "url": "regions/本厚木.html"
         },
         {
@@ -1430,6 +1669,7 @@
                 "lng": 141.34765217354294,
                 "restaurantCount": 60,
                 "fileName": "札幌",
+                "elevation": 29,
                 "url": "regions/札幌.html"
         },
         {
@@ -1438,6 +1678,7 @@
                 "lng": 141.35141505853105,
                 "restaurantCount": 60,
                 "fileName": "札幌駅",
+                "elevation": 20,
                 "url": "regions/札幌駅.html"
         },
         {
@@ -1446,6 +1687,7 @@
                 "lng": 139.76764578077783,
                 "restaurantCount": 348,
                 "fileName": "東京駅",
+                "elevation": 18,
                 "url": "regions/東京駅.html"
         },
         {
@@ -1454,6 +1696,7 @@
                 "lng": 137.96872837103447,
                 "restaurantCount": 49,
                 "fileName": "松本",
+                "elevation": 600,
                 "url": "regions/松本.html"
         },
         {
@@ -1462,6 +1705,7 @@
                 "lng": 136.525018558086,
                 "restaurantCount": 40,
                 "fileName": "松阪",
+                "elevation": 11,
                 "url": "regions/松阪.html"
         },
         {
@@ -1470,6 +1714,7 @@
                 "lng": 135.66385058651127,
                 "restaurantCount": 15,
                 "fileName": "枚方",
+                "elevation": 27,
                 "url": "regions/枚方.html"
         },
         {
@@ -1478,6 +1723,7 @@
                 "lng": 138.55565640107307,
                 "restaurantCount": 1,
                 "fileName": "柏崎",
+                "elevation": 5,
                 "url": "regions/柏崎.html"
         },
         {
@@ -1486,6 +1732,7 @@
                 "lng": 130.41353370828853,
                 "restaurantCount": 5,
                 "fileName": "柳川",
+                "elevation": 3,
                 "url": "regions/柳川.html"
         },
         {
@@ -1494,6 +1741,7 @@
                 "lng": 136.90732968506197,
                 "restaurantCount": 278,
                 "fileName": "栄",
+                "elevation": 19,
                 "url": "regions/栄.html"
         },
         {
@@ -1502,6 +1750,7 @@
                 "lng": 135.98686381252608,
                 "restaurantCount": 3,
                 "fileName": "栗東",
+                "elevation": 103,
                 "url": "regions/栗東.html"
         },
         {
@@ -1510,6 +1759,7 @@
                 "lng": 139.3266786673927,
                 "restaurantCount": 8,
                 "fileName": "桐生",
+                "elevation": 118,
                 "url": "regions/桐生.html"
         },
         {
@@ -1518,6 +1768,7 @@
                 "lng": 136.6860789825968,
                 "restaurantCount": 17,
                 "fileName": "桑名",
+                "elevation": -6,
                 "url": "regions/桑名.html"
         },
         {
@@ -1526,6 +1777,7 @@
                 "lng": 139.62680229678872,
                 "restaurantCount": 121,
                 "fileName": "桜木町",
+                "elevation": 34,
                 "url": "regions/桜木町.html"
         },
         {
@@ -1534,6 +1786,7 @@
                 "lng": 135.49851735711246,
                 "restaurantCount": 719,
                 "fileName": "梅田",
+                "elevation": 14,
                 "url": "regions/梅田.html"
         },
         {
@@ -1542,6 +1795,7 @@
                 "lng": 139.61808099238664,
                 "restaurantCount": 842,
                 "fileName": "横浜",
+                "elevation": 12,
                 "url": "regions/横浜.html"
         },
         {
@@ -1550,6 +1804,7 @@
                 "lng": 139.62129684482557,
                 "restaurantCount": 113,
                 "fileName": "横浜駅",
+                "elevation": 16,
                 "url": "regions/横浜駅.html"
         },
         {
@@ -1558,6 +1813,7 @@
                 "lng": 135.78967890930474,
                 "restaurantCount": 22,
                 "fileName": "橿原",
+                "elevation": 65,
                 "url": "regions/橿原.html"
         },
         {
@@ -1566,6 +1822,7 @@
                 "lng": 135.39312120232762,
                 "restaurantCount": 18,
                 "fileName": "武庫之荘",
+                "elevation": 8,
                 "url": "regions/武庫之荘.html"
         },
         {
@@ -1574,6 +1831,7 @@
                 "lng": 139.66007174570242,
                 "restaurantCount": 38,
                 "fileName": "武蔵小杉",
+                "elevation": 23,
                 "url": "regions/武蔵小杉.html"
         },
         {
@@ -1582,6 +1840,7 @@
                 "lng": 130.02064618282017,
                 "restaurantCount": 9,
                 "fileName": "武雄",
+                "elevation": 68,
                 "url": "regions/武雄.html"
         },
         {
@@ -1590,6 +1849,7 @@
                 "lng": 139.7118014173204,
                 "restaurantCount": 135,
                 "fileName": "池袋",
+                "elevation": 47,
                 "url": "regions/池袋.html"
         },
         {
@@ -1598,6 +1858,7 @@
                 "lng": 127.80106651387496,
                 "restaurantCount": 6,
                 "fileName": "沖縄市",
+                "elevation": 104,
                 "url": "regions/沖縄市.html"
         },
         {
@@ -1606,6 +1867,7 @@
                 "lng": 138.75487708819438,
                 "restaurantCount": 16,
                 "fileName": "河口湖",
+                "elevation": 876,
                 "url": "regions/河口湖.html"
         },
         {
@@ -1614,6 +1876,7 @@
                 "lng": 138.85848191122224,
                 "restaurantCount": 34,
                 "fileName": "沼津",
+                "elevation": 0,
                 "url": "regions/沼津.html"
         },
         {
@@ -1622,6 +1885,7 @@
                 "lng": 139.08414997284785,
                 "restaurantCount": 4,
                 "fileName": "沼田",
+                "elevation": 436,
                 "url": "regions/沼田.html"
         },
         {
@@ -1630,6 +1894,7 @@
                 "lng": 136.4971998920573,
                 "restaurantCount": 36,
                 "fileName": "津",
+                "elevation": 3,
                 "url": "regions/津.html"
         },
         {
@@ -1638,6 +1903,7 @@
                 "lng": 132.4640487602359,
                 "restaurantCount": 33,
                 "fileName": "流川",
+                "elevation": 10,
                 "url": "regions/流川.html"
         },
         {
@@ -1646,6 +1912,7 @@
                 "lng": 139.79476238518941,
                 "restaurantCount": 179,
                 "fileName": "浅草",
+                "elevation": 10,
                 "url": "regions/浅草.html"
         },
         {
@@ -1654,6 +1921,7 @@
                 "lng": 137.7169126119548,
                 "restaurantCount": 94,
                 "fileName": "浜松",
+                "elevation": 36,
                 "url": "regions/浜松.html"
         },
         {
@@ -1662,6 +1930,7 @@
                 "lng": 127.71557868540287,
                 "restaurantCount": 5,
                 "fileName": "浦添",
+                "elevation": 30,
                 "url": "regions/浦添.html"
         },
         {
@@ -1670,6 +1939,7 @@
                 "lng": 139.39202771317355,
                 "restaurantCount": 8,
                 "fileName": "海老名",
+                "elevation": 24,
                 "url": "regions/海老名.html"
         },
         {
@@ -1678,6 +1948,7 @@
                 "lng": 135.50011561396968,
                 "restaurantCount": 200,
                 "fileName": "淀屋橋",
+                "elevation": 4,
                 "url": "regions/淀屋橋.html"
         },
         {
@@ -1686,6 +1957,7 @@
                 "lng": 134.8690024020434,
                 "restaurantCount": 37,
                 "fileName": "淡路島",
+                "elevation": 70,
                 "url": "regions/淡路島.html"
         },
         {
@@ -1694,6 +1966,7 @@
                 "lng": 138.4958339332384,
                 "restaurantCount": 14,
                 "fileName": "清水",
+                "elevation": 7,
                 "url": "regions/清水.html"
         },
         {
@@ -1702,6 +1975,7 @@
                 "lng": 138.9575077701771,
                 "restaurantCount": 11,
                 "fileName": "渋川",
+                "elevation": 447,
                 "url": "regions/渋川.html"
         },
         {
@@ -1710,6 +1984,7 @@
                 "lng": 139.69949232004137,
                 "restaurantCount": 289,
                 "fileName": "渋谷",
+                "elevation": 42,
                 "url": "regions/渋谷.html"
         },
         {
@@ -1718,6 +1993,7 @@
                 "lng": 131.35967277763908,
                 "restaurantCount": 28,
                 "fileName": "湯布院",
+                "elevation": 464,
                 "url": "regions/湯布院.html"
         },
         {
@@ -1726,6 +2002,7 @@
                 "lng": 139.6126259158761,
                 "restaurantCount": 23,
                 "fileName": "溝の口",
+                "elevation": 20,
                 "url": "regions/溝の口.html"
         },
         {
@@ -1734,6 +2011,7 @@
                 "lng": 138.31370459508227,
                 "restaurantCount": 11,
                 "fileName": "焼津",
+                "elevation": 7,
                 "url": "regions/焼津.html"
         },
         {
@@ -1742,6 +2020,7 @@
                 "lng": 130.7123997892087,
                 "restaurantCount": 142,
                 "fileName": "熊本市",
+                "elevation": 18,
                 "url": "regions/熊本市.html"
         },
         {
@@ -1750,6 +2029,7 @@
                 "lng": 130.69164965923906,
                 "restaurantCount": 10,
                 "fileName": "熊本駅",
+                "elevation": 26,
                 "url": "regions/熊本駅.html"
         },
         {
@@ -1758,6 +2038,7 @@
                 "lng": 138.93834501544427,
                 "restaurantCount": 13,
                 "fileName": "燕三条",
+                "elevation": 6,
                 "url": "regions/燕三条.html"
         },
         {
@@ -1766,6 +2047,7 @@
                 "lng": 136.65171261547684,
                 "restaurantCount": 45,
                 "fileName": "片町",
+                "elevation": 30,
                 "url": "regions/片町.html"
         },
         {
@@ -1774,6 +2056,7 @@
                 "lng": 141.35232887395043,
                 "restaurantCount": 30,
                 "fileName": "狸小路",
+                "elevation": 40,
                 "url": "regions/狸小路.html"
         },
         {
@@ -1782,6 +2065,7 @@
                 "lng": 130.5606925409648,
                 "restaurantCount": 2,
                 "fileName": "玉名",
+                "elevation": 11,
                 "url": "regions/玉名.html"
         },
         {
@@ -1790,6 +2074,7 @@
                 "lng": 141.3058207505975,
                 "restaurantCount": 15,
                 "fileName": "琴似",
+                "elevation": 26,
                 "url": "regions/琴似.html"
         },
         {
@@ -1798,6 +2083,7 @@
                 "lng": 135.7061352638126,
                 "restaurantCount": 8,
                 "fileName": "生駒",
+                "elevation": 155,
                 "url": "regions/生駒.html"
         },
         {
@@ -1806,6 +2092,7 @@
                 "lng": 135.49021049464835,
                 "restaurantCount": 12,
                 "fileName": "田辺",
+                "elevation": 379,
                 "url": "regions/田辺.html"
         },
         {
@@ -1814,6 +2101,7 @@
                 "lng": 135.3683053551716,
                 "restaurantCount": 4,
                 "fileName": "甲子園",
+                "elevation": 5,
                 "url": "regions/甲子園.html"
         },
         {
@@ -1822,6 +2110,7 @@
                 "lng": 138.56489337786965,
                 "restaurantCount": 54,
                 "fileName": "甲府",
+                "elevation": 269,
                 "url": "regions/甲府.html"
         },
         {
@@ -1830,6 +2119,7 @@
                 "lng": 139.44770087573528,
                 "restaurantCount": 34,
                 "fileName": "町田",
+                "elevation": 102,
                 "url": "regions/町田.html"
         },
         {
@@ -1838,6 +2128,7 @@
                 "lng": 139.56623048749523,
                 "restaurantCount": 11,
                 "fileName": "登戸",
+                "elevation": 25,
                 "url": "regions/登戸.html"
         },
         {
@@ -1846,6 +2137,7 @@
                 "lng": 135.40651944766051,
                 "restaurantCount": 31,
                 "fileName": "白浜",
+                "elevation": 24,
                 "url": "regions/白浜.html"
         },
         {
@@ -1854,6 +2146,7 @@
                 "lng": 137.87835687140313,
                 "restaurantCount": 5,
                 "fileName": "白馬",
+                "elevation": 873,
                 "url": "regions/白馬.html"
         },
         {
@@ -1862,6 +2155,7 @@
                 "lng": 139.43414453213362,
                 "restaurantCount": 6,
                 "fileName": "相模大野",
+                "elevation": 95,
                 "url": "regions/相模大野.html"
         },
         {
@@ -1870,6 +2164,7 @@
                 "lng": 137.04400392653199,
                 "restaurantCount": 1,
                 "fileName": "知立",
+                "elevation": 16,
                 "url": "regions/知立.html"
         },
         {
@@ -1878,6 +2173,7 @@
                 "lng": 124.16805934314375,
                 "restaurantCount": 44,
                 "fileName": "石垣島",
+                "elevation": 41,
                 "url": "regions/石垣島.html"
         },
         {
@@ -1886,6 +2182,7 @@
                 "lng": 137.84237382465665,
                 "restaurantCount": 2,
                 "fileName": "磐田",
+                "elevation": 4,
                 "url": "regions/磐田.html"
         },
         {
@@ -1894,6 +2191,7 @@
                 "lng": 135.77626015994764,
                 "restaurantCount": 271,
                 "fileName": "祇園",
+                "elevation": 46,
                 "url": "regions/祇園.html"
         },
         {
@@ -1902,6 +2200,7 @@
                 "lng": 135.17847399040716,
                 "restaurantCount": 41,
                 "fileName": "神戸駅",
+                "elevation": 7,
                 "url": "regions/神戸駅.html"
         },
         {
@@ -1910,6 +2209,7 @@
                 "lng": 139.73886693208962,
                 "restaurantCount": 270,
                 "fileName": "神楽坂",
+                "elevation": 22,
                 "url": "regions/神楽坂.html"
         },
         {
@@ -1918,6 +2218,7 @@
                 "lng": 130.39786262905238,
                 "restaurantCount": 833,
                 "fileName": "福岡市",
+                "elevation": 8,
                 "url": "regions/福岡市.html"
         },
         {
@@ -1926,6 +2227,7 @@
                 "lng": 135.1445605712521,
                 "restaurantCount": 6,
                 "fileName": "福知山",
+                "elevation": 21,
                 "url": "regions/福知山.html"
         },
         {
@@ -1934,6 +2236,7 @@
                 "lng": 139.77522599821086,
                 "restaurantCount": 38,
                 "fileName": "秋葉原",
+                "elevation": 23,
                 "url": "regions/秋葉原.html"
         },
         {
@@ -1942,6 +2245,7 @@
                 "lng": 139.41472747696676,
                 "restaurantCount": 15,
                 "fileName": "立川",
+                "elevation": 98,
                 "url": "regions/立川.html"
         },
         {
@@ -1950,6 +2254,7 @@
                 "lng": 139.77215694777647,
                 "restaurantCount": 113,
                 "fileName": "築地",
+                "elevation": 18,
                 "url": "regions/築地.html"
         },
         {
@@ -1958,6 +2263,7 @@
                 "lng": 130.1733294928082,
                 "restaurantCount": 19,
                 "fileName": "糸島",
+                "elevation": 2,
                 "url": "regions/糸島.html"
         },
         {
@@ -1966,6 +2272,7 @@
                 "lng": 127.66116280981271,
                 "restaurantCount": 5,
                 "fileName": "糸満",
+                "elevation": 0,
                 "url": "regions/糸満.html"
         },
         {
@@ -1974,6 +2281,7 @@
                 "lng": 137.02279633292116,
                 "restaurantCount": 2,
                 "fileName": "美濃加茂",
+                "elevation": 113,
                 "url": "regions/美濃加茂.html"
         },
         {
@@ -1982,6 +2290,7 @@
                 "lng": 137.05421053026416,
                 "restaurantCount": 9,
                 "fileName": "能登",
+                "elevation": 184,
                 "url": "regions/能登.html"
         },
         {
@@ -1990,6 +2299,7 @@
                 "lng": 139.66848794889412,
                 "restaurantCount": 73,
                 "fileName": "自由が丘",
+                "elevation": 35,
                 "url": "regions/自由が丘.html"
         },
         {
@@ -1998,6 +2308,7 @@
                 "lng": 135.32817978392904,
                 "restaurantCount": 1,
                 "fileName": "舞鶴",
+                "elevation": 10,
                 "url": "regions/舞鶴.html"
         },
         {
@@ -2006,6 +2317,7 @@
                 "lng": 135.3072120732887,
                 "restaurantCount": 58,
                 "fileName": "芦屋",
+                "elevation": 14,
                 "url": "regions/芦屋.html"
         },
         {
@@ -2014,6 +2326,7 @@
                 "lng": 135.49891800137965,
                 "restaurantCount": 4,
                 "fileName": "茶屋町",
+                "elevation": 0,
                 "url": "regions/茶屋町.html"
         },
         {
@@ -2022,6 +2335,7 @@
                 "lng": 135.95767458991293,
                 "restaurantCount": 45,
                 "fileName": "草津",
+                "elevation": 98,
                 "url": "regions/草津.html"
         },
         {
@@ -2030,6 +2344,7 @@
                 "lng": 135.9627336773129,
                 "restaurantCount": 24,
                 "fileName": "草津駅",
+                "elevation": 99,
                 "url": "regions/草津駅.html"
         },
         {
@@ -2038,6 +2353,7 @@
                 "lng": 138.24448594876415,
                 "restaurantCount": 8,
                 "fileName": "藤枝",
+                "elevation": 34,
                 "url": "regions/藤枝.html"
         },
         {
@@ -2046,6 +2362,7 @@
                 "lng": 139.48791729252915,
                 "restaurantCount": 39,
                 "fileName": "藤沢",
+                "elevation": 16,
                 "url": "regions/藤沢.html"
         },
         {
@@ -2054,6 +2371,7 @@
                 "lng": 130.97467254467705,
                 "restaurantCount": 4,
                 "fileName": "行橋",
+                "elevation": 6,
                 "url": "regions/行橋.html"
         },
         {
@@ -2062,6 +2380,7 @@
                 "lng": 139.71324356182703,
                 "restaurantCount": 120,
                 "fileName": "表参道",
+                "elevation": 40,
                 "url": "regions/表参道.html"
         },
         {
@@ -2070,6 +2389,7 @@
                 "lng": 135.78155999447688,
                 "restaurantCount": 4,
                 "fileName": "西大寺",
+                "elevation": 75,
                 "url": "regions/西大寺.html"
         },
         {
@@ -2078,6 +2398,7 @@
                 "lng": 135.34107314741678,
                 "restaurantCount": 128,
                 "fileName": "西宮",
+                "elevation": 5,
                 "url": "regions/西宮.html"
         },
         {
@@ -2086,6 +2407,7 @@
                 "lng": 130.3585567389151,
                 "restaurantCount": 26,
                 "fileName": "西新",
+                "elevation": 8,
                 "url": "regions/西新.html"
         },
         {
@@ -2094,6 +2416,7 @@
                 "lng": 138.12327968809964,
                 "restaurantCount": 12,
                 "fileName": "諏訪",
+                "elevation": 808,
                 "url": "regions/諏訪.html"
         },
         {
@@ -2102,6 +2425,7 @@
                 "lng": 130.04869757947378,
                 "restaurantCount": 5,
                 "fileName": "諫早",
+                "elevation": 38,
                 "url": "regions/諫早.html"
         },
         {
@@ -2110,6 +2434,7 @@
                 "lng": 134.8324867636084,
                 "restaurantCount": 8,
                 "fileName": "豊岡",
+                "elevation": 19,
                 "url": "regions/豊岡.html"
         },
         {
@@ -2118,6 +2443,7 @@
                 "lng": 137.3817828124088,
                 "restaurantCount": 4,
                 "fileName": "豊川",
+                "elevation": 16,
                 "url": "regions/豊川.html"
         },
         {
@@ -2126,6 +2452,7 @@
                 "lng": 137.38771060282815,
                 "restaurantCount": 34,
                 "fileName": "豊橋",
+                "elevation": 9,
                 "url": "regions/豊橋.html"
         },
         {
@@ -2134,6 +2461,7 @@
                 "lng": 137.1549963528686,
                 "restaurantCount": 5,
                 "fileName": "豊田市駅",
+                "elevation": 45,
                 "url": "regions/豊田市駅.html"
         },
         {
@@ -2142,6 +2470,7 @@
                 "lng": 139.73647932978423,
                 "restaurantCount": 80,
                 "fileName": "赤坂",
+                "elevation": 17,
                 "url": "regions/赤坂.html"
         },
         {
@@ -2150,6 +2479,7 @@
                 "lng": 138.60069080042263,
                 "restaurantCount": 92,
                 "fileName": "軽井沢",
+                "elevation": 947,
                 "url": "regions/軽井沢.html"
         },
         {
@@ -2158,6 +2488,7 @@
                 "lng": 136.9031306330795,
                 "restaurantCount": 2,
                 "fileName": "輪島",
+                "elevation": 4,
                 "url": "regions/輪島.html"
         },
         {
@@ -2166,6 +2497,7 @@
                 "lng": 136.0996044651138,
                 "restaurantCount": 5,
                 "fileName": "近江八幡",
+                "elevation": 91,
                 "url": "regions/近江八幡.html"
         },
         {
@@ -2174,6 +2506,7 @@
                 "lng": 135.8291541783127,
                 "restaurantCount": 71,
                 "fileName": "近鉄奈良駅",
+                "elevation": 84,
                 "url": "regions/近鉄奈良駅.html"
         },
         {
@@ -2182,6 +2515,7 @@
                 "lng": 127.68416029369747,
                 "restaurantCount": 150,
                 "fileName": "那覇",
+                "elevation": 12,
                 "url": "regions/那覇.html"
         },
         {
@@ -2190,6 +2524,7 @@
                 "lng": 127.65065575698347,
                 "restaurantCount": 4,
                 "fileName": "那覇空港",
+                "elevation": 12,
                 "url": "regions/那覇空港.html"
         },
         {
@@ -2198,6 +2533,7 @@
                 "lng": 131.06870544982252,
                 "restaurantCount": 11,
                 "fileName": "都城",
+                "elevation": 146,
                 "url": "regions/都城.html"
         },
         {
@@ -2206,6 +2542,7 @@
                 "lng": 138.44560609671183,
                 "restaurantCount": 1,
                 "fileName": "野沢温泉",
+                "elevation": 606,
                 "url": "regions/野沢温泉.html"
         },
         {
@@ -2214,6 +2551,7 @@
                 "lng": 136.9018168147337,
                 "restaurantCount": 42,
                 "fileName": "金山",
+                "elevation": 15,
                 "url": "regions/金山.html"
         },
         {
@@ -2222,6 +2560,7 @@
                 "lng": 136.6539106589689,
                 "restaurantCount": 276,
                 "fileName": "金沢",
+                "elevation": 24,
                 "url": "regions/金沢.html"
         },
         {
@@ -2230,6 +2569,7 @@
                 "lng": 136.56280180279515,
                 "restaurantCount": 21,
                 "fileName": "鈴鹿",
+                "elevation": 19,
                 "url": "regions/鈴鹿.html"
         },
         {
@@ -2238,6 +2578,7 @@
                 "lng": 139.76471529253922,
                 "restaurantCount": 518,
                 "fileName": "銀座",
+                "elevation": 25,
                 "url": "regions/銀座.html"
         },
         {
@@ -2246,6 +2587,7 @@
                 "lng": 140.83790008103307,
                 "restaurantCount": 6,
                 "fileName": "銚子",
+                "elevation": -1,
                 "url": "regions/銚子.html"
         },
         {
@@ -2254,6 +2596,7 @@
                 "lng": 139.81382785644922,
                 "restaurantCount": 56,
                 "fileName": "錦糸町",
+                "elevation": 12,
                 "url": "regions/錦糸町.html"
         },
         {
@@ -2262,6 +2605,7 @@
                 "lng": 139.54512016787461,
                 "restaurantCount": 165,
                 "fileName": "鎌倉",
+                "elevation": 16,
                 "url": "regions/鎌倉.html"
         },
         {
@@ -2270,6 +2614,7 @@
                 "lng": 138.8341413527284,
                 "restaurantCount": 28,
                 "fileName": "長岡",
+                "elevation": 26,
                 "url": "regions/長岡.html"
         },
         {
@@ -2278,6 +2623,7 @@
                 "lng": 135.70500451173973,
                 "restaurantCount": 3,
                 "fileName": "長岡京",
+                "elevation": 14,
                 "url": "regions/長岡京.html"
         },
         {
@@ -2286,6 +2632,7 @@
                 "lng": 129.8753014569412,
                 "restaurantCount": 62,
                 "fileName": "長崎市",
+                "elevation": 19,
                 "url": "regions/長崎市.html"
         },
         {
@@ -2294,6 +2641,7 @@
                 "lng": 129.87115119140924,
                 "restaurantCount": 9,
                 "fileName": "長崎駅",
+                "elevation": 12,
                 "url": "regions/長崎駅.html"
         },
         {
@@ -2302,6 +2650,7 @@
                 "lng": 136.26801731263134,
                 "restaurantCount": 10,
                 "fileName": "長浜",
+                "elevation": 92,
                 "url": "regions/長浜.html"
         },
         {
@@ -2310,6 +2659,7 @@
                 "lng": 136.89385741186032,
                 "restaurantCount": 15,
                 "fileName": "関",
+                "elevation": 55,
                 "url": "regions/関.html"
         },
         {
@@ -2318,6 +2668,7 @@
                 "lng": 139.63398332070864,
                 "restaurantCount": 208,
                 "fileName": "関内",
+                "elevation": 20,
                 "url": "regions/関内.html"
         },
         {
@@ -2326,6 +2677,7 @@
                 "lng": 131.09292027171838,
                 "restaurantCount": 32,
                 "fileName": "阿蘇",
+                "elevation": 547,
                 "url": "regions/阿蘇.html"
         },
         {
@@ -2334,6 +2686,7 @@
                 "lng": 135.50262158521932,
                 "restaurantCount": 227,
                 "fileName": "難波",
+                "elevation": 17,
                 "url": "regions/難波.html"
         },
         {
@@ -2342,6 +2695,7 @@
                 "lng": 130.78865939244085,
                 "restaurantCount": 20,
                 "fileName": "霧島",
+                "elevation": 91,
                 "url": "regions/霧島.html"
         },
         {
@@ -2350,6 +2704,7 @@
                 "lng": 138.4027797388611,
                 "restaurantCount": 83,
                 "fileName": "静岡市",
+                "elevation": 57,
                 "url": "regions/静岡市.html"
         },
         {
@@ -2358,6 +2713,7 @@
                 "lng": 130.67520042636275,
                 "restaurantCount": 5,
                 "fileName": "飯塚",
+                "elevation": 18,
                 "url": "regions/飯塚.html"
         },
         {
@@ -2366,6 +2722,7 @@
                 "lng": 137.8239651737563,
                 "restaurantCount": 5,
                 "fileName": "飯田",
+                "elevation": 504,
                 "url": "regions/飯田.html"
         },
         {
@@ -2374,6 +2731,7 @@
                 "lng": 139.73419121768936,
                 "restaurantCount": 447,
                 "fileName": "飯田橋",
+                "elevation": 32,
                 "url": "regions/飯田橋.html"
         },
         {
@@ -2382,6 +2740,7 @@
                 "lng": 139.53188074256653,
                 "restaurantCount": 8,
                 "fileName": "館林",
+                "elevation": 24,
                 "url": "regions/館林.html"
         },
         {
@@ -2390,6 +2749,7 @@
                 "lng": 136.6523514434686,
                 "restaurantCount": 5,
                 "fileName": "香林坊",
+                "elevation": 28,
                 "url": "regions/香林坊.html"
         },
         {
@@ -2398,6 +2758,7 @@
                 "lng": 135.71281852446592,
                 "restaurantCount": 2,
                 "fileName": "香芝",
+                "elevation": 56,
                 "url": "regions/香芝.html"
         },
         {
@@ -2406,6 +2767,7 @@
                 "lng": 137.9033523965717,
                 "restaurantCount": 5,
                 "fileName": "駒ヶ根",
+                "elevation": 833,
                 "url": "regions/駒ヶ根.html"
         },
         {
@@ -2414,6 +2776,7 @@
                 "lng": 137.26624785422288,
                 "restaurantCount": 40,
                 "fileName": "高山",
+                "elevation": 604,
                 "url": "regions/高山.html"
         },
         {
@@ -2422,6 +2785,7 @@
                 "lng": 139.00764601765852,
                 "restaurantCount": 66,
                 "fileName": "高崎",
+                "elevation": 96,
                 "url": "regions/高崎.html"
         },
         {
@@ -2430,6 +2794,7 @@
                 "lng": 139.010186860501,
                 "restaurantCount": 24,
                 "fileName": "高崎駅",
+                "elevation": 100,
                 "url": "regions/高崎駅.html"
         },
         {
@@ -2438,6 +2803,7 @@
                 "lng": 137.40858644202365,
                 "restaurantCount": 5,
                 "fileName": "魚津",
+                "elevation": 22,
                 "url": "regions/魚津.html"
         },
         {
@@ -2446,6 +2812,7 @@
                 "lng": 134.23053611856722,
                 "restaurantCount": 3,
                 "fileName": "鳥取市",
+                "elevation": 7,
                 "url": "regions/鳥取市.html"
         },
         {
@@ -2454,6 +2821,7 @@
                 "lng": 130.51403059181882,
                 "restaurantCount": 15,
                 "fileName": "鳥栖",
+                "elevation": 33,
                 "url": "regions/鳥栖.html"
         },
         {
@@ -2462,6 +2830,7 @@
                 "lng": 136.86268451679803,
                 "restaurantCount": 23,
                 "fileName": "鳥羽",
+                "elevation": 60,
                 "url": "regions/鳥羽.html"
         },
         {
@@ -2470,6 +2839,7 @@
                 "lng": 130.54309202060486,
                 "restaurantCount": 17,
                 "fileName": "鹿児島中央駅",
+                "elevation": 7,
                 "url": "regions/鹿児島中央駅.html"
         },
         {
@@ -2478,6 +2848,7 @@
                 "lng": 130.55112017842055,
                 "restaurantCount": 107,
                 "fileName": "鹿児島市",
+                "elevation": 6,
                 "url": "regions/鹿児島市.html"
         },
         {
@@ -2486,6 +2857,7 @@
                 "lng": 130.8375737793525,
                 "restaurantCount": 4,
                 "fileName": "鹿屋",
+                "elevation": 70,
                 "url": "regions/鹿屋.html"
         },
         {
@@ -2494,6 +2866,7 @@
                 "lng": 139.7352600800399,
                 "restaurantCount": 158,
                 "fileName": "麻布十番",
+                "elevation": 21,
                 "url": "regions/麻布十番.html"
         },
         {
@@ -2502,6 +2875,7 @@
                 "lng": 141.34005140982765,
                 "restaurantCount": 4,
                 "fileName": "麻生",
+                "elevation": 13,
                 "url": "regions/麻生.html"
         },
         {
@@ -2510,6 +2884,7 @@
                 "lng": 130.76813333784446,
                 "restaurantCount": 15,
                 "fileName": "黒崎",
+                "elevation": 12,
                 "url": "regions/黒崎.html"
         },
         {
@@ -2518,6 +2893,7 @@
                 "lng": 137.45561889685803,
                 "restaurantCount": 1,
                 "fileName": "黒部",
+                "elevation": 24,
                 "url": "regions/黒部.html"
         }
 ];
@@ -2529,21 +2905,50 @@
             maxZoom: 19
         }).addTo(map);
 
-        // 地域マーカーアイコン（ピン型）
-        const regionIcon = L.icon({
-            iconUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAzMiA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTYgMEMxMC40NzcgMCA2IDQuNDc3IDYgMTBDNiAyMCAxNiAzMiAxNiAzMkMxNiAzMiAyNiAyMCAyNiAxMEMyNiA0LjQ3NyAyMS41MjMgMCAxNiAwWiIgZmlsbD0iIzE5NzZEMiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxMCIgcj0iNCIgZmlsbD0id2hpdGUiLz48L3N2Zz4=',
-            iconSize: [32, 48],
-            iconAnchor: [16, 48],
-            popupAnchor: [0, -48]
-        });
+        /**
+         * 標高から色を計算（0m=青, 1000m=赤のグラデーション）
+         */
+        function getColorFromElevation(elevation) {
+            // 標高を0-1000の範囲に正規化
+            const normalized = Math.min(Math.max(elevation, 0), 1000) / 1000;
+
+            // HSLカラースペースで青(240°)から赤(0°)へ
+            const hue = (1 - normalized) * 240;
+
+            return `hsl(${hue}, 100%, 50%)`;
+        }
+
+        /**
+         * 色付きのピンマーカーSVGを生成
+         */
+        function createColoredPinIcon(color) {
+            const svg = `<svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0C10.477 0 6 4.477 6 10C6 20 16 32 16 32C16 32 26 20 26 10C26 4.477 21.523 0 16 0Z" fill="${color}" stroke="white" stroke-width="2"/>
+                <circle cx="16" cy="10" r="4" fill="white"/>
+            </svg>`;
+
+            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+        }
 
         // マーカーを作成
         regions.forEach(region => {
+            const elevation = region.elevation || 0;
+            const color = getColorFromElevation(elevation);
+            const iconUrl = createColoredPinIcon(color);
+
+            const regionIcon = L.icon({
+                iconUrl: iconUrl,
+                iconSize: [32, 48],
+                iconAnchor: [16, 48],
+                popupAnchor: [0, -48]
+            });
+
             L.marker([region.lat, region.lng], { icon: regionIcon })
                 .addTo(map)
                 .bindPopup(`
                     <div style="min-width: 200px;">
                         <h3 style="margin: 0 0 10px 0; color: #1976d2; font-size: 1.1em;">${region.name}</h3>
+                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">標高: ${elevation}m</p>
                         <a href="${region.url}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #1976d2; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em;">車中泊スポットを見る</a>
                     </div>
                 `);
