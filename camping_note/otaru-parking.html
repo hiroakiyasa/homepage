@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小樽雪あかりの路 - 車中泊におすすめの駐車場ガイド</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 12px; margin-bottom: 30px; }
+    .header h1 { font-size: 28px; margin-bottom: 10px; }
+    .header p { font-size: 16px; opacity: 0.9; }
+    .map-section { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
+    .map-layout { display: flex; gap: 20px; }
+    .map-container { flex: 0 0 70%; height: 600px; border-radius: 8px; overflow: hidden; }
+    .parking-list { flex: 0 0 30%; max-height: 600px; overflow-y: auto; padding: 10px; }
+    .parking-list h3 { margin-bottom: 15px; color: #333; }
+    #map { width: 100%; height: 100%; }
+
+    @media (max-width: 1024px) {
+      .map-layout { flex-direction: column; }
+      .map-container, .parking-list { flex: 0 0 100%; }
+      .map-container { height: 500px; }
+      .parking-list { max-height: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎉 小樽雪あかりの路</h1>
+      <p>車中泊におすすめの駐車場トップ3（18:00〜8:00料金・安い順）</p>
+      
+    </div>
+
+    <div class="map-section">
+      <div class="map-layout">
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+        <div class="parking-list">
+          <h3>📍 駐車場一覧（クリックで地図に表示）</h3>
+          
+      <div style="background: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; position: relative;" onclick="showMarker('parking_1')">
+        <div style="position: absolute; top: 10px; left: 10px; background: #1976d2; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">1</div>
+
+        <div style="margin-left: 40px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <strong style="color: #1976d2; font-size: 14px;">ユニカ小樽稲穂第２</strong>
+            <div style="display: flex; gap: 6px;">
+              <a href="https://www.google.com/maps?q=43.195712,140.996587" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🗺️</a>
+              <a href="https://www.google.com/search?q=%E3%83%A6%E3%83%8B%E3%82%AB%E5%B0%8F%E6%A8%BD%E7%A8%B2%E7%A9%82%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🔍</a>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; font-size: 12px; color: #666; flex-wrap: wrap;">
+            <div>📍 徒歩約2分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 無料</div>
+            <div>🅿️ 平面駐車場</div>
+            <div>📊 6台</div>
+          </div>
+
+          
+        </div>
+      </div>
+    
+
+      <div style="background: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; position: relative;" onclick="showMarker('parking_2')">
+        <div style="position: absolute; top: 10px; left: 10px; background: #1976d2; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">2</div>
+
+        <div style="margin-left: 40px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <strong style="color: #1976d2; font-size: 14px;">小樽グランドパーキング</strong>
+            <div style="display: flex; gap: 6px;">
+              <a href="https://www.google.com/maps?q=43.199337,140.995148" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🗺️</a>
+              <a href="https://www.google.com/search?q=%E5%B0%8F%E6%A8%BD%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🔍</a>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; font-size: 12px; color: #666; flex-wrap: wrap;">
+            <div>📍 徒歩約6分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 無料</div>
+            <div>🅿️ 立体駐車場</div>
+            <div>📊 52台</div>
+          </div>
+
+          
+        </div>
+      </div>
+    
+
+      <div style="background: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; position: relative;" onclick="showMarker('parking_3')">
+        <div style="position: absolute; top: 10px; left: 10px; background: #1976d2; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">3</div>
+
+        <div style="margin-left: 40px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <strong style="color: #1976d2; font-size: 14px;">小樽市駅前広場駐車場</strong>
+            <div style="display: flex; gap: 6px;">
+              <a href="https://www.google.com/maps?q=43.198112,140.994137" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🗺️</a>
+              <a href="https://www.google.com/search?q=%E5%B0%8F%E6%A8%BD%E5%B8%82%E9%A7%85%E5%89%8D%E5%BA%83%E5%A0%B4%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 16px;">🔍</a>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; font-size: 12px; color: #666; flex-wrap: wrap;">
+            <div>📍 徒歩約5分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 無料</div>
+            <div>🅿️ 平面駐車場</div>
+            <div>📊 20台</div>
+          </div>
+
+          
+        </div>
+      </div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+const parkingMarkers = [
+  {
+    id: 'parking_1',
+    lat: 43.195712,
+    lng: 140.996587,
+    rank: 1,
+    name: 'ユニカ小樽稲穂第２',
+    fee: '無料',
+    walking: '2分'
+  },
+  {
+    id: 'parking_2',
+    lat: 43.199337,
+    lng: 140.995148,
+    rank: 2,
+    name: '小樽グランドパーキング',
+    fee: '無料',
+    walking: '6分'
+  },
+  {
+    id: 'parking_3',
+    lat: 43.198112,
+    lng: 140.994137,
+    rank: 3,
+    name: '小樽市駅前広場駐車場',
+    fee: '無料',
+    walking: '5分'
+  }
+];
+
+const restaurantMarkers = [
+  
+];
+
+const eventMarker = {
+  lat: 43.1947,
+  lon: 140.9947,
+  name: '小樽雪あかりの路'
+};
+  
+
+    // Initialize map
+    const map = L.map('map').setView([43.1947, 140.9947], 14);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add event marker
+    L.marker([43.1947, 140.9947], {
+      icon: L.divIcon({
+        className: 'custom-marker',
+        html: '<div style="background: #d32f2f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">🎉</div>',
+        iconSize: [40, 40],
+        iconAnchor: [20, 20]
+      })
+    }).addTo(map).bindPopup('<strong>小樽雪あかりの路</strong>');
+
+    // Add parking markers
+    const markers = {};
+    parkingMarkers.forEach(parking => {
+      const marker = L.marker([parking.lat, parking.lng], {
+        icon: L.divIcon({
+          className: 'custom-marker',
+          html: `<div style="background: #1976d2; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">${parking.rank}</div>`,
+          iconSize: [32, 32],
+          iconAnchor: [16, 16]
+        })
+      }).addTo(map);
+
+      marker.bindPopup(`
+        <div style="min-width: 200px;">
+          <strong style="font-size: 14px;">${parking.rank}. ${parking.name}</strong><br>
+          <div style="margin-top: 6px; font-size: 12px;">
+            📍 徒歩約${parking.walking}分<br>
+            💰 18:00〜8:00 ${parking.fee}
+          </div>
+          <a href="https://www.google.com/maps?q=${parking.lat},${parking.lng}" target="_blank" style="display: inline-block; margin-top: 8px; background: #1976d2; color: white; padding: 4px 8px; text-decoration: none; border-radius: 4px; font-size: 11px;">Google Maps</a>
+        </div>
+      `);
+
+      markers[parking.id] = marker;
+    });
+
+    // Add restaurant markers
+    restaurantMarkers.forEach(restaurant => {
+      L.marker([restaurant.lat, restaurant.lng], {
+        icon: L.divIcon({
+          className: 'custom-marker',
+          html: '<div style="background: #f57c00; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">🍴</div>',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        })
+      }).addTo(map).bindPopup(`
+        <div style="min-width: 180px;">
+          <strong style="font-size: 13px;">${restaurant.name}</strong><br>
+          <div style="margin-top: 4px; font-size: 11px;">
+            ⭐ ${restaurant.rating.toFixed(1)}<br>
+            📍 イベントから${restaurant.distance}m
+          </div>
+        </div>
+      `);
+    });
+
+    // Function to show specific marker
+    function showMarker(markerId) {
+      if (markers[markerId]) {
+        map.setView([markers[markerId].getLatLng().lat, markers[markerId].getLatLng().lng], 16);
+        markers[markerId].openPopup();
+      }
+    }
+
+    // Make function available globally
+    window.showMarker = showMarker;
+  </script>
+</body>
+</html>

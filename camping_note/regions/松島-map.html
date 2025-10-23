@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>松島 - 地図</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #map { width: 100%; height: 100%; }
+
+    .custom-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .custom-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    /* コンビニロゴマーカー */
+    .convenience-logo-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: white;
+      border: 2px solid #4caf50;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .convenience-logo-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    .convenience-logo-marker img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .marker-center { background: #d32f2f; }
+    .marker-parking { background: #1976d2; }
+    .marker-toilet { background: #795548; }
+    .marker-onsen { background: #f8bbd0; }
+    .marker-restaurant { background: #ff9800; }
+
+    .leaflet-popup-content { min-width: 200px; }
+    .popup-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+    .popup-info { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // 地図初期化
+    const map = L.map('map').setView([38.36887635661553, 141.05969742946382], 15);
+
+    // OpenStreetMap タイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // マーカーデータ
+    const markers = [
+    {
+        "type": "center",
+        "id": "area_center",
+        "lat": 38.36887635661553,
+        "lng": 141.05969742946382,
+        "title": "松島",
+        "description": "周辺のおすすめ車中泊スポット",
+        "color": "#d32f2f"
+    },
+    {
+        "type": "parking",
+        "id": "parking_0",
+        "lat": 38.370586,
+        "lng": 141.05623,
+        "title": "町営三十刈駐車場",
+        "number": 1,
+        "distance": "357m",
+        "walking": "徒歩約5分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_0_0",
+        "lat": 38.370621484859,
+        "lng": 141.05661345799,
+        "title": "三十刈無料駐車場公衆トイレ",
+        "distance": "34m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_0",
+        "lat": 38.371537,
+        "lng": 141.050898,
+        "title": "松島日帰り天然温泉 芭蕉の湯",
+        "distance": "0.5km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_1",
+        "lat": 38.374906,
+        "lng": 141.050602,
+        "title": "湯の原温泉 元湯 霊泉亭",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_2",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_1",
+        "lat": 38.3706602870609,
+        "lng": 141.055762061454,
+        "title": "松島町営三十刈駐車場",
+        "number": 2,
+        "distance": "397m",
+        "walking": "徒歩約5分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_1_0",
+        "lat": 38.370621484859,
+        "lng": 141.05661345799,
+        "title": "三十刈無料駐車場公衆トイレ",
+        "distance": "74m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_0",
+        "lat": 38.371537,
+        "lng": 141.050898,
+        "title": "松島日帰り天然温泉 芭蕉の湯",
+        "distance": "0.4km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_1",
+        "lat": 38.374906,
+        "lng": 141.050602,
+        "title": "湯の原温泉 元湯 霊泉亭",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_2",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_2",
+        "lat": 38.367928,
+        "lng": 141.059902,
+        "title": "松島公園第４駐車場",
+        "number": 3,
+        "distance": "107m",
+        "walking": "徒歩約2分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_2_0",
+        "lat": 38.366108221634,
+        "lng": 141.06109028431,
+        "title": "浪打浜公衆トイレ",
+        "distance": "228m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_0",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.5km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_1",
+        "lat": 38.370676,
+        "lng": 141.069064,
+        "title": "松島温泉 ホテル絶景の館",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_2",
+        "lat": 38.371537,
+        "lng": 141.050898,
+        "title": "松島日帰り天然温泉 芭蕉の湯",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_3",
+        "lat": 38.364687,
+        "lng": 141.060816,
+        "title": "松島公園第５駐車場",
+        "number": 4,
+        "distance": "476m",
+        "walking": "徒歩約6分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_3_0",
+        "lat": 38.363612836248,
+        "lng": 141.06084629886,
+        "title": "浪打浜公園トイレ",
+        "distance": "120m",
+        "color": "#795548"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_3_1",
+        "lat": 38.366108221634,
+        "lng": 141.06109028431,
+        "title": "浪打浜公衆トイレ",
+        "distance": "160m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_3_0",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.4km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_3_1",
+        "lat": 38.370676,
+        "lng": 141.069064,
+        "title": "松島温泉 ホテル絶景の館",
+        "distance": "1.0km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_3_2",
+        "lat": 38.371537,
+        "lng": 141.050898,
+        "title": "松島日帰り天然温泉 芭蕉の湯",
+        "distance": "1.2km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_4",
+        "lat": 38.370086,
+        "lng": 141.061416,
+        "title": "システムパーク松島海岸",
+        "number": 5,
+        "distance": "202m",
+        "walking": "徒歩約3分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_4_0",
+        "lat": 38.370198530895,
+        "lng": 141.06218149564,
+        "title": "瑞巌寺山門公衆トイレ",
+        "distance": "68m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_4_0",
+        "lat": 38.370676,
+        "lng": 141.069064,
+        "title": "松島温泉 ホテル絶景の館",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_4_1",
+        "lat": 38.375465,
+        "lng": 141.064946,
+        "title": "花ごころの湯 新富亭",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_4_2",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.8km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_5",
+        "lat": 38.367783,
+        "lng": 141.063481,
+        "title": "タイムズ松島",
+        "number": 6,
+        "distance": "352m",
+        "walking": "徒歩約5分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_5_0",
+        "lat": 38.366108221634,
+        "lng": 141.06109028431,
+        "title": "浪打浜公衆トイレ",
+        "distance": "280m",
+        "color": "#795548"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_5_1",
+        "lat": 38.370198530895,
+        "lng": 141.06218149564,
+        "title": "瑞巌寺山門公衆トイレ",
+        "distance": "292m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_5_0",
+        "lat": 38.370676,
+        "lng": 141.069064,
+        "title": "松島温泉 ホテル絶景の館",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_5_1",
+        "lat": 38.36416,
+        "lng": 141.056499,
+        "title": "ホテル松島 大観荘",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_5_2",
+        "lat": 38.375465,
+        "lng": 141.064946,
+        "title": "花ごころの湯 新富亭",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_0",
+        "lat": 38.36861953661548,
+        "lng": 141.05905730946168,
+        "title": "松島イタリアン トト",
+        "number": 1,
+        "genre": "イタリアン",
+        "address": "宮城県宮城郡松島町松島字浪打浜10",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_1",
+        "lat": 38.368472936615746,
+        "lng": 141.05955110945985,
+        "title": "丼松島",
+        "number": 2,
+        "genre": "海鮮",
+        "address": "宮城県宮城郡松島町松島浪打浜10-15",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_2",
+        "lat": 38.37017173661547,
+        "lng": 141.06209190947524,
+        "title": "松島 寿司幸",
+        "number": 3,
+        "genre": "寿司",
+        "address": "宮城県宮城郡松島町松島字町内88-1",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_3",
+        "lat": 38.37045703661583,
+        "lng": 141.06380490947691,
+        "title": "松華堂菓子店",
+        "number": 4,
+        "genre": "喫茶店",
+        "address": "宮城県宮城郡松島町松島字町内109 ２F",
+        "color": "#ff9800"
+    }
+];
+
+    // マーカーオブジェクトを保存
+    const markerObjects = {};
+
+    // アイコン取得関数
+    function getMarkerIcon(type, number) {
+      if (type === 'parking' && number) {
+        return number;
+      }
+      if (type === 'restaurant' && number) {
+        return number;
+      }
+      const icons = {
+        center: '📍',
+        parking: '🅿️',
+        toilet: '🚻',
+        onsen: '♨️',
+        restaurant: '🍴'
+      };
+      return icons[type] || '📌';
+    }
+
+    // マーカーを作成
+    markers.forEach(markerData => {
+      let icon;
+      let zIndexOffset = 0;
+
+      // z-indexの設定（駐車場を最前面に）
+      if (markerData.type === 'parking') {
+        zIndexOffset = 1000;
+      } else if (markerData.type === 'center') {
+        zIndexOffset = 900;
+      } else if (markerData.type === 'restaurant') {
+        zIndexOffset = 800;
+      } else if (markerData.type === 'convenience') {
+        zIndexOffset = 700;
+      } else if (markerData.type === 'toilet') {
+        zIndexOffset = 600;
+      } else if (markerData.type === 'onsen') {
+        zIndexOffset = 500;
+      }
+
+      // コンビニの場合はロゴ画像を使用（Base64埋め込み）
+      if (markerData.type === 'convenience' && markerData.logo) {
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="convenience-logo-marker"><img src="${markerData.logo}" alt="${markerData.subType}"></div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      } else {
+        // その他のマーカーは従来通り
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="custom-marker marker-${markerData.type}" style="background-color: ${markerData.color}">${getMarkerIcon(markerData.type, markerData.number)}</div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      }
+
+      // マーカー作成（zIndexOffsetを指定）
+      const marker = L.marker([markerData.lat, markerData.lng], {
+        icon: icon,
+        zIndexOffset: zIndexOffset
+      }).addTo(map);
+
+      // ポップアップ内容
+      let popupContent = `<div class="popup-title">${markerData.title}</div>`;
+
+      if (markerData.subType) {
+        popupContent += `<div class="popup-info">🏪 ${markerData.subType}</div>`;
+      }
+      if (markerData.description) {
+        popupContent += `<div class="popup-info">${markerData.description}</div>`;
+      }
+      if (markerData.distance) {
+        popupContent += `<div class="popup-info">📍 ${markerData.distance}</div>`;
+      }
+      if (markerData.walking) {
+        popupContent += `<div class="popup-info">🚶 ${markerData.walking}</div>`;
+      }
+      if (markerData.genre) {
+        popupContent += `<div class="popup-info">🍽️ ${markerData.genre}</div>`;
+      }
+      if (markerData.address) {
+        popupContent += `<div class="popup-info" style="margin-top: 4px;">${markerData.address}</div>`;
+      }
+
+      marker.bindPopup(popupContent);
+
+      // マーカーオブジェクトを保存
+      markerObjects[markerData.id] = marker;
+    });
+
+    // 外部から呼び出せる関数
+    window.showMarker = function(markerId) {
+      const marker = markerObjects[markerId];
+      if (marker) {
+        // アニメーションで地図を移動
+        map.setView(marker.getLatLng(), 17, {
+          animate: true,
+          duration: 0.5
+        });
+        marker.openPopup();
+      }
+    };
+  </script>
+</body>
+</html>

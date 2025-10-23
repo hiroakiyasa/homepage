@@ -1,0 +1,496 @@
+
+<div class="wp-block-group alignfull has-bg-color has-fg-background-color has-text-color has-background has-global-padding is-layout-constrained" style="border-radius:12px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px;">
+    <h2 style="margin: 0; font-size: 18px; font-weight: bold;">🚉 おもろまち駅周辺エリアとは</h2>
+    <div style="display: flex; gap: 6px; flex-shrink: 0;">
+      <a href="https://www.google.com/maps?q=26.2181,127.7004" target="_blank" style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 11px; white-space: nowrap; display: flex; align-items: center; gap: 4px;">🗺️ Maps</a>
+      <a href="https://www.google.com/search?q=%E3%81%8A%E3%82%82%E3%82%8D%E3%81%BE%E3%81%A1%E9%A7%85%E5%91%A8%E8%BE%BA%E3%82%A8%E3%83%AA%E3%82%A2" target="_blank" style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 11px; white-space: nowrap; display: flex; align-items: center; gap: 4px;">🔍 検索</a>
+    </div>
+  </div>
+
+<p class="has-sm-font-size">📅 <strong>営業時期:</strong> 通年</p>
+<p class="has-sm-font-size">那覇市の中心部、ショッピングやグルメが楽しめるエリア</p>
+</div>
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--1"/>
+
+<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<h2 class="wp-block-heading has-text-align-center has-xl-font-size" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--50)">🚗 車中泊におすすめの駐車場トップ10</h2>
+
+<style>
+  .parking-map-fullwidth { width: 100%; max-width: 100%; background: #f8f9fa; }
+  .map-layout-container { display: flex; gap: 0; width: 100%; }
+  .map-layout-left { flex: 0 0 70%; min-width: 0; height: 700px; }
+  .map-layout-right { flex: 0 0 30%; min-width: 0; max-height: 700px; overflow-y: auto; background: white; padding: 20px; }
+  .map-layout-left iframe { width: 100%; height: 100%; border: none; display: block; }
+  @media (max-width: 1200px) {
+    .map-layout-container { flex-direction: column; min-height: auto; }
+    .map-layout-left { flex: 0 0 100%; height: 500px; }
+    .map-layout-right { flex: 0 0 100%; max-height: none; }
+  }
+  @media (max-width: 768px) {
+    .map-layout-left { height: 400px; }
+  }
+</style>
+<div class="parking-map-fullwidth">
+  <div class="map-layout-container">
+    <div class="map-layout-left">
+      <iframe id="parking-map-iframe" src="http://camping-note.local/omoromachi-map.html"></iframe>
+    </div>
+    <div class="map-layout-right">
+      <h4 style="margin: 0 0 15px 0;">📍 クリックして地図に表示</h4>
+      <div style="background: #fff3e0; padding: 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('station')">
+        <strong style="color: #d32f2f;">🔴 おもろまち駅周辺エリア</strong>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=26.2181,127.7004" target="_blank" onclick="event.stopPropagation()" style="background: #667eea; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_0')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場1:タイムズ壺屋やちむん通り</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.211117,127.692683" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E5%A3%BA%E5%B1%8B%E3%82%84%E3%81%A1%E3%82%80%E3%82%93%E9%80%9A%E3%82%8A" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約14分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥400</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_0')" style="cursor: pointer;">♨️ サウナの珠湯 (0.6km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_1')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場2:タイムズコザ信用金庫安里支店</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.218094,127.694164" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E3%82%B3%E3%82%B6%E4%BF%A1%E7%94%A8%E9%87%91%E5%BA%AB%E5%AE%89%E9%87%8C%E6%94%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約8分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥550</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_1')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート　さいおんスクエア店">
+              <span>ファミリーマート　さいおんスクエア店 (72m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('toilet_1')" style="cursor: pointer;">🚻 牧志公園トイレ (224m)</div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_1')" style="cursor: pointer;">♨️ ゆんたくあしび温泉 りっかりっか湯 (0.6km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_2')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場3:タイムズ前島</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.21755,127.6875" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E5%89%8D%E5%B3%B6" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約17分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥550</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_2')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート　那覇沖映通り店">
+              <span>ファミリーマート　那覇沖映通り店 (139m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('toilet_2')" style="cursor: pointer;">🚻 緑ヶ丘公園トイレ (85m)</div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_2')" style="cursor: pointer;">♨️ ゆんたくあしび温泉 りっかりっか湯 (0.1km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_3')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場4:タイムズ松川３丁目</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.206733,127.700683" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E6%9D%BE%E5%B7%9D%EF%BC%93%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約16分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥600</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_3')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート真和志小学校前店">
+              <span>ファミリーマート真和志小学校前店 (68m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_3')" style="cursor: pointer;">♨️ 沖縄ホテル (1.3km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_4')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場5:Ｄパーキングおもろまち</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.226585,127.689947" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%EF%BC%A4%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%81%8A%E3%82%82%E3%82%8D%E3%81%BE%E3%81%A1" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約18分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥600</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_4')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート那覇第2地方合同庁舎／S店">
+              <span>ファミリーマート那覇第2地方合同庁舎／S店 (147m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('toilet_4')" style="cursor: pointer;">🚻 黄金森公園トイレ (160m)</div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_4')" style="cursor: pointer;">♨️ HOTEL StoRK 那覇新都心 (0.3km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_5')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場6:タイムズおもろまち４丁目第２</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.223811,127.699636" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E3%81%8A%E3%82%82%E3%82%8D%E3%81%BE%E3%81%A1%EF%BC%94%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約8分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥660</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_5')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/LAWSON.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ローソン おもろまち駅前店">
+              <span>ローソン おもろまち駅前店 (163m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_5')" style="cursor: pointer;">♨️ 沖縄ホテル (0.6km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_6')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場7:タイムズ三原１丁目</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.206897,127.700428" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E4%B8%89%E5%8E%9F%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約16分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥660</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_6')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート真和志小学校前店">
+              <span>ファミリーマート真和志小学校前店 (98m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_6')" style="cursor: pointer;">♨️ 沖縄ホテル (1.3km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_7')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場8:タイムズ三原１丁目第２</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.206733,127.700683" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E4%B8%89%E5%8E%9F%EF%BC%91%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約16分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥660</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_7')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート真和志小学校前店">
+              <span>ファミリーマート真和志小学校前店 (68m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_7')" style="cursor: pointer;">♨️ 沖縄ホテル (1.3km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_8')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場9:タイムズ前島第２</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.21755,127.6875" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E5%89%8D%E5%B3%B6%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約17分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥660</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_8')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/familymart.png" style="width: 20px; height: 20px; object-fit: contain;" alt="ファミリーマート　那覇沖映通り店">
+              <span>ファミリーマート　那覇沖映通り店 (139m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('toilet_8')" style="cursor: pointer;">🚻 緑ヶ丘公園トイレ (85m)</div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_8')" style="cursor: pointer;">♨️ ゆんたくあしび温泉 りっかりっか湯 (0.1km)</div></div>
+
+        </div>
+      </div>
+
+<div style="background: #e3f2fd; padding: 10px; border-radius: 6px; margin-bottom: 8px; cursor: pointer;" onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('parking_9')">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <strong style="color: #1976d2; font-size: 13px;">🔵 駐車場10:タイムズ泊３丁目</strong>
+          <div style="display: flex; gap: 4px;">
+            <a href="https://www.google.com/maps?q=26.224656,127.688286" target="_blank" onclick="event.stopPropagation()" style="background: #3B82F6; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E6%B3%8A%EF%BC%93%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" style="background: #22D3EE; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;">🔍</a>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; font-size: 12px; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+            <div style="color: #666;">📍 徒歩約18分</div>
+            <div style="color: #d32f2f; font-weight: bold;">💰 18:00〜8:00 ¥660</div>
+          </div>
+
+          <div style="color: #666; flex-shrink: 0;">|</div>
+          <div style="color: #555; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            
+            <div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('convenience_9')" style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <img decoding="async" src="http://camping-note.local/logos/seveneleven.png" style="width: 20px; height: 20px; object-fit: contain;" alt="セブンイレブン那覇泊2丁目店">
+              <span>セブンイレブン那覇泊2丁目店 (189m)</span>
+            </div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('toilet_9')" style="cursor: pointer;">🚻 黄金森公園トイレ (265m)</div><div onclick="event.stopPropagation(); document.getElementById('parking-map-iframe').contentWindow.showMarker('onsen_9')" style="cursor: pointer;">♨️ The Naha Terrace ザ・ナハテラス (0.4km)</div></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+function scrollToMap(markerKey) {
+  const mapContainer = document.getElementById('parking-map-iframe');
+  if (mapContainer) {
+    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => mapContainer.contentWindow.showMarker(markerKey), 500);
+  }
+}
+</script>
+</div>
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+
+<div class="wp-block-group alignfull has-global-padding is-layout-constrained">
+  <h2 class="wp-block-heading has-text-align-center has-xl-font-size" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--50)">🍴 周辺おすすめレストラン（トップ5）</h2>
+
+  <p class="has-text-align-center has-text-color has-md-font-size" style="margin-bottom: 30px;">
+    駅周辺の高評価レストランをご紹介。車中泊の夕食・朝食におすすめです。
+  </p>
+
+  <div class="restaurant-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+    <div class="restaurant-card" style="background: #fff8e1; border-radius: 8px; padding: 20px; border-left: 4px solid #ff9800;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 18px;">ゆうなみ 坂下店</h3>
+        <span class="restaurant-score" style="font-size: 20px; color: #ff6f00; font-weight: bold;">⭐ 3.68</span>
+      </div>
+
+      <div style="font-size: 14px; color: #666; margin-bottom: 8px;">
+        <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">沖縄そば</span>
+        <span>💰 ディナー: ～￥999</span>
+      </div>
+
+      <p style="font-size: 13px; color: #888; margin-bottom: 10px;">
+        📍 沖縄県那覇市松川301-15 テラス坂下 1F
+      </p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="https://www.google.com/maps?q=26.21817124007876,127.70214349609371" target="_blank"
+           style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🗺️ 地図
+        </a>
+        <a href="https://tabelog.com/47013540/" target="_blank"
+           style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🔍 詳細
+        </a>
+        <button onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('restaurant_0')"
+                style="background: #ff9800; color: white; padding: 8px 12px; border: none; border-radius: 6px; font-size: 12px; cursor: pointer;">
+          📍 地図で表示
+        </button>
+      </div>
+    </div>
+
+    <div class="restaurant-card" style="background: #fff8e1; border-radius: 8px; padding: 20px; border-left: 4px solid #ff9800;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 18px;">鶴千</h3>
+        <span class="restaurant-score" style="font-size: 20px; color: #ff6f00; font-weight: bold;">⭐ 3.58</span>
+      </div>
+
+      <div style="font-size: 14px; color: #666; margin-bottom: 8px;">
+        <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">居酒屋</span>
+        <span>💰 ディナー: ￥4,000～￥4,999</span>
+      </div>
+
+      <p style="font-size: 13px; color: #888; margin-bottom: 10px;">
+        📍 沖縄県那覇市安里1-6-8 ハッピービル 1F
+      </p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="https://www.google.com/maps?q=26.219033940880934,127.69382719727007" target="_blank"
+           style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🗺️ 地図
+        </a>
+        <a href="https://tabelog.com/47017306/" target="_blank"
+           style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🔍 詳細
+        </a>
+        <button onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('restaurant_1')"
+                style="background: #ff9800; color: white; padding: 8px 12px; border: none; border-radius: 6px; font-size: 12px; cursor: pointer;">
+          📍 地図で表示
+        </button>
+      </div>
+    </div>
+
+    <div class="restaurant-card" style="background: #fff8e1; border-radius: 8px; padding: 20px; border-left: 4px solid #ff9800;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 18px;">GLOUTON SHURI</h3>
+        <span class="restaurant-score" style="font-size: 20px; color: #ff6f00; font-weight: bold;">⭐ 3.58</span>
+      </div>
+
+      <div style="font-size: 14px; color: #666; margin-bottom: 8px;">
+        <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">フレンチ</span>
+        <span>💰 ディナー: ￥15,000～￥19,999</span>
+      </div>
+
+      <p style="font-size: 13px; color: #888; margin-bottom: 10px;">
+        📍 沖縄県那覇市松川402 コテージジャム 2F
+      </p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="https://www.google.com/maps?q=26.219382399303313,127.705162847564" target="_blank"
+           style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🗺️ 地図
+        </a>
+        <a href="https://tabelog.com/47031248/" target="_blank"
+           style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🔍 詳細
+        </a>
+        <button onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('restaurant_2')"
+                style="background: #ff9800; color: white; padding: 8px 12px; border: none; border-radius: 6px; font-size: 12px; cursor: pointer;">
+          📍 地図で表示
+        </button>
+      </div>
+    </div>
+
+    <div class="restaurant-card" style="background: #fff8e1; border-radius: 8px; padding: 20px; border-left: 4px solid #ff9800;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 18px;">El Lequio</h3>
+        <span class="restaurant-score" style="font-size: 20px; color: #ff6f00; font-weight: bold;">⭐ 3.56</span>
+      </div>
+
+      <div style="font-size: 14px; color: #666; margin-bottom: 8px;">
+        <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">バー</span>
+        <span>💰 ディナー: ￥4,000～￥4,999</span>
+      </div>
+
+      <p style="font-size: 13px; color: #888; margin-bottom: 10px;">
+        📍 沖縄県那覇市安里1-3-3 安里ビル
+      </p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="https://www.google.com/maps?q=26.21875304007587,127.69423759610513" target="_blank"
+           style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🗺️ 地図
+        </a>
+        <a href="https://tabelog.com/47028764/" target="_blank"
+           style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🔍 詳細
+        </a>
+        <button onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('restaurant_3')"
+                style="background: #ff9800; color: white; padding: 8px 12px; border: none; border-radius: 6px; font-size: 12px; cursor: pointer;">
+          📍 地図で表示
+        </button>
+      </div>
+    </div>
+
+    <div class="restaurant-card" style="background: #fff8e1; border-radius: 8px; padding: 20px; border-left: 4px solid #ff9800;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="margin: 0; font-size: 18px;">削りたてカツオ節専門店 出汁ダシ</h3>
+        <span class="restaurant-score" style="font-size: 20px; color: #ff6f00; font-weight: bold;">⭐ 3.56</span>
+      </div>
+
+      <div style="font-size: 14px; color: #666; margin-bottom: 8px;">
+        <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">日本料理</span>
+        <span>💰 ランチ: ～￥999</span>
+      </div>
+
+      <p style="font-size: 13px; color: #888; margin-bottom: 10px;">
+        📍 沖縄県那覇市安里379
+      </p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="https://www.google.com/maps?q=26.21724978477246,127.69724658617311" target="_blank"
+           style="background: #3B82F6; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🗺️ 地図
+        </a>
+        <a href="https://tabelog.com/47031411/" target="_blank"
+           style="background: #22D3EE; color: white; padding: 8px 12px; text-decoration: none; border-radius: 6px; font-size: 12px;">
+          🔍 詳細
+        </a>
+        <button onclick="document.getElementById('parking-map-iframe').contentWindow.showMarker('restaurant_4')"
+                style="background: #ff9800; color: white; padding: 8px 12px; border: none; border-radius: 6px; font-size: 12px; cursor: pointer;">
+          📍 地図で表示
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--3"/>
+
+<div class="wp-block-group alignfull has-global-padding is-layout-constrained">
+  <h2 class="wp-block-heading has-text-align-center has-xl-font-size">✨ まとめ</h2>
+
+  <p class="has-text-align-center has-text-color has-md-font-size"><strong>おもろまち駅周辺は那覇市の中心部で、ショッピングやグルメが楽しめるエリアです。車中泊を活用すれば、沖縄観光の拠点として便利に使えます。安全に気をつけて、素敵な思い出を作ってください!</strong></p>
+
+  <div class="wp-block-buttons is-content-justification-center is-layout-flex">
+    <div class="wp-block-button"><a class="wp-block-button__link has-bg-color has-fg-background-color has-text-color has-background wp-element-button" href="http://camping-note.local/">他のエリアを見る</a></div>
+  </div>
+</div>
