@@ -636,11 +636,25 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>御料理 まつ山</h3>
+
+          <span class="restaurant-genre">日本料理</span>
+
+          <div class="restaurant-address">📍 福岡県北九州市八幡西区藤田2-1-10</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.86683663619822,130.77087047120125" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%BE%A1%E6%96%99%E7%90%86%20%E3%81%BE%E3%81%A4%E5%B1%B1" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>黒崎 田舎庵 日日屋</h3>
 
           <span class="restaurant-genre">うなぎ</span>
@@ -653,36 +667,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>いづみ</h3>
-
-          <span class="restaurant-genre">餃子</span>
-
-          <div class="restaurant-address">📍 福岡県北九州市八幡西区黒崎3-5-10</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.86505983619726,130.76428357118792" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%84%E3%81%A5%E3%81%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>天や</h3>
-
-          <span class="restaurant-genre">天ぷら</span>
-
-          <div class="restaurant-address">📍 福岡県北九州市八幡西区黒崎1-8-7</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.86487993619851,130.76786297118358" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>魚虎</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -695,17 +681,31 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>御料理 まつ山</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>天や</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">天ぷら</span>
 
-          <div class="restaurant-address">📍 福岡県北九州市八幡西区藤田2-1-10</div>
+          <div class="restaurant-address">📍 福岡県北九州市八幡西区黒崎1-8-7</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.86683663619822,130.77087047120125" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%BE%A1%E6%96%99%E7%90%86%20%E3%81%BE%E3%81%A4%E5%B1%B1" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=33.86487993619851,130.76786297118358" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>いづみ</h3>
+
+          <span class="restaurant-genre">餃子</span>
+
+          <div class="restaurant-address">📍 福岡県北九州市八幡西区黒崎3-5-10</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.86505983619726,130.76428357118792" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%84%E3%81%A5%E3%81%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
