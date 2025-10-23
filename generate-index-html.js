@@ -1,24 +1,79 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+
+/**
+ * 富士山の背景画像を取得してBase64エンコード
+ */
+async function fetchBackgroundImageBase64() {
+  return new Promise((resolve) => {
+    const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/080103_hakkai_fuji.jpg/1280px-080103_hakkai_fuji.jpg';
+
+    const options = {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+      }
+    };
+
+    const processResponse = (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) {
+        https.get(res.headers.location, options, processResponse).on('error', (err) => {
+          console.error('   ⚠️  画像取得エラー:', err.message);
+          resolve('');
+        });
+        return;
+      }
+
+      if (res.statusCode !== 200) {
+        console.error('   ⚠️  画像取得失敗 Status:', res.statusCode);
+        resolve('');
+        return;
+      }
+
+      const chunks = [];
+      res.on('data', (chunk) => chunks.push(chunk));
+      res.on('end', () => {
+        const buffer = Buffer.concat(chunks);
+        const base64 = buffer.toString('base64');
+        resolve(`data:image/jpeg;base64,${base64}`);
+      });
+    };
+
+    https.get(imageUrl, options, processResponse).on('error', (err) => {
+      console.error('   ⚠️  画像取得エラー:', err.message);
+      resolve('');
+    });
+  });
+}
 
 /**
  * 車中泊スポットマップのindex.htmlを生成
  */
-function generateIndexHTML() {
+async function generateIndexHTML() {
   // 地域データを読み込む
   const regionsDataPath = path.join(__dirname, 'data', 'regions-data.json');
   const regions = JSON.parse(fs.readFileSync(regionsDataPath, 'utf8'));
 
   console.log(`📍 ${regions.length}個の地域マーカーを追加します`);
 
-  // 地域データをJavaScript配列形式に変換
+  // 背景画像を取得
+  console.log('🖼️  背景画像を取得中...');
+  const backgroundImageBase64 = await fetchBackgroundImageBase64();
+  if (backgroundImageBase64) {
+    console.log(`   ✅ 背景画像を取得しました (${backgroundImageBase64.length.toLocaleString()} bytes)`);
+  } else {
+    console.log('   ⚠️  背景画像の取得に失敗しました');
+  }
+
+  // 地域データをJavaScript配列形式に変換（標高データを含む）
   const regionsJS = regions.map(r => ({
     name: r.name,
     lat: r.lat,
     lng: r.lng,
     restaurantCount: r.restaurantCount,
     fileName: r.fileName,
-    url: `${r.fileName}.html` // 地域ページのURL
+    elevation: r.elevation || 0, // 標高データ
+    url: `regions/${r.fileName}.html` // 地域ページのURL（regionsフォルダ内）
   }));
 
   const html = `<!DOCTYPE html>
@@ -26,7 +81,7 @@ function generateIndexHTML() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camping Note - 全国車中泊スポットマップ</title>
+    <title>車旅コンシェルジュ - 全国車中泊スポットマップ</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -36,85 +91,121 @@ function generateIndexHTML() {
             line-height: 1.7;
             color: #333;
             background: #f5f5f5;
+            margin: 0;
         }
+
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
             background: white;
         }
-        h1, h2, h3 { margin-top: 1.5em; margin-bottom: 0.5em; }
-        h1 { font-size: 2em; }
-        h2 { font-size: 1.5em; }
+
+        .header {
+            background: linear-gradient(rgba(25, 118, 210, 0.85), rgba(66, 165, 245, 0.85))${backgroundImageBase64 ? `,\n                  url('${backgroundImageBase64}')` : ''};
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-links a {
+            margin-right: 20px;
+            color: #1976d2;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 0.8em;
+            text-align: center;
+            color: #1976d2;
+            font-weight: 600;
+        }
+
         p { margin-bottom: 1em; }
         a { color: #3B82F6; text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         #map {
             width: 100%;
-            height: 600px;
-            margin: 30px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: calc(100vh - 200px);
+            min-height: 600px;
+            margin: 0;
+            border: none;
+            position: relative;
         }
 
-        .region-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .region-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
+        .elevation-legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
             padding: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .region-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
-        .region-card h3 {
-            margin-top: 0;
-            color: #1976d2;
-            font-size: 1.1em;
-        }
-
-        .region-info {
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 8px;
-        }
-
-        .stats {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
-            padding: 20px;
-            background: #f8f9fa;
             border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 0.85em;
         }
 
-        .stat-item {
-            flex: 1;
-            text-align: center;
+        .elevation-legend h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #333;
         }
 
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #1976d2;
+        .elevation-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        .stat-label {
+        .elevation-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .elevation-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .elevation-label {
             color: #666;
             font-size: 0.9em;
-            margin-top: 5px;
         }
 
         footer {
@@ -125,33 +216,76 @@ function generateIndexHTML() {
             color: #666;
             font-size: 0.9em;
         }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            #map {
+                height: 500px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <p><a href="../index.html">← トップページに戻る</a> | <a href="https://trailfusionai.com">TrailFusion AI</a></p>
+        <div class="header">
+            <h1>🚗 車旅コンシェルジュ</h1>
+            <h2 style="font-size: 1.5em; margin: 10px 0 0 0; font-weight: 500;">全国車中泊スポットマップ</h2>
+            <p>日本全国の車中泊スポットを地図上で確認できます</p>
+        </div>
 
-        <h1>🚗 全国車中泊スポットマップ</h1>
-        <p>日本全国の車中泊スポットを地図上で確認できます。マーカーをクリックして各地域の詳細ページへ。</p>
+        <div class="nav-links">
+            <a href="../index.html">← トップページ</a>
+            <a href="terms.html">利用規約</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="https://trailfusionai.com" target="_blank">TrailFusion AI</a>
+        </div>
 
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">${regions.length}</div>
-                <div class="stat-label">対応地域</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">${regions.reduce((sum, r) => sum + r.restaurantCount, 0).toLocaleString()}</div>
-                <div class="stat-label">レストラン情報</div>
+        <div class="map-container">
+            <div id="map">
+                <div class="elevation-legend">
+                    <h4>標高</h4>
+                    <div class="elevation-scale">
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FF0000;"></div>
+                            <span class="elevation-label">1000m+</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FF8000;"></div>
+                            <span class="elevation-label">750m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #FFFF00;"></div>
+                            <span class="elevation-label">500m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #80FF00;"></div>
+                            <span class="elevation-label">250m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #00FFFF;"></div>
+                            <span class="elevation-label">100m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #0080FF;"></div>
+                            <span class="elevation-label">50m</span>
+                        </div>
+                        <div class="elevation-item">
+                            <div class="elevation-color" style="background: #0000FF;"></div>
+                            <span class="elevation-label">0m</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="map"></div>
-
-        <h2>📍 地域一覧</h2>
-        <div id="region-list" class="region-list"></div>
-
         <footer>
-            © 2025 TrailFusion AI - Camping Note
+            <p>© 2025 TrailFusion AI - 車旅コンシェルジュ</p>
+            <p><a href="terms.html">利用規約</a> | <a href="privacy.html">プライバシーポリシー</a></p>
         </footer>
     </div>
 
@@ -159,50 +293,60 @@ function generateIndexHTML() {
         // 地域データ
         const regions = ${JSON.stringify(regionsJS, null, 8)};
 
-        // 地図初期化
-        const map = L.map('map').setView([37.5, 138.0], 5);
+        // 地図初期化（日本全体が見えるように拡大）
+        const map = L.map('map').setView([37.5, 138.0], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 19
         }).addTo(map);
 
-        // 地域マーカーアイコン
-        const regionIcon = L.divIcon({
-            html: '<div style="background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(25,118,210,0.5); border: 3px solid white;">🚗</div>',
-            iconSize: [35, 35],
-            iconAnchor: [17, 35],
-            popupAnchor: [0, -35],
-            className: 'region-icon'
-        });
+        /**
+         * 標高から色を計算（0m=青, 1000m=赤のグラデーション）
+         */
+        function getColorFromElevation(elevation) {
+            // 標高を0-1000の範囲に正規化
+            const normalized = Math.min(Math.max(elevation, 0), 1000) / 1000;
 
-        const regionListEl = document.getElementById('region-list');
+            // HSLカラースペースで青(240°)から赤(0°)へ
+            const hue = (1 - normalized) * 240;
 
-        // マーカーとカードを作成
+            return \`hsl(\${hue}, 100%, 50%)\`;
+        }
+
+        /**
+         * 色付きのピンマーカーSVGを生成
+         */
+        function createColoredPinIcon(color) {
+            const svg = \`<svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0C10.477 0 6 4.477 6 10C6 20 16 32 16 32C16 32 26 20 26 10C26 4.477 21.523 0 16 0Z" fill="\${color}" stroke="white" stroke-width="2"/>
+                <circle cx="16" cy="10" r="4" fill="white"/>
+            </svg>\`;
+
+            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+        }
+
+        // マーカーを作成
         regions.forEach(region => {
-            // マーカー追加
-            const marker = L.marker([region.lat, region.lng], { icon: regionIcon })
+            const elevation = region.elevation || 0;
+            const color = getColorFromElevation(elevation);
+            const iconUrl = createColoredPinIcon(color);
+
+            const regionIcon = L.icon({
+                iconUrl: iconUrl,
+                iconSize: [32, 48],
+                iconAnchor: [16, 48],
+                popupAnchor: [0, -48]
+            });
+
+            L.marker([region.lat, region.lng], { icon: regionIcon })
                 .addTo(map)
                 .bindPopup(\`
                     <div style="min-width: 200px;">
                         <h3 style="margin: 0 0 10px 0; color: #1976d2; font-size: 1.1em;">\${region.name}</h3>
-                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">🍴 レストラン: \${region.restaurantCount}店</p>
+                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">標高: \${elevation}m</p>
                         <a href="\${region.url}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #1976d2; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em;">車中泊スポットを見る</a>
                     </div>
                 \`);
-
-            // 地域カード追加
-            const card = document.createElement('div');
-            card.className = 'region-card';
-            card.innerHTML = \`
-                <h3>\${region.name}</h3>
-                <div class="region-info">🍴 レストラン: \${region.restaurantCount}店</div>
-            \`;
-            card.addEventListener('click', () => {
-                map.setView([region.lat, region.lng], 13);
-                marker.openPopup();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            regionListEl.appendChild(card);
         });
     </script>
 </body>
@@ -217,4 +361,7 @@ function generateIndexHTML() {
 }
 
 // 実行
-generateIndexHTML();
+generateIndexHTML().catch(err => {
+  console.error('エラー:', err);
+  process.exit(1);
+});

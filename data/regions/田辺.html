@@ -6,19 +6,22 @@
   <title>田辺 - 車中泊おすすめスポット</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f8f9fa;
     }
+
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
     }
+
     .header {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #1976d2;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
       background-size: cover;
       background-position: center;
       padding: 50px 30px;
@@ -26,43 +29,226 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
     .header h1 {
       font-size: 28px;
       color: #fff;
       margin-bottom: 8px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
+
     .header p {
       color: #fff;
       font-size: 16px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    /* 地図とリストのレイアウト */
+    .parking-map-fullwidth {
+      width: 100%;
+      background: #f8f9fa;
+      margin-bottom: 30px;
+    }
+
+    .map-layout-container {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .map-layout-left {
+      flex: 0 0 60%;
+      min-width: 0;
+      height: 700px;
+    }
+
+    .map-layout-left iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .map-layout-right {
+      flex: 0 0 40%;
+      min-width: 0;
+      max-height: 700px;
+      overflow-y: auto;
+      background: white;
+      padding: 20px;
+    }
+
+    .map-layout-right h4 {
+      margin: 0 0 15px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* エリア中心カード */
+    .area-center-card {
+      background: #fff3e0;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .area-center-card strong {
+      color: #d32f2f;
+      font-size: 13px;
+    }
+
+    /* 駐車場カード */
+    .parking-card {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .parking-card:hover {
+      background: #bbdefb;
+    }
+
+    .parking-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .parking-card-header strong {
+      color: #1976d2;
+      font-size: 14px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .parking-card-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .btn-icon {
+      background: #3B82F6;
+      color: white;
+      padding: 6px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    .btn-icon:hover {
+      opacity: 0.8;
+    }
+
+    .btn-search {
+      background: #22D3EE;
+    }
+
+    .parking-info {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      align-items: flex-start;
+    }
+
+    .parking-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .parking-info-left div {
+      color: #666;
+    }
+
+    .parking-fee {
+      color: #d32f2f !important;
+      font-weight: bold;
+    }
+
+    .parking-facilities {
+      color: #555;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 11px;
+      flex-wrap: wrap;
+    }
+
+    .facility-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* レストランセクション */
     .restaurant-section {
       margin-top: 30px;
     }
+
     .restaurant-section h2 {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 15px;
       color: #333;
     }
+
     .restaurant-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 15px;
     }
+
     .restaurant-card {
       background: #fff8e1;
       border-radius: 6px;
       padding: 12px;
       border-left: 4px solid #ff9800;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+
+    .restaurant-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
     .restaurant-card h3 {
       color: #ff9800;
       font-size: 14px;
       margin-bottom: 8px;
       font-weight: bold;
     }
+
     .restaurant-genre {
       background: #ff9800;
       color: white;
@@ -72,22 +258,54 @@
       display: inline-block;
       margin-bottom: 8px;
     }
+
     .restaurant-address {
       font-size: 11px;
       color: #666;
       margin-bottom: 10px;
       line-height: 1.4;
     }
+
+    .restaurant-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .restaurant-buttons .btn-icon {
+      font-size: 14px;
+      padding: 5px 8px;
+    }
+
     @media (max-width: 1200px) {
+      .map-layout-container {
+        flex-direction: column;
+      }
+
+      .map-layout-left {
+        flex: 0 0 100%;
+        height: 500px;
+      }
+
+      .map-layout-right {
+        flex: 0 0 100%;
+        max-height: none;
+      }
+
       .restaurant-grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
+
     @media (max-width: 768px) {
+      .map-layout-left {
+        height: 400px;
+      }
+
       .restaurant-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
     @media (max-width: 480px) {
       .restaurant-grid {
         grid-template-columns: 1fr;
@@ -99,46 +317,148 @@
   <div class="container">
     <div class="header">
       <h1>🚗 田辺</h1>
-      <p>周辺のおすすめレストラン情報</p>
+      <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 地図＋駐車場リスト -->
+    <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
+
+    <div class="parking-map-fullwidth">
+      <div class="map-layout-container">
+        <div class="map-layout-left">
+          <iframe id="parking-map-iframe" src="田辺-map.html"></iframe>
+        </div>
+
+        <div class="map-layout-right">
+          <h4>📍 クリックして地図に表示</h4>
+
+          <!-- エリア中心 -->
+          <div class="area-center-card" onclick="showMarker('area_center')">
+            <strong>🔴 エリア中心: 田辺</strong>
+            <a href="https://www.google.com/maps?q=33.751862909355076,135.49021049464835" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+          </div>
+
+
+          <!-- 駐車場1 -->
+          <div class="parking-card" onclick="showMarker('parking_0')">
+            <div class="parking-card-header">
+              <strong>🥇 1位: 道の駅 ふるさとセンター大塔</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=33.7428,135.5018" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E9%81%93%E3%81%AE%E9%A7%85%20%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%A4%A7%E5%A1%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約19分 (1473m)</div>
+                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (1008m)</div>
+                <div class="facility-item">🚻 「道の駅」ふるさとセンター大塔公衆トイレ (58m)</div>
+                <div class="facility-item">♨️ undefined (0.3km)</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
       <h2>🍴 おすすめレストラントップ5</h2>
       <div class="restaurant-grid">
-        <div class="restaurant-card">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
           <h3>召膳 無苦庵</h3>
+
           <span class="restaurant-genre">日本料理</span>
+
           <div class="restaurant-address">📍 和歌山県田辺市高雄2-16-30</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.73787872897303,135.38320308599864" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%8F%AC%E8%86%B3%20%E7%84%A1%E8%8B%A6%E5%BA%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
         </div>
-        <div class="restaurant-card">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
           <h3>おおみや</h3>
+
           <span class="restaurant-genre">そば</span>
+
           <div class="restaurant-address">📍 和歌山県西牟婁郡上富田町生馬3115-1</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.68633703781372,135.4836252660745" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%8A%E3%81%8A%E3%81%BF%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
         </div>
-        <div class="restaurant-card">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
           <h3>旅館 あづまや</h3>
+
           <span class="restaurant-genre">料理旅館</span>
+
           <div class="restaurant-address">📍 和歌山県田辺市本宮町湯の峰122</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.82856333579056,135.75728939732784" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%97%85%E9%A4%A8%20%E3%81%82%E3%81%A5%E3%81%BE%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
         </div>
-        <div class="restaurant-card">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
           <h3>むそう</h3>
+
           <span class="restaurant-genre">居酒屋</span>
+
           <div class="restaurant-address">📍 和歌山県田辺市湊1165</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.73313088256082,135.3821331267915" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%80%E3%81%9D%E3%81%86" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
         </div>
-        <div class="restaurant-card">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
           <h3>Mobo</h3>
+
           <span class="restaurant-genre">洋食</span>
+
           <div class="restaurant-address">📍 和歌山県田辺市新万8-2</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.7335090377556,135.39520636661297" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=Mobo" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
         </div>
+
       </div>
     </div>
 
   </div>
+
+  <script>
+    function showMarker(markerId) {
+      const iframe = document.getElementById('parking-map-iframe');
+      if (iframe && iframe.contentWindow && iframe.contentWindow.showMarker) {
+        iframe.contentWindow.showMarker(markerId);
+        // 地図までスクロール
+        iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
 </body>
 </html>
