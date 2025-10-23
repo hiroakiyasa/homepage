@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>亀山 - 地図</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #map { width: 100%; height: 100%; }
+
+    .custom-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .custom-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    /* コンビニロゴマーカー */
+    .convenience-logo-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: white;
+      border: 2px solid #4caf50;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .convenience-logo-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    .convenience-logo-marker img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .marker-center { background: #d32f2f; }
+    .marker-parking { background: #1976d2; }
+    .marker-toilet { background: #795548; }
+    .marker-onsen { background: #f8bbd0; }
+    .marker-restaurant { background: #ff9800; }
+
+    .leaflet-popup-content { min-width: 200px; }
+    .popup-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+    .popup-info { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // 地図初期化
+    const map = L.map('map').setView([34.866754387372325, 136.4517504523192], 15);
+
+    // OpenStreetMap タイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // マーカーデータ
+    const markers = [
+    {
+        "type": "center",
+        "id": "area_center",
+        "lat": 34.866754387372325,
+        "lng": 136.4517504523192,
+        "title": "亀山",
+        "description": "周辺のおすすめ車中泊スポット",
+        "color": "#d32f2f"
+    },
+    {
+        "type": "parking",
+        "id": "parking_0",
+        "lat": 34.8569,
+        "lng": 136.4493,
+        "title": "亀山城南側駐車場",
+        "number": 1,
+        "distance": "1120m",
+        "walking": "徒歩約14分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_1",
+        "lat": 34.857,
+        "lng": 136.4483,
+        "title": "亀山菖蒲園",
+        "number": 2,
+        "distance": "1131m",
+        "walking": "徒歩約15分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "0.9km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_2",
+        "lat": 34.8592,
+        "lng": 136.4481,
+        "title": "亀山公園",
+        "number": 3,
+        "distance": "905m",
+        "walking": "徒歩約12分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "0.7km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_3",
+        "lat": 34.8617,
+        "lng": 136.436,
+        "title": "西野公園 北側駐車場",
+        "number": 4,
+        "distance": "1545m",
+        "walking": "徒歩約20分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_3_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "1.3km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_3_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "1.4km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_4",
+        "lat": 34.8638,
+        "lng": 136.4742,
+        "title": "東野公園",
+        "number": 5,
+        "distance": "2077m",
+        "walking": "徒歩約26分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "parking",
+        "id": "parking_5",
+        "lat": 34.851332,
+        "lng": 136.449561,
+        "title": "スペースＥＣＯ　亀山駅前第２",
+        "number": 6,
+        "distance": "1728m",
+        "walking": "徒歩約22分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_5_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "1.5km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_5_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "1.5km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_6",
+        "lat": 34.850941,
+        "lng": 136.448597,
+        "title": "ＭＡＹパーク亀山",
+        "number": 7,
+        "distance": "1784m",
+        "walking": "徒歩約23分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_6_0",
+        "lat": 34.864723,
+        "lng": 136.449448,
+        "title": "亀山温泉 白鳥の湯 足湯",
+        "distance": "1.5km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_6_1",
+        "lat": 34.865181,
+        "lng": 136.4505,
+        "title": "総合保健福祉センター 白鳥の湯",
+        "distance": "1.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_0",
+        "lat": 34.85226363738296,
+        "lng": 136.45624557716968,
+        "title": "焼肉  じゅうじゅう 百",
+        "number": 1,
+        "genre": "焼肉",
+        "address": "三重県亀山市東御幸町59",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_1",
+        "lat": 34.8501005373629,
+        "lng": 136.388949477195,
+        "title": "うなぎ 初音",
+        "number": 2,
+        "genre": "うなぎ",
+        "address": "三重県亀山市関町新所898-1",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_2",
+        "lat": 34.871345637375825,
+        "lng": 136.47190787735144,
+        "title": "鮨いの上",
+        "number": 3,
+        "genre": "寿司",
+        "address": "三重県亀山市川合町1197-50",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_3",
+        "lat": 34.89330773736761,
+        "lng": 136.48989887756068,
+        "title": "TSUMUGI cafe",
+        "number": 4,
+        "genre": "カフェ",
+        "address": "三重県亀山市能褒野町43-3",
+        "color": "#ff9800"
+    }
+];
+
+    // マーカーオブジェクトを保存
+    const markerObjects = {};
+
+    // アイコン取得関数
+    function getMarkerIcon(type, number) {
+      if (type === 'parking' && number) {
+        return number;
+      }
+      if (type === 'restaurant' && number) {
+        return number;
+      }
+      const icons = {
+        center: '📍',
+        parking: '🅿️',
+        toilet: '🚻',
+        onsen: '♨️',
+        restaurant: '🍴'
+      };
+      return icons[type] || '📌';
+    }
+
+    // マーカーを作成
+    markers.forEach(markerData => {
+      let icon;
+      let zIndexOffset = 0;
+
+      // z-indexの設定（駐車場を最前面に）
+      if (markerData.type === 'parking') {
+        zIndexOffset = 1000;
+      } else if (markerData.type === 'center') {
+        zIndexOffset = 900;
+      } else if (markerData.type === 'restaurant') {
+        zIndexOffset = 800;
+      } else if (markerData.type === 'convenience') {
+        zIndexOffset = 700;
+      } else if (markerData.type === 'toilet') {
+        zIndexOffset = 600;
+      } else if (markerData.type === 'onsen') {
+        zIndexOffset = 500;
+      }
+
+      // コンビニの場合はロゴ画像を使用（Base64埋め込み）
+      if (markerData.type === 'convenience' && markerData.logo) {
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="convenience-logo-marker"><img src="${markerData.logo}" alt="${markerData.subType}"></div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      } else {
+        // その他のマーカーは従来通り
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="custom-marker marker-${markerData.type}" style="background-color: ${markerData.color}">${getMarkerIcon(markerData.type, markerData.number)}</div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      }
+
+      // マーカー作成（zIndexOffsetを指定）
+      const marker = L.marker([markerData.lat, markerData.lng], {
+        icon: icon,
+        zIndexOffset: zIndexOffset
+      }).addTo(map);
+
+      // ポップアップ内容
+      let popupContent = `<div class="popup-title">${markerData.title}</div>`;
+
+      if (markerData.subType) {
+        popupContent += `<div class="popup-info">🏪 ${markerData.subType}</div>`;
+      }
+      if (markerData.description) {
+        popupContent += `<div class="popup-info">${markerData.description}</div>`;
+      }
+      if (markerData.distance) {
+        popupContent += `<div class="popup-info">📍 ${markerData.distance}</div>`;
+      }
+      if (markerData.walking) {
+        popupContent += `<div class="popup-info">🚶 ${markerData.walking}</div>`;
+      }
+      if (markerData.genre) {
+        popupContent += `<div class="popup-info">🍽️ ${markerData.genre}</div>`;
+      }
+      if (markerData.address) {
+        popupContent += `<div class="popup-info" style="margin-top: 4px;">${markerData.address}</div>`;
+      }
+
+      marker.bindPopup(popupContent);
+
+      // マーカーオブジェクトを保存
+      markerObjects[markerData.id] = marker;
+    });
+
+    // 外部から呼び出せる関数
+    window.showMarker = function(markerId) {
+      const marker = markerObjects[markerId];
+      if (marker) {
+        // アニメーションで地図を移動
+        map.setView(marker.getLatLng(), 17, {
+          animate: true,
+          duration: 0.5
+        });
+        marker.openPopup();
+      }
+    };
+  </script>
+</body>
+</html>
