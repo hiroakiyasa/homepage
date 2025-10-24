@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -641,6 +650,20 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>鮨処 やまと</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 東京都中央区築地3-7-2 第五銀座ウェスト築地ビル 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.66792573792143,139.77375888308313" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%AE%A8%E5%87%A6%20%E3%82%84%E3%81%BE%E3%81%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>櫻木</h3>
 
           <span class="restaurant-genre">日本料理</span>
@@ -653,31 +676,17 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>PRIMO PASSO</h3>
-
-          <span class="restaurant-genre">イタリアン</span>
-
-          <div class="restaurant-address">📍 東京都中央区築地1-5-11 ACN築地ビル B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.67023053791932,139.77174558310784" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=PRIMO%20PASSO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>鮨処 やまと</h3>
+          <h3>日本料理 久丹</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 東京都中央区築地3-7-2 第五銀座ウェスト築地ビル 1F</div>
+          <div class="restaurant-address">📍 東京都中央区新富2-5-5 新富MSビル 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.66792573792143,139.77375888308313" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%AE%A8%E5%87%A6%20%E3%82%84%E3%81%BE%E3%81%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.67161153791918,139.77402868312018" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86%20%E4%B9%85%E4%B8%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -697,15 +706,15 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>日本料理 久丹</h3>
+          <h3>PRIMO PASSO</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">イタリアン</span>
 
-          <div class="restaurant-address">📍 東京都中央区新富2-5-5 新富MSビル 1F</div>
+          <div class="restaurant-address">📍 東京都中央区築地1-5-11 ACN築地ビル B1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.67161153791918,139.77402868312018" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86%20%E4%B9%85%E4%B8%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.67023053791932,139.77174558310784" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=PRIMO%20PASSO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

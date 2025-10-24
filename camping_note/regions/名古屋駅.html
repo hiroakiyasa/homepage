@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -635,34 +644,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>肉屋 雪月花 NAGOYA</h3>
-
-          <span class="restaurant-genre">牛料理</span>
-
-          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅4-6-23 第三堀内ビル B1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.171154837317125,136.8854849800899" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%82%89%E5%B1%8B%20%E9%9B%AA%E6%9C%88%E8%8A%B1%20NAGOYA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>Hirovanna</h3>
-
-          <span class="restaurant-genre">イタリアン</span>
-
-          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅3-5-14 ジェイチル名駅ビル B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.173618237316276,136.8877134801132" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=Hirovanna" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>中国飯店 麗穂</h3>
 
           <span class="restaurant-genre">中華料理</span>
@@ -675,22 +656,36 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>TANAKA YAKINIKU RESTAURANTE</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>肉屋 雪月花 NAGOYA</h3>
 
-          <span class="restaurant-genre">焼肉</span>
+          <span class="restaurant-genre">牛料理</span>
 
-          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅4-6-23 第三堀内ビル B1F</div>
+          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅4-6-23 第三堀内ビル B1</div>
 
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.171154837317125,136.8854849800899" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=TANAKA%20YAKINIKU%20RESTAURANTE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/search?q=%E8%82%89%E5%B1%8B%20%E9%9B%AA%E6%9C%88%E8%8A%B1%20NAGOYA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>Hirovanna</h3>
+
+          <span class="restaurant-genre">イタリアン</span>
+
+          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅3-5-14 ジェイチル名駅ビル B1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.173618237316276,136.8877134801132" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=Hirovanna" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>鮨 花車</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -700,6 +695,20 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.171154837317125,136.8854849800899" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E9%AE%A8%20%E8%8A%B1%E8%BB%8A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>TANAKA YAKINIKU RESTAURANTE</h3>
+
+          <span class="restaurant-genre">焼肉</span>
+
+          <div class="restaurant-address">📍 愛知県名古屋市中村区名駅4-6-23 第三堀内ビル B1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.171154837317125,136.8854849800899" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=TANAKA%20YAKINIKU%20RESTAURANTE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

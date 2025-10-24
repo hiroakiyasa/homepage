@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -641,48 +650,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>WAJO</h3>
-
-          <span class="restaurant-genre">イタリアン</span>
-
-          <div class="restaurant-address">📍 東京都渋谷区代官山町18-6 ACN代官山ビル B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.649452937911086,139.70444128294514" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=WAJO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>TACUBO</h3>
-
-          <span class="restaurant-genre">イタリアン</span>
-
-          <div class="restaurant-address">📍 東京都渋谷区恵比寿西2-13-16 ラングス代官山 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.6508679379107,139.7060317829583" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=TACUBO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>レカー</h3>
-
-          <span class="restaurant-genre">パン</span>
-
-          <div class="restaurant-address">📍 東京都渋谷区代官山町9-7 サインビュ－ハイツ代官山 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.65164562183653,139.70438582112365" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%AC%E3%82%AB%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>ARMONICO</h3>
 
           <span class="restaurant-genre">イタリアン</span>
@@ -695,8 +662,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>レカー</h3>
+
+          <span class="restaurant-genre">パン</span>
+
+          <div class="restaurant-address">📍 東京都渋谷区代官山町9-7 サインビュ－ハイツ代官山 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.65164562183653,139.70438582112365" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%AC%E3%82%AB%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>recte</h3>
 
           <span class="restaurant-genre">フレンチ</span>
@@ -706,6 +687,34 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.648938837911906,139.70596498293887" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=recte" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>WAJO</h3>
+
+          <span class="restaurant-genre">イタリアン</span>
+
+          <div class="restaurant-address">📍 東京都渋谷区代官山町18-6 ACN代官山ビル B1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.649452937911086,139.70444128294514" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=WAJO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>TACUBO</h3>
+
+          <span class="restaurant-genre">イタリアン</span>
+
+          <div class="restaurant-address">📍 東京都渋谷区恵比寿西2-13-16 ラングス代官山 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.6508679379107,139.7060317829583" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=TACUBO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

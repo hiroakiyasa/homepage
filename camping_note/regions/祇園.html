@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -641,6 +650,20 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>祇園 にし</h3>
+
+          <span class="restaurant-genre">日本料理</span>
+
+          <div class="restaurant-address">📍 京都府京都市東山区月見町21-2 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.00094823707263,135.77827487914678" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%A5%87%E5%9C%92%20%E3%81%AB%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>やまぐち</h3>
 
           <span class="restaurant-genre">イタリアン</span>
@@ -653,36 +676,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>啐啄 つか本</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 京都府京都市東山区祇園町南側570-120</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.001894037070755,135.7743135791591" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%95%90%E5%95%84%20%E3%81%A4%E3%81%8B%E6%9C%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>にくの匠 三芳</h3>
-
-          <span class="restaurant-genre">牛料理</span>
-
-          <div class="restaurant-address">📍 京都府京都市東山区祇園町南側570-15</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00297163707056,135.77586197916892" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%AB%E3%81%8F%E3%81%AE%E5%8C%A0%20%E4%B8%89%E8%8A%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>にしぶち飯店</h3>
 
           <span class="restaurant-genre">中華料理</span>
@@ -695,17 +690,31 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>祇園 にし</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>啐啄 つか本</h3>
 
           <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 京都府京都市東山区月見町21-2 1F</div>
+          <div class="restaurant-address">📍 京都府京都市東山区祇園町南側570-120</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00094823707263,135.77827487914678" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%A5%87%E5%9C%92%20%E3%81%AB%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.001894037070755,135.7743135791591" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%95%90%E5%95%84%20%E3%81%A4%E3%81%8B%E6%9C%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>にくの匠 三芳</h3>
+
+          <span class="restaurant-genre">牛料理</span>
+
+          <div class="restaurant-address">📍 京都府京都市東山区祇園町南側570-15</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.00297163707056,135.77586197916892" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%AB%E3%81%8F%E3%81%AE%E5%8C%A0%20%E4%B8%89%E8%8A%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -634,20 +643,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>練馬 鳥長 新潟</h3>
-
-          <span class="restaurant-genre">焼き鳥</span>
-
-          <div class="restaurant-address">📍 新潟県新潟市中央区東大通2-1-7 松屋ビル 2F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=37.914844236266795,139.05916540628002" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%B7%B4%E9%A6%AC%20%E9%B3%A5%E9%95%B7%20%E6%96%B0%E6%BD%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>ニイガタ ピッツェリア ベントエマーレ</h3>
 
           <span class="restaurant-genre">ピザ</span>
@@ -660,22 +655,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>千代鮨</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>練馬 鳥長 新潟</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">焼き鳥</span>
 
-          <div class="restaurant-address">📍 新潟県新潟市中央区東大通1-5-26</div>
+          <div class="restaurant-address">📍 新潟県新潟市中央区東大通2-1-7 松屋ビル 2F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=37.91415163626835,139.06268690627053" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%8D%83%E4%BB%A3%E9%AE%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=37.914844236266795,139.05916540628002" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%B7%B4%E9%A6%AC%20%E9%B3%A5%E9%95%B7%20%E6%96%B0%E6%BD%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>越後一会 十郎</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -685,6 +680,20 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=37.914841436266805,139.05919280627995" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E8%B6%8A%E5%BE%8C%E4%B8%80%E4%BC%9A%20%E5%8D%81%E9%83%8E" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>千代鮨</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 新潟県新潟市中央区東大通1-5-26</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=37.91415163626835,139.06268690627053" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%8D%83%E4%BB%A3%E9%AE%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

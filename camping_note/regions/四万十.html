@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -397,20 +406,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>食酔亭元屋</h3>
-
-          <span class="restaurant-genre">居酒屋</span>
-
-          <div class="restaurant-address">📍 高知県四万十市中村栄町22-1-6</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=32.99214273744246,132.9334246608501" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%A3%9F%E9%85%94%E4%BA%AD%E5%85%83%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>居酒屋 なかひら</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -423,8 +418,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>居酒屋いなか</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -437,22 +432,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>味劇場 ちか</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>食酔亭元屋</h3>
 
           <span class="restaurant-genre">居酒屋</span>
 
-          <div class="restaurant-address">📍 高知県四万十市中村新町1-39-2</div>
+          <div class="restaurant-address">📍 高知県四万十市中村栄町22-1-6</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=32.993734237442126,132.9355413608647" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%91%B3%E5%8A%87%E5%A0%B4%20%E3%81%A1%E3%81%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=32.99214273744246,132.9334246608501" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%A3%9F%E9%85%94%E4%BA%AD%E5%85%83%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>居酒屋 喜八</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -462,6 +457,20 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=32.992928637441445,132.93181086085917" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%B1%85%E9%85%92%E5%B1%8B%20%E5%96%9C%E5%85%AB" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>味劇場 ちか</h3>
+
+          <span class="restaurant-genre">居酒屋</span>
+
+          <div class="restaurant-address">📍 高知県四万十市中村新町1-39-2</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=32.993734237442126,132.9355413608647" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%91%B3%E5%8A%87%E5%A0%B4%20%E3%81%A1%E3%81%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
