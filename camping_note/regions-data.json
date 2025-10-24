@@ -2400,36 +2400,12 @@
     "elevation": 13
   },
   {
-    "name": "さいたま新都心",
-    "lat": 35.89276651950274,
-    "lng": 139.63367397124998,
-    "restaurantCount": 5,
-    "fileName": "さいたま新都心",
-    "elevation": 10
-  },
-  {
     "name": "ひたち野うしく",
     "lat": 36.007112302251734,
     "lng": 140.16045624404973,
     "restaurantCount": 5,
     "fileName": "ひたち野うしく",
     "elevation": 23
-  },
-  {
-    "name": "一関",
-    "lat": 38.93035731326829,
-    "lng": 141.15933966504628,
-    "restaurantCount": 5,
-    "fileName": "一関",
-    "elevation": 24
-  },
-  {
-    "name": "三原",
-    "lat": 34.40740367525495,
-    "lng": 133.04678482970863,
-    "restaurantCount": 5,
-    "fileName": "三原",
-    "elevation": 150
   },
   {
     "name": "三島駅",
@@ -2440,22 +2416,6 @@
     "elevation": 31
   },
   {
-    "name": "三方五湖",
-    "lat": 35.56817919674668,
-    "lng": 135.88605032480075,
-    "restaurantCount": 5,
-    "fileName": "三方五湖",
-    "elevation": -2
-  },
-  {
-    "name": "三次",
-    "lat": 34.78839130684819,
-    "lng": 132.88669691273176,
-    "restaurantCount": 5,
-    "fileName": "三次",
-    "elevation": 207
-  },
-  {
     "name": "上尾",
     "lat": 35.97470243766785,
     "lng": 139.58929976631117,
@@ -2464,36 +2424,12 @@
     "elevation": 24
   },
   {
-    "name": "下松",
-    "lat": 34.022501765458344,
-    "lng": 131.8741029165974,
-    "restaurantCount": 5,
-    "fileName": "下松",
-    "elevation": 36
-  },
-  {
-    "name": "下関",
-    "lat": 33.96012652507028,
-    "lng": 130.9326092870124,
-    "restaurantCount": 5,
-    "fileName": "下関",
-    "elevation": 32
-  },
-  {
     "name": "下関駅",
     "lat": 33.95256927619253,
     "lng": 130.92393921195992,
     "restaurantCount": 5,
     "fileName": "下関駅",
     "elevation": 9
-  },
-  {
-    "name": "丸亀",
-    "lat": 34.26788679707789,
-    "lng": 133.82713675334224,
-    "restaurantCount": 5,
-    "fileName": "丸亀",
-    "elevation": 16
   },
   {
     "name": "久喜",
@@ -2512,14 +2448,6 @@
     "elevation": 0
   },
   {
-    "name": "今治",
-    "lat": 34.1434121735396,
-    "lng": 133.03150224575387,
-    "restaurantCount": 5,
-    "fileName": "今治",
-    "elevation": 72
-  },
-  {
     "name": "仙台",
     "lat": 38.26402007662191,
     "lng": 140.8706265085372,
@@ -2536,84 +2464,12 @@
     "elevation": 48
   },
   {
-    "name": "伊勢崎",
-    "lat": 36.31964175731321,
-    "lng": 139.16364141009373,
-    "restaurantCount": 5,
-    "fileName": "伊勢崎",
-    "elevation": 61
-  },
-  {
     "name": "伊勢市駅",
     "lat": 34.49366803363695,
     "lng": 136.70928362022738,
     "restaurantCount": 5,
     "fileName": "伊勢市駅",
     "elevation": 3
-  },
-  {
-    "name": "会津若松",
-    "lat": 37.479965100720634,
-    "lng": 139.92979619742252,
-    "restaurantCount": 5,
-    "fileName": "会津若松",
-    "elevation": 222
-  },
-  {
-    "name": "倉吉",
-    "lat": 35.44294131617353,
-    "lng": 133.83659408497238,
-    "restaurantCount": 5,
-    "fileName": "倉吉",
-    "elevation": 30
-  },
-  {
-    "name": "倉敷",
-    "lat": 34.60569653668695,
-    "lng": 133.7790018165558,
-    "restaurantCount": 5,
-    "fileName": "倉敷",
-    "elevation": 4
-  },
-  {
-    "name": "倉敷駅",
-    "lat": 34.5999491366872,
-    "lng": 133.76832343650523,
-    "restaurantCount": 5,
-    "fileName": "倉敷駅",
-    "elevation": 8
-  },
-  {
-    "name": "光の森",
-    "lat": 32.860612580530564,
-    "lng": 130.78825618821503,
-    "restaurantCount": 5,
-    "fileName": "光の森",
-    "elevation": 80
-  },
-  {
-    "name": "児島",
-    "lat": 34.46259649678565,
-    "lng": 133.8035823350931,
-    "restaurantCount": 5,
-    "fileName": "児島",
-    "elevation": 2
-  },
-  {
-    "name": "出雲",
-    "lat": 35.38858651403402,
-    "lng": 132.74130385432676,
-    "restaurantCount": 5,
-    "fileName": "出雲",
-    "elevation": 2
-  },
-  {
-    "name": "出雲市駅",
-    "lat": 35.36340440905143,
-    "lng": 132.75784618213828,
-    "restaurantCount": 5,
-    "fileName": "出雲市駅",
-    "elevation": 7
   },
   {
     "name": "前橋",
@@ -2630,14 +2486,6 @@
     "restaurantCount": 5,
     "fileName": "前橋駅",
     "elevation": 110
-  },
-  {
-    "name": "北上",
-    "lat": 39.290848821935995,
-    "lng": 141.1064305005388,
-    "restaurantCount": 5,
-    "fileName": "北上",
-    "elevation": 68
   },
   {
     "name": "北浦和",
@@ -2688,44 +2536,12 @@
     "elevation": 20
   },
   {
-    "name": "古河",
-    "lat": 36.17497154177865,
-    "lng": 139.71696213925048,
-    "restaurantCount": 5,
-    "fileName": "古河",
-    "elevation": 17
-  },
-  {
-    "name": "名取",
-    "lat": 38.17263367667997,
-    "lng": 140.87067994761406,
-    "restaurantCount": 5,
-    "fileName": "名取",
-    "elevation": 11
-  },
-  {
     "name": "周南",
     "lat": 34.051250486411305,
     "lng": 131.8077259723372,
     "restaurantCount": 5,
     "fileName": "周南",
     "elevation": 15
-  },
-  {
-    "name": "善通寺",
-    "lat": 34.234519890150246,
-    "lng": 133.7971948014273,
-    "restaurantCount": 5,
-    "fileName": "善通寺",
-    "elevation": 32
-  },
-  {
-    "name": "喜多方",
-    "lat": 37.65619348895832,
-    "lng": 139.8728831493329,
-    "restaurantCount": 5,
-    "fileName": "喜多方",
-    "elevation": 216
   },
   {
     "name": "四万十",
@@ -2768,14 +2584,6 @@
     "elevation": 8
   },
   {
-    "name": "境港",
-    "lat": 35.5371464759222,
-    "lng": 133.23525788634544,
-    "restaurantCount": 5,
-    "fileName": "境港",
-    "elevation": 3
-  },
-  {
     "name": "多賀城",
     "lat": 38.29065732202524,
     "lng": 141.00661462018587,
@@ -2800,44 +2608,12 @@
     "elevation": 36
   },
   {
-    "name": "大崎",
-    "lat": 38.62045529687766,
-    "lng": 140.88780723130466,
-    "restaurantCount": 5,
-    "fileName": "大崎",
-    "elevation": 58
-  },
-  {
     "name": "大曲",
     "lat": 39.463764835734835,
     "lng": 140.47784942093105,
     "restaurantCount": 5,
     "fileName": "大曲",
     "elevation": 28
-  },
-  {
-    "name": "大洲",
-    "lat": 33.50724973700093,
-    "lng": 132.57428124630493,
-    "restaurantCount": 5,
-    "fileName": "大洲",
-    "elevation": 26
-  },
-  {
-    "name": "大船渡",
-    "lat": 39.07893327907455,
-    "lng": 141.71086329389783,
-    "restaurantCount": 5,
-    "fileName": "大船渡",
-    "elevation": 13
-  },
-  {
-    "name": "天童",
-    "lat": 38.35509473640333,
-    "lng": 140.36590658981095,
-    "restaurantCount": 5,
-    "fileName": "天童",
-    "elevation": 102
   },
   {
     "name": "宇和島",
@@ -2848,22 +2624,6 @@
     "elevation": 4
   },
   {
-    "name": "宇多津",
-    "lat": 34.30763054804694,
-    "lng": 133.81535180842673,
-    "restaurantCount": 5,
-    "fileName": "宇多津",
-    "elevation": 4
-  },
-  {
-    "name": "宇部",
-    "lat": 33.96057703629428,
-    "lng": 131.25945201180562,
-    "restaurantCount": 5,
-    "fileName": "宇部",
-    "elevation": 6
-  },
-  {
     "name": "守谷",
     "lat": 35.95119069781229,
     "lng": 139.99594402578865,
@@ -2872,44 +2632,12 @@
     "elevation": 22
   },
   {
-    "name": "宮島",
-    "lat": 34.29801327641816,
-    "lng": 132.32138869446965,
-    "restaurantCount": 5,
-    "fileName": "宮島",
-    "elevation": 9
-  },
-  {
-    "name": "小浜",
-    "lat": 35.50370587674513,
-    "lng": 135.75261038424307,
-    "restaurantCount": 5,
-    "fileName": "小浜",
-    "elevation": 2
-  },
-  {
     "name": "小豆島",
     "lat": 34.47601845692754,
     "lng": 134.27587529489762,
     "restaurantCount": 5,
     "fileName": "小豆島",
     "elevation": 86
-  },
-  {
-    "name": "尾道",
-    "lat": 34.40709958940174,
-    "lng": 133.198324526409,
-    "restaurantCount": 5,
-    "fileName": "尾道",
-    "elevation": 9
-  },
-  {
-    "name": "山口市",
-    "lat": 34.15279719665429,
-    "lng": 131.44883718507418,
-    "restaurantCount": 5,
-    "fileName": "山口市",
-    "elevation": 11
   },
   {
     "name": "山形駅",
@@ -2942,14 +2670,6 @@
     "restaurantCount": 5,
     "fileName": "岡山駅",
     "elevation": 10
-  },
-  {
-    "name": "岩国",
-    "lat": 34.1594664134813,
-    "lng": 132.19805825453096,
-    "restaurantCount": 5,
-    "fileName": "岩国",
-    "elevation": 0
   },
   {
     "name": "川口",
@@ -3032,28 +2752,12 @@
     "elevation": 3
   },
   {
-    "name": "新居浜",
-    "lat": 33.95290237365039,
-    "lng": 133.28242810119045,
-    "restaurantCount": 5,
-    "fileName": "新居浜",
-    "elevation": 9
-  },
-  {
     "name": "新山口駅",
     "lat": 34.09424877374823,
     "lng": 131.3971478352399,
     "restaurantCount": 5,
     "fileName": "新山口駅",
     "elevation": 3
-  },
-  {
-    "name": "新庄",
-    "lat": 38.760808704942846,
-    "lng": 140.29804447917877,
-    "restaurantCount": 5,
-    "fileName": "新庄",
-    "elevation": 98
   },
   {
     "name": "新潟駅",
@@ -3088,14 +2792,6 @@
     "elevation": 28
   },
   {
-    "name": "本庄",
-    "lat": 36.24084092372252,
-    "lng": 139.1714765413336,
-    "restaurantCount": 5,
-    "fileName": "本庄",
-    "elevation": 64
-  },
-  {
     "name": "東広島",
     "lat": 34.423568604040334,
     "lng": 132.74321270396962,
@@ -3118,22 +2814,6 @@
     "restaurantCount": 5,
     "fileName": "松島",
     "elevation": 5
-  },
-  {
-    "name": "松江",
-    "lat": 35.47103873590608,
-    "lng": 133.05281712580557,
-    "restaurantCount": 5,
-    "fileName": "松江",
-    "elevation": 10
-  },
-  {
-    "name": "松江駅",
-    "lat": 35.464455843149565,
-    "lng": 133.0599451887819,
-    "restaurantCount": 5,
-    "fileName": "松江駅",
-    "elevation": 3
   },
   {
     "name": "松阪駅",
@@ -3168,22 +2848,6 @@
     "elevation": 9
   },
   {
-    "name": "横手",
-    "lat": 39.265562055878924,
-    "lng": 140.53498305888897,
-    "restaurantCount": 5,
-    "fileName": "横手",
-    "elevation": 75
-  },
-  {
-    "name": "武生",
-    "lat": 35.908016576637074,
-    "lng": 136.21964220799958,
-    "restaurantCount": 5,
-    "fileName": "武生",
-    "elevation": 24
-  },
-  {
     "name": "武蔵浦和",
     "lat": 35.84440157653385,
     "lng": 139.64543714680536,
@@ -3216,14 +2880,6 @@
     "elevation": 42
   },
   {
-    "name": "津山",
-    "lat": 35.071236223996934,
-    "lng": 133.991017285108,
-    "restaurantCount": 5,
-    "fileName": "津山",
-    "elevation": 118
-  },
-  {
     "name": "津駅",
     "lat": 34.731875946652174,
     "lng": 136.51144798713977,
@@ -3238,14 +2894,6 @@
     "restaurantCount": 5,
     "fileName": "浜松駅",
     "elevation": 13
-  },
-  {
-    "name": "浜田",
-    "lat": 34.87949355596667,
-    "lng": 132.06332284052402,
-    "restaurantCount": 5,
-    "fileName": "浜田",
-    "elevation": 40
   },
   {
     "name": "浦和",
@@ -3288,38 +2936,6 @@
     "elevation": 75
   },
   {
-    "name": "牛久",
-    "lat": 35.981926965626045,
-    "lng": 140.1532352254445,
-    "restaurantCount": 5,
-    "fileName": "牛久",
-    "elevation": 29
-  },
-  {
-    "name": "白河",
-    "lat": 37.107805909846164,
-    "lng": 140.2849551492499,
-    "restaurantCount": 5,
-    "fileName": "白河",
-    "elevation": 420
-  },
-  {
-    "name": "白石",
-    "lat": 38.012858741786246,
-    "lng": 140.60334445148223,
-    "restaurantCount": 5,
-    "fileName": "白石",
-    "elevation": 129
-  },
-  {
-    "name": "益田",
-    "lat": 34.680146496019866,
-    "lng": 131.83281905867202,
-    "restaurantCount": 5,
-    "fileName": "益田",
-    "elevation": 8
-  },
-  {
     "name": "盛岡",
     "lat": 39.70145807579721,
     "lng": 141.1477184028624,
@@ -3336,52 +2952,12 @@
     "elevation": 130
   },
   {
-    "name": "石岡",
-    "lat": 36.20368301773736,
-    "lng": 140.26425324815096,
-    "restaurantCount": 5,
-    "fileName": "石岡",
-    "elevation": 24
-  },
-  {
-    "name": "石巻",
-    "lat": 38.43203222281198,
-    "lng": 141.29673422416795,
-    "restaurantCount": 5,
-    "fileName": "石巻",
-    "elevation": 38
-  },
-  {
     "name": "神戸",
     "lat": 34.69423751207947,
     "lng": 135.1881079014624,
     "restaurantCount": 5,
     "fileName": "神戸",
     "elevation": 26
-  },
-  {
-    "name": "神辺",
-    "lat": 34.546682696593145,
-    "lng": 133.36677905624865,
-    "restaurantCount": 5,
-    "fileName": "神辺",
-    "elevation": 10
-  },
-  {
-    "name": "福山",
-    "lat": 34.48957329993744,
-    "lng": 133.38385455463978,
-    "restaurantCount": 5,
-    "fileName": "福山",
-    "elevation": 3
-  },
-  {
-    "name": "福島市",
-    "lat": 37.77474382978495,
-    "lng": 140.4576641677762,
-    "restaurantCount": 5,
-    "fileName": "福島市",
-    "elevation": 77
   },
   {
     "name": "稲毛",
@@ -3392,38 +2968,6 @@
     "elevation": 25
   },
   {
-    "name": "米子",
-    "lat": 35.45750369600297,
-    "lng": 133.33005084547455,
-    "restaurantCount": 5,
-    "fileName": "米子",
-    "elevation": 4
-  },
-  {
-    "name": "米沢",
-    "lat": 37.909529181796884,
-    "lng": 140.13302919312622,
-    "restaurantCount": 5,
-    "fileName": "米沢",
-    "elevation": 250
-  },
-  {
-    "name": "総社",
-    "lat": 34.677373836636505,
-    "lng": 133.7635592772906,
-    "restaurantCount": 5,
-    "fileName": "総社",
-    "elevation": 15
-  },
-  {
-    "name": "能代",
-    "lat": 40.187151700244,
-    "lng": 140.02615976691305,
-    "restaurantCount": 5,
-    "fileName": "能代",
-    "elevation": 8
-  },
-  {
     "name": "船橋",
     "lat": 35.700289439495926,
     "lng": 139.98391520199058,
@@ -3432,28 +2976,12 @@
     "elevation": 18
   },
   {
-    "name": "花巻",
-    "lat": 39.37523485191429,
-    "lng": 141.10015157581478,
-    "restaurantCount": 5,
-    "fileName": "花巻",
-    "elevation": 81
-  },
-  {
     "name": "草加",
     "lat": 35.82742853783005,
     "lng": 139.8049235846724,
     "restaurantCount": 5,
     "fileName": "草加",
     "elevation": 17
-  },
-  {
-    "name": "萩",
-    "lat": 34.45628344499077,
-    "lng": 131.43957811728916,
-    "restaurantCount": 5,
-    "fileName": "萩",
-    "elevation": 37
   },
   {
     "name": "蘇我",
@@ -3472,28 +3000,12 @@
     "elevation": 16
   },
   {
-    "name": "西条",
-    "lat": 33.92526329827219,
-    "lng": 133.1606730473098,
-    "restaurantCount": 5,
-    "fileName": "西条",
-    "elevation": 3
-  },
-  {
     "name": "西条駅",
     "lat": 34.429354176469,
     "lng": 132.7429584755008,
     "restaurantCount": 5,
     "fileName": "西条駅",
     "elevation": 221
-  },
-  {
-    "name": "観音寺",
-    "lat": 34.105595265342835,
-    "lng": 133.66771851035045,
-    "restaurantCount": 5,
-    "fileName": "観音寺",
-    "elevation": 18
   },
   {
     "name": "越谷",
@@ -3512,36 +3024,12 @@
     "elevation": 59
   },
   {
-    "name": "郡山",
-    "lat": 37.40090510035915,
-    "lng": 140.37140890411328,
-    "restaurantCount": 5,
-    "fileName": "郡山",
-    "elevation": 242
-  },
-  {
     "name": "郡山駅",
     "lat": 37.39817248796906,
     "lng": 140.38518840690443,
     "restaurantCount": 5,
     "fileName": "郡山駅",
     "elevation": 234
-  },
-  {
-    "name": "酒田",
-    "lat": 38.92301851588384,
-    "lng": 139.867313735897,
-    "restaurantCount": 5,
-    "fileName": "酒田",
-    "elevation": 0
-  },
-  {
-    "name": "釜石",
-    "lat": 39.27202616934291,
-    "lng": 141.86957459354988,
-    "restaurantCount": 5,
-    "fileName": "釜石",
-    "elevation": 10
   },
   {
     "name": "長岡駅",
@@ -3552,36 +3040,12 @@
     "elevation": 30
   },
   {
-    "name": "防府",
-    "lat": 34.038092885980724,
-    "lng": 131.5701224682379,
-    "restaurantCount": 5,
-    "fileName": "防府",
-    "elevation": -1
-  },
-  {
     "name": "静岡駅",
     "lat": 34.97439400853299,
     "lng": 138.3871962988987,
     "restaurantCount": 5,
     "fileName": "静岡駅",
     "elevation": 37
-  },
-  {
-    "name": "須賀川",
-    "lat": 37.278878188028486,
-    "lng": 140.3719719563988,
-    "restaurantCount": 5,
-    "fileName": "須賀川",
-    "elevation": 269
-  },
-  {
-    "name": "高松",
-    "lat": 34.34380309710869,
-    "lng": 134.07522099393512,
-    "restaurantCount": 5,
-    "fileName": "高松",
-    "elevation": 10
   },
   {
     "name": "高松駅",
@@ -3592,43 +3056,11 @@
     "elevation": 14
   },
   {
-    "name": "高知市",
-    "lat": 33.53376749728699,
-    "lng": 133.52541278590604,
-    "restaurantCount": 5,
-    "fileName": "高知市",
-    "elevation": 159
-  },
-  {
     "name": "高知駅",
     "lat": 33.56206797727465,
     "lng": 133.54310020617953,
     "restaurantCount": 5,
     "fileName": "高知駅",
     "elevation": 10
-  },
-  {
-    "name": "鳴門",
-    "lat": 34.191113157200675,
-    "lng": 134.5653326118169,
-    "restaurantCount": 5,
-    "fileName": "鳴門",
-    "elevation": 268
-  },
-  {
-    "name": "鶴岡",
-    "lat": 38.711717234187624,
-    "lng": 139.82662396094628,
-    "restaurantCount": 5,
-    "fileName": "鶴岡",
-    "elevation": 17
-  },
-  {
-    "name": "鹿島",
-    "lat": 35.965766060008,
-    "lng": 140.6450049691244,
-    "restaurantCount": 5,
-    "fileName": "鹿島",
-    "elevation": 41
   }
 ]
