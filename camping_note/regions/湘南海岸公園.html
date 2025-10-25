@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>湘南海岸公園 - 車中泊おすすめスポット</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      background-size: cover;
+      background-position: center;
+      padding: 50px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .header p {
+      color: #fff;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    /* 地図とリストのレイアウト */
+    .parking-map-fullwidth {
+      width: 100%;
+      background: #f8f9fa;
+      margin-bottom: 30px;
+    }
+
+    .map-layout-container {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .map-layout-left {
+      flex: 0 0 60%;
+      min-width: 0;
+      height: 700px;
+    }
+
+    .map-layout-left iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .map-layout-right {
+      flex: 0 0 40%;
+      min-width: 0;
+      max-height: 700px;
+      overflow-y: auto;
+      background: white;
+      padding: 20px;
+    }
+
+    .map-layout-right h4 {
+      margin: 0 0 15px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* エリア中心カード */
+    .area-center-card {
+      background: #fff3e0;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .area-center-card strong {
+      color: #d32f2f;
+      font-size: 13px;
+    }
+
+    /* 駐車場カード */
+    .parking-card {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .parking-card:hover {
+      background: #bbdefb;
+    }
+
+    .parking-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .parking-card-header strong {
+      color: #1976d2;
+      font-size: 14px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .parking-card-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .btn-icon {
+      background: #3B82F6;
+      color: white;
+      padding: 6px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    .btn-icon:hover {
+      opacity: 0.8;
+    }
+
+    .btn-search {
+      background: #22D3EE;
+    }
+
+    .parking-info {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      align-items: flex-start;
+    }
+
+    .parking-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .parking-info-left div {
+      color: #666;
+    }
+
+    .parking-fee {
+      color: #d32f2f !important;
+      font-weight: bold;
+    }
+
+    .parking-facilities {
+      color: #555;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 11px;
+      flex-wrap: wrap;
+    }
+
+    .facility-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* レストランセクション */
+    .restaurant-section {
+      margin-top: 30px;
+    }
+
+    .restaurant-section h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .restaurant-card {
+      background: #fff8e1;
+      border-radius: 6px;
+      padding: 12px;
+      border-left: 4px solid #ff9800;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .restaurant-card h3 {
+      color: #ff9800;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .restaurant-genre {
+      background: #ff9800;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .restaurant-address {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .restaurant-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .restaurant-buttons .btn-icon {
+      font-size: 14px;
+      padding: 5px 8px;
+    }
+
+    @media (max-width: 1200px) {
+      .map-layout-container {
+        flex-direction: column;
+      }
+
+      .map-layout-left {
+        flex: 0 0 100%;
+        height: 500px;
+      }
+
+      .map-layout-right {
+        flex: 0 0 100%;
+        max-height: none;
+      }
+
+      .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .map-layout-left {
+        height: 400px;
+      }
+
+      .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .restaurant-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
+    <div class="header">
+      <h1>🚗 湘南海岸公園</h1>
+      <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
+    <!-- 地図＋駐車場リスト -->
+    <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
+
+    <div class="parking-map-fullwidth">
+      <div class="map-layout-container">
+        <div class="map-layout-left">
+          <iframe id="parking-map-iframe" src="湘南海岸公園-map.html"></iframe>
+        </div>
+
+        <div class="map-layout-right">
+          <h4>📍 クリックして地図に表示</h4>
+
+          <!-- エリア中心 -->
+          <div class="area-center-card" onclick="showMarker('area_center')">
+            <strong>🔴 エリア中心: 湘南海岸公園</strong>
+            <a href="https://www.google.com/maps?q=35.3149457,139.4836473" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+          </div>
+
+
+          <!-- 駐車場1 -->
+          <div class="parking-card" onclick="showMarker('parking_0')">
+            <div class="parking-card-header">
+              <strong>🥇 1位: リビングパーク江ノ島第１</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.313557,139.486483" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%93%E3%83%B3%E3%82%B0%E3%83%91%E3%83%BC%E3%82%AF%E6%B1%9F%E3%83%8E%E5%B3%B6%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (300m)</div>
+                <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (66m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.6km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
+            <div class="parking-card-header">
+              <strong>🥈 2位: システムパーク片瀬５丁目</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.319031,139.485519" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E7%89%87%E7%80%AC%EF%BC%95%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約7分 (486m)</div>
+                <div class="parking-fee">💰 ¥1,400 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (164m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (1.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
+            <div class="parking-card-header">
+              <strong>🥉 3位: リビングパーク江ノ島第４</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.313207,139.486808" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%93%E3%83%B3%E3%82%B0%E3%83%91%E3%83%BC%E3%82%AF%E6%B1%9F%E3%83%8E%E5%B3%B6%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (346m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (68m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.6km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: リパーク片瀬３丁目第３</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.31424,139.487719" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E7%89%87%E7%80%AC%EF%BC%93%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (378m)</div>
+                <div class="parking-fee">💰 ¥4,620 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (198m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.6km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <strong>🔵 5位: シンコウパーク片瀬</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.31239,139.486869" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B7%E3%83%B3%E3%82%B3%E3%82%A6%E3%83%91%E3%83%BC%E3%82%AF%E7%89%87%E7%80%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (408m)</div>
+                <div class="parking-fee">💰 ¥5,600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (64m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.5km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
+            <div class="parking-card-header">
+              <strong>🔵 6位: リビングパーク江ノ島第２</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.311757,139.486608" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%93%E3%83%B3%E3%82%B0%E3%83%91%E3%83%BC%E3%82%AF%E6%B1%9F%E3%83%8E%E5%B3%B6%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (445m)</div>
+                <div class="parking-fee">💰 ¥5,600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (69m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.4km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
+            <div class="parking-card-header">
+              <strong>🔵 7位: リビングパーク江ノ島第５</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.311882,139.485983" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%93%E3%83%B3%E3%82%B0%E3%83%91%E3%83%BC%E3%82%AF%E6%B1%9F%E3%83%8E%E5%B3%B6%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (402m)</div>
+                <div class="parking-fee">💰 ¥5,600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (46m)</div>
+                <div class="facility-item">♨️ ほてる汐彩 (0.5km)</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- レストランセクション -->
+    <div class="restaurant-section">
+      <h2>🍴 おすすめレストラン</h2>
+      <div class="restaurant-grid">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_0')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>レ ファーブル ボンジュール</h3>
+
+          <span class="restaurant-genre">ビストロ</span>
+
+          <div class="restaurant-address">📍 神奈川県藤沢市片瀬海岸1-3-18 グランデュールIII江の島</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.311315138056514,139.48671427968225" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%AC%20%E3%83%95%E3%82%A1%E3%83%BC%E3%83%96%E3%83%AB%20%E3%83%9C%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>ラ・ターブル・オ・ジャポン</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 神奈川県藤沢市片瀬4-10-13</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.31491843805321,139.48356767972084" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%A9%E3%83%BB%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%9D%E3%83%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showMarker(markerId) {
+      const iframe = document.getElementById('parking-map-iframe');
+      if (iframe && iframe.contentWindow && iframe.contentWindow.showMarker) {
+        iframe.contentWindow.showMarker(markerId);
+        // 地図までスクロール
+        iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+</html>
