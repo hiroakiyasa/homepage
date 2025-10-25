@@ -1009,6 +1009,15 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -1122,21 +1131,17 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 `;
 
-  // レストランカード生成
+  // レストランカード生成（連番で表示、順番はランダム）
   topRestaurants.forEach((restaurant, index) => {
-    let rankIcon = '';
-    if (index === 0) rankIcon = '🥇 1位';
-    else if (index === 1) rankIcon = '🥈 2位';
-    else if (index === 2) rankIcon = '🥉 3位';
-    else rankIcon = `${index + 1}位`;
+    const number = index + 1; // 1, 2, 3, 4, 5
 
     html += `
         <div class="restaurant-card" onclick="showMarker('restaurant_${index}')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">${rankIcon}</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">${number}</div>
           <h3>${restaurant.name}</h3>
 `;
 
@@ -1190,15 +1195,24 @@ async function generateRegionFullHTML(regionData, convenienceLogos, outputDir) {
   const { name, fileName } = regionData;
 
   try {
-    // レストランデータを読み込む
-    const restaurantDataPath = `/Users/user/WebApp/camping_note/restaurants_data/area_${fileName}.json`;
+    // レストランデータを読み込む（restaurants_dataとrestaurants_data_top5の両方をチェック）
+    let restaurantDataPath = `/Users/user/WebApp/camping_note/restaurants_data/area_${fileName}.json`;
+    let restaurantData;
 
-    if (!fs.existsSync(restaurantDataPath)) {
-      console.log(`   ${colors.red}✗${colors.reset} ${fileName}: レストランデータが見つかりません`);
-      return { success: false, reason: 'レストランデータなし' };
+    if (fs.existsSync(restaurantDataPath)) {
+      // restaurants_dataフォルダから読み込み
+      restaurantData = JSON.parse(fs.readFileSync(restaurantDataPath, 'utf8'));
+    } else {
+      // restaurants_data_top5フォルダから読み込み
+      restaurantDataPath = `/Users/user/WebApp/camping_note/restaurants_data_top5/top5_${fileName}.json`;
+
+      if (!fs.existsSync(restaurantDataPath)) {
+        console.log(`   ${colors.red}✗${colors.reset} ${fileName}: レストランデータが見つかりません`);
+        return { success: false, reason: 'レストランデータなし' };
+      }
+
+      restaurantData = JSON.parse(fs.readFileSync(restaurantDataPath, 'utf8'));
     }
-
-    const restaurantData = JSON.parse(fs.readFileSync(restaurantDataPath, 'utf8'));
 
     // エリア中心から500m以内のレストランをフィルタリング
     const restaurantsWithDistance = restaurantData.restaurants.map(restaurant => {
@@ -1223,10 +1237,11 @@ async function generateRegionFullHTML(regionData, convenienceLogos, outputDir) {
       };
     }).filter(r => r !== null && r.distance <= 500);
 
-    // スコアでソート（スコアが高い順）して上位5件を取得
+    // スコアでソート（スコアが高い順）して上位5件を取得し、ランダムに並び替える
     const topRestaurants = restaurantsWithDistance
       .sort((a, b) => (b.score || 0) - (a.score || 0))
-      .slice(0, 5);
+      .slice(0, 5)
+      .sort(() => Math.random() - 0.5); // ランダムソート
 
     // 駐車場データを取得（Supabase RPC経由）
     const parkingSpots = await getParkingSpots(regionData);

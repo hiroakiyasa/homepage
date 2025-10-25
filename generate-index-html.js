@@ -50,43 +50,17 @@ async function fetchBackgroundImageBase64() {
  * 車中泊スポットマップのindex.htmlを生成
  */
 async function generateIndexHTML() {
-  // 2つのJSONファイルから地域データを読み込む
-  const restaurantSpotsPath = path.join(__dirname, 'all-restaurant-spots.json');
-  const backupRegionsPath = path.join(__dirname, 'data', 'regions-data.backup-2025-10-24T15-58-43-523Z.json');
-
+  // 標高データを含むユニーク地域データを読み込む
+  const elevationRegionsPath = path.join(__dirname, 'data', 'regions-data-with-elevation.json');
   let allRegions = [];
 
-  // all-restaurant-spots.jsonから読み込み
-  if (fs.existsSync(restaurantSpotsPath)) {
-    console.log('📍 all-restaurant-spots.json を読み込み中...');
-    const restaurantSpotsData = JSON.parse(fs.readFileSync(restaurantSpotsPath, 'utf8'));
-
-    if (restaurantSpotsData.spots) {
-      const uniqueSpots = new Map();
-      restaurantSpotsData.spots.forEach(spot => {
-        const key = `${spot.name}_${spot.latitude}_${spot.longitude}`;
-        if (!uniqueSpots.has(key)) {
-          uniqueSpots.set(key, {
-            name: spot.name,
-            lat: spot.latitude,
-            lng: spot.longitude,
-            fileName: spot.name,
-            restaurantCount: spot.restaurantCount || 0,
-            elevation: 0
-          });
-        }
-      });
-      allRegions.push(...Array.from(uniqueSpots.values()));
-      console.log(`   ✅ ${uniqueSpots.size}箇所のレストランスポットを読み込みました`);
-    }
-  }
-
-  // regions-data.backup-*.jsonから読み込み
-  if (fs.existsSync(backupRegionsPath)) {
-    console.log('📍 regions-data.backup-*.json を読み込み中...');
-    const backupRegions = JSON.parse(fs.readFileSync(backupRegionsPath, 'utf8'));
-    allRegions.push(...backupRegions);
-    console.log(`   ✅ ${backupRegions.length}箇所の地域データを読み込みました`);
+  if (fs.existsSync(elevationRegionsPath)) {
+    console.log('📍 regions-data-with-elevation.json を読み込み中...');
+    allRegions = JSON.parse(fs.readFileSync(elevationRegionsPath, 'utf8'));
+    console.log(`   ✅ ${allRegions.length}箇所の標高データを読み込みました`);
+  } else {
+    console.error('❌ regions-data-with-elevation.json が見つかりません');
+    process.exit(1);
   }
 
   // regionsフォルダ内に存在するHTMLファイルのみをフィルタリング

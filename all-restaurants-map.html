@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全国レストランマップ（18,345店舗）</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Leaflet MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+      background: #f5f5f5;
+    }
+
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      z-index: 1000;
+      background: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .stats {
+      position: absolute;
+      bottom: 30px;
+      left: 60px;
+      z-index: 1000;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-size: 14px;
+      color: #666;
+    }
+
+    .stats strong {
+      color: #e74c3c;
+      font-size: 16px;
+    }
+
+    /* レストランマーカーのスタイル */
+    .restaurant-marker {
+      background: #e74c3c;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* ポップアップのスタイル */
+    .leaflet-popup-content {
+      margin: 15px;
+      min-width: 280px;
+    }
+
+    .popup-header {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e74c3c;
+    }
+
+    .popup-info {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .popup-info div {
+      margin: 5px 0;
+    }
+
+    .popup-info strong {
+      color: #333;
+      display: inline-block;
+      width: 80px;
+    }
+
+    .score {
+      color: #f39c12;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .genre {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    /* マーカークラスタのカスタマイズ */
+    .marker-cluster {
+      background: rgba(231, 76, 60, 0.6);
+      border: 2px solid white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .marker-cluster div {
+      background: rgba(231, 76, 60, 0.8);
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+      background: white;
+      padding: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .loading h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .loading-bar {
+      width: 300px;
+      height: 8px;
+      background: #ecf0f1;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .loading-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #e74c3c, #c0392b);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .loading-text {
+      margin-top: 10px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🍴 全国レストランマップ</h1>
+    <p>日本全国 18,345店舗のレストラン</p>
+  </div>
+
+  <div class="stats">
+    📍 表示中: <strong id="displayCount">0</strong> 店舗
+  </div>
+
+  <div id="loading" class="loading">
+    <h2>🗾 レストランデータを読み込み中...</h2>
+    <div class="loading-bar">
+      <div class="loading-progress" id="progress"></div>
+    </div>
+    <div class="loading-text" id="loadingText">0 / 18,345 店舗</div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet MarkerCluster JS -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- レストランデータ -->
+  <script src="restaurants-data.js"></script>
+
+  <script>
+    // 地図の初期化（日本中心）
+    const map = L.map('map').setView([36.5, 138.0], 6);
+
+    // OpenStreetMap タイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    // マーカークラスタグループを作成
+    const markers = L.markerClusterGroup({
+      chunkedLoading: true,
+      chunkProgress: updateProgressBar,
+      maxClusterRadius: 50,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      zoomToBoundsOnClick: true
+    });
+
+    // プログレスバー更新関数
+    function updateProgressBar(processed, total, elapsed) {
+      const progress = (processed / total) * 100;
+      document.getElementById('progress').style.width = progress + '%';
+      document.getElementById('loadingText').textContent =
+        `${processed.toLocaleString()} / ${total.toLocaleString()} 店舗`;
+
+      if (processed === total) {
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('displayCount').textContent = total.toLocaleString();
+        }, 300);
+      }
+    }
+
+    // カスタムアイコン
+    const restaurantIcon = L.divIcon({
+      className: 'restaurant-marker',
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+      popupAnchor: [0, -6]
+    });
+
+    // レストランデータを処理
+    const restaurants = restaurantsData.restaurants;
+    console.log(`📍 レストラン総数: ${restaurants.length.toLocaleString()}件`);
+
+    // 各レストランにマーカーを作成
+    restaurants.forEach((restaurant, index) => {
+      if (restaurant.latitude && restaurant.longitude) {
+        // ポップアップコンテンツを作成
+        const popupContent = `
+          <div class="popup-header">${restaurant.name}</div>
+          <div class="popup-info">
+            ${restaurant.score ? `<div><strong>評価:</strong> <span class="score">⭐ ${restaurant.score}</span></div>` : ''}
+            ${restaurant.genre ? `<div><strong>ジャンル:</strong> <span class="genre">${restaurant.genre}</span></div>` : ''}
+            ${restaurant.address ? `<div><strong>住所:</strong> ${restaurant.address}</div>` : ''}
+            ${restaurant.dinnerBudget ? `<div><strong>ディナー:</strong> ${restaurant.dinnerBudget}</div>` : ''}
+            ${restaurant.lunchBudget ? `<div><strong>ランチ:</strong> ${restaurant.lunchBudget}</div>` : ''}
+            ${restaurant.inquiry ? `<div><strong>電話:</strong> ${restaurant.inquiry}</div>` : ''}
+            ${restaurant.parking ? `<div><strong>駐車場:</strong> ${restaurant.parking}</div>` : ''}
+          </div>
+        `;
+
+        // マーカーを作成
+        const marker = L.marker([restaurant.latitude, restaurant.longitude], {
+          icon: restaurantIcon
+        }).bindPopup(popupContent);
+
+        markers.addLayer(marker);
+      }
+    });
+
+    // マーカークラスタを地図に追加
+    map.addLayer(markers);
+
+    console.log('✅ すべてのレストランマーカーを追加しました');
+  </script>
+</body>
+</html>

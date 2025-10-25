@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2025-10-25T04:30:57.075Z",
+  "dataSource": "OpenStreetMap + レストランデータ",
+  "searchRadius": 500,
+  "minimumRestaurants": 5,
+  "totalHotspots": 9,
+  "totalCitiesAnalyzed": 1741,
+  "totalRestaurantsAnalyzed": 18310,
+  "note": "OpenStreetMapから取得した市区町村の中心座標から半径500m以内に5件以上のレストランがある地域",
+  "hotspots": [
+    {
+      "cityName": "豊島区",
+      "fullName": "豊島区",
+      "prefecture": "",
+      "latitude": 35.7291424,
+      "longitude": 139.7150585,
+      "restaurantCount": 61,
+      "adminLevel": 7,
+      "osmId": 1759506
+    },
+    {
+      "cityName": "中央区",
+      "fullName": "中央区",
+      "prefecture": "",
+      "latitude": 35.6684074,
+      "longitude": 139.7758539,
+      "restaurantCount": 55,
+      "adminLevel": 7,
+      "osmId": 1758897
+    },
+    {
+      "cityName": "台東区",
+      "fullName": "台東区",
+      "prefecture": "",
+      "latitude": 35.7132135,
+      "longitude": 139.7860339,
+      "restaurantCount": 18,
+      "adminLevel": 7,
+      "osmId": 1758888
+    },
+    {
+      "cityName": "渋谷区",
+      "fullName": "渋谷区",
+      "prefecture": "",
+      "latitude": 35.6668209,
+      "longitude": 139.6926519,
+      "restaurantCount": 10,
+      "adminLevel": 7,
+      "osmId": 1759477
+    },
+    {
+      "cityName": "逗子市",
+      "fullName": "神奈川県逗子市",
+      "prefecture": "神奈川県",
+      "latitude": 35.298055,
+      "longitude": 139.577882,
+      "restaurantCount": 10,
+      "adminLevel": 7,
+      "osmId": 2689444
+    },
+    {
+      "cityName": "新宿区",
+      "fullName": "新宿区",
+      "prefecture": "",
+      "latitude": 35.7015623,
+      "longitude": 139.7092071,
+      "restaurantCount": 7,
+      "adminLevel": 7,
+      "osmId": 1758858
+    },
+    {
+      "cityName": "鎌倉市",
+      "fullName": "神奈川県鎌倉市",
+      "prefecture": "神奈川県",
+      "latitude": 35.317437,
+      "longitude": 139.5408606,
+      "restaurantCount": 7,
+      "adminLevel": 7,
+      "osmId": 2689445
+    },
+    {
+      "cityName": "多治見市",
+      "fullName": "多治見市",
+      "prefecture": "",
+      "latitude": 35.336746,
+      "longitude": 137.1158485,
+      "restaurantCount": 5,
+      "adminLevel": 7,
+      "osmId": 4716872
+    },
+    {
+      "cityName": "名古屋市",
+      "fullName": "名古屋市",
+      "prefecture": "",
+      "latitude": 35.1430901,
+      "longitude": 136.926434,
+      "restaurantCount": 5,
+      "adminLevel": 7,
+      "osmId": 4576938
+    }
+  ]
+}
