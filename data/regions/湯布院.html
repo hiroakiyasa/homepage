@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -447,39 +456,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>由布院 玉の湯</h3>
-
-          <span class="restaurant-genre">料理旅館</span>
-
-          <div class="restaurant-address">📍 大分県由布市湯布院町川上2731-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.26572553676859,131.36304196471437" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%94%B1%E5%B8%83%E9%99%A2%20%E7%8E%89%E3%81%AE%E6%B9%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>ビー・スピーク</h3>
-
-          <span class="restaurant-genre">ケーキ</span>
-
-          <div class="restaurant-address">📍 大分県由布市湯布院町川上3040-2</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.26539393676763,131.35939326471356" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%93%E3%83%BC%E3%83%BB%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>由布院Milch 本店</h3>
 
           <span class="restaurant-genre">洋菓子</span>
@@ -492,8 +473,36 @@
           </div>
         </div>
 
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>Nicol</h3>
+
+          <span class="restaurant-genre">喫茶店</span>
+
+          <div class="restaurant-address">📍 大分県由布市湯布院町川上2731-1 由布院　玉の湯内</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.26581982736267,131.3627426081676" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=Nicol" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>由布院 玉の湯</h3>
+
+          <span class="restaurant-genre">料理旅館</span>
+
+          <div class="restaurant-address">📍 大分県由布市湯布院町川上2731-1</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=33.26572553676859,131.36304196471437" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%94%B1%E5%B8%83%E9%99%A2%20%E7%8E%89%E3%81%AE%E6%B9%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>由布院 鞠智</h3>
 
           <span class="restaurant-genre">カフェ</span>
@@ -507,16 +516,16 @@
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>Nicol</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>ビー・スピーク</h3>
 
-          <span class="restaurant-genre">喫茶店</span>
+          <span class="restaurant-genre">ケーキ</span>
 
-          <div class="restaurant-address">📍 大分県由布市湯布院町川上2731-1 由布院　玉の湯内</div>
+          <div class="restaurant-address">📍 大分県由布市湯布院町川上3040-2</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=33.26581982736267,131.3627426081676" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=Nicol" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=33.26539393676763,131.35939326471356" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%93%E3%83%BC%E3%83%BB%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

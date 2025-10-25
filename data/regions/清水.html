@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 清水</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,146 +365,14 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 清水</strong>
-            <a href="https://www.google.com/maps?q=35.033361383016555,138.4958339332384" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.0233337,138.4890488" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: 三保真崎広場 無料駐車場とトイレ</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.0189,138.5174" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%B8%89%E4%BF%9D%E7%9C%9F%E5%B4%8E%E5%BA%83%E5%A0%B4%20%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4%E3%81%A8%E3%83%88%E3%82%A4%E3%83%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約32分 (2541m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (1229m)</div>
-                <div class="facility-item">♨️ undefined (0.3km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場2 -->
-          <div class="parking-card" onclick="showMarker('parking_1')">
-            <div class="parking-card-header">
-              <strong>🥈 2位: 三保真崎海水浴場</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.0199,138.5211" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%B8%89%E4%BF%9D%E7%9C%9F%E5%B4%8E%E6%B5%B7%E6%B0%B4%E6%B5%B4%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約35分 (2748m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (1319m)</div>
-                <div class="facility-item">🚻 三保真崎観光トイレ (53m)</div>
-                <div class="facility-item">♨️ undefined (0.5km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場3 -->
-          <div class="parking-card" onclick="showMarker('parking_2')">
-            <div class="parking-card-header">
-              <strong>🥉 3位: 新興津緑地</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.0467,138.5166" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E6%96%B0%E8%88%88%E6%B4%A5%E7%B7%91%E5%9C%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約31分 (2406m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (826m)</div>
-                <div class="facility-item">🚻 清水清見潟公園興津本町トイレ (295m)</div>
-                <div class="facility-item">♨️ undefined (1.9km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
-            <div class="parking-card-header">
-              <strong>🔵 4位: 東洋カーマックス清水万世町駐車場</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.013148,138.489479" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E6%B8%85%E6%B0%B4%E4%B8%87%E4%B8%96%E7%94%BA%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約30分 (2324m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (93m)</div>
-                <div class="facility-item">♨️ undefined (0.8km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場5 -->
-          <div class="parking-card" onclick="showMarker('parking_4')">
-            <div class="parking-card-header">
-              <strong>🔵 5位: チケパ　新清水駅前第１</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.016381,138.489954" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%81%E3%82%B1%E3%83%91%E3%80%80%E6%96%B0%E6%B8%85%E6%B0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約25分 (1965m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (209m)</div>
-                <div class="facility-item">♨️ undefined (0.4km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場6 -->
-          <div class="parking-card" onclick="showMarker('parking_5')">
-            <div class="parking-card-header">
-              <strong>🔵 6位: パーキング紅葉園清水駅前</strong>
+              <strong>🥇 1位: パーキング紅葉園清水駅前</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.026421,138.489579" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E7%B4%85%E8%91%89%E5%9C%92%E6%B8%85%E6%B0%B4%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -484,7 +381,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約12分 (960m)</div>
+                <div>📍 徒歩約5分 (347m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -499,36 +396,10 @@
             </div>
           </div>
 
-          <!-- 駐車場7 -->
-          <div class="parking-card" onclick="showMarker('parking_6')">
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🔵 7位: 名鉄協商清水旭町</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.015156,138.489079" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B8%85%E6%B0%B4%E6%97%AD%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約27分 (2118m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (242m)</div>
-                <div class="facility-item">♨️ undefined (0.5km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場8 -->
-          <div class="parking-card" onclick="showMarker('parking_7')">
-            <div class="parking-card-header">
-              <strong>🔵 8位: リブレコインパーキング辻町</strong>
+              <strong>🥈 2位: リブレコインパーキング辻町</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.025763,138.487965" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%96%E3%83%AC%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E8%BE%BB%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -537,7 +408,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約14分 (1109m)</div>
+                <div>📍 徒歩約4分 (288m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -552,36 +423,10 @@
             </div>
           </div>
 
-          <!-- 駐車場9 -->
-          <div class="parking-card" onclick="showMarker('parking_8')">
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🔵 9位: ザ・パーク清水江尻東二丁目第１</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.021913,138.484229" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E6%B8%85%E6%B0%B4%E6%B1%9F%E5%B0%BB%E6%9D%B1%E4%BA%8C%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約21分 (1656m)</div>
-                <div class="parking-fee">💰 ¥550 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (288m)</div>
-                <div class="facility-item">♨️ undefined (0.5km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
-            <div class="parking-card-header">
-              <strong>🔵 10位: 名鉄協商清水辻１丁目</strong>
+              <strong>🥉 3位: 名鉄協商清水辻１丁目</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.026413,138.488415" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B8%85%E6%B0%B4%E8%BE%BB%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -590,7 +435,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約13分 (1027m)</div>
+                <div>📍 徒歩約5分 (348m)</div>
                 <div class="parking-fee">💰 ¥550 (18:00-8:00)</div>
               </div>
 
@@ -605,17 +450,221 @@
             </div>
           </div>
 
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: リパーク清水駅前グルメ通り第２</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.01998,138.487979" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B8%85%E6%B0%B4%E9%A7%85%E5%89%8D%E3%82%B0%E3%83%AB%E3%83%A1%E9%80%9A%E3%82%8A%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (386m)</div>
+                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (219m)</div>
+                <div class="facility-item">🚻 島崎町公園トイレ (67m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <strong>🔵 5位: 静岡市清水駅東口駐車場</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.02098,138.489593" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E9%9D%99%E5%B2%A1%E5%B8%82%E6%B8%85%E6%B0%B4%E9%A7%85%E6%9D%B1%E5%8F%A3%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (267m)</div>
+                <div class="parking-fee">💰 ¥2,000 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (224m)</div>
+                <div class="facility-item">🚻 島崎町公園トイレ (196m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
+            <div class="parking-card-header">
+              <strong>🔵 6位: リパーク清水真砂町</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.01988,138.487704" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B8%85%E6%B0%B4%E7%9C%9F%E7%A0%82%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (404m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (225m)</div>
+                <div class="facility-item">🚻 島崎町公園トイレ (78m)</div>
+                <div class="facility-item">♨️ undefined (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
+            <div class="parking-card-header">
+              <strong>🔵 7位: 名鉄協商清水真砂町</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.02223,138.488165" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B8%85%E6%B0%B4%E7%9C%9F%E7%A0%82%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約2分 (147m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (80m)</div>
+                <div class="facility-item">🚻 清水駅東口公園トイレ (261m)</div>
+                <div class="facility-item">♨️ undefined (0.3km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
+            <div class="parking-card-header">
+              <strong>🔵 8位: 駅前銀座パーキング</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.02113,138.488504" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E9%A7%85%E5%89%8D%E9%8A%80%E5%BA%A7%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (250m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (132m)</div>
+                <div class="facility-item">🚻 島崎町公園トイレ (181m)</div>
+                <div class="facility-item">♨️ undefined (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
+            <div class="parking-card-header">
+              <strong>🔵 9位: リパーク清水駅西口駅前</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.02528,138.487879" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B8%85%E6%B0%B4%E9%A7%85%E8%A5%BF%E5%8F%A3%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (241m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (142m)</div>
+                <div class="facility-item">🚻 辻一丁目公園トイレ (118m)</div>
+                <div class="facility-item">♨️ undefined (0.6km)</div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>どん福</h3>
+
+          <span class="restaurant-genre">海鮮丼</span>
+
+          <div class="restaurant-address">📍 静岡県静岡市清水区島崎町149 まぐろ館 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.021044937923655,138.49067907744842" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%A9%E3%82%93%E7%A6%8F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>まぐろ王国 大ちゃん</h3>
+
+          <span class="restaurant-genre">海鮮</span>
+
+          <div class="restaurant-address">📍 静岡県静岡市清水区島崎町149 まぐろ館 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.02096763792372,138.49070627744763" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%BE%E3%81%90%E3%82%8D%E7%8E%8B%E5%9B%BD%20%E5%A4%A7%E3%81%A1%E3%82%83%E3%82%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>いわし料理 善</h3>
+
+          <span class="restaurant-genre">居酒屋</span>
+
+          <div class="restaurant-address">📍 静岡県静岡市清水区辻1-1-23</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.02497043792043,138.4883500774897" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%84%E3%82%8F%E3%81%97%E6%96%99%E7%90%86%20%E5%96%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>末廣鮨</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -625,62 +674,6 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.022149437921044,138.4846458774638" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E6%9C%AB%E5%BB%A3%E9%AE%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>お料理 さいとう</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 静岡県静岡市清水区駒越中17-35</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.97695746934158,138.49978755636488" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%8A%E6%96%99%E7%90%86%20%E3%81%95%E3%81%84%E3%81%A8%E3%81%86" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>桐林もつ焼</h3>
-
-          <span class="restaurant-genre">居酒屋</span>
-
-          <div class="restaurant-address">📍 静岡県静岡市清水区興津中町524-13</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.05614703791221,138.52470007777916" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%A1%90%E6%9E%97%E3%82%82%E3%81%A4%E7%84%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>かん吉 清水店</h3>
-
-          <span class="restaurant-genre">うなぎ</span>
-
-          <div class="restaurant-address">📍 静岡県静岡市清水区御門台3-10</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00697943792153,138.45595317733068" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%8B%E3%82%93%E5%90%89%20%E6%B8%85%E6%B0%B4%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>あおぞら</h3>
-
-          <span class="restaurant-genre">食堂</span>
-
-          <div class="restaurant-address">📍 静岡県静岡市清水区由比今宿195-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.097213637894946,138.55240067817456" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%82%E3%81%8A%E3%81%9E%E3%82%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

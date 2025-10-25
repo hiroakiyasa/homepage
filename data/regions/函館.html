@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 函館</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,95 +365,14 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 函館</strong>
-            <a href="https://www.google.com/maps?q=41.78078266254211,140.74068616027927" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=41.7737872,140.7261884" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: 函館山 登山道 駐車場</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.7584,140.7124" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%87%BD%E9%A4%A8%E5%B1%B1%20%E7%99%BB%E5%B1%B1%E9%81%93%20%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約43分 (3424m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (674m)</div>
-                <div class="facility-item">🚻 函館山緑地管理事務所前公衆トイレ (49m)</div>
-                <div class="facility-item">♨️ undefined (0.7km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場2 -->
-          <div class="parking-card" onclick="showMarker('parking_1')">
-            <div class="parking-card-header">
-              <strong>🥈 2位: 啄木小公園</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.7724,140.7539" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%95%84%E6%9C%A8%E5%B0%8F%E5%85%AC%E5%9C%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約18分 (1440m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (384m)</div>
-                <div class="facility-item">🚻 啄木小公園トイレ (73m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場3 -->
-          <div class="parking-card" onclick="showMarker('parking_2')">
-            <div class="parking-card-header">
-              <strong>🥉 3位: パラカ函館市五稜郭町第１</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.792874,140.75383" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%87%BD%E9%A4%A8%E5%B8%82%E4%BA%94%E7%A8%9C%E9%83%AD%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約22分 (1733m)</div>
-                <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (154m)</div>
-                <div class="facility-item">🚻 五稜郭公園南側緑地公衆トイレ (231m)</div>
-                <div class="facility-item">♨️ 田家の湯 (0.8km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
-            <div class="parking-card-header">
-              <strong>🔵 4位: パラカ函館市東雲町第１</strong>
+              <strong>🥇 1位: パラカ函館市東雲町第１</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=41.770418,140.72952" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%87%BD%E9%A4%A8%E5%B8%82%E6%9D%B1%E9%9B%B2%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -433,7 +381,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約19分 (1480m)</div>
+                <div>📍 徒歩約6分 (466m)</div>
                 <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
               </div>
 
@@ -448,91 +396,10 @@
             </div>
           </div>
 
-          <!-- 駐車場5 -->
-          <div class="parking-card" onclick="showMarker('parking_4')">
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🔵 5位: パラカ函館市五稜郭町第２</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.794215,140.75303" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%87%BD%E9%A4%A8%E5%B8%82%E4%BA%94%E7%A8%9C%E9%83%AD%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約23分 (1813m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (85m)</div>
-                <div class="facility-item">🚻 五稜郭公園表門広場前トイレ (193m)</div>
-                <div class="facility-item">♨️ undefined (0.6km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場6 -->
-          <div class="parking-card" onclick="showMarker('parking_5')">
-            <div class="parking-card-header">
-              <strong>🔵 6位: パラカ函館市五稜郭町第３</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.794674,140.752316" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%87%BD%E9%A4%A8%E5%B8%82%E4%BA%94%E7%A8%9C%E9%83%AD%E7%94%BA%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約23分 (1823m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (72m)</div>
-                <div class="facility-item">🚻 五稜郭公園表門広場前トイレ (191m)</div>
-                <div class="facility-item">♨️ undefined (0.5km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場7 -->
-          <div class="parking-card" onclick="showMarker('parking_6')">
-            <div class="parking-card-header">
-              <strong>🔵 7位: ザ・パーク大手町７</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.769626,140.723545" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%A4%A7%E6%89%8B%E7%94%BA%EF%BC%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約24分 (1889m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (121m)</div>
-                <div class="facility-item">🚻 函館駅前桟橋駐車場内公衆トイレ (316m)</div>
-                <div class="facility-item">♨️ undefined (0.2km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場8 -->
-          <div class="parking-card" onclick="showMarker('parking_7')">
-            <div class="parking-card-header">
-              <strong>🔵 8位: パラカ函館市若松町第２</strong>
+              <strong>🥈 2位: パラカ函館市若松町第２</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=41.770426,140.727134" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%87%BD%E9%A4%A8%E5%B8%82%E8%8B%A5%E6%9D%BE%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -541,7 +408,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約21分 (1611m)</div>
+                <div>📍 徒歩約5分 (382m)</div>
                 <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
               </div>
 
@@ -556,37 +423,10 @@
             </div>
           </div>
 
-          <!-- 駐車場9 -->
-          <div class="parking-card" onclick="showMarker('parking_8')">
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🔵 9位: 五稜郭駅パーク＆トレイン立体駐車場</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=41.802861,140.734143" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%BA%94%E7%A8%9C%E9%83%AD%E9%A7%85%E3%83%91%E3%83%BC%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%B3%E7%AB%8B%E4%BD%93%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約32分 (2517m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (356m)</div>
-                <div class="facility-item">🚻 港公園トイレ (671m)</div>
-                <div class="facility-item">♨️ undefined (0.9km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
-            <div class="parking-card-header">
-              <strong>🔵 10位: ザ・パーク東雲町１５</strong>
+              <strong>🥉 3位: ザ・パーク東雲町１５</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=41.771176,140.729434" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E6%9D%B1%E9%9B%B2%E7%94%BA%EF%BC%91%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -595,7 +435,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約18分 (1420m)</div>
+                <div>📍 徒歩約5分 (396m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -610,82 +450,271 @@
             </div>
           </div>
 
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: ザ・パーク函館松風町７</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.772667,140.73047" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%87%BD%E9%A4%A8%E6%9D%BE%E9%A2%A8%E7%94%BA%EF%BC%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (377m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (131m)</div>
+                <div class="facility-item">🚻 グリーンプラザ公衆トイレ (161m)</div>
+                <div class="facility-item">♨️ undefined (0.5km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <strong>🔵 5位: 函館駅パーク＆トレイン立体駐車場</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.774648,140.725089" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%87%BD%E9%A4%A8%E9%A7%85%E3%83%91%E3%83%BC%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%B3%E7%AB%8B%E4%BD%93%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約2分 (132m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (150m)</div>
+                <div class="facility-item">🚻 函館駅前広場内トイレ (262m)</div>
+                <div class="facility-item">♨️ undefined (0.4km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
+            <div class="parking-card-header">
+              <strong>🔵 6位: 函館駅パーク＆トレイン第２駐車場</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.774986,140.727659" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%87%BD%E9%A4%A8%E9%A7%85%E3%83%91%E3%83%BC%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%B3%E7%AC%AC%EF%BC%92%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (181m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (55m)</div>
+                <div class="facility-item">🚻 函館駅前広場内トイレ (196m)</div>
+                <div class="facility-item">♨️ undefined (0.6km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
+            <div class="parking-card-header">
+              <strong>🔵 7位: ホテルニューオーテ</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.771767,140.725745" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%AA%E3%83%BC%E3%83%86" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (228m)</div>
+                <div class="parking-fee">💰 ¥550 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (122m)</div>
+                <div class="facility-item">🚻 函館駅前桟橋駐車場内公衆トイレ (194m)</div>
+                <div class="facility-item">♨️ undefined (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
+            <div class="parking-card-header">
+              <strong>🔵 8位: ザ・パーク大手町１１</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.769443,140.725234" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%A4%A7%E6%89%8B%E7%94%BA%EF%BC%91%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約7分 (490m)</div>
+                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (171m)</div>
+                <div class="facility-item">🚻 函館駅前桟橋駐車場内公衆トイレ (362m)</div>
+                <div class="facility-item">♨️ undefined (0.3km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
+            <div class="parking-card-header">
+              <strong>🔵 9位: リパーク函館朝市前</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.771776,140.726295" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%87%BD%E9%A4%A8%E6%9C%9D%E5%B8%82%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (224m)</div>
+                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (78m)</div>
+                <div class="facility-item">🚻 函館駅前広場内トイレ (195m)</div>
+                <div class="facility-item">♨️ undefined (0.3km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
+            <div class="parking-card-header">
+              <strong>🔵 10位: ザ・パーク松風町１３</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=41.772742,140.730545" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E6%9D%BE%E9%A2%A8%E7%94%BA%EF%BC%91%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (380m)</div>
+                <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (136m)</div>
+                <div class="facility-item">🚻 グリーンプラザ公衆トイレ (168m)</div>
+                <div class="facility-item">♨️ undefined (0.5km)</div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>エノテカ・ラ・リコルマ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>うに むらかみ 函館本店</h3>
 
-          <span class="restaurant-genre">イタリアン</span>
+          <span class="restaurant-genre">海鮮</span>
 
-          <div class="restaurant-address">📍 北海道函館市富岡町2-33-12</div>
+          <div class="restaurant-address">📍 北海道函館市大手町22-1</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=41.80511013433482,140.75105984438935" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%A8%E3%83%8E%E3%83%86%E3%82%AB%E3%83%BB%E3%83%A9%E3%83%BB%E3%83%AA%E3%82%B3%E3%83%AB%E3%83%9E" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=41.7719099343474,140.72436204407265" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AB%20%E3%82%80%E3%82%89%E3%81%8B%E3%81%BF%20%E5%87%BD%E9%A4%A8%E6%9C%AC%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>メゾン フジヤ ハコダテ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>はこだて ふさや 大門店</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">お好み焼き</span>
 
-          <div class="restaurant-address">📍 北海道函館市元町17-17</div>
+          <div class="restaurant-address">📍 北海道函館市若松町18-22</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=41.76241173435011,140.71393324398406" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%A1%E3%82%BE%E3%83%B3%20%E3%83%95%E3%82%B8%E3%83%A4%20%E3%83%8F%E3%82%B3%E3%83%80%E3%83%86" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=41.77260553434868,140.72981314407588" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%AF%E3%81%93%E3%81%A0%E3%81%A6%20%E3%81%B5%E3%81%95%E3%82%84%20%E5%A4%A7%E9%96%80%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>鮨おおね田</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>大衆居酒屋魚さんこ</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">居酒屋</span>
 
-          <div class="restaurant-address">📍 北海道函館市柏木町4-6</div>
+          <div class="restaurant-address">📍 北海道函館市若松町19-3</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=41.79114800837931,140.764426222104" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%81%8A%E3%81%8A%E3%81%AD%E7%94%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=41.77252403434853,140.72914164407553" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A7%E8%A1%86%E5%B1%85%E9%85%92%E5%B1%8B%E9%AD%9A%E3%81%95%E3%82%93%E3%81%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>旬菜旬魚 たじま</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>滋養軒</h3>
 
-          <span class="restaurant-genre">居酒屋</span>
+          <span class="restaurant-genre">ラーメン</span>
 
-          <div class="restaurant-address">📍 北海道函館市富岡町3-36-1</div>
+          <div class="restaurant-address">📍 北海道函館市松風町7-12</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=41.81193659173582,140.7470111557236" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%97%AC%E8%8F%9C%E6%97%AC%E9%AD%9A%20%E3%81%9F%E3%81%98%E3%81%BE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=41.77308293434873,140.73085754407998" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%BB%8B%E9%A4%8A%E8%BB%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>コルツ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>うに専門店 世壱屋 函館朝市店</h3>
 
-          <span class="restaurant-genre">イタリアン</span>
+          <span class="restaurant-genre">食堂</span>
 
-          <div class="restaurant-address">📍 北海道函館市宝来町34-7</div>
+          <div class="restaurant-address">📍 北海道函館市若松町8-16</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=41.763213134351844,140.7209778439872" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%AB%E3%83%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=41.77231693515321,140.726563245237" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AB%E5%B0%82%E9%96%80%E5%BA%97%20%E4%B8%96%E5%A3%B1%E5%B1%8B%20%E5%87%BD%E9%A4%A8%E6%9C%9D%E5%B8%82%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

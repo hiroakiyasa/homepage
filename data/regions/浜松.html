@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 浜松</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,31 +365,31 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 浜松</strong>
-            <a href="https://www.google.com/maps?q=34.722430218176896,137.7169126119548" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=34.7036136,137.7349439" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: 佐鳴湖公園 サンサン駐車場</strong>
+              <strong>🥇 1位: システムパーク浜松板屋町第１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.7026,137.6875" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%BD%90%E9%B3%B4%E6%B9%96%E5%85%AC%E5%9C%92%20%E3%82%B5%E3%83%B3%E3%82%B5%E3%83%B3%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.707763,137.735519" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%9C%E6%9D%BE%E6%9D%BF%E5%B1%8B%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約44分 (3481m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
+                <div>📍 徒歩約6分 (465m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (492m)</div>
-                <div class="facility-item">♨️ undefined (1.6km)</div>
+                <div class="facility-item">🏪 コンビニ (103m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.5km)</div>
               </div>
 
             </div>
@@ -369,24 +398,24 @@
           <!-- 駐車場2 -->
           <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🥈 2位: 佐鳴湖公園 駐車場</strong>
+              <strong>🥈 2位: 名鉄協商浜松砂山町第３</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.7208,137.6905" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%BD%90%E9%B3%B4%E6%B9%96%E5%85%AC%E5%9C%92%20%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.701514,137.735091" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E7%A0%82%E5%B1%B1%E7%94%BA%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約31分 (2423m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
+                <div>📍 徒歩約3分 (234m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (627m)</div>
-                <div class="facility-item">♨️ undefined (1.9km)</div>
+                <div class="facility-item">🏪 コンビニ (172m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.6km)</div>
               </div>
 
             </div>
@@ -395,24 +424,24 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🥉 3位: 名鉄協商浜松塩町</strong>
+              <strong>🥉 3位: 名鉄協商浜松駅前第１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.701597,137.72767" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E5%A1%A9%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.70618,137.733805" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約32分 (2519m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+                <div>📍 徒歩約4分 (304m)</div>
+                <div class="parking-fee">💰 ¥1,500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (97m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.5km)</div>
+                <div class="facility-item">🏪 コンビニ (76m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.3km)</div>
               </div>
 
             </div>
@@ -421,24 +450,24 @@
           <!-- 駐車場4 -->
           <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <strong>🔵 4位: 名鉄協商浜松塩町第２</strong>
+              <strong>🔵 4位: 名鉄協商浜松千歳町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.701514,137.727631" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E5%A1%A9%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.703247,137.731055" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E5%8D%83%E6%AD%B3%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約32分 (2527m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+                <div>📍 徒歩約5分 (358m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (88m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.5km)</div>
+                <div class="facility-item">🏪 コンビニ (111m)</div>
+                <div class="facility-item">♨️ undefined (0.2km)</div>
               </div>
 
             </div>
@@ -447,24 +476,24 @@
           <!-- 駐車場5 -->
           <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <strong>🔵 5位: 名鉄協商浜松相生町</strong>
+              <strong>🔵 5位: 名鉄協商浜松板屋町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.709171,137.745229" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E7%9B%B8%E7%94%9F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.707255,137.735441" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E6%9D%BF%E5%B1%8B%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約38分 (2982m)</div>
-                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+                <div>📍 徒歩約6分 (408m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (394m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
+                <div class="facility-item">🏪 コンビニ (134m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.5km)</div>
               </div>
 
             </div>
@@ -473,24 +502,24 @@
           <!-- 駐車場6 -->
           <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <strong>🔵 6位: 名鉄協商浜松城北１丁目</strong>
+              <strong>🔵 6位: Ｏｎｅ　Ｐａｒｋ　浜松駅前</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.717937,137.723642" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E5%9F%8E%E5%8C%97%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.706488,137.73473" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%EF%BC%AF%EF%BD%8E%EF%BD%85%E3%80%80%EF%BC%B0%EF%BD%81%EF%BD%92%EF%BD%8B%E3%80%80%E6%B5%9C%E6%9D%BE%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約10分 (793m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+                <div>📍 徒歩約5分 (321m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (107m)</div>
-                <div class="facility-item">♨️ undefined (1.0km)</div>
+                <div class="facility-item">🏪 コンビニ (96m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.4km)</div>
               </div>
 
             </div>
@@ -499,24 +528,24 @@
           <!-- 駐車場7 -->
           <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <strong>🔵 7位: 名鉄協商浜松森田町</strong>
+              <strong>🔵 7位: システムパーク浜松板屋町第２</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.694572,137.719782" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E6%A3%AE%E7%94%B0%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.707988,137.735519" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%9C%E6%9D%BE%E6%9D%BF%E5%B1%8B%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約39分 (3112m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+                <div>📍 徒歩約7分 (490m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (385m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (1.5km)</div>
+                <div class="facility-item">🏪 コンビニ (100m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.6km)</div>
               </div>
 
             </div>
@@ -525,24 +554,24 @@
           <!-- 駐車場8 -->
           <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <strong>🔵 8位: 名鉄協商浜松菅原町</strong>
+              <strong>🔵 8位: 名鉄協商浜松砂山町第２</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.699605,137.72622" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E8%8F%85%E5%8E%9F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.70403,137.73688" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E7%A0%82%E5%B1%B1%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約34分 (2680m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+                <div>📍 徒歩約3分 (183m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (154m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.7km)</div>
+                <div class="facility-item">🏪 コンビニ (86m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.6km)</div>
               </div>
 
             </div>
@@ -551,24 +580,24 @@
           <!-- 駐車場9 -->
           <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <strong>🔵 9位: 名鉄協商浜松伝馬町</strong>
+              <strong>🔵 9位: 名鉄協商浜松鍛冶町第２</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.704846,137.728331" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E4%BC%9D%E9%A6%AC%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.704813,137.731905" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E9%8D%9B%E5%86%B6%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約28分 (2219m)</div>
-                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+                <div>📍 徒歩約4分 (308m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (155m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.2km)</div>
+                <div class="facility-item">🏪 コンビニ (73m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.1km)</div>
               </div>
 
             </div>
@@ -577,24 +606,24 @@
           <!-- 駐車場10 -->
           <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <strong>🔵 10位: システムパーク紺屋町</strong>
+              <strong>🔵 10位: 名鉄協商浜松鍛冶町第３</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.708188,137.725956" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E7%B4%BA%E5%B1%8B%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.704705,137.731655" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%B5%9C%E6%9D%BE%E9%8D%9B%E5%86%B6%E7%94%BA%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約23分 (1788m)</div>
-                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+                <div>📍 徒歩約5分 (325m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (294m)</div>
-                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.5km)</div>
+                <div class="facility-item">🏪 コンビニ (97m)</div>
+                <div class="facility-item">♨️ かじまちの湯 SPA SOLANI (0.1km)</div>
               </div>
 
             </div>
@@ -606,25 +635,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>勢麟</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 静岡県浜松市中央区元城町222-25 アルスビル 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.708803069746516,137.72868247993907" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%8B%A2%E9%BA%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>麟</h3>
 
           <span class="restaurant-genre">うなぎ</span>
@@ -637,45 +652,59 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>焼き鳥 幸羽</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>うなぎ料理 あつみ</h3>
 
-          <span class="restaurant-genre">焼き鳥</span>
+          <span class="restaurant-genre">うなぎ</span>
 
-          <div class="restaurant-address">📍 静岡県浜松市中央区千歳町6 コートクビル 1F</div>
+          <div class="restaurant-address">📍 静岡県浜松市中央区千歳町70</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.70319183868843,137.7293098759333" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%84%BC%E3%81%8D%E9%B3%A5%20%E5%B9%B8%E7%BE%BD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.704467180129996,137.73071501076984" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AA%E3%81%8E%E6%96%99%E7%90%86%20%E3%81%82%E3%81%A4%E3%81%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>氷箱里</h3>
+
+          <span class="restaurant-genre">飲茶・点心</span>
+
+          <div class="restaurant-address">📍 静岡県浜松市中央区板屋町628</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=34.70736360796992,137.73477842883545" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%B0%B7%E7%AE%B1%E9%87%8C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>好し智</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>勢呂久</h3>
 
-          <span class="restaurant-genre">天ぷら</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 静岡県浜松市中央区田町325-6 小島屋ビル 1F</div>
+          <div class="restaurant-address">📍 静岡県浜松市中央区千歳町5-2</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.70790208047757,137.73014073364777" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A5%BD%E3%81%97%E6%99%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.70297383868874,137.72982307593054" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%8B%A2%E5%91%82%E4%B9%85" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>炭焼うなぎ 加茂</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>むつぎく</h3>
 
-          <span class="restaurant-genre">うなぎ</span>
+          <span class="restaurant-genre">餃子</span>
 
-          <div class="restaurant-address">📍 静岡県浜松市浜名区三ヶ日町都筑791-8</div>
+          <div class="restaurant-address">📍 静岡県浜松市中央区砂山町356-5</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.79114008409302,137.58486146664643" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%82%AD%E7%84%BC%E3%81%86%E3%81%AA%E3%81%8E%20%E5%8A%A0%E8%8C%82" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.70194438195635,137.7348899763731" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%80%E3%81%A4%E3%81%8E%E3%81%8F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

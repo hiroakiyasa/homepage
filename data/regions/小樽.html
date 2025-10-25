@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -636,39 +645,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>群来膳</h3>
-
-          <span class="restaurant-genre">寿司</span>
-
-          <div class="restaurant-address">📍 北海道小樽市色内1-10-7</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.19577633433673,141.0015740594225" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%BE%A4%E6%9D%A5%E8%86%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>よし</h3>
-
-          <span class="restaurant-genre">寿司</span>
-
-          <div class="restaurant-address">📍 北海道小樽市色内1-10-9</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.19582993353127,141.00140485826137" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%88%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>小樽おり鮨</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -681,8 +662,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>山中牧場 小樽店</h3>
 
           <span class="restaurant-genre">ソフトクリーム</span>
@@ -695,8 +676,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>よし</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 北海道小樽市色内1-10-9</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.19582993353127,141.00140485826137" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%88%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>焼肉 三四郎</h3>
 
           <span class="restaurant-genre">焼肉</span>
@@ -706,6 +701,20 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=43.19260503353285,140.99993035822985" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E7%84%BC%E8%82%89%20%E4%B8%89%E5%9B%9B%E9%83%8E" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>群来膳</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 北海道小樽市色内1-10-7</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.19577633433673,141.0015740594225" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%BE%A4%E6%9D%A5%E8%86%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

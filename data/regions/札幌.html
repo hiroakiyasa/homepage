@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -636,25 +645,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>天ぷらあら木</h3>
-
-          <span class="restaurant-genre">天ぷら</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南7条西4 延寿堂 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.05253310366708,141.35361893546238" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%81%B7%E3%82%89%E3%81%82%E3%82%89%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>寿し ひでたか</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -667,22 +662,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>焼鳥 ひげぼうず</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>天ぷらあら木</h3>
 
-          <span class="restaurant-genre">焼き鳥</span>
+          <span class="restaurant-genre">天ぷら</span>
 
-          <div class="restaurant-address">📍 北海道札幌市中央区南五条西6-4 多田ビル 1F</div>
+          <div class="restaurant-address">📍 北海道札幌市中央区南7条西4 延寿堂 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.05371713373254,141.34997265658157" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%84%BC%E9%B3%A5%20%E3%81%B2%E3%81%92%E3%81%BC%E3%81%86%E3%81%9A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=43.05253310366708,141.35361893546238" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%81%B7%E3%82%89%E3%81%82%E3%82%89%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>まる鮨</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -695,8 +690,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>テアトロ ディ マッサ</h3>
 
           <span class="restaurant-genre">イタリアン</span>
@@ -706,6 +701,20 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=43.056136433729904,141.34655065660843" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%83%86%E3%82%A2%E3%83%88%E3%83%AD%20%E3%83%87%E3%82%A3%20%E3%83%9E%E3%83%83%E3%82%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>焼鳥 ひげぼうず</h3>
+
+          <span class="restaurant-genre">焼き鳥</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南五条西6-4 多田ビル 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.05371713373254,141.34997265658157" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%84%BC%E9%B3%A5%20%E3%81%B2%E3%81%92%E3%81%BC%E3%81%86%E3%81%9A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

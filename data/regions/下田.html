@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -420,25 +429,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>小川家</h3>
-
-          <span class="restaurant-genre">うなぎ</span>
-
-          <div class="restaurant-address">📍 静岡県下田市2-8-14</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.672662338289605,138.94495567361102" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%B0%8F%E5%B7%9D%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>焼肉食堂 成翠園</h3>
 
           <span class="restaurant-genre">焼肉</span>
@@ -451,22 +446,22 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>旬の味 ごろさや</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>海女小屋</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">海鮮</span>
 
-          <div class="restaurant-address">📍 静岡県下田市1丁目5-25</div>
+          <div class="restaurant-address">📍 静岡県下田市3-3-4</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.67699773828676,138.944687473655" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%97%AC%E3%81%AE%E5%91%B3%20%E3%81%94%E3%82%8D%E3%81%95%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.67280619491113,138.9434860257696" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%B5%B7%E5%A5%B3%E5%B0%8F%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>テーブル トマト</h3>
 
           <span class="restaurant-genre">ダイニングバー</span>
@@ -479,17 +474,31 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>海女小屋</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>旬の味 ごろさや</h3>
 
-          <span class="restaurant-genre">海鮮</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 静岡県下田市3-3-4</div>
+          <div class="restaurant-address">📍 静岡県下田市1丁目5-25</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.67280619491113,138.9434860257696" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%B5%B7%E5%A5%B3%E5%B0%8F%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.67699773828676,138.944687473655" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%97%AC%E3%81%AE%E5%91%B3%20%E3%81%94%E3%82%8D%E3%81%95%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>小川家</h3>
+
+          <span class="restaurant-genre">うなぎ</span>
+
+          <div class="restaurant-address">📍 静岡県下田市2-8-14</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=34.672662338289605,138.94495567361102" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%B0%8F%E5%B7%9D%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

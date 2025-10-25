@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -626,39 +635,25 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>おゝ杉</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>直</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">居酒屋</span>
 
-          <div class="restaurant-address">📍 滋賀県大津市中央3-4-30</div>
+          <div class="restaurant-address">📍 滋賀県大津市末広町3-1</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.005991037098134,135.86846977913447" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%8A%E3%82%9D%E6%9D%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.00477733709742,135.8637968791255" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%9B%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>近江牛専門店 近江かど萬</h3>
-
-          <span class="restaurant-genre">ステーキ</span>
-
-          <div class="restaurant-address">📍 滋賀県大津市中央1-7-35</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00947323709474,135.86475117917223" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%BF%91%E6%B1%9F%E7%89%9B%E5%B0%82%E9%96%80%E5%BA%97%20%E8%BF%91%E6%B1%9F%E3%81%8B%E3%81%A9%E8%90%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>肉とワイン Jinen</h3>
 
           <span class="restaurant-genre">ステーキ</span>
@@ -671,8 +666,36 @@
           </div>
         </div>
 
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>近江牛専門店 近江かど萬</h3>
+
+          <span class="restaurant-genre">ステーキ</span>
+
+          <div class="restaurant-address">📍 滋賀県大津市中央1-7-35</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.00947323709474,135.86475117917223" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E8%BF%91%E6%B1%9F%E7%89%9B%E5%B0%82%E9%96%80%E5%BA%97%20%E8%BF%91%E6%B1%9F%E3%81%8B%E3%81%A9%E8%90%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>おゝ杉</h3>
+
+          <span class="restaurant-genre">日本料理</span>
+
+          <div class="restaurant-address">📍 滋賀県大津市中央3-4-30</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.005991037098134,135.86846977913447" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%8A%E3%82%9D%E6%9D%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
           <h3>とっくり</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -682,20 +705,6 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.0035305370981,135.86345767911314" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%81%A8%E3%81%A3%E3%81%8F%E3%82%8A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>直</h3>
-
-          <span class="restaurant-genre">居酒屋</span>
-
-          <div class="restaurant-address">📍 滋賀県大津市末広町3-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00477733709742,135.8637968791255" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%9B%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 中津川</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,7 +365,7 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 中津川</strong>
-            <a href="https://www.google.com/maps?q=35.52093698295562,137.4997702777027" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.500617,137.502847" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
@@ -352,7 +381,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約25分 (1946m)</div>
+                <div>📍 徒歩約5分 (352m)</div>
                 <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
               </div>
 
@@ -378,7 +407,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約29分 (2299m)</div>
+                <div>📍 徒歩約2分 (99m)</div>
                 <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
               </div>
 
@@ -404,7 +433,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約27分 (2126m)</div>
+                <div>📍 徒歩約4分 (250m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -430,7 +459,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約27分 (2108m)</div>
+                <div>📍 徒歩約3分 (211m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -456,7 +485,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約28分 (2178m)</div>
+                <div>📍 徒歩約4分 (247m)</div>
                 <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
               </div>
 
@@ -482,7 +511,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約26分 (2047m)</div>
+                <div>📍 徒歩約3分 (239m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
               </div>
 
@@ -508,7 +537,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約26分 (2004m)</div>
+                <div>📍 徒歩約4分 (276m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
               </div>
 
@@ -534,7 +563,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約31分 (2458m)</div>
+                <div>📍 徒歩約3分 (181m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
               </div>
 
@@ -560,7 +589,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約31分 (2435m)</div>
+                <div>📍 徒歩約3分 (164m)</div>
                 <div class="parking-fee">💰 ¥2,400 (18:00-8:00)</div>
               </div>
 
@@ -580,25 +609,53 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>手打蕎麦 わくり</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>喜楽五平餅 駅前店</h3>
 
-          <span class="restaurant-genre">そば</span>
+          <span class="restaurant-genre">和菓子</span>
 
-          <div class="restaurant-address">📍 岐阜県中津川市太田町2-2-35</div>
+          <div class="restaurant-address">📍 岐阜県中津川市太田町2-1-16</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.50000123730527,137.50405398297795" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%89%8B%E6%89%93%E8%95%8E%E9%BA%A6%20%E3%82%8F%E3%81%8F%E3%82%8A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.49958455208083,137.50326733606653" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%96%9C%E6%A5%BD%E4%BA%94%E5%B9%B3%E9%A4%85%20%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>松月堂</h3>
+
+          <span class="restaurant-genre">和菓子</span>
+
+          <div class="restaurant-address">📍 岐阜県中津川市太田町2-5-29</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.49860833730614,137.5040065829639" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%9D%BE%E6%9C%88%E5%A0%82" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>信玄堂 栄町店</h3>
+
+          <span class="restaurant-genre">和菓子</span>
+
+          <div class="restaurant-address">📍 岐阜県中津川市栄町7-17</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.50228763730386,137.50418688300093" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E4%BF%A1%E7%8E%84%E5%A0%82%20%E6%A0%84%E7%94%BA%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>栗きんとん本家　すや 本店</h3>
 
           <span class="restaurant-genre">和菓子</span>
@@ -611,45 +668,17 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>萩乃屋</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 岐阜県中津川市馬籠4572</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.523867437309626,137.56536518317603" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%90%A9%E4%B9%83%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>すや 西木</h3>
-
-          <span class="restaurant-genre">甘味処</span>
-
-          <div class="restaurant-address">📍 岐阜県中津川市中津川1296-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.49814963730941,137.5133708829527" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%99%E3%82%84%20%E8%A5%BF%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>七福</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>手打蕎麦 わくり</h3>
 
-          <span class="restaurant-genre">和菓子</span>
+          <span class="restaurant-genre">そば</span>
 
-          <div class="restaurant-address">📍 岐阜県中津川市中津川3022-18</div>
+          <div class="restaurant-address">📍 岐阜県中津川市太田町2-2-35</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.48790543731223,137.50179858285736" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E4%B8%83%E7%A6%8F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.50000123730527,137.50405398297795" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%89%8B%E6%89%93%E8%95%8E%E9%BA%A6%20%E3%82%8F%E3%81%8F%E3%82%8A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -636,53 +645,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>AKI NAGAO</h3>
-
-          <span class="restaurant-genre">フレンチ</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南3西3-3 Ｇ　ＤＩＮＩＮＧ　１Ｆ</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.056436586813554,141.35429314419034" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=AKI%20NAGAO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>鮨ノ蔵</h3>
-
-          <span class="restaurant-genre">寿司</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南2条西4 乙井ビル B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.05783305668711,141.3515780276067" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%83%8E%E8%94%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>天ぷらあら木</h3>
-
-          <span class="restaurant-genre">天ぷら</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南7条西4 延寿堂 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.05253310366708,141.35361893546238" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%81%B7%E3%82%89%E3%81%82%E3%82%89%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>みえ田</h3>
 
           <span class="restaurant-genre">日本料理</span>
@@ -695,8 +662,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>寿し ひでたか</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -706,6 +673,48 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=43.05252338235367,141.35361143653273" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%AF%BF%E3%81%97%20%E3%81%B2%E3%81%A7%E3%81%9F%E3%81%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>AKI NAGAO</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南3西3-3 Ｇ　ＤＩＮＩＮＧ　１Ｆ</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.056436586813554,141.35429314419034" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=AKI%20NAGAO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>鮨ノ蔵</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南2条西4 乙井ビル B1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.05783305668711,141.3515780276067" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%83%8E%E8%94%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>天ぷらあら木</h3>
+
+          <span class="restaurant-genre">天ぷら</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南7条西4 延寿堂 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=43.05253310366708,141.35361893546238" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A9%E3%81%B7%E3%82%89%E3%81%82%E3%82%89%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

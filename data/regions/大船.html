@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -635,39 +644,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>CALVA</h3>
-
-          <span class="restaurant-genre">ケーキ</span>
-
-          <div class="restaurant-address">📍 神奈川県鎌倉市大船1-12-18 エミールビル 1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.351067252132665,139.53150540688932" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=CALVA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>Chinese restaurant KUE</h3>
-
-          <span class="restaurant-genre">中華料理</span>
-
-          <div class="restaurant-address">📍 神奈川県鎌倉市岡本1-2-35 大船プラザ 204</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.35370003804327,139.52972778008024" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=Chinese%20restaurant%20KUE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>CURRY CLUB キュイエール</h3>
 
           <span class="restaurant-genre">カレー</span>
@@ -680,8 +661,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>キャベツ畑</h3>
 
           <span class="restaurant-genre">お好み焼き</span>
@@ -694,8 +675,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>中華そば さとう</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -705,6 +686,34 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.35230533804558,139.53415798006301" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0%20%E3%81%95%E3%81%A8%E3%81%86" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>Chinese restaurant KUE</h3>
+
+          <span class="restaurant-genre">中華料理</span>
+
+          <div class="restaurant-address">📍 神奈川県鎌倉市岡本1-2-35 大船プラザ 204</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.35370003804327,139.52972778008024" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=Chinese%20restaurant%20KUE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>CALVA</h3>
+
+          <span class="restaurant-genre">ケーキ</span>
+
+          <div class="restaurant-address">📍 神奈川県鎌倉市大船1-12-18 エミールビル 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.351067252132665,139.53150540688932" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=CALVA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

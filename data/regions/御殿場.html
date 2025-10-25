@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 御殿場</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,40 +365,14 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 御殿場</strong>
-            <a href="https://www.google.com/maps?q=35.29492418441015,138.94594354305963" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.2999658,138.9341778" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: 乙女駐車場</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.287938,138.971078" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E4%B9%99%E5%A5%B3%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約31分 (2413m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (1536m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場2 -->
-          <div class="parking-card" onclick="showMarker('parking_1')">
-            <div class="parking-card-header">
-              <strong>🥈 2位: チケパ　御殿場駅前第２</strong>
+              <strong>🥇 1位: チケパ　御殿場駅前第２</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.302577,138.936066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%81%E3%82%B1%E3%83%91%E3%80%80%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -378,7 +381,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約16分 (1237m)</div>
+                <div>📍 徒歩約5分 (338m)</div>
                 <div class="parking-fee">💰 ¥100 (18:00-8:00)</div>
               </div>
 
@@ -393,10 +396,10 @@
             </div>
           </div>
 
-          <!-- 駐車場3 -->
-          <div class="parking-card" onclick="showMarker('parking_2')">
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🥉 3位: チケパ　御殿場駅前第１</strong>
+              <strong>🥈 2位: チケパ　御殿場駅前第１</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.299627,138.93528" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%81%E3%82%B1%E3%83%91%E3%80%80%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -405,7 +408,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約14分 (1101m)</div>
+                <div>📍 徒歩約2分 (107m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
@@ -420,10 +423,10 @@
             </div>
           </div>
 
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🔵 4位: リパーク御殿場駅前第３</strong>
+              <strong>🥉 3位: リパーク御殿場駅前第３</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.301885,138.934144" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -432,7 +435,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約17分 (1323m)</div>
+                <div>📍 徒歩約3分 (214m)</div>
                 <div class="parking-fee">💰 ¥650 (18:00-8:00)</div>
               </div>
 
@@ -447,10 +450,10 @@
             </div>
           </div>
 
-          <!-- 駐車場5 -->
-          <div class="parking-card" onclick="showMarker('parking_4')">
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <strong>🔵 5位: リパーク御殿場駅前第４</strong>
+              <strong>🔵 4位: リパーク御殿場駅前第４</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.30241,138.932405" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -459,7 +462,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約19分 (1486m)</div>
+                <div>📍 徒歩約4分 (316m)</div>
                 <div class="parking-fee">💰 ¥650 (18:00-8:00)</div>
               </div>
 
@@ -474,10 +477,10 @@
             </div>
           </div>
 
-          <!-- 駐車場6 -->
-          <div class="parking-card" onclick="showMarker('parking_5')">
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <strong>🔵 6位: 御殿場市営駅南駐車場</strong>
+              <strong>🔵 5位: 御殿場市営駅南駐車場</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.299094,138.933205" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E5%BE%A1%E6%AE%BF%E5%A0%B4%E5%B8%82%E5%96%B6%E9%A7%85%E5%8D%97%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -486,7 +489,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約16分 (1247m)</div>
+                <div>📍 徒歩約2分 (131m)</div>
                 <div class="parking-fee">💰 ¥2,700 (18:00-8:00)</div>
               </div>
 
@@ -501,10 +504,10 @@
             </div>
           </div>
 
-          <!-- 駐車場7 -->
-          <div class="parking-card" onclick="showMarker('parking_6')">
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <strong>🔵 7位: ザ・パーク御殿場新天地</strong>
+              <strong>🔵 6位: ザ・パーク御殿場新天地</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.302985,138.930294" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E6%96%B0%E5%A4%A9%E5%9C%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -513,7 +516,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約22分 (1681m)</div>
+                <div>📍 徒歩約7分 (487m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
@@ -527,10 +530,10 @@
             </div>
           </div>
 
-          <!-- 駐車場8 -->
-          <div class="parking-card" onclick="showMarker('parking_7')">
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <strong>🔵 8位: ザ・パーク御殿場新天地第２</strong>
+              <strong>🔵 7位: ザ・パーク御殿場新天地第２</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.302168,138.931417" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E6%96%B0%E5%A4%A9%E5%9C%B0%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -539,7 +542,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約20分 (1547m)</div>
+                <div>📍 徒歩約5分 (351m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
@@ -553,10 +556,10 @@
             </div>
           </div>
 
-          <!-- 駐車場9 -->
-          <div class="parking-card" onclick="showMarker('parking_8')">
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <strong>🔵 9位: リパーク御殿場駅前</strong>
+              <strong>🔵 8位: リパーク御殿場駅前</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.301943,138.93233" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -565,7 +568,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約19分 (1463m)</div>
+                <div>📍 徒歩約4分 (277m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
@@ -580,10 +583,10 @@
             </div>
           </div>
 
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <strong>🔵 10位: リパーク御殿場駅前第２</strong>
+              <strong>🔵 9位: リパーク御殿場駅前第２</strong>
               <div class="parking-card-buttons">
                 <a href="https://www.google.com/maps?q=35.301427,138.931955" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%BE%A1%E6%AE%BF%E5%A0%B4%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
@@ -592,7 +595,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約19分 (1463m)</div>
+                <div>📍 徒歩約4分 (259m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
@@ -613,76 +616,34 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>メゾン ケイ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>てんぷら 士才</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">天ぷら</span>
 
-          <div class="restaurant-address">📍 静岡県御殿場市東山527-1</div>
+          <div class="restaurant-address">📍 静岡県御殿場市新橋1936-16 東口プラザビル 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.29621423789778,138.9581958799002" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%A1%E3%82%BE%E3%83%B3%20%E3%82%B1%E3%82%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.30045528502306,138.93570294655729" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%A6%E3%82%93%E3%81%B7%E3%82%89%20%E5%A3%AB%E6%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>とらや工房</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>さわやか 御殿場インター店</h3>
 
-          <span class="restaurant-genre">和菓子</span>
+          <span class="restaurant-genre">ファミレス</span>
 
-          <div class="restaurant-address">📍 静岡県御殿場市東山1022-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.29538433789885,138.9599106798906" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%A8%E3%82%89%E3%82%84%E5%B7%A5%E6%88%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>炭焼きレストランさわやか 御殿場プレミアム・アウトレット店</h3>
-
-          <span class="restaurant-genre">ハンバーグ</span>
-
-          <div class="restaurant-address">📍 静岡県御殿場市深沢1312 御殿場プレミアムアウトレット内 ヒルサイド エリア</div>
+          <div class="restaurant-address">📍 静岡県御殿場市東田中984-1</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.30500202132539,138.96586644851809" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%82%AD%E7%84%BC%E3%81%8D%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%81%95%E3%82%8F%E3%82%84%E3%81%8B%20%E5%BE%A1%E6%AE%BF%E5%A0%B4%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%BB%E3%82%A2%E3%82%A6%E3%83%88%E3%83%AC%E3%83%83%E3%83%88%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>フルフール御殿場</h3>
-
-          <span class="restaurant-genre">スイーツ</span>
-
-          <div class="restaurant-address">📍 静岡県御殿場市東田中2-14-25</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.30328423788821,138.94223117998277" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%95%E3%83%AB%E3%83%95%E3%83%BC%E3%83%AB%E5%BE%A1%E6%AE%BF%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>とんかつ 壱</h3>
-
-          <span class="restaurant-genre">とんかつ</span>
-
-          <div class="restaurant-address">📍 静岡県御殿場市東田中2-14-1</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.303445581611804,138.94185760120985" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4%20%E5%A3%B1" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.300799937888705,138.93885747996006" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%95%E3%82%8F%E3%82%84%E3%81%8B%20%E5%BE%A1%E6%AE%BF%E5%A0%B4%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

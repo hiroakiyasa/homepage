@@ -341,6 +341,15 @@
       <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
     <!-- 地図＋駐車場リスト -->
     <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
 
@@ -634,53 +643,11 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
-          <h3>マスドラヴァンド</h3>
-
-          <span class="restaurant-genre">フレンチ</span>
-
-          <div class="restaurant-address">📍 愛知県名古屋市中区東桜2-23-22 ホテルマイステイズ名古屋栄 B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.16967913732752,136.91516448005416" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%9E%E3%82%B9%E3%83%89%E3%83%A9%E3%83%B4%E3%82%A1%E3%83%B3%E3%83%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>好蘭</h3>
-
-          <span class="restaurant-genre">中華料理</span>
-
-          <div class="restaurant-address">📍 愛知県名古屋市中区栄5-1-21 MLアシスト栄ビル 2F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.16530073732883,136.91060148001313" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A5%BD%E8%98%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
-          <h3>ハクガ</h3>
-
-          <span class="restaurant-genre">イノベーティブ</span>
-
-          <div class="restaurant-address">📍 愛知県名古屋市中区栄5-6-34 エムテックエニカビル 5F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.16529963732957,136.91287588001154" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%8F%E3%82%AF%E3%82%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
           <h3>華丸吉日</h3>
 
           <span class="restaurant-genre">日本料理</span>
@@ -693,8 +660,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>なるとや</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -704,6 +671,48 @@
           <div class="restaurant-buttons">
             <a href="https://www.google.com/maps?q=35.167447850306324,136.91453508585536" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%81%AA%E3%82%8B%E3%81%A8%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>マスドラヴァンド</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 愛知県名古屋市中区東桜2-23-22 ホテルマイステイズ名古屋栄 B1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.16967913732752,136.91516448005416" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%9E%E3%82%B9%E3%83%89%E3%83%A9%E3%83%B4%E3%82%A1%E3%83%B3%E3%83%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>好蘭</h3>
+
+          <span class="restaurant-genre">中華料理</span>
+
+          <div class="restaurant-address">📍 愛知県名古屋市中区栄5-1-21 MLアシスト栄ビル 2F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.16530073732883,136.91060148001313" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A5%BD%E8%98%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>ハクガ</h3>
+
+          <span class="restaurant-genre">イノベーティブ</span>
+
+          <div class="restaurant-address">📍 愛知県名古屋市中区栄5-6-34 エムテックエニカビル 5F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.16529963732957,136.91287588001154" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%8F%E3%82%AF%E3%82%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

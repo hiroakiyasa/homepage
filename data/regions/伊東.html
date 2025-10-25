@@ -44,6 +44,22 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
     .section-title {
       font-size: 20px;
       font-weight: bold;
@@ -316,9 +332,22 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+    </div>
+
     <div class="header">
       <h1>🚗 伊東</h1>
       <p>周辺のおすすめ車中泊スポット</p>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
     </div>
 
     <!-- 地図＋駐車場リスト -->
@@ -336,32 +365,274 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 伊東</strong>
-            <a href="https://www.google.com/maps?q=34.93350036893137,139.0987850110241" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=34.9755818,139.0922763" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: 桜の里駐車場</strong>
+              <strong>🥇 1位: リパーク伊東松原本町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=34.9072,139.0893" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E6%A1%9C%E3%81%AE%E9%87%8C%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <a href="https://www.google.com/maps?q=34.973193,139.096704" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%BC%8A%E6%9D%B1%E6%9D%BE%E5%8E%9F%E6%9C%AC%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約39分 (3053m)</div>
-                <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
+                <div>📍 徒歩約7分 (484m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (3250m)</div>
-                <div class="facility-item">🚻 手水庵公衆トイレ (112m)</div>
-                <div class="facility-item">♨️ 伊豆高原ホテル五つ星 (1.7km)</div>
+                <div class="facility-item">🏪 コンビニ (328m)</div>
+                <div class="facility-item">🚻 伊東海岸公衆トイレ (179m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
+            <div class="parking-card-header">
+              <strong>🥈 2位: エコロパーク　伊東駅前第２</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.974109,139.093929" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (223m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (58m)</div>
+                <div class="facility-item">🚻 ＪＲ伊東駅前観光トイレ (149m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
+            <div class="parking-card-header">
+              <strong>🥉 3位: 名鉄協商伊東駅前</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.971926,139.09203" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (408m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (20m)</div>
+                <div class="facility-item">🚻 松原公園トイレ (200m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: リパーク伊東松原本町第２</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.972701,139.095679" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%BC%8A%E6%9D%B1%E6%9D%BE%E5%8E%9F%E6%9C%AC%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (446m)</div>
+                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (282m)</div>
+                <div class="facility-item">🚻 伊東海岸公衆トイレ (249m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <strong>🔵 5位: エコロパーク　伊東駅前第１</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.973726,139.092104" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (207m)</div>
+                <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (148m)</div>
+                <div class="facility-item">🚻 ＪＲ伊東駅前観光トイレ (53m)</div>
+                <div class="facility-item">♨️ undefined (0.0km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
+            <div class="parking-card-header">
+              <strong>🔵 6位: リパーク伊東駅前仲丸通り</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.973568,139.093529" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D%E4%BB%B2%E4%B8%B8%E9%80%9A%E3%82%8A" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (252m)</div>
+                <div class="parking-fee">💰 ¥650 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (100m)</div>
+                <div class="facility-item">🚻 ＪＲ伊東駅前観光トイレ (131m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
+            <div class="parking-card-header">
+              <strong>🔵 7位: ＭＡＹパーク伊東駅前</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.975734,139.093643" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%EF%BC%AD%EF%BC%A1%EF%BC%B9%E3%83%91%E3%83%BC%E3%82%AF%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約2分 (126m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (143m)</div>
+                <div class="facility-item">🚻 伊東公園トイレ (205m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
+            <div class="parking-card-header">
+              <strong>🔵 8位: パーク　ロカンダ</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.973809,139.093729" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E3%83%AD%E3%82%AB%E3%83%B3%E3%83%80" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (238m)</div>
+                <div class="parking-fee">💰 ¥1,500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (77m)</div>
+                <div class="facility-item">🚻 ＪＲ伊東駅前観光トイレ (137m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
+            <div class="parking-card-header">
+              <strong>🔵 9位: 伊東市伊東駅前駐車場</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.975617,139.092629" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E4%BC%8A%E6%9D%B1%E5%B8%82%E4%BC%8A%E6%9D%B1%E9%A7%85%E5%89%8D%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約1分 (32m)</div>
+                <div class="parking-fee">💰 ¥1,500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (149m)</div>
+                <div class="facility-item">🚻 伊東公園トイレ (126m)</div>
+                <div class="facility-item">♨️ 湯川第一浴場 子持ち湯 (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
+            <div class="parking-card-header">
+              <strong>🔵 10位: 東洋カーマックス伊東中央町駐車場</strong>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=34.971501,139.093804" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E4%BC%8A%E6%9D%B1%E4%B8%AD%E5%A4%AE%E7%94%BA%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (475m)</div>
+                <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (151m)</div>
+                <div class="facility-item">♨️ undefined (0.1km)</div>
               </div>
 
             </div>
@@ -373,11 +644,25 @@
 
     <!-- レストランセクション -->
     <div class="restaurant-section">
-      <h2>🍴 おすすめレストラントップ5</h2>
+      <h2>🍴 おすすめレストラン</h2>
       <div class="restaurant-grid">
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥇 1位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <h3>黒潮金剛 どろめ</h3>
+
+          <span class="restaurant-genre">丼</span>
+
+          <div class="restaurant-address">📍 静岡県伊東市湯川1-9-13 かめやビル 1F</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=34.97444323814502,139.09281237655563" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%BB%92%E6%BD%AE%E9%87%91%E5%89%9B%20%E3%81%A9%E3%82%8D%E3%82%81" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>一鰻</h3>
 
           <span class="restaurant-genre">うなぎ</span>
@@ -390,22 +675,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥈 2位</div>
-          <h3>うなぎのまとい</h3>
-
-          <span class="restaurant-genre">うなぎ</span>
-
-          <div class="restaurant-address">📍 静岡県伊東市東松原13-6</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.97185605815712,139.0970953330648" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AA%E3%81%8E%E3%81%AE%E3%81%BE%E3%81%A8%E3%81%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">🥉 3位</div>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>福々亭</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -419,30 +690,30 @@
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4位</div>
-          <h3>ル・フィヤージュ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>杉国商店</h3>
 
-          <span class="restaurant-genre">パン</span>
+          <span class="restaurant-genre">食堂</span>
 
-          <div class="restaurant-address">📍 静岡県伊東市八幡野1305-75</div>
+          <div class="restaurant-address">📍 静岡県伊東市湯川2-2-18</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=34.884354238205724,139.10377527563796" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%AB%E3%83%BB%E3%83%95%E3%82%A3%E3%83%A4%E3%83%BC%E3%82%B8%E3%83%A5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.974631638146015,139.09631487655508" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%9D%89%E5%9B%BD%E5%95%86%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5位</div>
-          <h3>焼肉ふじ</h3>
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>鮨と地魚料理 さかな倶楽部 たっぱん</h3>
 
-          <span class="restaurant-genre">焼肉</span>
+          <span class="restaurant-genre">海鮮</span>
 
-          <div class="restaurant-address">📍 静岡県伊東市宇佐美1977-2</div>
+          <div class="restaurant-address">📍 静岡県伊東市湯川3-3-19 ドルフィンK 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.00464443812138,139.07881057687052" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%84%BC%E8%82%89%E3%81%B5%E3%81%98" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.97627303814434,139.09434017657304" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%81%A8%E5%9C%B0%E9%AD%9A%E6%96%99%E7%90%86%20%E3%81%95%E3%81%8B%E3%81%AA%E5%80%B6%E6%A5%BD%E9%83%A8%20%E3%81%9F%E3%81%A3%E3%81%B1%E3%82%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
