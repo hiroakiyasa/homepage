@@ -95,7 +95,7 @@
     </div>
 
     <div class="container">
-        <p>最終更新日: 2025年1月23日</p>
+        <p>最終更新日: 2025年10月26日</p>
 
         <p>車旅コンシェルジュ（以下「当サービス」といいます）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。本プライバシーポリシー（以下「本ポリシー」といいます）は、当サービスにおける個人情報の取扱いについて定めるものです。</p>
 
@@ -108,11 +108,27 @@
             <li>ユーザーが当サービスを利用する際の閲覧履歴、IPアドレス、Cookie情報</li>
             <li>お問い合わせフォーム等から送信された情報</li>
             <li>アクセス解析ツールによる統計情報</li>
+            <li><strong>Google OAuth認証によるログイン時に取得する情報</strong></li>
         </ul>
 
         <div class="important">
+            <h3>Google OAuth認証について</h3>
+            <p>当サービスでは、一部の機能（お気に入り保存等）において<strong>Google OAuth 2.0認証</strong>を使用しています。</p>
+            <h4>取得する情報</h4>
+            <p>Google OAuth認証を通じて、以下の情報を取得します：</p>
+            <ul>
+                <li><strong>メールアドレス</strong>（Googleアカウントに登録されているもの）</li>
+                <li><strong>プロフィール情報</strong>（氏名、プロフィール画像等）</li>
+                <li><strong>ユーザーID</strong>（認証システムにより自動生成されるもの）</li>
+            </ul>
+            <h4>認証情報の管理</h4>
+            <p>取得した認証情報は、<strong>Supabase Authentication</strong>サービスにより安全に管理されます。Supabaseは業界標準のセキュリティ対策を実施しており、データの暗号化、アクセス制御等の保護措置が講じられています。</p>
+            <h4>Googleプライバシーポリシー</h4>
+            <p>Google OAuth認証の使用にあたり、<a href="https://policies.google.com/privacy" target="_blank" style="color: #1976d2;">Googleプライバシーポリシー</a>も適用されます。詳細はGoogleの公式ドキュメントをご確認ください。</p>
+        </div>
+
+        <div class="important">
             <h3>当サービスの個人情報収集について</h3>
-            <p>当サービスは、<strong>ユーザー登録機能を提供しておらず、氏名、メールアドレス、電話番号等の個人を特定できる情報を直接収集することはありません。</strong></p>
             <p>当サービスは、サービスの改善および統計分析の目的で、匿名化されたアクセスデータ（閲覧ページ、アクセス時間、使用デバイス情報等）を収集する場合があります。</p>
         </div>
 
@@ -120,12 +136,18 @@
         <p>当サービスは、収集した情報を以下の目的で利用します。</p>
         <ul>
             <li>サービスの提供、維持、改善</li>
+            <li><strong>ユーザー認証、アカウント管理、ログイン機能の提供</strong></li>
+            <li><strong>お気に入り地域の保存、ユーザー設定の保存</strong></li>
             <li>サービスの利用状況の分析</li>
             <li>サービスに関する情報提供、お知らせの送付</li>
             <li>お問い合わせへの対応</li>
             <li>利用規約に違反する行為への対応</li>
             <li>上記の利用目的に付随する目的</li>
         </ul>
+        <div class="important">
+            <h4>認証情報の利用について</h4>
+            <p>Google OAuth認証により取得したメールアドレスおよびプロフィール情報は、<strong>ユーザーの識別とアカウント管理の目的でのみ使用</strong>され、第三者への提供や営業目的での利用は一切行いません。</p>
+        </div>
 
         <h2>第4条（Cookie（クッキー）について）</h2>
         <p>当サービスは、サービスの利便性向上および利用状況の分析のため、Cookieを使用する場合があります。Cookieとは、ウェブサイトがユーザーのコンピュータに送信する小さなデータファイルです。</p>
@@ -151,9 +173,20 @@
         <p>当サービスは、個人情報への不正アクセス、紛失、破壊、改ざん、漏洩等を防止するため、適切な安全管理措置を講じます。</p>
 
         <h2>第9条（外部サービスの利用）</h2>
-        <p>当サービスでは、地図表示のためにOpenStreetMap等の外部サービスを利用しています。これらの外部サービスには、それぞれ独自のプライバシーポリシーが適用されます。詳細は各サービスのプライバシーポリシーをご確認ください。</p>
+        <p>当サービスでは、以下の外部サービスを利用しています。これらの外部サービスには、それぞれ独自のプライバシーポリシーが適用されます。詳細は各サービスのプライバシーポリシーをご確認ください。</p>
+
+        <h3>認証サービス</h3>
         <ul>
-            <li><strong>OpenStreetMap</strong>: 地図データの表示に使用</li>
+            <li><strong>Google OAuth 2.0</strong>: ユーザー認証に使用
+                <br><a href="https://policies.google.com/privacy" target="_blank" style="color: #1976d2;">Googleプライバシーポリシー</a></li>
+            <li><strong>Supabase Authentication</strong>: 認証情報の管理とデータベース連携に使用
+                <br><a href="https://supabase.com/privacy" target="_blank" style="color: #1976d2;">Supabaseプライバシーポリシー</a></li>
+        </ul>
+
+        <h3>地図表示サービス</h3>
+        <ul>
+            <li><strong>OpenStreetMap</strong>: 地図データの表示に使用
+                <br><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" style="color: #1976d2;">OpenStreetMapプライバシーポリシー</a></li>
             <li><strong>Leaflet</strong>: 地図の描画ライブラリとして使用</li>
         </ul>
 
