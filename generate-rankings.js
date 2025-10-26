@@ -124,46 +124,6 @@ async function getParkingRankings(regions) {
   return withRegions;
 }
 
-/**
- * レストランランキングを取得
- */
-async function getRestaurantRankings(regions) {
-  console.log(`${colors.cyan}🍴 レストランランキングを取得中...${colors.reset}`);
-
-  const { data, error } = await supabase.rpc('get_restaurant_rankings', { p_limit: 10 });
-
-  if (error) {
-    console.error(`${colors.red}エラー:${colors.reset}`, error);
-    return [];
-  }
-
-  if (!data || data.length === 0) {
-    console.log(`   ${colors.yellow}⚠${colors.reset} レストランのいいねデータがまだありません`);
-    return [];
-  }
-
-  // 各スポットに最寄り地域情報を追加
-  const withRegions = data.map((spot, index) => {
-    const nearest = findNearestRegion(spot.latitude, spot.longitude, regions);
-    return {
-      rank: index + 1,
-      spot_name: spot.spot_name,
-      spot_id: spot.spot_id,
-      latitude: spot.latitude,
-      longitude: spot.longitude,
-      like_count: parseInt(spot.like_count),
-      nearest_region: {
-        name: nearest.name,
-        fileName: nearest.fileName || nearest.name,
-        url: `regions/${(nearest.fileName || nearest.name).replace(/[\/\\:*?"<>|]/g, '_')}.html`,
-        distance_meters: nearest.distance_meters
-      }
-    };
-  });
-
-  console.log(`   ${colors.green}✓${colors.reset} ${withRegions.length}件のレストランランキングを取得しました`);
-  return withRegions;
-}
 
 /**
  * 地域ランキングを取得
@@ -245,14 +205,12 @@ async function main() {
 
     // ランキング取得
     const parkingRankings = await getParkingRankings(regions);
-    const restaurantRankings = await getRestaurantRankings(regions);
     const regionRankings = await getRegionRankings(regions);
 
     // 出力データ作成
     const output = {
       generated_at: new Date().toISOString(),
       parking: parkingRankings,
-      restaurant: restaurantRankings,
       region: regionRankings
     };
 
@@ -272,7 +230,6 @@ async function main() {
     console.log(`   生成日時: ${colors.cyan}${new Date().toLocaleString('ja-JP')}${colors.reset}`);
     console.log(`\n${colors.blue}📊 ランキング内容:${colors.reset}`);
     console.log(`   🚗 駐車場: ${parkingRankings.length}件`);
-    console.log(`   🍴 レストラン: ${restaurantRankings.length}件`);
     console.log(`   🗾 地域: ${regionRankings.length}件`);
 
   } catch (error) {

@@ -636,7 +636,6 @@
             <div class="rankings-tabs">
                 <button class="rankings-tab active" data-type="region">🗾 地域</button>
                 <button class="rankings-tab" data-type="parking">🚗 駐車場</button>
-                <button class="rankings-tab" data-type="restaurant">🍴 レストラン</button>
             </div>
 
             <div class="rankings-container">
@@ -644,8 +643,6 @@
                 <div class="rankings-scroll" id="parking-rankings" style="display: none;">
                     <!-- 駐車場ランキングがここに表示されます -->
                 </div>
-                <div class="rankings-scroll" id="restaurant-rankings" style="display: none;">
-                    <!-- レストランランキングがここに表示されます -->
                 </div>
             </div>
 
@@ -9871,8 +9868,6 @@
                 // 駐車場ランキング表示
                 displayRankings('parking', data.parking);
 
-                // レストランランキング表示
-                displayRankings('restaurant', data.restaurant);
 
                 // 地域ランキング表示
                 displayRankings('region', data.region || []);
@@ -9888,7 +9883,7 @@
             const container = document.getElementById(`${type}-rankings`);
 
             if (!items || items.length === 0) {
-                let typeName = type === "parking" ? "駐車場" : (type === "restaurant" ? "レストラン" : "地域");
+                let typeName = type === "parking" ? "駐車場" : "地域";
                 container.innerHTML = `
                     <div style="padding: 40px; text-align: center; color: #999;">
                         まだ${typeName}のランキングデータがありません。<br>
@@ -9957,8 +9952,6 @@
                     type === "region" ? "flex" : "none";
                 document.getElementById("parking-rankings").style.display =
                     type === "parking" ? "flex" : "none";
-                document.getElementById("restaurant-rankings").style.display =
-                    type === "restaurant" ? "flex" : "none";
             });
         });
 
