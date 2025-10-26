@@ -64,7 +64,7 @@
 
         .map-container {
             padding: 0;
-            margin: 0;
+            margin: 0 20px; /* left and right margins */
         }
 
         h2 {
@@ -546,16 +546,16 @@
 <body>
     <div class="container">
         <div class="header">
-            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px;">
                 <a href="https://trailfusionai.com" style="display: block; line-height: 0;">
                     <img src="images/logo.png" alt="車旅コンシェルジュ" style="width: 80px; height: 80px; object-fit: contain; cursor: pointer;">
                 </a>
-                <div>
+                <div style="text-align: left;">
                     <h1 style="margin: 0;">🚗 車旅コンシェルジュ</h1>
                     <h2 style="font-size: 1.5em; margin: 10px 0 0 0; font-weight: 500; color: white;">全国車中泊スポットマップ</h2>
                 </div>
             </div>
-            <p>日本全国の車中泊スポットを地図上で確認できます</p>
+            <p style="text-align: center;">日本全国の車中泊スポットを地図上で確認できます</p>
         </div>
 
         <div class="nav-links">
@@ -9923,7 +9923,7 @@
                 card.innerHTML = `
                     <div class="rank-badge">${medal}</div>
                     <h4>${item.region_name}</h4>
-                    <p class="like-info">🍴 ${item.restaurant_count} 店舗</p>
+                    <p class="like-info">❤️ ${item.like_count} いいね</p>
                     <p class="location-info">📏 標高 ${item.elevation}m</p>
                 `;
                 card.addEventListener("click", () => {
