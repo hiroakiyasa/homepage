@@ -1,107 +1,40 @@
 {
-  "generated_at": "2025-10-26T10:41:59.103Z",
+  "generated_at": "2025-10-26T11:06:23.097Z",
   "parking": [],
   "restaurant": [],
   "region": [
     {
       "rank": 1,
-      "region_name": "名古屋",
-      "file_name": "名古屋",
-      "latitude": 35.166533464067314,
-      "longitude": 136.9132454180135,
-      "restaurant_count": 1200,
-      "elevation": 14,
-      "url": "regions/名古屋.html"
+      "region_name": "桜木町",
+      "file_name": "桜木町",
+      "latitude": 35.451416237372,
+      "longitude": 139.626802296789,
+      "like_count": 9,
+      "restaurant_count": 121,
+      "elevation": 34,
+      "url": "regions/桜木町.html"
     },
     {
       "rank": 2,
-      "region_name": "横浜",
-      "file_name": "横浜",
-      "latitude": 35.46466785838226,
-      "longitude": 139.61808099238664,
-      "restaurant_count": 842,
-      "elevation": 12,
-      "url": "regions/横浜.html"
+      "region_name": "九段下",
+      "file_name": "九段下",
+      "latitude": 35.6959,
+      "longitude": 139.7511,
+      "like_count": 7,
+      "restaurant_count": 0,
+      "elevation": 0,
+      "url": "regions/九段下.html"
     },
     {
       "rank": 3,
-      "region_name": "福岡市",
-      "file_name": "福岡市",
-      "latitude": 33.58566100556339,
-      "longitude": 130.39786262905238,
-      "restaurant_count": 833,
-      "elevation": 8,
-      "url": "regions/福岡市.html"
-    },
-    {
-      "rank": 4,
-      "region_name": "梅田",
-      "file_name": "梅田",
-      "latitude": 34.70069524230091,
-      "longitude": 135.49851735711246,
-      "restaurant_count": 719,
-      "elevation": 14,
-      "url": "regions/梅田.html"
-    },
-    {
-      "rank": 5,
-      "region_name": "銀座",
-      "file_name": "銀座",
-      "latitude": 35.67098820855756,
-      "longitude": 139.76471529253922,
-      "restaurant_count": 518,
-      "elevation": 25,
-      "url": "regions/銀座.html"
-    },
-    {
-      "rank": 6,
-      "region_name": "飯田橋",
-      "file_name": "飯田橋",
-      "latitude": 35.69727107437048,
-      "longitude": 139.73419121768936,
-      "restaurant_count": 447,
-      "elevation": 32,
-      "url": "regions/飯田橋.html"
-    },
-    {
-      "rank": 7,
-      "region_name": "東京駅",
-      "file_name": "東京駅",
-      "latitude": 35.68000954100449,
-      "longitude": 139.76764578077783,
-      "restaurant_count": 348,
-      "elevation": 18,
-      "url": "regions/東京駅.html"
-    },
-    {
-      "rank": 8,
-      "region_name": "六本木",
-      "file_name": "六本木",
-      "latitude": 35.66223217611374,
-      "longitude": 139.7312019239331,
-      "restaurant_count": 321,
-      "elevation": 39,
-      "url": "regions/六本木.html"
-    },
-    {
-      "rank": 9,
-      "region_name": "新宿",
-      "file_name": "新宿",
-      "latitude": 35.69243048057798,
-      "longitude": 139.70054288529818,
-      "restaurant_count": 313,
-      "elevation": 55,
-      "url": "regions/新宿.html"
-    },
-    {
-      "rank": 10,
-      "region_name": "三宮",
-      "file_name": "三宮",
-      "latitude": 34.69519776612317,
-      "longitude": 135.19190406075637,
-      "restaurant_count": 305,
-      "elevation": 21,
-      "url": "regions/三宮.html"
+      "region_name": "大須",
+      "file_name": "大須",
+      "latitude": 35.1596016013733,
+      "longitude": 136.903522283577,
+      "like_count": 4,
+      "restaurant_count": 42,
+      "elevation": 15,
+      "url": "regions/大須.html"
     }
   ]
 }

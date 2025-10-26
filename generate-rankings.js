@@ -167,36 +167,70 @@ async function getRestaurantRankings(regions) {
 
 /**
  * 地域ランキングを取得
- * レストラン数とスポット情報に基づいてランキングを生成
+ * likesテーブルのいいね数に基づいてランキングを生成
  */
 async function getRegionRankings(regions) {
   console.log(`${colors.cyan}🗾 地域ランキングを生成中...${colors.reset}`);
 
-  // レストラン数でソートして上位10件を取得
-  const topRegions = regions
-    .filter(r => r.restaurantCount > 0)
-    .sort((a, b) => {
-      // レストラン数で降順ソート
-      if (b.restaurantCount !== a.restaurantCount) {
-        return b.restaurantCount - a.restaurantCount;
-      }
-      // レストラン数が同じ場合は標高が低い方を優先
-      return (a.elevation || 0) - (b.elevation || 0);
-    })
-    .slice(0, 10)
-    .map((region, index) => ({
-      rank: index + 1,
-      region_name: region.name,
-      file_name: region.fileName || region.name,
-      latitude: region.lat,
-      longitude: region.lng,
-      restaurant_count: region.restaurantCount || 0,
-      elevation: region.elevation || 0,
-      url: `regions/${(region.fileName || region.name).replace(/[\/\\:*?"<>|]/g, '_')}.html`
-    }));
+  // likesテーブルから地域のいいね数を集計
+  const { data, error } = await supabase
+    .from('likes')
+    .select('spot_name, latitude, longitude')
+    .eq('spot_type', 'region');
 
-  console.log(`   ${colors.green}✓${colors.reset} ${topRegions.length}件の地域ランキングを生成しました`);
-  return topRegions;
+  if (error) {
+    console.error(`${colors.red}エラー:${colors.reset}`, error);
+    return [];
+  }
+
+  if (!data || data.length === 0) {
+    console.log(`   ${colors.yellow}⚠${colors.reset} 地域のいいねデータがまだありません`);
+    return [];
+  }
+
+  // spot_nameごとにいいね数を集計
+  const likeCounts = {};
+  data.forEach(like => {
+    const key = like.spot_name;
+    if (!likeCounts[key]) {
+      likeCounts[key] = {
+        spot_name: like.spot_name,
+        latitude: like.latitude,
+        longitude: like.longitude,
+        like_count: 0
+      };
+    }
+    likeCounts[key].like_count++;
+  });
+
+  // いいね数でソート
+  const sorted = Object.values(likeCounts)
+    .sort((a, b) => b.like_count - a.like_count)
+    .slice(0, 10);
+
+  // 各地域に詳細情報を追加
+  const withDetails = sorted.map((spot, index) => {
+    // 地域データから詳細情報を検索
+    const regionData = regions.find(r =>
+      r.name === spot.spot_name ||
+      Math.abs(r.lat - spot.latitude) < 0.001 && Math.abs(r.lng - spot.longitude) < 0.001
+    );
+
+    return {
+      rank: index + 1,
+      region_name: spot.spot_name,
+      file_name: regionData?.fileName || spot.spot_name,
+      latitude: spot.latitude,
+      longitude: spot.longitude,
+      like_count: spot.like_count,
+      restaurant_count: regionData?.restaurantCount || 0,
+      elevation: regionData?.elevation || 0,
+      url: `regions/${(regionData?.fileName || spot.spot_name).replace(/[\/\\:*?"<>|]/g, '_')}.html`
+    };
+  });
+
+  console.log(`   ${colors.green}✓${colors.reset} ${withDetails.length}件の地域ランキングを生成しました`);
+  return withDetails;
 }
 
 /**
