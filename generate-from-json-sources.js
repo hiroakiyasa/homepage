@@ -996,12 +996,193 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
         grid-template-columns: 1fr;
       }
     }
+
+    /* Authentication UI Styles */
+    .nav-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      margin-bottom: 20px;
+    }
+
+    .nav-auth {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-user-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .btn-login, .btn-logout {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-login {
+      background: #1976d2;
+      color: white;
+    }
+
+    .btn-login:hover {
+      background: #1565c0;
+    }
+
+    .btn-logout {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-logout:hover {
+      background: #d32f2f;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #000;
+    }
+
+    .btn-google {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .btn-google:hover {
+      background: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div style="margin-bottom: 20px;">
+    <div class="nav-header">
       <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+
+      <div class="nav-auth">
+        <div id="nav-logged-in" style="display: none;">
+          <div class="nav-user-info">
+            <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
+            <span id="nav-user-name" class="nav-user-name"></span>
+          </div>
+        </div>
+        <button id="nav-btn-login" class="btn-login">ログイン</button>
+        <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
+      </div>
     </div>
 
     <div class="header">
@@ -1181,6 +1362,122 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
         iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+  </script>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('login-modal')">&times;</span>
+      <h2 style="margin-bottom: 20px;">ログイン</h2>
+
+      <div id="login-error" class="error-message" style="display: none;"></div>
+
+      <button id="google-login" class="btn-google" onclick="signInWithGoogle()">
+        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+        Googleでログイン
+      </button>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // モーダル制御
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+    }
+
+    // エラー表示
+    function showError(elementId, message) {
+      const el = document.getElementById(elementId);
+      el.textContent = message;
+      el.style.display = 'block';
+    }
+
+    function hideError(elementId) {
+      document.getElementById(elementId).style.display = 'none';
+    }
+
+    // Google OAuth
+    async function signInWithGoogle() {
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? 'http://localhost:8000' + window.location.pathname
+            : 'https://trailfusionai.com' + window.location.pathname
+        }
+      });
+
+      if (error) {
+        showError('login-error', error.message);
+      }
+    }
+
+    // ログアウト
+    async function signOut() {
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) {
+        console.error('Logout error:', error);
+      } else {
+        updateAuthUI(null);
+      }
+    }
+
+    // UI更新
+    function updateAuthUI(user) {
+      const navLoggedIn = document.getElementById('nav-logged-in');
+      const navBtnLogin = document.getElementById('nav-btn-login');
+      const navBtnLogout = document.getElementById('nav-btn-logout');
+      const navUserName = document.getElementById('nav-user-name');
+      const navUserAvatar = document.getElementById('nav-user-avatar');
+
+      if (user) {
+        navLoggedIn.style.display = 'block';
+        navBtnLogin.style.display = 'none';
+        navBtnLogout.style.display = 'block';
+
+        navUserName.textContent = user.user_metadata?.full_name || user.email || 'ユーザー';
+
+        if (user.user_metadata?.avatar_url) {
+          navUserAvatar.src = user.user_metadata.avatar_url;
+          navUserAvatar.style.display = 'block';
+        } else {
+          navUserAvatar.style.display = 'none';
+        }
+      } else {
+        navLoggedIn.style.display = 'none';
+        navBtnLogin.style.display = 'block';
+        navBtnLogout.style.display = 'none';
+      }
+    }
+
+    // 認証状態監視
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      updateAuthUI(session?.user || null);
+    });
+
+    // イベントリスナー
+    document.getElementById('nav-btn-login').addEventListener('click', () => {
+      openModal('login-modal');
+    });
+
+    document.getElementById('nav-btn-logout').addEventListener('click', signOut);
+
+    // 初期ロード時にセッション確認
+    (async () => {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      updateAuthUI(session?.user || null);
+    })();
   </script>
 </body>
 </html>`;
