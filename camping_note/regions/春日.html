@@ -20,40 +20,6 @@
       padding: 20px;
     }
 
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .nav-auth {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-user-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: #f5f5f5;
-      border-radius: 20px;
-    }
-
-    .nav-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .nav-user-name {
-      font-size: 14px;
-      color: #333;
-    }
-
     .header {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                   url('data:image/jpeg;base64,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');
@@ -65,54 +31,17 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-left h1 {
+    .header h1 {
       font-size: 28px;
       color: #fff;
       margin-bottom: 8px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 
-    .header-left p {
+    .header p {
       color: #fff;
       font-size: 16px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    }
-
-    .header-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-    }
-
-    .region-like-button {
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      padding: 12px 24px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .region-like-button:hover {
-      background: white;
-      transform: scale(1.05);
-    }
-
-    .region-like-button.liked {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      color: white;
     }
 
     .back-button {
@@ -221,41 +150,13 @@
       margin-bottom: 6px;
     }
 
-    .parking-card-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .parking-card-title strong {
+    .parking-card-header strong {
       color: #1976d2;
       font-size: 14px;
+      flex: 1;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .parking-like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 6px;
-      border-radius: 12px;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: #666;
-    }
-
-    .parking-like-btn:hover {
-      background: rgba(255,255,255,0.5);
-    }
-
-    .parking-like-btn.liked {
-      color: #f5576c;
     }
 
     .parking-card-buttons {
@@ -283,6 +184,46 @@
 
     .btn-search {
       background: #22D3EE;
+    }
+
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .parking-info {
@@ -358,40 +299,11 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .restaurant-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-
     .restaurant-card h3 {
       color: #ff9800;
       font-size: 14px;
+      margin-bottom: 8px;
       font-weight: bold;
-      flex: 1;
-    }
-
-    .restaurant-like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 6px;
-      border-radius: 12px;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: #666;
-    }
-
-    .restaurant-like-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .restaurant-like-btn.liked {
-      color: #f5576c;
     }
 
     .restaurant-genre {
@@ -457,55 +369,36 @@
       }
     }
 
-    /* === 認証・いいね・コメント機能のスタイル === */
-    .auth-like-comment-section {
-      margin: 40px auto;
-      max-width: 800px;
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .auth-status {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-      background: #f5f5f5;
-      border-radius: 6px;
+    /* Authentication UI Styles */
+    .nav-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
       margin-bottom: 20px;
     }
 
-    .user-info {
+    .nav-auth {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .avatar {
-      width: 40px;
-      height: 40px;
+    .nav-user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .user-name {
-      font-weight: bold;
+    .nav-user-name {
+      font-weight: 500;
       color: #333;
-    }
-
-    .btn-profile-edit {
-      background: none;
-      border: none;
-      color: #1976d2;
-      cursor: pointer;
-      font-size: 18px;
-      padding: 4px;
-    }
-
-    .btn-profile-edit:hover {
-      opacity: 0.7;
     }
 
     .btn-login, .btn-logout {
@@ -535,350 +428,52 @@
       background: #d32f2f;
     }
 
-    .like-section {
-      text-align: center;
-      padding: 20px;
-      background: #fafafa;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-
-    .like-button {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      font-size: 24px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    .like-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-    }
-
-    .like-button:active {
-      transform: scale(0.95);
-    }
-
-    .like-button.liked {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    }
-
-    .like-count {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #666;
-    }
-
-    .comments-section {
-      margin-top: 30px;
-    }
-
-    .comments-section h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    .comment-form {
-      margin-bottom: 20px;
-    }
-
-    .comment-form textarea {
-      width: 100%;
-      min-height: 100px;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    .comment-form textarea:focus {
-      outline: none;
-      border-color: #1976d2;
-    }
-
-    .comment-form button {
-      margin-top: 10px;
-      padding: 10px 24px;
-      background: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .comment-form button:hover {
-      background: #1565c0;
-    }
-
-    .comments-list {
-      margin-top: 20px;
-    }
-
-    .comment-item {
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      border-left: 3px solid #1976d2;
-    }
-
-    .comment-item.reply {
-      margin-left: 40px;
-      border-left-color: #ff9800;
-      background: #fff8e1;
-    }
-
-    .comment-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .comment-author {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .comment-author img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .comment-author-name {
-      font-weight: bold;
-      color: #333;
-    }
-
-    .comment-date {
-      font-size: 12px;
-      color: #999;
-    }
-
-    .comment-content {
-      color: #333;
-      line-height: 1.6;
-      margin-bottom: 10px;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-
-    .comment-actions {
-      display: flex;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .comment-actions button {
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
-
-    .comment-actions button:hover {
-      background: #f0f0f0;
-      color: #333;
-    }
-
-    .reply-form-container {
-      margin-top: 10px;
-      display: none;
-    }
-
-    .reply-form-container.active {
-      display: block;
-    }
-
-    .reply-form-container textarea {
-      width: 100%;
-      min-height: 80px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    .reply-form-actions {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .reply-cancel, .reply-submit {
-      padding: 6px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .reply-cancel {
-      background: #f0f0f0;
-      color: #666;
-    }
-
-    .reply-cancel:hover {
-      background: #e0e0e0;
-    }
-
-    .reply-submit {
-      background: #1976d2;
-      color: white;
-    }
-
-    .reply-submit:hover {
-      background: #1565c0;
-    }
-
-    /* モーダル */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
-      top: 0;
+      z-index: 9999;
       left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
+      background: rgba(0,0,0,0.5);
     }
 
     .modal.active {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-content {
       background: white;
-      border-radius: 8px;
       padding: 30px;
-      max-width: 500px;
+      border-radius: 8px;
       width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
+      max-width: 400px;
       position: relative;
     }
 
     .modal-close {
       position: absolute;
-      top: 15px;
+      top: 10px;
       right: 15px;
-      background: none;
-      border: none;
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
       cursor: pointer;
-      color: #999;
     }
 
     .modal-close:hover {
-      color: #333;
-    }
-
-    .modal h2 {
-      margin-bottom: 20px;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #555;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #1976d2;
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .form-actions button {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .btn-cancel {
-      background: #f0f0f0;
-      color: #666;
-    }
-
-    .btn-cancel:hover {
-      background: #e0e0e0;
-    }
-
-    .btn-submit {
-      background: #1976d2;
-      color: white;
-    }
-
-    .btn-submit:hover {
-      background: #1565c0;
-    }
-
-    .error-message {
-      color: #f44336;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .success-message {
-      color: #4caf50;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .login-options {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      color: #000;
     }
 
     .btn-google {
+      width: 100%;
+      padding: 12px;
       background: white;
-      color: #333;
       border: 1px solid #ddd;
-      padding: 12px 24px;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
@@ -890,74 +485,81 @@
     }
 
     .btn-google:hover {
-      background: #f5f5f5;
-      border-color: #bbb;
+      background: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
     }
 
     .divider {
       text-align: center;
+      margin: 20px 0;
       color: #999;
-      margin: 10px 0;
-      position: relative;
+      font-size: 14px;
     }
 
-    .divider::before,
-    .divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 45%;
-      height: 1px;
-      background: #ddd;
-    }
-
-    .divider::before {
-      left: 0;
-    }
-
-    .divider::after {
-      right: 0;
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- トップナビゲーション -->
-    <div class="top-nav">
+    <div class="nav-header">
       <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
 
       <div class="nav-auth">
-        <!-- ログイン状態 -->
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-            <button id="nav-btn-profile-edit" class="btn-profile-edit" title="プロフィールを編集">✏️</button>
-          </div>
+          </a>
         </div>
-
-        <!-- ログインボタン -->
-        <button id="nav-btn-login" class="btn-login" style="display: none;">ログイン</button>
-
-        <!-- ログアウトボタン -->
+        <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
       </div>
     </div>
 
-    <!-- ヒーローセクション -->
     <div class="header">
-      <div class="header-content">
-        <div class="header-left">
-          <h1>🚗 春日</h1>
-          <p>周辺のおすすめ車中泊スポット</p>
-        </div>
-        <div class="header-right">
-          <button id="region-like-button" class="region-like-button">
-            <span>♥️</span>
-            <span id="region-like-count">0</span>
-          </button>
-        </div>
-      </div>
+      <h1>🚗 春日</h1>
+      <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
     <!-- 注意喚起 -->
@@ -991,14 +593,12 @@
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥇 1位: Ｄパーキングメトロ・エム後楽園</strong>
-                <button class="parking-like-btn" data-parking-id="________________35_707294_139_751481" onclick="event.stopPropagation(); likeParkingSpot('________________35_707294_139_751481')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥇 1位: Ｄパーキングメトロ・エム後楽園</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="Ｄパーキングメトロ・エム後楽園" data-lat="35.707294" data-lng="139.751481" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.707294,139.751481" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%A4%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%A1%E3%83%88%E3%83%AD%E3%83%BB%E3%82%A8%E3%83%A0%E5%BE%8C%E6%A5%BD%E5%9C%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1024,14 +624,12 @@
           <!-- 駐車場2 -->
           <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥈 2位: パラカ小石川第１１</strong>
-                <button class="parking-like-btn" data-parking-id="__________35_709278_139_751159" onclick="event.stopPropagation(); likeParkingSpot('__________35_709278_139_751159')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥈 2位: パラカ小石川第１１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="パラカ小石川第１１" data-lat="35.709278" data-lng="139.751159" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.709278,139.751159" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%B0%8F%E7%9F%B3%E5%B7%9D%E7%AC%AC%EF%BC%91%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1057,14 +655,12 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥉 3位: ＴＯＭＯパーキング本郷第２</strong>
-                <button class="parking-like-btn" data-parking-id="______________35_709819_139_753908" onclick="event.stopPropagation(); likeParkingSpot('______________35_709819_139_753908')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥉 3位: ＴＯＭＯパーキング本郷第２</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="ＴＯＭＯパーキング本郷第２" data-lat="35.709819" data-lng="139.753908" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.709819,139.753908" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%B4%EF%BC%AF%EF%BC%AD%EF%BC%AF%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E6%9C%AC%E9%83%B7%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1090,14 +686,12 @@
           <!-- 駐車場4 -->
           <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 4位: 文京ガーデン北パーキング</strong>
-                <button class="parking-like-btn" data-parking-id="_____________35_710353_139_752445" onclick="event.stopPropagation(); likeParkingSpot('_____________35_710353_139_752445')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 4位: 文京ガーデン北パーキング</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="文京ガーデン北パーキング" data-lat="35.710353" data-lng="139.752445" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.710353,139.752445" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E6%96%87%E4%BA%AC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E5%8C%97%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1123,14 +717,12 @@
           <!-- 駐車場5 -->
           <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 5位: 文京ガーデン南パーキング</strong>
-                <button class="parking-like-btn" data-parking-id="_____________35_708828_139_752431" onclick="event.stopPropagation(); likeParkingSpot('_____________35_708828_139_752431')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 5位: 文京ガーデン南パーキング</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="文京ガーデン南パーキング" data-lat="35.708828" data-lng="139.752431" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.708828,139.752431" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E6%96%87%E4%BA%AC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E5%8D%97%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1156,14 +748,12 @@
           <!-- 駐車場6 -->
           <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 6位: 文京シビックセンター駐車場</strong>
-                <button class="parking-like-btn" data-parking-id="______________35_707878_139_752195" onclick="event.stopPropagation(); likeParkingSpot('______________35_707878_139_752195')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 6位: 文京シビックセンター駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="文京シビックセンター駐車場" data-lat="35.707878" data-lng="139.752195" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.707878,139.752195" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E6%96%87%E4%BA%AC%E3%82%B7%E3%83%93%E3%83%83%E3%82%AF%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1189,14 +779,12 @@
           <!-- 駐車場7 -->
           <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 7位: 講道館駐車場</strong>
-                <button class="parking-like-btn" data-parking-id="_______35_70747_139_753431" onclick="event.stopPropagation(); likeParkingSpot('_______35_70747_139_753431')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 7位: 講道館駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="講道館駐車場" data-lat="35.70747" data-lng="139.753431" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.70747,139.753431" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E8%AC%9B%E9%81%93%E9%A4%A8%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1222,14 +810,12 @@
           <!-- 駐車場8 -->
           <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 8位: ＴＣＲパーキング本郷第１</strong>
-                <button class="parking-like-btn" data-parking-id="_____________35_704887_139_755745" onclick="event.stopPropagation(); likeParkingSpot('_____________35_704887_139_755745')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 8位: ＴＣＲパーキング本郷第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="ＴＣＲパーキング本郷第１" data-lat="35.704887" data-lng="139.755745" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.704887,139.755745" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%B4%EF%BC%A3%EF%BC%B2%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E6%9C%AC%E9%83%B7%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1254,14 +840,12 @@
           <!-- 駐車場9 -->
           <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 9位: コインパーク本郷４丁目</strong>
-                <button class="parking-like-btn" data-parking-id="____________35_708253_139_756031" onclick="event.stopPropagation(); likeParkingSpot('____________35_708253_139_756031')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 9位: コインパーク本郷４丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="コインパーク本郷４丁目" data-lat="35.708253" data-lng="139.756031" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.708253,139.756031" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AC%E9%83%B7%EF%BC%94%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1287,14 +871,12 @@
           <!-- 駐車場10 -->
           <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 10位: パークジャパン本郷第１</strong>
-                <button class="parking-like-btn" data-parking-id="____________35_705628_139_754895" onclick="event.stopPropagation(); likeParkingSpot('____________35_705628_139_754895')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 10位: パークジャパン本郷第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="パークジャパン本郷第１" data-lat="35.705628" data-lng="139.754895" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.705628,139.754895" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%9C%AC%E9%83%B7%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1328,19 +910,17 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <div class="restaurant-card-header">
-            <h3>アヴランシュ・ゲネー</h3>
-            <button class="restaurant-like-btn" data-restaurant-id="759" onclick="event.stopPropagation(); likeRestaurant(759)">
-              <span>♥️</span>
-              <span class="restaurant-like-count">0</span>
-            </button>
-          </div>
+          <h3>アヴランシュ・ゲネー</h3>
 
           <span class="restaurant-genre">ケーキ</span>
 
           <div class="restaurant-address">📍 東京都文京区本郷4-17-6 1F</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="759" data-spot-name="アヴランシュ・ゲネー" data-lat="35.70945273788863" data-lng="139.75358658351672" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.70945273788863,139.75358658351672" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%B4%E3%83%A9%E3%83%B3%E3%82%B7%E3%83%A5%E3%83%BB%E3%82%B2%E3%83%8D%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -1348,19 +928,17 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <div class="restaurant-card-header">
-            <h3>わたべ</h3>
-            <button class="restaurant-like-btn" data-restaurant-id="1204" onclick="event.stopPropagation(); likeRestaurant(1204)">
-              <span>♥️</span>
-              <span class="restaurant-like-count">0</span>
-            </button>
-          </div>
+          <h3>わたべ</h3>
 
           <span class="restaurant-genre">うなぎ</span>
 
           <div class="restaurant-address">📍 東京都文京区小石川1-9-14 アトラスタワー小石川 1Ｆ</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1204" data-spot-name="わたべ" data-lat="35.71132803788695" data-lng="139.7520832835367" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.71132803788695,139.7520832835367" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%82%8F%E3%81%9F%E3%81%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -1369,326 +947,117 @@
       </div>
     </div>
 
-    <!-- コメント機能セクション -->
-    <div class="auth-like-comment-section">
-      <div class="comments-section">
-        <h3>💬 みんなのコメント</h3>
-
-        <!-- コメント投稿フォーム -->
-        <div class="comment-form">
-          <textarea id="comment-input" placeholder="この地域についてコメントを残そう（1-1000文字）" maxlength="1000"></textarea>
-          <button id="comment-submit">投稿</button>
-          <div id="comment-error" class="error-message" style="display: none;"></div>
-        </div>
-
-        <!-- コメント一覧 -->
-        <div id="comments-list" class="comments-list">
-          <!-- コメントがここに表示されます -->
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- 認証モーダル -->
-  <div id="auth-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeAuthModal()">×</button>
-      <h2>ログイン</h2>
-
-      <div class="login-options">
-        <button id="google-login" class="btn-google">
-          <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
-          Googleでログイン
-        </button>
-
-        <div class="divider">または</div>
-
-        <div class="form-group">
-          <label>メールアドレス</label>
-          <input type="email" id="login-email" placeholder="email@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label>パスワード（6文字以上）</label>
-          <input type="password" id="login-password" placeholder="••••••" />
-        </div>
-
-        <div id="login-error" class="error-message" style="display: none;"></div>
-
-        <div class="form-actions">
-          <button class="btn-submit" onclick="handleEmailLogin()">ログイン / 新規登録</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- プロフィール編集モーダル -->
-  <div id="profile-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeProfileModal()">×</button>
-      <h2>プロフィール編集</h2>
-
-      <form id="profile-form">
-        <div class="form-group">
-          <label>ニックネーム *</label>
-          <input type="text" id="profile-nickname" required maxlength="50" />
-        </div>
-
-        <div class="form-group">
-          <label>アバターURL（オプション）</label>
-          <input type="url" id="profile-avatar-url" placeholder="https://..." />
-        </div>
-
-        <div id="profile-error" class="error-message" style="display: none;"></div>
-        <div id="profile-success" class="success-message" style="display: none;"></div>
-
-        <div class="form-actions">
-          <button type="button" class="btn-cancel" onclick="closeProfileModal()">キャンセル</button>
-          <button type="submit" class="btn-submit">保存</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
-    const regionSlug = '春日';
-
-    // Supabaseクライアント初期化
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    let currentUser = null;
-    let userProfile = null;
-
-    // 地図表示関数
     function showMarker(markerId) {
       const iframe = document.getElementById('parking-map-iframe');
       if (iframe && iframe.contentWindow && iframe.contentWindow.showMarker) {
         iframe.contentWindow.showMarker(markerId);
+        // 地図までスクロール
         iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    }
+  </script>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('login-modal')">&times;</span>
+      <h2 style="margin-bottom: 20px;">ログイン</h2>
+
+      <div id="login-error" class="error-message" style="display: none;"></div>
+
+      <button id="google-login" class="btn-google" onclick="signInWithGoogle()">
+        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+        Googleでログイン
+      </button>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
+
+    // モーダル制御
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
     }
 
     // エラー表示
     function showError(elementId, message) {
       const el = document.getElementById(elementId);
-      if (el) {
-        el.textContent = message;
-        el.style.display = 'block';
-        setTimeout(() => { el.style.display = 'none'; }, 5000);
-      }
+      el.textContent = message;
+      el.style.display = 'block';
     }
 
-    // 成功メッセージ表示
-    function showSuccess(elementId, message) {
-      const el = document.getElementById(elementId);
-      if (el) {
-        el.textContent = message;
-        el.style.display = 'block';
-        setTimeout(() => { el.style.display = 'none'; }, 3000);
-      }
+    function hideError(elementId) {
+      document.getElementById(elementId).style.display = 'none';
     }
 
-    // エラーメッセージをクリア
-    function clearErrors() {
-      ['login-error', 'comment-error', 'like-error', 'profile-error', 'profile-success'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-    }
-
-    // 認証モーダルを開く
-    function openAuthModal() {
-      document.getElementById('auth-modal').classList.add('active');
-    }
-
-    // 認証モーダルを閉じる
-    function closeAuthModal() {
-      document.getElementById('auth-modal').classList.remove('active');
-      clearErrors();
-    }
-
-    // プロフィールモーダルを開く
-    function openProfileModal() {
-      if (!currentUser) return;
-
-      const nickname = document.getElementById('profile-nickname');
-      const avatarUrl = document.getElementById('profile-avatar-url');
-
-      nickname.value = userProfile?.display_name || currentUser.user_metadata?.display_name || '';
-      avatarUrl.value = userProfile?.avatar_url || '';
-
-      document.getElementById('profile-modal').classList.add('active');
-    }
-
-    // プロフィールモーダルを閉じる
-    function closeProfileModal() {
-      document.getElementById('profile-modal').classList.remove('active');
-      clearErrors();
-    }
-
-    // Googleログイン
-    document.getElementById('google-login')?.addEventListener('click', async () => {
-      const { error } = await supabaseClient.auth.signInWithOAuth({
+    // Google OAuth
+    async function signInWithGoogle() {
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
             ? 'http://localhost:8000' + window.location.pathname
-            : 'https://trailfusionai.com/camping_note' + window.location.pathname.replace(/.*camping_note/, '')
+            : 'https://trailfusionai.com' + window.location.pathname
         }
       });
 
       if (error) {
-        showError('login-error', 'Googleログインに失敗しました: ' + error.message);
+        showError('login-error', error.message);
       }
-    });
+    }
 
-    // メール/パスワードログイン
-    async function handleEmailLogin() {
-      const email = document.getElementById('login-email').value.trim();
-      const password = document.getElementById('login-password').value;
-
-      if (!email || !password) {
-        showError('login-error', 'メールアドレスとパスワードを入力してください');
-        return;
-      }
-
-      if (password.length < 6) {
-        showError('login-error', 'パスワードは6文字以上で入力してください');
-        return;
-      }
-
-      // まずログインを試みる
-      let { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
-      // ログイン失敗の場合は新規登録を試みる
-      if (error && error.message.includes('Invalid')) {
-        const result = await supabaseClient.auth.signUp({ email, password });
-        data = result.data;
-        error = result.error;
-
-        if (!error) {
-          alert('確認メールを送信しました。メールを確認してアカウントを有効化してください。');
-        }
-      }
-
+    // ログアウト
+    async function signOut() {
+      const { error } = await supabaseClient.auth.signOut();
       if (error) {
-        showError('login-error', 'ログインに失敗しました: ' + error.message);
-        return;
-      }
-
-      closeAuthModal();
-      await checkAuthStatus();
-    }
-
-    // ログアウト（ナビゲーション）
-    document.getElementById('nav-btn-logout')?.addEventListener('click', async () => {
-      await supabaseClient.auth.signOut();
-      await checkAuthStatus();
-    });
-
-    // プロフィール編集ボタン（ナビゲーション）
-    document.getElementById('nav-btn-profile-edit')?.addEventListener('click', openProfileModal);
-
-    // ログインボタン（ナビゲーション）
-    document.getElementById('nav-btn-login')?.addEventListener('click', openAuthModal);
-
-    // プロフィール更新
-    document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      clearErrors();
-
-      const nickname = document.getElementById('profile-nickname').value.trim();
-      const avatarUrl = document.getElementById('profile-avatar-url').value.trim();
-
-      if (!nickname) {
-        showError('profile-error', 'ニックネームを入力してください');
-        return;
-      }
-
-      const { error } = await supabaseClient
-        .from('user_profiles')
-        .upsert({
-          id: currentUser.id,
-          display_name: nickname,
-          avatar_url: avatarUrl || null
-        });
-
-      if (error) {
-        showError('profile-error', 'プロフィールの更新に失敗しました: ' + error.message);
-        return;
-      }
-
-      showSuccess('profile-success', 'プロフィールを更新しました');
-      await loadUserProfile();
-      updateAuthUI();
-      await loadComments();
-
-      setTimeout(() => {
-        closeProfileModal();
-      }, 1500);
-    });
-
-    // ユーザープロフィール読み込み
-    async function loadUserProfile() {
-      if (!currentUser) return;
-
-      const { data, error } = await supabaseClient
-        .from('user_profiles')
-        .select('*')
-        .eq('id', currentUser.id)
-        .maybeSingle();
-
-      if (!error && data) {
-        userProfile = data;
+        console.error('Logout error:', error);
+      } else {
+        updateAuthUI(null);
       }
     }
 
-    // 認証状態チェック
-    async function checkAuthStatus() {
-      const { data: { user } } = await supabaseClient.auth.getUser();
-      currentUser = user;
-
-      if (currentUser) {
-        await loadUserProfile();
-      }
-
-      updateAuthUI();
-      await loadLikeStatus();
-      await loadComments();
-    }
-
-    // 認証UIを更新
-    function updateAuthUI() {
+    // UI更新
+    function updateAuthUI(user) {
       const navLoggedIn = document.getElementById('nav-logged-in');
-      const navUserName = document.getElementById('nav-user-name');
-      const navUserAvatar = document.getElementById('nav-user-avatar');
       const navBtnLogin = document.getElementById('nav-btn-login');
       const navBtnLogout = document.getElementById('nav-btn-logout');
+      const navUserName = document.getElementById('nav-user-name');
+      const navUserAvatar = document.getElementById('nav-user-avatar');
 
-      if (currentUser) {
-        // ニックネーム表示（優先順位: user_profiles.display_name → user_metadata.display_name → emailのプレフィックス）
-        const displayName = userProfile?.display_name ||
-                           currentUser.user_metadata?.display_name ||
-                           currentUser.email.split('@')[0];
+      if (user) {
+        navLoggedIn.style.display = 'block';
+        navBtnLogin.style.display = 'none';
+        navBtnLogout.style.display = 'block';
 
-        navUserName.textContent = displayName;
+        navUserName.textContent = user.user_metadata?.full_name || user.email || 'ユーザー';
 
-        // アバター表示
-        const avatarUrl = userProfile?.avatar_url || currentUser.user_metadata?.avatar_url;
-        if (avatarUrl) {
-          navUserAvatar.src = avatarUrl;
+        if (user.user_metadata?.avatar_url) {
+          navUserAvatar.src = user.user_metadata.avatar_url;
           navUserAvatar.style.display = 'block';
         } else {
           navUserAvatar.style.display = 'none';
         }
-
-        navLoggedIn.style.display = 'block';
-        navBtnLogin.style.display = 'none';
-        navBtnLogout.style.display = 'block';
       } else {
         navLoggedIn.style.display = 'none';
         navBtnLogin.style.display = 'block';
@@ -1696,629 +1065,155 @@
       }
     }
 
-    // いいね状態を読み込む
-    async function loadLikeStatus() {
-      try {
-        // 総いいね数を取得
-        const { data: regionData, error: regionError } = await supabaseClient
-          .from('regions')
-          .select('like_count')
-          .eq('slug', regionSlug)
-          .maybeSingle();
+    // 認証状態監視
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      updateAuthUI(session?.user || null);
+    });
 
-        if (!regionError && regionData) {
-          document.getElementById('region-like-count').textContent = regionData.like_count || 0;
+    // イベントリスナー
+    document.getElementById('nav-btn-login').addEventListener('click', () => {
+      openModal('login-modal');
+    });
+
+    document.getElementById('nav-btn-logout').addEventListener('click', signOut);
+
+    // 初期ロード時にセッション確認
+    (async () => {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
+    })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
         }
 
-        // ユーザーがログインしている場合、ユーザーのいいね状態を取得
-        if (currentUser) {
-          const { data: userLike, error: likeError } = await supabaseClient
-            .from('region_likes')
-            .select('*')
-            .eq('region_slug', regionSlug)
-            .eq('user_id', currentUser.id)
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
             .maybeSingle();
 
-          const likeButton = document.getElementById('region-like-button');
-          if (!likeError && userLike) {
-            likeButton.classList.add('liked');
-          } else {
-            likeButton.classList.remove('liked');
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
           }
         }
-      } catch (err) {
-        console.error('いいね状態読み込みエラー:', err);
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
       }
     }
 
-    // 地域いいねボタン
-    document.getElementById('region-like-button')?.addEventListener('click', async () => {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
 
-      const likeButton = document.getElementById('region-like-button');
-      const isLiked = likeButton.classList.contains('liked');
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
 
       if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('region_likes')
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
           .delete()
-          .eq('region_slug', regionSlug)
-          .eq('user_id', currentUser.id);
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
 
-        if (error) {
-          console.error('地域いいね取り消しエラー:', error);
-          return;
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
         }
 
-        likeButton.classList.remove('liked');
-      } else {
-        // いいねを追加する
-        const { error } = await supabaseClient
-          .from('region_likes')
-          .insert({
-            region_slug: regionSlug,
-            user_id: currentUser.id
-          });
+        const { error } = await query;
 
-        if (error) {
-          console.error('地域いいね追加エラー:', error);
-          if (error.code === '23503') {
-            alert('いいねの追加に失敗しました。地域データが登録されていない可能性があります。');
-          }
-          return;
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
         }
-
-        likeButton.classList.add('liked');
-      }
-
-      // いいね数を再読み込み
-      await loadLikeStatus();
-    });
-
-    // コメント投稿
-    document.getElementById('comment-submit')?.addEventListener('click', async () => {
-      console.log('[DEBUG] コメント投稿ボタンがクリックされました');
-      clearErrors();
-
-      if (!currentUser) {
-        console.log('[DEBUG] ユーザーが未ログイン');
-        openAuthModal();
-        return;
-      }
-
-      console.log('[DEBUG] 現在のユーザー:', currentUser.id);
-
-      const input = document.getElementById('comment-input');
-      const content = input.value.trim();
-
-      console.log('[DEBUG] コメント内容:', content, '文字数:', content.length);
-
-      if (!content || content.length < 1 || content.length > 1000) {
-        showError('comment-error', 'コメントは1文字以上1000文字以内で入力してください');
-        return;
-      }
-
-      try {
-        // プロフィールが存在しない場合は自動作成
-        if (!userProfile) {
-          console.log('[DEBUG] プロフィールを自動作成中...');
-          const displayName = currentUser.user_metadata?.display_name ||
-                             currentUser.email?.split('@')[0] ||
-                             'ユーザー' + currentUser.id.slice(0, 8);
-
-          const { error: profileError } = await supabaseClient
-            .from('user_profiles')
-            .upsert({
-              id: currentUser.id,
-              display_name: displayName
-            });
-
-          if (profileError) {
-            console.error('[DEBUG] プロフィール作成エラー:', profileError);
-          } else {
-            console.log('[DEBUG] プロフィール作成成功');
-          }
-
-          await loadUserProfile();
-        }
-
-        console.log('[DEBUG] コメントを投稿中...', {
-          region_slug: regionSlug,
-          user_id: currentUser.id,
-          content: content
-        });
-
-        const { data, error } = await supabaseClient
-          .from('region_comments')
-          .insert({
-            region_slug: regionSlug,
-            user_id: currentUser.id,
-            content: content
-          })
-          .select();
-
-        if (error) {
-          console.error('[DEBUG] コメント投稿エラー:', error);
-          showError('comment-error', 'コメントの投稿に失敗しました: ' + error.message);
-          alert('エラー詳細: ' + JSON.stringify(error, null, 2));
-          return;
-        }
-
-        console.log('[DEBUG] コメント投稿成功:', data);
-        input.value = '';
-
-        console.log('[DEBUG] コメント一覧を再読み込み中...');
-        await loadComments();
-        console.log('[DEBUG] コメント一覧の再読み込み完了');
-      } catch (err) {
-        console.error('[DEBUG] 例外発生:', err);
-        showError('comment-error', '予期しないエラーが発生しました: ' + err.message);
-        alert('例外詳細: ' + err.message);
-      }
-    });
-
-    // コメントを読み込む
-    async function loadComments() {
-      console.log('[DEBUG] コメント読み込み開始');
-      try {
-        console.log('[DEBUG] region_slug:', regionSlug);
-
-        // Step 1: コメントを取得
-        const { data: comments, error: commentsError } = await supabaseClient
-          .from('region_comments')
-          .select(`
-            id,
-            content,
-            like_count,
-            created_at,
-            user_id,
-            is_edited,
-            parent_comment_id
-          `)
-          .eq('region_slug', regionSlug)
-          .order('created_at', { ascending: false });
-
-        console.log('[DEBUG] コメント取得結果:', { comments, commentsError });
-
-        if (commentsError) {
-          console.error('[DEBUG] コメント読み込みエラー:', commentsError);
-          alert('コメント読み込みエラー: ' + commentsError.message);
-          return;
-        }
-
-        const commentsList = document.getElementById('comments-list');
-        console.log('[DEBUG] コメントリスト要素:', commentsList);
-
-        if (!commentsList) {
-          console.error('[DEBUG] コメントリスト要素が見つかりません');
-          return;
-        }
-
-        commentsList.innerHTML = '';
-
-        if (!comments || comments.length === 0) {
-          console.log('[DEBUG] コメントがありません');
-          commentsList.innerHTML = '<p style="text-align: center; color: #999;">まだコメントがありません</p>';
-          return;
-        }
-
-        console.log('[DEBUG] コメント件数:', comments.length);
-
-        // Step 2: ユニークなuser_idを抽出
-        const userIds = [...new Set(comments.map(c => c.user_id))];
-        console.log('[DEBUG] ユーザーID数:', userIds.length);
-
-        // Step 3: user_profilesを取得
-        const { data: profiles, error: profilesError } = await supabaseClient
-          .from('user_profiles')
-          .select('id, display_name, avatar_url')
-          .in('id', userIds);
-
-        console.log('[DEBUG] プロフィール取得結果:', { profiles, profilesError });
-
-        // Step 4: user_idでマッピング
-        const profileMap = {};
-        if (profiles) {
-          profiles.forEach(profile => {
-            profileMap[profile.id] = profile;
-          });
-        }
-
-        // Step 5: コメントにプロフィール情報を追加
-        const commentsWithProfiles = comments.map(comment => ({
-          ...comment,
-          user_profiles: profileMap[comment.user_id] || {
-            display_name: 'ユーザー' + comment.user_id.slice(0, 8),
-            avatar_url: null
-          }
-        }));
-
-        // 親コメントと返信を分ける
-        const parentComments = commentsWithProfiles.filter(c => !c.parent_comment_id);
-        const replies = commentsWithProfiles.filter(c => c.parent_comment_id);
-
-        console.log('[DEBUG] 親コメント:', parentComments.length, '件、返信:', replies.length, '件');
-
-        for (const comment of parentComments) {
-          const commentEl = createCommentElement(comment);
-          commentsList.appendChild(commentEl);
-
-          // この親コメントへの返信を表示
-          const commentReplies = replies.filter(r => r.parent_comment_id === comment.id);
-          for (const reply of commentReplies) {
-            const replyEl = createCommentElement(reply, true);
-            commentsList.appendChild(replyEl);
-          }
-        }
-
-        console.log('[DEBUG] コメント表示完了');
-      } catch (err) {
-        console.error('[DEBUG] コメント読み込み例外:', err);
-        alert('コメント読み込み例外: ' + err.message);
-      }
-    }
-
-    // コメント要素を作成
-    function createCommentElement(comment, isReply = false) {
-      const div = document.createElement('div');
-      div.className = 'comment-item' + (isReply ? ' reply' : '');
-
-      const displayName = comment.user_profiles?.display_name || 'ユーザー' + comment.user_id.slice(0, 8);
-      const avatarUrl = comment.user_profiles?.avatar_url;
-      const date = new Date(comment.created_at).toLocaleString('ja-JP');
-      const isOwner = currentUser && currentUser.id === comment.user_id;
-
-      let html = `
-        <div class="comment-header">
-          <div class="comment-author">
-            ${avatarUrl ? `<img src="${avatarUrl}" alt="${displayName}">` : ''}
-            <span class="comment-author-name">${displayName}</span>
-          </div>
-          <span class="comment-date">${date}</span>
-        </div>
-        <div class="comment-content">${comment.content}</div>
-        <div class="comment-actions">
-          <button onclick="likeComment('${comment.id}')">♥️ ${comment.like_count || 0}</button>
-      `;
-
-      if (!isReply) {
-        html += `<button onclick="showReplyForm('${comment.id}', '${displayName}')">💬 返信</button>`;
-      }
-
-      if (isOwner) {
-        html += `<button onclick="deleteComment('${comment.id}')">🗑️ 削除</button>`;
-      }
-
-      html += `
-        </div>
-        <div id="reply-form-${comment.id}" class="reply-form-container"></div>
-      `;
-
-      div.innerHTML = html;
-      return div;
-    }
-
-    // コメントいいね
-    async function likeComment(commentId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      // いいね状態を確認
-      const { data: existingLike } = await supabaseClient
-        .from('region_comment_likes')
-        .select('*')
-        .eq('comment_id', commentId)
-        .eq('user_id', currentUser.id)
-        .maybeSingle();
-
-      if (existingLike) {
-        // いいね取り消し
-        await supabaseClient
-          .from('region_comment_likes')
-          .delete()
-          .eq('comment_id', commentId)
-          .eq('user_id', currentUser.id);
-      } else {
-        // いいね追加
-        await supabaseClient
-          .from('region_comment_likes')
-          .insert({
-            comment_id: commentId,
-            user_id: currentUser.id
-          });
-      }
-
-      await loadComments();
-    }
-
-    // コメント削除
-    async function deleteComment(commentId) {
-      if (!currentUser) return;
-
-      if (!confirm('このコメントを削除しますか？')) return;
-
-      const { error } = await supabaseClient
-        .from('region_comments')
-        .delete()
-        .eq('id', commentId)
-        .eq('user_id', currentUser.id);
-
-      if (error) {
-        alert('コメントの削除に失敗しました');
-        return;
-      }
-
-      await loadComments();
-    }
-
-    // 返信フォームを表示
-    function showReplyForm(parentCommentId, parentAuthor) {
-      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
-
-      replyForm.innerHTML = `
-        <textarea id="reply-input-${parentCommentId}" placeholder="@${parentAuthor} への返信（1-1000文字）" maxlength="1000" required>@${parentAuthor} </textarea>
-        <div class="reply-form-actions">
-          <button class="reply-cancel" onclick="hideReplyForm('${parentCommentId}')">キャンセル</button>
-          <button class="reply-submit" onclick="submitReply('${parentCommentId}')">返信</button>
-        </div>
-      `;
-
-      replyForm.classList.add('active');
-      document.getElementById(`reply-input-${parentCommentId}`).focus();
-    }
-
-    // 返信フォームを非表示
-    function hideReplyForm(parentCommentId) {
-      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
-      replyForm.classList.remove('active');
-      replyForm.innerHTML = '';
-    }
-
-    // 返信を投稿
-    async function submitReply(parentCommentId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const input = document.getElementById(`reply-input-${parentCommentId}`);
-      const content = input.value.trim();
-
-      if (!content || content.length < 1 || content.length > 1000) {
-        alert('返信は1文字以上1000文字以内で入力してください');
-        return;
-      }
-
-      const { error } = await supabaseClient
-        .from('region_comments')
-        .insert({
-          region_slug: regionSlug,
-          user_id: currentUser.id,
-          content: content,
-          parent_comment_id: parentCommentId
-        });
-
-      if (error) {
-        console.error('返信投稿エラー:', error);
-        alert('返信の投稿に失敗しました');
-        return;
-      }
-
-      hideReplyForm(parentCommentId);
-      await loadComments();
-    }
-
-    // 駐車場いいね機能
-    async function likeParkingSpot(parkingId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const button = document.querySelector(`[data-parking-id="${parkingId}"]`);
-      const isLiked = button?.classList.contains('liked');
-
-      if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('parking_spot_likes')
-          .delete()
-          .eq('parking_spot_id', parkingId)
-          .eq('user_id', currentUser.id);
-
-        if (error) {
-          console.error('駐車場いいね取り消しエラー:', error);
-          return;
-        }
-
-        button.classList.remove('liked');
       } else {
         // いいねを追加
         const { error } = await supabaseClient
-          .from('parking_spot_likes')
+          .from('likes')
           .insert({
-            parking_spot_id: parkingId,
-            user_id: currentUser.id
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
           });
 
-        if (error) {
-          console.error('駐車場いいね追加エラー:', error);
-          return;
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
         }
-
-        button.classList.add('liked');
-      }
-
-      // いいね数を更新
-      await loadParkingLikes();
-    }
-
-    // レストランいいね機能
-    async function likeRestaurant(restaurantId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const button = document.querySelector(`[data-restaurant-id="${restaurantId}"]`);
-      const isLiked = button?.classList.contains('liked');
-
-      if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('restaurant_likes')
-          .delete()
-          .eq('restaurant_id', restaurantId)
-          .eq('user_id', currentUser.id);
-
-        if (error) {
-          console.error('レストランいいね取り消しエラー:', error);
-          return;
-        }
-
-        button.classList.remove('liked');
-      } else {
-        // いいねを追加
-        const { error } = await supabaseClient
-          .from('restaurant_likes')
-          .insert({
-            restaurant_id: restaurantId,
-            user_id: currentUser.id
-          });
-
-        if (error) {
-          console.error('レストランいいね追加エラー:', error);
-          return;
-        }
-
-        button.classList.add('liked');
-      }
-
-      // いいね数を更新
-      await loadRestaurantLikes();
-    }
-
-    // 駐車場のいいね数を読み込む
-    async function loadParkingLikes() {
-      try {
-        // 全ての駐車場IDを取得
-        const parkingButtons = document.querySelectorAll('.parking-like-btn');
-        const parkingIds = Array.from(parkingButtons).map(btn => btn.dataset.parkingId);
-
-        if (parkingIds.length === 0) return;
-
-        // いいね数を一括取得
-        const { data: likes, error } = await supabaseClient
-          .from('parking_spot_likes')
-          .select('parking_spot_id, user_id')
-          .in('parking_spot_id', parkingIds);
-
-        if (error) {
-          console.error('駐車場いいね数読み込みエラー:', error);
-          return;
-        }
-
-        // 各駐車場のいいね数を集計
-        const likeCounts = {};
-        const userLikes = new Set();
-
-        likes?.forEach(like => {
-          likeCounts[like.parking_spot_id] = (likeCounts[like.parking_spot_id] || 0) + 1;
-          if (currentUser && like.user_id === currentUser.id) {
-            userLikes.add(like.parking_spot_id);
-          }
-        });
-
-        // UIを更新
-        parkingButtons.forEach(btn => {
-          const parkingId = btn.dataset.parkingId;
-          const count = likeCounts[parkingId] || 0;
-          const countSpan = btn.querySelector('.parking-like-count');
-          if (countSpan) {
-            countSpan.textContent = count;
-          }
-
-          if (userLikes.has(parkingId)) {
-            btn.classList.add('liked');
-          } else {
-            btn.classList.remove('liked');
-          }
-        });
-      } catch (err) {
-        console.error('駐車場いいね数読み込みエラー:', err);
       }
     }
-
-    // レストランのいいね数を読み込む
-    async function loadRestaurantLikes() {
-      try {
-        // 全てのレストランIDを取得
-        const restaurantButtons = document.querySelectorAll('.restaurant-like-btn');
-        const restaurantIds = Array.from(restaurantButtons).map(btn => parseInt(btn.dataset.restaurantId));
-
-        if (restaurantIds.length === 0) return;
-
-        // いいね数を一括取得
-        const { data: likes, error } = await supabaseClient
-          .from('restaurant_likes')
-          .select('restaurant_id, user_id')
-          .in('restaurant_id', restaurantIds);
-
-        if (error) {
-          console.error('レストランいいね数読み込みエラー:', error);
-          return;
-        }
-
-        // 各レストランのいいね数を集計
-        const likeCounts = {};
-        const userLikes = new Set();
-
-        likes?.forEach(like => {
-          likeCounts[like.restaurant_id] = (likeCounts[like.restaurant_id] || 0) + 1;
-          if (currentUser && like.user_id === currentUser.id) {
-            userLikes.add(like.restaurant_id);
-          }
-        });
-
-        // UIを更新
-        restaurantButtons.forEach(btn => {
-          const restaurantId = parseInt(btn.dataset.restaurantId);
-          const count = likeCounts[restaurantId] || 0;
-          const countSpan = btn.querySelector('.restaurant-like-count');
-          if (countSpan) {
-            countSpan.textContent = count;
-          }
-
-          if (userLikes.has(restaurantId)) {
-            btn.classList.add('liked');
-          } else {
-            btn.classList.remove('liked');
-          }
-        });
-      } catch (err) {
-        console.error('レストランいいね数読み込みエラー:', err);
-      }
-    }
-
-    // 初期化
-    checkAuthStatus();
-    loadParkingLikes();
-    loadRestaurantLikes();
-
-    // 認証状態の変更を監視
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
-        checkAuthStatus();
-        loadParkingLikes();
-        loadRestaurantLikes();
-      }
-    });
   </script>
 </body>
 </html>

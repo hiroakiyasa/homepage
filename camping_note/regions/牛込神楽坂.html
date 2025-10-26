@@ -186,6 +186,46 @@
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -507,10 +547,10 @@
 
       <div class="nav-auth">
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-          </div>
+          </a>
         </div>
         <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
@@ -555,6 +595,10 @@
             <div class="parking-card-header">
               <strong>🥇 1位: パラカ新宿区矢来町第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="パラカ新宿区矢来町第１" data-lat="35.701436" data-lng="139.733233" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.701436,139.733233" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%96%B0%E5%AE%BF%E5%8C%BA%E7%9F%A2%E6%9D%A5%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -582,6 +626,10 @@
             <div class="parking-card-header">
               <strong>🥈 2位: 東洋カーマックス神楽坂駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="東洋カーマックス神楽坂駐車場" data-lat="35.70342" data-lng="139.736921" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.70342,139.736921" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E7%A5%9E%E6%A5%BD%E5%9D%82%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -609,6 +657,10 @@
             <div class="parking-card-header">
               <strong>🥉 3位: リパーク新宿矢来町第５</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="リパーク新宿矢来町第５" data-lat="35.702536" data-lng="139.731497" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.702536,139.731497" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%96%B0%E5%AE%BF%E7%9F%A2%E6%9D%A5%E7%94%BA%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -636,6 +688,10 @@
             <div class="parking-card-header">
               <strong>🔵 4位: パークジャパン細工町第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="パークジャパン細工町第１" data-lat="35.69927" data-lng="139.733272" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.69927,139.733272" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E7%B4%B0%E5%B7%A5%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -663,6 +719,10 @@
             <div class="parking-card-header">
               <strong>🔵 5位: パークイット新宿中町</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="パークイット新宿中町" data-lat="35.69857" data-lng="139.733883" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.69857,139.733883" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%83%E3%83%88%E6%96%B0%E5%AE%BF%E4%B8%AD%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -690,6 +750,10 @@
             <div class="parking-card-header">
               <strong>🔵 6位: ミスターＰ市谷砂土原町</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="ミスターＰ市谷砂土原町" data-lat="35.697812" data-lng="139.73751" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.697812,139.73751" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%B0%E5%B8%82%E8%B0%B7%E7%A0%82%E5%9C%9F%E5%8E%9F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -717,6 +781,10 @@
             <div class="parking-card-header">
               <strong>🔵 7位: 大栄パーク牛込神楽坂</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="大栄パーク牛込神楽坂" data-lat="35.700056" data-lng="139.734074" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.700056,139.734074" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E5%A4%A7%E6%A0%84%E3%83%91%E3%83%BC%E3%82%AF%E7%89%9B%E8%BE%BC%E7%A5%9E%E6%A5%BD%E5%9D%82" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -744,6 +812,10 @@
             <div class="parking-card-header">
               <strong>🔵 8位: パークジャパン新宿南町第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="パークジャパン新宿南町第１" data-lat="35.697962" data-lng="139.734947" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.697962,139.734947" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%96%B0%E5%AE%BF%E5%8D%97%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -771,6 +843,10 @@
             <div class="parking-card-header">
               <strong>🔵 9位: ＩＴＣパーク神楽坂</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="ＩＴＣパーク神楽坂" data-lat="35.70292" data-lng="139.739082" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.70292,139.739082" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%A9%EF%BC%B4%EF%BC%A3%E3%83%91%E3%83%BC%E3%82%AF%E7%A5%9E%E6%A5%BD%E5%9D%82" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -798,6 +874,10 @@
             <div class="parking-card-header">
               <strong>🔵 10位: ＮＴＴル・パルク牛込第１駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="ＮＴＴル・パルク牛込第１駐車場" data-lat="35.699278" data-lng="139.732383" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.699278,139.732383" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%AE%EF%BC%B4%EF%BC%B4%E3%83%AB%E3%83%BB%E3%83%91%E3%83%AB%E3%82%AF%E7%89%9B%E8%BE%BC%E7%AC%AC%EF%BC%91%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -831,29 +911,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>サンルーカルバー</h3>
+          <h3>NK</h3>
 
-          <span class="restaurant-genre">バー</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂6-43 K's Place102</div>
+          <div class="restaurant-address">📍 東京都新宿区神楽坂5-37 相良ビル 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.703578077383746,139.73525686926448" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%B3%E3%83%AB%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%90%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="144" data-spot-name="NK" data-lat="35.70129673788926" data-lng="139.73929918344436" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.70129673788926,139.73929918344436" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=NK" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>波濤</h3>
+          <h3>虎白</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂5-7</div>
+          <div class="restaurant-address">📍 東京都新宿区神楽坂3-5-5</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70219463788855,139.73886468345373" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%B3%A2%E6%BF%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="356" data-spot-name="虎白" data-lat="35.700830164391334" data-lng="139.74083664045196" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.700830164391334,139.74083664045196" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E8%99%8E%E7%99%BD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -866,6 +954,10 @@
           <div class="restaurant-address">📍 東京都新宿区神楽坂5-37 高村ビル　１Ｆ</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="112" data-spot-name="神楽坂 石かわ" data-lat="35.70121103788937" data-lng="139.73947548344336" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.70121103788937,139.73947548344336" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E7%A5%9E%E6%A5%BD%E5%9D%82%20%E7%9F%B3%E3%81%8B%E3%82%8F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -873,29 +965,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>NK</h3>
+          <h3>波濤</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">寿司</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂5-37 相良ビル 1F</div>
+          <div class="restaurant-address">📍 東京都新宿区神楽坂5-7</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70129673788926,139.73929918344436" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=NK" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="196" data-spot-name="波濤" data-lat="35.70219463788855" data-lng="139.73886468345373" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.70219463788855,139.73886468345373" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%B3%A2%E6%BF%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>虎白</h3>
+          <h3>サンルーカルバー</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">バー</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂3-5-5</div>
+          <div class="restaurant-address">📍 東京都新宿区神楽坂6-43 K's Place102</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.700830164391334,139.74083664045196" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%99%8E%E7%99%BD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="468" data-spot-name="サンルーカルバー" data-lat="35.703578077383746" data-lng="139.73525686926448" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.703578077383746,139.73525686926448" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%B3%E3%83%AB%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%90%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -936,7 +1036,15 @@
     const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
 
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
 
     // モーダル制御
     function openModal(modalId) {
@@ -1028,7 +1136,139 @@
     (async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
     })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
+      }
+    }
   </script>
 </body>
 </html>

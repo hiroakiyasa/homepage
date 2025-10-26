@@ -186,6 +186,46 @@
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -507,10 +547,10 @@
 
       <div class="nav-auth">
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-          </div>
+          </a>
         </div>
         <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
@@ -546,7 +586,7 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: すすきの</strong>
-            <a href="https://www.google.com/maps?q=43.0553612,141.3533762" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=43.054976506544044,141.35237670104846" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
@@ -555,6 +595,10 @@
             <div class="parking-card-header">
               <strong>🥇 1位: ２５パーキング</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="２５パーキング" data-lat="43.058299" data-lng="141.350588" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.058299,141.350588" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%92%EF%BC%95%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -562,7 +606,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (398m)</div>
+                <div>📍 徒歩約5分 (397m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
               </div>
 
@@ -582,6 +626,10 @@
             <div class="parking-card-header">
               <strong>🥈 2位: アイ・パーキング２．５</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="アイ・パーキング２．５" data-lat="43.057715" data-lng="141.350352" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.057715,141.350352" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%A2%E3%82%A4%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%EF%BC%92%EF%BC%8E%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -589,7 +637,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (359m)</div>
+                <div>📍 徒歩約5分 (346m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
               </div>
 
@@ -607,35 +655,12 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🥉 3位: パーキングパレス第３</strong>
+              <strong>🥉 3位: パラカパーキング１０１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=43.058615,141.357223" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%91%E3%83%AC%E3%82%B9%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約6分 (479m)</div>
-                <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (33m)</div>
-                <div class="facility-item">🚻 大通公園トイレ⑤ (416m)</div>
-                <div class="facility-item">♨️ こみちの湯 ほのか（女性専用） (0.2km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
-            <div class="parking-card-header">
-              <strong>🔵 4位: パラカパーキング１０１</strong>
-              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="パラカパーキング１０１" data-lat="43.056616" data-lng="141.351063" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.056616,141.351063" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%EF%BC%91%EF%BC%90%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -643,7 +668,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約3分 (234m)</div>
+                <div>📍 徒歩約3分 (211m)</div>
                 <div class="parking-fee">💰 ¥1,100 (18:00-8:00)</div>
               </div>
 
@@ -658,11 +683,46 @@
             </div>
           </div>
 
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: パラカ札幌市南５西７第１</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="パラカ札幌市南５西７第１" data-lat="43.053249" data-lng="141.348774" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=43.053249,141.348774" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8D%97%EF%BC%95%E8%A5%BF%EF%BC%97%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (351m)</div>
+                <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (96m)</div>
+                <div class="facility-item">🚻 七条公園トイレ (673m)</div>
+                <div class="facility-item">♨️ 天然温泉プレミアホテル -CABIN-札幌 (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
           <!-- 駐車場5 -->
           <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
               <strong>🔵 5位: ＲＥＣＯＬＴＥ　Ｓａｐｐｏｒｏ駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="ＲＥＣＯＬＴＥ　Ｓａｐｐｏｒｏ駐車場" data-lat="43.055582" data-lng="141.355673" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.055582,141.355673" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%B2%EF%BC%A5%EF%BC%A3%EF%BC%AF%EF%BC%AC%EF%BC%B4%EF%BC%A5%E3%80%80%EF%BC%B3%EF%BD%81%EF%BD%90%EF%BD%90%EF%BD%8F%EF%BD%92%EF%BD%8F%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -670,7 +730,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約3分 (188m)</div>
+                <div>📍 徒歩約4分 (276m)</div>
                 <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
               </div>
 
@@ -690,6 +750,10 @@
             <div class="parking-card-header">
               <strong>🔵 6位: からくさホテル札幌駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="からくさホテル札幌駐車場" data-lat="43.056441" data-lng="141.350113" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.056441,141.350113" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%81%8B%E3%82%89%E3%81%8F%E3%81%95%E3%83%9B%E3%83%86%E3%83%AB%E6%9C%AD%E5%B9%8C%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -697,7 +761,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (291m)</div>
+                <div>📍 徒歩約4分 (246m)</div>
                 <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
               </div>
 
@@ -717,6 +781,10 @@
             <div class="parking-card-header">
               <strong>🔵 7位: リパーク３・５狸パーキング</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="リパーク３・５狸パーキング" data-lat="43.055974" data-lng="141.350288" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.055974,141.350288" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%EF%BC%93%E3%83%BB%EF%BC%95%E7%8B%B8%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -724,7 +792,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (260m)</div>
+                <div>📍 徒歩約3分 (203m)</div>
                 <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
               </div>
 
@@ -742,8 +810,43 @@
           <!-- 駐車場8 -->
           <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <strong>🔵 8位: カタオカビルパーキング</strong>
+              <strong>🔵 8位: パラカ札幌市南６西７第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="パラカ札幌市南６西７第１" data-lat="43.052833" data-lng="141.348438" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=43.052833,141.348438" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8D%97%EF%BC%96%E8%A5%BF%EF%BC%97%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (399m)</div>
+                <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (49m)</div>
+                <div class="facility-item">🚻 七条公園トイレ (628m)</div>
+                <div class="facility-item">♨️ 天然温泉プレミアホテル -CABIN-札幌 (0.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
+            <div class="parking-card-header">
+              <strong>🔵 9位: カタオカビルパーキング</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="カタオカビルパーキング" data-lat="43.058157" data-lng="141.353437" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.058157,141.353437" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%AB%E3%82%BF%E3%82%AA%E3%82%AB%E3%83%93%E3%83%AB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -751,7 +854,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (311m)</div>
+                <div>📍 徒歩約5分 (364m)</div>
                 <div class="parking-fee">💰 ¥1,500 (18:00-8:00)</div>
               </div>
 
@@ -766,11 +869,15 @@
             </div>
           </div>
 
-          <!-- 駐車場9 -->
-          <div class="parking-card" onclick="showMarker('parking_8')">
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <strong>🔵 9位: 第３０ビッグＳ－１パーキング</strong>
+              <strong>🔵 10位: 第３０ビッグＳ－１パーキング</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="第３０ビッグＳ－１パーキング" data-lat="43.059299" data-lng="141.351613" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=43.059299,141.351613" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E7%AC%AC%EF%BC%93%EF%BC%90%E3%83%93%E3%83%83%E3%82%B0%EF%BC%B3%EF%BC%8D%EF%BC%91%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -778,7 +885,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約6分 (461m)</div>
+                <div>📍 徒歩約7分 (485m)</div>
                 <div class="parking-fee">💰 ¥1,600 (18:00-8:00)</div>
               </div>
 
@@ -788,33 +895,6 @@
                 <div class="facility-item">🏪 コンビニ (82m)</div>
                 <div class="facility-item">🚻 大通公園トイレ⑤ (143m)</div>
                 <div class="facility-item">♨️ GARDENS CABIN ガーデンズキャビン (0.1km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
-            <div class="parking-card-header">
-              <strong>🔵 10位: パラカ札幌市南７西２第２</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=43.052183,141.356851" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8D%97%EF%BC%97%E8%A5%BF%EF%BC%92%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約6分 (453m)</div>
-                <div class="parking-fee">💰 ¥1,600 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (185m)</div>
-                <div class="facility-item">🚻 中島公園トイレ５（中島公園駅） (447m)</div>
-                <div class="facility-item">♨️ すすきの天然温泉 湯香郷 (0.1km)</div>
               </div>
 
             </div>
@@ -831,34 +911,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>AKI NAGAO</h3>
-
-          <span class="restaurant-genre">フレンチ</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南3西3-3 Ｇ　ＤＩＮＩＮＧ　１Ｆ</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.056436586813554,141.35429314419034" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=AKI%20NAGAO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>鮨ノ蔵</h3>
-
-          <span class="restaurant-genre">寿司</span>
-
-          <div class="restaurant-address">📍 北海道札幌市中央区南2条西4 乙井ビル B1F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=43.05783305668711,141.3515780276067" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%83%8E%E8%94%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>寿し ひでたか</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -866,8 +918,48 @@
           <div class="restaurant-address">📍 北海道札幌市中央区南7条西4-1-2 延寿ビル 1F</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="寿し ひでたか" data-lat="43.05252338235367" data-lng="141.35361143653273" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=43.05252338235367,141.35361143653273" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%AF%BF%E3%81%97%20%E3%81%B2%E3%81%A7%E3%81%9F%E3%81%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>AKI NAGAO</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南3西3-3 Ｇ　ＤＩＮＩＮＧ　１Ｆ</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="AKI NAGAO" data-lat="43.056436586813554" data-lng="141.35429314419034" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=43.056436586813554,141.35429314419034" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=AKI%20NAGAO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>鮨ノ蔵</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 北海道札幌市中央区南2条西4 乙井ビル B1F</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="鮨ノ蔵" data-lat="43.05783305668711" data-lng="141.3515780276067" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=43.05783305668711,141.3515780276067" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%AE%A8%E3%83%8E%E8%94%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -880,6 +972,10 @@
           <div class="restaurant-address">📍 北海道札幌市中央区南7条西4 延寿堂 1F</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="天ぷらあら木" data-lat="43.05253310366708" data-lng="141.35361893546238" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=43.05253310366708,141.35361893546238" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%A4%A9%E3%81%B7%E3%82%89%E3%81%82%E3%82%89%E6%9C%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -894,6 +990,10 @@
           <div class="restaurant-address">📍 北海道札幌市中央区南五条西3丁目 第23桂和ビル 4F</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="みえ田" data-lat="43.054838033733034" data-lng="141.3537728565902" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=43.054838033733034,141.3537728565902" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%81%BF%E3%81%88%E7%94%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -936,7 +1036,15 @@
     const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
 
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
 
     // モーダル制御
     function openModal(modalId) {
@@ -1028,7 +1136,139 @@
     (async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
     })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
+      }
+    }
   </script>
 </body>
 </html>

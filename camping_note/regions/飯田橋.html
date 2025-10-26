@@ -186,6 +186,46 @@
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -507,10 +547,10 @@
 
       <div class="nav-auth">
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-          </div>
+          </a>
         </div>
         <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
@@ -546,32 +586,36 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 飯田橋</strong>
-            <a href="https://www.google.com/maps?q=35.7007418,139.7440022" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.69727107437048,139.73419121768936" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: コインパーク富士見２丁目第４</strong>
+              <strong>🥇 1位: コインパーク新宿二十騎町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.699678,139.744471" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E5%AF%8C%E5%A3%AB%E8%A6%8B%EF%BC%92%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="コインパーク新宿二十騎町" data-lat="35.697953" data-lng="139.731661" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.697953,139.731661" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%96%B0%E5%AE%BF%E4%BA%8C%E5%8D%81%E9%A8%8E%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約2分 (126m)</div>
-                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+                <div>📍 徒歩約4分 (241m)</div>
+                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (74m)</div>
-                <div class="facility-item">🚻 牛込見附公衆トイレ (76m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.4km)</div>
+                <div class="facility-item">🏪 コンビニ (251m)</div>
+                <div class="facility-item">🚻 納戸町公園トイレ (88m)</div>
+                <div class="facility-item">♨️ 柳湯 (0.5km)</div>
               </div>
 
             </div>
@@ -580,25 +624,29 @@
           <!-- 駐車場2 -->
           <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🥈 2位: パラカ千代田区富士見第１</strong>
+              <strong>🥈 2位: パラカ新宿区矢来町第１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.698662,139.744446" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%AF%8C%E5%A3%AB%E8%A6%8B%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="パラカ新宿区矢来町第１" data-lat="35.701436" data-lng="139.733233" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.701436,139.733233" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%96%B0%E5%AE%BF%E5%8C%BA%E7%9F%A2%E6%9D%A5%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約3分 (235m)</div>
+                <div>📍 徒歩約6分 (472m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (34m)</div>
-                <div class="facility-item">🚻 牛込見附公衆トイレ (131m)</div>
-                <div class="facility-item">♨️ 熱海湯 (0.4km)</div>
+                <div class="facility-item">🏪 コンビニ (29m)</div>
+                <div class="facility-item">🚻 あさひ児童遊園トイレ (82m)</div>
+                <div class="facility-item">♨️ 第三玉の湯 (0.5km)</div>
               </div>
 
             </div>
@@ -607,25 +655,29 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🥉 3位: リパーク新宿新小川町第２</strong>
+              <strong>🥉 3位: ナビパーク市谷長延寺町第１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.704111,139.74341" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%96%B0%E5%AE%BF%E6%96%B0%E5%B0%8F%E5%B7%9D%E7%94%BA%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="ナビパーク市谷長延寺町第１" data-lat="35.694287" data-lng="139.734833" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.694287,139.734833" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%8A%E3%83%93%E3%83%91%E3%83%BC%E3%82%AF%E5%B8%82%E8%B0%B7%E9%95%B7%E5%BB%B6%E5%AF%BA%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (379m)</div>
-                <div class="parking-fee">💰 ¥1,800 (18:00-8:00)</div>
+                <div>📍 徒歩約5分 (337m)</div>
+                <div class="parking-fee">💰 ¥2,000 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (49m)</div>
-                <div class="facility-item">🚻 新小川公園トイレ (139m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.4km)</div>
+                <div class="facility-item">🏪 コンビニ (218m)</div>
+                <div class="facility-item">🚻 市谷八幡児童遊園トイレ (256m)</div>
+                <div class="facility-item">♨️ 熱海湯 (0.9km)</div>
               </div>
 
             </div>
@@ -634,25 +686,29 @@
           <!-- 駐車場4 -->
           <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <strong>🔵 4位: ＳＡＮパーク新宿下宮比１</strong>
+              <strong>🔵 4位: パークイットＹＳＰ新宿北山伏町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.703053,139.743971" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%EF%BC%B3%EF%BC%A1%EF%BC%AE%E3%83%91%E3%83%BC%E3%82%AF%E6%96%B0%E5%AE%BF%E4%B8%8B%E5%AE%AE%E6%AF%94%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="パークイットＹＳＰ新宿北山伏町" data-lat="35.69927" data-lng="139.730122" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.69927,139.730122" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%83%E3%83%88%EF%BC%B9%EF%BC%B3%EF%BC%B0%E6%96%B0%E5%AE%BF%E5%8C%97%E5%B1%B1%E4%BC%8F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (257m)</div>
-                <div class="parking-fee">💰 ¥2,500 (18:00-8:00)</div>
+                <div>📍 徒歩約6分 (430m)</div>
+                <div class="parking-fee">💰 ¥2,400 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (74m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (107m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.3km)</div>
+                <div class="facility-item">🏪 コンビニ (261m)</div>
+                <div class="facility-item">🚻 山伏公園トイレ (59m)</div>
+                <div class="facility-item">♨️ 柳湯 (0.3km)</div>
               </div>
 
             </div>
@@ -661,25 +717,28 @@
           <!-- 駐車場5 -->
           <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <strong>🔵 5位: システムパーク飯田橋Ｎｏ．１</strong>
+              <strong>🔵 5位: システムパーク市谷砂土原町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.699412,139.746971" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E9%A3%AF%E7%94%B0%E6%A9%8B%EF%BC%AE%EF%BD%8F%EF%BC%8E%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="システムパーク市谷砂土原町" data-lat="35.696395" data-lng="139.73666" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.696395,139.73666" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E5%B8%82%E8%B0%B7%E7%A0%82%E5%9C%9F%E5%8E%9F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (307m)</div>
-                <div class="parking-fee">💰 ¥2,600 (18:00-8:00)</div>
+                <div>📍 徒歩約4分 (244m)</div>
+                <div class="parking-fee">💰 ¥2,500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (84m)</div>
-                <div class="facility-item">🚻 富士見児童公園トイレ (116m)</div>
-                <div class="facility-item">♨️ ナインアワーズ水道橋 (0.4km)</div>
+                <div class="facility-item">🏪 コンビニ (263m)</div>
+                <div class="facility-item">♨️ 熱海湯 (0.6km)</div>
               </div>
 
             </div>
@@ -688,25 +747,29 @@
           <!-- 駐車場6 -->
           <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <strong>🔵 6位: Ｄパーキング後楽２丁目第１</strong>
+              <strong>🔵 6位: ＮＰＣ２４Ｈ市谷鷹匠町パーキング</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.704345,139.745282" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%EF%BC%A4%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E5%BE%8C%E6%A5%BD%EF%BC%92%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="ＮＰＣ２４Ｈ市谷鷹匠町パーキング" data-lat="35.696337" data-lng="139.733961" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.696337,139.733961" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%EF%BC%AE%EF%BC%B0%EF%BC%A3%EF%BC%92%EF%BC%94%EF%BC%A8%E5%B8%82%E8%B0%B7%E9%B7%B9%E5%8C%A0%E7%94%BA%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約6分 (417m)</div>
-                <div class="parking-fee">💰 ¥2,600 (18:00-8:00)</div>
+                <div>📍 徒歩約2分 (106m)</div>
+                <div class="parking-fee">💰 ¥2,500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (84m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (107m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.5km)</div>
+                <div class="facility-item">🏪 コンビニ (388m)</div>
+                <div class="facility-item">🚻 中根坂東公園トイレ (111m)</div>
+                <div class="facility-item">♨️ 柳湯 (0.7km)</div>
               </div>
 
             </div>
@@ -715,25 +778,29 @@
           <!-- 駐車場7 -->
           <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <strong>🔵 7位: ＰＥＮ文京区後楽２丁目パーキング</strong>
+              <strong>🔵 7位: パークジャパン細工町第１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.70427,139.745945" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%EF%BC%B0%EF%BC%A5%EF%BC%AE%E6%96%87%E4%BA%AC%E5%8C%BA%E5%BE%8C%E6%A5%BD%EF%BC%92%E4%B8%81%E7%9B%AE%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="パークジャパン細工町第１" data-lat="35.69927" data-lng="139.733272" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.69927,139.733272" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E7%B4%B0%E5%B7%A5%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約6分 (430m)</div>
-                <div class="parking-fee">💰 ¥3,200 (18:00-8:00)</div>
+                <div>📍 徒歩約3分 (238m)</div>
+                <div class="parking-fee">💰 ¥2,500 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (48m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (125m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.5km)</div>
+                <div class="facility-item">🏪 コンビニ (86m)</div>
+                <div class="facility-item">🚻 なんど児童遊園トイレ (136m)</div>
+                <div class="facility-item">♨️ 柳湯 (0.6km)</div>
               </div>
 
             </div>
@@ -742,25 +809,29 @@
           <!-- 駐車場8 -->
           <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <strong>🔵 8位: ミスターＰ揚場町第１</strong>
+              <strong>🔵 8位: パークイット新宿中町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.70242,139.743082" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%B0%E6%8F%9A%E5%A0%B4%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="パークイット新宿中町" data-lat="35.69857" data-lng="139.733883" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.69857,139.733883" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%83%E3%83%88%E6%96%B0%E5%AE%BF%E4%B8%AD%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約3分 (204m)</div>
-                <div class="parking-fee">💰 ¥3,400 (18:00-8:00)</div>
+                <div>📍 徒歩約2分 (147m)</div>
+                <div class="parking-fee">💰 ¥2,900 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (33m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (211m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.2km)</div>
+                <div class="facility-item">🏪 コンビニ (181m)</div>
+                <div class="facility-item">🚻 なんど児童遊園トイレ (92m)</div>
+                <div class="facility-item">♨️ 第三玉の湯 (0.6km)</div>
               </div>
 
             </div>
@@ -769,25 +840,29 @@
           <!-- 駐車場9 -->
           <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <strong>🔵 9位: リパーク飯田橋ＭＦビル</strong>
+              <strong>🔵 9位: ミスターＰ市谷砂土原町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.704203,139.743696" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E9%A3%AF%E7%94%B0%E6%A9%8B%EF%BC%AD%EF%BC%A6%E3%83%93%E3%83%AB" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="ミスターＰ市谷砂土原町" data-lat="35.697812" data-lng="139.73751" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.697812,139.73751" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%B0%E5%B8%82%E8%B0%B7%E7%A0%82%E5%9C%9F%E5%8E%9F%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (386m)</div>
-                <div class="parking-fee">💰 ¥4,000 (18:00-8:00)</div>
+                <div>📍 徒歩約4分 (306m)</div>
+                <div class="parking-fee">💰 ¥3,000 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (51m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (153m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.4km)</div>
+                <div class="facility-item">🏪 コンビニ (324m)</div>
+                <div class="facility-item">🚻 中町公園トイレ (189m)</div>
+                <div class="facility-item">♨️ 熱海湯 (0.4km)</div>
               </div>
 
             </div>
@@ -796,25 +871,28 @@
           <!-- 駐車場10 -->
           <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <strong>🔵 10位: 飯田橋ビル駐車場</strong>
+              <strong>🔵 10位: ＧＳパーク市谷田町</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.702345,139.743757" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E9%A3%AF%E7%94%B0%E6%A9%8B%E3%83%93%E3%83%AB%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="ＧＳパーク市谷田町" data-lat="35.694754" data-lng="139.737847" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.694754,139.737847" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%EF%BC%A7%EF%BC%B3%E3%83%91%E3%83%BC%E3%82%AF%E5%B8%82%E8%B0%B7%E7%94%B0%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約3分 (180m)</div>
-                <div class="parking-fee">💰 ¥8,400 (18:00-8:00)</div>
+                <div>📍 徒歩約6分 (433m)</div>
+                <div class="parking-fee">💰 ¥5,600 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (52m)</div>
-                <div class="facility-item">🚻 船河原橋際公衆トイレ (167m)</div>
-                <div class="facility-item">♨️ あかざる 神楽坂SAUNA (0.2km)</div>
+                <div class="facility-item">🏪 コンビニ (94m)</div>
+                <div class="facility-item">♨️ 熱海湯 (0.7km)</div>
               </div>
 
             </div>
@@ -831,71 +909,91 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>虎白</h3>
+          <h3>SECRETO</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">イノベーティブ</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂3-5-5</div>
+          <div class="restaurant-address">📍 東京都新宿区二十騎町2-23 ランピオンイゴー 1F 102</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.700830164391334,139.74083664045196" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%99%8E%E7%99%BD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="SECRETO" data-lat="35.69834359561663" data-lng="139.73121449850044" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.69834359561663,139.73121449850044" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=SECRETO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>波濤</h3>
+          <h3>アンティカ オステリア カルネヤ</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">イタリアン</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂5-7</div>
+          <div class="restaurant-address">📍 東京都新宿区南山伏町3-6 市ヶ谷NHビル1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70219463788855,139.73886468345373" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%B3%A2%E6%BF%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="アンティカ オステリア カルネヤ" data-lat="35.69905753788768" data-lng="139.72986888342837" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.69905753788768,139.72986888342837" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AB%20%E3%82%AA%E3%82%B9%E3%83%86%E3%83%AA%E3%82%A2%20%E3%82%AB%E3%83%AB%E3%83%8D%E3%83%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>NK</h3>
+          <h3>焼き鳥 峠</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">焼き鳥</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂5-37 相良ビル 1F</div>
+          <div class="restaurant-address">📍 東京都新宿区細工町3-5 荘 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70129673788926,139.73929918344436" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=NK" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="焼き鳥 峠" data-lat="35.69893800127927" data-lng="139.73263407545943" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.69893800127927,139.73263407545943" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%84%BC%E3%81%8D%E9%B3%A5%20%E5%B3%A0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>愚直に</h3>
+          <h3>ル・マンジュ・トゥー</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">フレンチ</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂4-3 近江屋ビル 4F</div>
+          <div class="restaurant-address">📍 東京都新宿区納戸町22</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.7015973378893,139.74003048344687" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%84%9A%E7%9B%B4%E3%81%AB" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="ル・マンジュ・トゥー" data-lat="35.69805453788912" data-lng="139.73240878341642" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.69805453788912,139.73240878341642" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%AB%E3%83%BB%E3%83%9E%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>神楽坂 石かわ</h3>
+          <h3>森ふじ</h3>
 
           <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 東京都新宿区神楽坂5-37 高村ビル　１Ｆ</div>
+          <div class="restaurant-address">📍 東京都新宿区納戸町32-3 ザ・フィガロ市ヶ谷 1F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70121103788937,139.73947548344336" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%A5%9E%E6%A5%BD%E5%9D%82%20%E7%9F%B3%E3%81%8B%E3%82%8F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="森ふじ" data-lat="35.69772509562607" data-lng="139.7337887576298" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.69772509562607,139.7337887576298" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%A3%AE%E3%81%B5%E3%81%98" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -936,7 +1034,15 @@
     const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
 
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
 
     // モーダル制御
     function openModal(modalId) {
@@ -1028,7 +1134,139 @@
     (async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
     })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
+      }
+    }
   </script>
 </body>
 </html>

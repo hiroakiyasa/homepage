@@ -20,40 +20,6 @@
       padding: 20px;
     }
 
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .nav-auth {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-user-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: #f5f5f5;
-      border-radius: 20px;
-    }
-
-    .nav-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .nav-user-name {
-      font-size: 14px;
-      color: #333;
-    }
-
     .header {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                   url('data:image/jpeg;base64,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');
@@ -65,54 +31,17 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-left h1 {
+    .header h1 {
       font-size: 28px;
       color: #fff;
       margin-bottom: 8px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 
-    .header-left p {
+    .header p {
       color: #fff;
       font-size: 16px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    }
-
-    .header-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-    }
-
-    .region-like-button {
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      padding: 12px 24px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .region-like-button:hover {
-      background: white;
-      transform: scale(1.05);
-    }
-
-    .region-like-button.liked {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      color: white;
     }
 
     .back-button {
@@ -221,41 +150,13 @@
       margin-bottom: 6px;
     }
 
-    .parking-card-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .parking-card-title strong {
+    .parking-card-header strong {
       color: #1976d2;
       font-size: 14px;
+      flex: 1;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .parking-like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 6px;
-      border-radius: 12px;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: #666;
-    }
-
-    .parking-like-btn:hover {
-      background: rgba(255,255,255,0.5);
-    }
-
-    .parking-like-btn.liked {
-      color: #f5576c;
     }
 
     .parking-card-buttons {
@@ -283,6 +184,46 @@
 
     .btn-search {
       background: #22D3EE;
+    }
+
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .parking-info {
@@ -358,40 +299,11 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .restaurant-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-
     .restaurant-card h3 {
       color: #ff9800;
       font-size: 14px;
+      margin-bottom: 8px;
       font-weight: bold;
-      flex: 1;
-    }
-
-    .restaurant-like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 6px;
-      border-radius: 12px;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: #666;
-    }
-
-    .restaurant-like-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .restaurant-like-btn.liked {
-      color: #f5576c;
     }
 
     .restaurant-genre {
@@ -457,55 +369,36 @@
       }
     }
 
-    /* === 認証・いいね・コメント機能のスタイル === */
-    .auth-like-comment-section {
-      margin: 40px auto;
-      max-width: 800px;
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .auth-status {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-      background: #f5f5f5;
-      border-radius: 6px;
+    /* Authentication UI Styles */
+    .nav-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
       margin-bottom: 20px;
     }
 
-    .user-info {
+    .nav-auth {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .avatar {
-      width: 40px;
-      height: 40px;
+    .nav-user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .user-name {
-      font-weight: bold;
+    .nav-user-name {
+      font-weight: 500;
       color: #333;
-    }
-
-    .btn-profile-edit {
-      background: none;
-      border: none;
-      color: #1976d2;
-      cursor: pointer;
-      font-size: 18px;
-      padding: 4px;
-    }
-
-    .btn-profile-edit:hover {
-      opacity: 0.7;
     }
 
     .btn-login, .btn-logout {
@@ -535,350 +428,52 @@
       background: #d32f2f;
     }
 
-    .like-section {
-      text-align: center;
-      padding: 20px;
-      background: #fafafa;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-
-    .like-button {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      font-size: 24px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    .like-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-    }
-
-    .like-button:active {
-      transform: scale(0.95);
-    }
-
-    .like-button.liked {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    }
-
-    .like-count {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #666;
-    }
-
-    .comments-section {
-      margin-top: 30px;
-    }
-
-    .comments-section h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    .comment-form {
-      margin-bottom: 20px;
-    }
-
-    .comment-form textarea {
-      width: 100%;
-      min-height: 100px;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    .comment-form textarea:focus {
-      outline: none;
-      border-color: #1976d2;
-    }
-
-    .comment-form button {
-      margin-top: 10px;
-      padding: 10px 24px;
-      background: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .comment-form button:hover {
-      background: #1565c0;
-    }
-
-    .comments-list {
-      margin-top: 20px;
-    }
-
-    .comment-item {
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      border-left: 3px solid #1976d2;
-    }
-
-    .comment-item.reply {
-      margin-left: 40px;
-      border-left-color: #ff9800;
-      background: #fff8e1;
-    }
-
-    .comment-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .comment-author {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .comment-author img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .comment-author-name {
-      font-weight: bold;
-      color: #333;
-    }
-
-    .comment-date {
-      font-size: 12px;
-      color: #999;
-    }
-
-    .comment-content {
-      color: #333;
-      line-height: 1.6;
-      margin-bottom: 10px;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-
-    .comment-actions {
-      display: flex;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .comment-actions button {
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
-
-    .comment-actions button:hover {
-      background: #f0f0f0;
-      color: #333;
-    }
-
-    .reply-form-container {
-      margin-top: 10px;
-      display: none;
-    }
-
-    .reply-form-container.active {
-      display: block;
-    }
-
-    .reply-form-container textarea {
-      width: 100%;
-      min-height: 80px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    .reply-form-actions {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .reply-cancel, .reply-submit {
-      padding: 6px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .reply-cancel {
-      background: #f0f0f0;
-      color: #666;
-    }
-
-    .reply-cancel:hover {
-      background: #e0e0e0;
-    }
-
-    .reply-submit {
-      background: #1976d2;
-      color: white;
-    }
-
-    .reply-submit:hover {
-      background: #1565c0;
-    }
-
-    /* モーダル */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
-      top: 0;
+      z-index: 9999;
       left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
+      background: rgba(0,0,0,0.5);
     }
 
     .modal.active {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-content {
       background: white;
-      border-radius: 8px;
       padding: 30px;
-      max-width: 500px;
+      border-radius: 8px;
       width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
+      max-width: 400px;
       position: relative;
     }
 
     .modal-close {
       position: absolute;
-      top: 15px;
+      top: 10px;
       right: 15px;
-      background: none;
-      border: none;
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
       cursor: pointer;
-      color: #999;
     }
 
     .modal-close:hover {
-      color: #333;
-    }
-
-    .modal h2 {
-      margin-bottom: 20px;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #555;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #1976d2;
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .form-actions button {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .btn-cancel {
-      background: #f0f0f0;
-      color: #666;
-    }
-
-    .btn-cancel:hover {
-      background: #e0e0e0;
-    }
-
-    .btn-submit {
-      background: #1976d2;
-      color: white;
-    }
-
-    .btn-submit:hover {
-      background: #1565c0;
-    }
-
-    .error-message {
-      color: #f44336;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .success-message {
-      color: #4caf50;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .login-options {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      color: #000;
     }
 
     .btn-google {
+      width: 100%;
+      padding: 12px;
       background: white;
-      color: #333;
       border: 1px solid #ddd;
-      padding: 12px 24px;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
@@ -890,74 +485,81 @@
     }
 
     .btn-google:hover {
-      background: #f5f5f5;
-      border-color: #bbb;
+      background: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
     }
 
     .divider {
       text-align: center;
+      margin: 20px 0;
       color: #999;
-      margin: 10px 0;
-      position: relative;
+      font-size: 14px;
     }
 
-    .divider::before,
-    .divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 45%;
-      height: 1px;
-      background: #ddd;
-    }
-
-    .divider::before {
-      left: 0;
-    }
-
-    .divider::after {
-      right: 0;
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- トップナビゲーション -->
-    <div class="top-nav">
+    <div class="nav-header">
       <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
 
       <div class="nav-auth">
-        <!-- ログイン状態 -->
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-            <button id="nav-btn-profile-edit" class="btn-profile-edit" title="プロフィールを編集">✏️</button>
-          </div>
+          </a>
         </div>
-
-        <!-- ログインボタン -->
-        <button id="nav-btn-login" class="btn-login" style="display: none;">ログイン</button>
-
-        <!-- ログアウトボタン -->
+        <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
       </div>
     </div>
 
-    <!-- ヒーローセクション -->
     <div class="header">
-      <div class="header-content">
-        <div class="header-left">
-          <h1>🚗 海老江</h1>
-          <p>周辺のおすすめ車中泊スポット</p>
-        </div>
-        <div class="header-right">
-          <button id="region-like-button" class="region-like-button">
-            <span>♥️</span>
-            <span id="region-like-count">0</span>
-          </button>
-        </div>
-      </div>
+      <h1>🚗 海老江</h1>
+      <p>周辺のおすすめ車中泊スポット</p>
     </div>
 
     <!-- 注意喚起 -->
@@ -991,14 +593,12 @@
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥇 1位: セイワパーキング　海老江３丁目第１</strong>
-                <button class="parking-like-btn" data-parking-id="__________________34_699451_135_473876" onclick="event.stopPropagation(); likeParkingSpot('__________________34_699451_135_473876')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥇 1位: セイワパーキング　海老江３丁目第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="セイワパーキング　海老江３丁目第１" data-lat="34.699451" data-lng="135.473876" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.699451,135.473876" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%BB%E3%82%A4%E3%83%AF%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%80%80%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%93%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1014,7 +614,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (191m)</div>
-                <div class="facility-item">♨️ undefined (0.2km)</div>
+                <div class="facility-item">♨️ 龍美温泉 (0.2km)</div>
               </div>
 
             </div>
@@ -1023,14 +623,12 @@
           <!-- 駐車場2 -->
           <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥈 2位: ＧＳパーク海老江一丁目</strong>
-                <button class="parking-like-btn" data-parking-id="____________34_696102_135_477051" onclick="event.stopPropagation(); likeParkingSpot('____________34_696102_135_477051')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥈 2位: ＧＳパーク海老江一丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="ＧＳパーク海老江一丁目" data-lat="34.696102" data-lng="135.477051" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.696102,135.477051" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%A7%EF%BC%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%E4%B8%80%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1046,7 +644,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (66m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
+                <div class="facility-item">♨️ 日之出温泉 (0.1km)</div>
               </div>
 
             </div>
@@ -1055,14 +653,12 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🥉 3位: リパーク海老江１丁目</strong>
-                <button class="parking-like-btn" data-parking-id="___________34_696143_135_476876" onclick="event.stopPropagation(); likeParkingSpot('___________34_696143_135_476876')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🥉 3位: リパーク海老江１丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="リパーク海老江１丁目" data-lat="34.696143" data-lng="135.476876" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.696143,135.476876" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1078,7 +674,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (79m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
+                <div class="facility-item">♨️ 日之出温泉 (0.1km)</div>
               </div>
 
             </div>
@@ -1087,14 +683,12 @@
           <!-- 駐車場4 -->
           <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 4位: リパーク海老江１丁目第３</strong>
-                <button class="parking-like-btn" data-parking-id="_____________34_69631_135_476251" onclick="event.stopPropagation(); likeParkingSpot('_____________34_69631_135_476251')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 4位: リパーク海老江１丁目第３</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="リパーク海老江１丁目第３" data-lat="34.69631" data-lng="135.476251" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.69631,135.476251" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%91%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1110,7 +704,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (134m)</div>
-                <div class="facility-item">♨️ undefined (0.2km)</div>
+                <div class="facility-item">♨️ 日之出温泉 (0.2km)</div>
               </div>
 
             </div>
@@ -1119,14 +713,12 @@
           <!-- 駐車場5 -->
           <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 5位: リパーク海老江１丁目第４</strong>
-                <button class="parking-like-btn" data-parking-id="_____________34_69631_135_476037" onclick="event.stopPropagation(); likeParkingSpot('_____________34_69631_135_476037')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 5位: リパーク海老江１丁目第４</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="リパーク海老江１丁目第４" data-lat="34.69631" data-lng="135.476037" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.69631,135.476037" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%91%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1151,14 +743,12 @@
           <!-- 駐車場6 -->
           <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 6位: コインパーク海老江５丁目第２</strong>
-                <button class="parking-like-btn" data-parking-id="_______________34_696835_135_472201" onclick="event.stopPropagation(); likeParkingSpot('_______________34_696835_135_472201')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 6位: コインパーク海老江５丁目第２</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="コインパーク海老江５丁目第２" data-lat="34.696835" data-lng="135.472201" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.696835,135.472201" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%95%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1184,14 +774,12 @@
           <!-- 駐車場7 -->
           <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 7位: 野田阪神ウイステ駐車場</strong>
-                <button class="parking-like-btn" data-parking-id="____________34_695685_135_475851" onclick="event.stopPropagation(); likeParkingSpot('____________34_695685_135_475851')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 7位: 野田阪神ウイステ駐車場</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="野田阪神ウイステ駐車場" data-lat="34.695685" data-lng="135.475851" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.695685,135.475851" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E9%87%8E%E7%94%B0%E9%98%AA%E7%A5%9E%E3%82%A6%E3%82%A4%E3%82%B9%E3%83%86%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1216,14 +804,12 @@
           <!-- 駐車場8 -->
           <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 8位: コインパーク海老江５丁目</strong>
-                <button class="parking-like-btn" data-parking-id="_____________34_695785_135_473676" onclick="event.stopPropagation(); likeParkingSpot('_____________34_695785_135_473676')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 8位: コインパーク海老江５丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="コインパーク海老江５丁目" data-lat="34.695785" data-lng="135.473676" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.695785,135.473676" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%95%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1248,14 +834,12 @@
           <!-- 駐車場9 -->
           <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 9位: Ｏｎｅ　Ｐａｒｋ　海老江６丁目</strong>
-                <button class="parking-like-btn" data-parking-id="________________34_697885_135_471837" onclick="event.stopPropagation(); likeParkingSpot('________________34_697885_135_471837')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 9位: Ｏｎｅ　Ｐａｒｋ　海老江６丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="Ｏｎｅ　Ｐａｒｋ　海老江６丁目" data-lat="34.697885" data-lng="135.471837" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.697885,135.471837" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%EF%BC%AF%EF%BD%8E%EF%BD%85%E3%80%80%EF%BC%B0%EF%BD%81%EF%BD%92%EF%BD%8B%E3%80%80%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%96%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1271,7 +855,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (70m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
+                <div class="facility-item">♨️ 龍美温泉 (0.1km)</div>
               </div>
 
             </div>
@@ -1280,14 +864,12 @@
           <!-- 駐車場10 -->
           <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <div class="parking-card-title">
-                <strong>🔵 10位: フルーツパーク海老江４丁目</strong>
-                <button class="parking-like-btn" data-parking-id="______________34_698035_135_472515" onclick="event.stopPropagation(); likeParkingSpot('______________34_698035_135_472515')">
-                  <span>♥️</span>
-                  <span class="parking-like-count">0</span>
-                </button>
-              </div>
+              <strong>🔵 10位: フルーツパーク海老江４丁目</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="フルーツパーク海老江４丁目" data-lat="34.698035" data-lng="135.472515" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=34.698035,135.472515" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%B7%E8%80%81%E6%B1%9F%EF%BC%94%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1303,7 +885,7 @@
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
                 <div class="facility-item">🏪 コンビニ (42m)</div>
-                <div class="facility-item">♨️ undefined (0.1km)</div>
+                <div class="facility-item">♨️ 龍美温泉 (0.1km)</div>
               </div>
 
             </div>
@@ -1320,19 +902,17 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <div class="restaurant-card-header">
-            <h3>YAMACHAN</h3>
-            <button class="restaurant-like-btn" data-restaurant-id="6925" onclick="event.stopPropagation(); likeRestaurant(6925)">
-              <span>♥️</span>
-              <span class="restaurant-like-count">0</span>
-            </button>
-          </div>
+          <h3>YAMACHAN</h3>
 
           <span class="restaurant-genre">ラーメン</span>
 
           <div class="restaurant-address">📍 大阪府大阪市福島区海老江2-2-12</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6925" data-spot-name="YAMACHAN" data-lat="34.69631073716904" data-lng="135.47353447628325" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=34.69631073716904,135.47353447628325" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=YAMACHAN" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -1340,19 +920,17 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <div class="restaurant-card-header">
-            <h3>中華そば 無限</h3>
-            <button class="restaurant-like-btn" data-restaurant-id="1663" onclick="event.stopPropagation(); likeRestaurant(1663)">
-              <span>♥️</span>
-              <span class="restaurant-like-count">0</span>
-            </button>
-          </div>
+          <h3>中華そば 無限</h3>
 
           <span class="restaurant-genre">ラーメン</span>
 
           <div class="restaurant-address">📍 大阪府大阪市福島区海老江5-5-10</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1663" data-spot-name="中華そば 無限" data-lat="34.69661133716843" data-lng="135.4722094762872" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=34.69661133716843,135.4722094762872" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0%20%E7%84%A1%E9%99%90" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -1361,326 +939,117 @@
       </div>
     </div>
 
-    <!-- コメント機能セクション -->
-    <div class="auth-like-comment-section">
-      <div class="comments-section">
-        <h3>💬 みんなのコメント</h3>
-
-        <!-- コメント投稿フォーム -->
-        <div class="comment-form">
-          <textarea id="comment-input" placeholder="この地域についてコメントを残そう（1-1000文字）" maxlength="1000"></textarea>
-          <button id="comment-submit">投稿</button>
-          <div id="comment-error" class="error-message" style="display: none;"></div>
-        </div>
-
-        <!-- コメント一覧 -->
-        <div id="comments-list" class="comments-list">
-          <!-- コメントがここに表示されます -->
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- 認証モーダル -->
-  <div id="auth-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeAuthModal()">×</button>
-      <h2>ログイン</h2>
-
-      <div class="login-options">
-        <button id="google-login" class="btn-google">
-          <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
-          Googleでログイン
-        </button>
-
-        <div class="divider">または</div>
-
-        <div class="form-group">
-          <label>メールアドレス</label>
-          <input type="email" id="login-email" placeholder="email@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label>パスワード（6文字以上）</label>
-          <input type="password" id="login-password" placeholder="••••••" />
-        </div>
-
-        <div id="login-error" class="error-message" style="display: none;"></div>
-
-        <div class="form-actions">
-          <button class="btn-submit" onclick="handleEmailLogin()">ログイン / 新規登録</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- プロフィール編集モーダル -->
-  <div id="profile-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeProfileModal()">×</button>
-      <h2>プロフィール編集</h2>
-
-      <form id="profile-form">
-        <div class="form-group">
-          <label>ニックネーム *</label>
-          <input type="text" id="profile-nickname" required maxlength="50" />
-        </div>
-
-        <div class="form-group">
-          <label>アバターURL（オプション）</label>
-          <input type="url" id="profile-avatar-url" placeholder="https://..." />
-        </div>
-
-        <div id="profile-error" class="error-message" style="display: none;"></div>
-        <div id="profile-success" class="success-message" style="display: none;"></div>
-
-        <div class="form-actions">
-          <button type="button" class="btn-cancel" onclick="closeProfileModal()">キャンセル</button>
-          <button type="submit" class="btn-submit">保存</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
-    const regionSlug = '海老江';
-
-    // Supabaseクライアント初期化
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    let currentUser = null;
-    let userProfile = null;
-
-    // 地図表示関数
     function showMarker(markerId) {
       const iframe = document.getElementById('parking-map-iframe');
       if (iframe && iframe.contentWindow && iframe.contentWindow.showMarker) {
         iframe.contentWindow.showMarker(markerId);
+        // 地図までスクロール
         iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    }
+  </script>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('login-modal')">&times;</span>
+      <h2 style="margin-bottom: 20px;">ログイン</h2>
+
+      <div id="login-error" class="error-message" style="display: none;"></div>
+
+      <button id="google-login" class="btn-google" onclick="signInWithGoogle()">
+        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+        Googleでログイン
+      </button>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
+
+    // モーダル制御
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
     }
 
     // エラー表示
     function showError(elementId, message) {
       const el = document.getElementById(elementId);
-      if (el) {
-        el.textContent = message;
-        el.style.display = 'block';
-        setTimeout(() => { el.style.display = 'none'; }, 5000);
-      }
+      el.textContent = message;
+      el.style.display = 'block';
     }
 
-    // 成功メッセージ表示
-    function showSuccess(elementId, message) {
-      const el = document.getElementById(elementId);
-      if (el) {
-        el.textContent = message;
-        el.style.display = 'block';
-        setTimeout(() => { el.style.display = 'none'; }, 3000);
-      }
+    function hideError(elementId) {
+      document.getElementById(elementId).style.display = 'none';
     }
 
-    // エラーメッセージをクリア
-    function clearErrors() {
-      ['login-error', 'comment-error', 'like-error', 'profile-error', 'profile-success'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-    }
-
-    // 認証モーダルを開く
-    function openAuthModal() {
-      document.getElementById('auth-modal').classList.add('active');
-    }
-
-    // 認証モーダルを閉じる
-    function closeAuthModal() {
-      document.getElementById('auth-modal').classList.remove('active');
-      clearErrors();
-    }
-
-    // プロフィールモーダルを開く
-    function openProfileModal() {
-      if (!currentUser) return;
-
-      const nickname = document.getElementById('profile-nickname');
-      const avatarUrl = document.getElementById('profile-avatar-url');
-
-      nickname.value = userProfile?.display_name || currentUser.user_metadata?.display_name || '';
-      avatarUrl.value = userProfile?.avatar_url || '';
-
-      document.getElementById('profile-modal').classList.add('active');
-    }
-
-    // プロフィールモーダルを閉じる
-    function closeProfileModal() {
-      document.getElementById('profile-modal').classList.remove('active');
-      clearErrors();
-    }
-
-    // Googleログイン
-    document.getElementById('google-login')?.addEventListener('click', async () => {
-      const { error } = await supabaseClient.auth.signInWithOAuth({
+    // Google OAuth
+    async function signInWithGoogle() {
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
             ? 'http://localhost:8000' + window.location.pathname
-            : 'https://trailfusionai.com/camping_note' + window.location.pathname.replace(/.*camping_note/, '')
+            : 'https://trailfusionai.com' + window.location.pathname
         }
       });
 
       if (error) {
-        showError('login-error', 'Googleログインに失敗しました: ' + error.message);
+        showError('login-error', error.message);
       }
-    });
+    }
 
-    // メール/パスワードログイン
-    async function handleEmailLogin() {
-      const email = document.getElementById('login-email').value.trim();
-      const password = document.getElementById('login-password').value;
-
-      if (!email || !password) {
-        showError('login-error', 'メールアドレスとパスワードを入力してください');
-        return;
-      }
-
-      if (password.length < 6) {
-        showError('login-error', 'パスワードは6文字以上で入力してください');
-        return;
-      }
-
-      // まずログインを試みる
-      let { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
-      // ログイン失敗の場合は新規登録を試みる
-      if (error && error.message.includes('Invalid')) {
-        const result = await supabaseClient.auth.signUp({ email, password });
-        data = result.data;
-        error = result.error;
-
-        if (!error) {
-          alert('確認メールを送信しました。メールを確認してアカウントを有効化してください。');
-        }
-      }
-
+    // ログアウト
+    async function signOut() {
+      const { error } = await supabaseClient.auth.signOut();
       if (error) {
-        showError('login-error', 'ログインに失敗しました: ' + error.message);
-        return;
-      }
-
-      closeAuthModal();
-      await checkAuthStatus();
-    }
-
-    // ログアウト（ナビゲーション）
-    document.getElementById('nav-btn-logout')?.addEventListener('click', async () => {
-      await supabaseClient.auth.signOut();
-      await checkAuthStatus();
-    });
-
-    // プロフィール編集ボタン（ナビゲーション）
-    document.getElementById('nav-btn-profile-edit')?.addEventListener('click', openProfileModal);
-
-    // ログインボタン（ナビゲーション）
-    document.getElementById('nav-btn-login')?.addEventListener('click', openAuthModal);
-
-    // プロフィール更新
-    document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      clearErrors();
-
-      const nickname = document.getElementById('profile-nickname').value.trim();
-      const avatarUrl = document.getElementById('profile-avatar-url').value.trim();
-
-      if (!nickname) {
-        showError('profile-error', 'ニックネームを入力してください');
-        return;
-      }
-
-      const { error } = await supabaseClient
-        .from('user_profiles')
-        .upsert({
-          id: currentUser.id,
-          display_name: nickname,
-          avatar_url: avatarUrl || null
-        });
-
-      if (error) {
-        showError('profile-error', 'プロフィールの更新に失敗しました: ' + error.message);
-        return;
-      }
-
-      showSuccess('profile-success', 'プロフィールを更新しました');
-      await loadUserProfile();
-      updateAuthUI();
-      await loadComments();
-
-      setTimeout(() => {
-        closeProfileModal();
-      }, 1500);
-    });
-
-    // ユーザープロフィール読み込み
-    async function loadUserProfile() {
-      if (!currentUser) return;
-
-      const { data, error } = await supabaseClient
-        .from('user_profiles')
-        .select('*')
-        .eq('id', currentUser.id)
-        .maybeSingle();
-
-      if (!error && data) {
-        userProfile = data;
+        console.error('Logout error:', error);
+      } else {
+        updateAuthUI(null);
       }
     }
 
-    // 認証状態チェック
-    async function checkAuthStatus() {
-      const { data: { user } } = await supabaseClient.auth.getUser();
-      currentUser = user;
-
-      if (currentUser) {
-        await loadUserProfile();
-      }
-
-      updateAuthUI();
-      await loadLikeStatus();
-      await loadComments();
-    }
-
-    // 認証UIを更新
-    function updateAuthUI() {
+    // UI更新
+    function updateAuthUI(user) {
       const navLoggedIn = document.getElementById('nav-logged-in');
-      const navUserName = document.getElementById('nav-user-name');
-      const navUserAvatar = document.getElementById('nav-user-avatar');
       const navBtnLogin = document.getElementById('nav-btn-login');
       const navBtnLogout = document.getElementById('nav-btn-logout');
+      const navUserName = document.getElementById('nav-user-name');
+      const navUserAvatar = document.getElementById('nav-user-avatar');
 
-      if (currentUser) {
-        // ニックネーム表示（優先順位: user_profiles.display_name → user_metadata.display_name → emailのプレフィックス）
-        const displayName = userProfile?.display_name ||
-                           currentUser.user_metadata?.display_name ||
-                           currentUser.email.split('@')[0];
+      if (user) {
+        navLoggedIn.style.display = 'block';
+        navBtnLogin.style.display = 'none';
+        navBtnLogout.style.display = 'block';
 
-        navUserName.textContent = displayName;
+        navUserName.textContent = user.user_metadata?.full_name || user.email || 'ユーザー';
 
-        // アバター表示
-        const avatarUrl = userProfile?.avatar_url || currentUser.user_metadata?.avatar_url;
-        if (avatarUrl) {
-          navUserAvatar.src = avatarUrl;
+        if (user.user_metadata?.avatar_url) {
+          navUserAvatar.src = user.user_metadata.avatar_url;
           navUserAvatar.style.display = 'block';
         } else {
           navUserAvatar.style.display = 'none';
         }
-
-        navLoggedIn.style.display = 'block';
-        navBtnLogin.style.display = 'none';
-        navBtnLogout.style.display = 'block';
       } else {
         navLoggedIn.style.display = 'none';
         navBtnLogin.style.display = 'block';
@@ -1688,629 +1057,155 @@
       }
     }
 
-    // いいね状態を読み込む
-    async function loadLikeStatus() {
-      try {
-        // 総いいね数を取得
-        const { data: regionData, error: regionError } = await supabaseClient
-          .from('regions')
-          .select('like_count')
-          .eq('slug', regionSlug)
-          .maybeSingle();
+    // 認証状態監視
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      updateAuthUI(session?.user || null);
+    });
 
-        if (!regionError && regionData) {
-          document.getElementById('region-like-count').textContent = regionData.like_count || 0;
+    // イベントリスナー
+    document.getElementById('nav-btn-login').addEventListener('click', () => {
+      openModal('login-modal');
+    });
+
+    document.getElementById('nav-btn-logout').addEventListener('click', signOut);
+
+    // 初期ロード時にセッション確認
+    (async () => {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
+    })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
         }
 
-        // ユーザーがログインしている場合、ユーザーのいいね状態を取得
-        if (currentUser) {
-          const { data: userLike, error: likeError } = await supabaseClient
-            .from('region_likes')
-            .select('*')
-            .eq('region_slug', regionSlug)
-            .eq('user_id', currentUser.id)
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
             .maybeSingle();
 
-          const likeButton = document.getElementById('region-like-button');
-          if (!likeError && userLike) {
-            likeButton.classList.add('liked');
-          } else {
-            likeButton.classList.remove('liked');
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
           }
         }
-      } catch (err) {
-        console.error('いいね状態読み込みエラー:', err);
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
       }
     }
 
-    // 地域いいねボタン
-    document.getElementById('region-like-button')?.addEventListener('click', async () => {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
 
-      const likeButton = document.getElementById('region-like-button');
-      const isLiked = likeButton.classList.contains('liked');
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
 
       if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('region_likes')
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
           .delete()
-          .eq('region_slug', regionSlug)
-          .eq('user_id', currentUser.id);
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
 
-        if (error) {
-          console.error('地域いいね取り消しエラー:', error);
-          return;
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
         }
 
-        likeButton.classList.remove('liked');
-      } else {
-        // いいねを追加する
-        const { error } = await supabaseClient
-          .from('region_likes')
-          .insert({
-            region_slug: regionSlug,
-            user_id: currentUser.id
-          });
+        const { error } = await query;
 
-        if (error) {
-          console.error('地域いいね追加エラー:', error);
-          if (error.code === '23503') {
-            alert('いいねの追加に失敗しました。地域データが登録されていない可能性があります。');
-          }
-          return;
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
         }
-
-        likeButton.classList.add('liked');
-      }
-
-      // いいね数を再読み込み
-      await loadLikeStatus();
-    });
-
-    // コメント投稿
-    document.getElementById('comment-submit')?.addEventListener('click', async () => {
-      console.log('[DEBUG] コメント投稿ボタンがクリックされました');
-      clearErrors();
-
-      if (!currentUser) {
-        console.log('[DEBUG] ユーザーが未ログイン');
-        openAuthModal();
-        return;
-      }
-
-      console.log('[DEBUG] 現在のユーザー:', currentUser.id);
-
-      const input = document.getElementById('comment-input');
-      const content = input.value.trim();
-
-      console.log('[DEBUG] コメント内容:', content, '文字数:', content.length);
-
-      if (!content || content.length < 1 || content.length > 1000) {
-        showError('comment-error', 'コメントは1文字以上1000文字以内で入力してください');
-        return;
-      }
-
-      try {
-        // プロフィールが存在しない場合は自動作成
-        if (!userProfile) {
-          console.log('[DEBUG] プロフィールを自動作成中...');
-          const displayName = currentUser.user_metadata?.display_name ||
-                             currentUser.email?.split('@')[0] ||
-                             'ユーザー' + currentUser.id.slice(0, 8);
-
-          const { error: profileError } = await supabaseClient
-            .from('user_profiles')
-            .upsert({
-              id: currentUser.id,
-              display_name: displayName
-            });
-
-          if (profileError) {
-            console.error('[DEBUG] プロフィール作成エラー:', profileError);
-          } else {
-            console.log('[DEBUG] プロフィール作成成功');
-          }
-
-          await loadUserProfile();
-        }
-
-        console.log('[DEBUG] コメントを投稿中...', {
-          region_slug: regionSlug,
-          user_id: currentUser.id,
-          content: content
-        });
-
-        const { data, error } = await supabaseClient
-          .from('region_comments')
-          .insert({
-            region_slug: regionSlug,
-            user_id: currentUser.id,
-            content: content
-          })
-          .select();
-
-        if (error) {
-          console.error('[DEBUG] コメント投稿エラー:', error);
-          showError('comment-error', 'コメントの投稿に失敗しました: ' + error.message);
-          alert('エラー詳細: ' + JSON.stringify(error, null, 2));
-          return;
-        }
-
-        console.log('[DEBUG] コメント投稿成功:', data);
-        input.value = '';
-
-        console.log('[DEBUG] コメント一覧を再読み込み中...');
-        await loadComments();
-        console.log('[DEBUG] コメント一覧の再読み込み完了');
-      } catch (err) {
-        console.error('[DEBUG] 例外発生:', err);
-        showError('comment-error', '予期しないエラーが発生しました: ' + err.message);
-        alert('例外詳細: ' + err.message);
-      }
-    });
-
-    // コメントを読み込む
-    async function loadComments() {
-      console.log('[DEBUG] コメント読み込み開始');
-      try {
-        console.log('[DEBUG] region_slug:', regionSlug);
-
-        // Step 1: コメントを取得
-        const { data: comments, error: commentsError } = await supabaseClient
-          .from('region_comments')
-          .select(`
-            id,
-            content,
-            like_count,
-            created_at,
-            user_id,
-            is_edited,
-            parent_comment_id
-          `)
-          .eq('region_slug', regionSlug)
-          .order('created_at', { ascending: false });
-
-        console.log('[DEBUG] コメント取得結果:', { comments, commentsError });
-
-        if (commentsError) {
-          console.error('[DEBUG] コメント読み込みエラー:', commentsError);
-          alert('コメント読み込みエラー: ' + commentsError.message);
-          return;
-        }
-
-        const commentsList = document.getElementById('comments-list');
-        console.log('[DEBUG] コメントリスト要素:', commentsList);
-
-        if (!commentsList) {
-          console.error('[DEBUG] コメントリスト要素が見つかりません');
-          return;
-        }
-
-        commentsList.innerHTML = '';
-
-        if (!comments || comments.length === 0) {
-          console.log('[DEBUG] コメントがありません');
-          commentsList.innerHTML = '<p style="text-align: center; color: #999;">まだコメントがありません</p>';
-          return;
-        }
-
-        console.log('[DEBUG] コメント件数:', comments.length);
-
-        // Step 2: ユニークなuser_idを抽出
-        const userIds = [...new Set(comments.map(c => c.user_id))];
-        console.log('[DEBUG] ユーザーID数:', userIds.length);
-
-        // Step 3: user_profilesを取得
-        const { data: profiles, error: profilesError } = await supabaseClient
-          .from('user_profiles')
-          .select('id, display_name, avatar_url')
-          .in('id', userIds);
-
-        console.log('[DEBUG] プロフィール取得結果:', { profiles, profilesError });
-
-        // Step 4: user_idでマッピング
-        const profileMap = {};
-        if (profiles) {
-          profiles.forEach(profile => {
-            profileMap[profile.id] = profile;
-          });
-        }
-
-        // Step 5: コメントにプロフィール情報を追加
-        const commentsWithProfiles = comments.map(comment => ({
-          ...comment,
-          user_profiles: profileMap[comment.user_id] || {
-            display_name: 'ユーザー' + comment.user_id.slice(0, 8),
-            avatar_url: null
-          }
-        }));
-
-        // 親コメントと返信を分ける
-        const parentComments = commentsWithProfiles.filter(c => !c.parent_comment_id);
-        const replies = commentsWithProfiles.filter(c => c.parent_comment_id);
-
-        console.log('[DEBUG] 親コメント:', parentComments.length, '件、返信:', replies.length, '件');
-
-        for (const comment of parentComments) {
-          const commentEl = createCommentElement(comment);
-          commentsList.appendChild(commentEl);
-
-          // この親コメントへの返信を表示
-          const commentReplies = replies.filter(r => r.parent_comment_id === comment.id);
-          for (const reply of commentReplies) {
-            const replyEl = createCommentElement(reply, true);
-            commentsList.appendChild(replyEl);
-          }
-        }
-
-        console.log('[DEBUG] コメント表示完了');
-      } catch (err) {
-        console.error('[DEBUG] コメント読み込み例外:', err);
-        alert('コメント読み込み例外: ' + err.message);
-      }
-    }
-
-    // コメント要素を作成
-    function createCommentElement(comment, isReply = false) {
-      const div = document.createElement('div');
-      div.className = 'comment-item' + (isReply ? ' reply' : '');
-
-      const displayName = comment.user_profiles?.display_name || 'ユーザー' + comment.user_id.slice(0, 8);
-      const avatarUrl = comment.user_profiles?.avatar_url;
-      const date = new Date(comment.created_at).toLocaleString('ja-JP');
-      const isOwner = currentUser && currentUser.id === comment.user_id;
-
-      let html = `
-        <div class="comment-header">
-          <div class="comment-author">
-            ${avatarUrl ? `<img src="${avatarUrl}" alt="${displayName}">` : ''}
-            <span class="comment-author-name">${displayName}</span>
-          </div>
-          <span class="comment-date">${date}</span>
-        </div>
-        <div class="comment-content">${comment.content}</div>
-        <div class="comment-actions">
-          <button onclick="likeComment('${comment.id}')">♥️ ${comment.like_count || 0}</button>
-      `;
-
-      if (!isReply) {
-        html += `<button onclick="showReplyForm('${comment.id}', '${displayName}')">💬 返信</button>`;
-      }
-
-      if (isOwner) {
-        html += `<button onclick="deleteComment('${comment.id}')">🗑️ 削除</button>`;
-      }
-
-      html += `
-        </div>
-        <div id="reply-form-${comment.id}" class="reply-form-container"></div>
-      `;
-
-      div.innerHTML = html;
-      return div;
-    }
-
-    // コメントいいね
-    async function likeComment(commentId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      // いいね状態を確認
-      const { data: existingLike } = await supabaseClient
-        .from('region_comment_likes')
-        .select('*')
-        .eq('comment_id', commentId)
-        .eq('user_id', currentUser.id)
-        .maybeSingle();
-
-      if (existingLike) {
-        // いいね取り消し
-        await supabaseClient
-          .from('region_comment_likes')
-          .delete()
-          .eq('comment_id', commentId)
-          .eq('user_id', currentUser.id);
-      } else {
-        // いいね追加
-        await supabaseClient
-          .from('region_comment_likes')
-          .insert({
-            comment_id: commentId,
-            user_id: currentUser.id
-          });
-      }
-
-      await loadComments();
-    }
-
-    // コメント削除
-    async function deleteComment(commentId) {
-      if (!currentUser) return;
-
-      if (!confirm('このコメントを削除しますか？')) return;
-
-      const { error } = await supabaseClient
-        .from('region_comments')
-        .delete()
-        .eq('id', commentId)
-        .eq('user_id', currentUser.id);
-
-      if (error) {
-        alert('コメントの削除に失敗しました');
-        return;
-      }
-
-      await loadComments();
-    }
-
-    // 返信フォームを表示
-    function showReplyForm(parentCommentId, parentAuthor) {
-      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
-
-      replyForm.innerHTML = `
-        <textarea id="reply-input-${parentCommentId}" placeholder="@${parentAuthor} への返信（1-1000文字）" maxlength="1000" required>@${parentAuthor} </textarea>
-        <div class="reply-form-actions">
-          <button class="reply-cancel" onclick="hideReplyForm('${parentCommentId}')">キャンセル</button>
-          <button class="reply-submit" onclick="submitReply('${parentCommentId}')">返信</button>
-        </div>
-      `;
-
-      replyForm.classList.add('active');
-      document.getElementById(`reply-input-${parentCommentId}`).focus();
-    }
-
-    // 返信フォームを非表示
-    function hideReplyForm(parentCommentId) {
-      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
-      replyForm.classList.remove('active');
-      replyForm.innerHTML = '';
-    }
-
-    // 返信を投稿
-    async function submitReply(parentCommentId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const input = document.getElementById(`reply-input-${parentCommentId}`);
-      const content = input.value.trim();
-
-      if (!content || content.length < 1 || content.length > 1000) {
-        alert('返信は1文字以上1000文字以内で入力してください');
-        return;
-      }
-
-      const { error } = await supabaseClient
-        .from('region_comments')
-        .insert({
-          region_slug: regionSlug,
-          user_id: currentUser.id,
-          content: content,
-          parent_comment_id: parentCommentId
-        });
-
-      if (error) {
-        console.error('返信投稿エラー:', error);
-        alert('返信の投稿に失敗しました');
-        return;
-      }
-
-      hideReplyForm(parentCommentId);
-      await loadComments();
-    }
-
-    // 駐車場いいね機能
-    async function likeParkingSpot(parkingId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const button = document.querySelector(`[data-parking-id="${parkingId}"]`);
-      const isLiked = button?.classList.contains('liked');
-
-      if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('parking_spot_likes')
-          .delete()
-          .eq('parking_spot_id', parkingId)
-          .eq('user_id', currentUser.id);
-
-        if (error) {
-          console.error('駐車場いいね取り消しエラー:', error);
-          return;
-        }
-
-        button.classList.remove('liked');
       } else {
         // いいねを追加
         const { error } = await supabaseClient
-          .from('parking_spot_likes')
+          .from('likes')
           .insert({
-            parking_spot_id: parkingId,
-            user_id: currentUser.id
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
           });
 
-        if (error) {
-          console.error('駐車場いいね追加エラー:', error);
-          return;
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
         }
-
-        button.classList.add('liked');
-      }
-
-      // いいね数を更新
-      await loadParkingLikes();
-    }
-
-    // レストランいいね機能
-    async function likeRestaurant(restaurantId) {
-      if (!currentUser) {
-        openAuthModal();
-        return;
-      }
-
-      const button = document.querySelector(`[data-restaurant-id="${restaurantId}"]`);
-      const isLiked = button?.classList.contains('liked');
-
-      if (isLiked) {
-        // いいねを取り消す
-        const { error } = await supabaseClient
-          .from('restaurant_likes')
-          .delete()
-          .eq('restaurant_id', restaurantId)
-          .eq('user_id', currentUser.id);
-
-        if (error) {
-          console.error('レストランいいね取り消しエラー:', error);
-          return;
-        }
-
-        button.classList.remove('liked');
-      } else {
-        // いいねを追加
-        const { error } = await supabaseClient
-          .from('restaurant_likes')
-          .insert({
-            restaurant_id: restaurantId,
-            user_id: currentUser.id
-          });
-
-        if (error) {
-          console.error('レストランいいね追加エラー:', error);
-          return;
-        }
-
-        button.classList.add('liked');
-      }
-
-      // いいね数を更新
-      await loadRestaurantLikes();
-    }
-
-    // 駐車場のいいね数を読み込む
-    async function loadParkingLikes() {
-      try {
-        // 全ての駐車場IDを取得
-        const parkingButtons = document.querySelectorAll('.parking-like-btn');
-        const parkingIds = Array.from(parkingButtons).map(btn => btn.dataset.parkingId);
-
-        if (parkingIds.length === 0) return;
-
-        // いいね数を一括取得
-        const { data: likes, error } = await supabaseClient
-          .from('parking_spot_likes')
-          .select('parking_spot_id, user_id')
-          .in('parking_spot_id', parkingIds);
-
-        if (error) {
-          console.error('駐車場いいね数読み込みエラー:', error);
-          return;
-        }
-
-        // 各駐車場のいいね数を集計
-        const likeCounts = {};
-        const userLikes = new Set();
-
-        likes?.forEach(like => {
-          likeCounts[like.parking_spot_id] = (likeCounts[like.parking_spot_id] || 0) + 1;
-          if (currentUser && like.user_id === currentUser.id) {
-            userLikes.add(like.parking_spot_id);
-          }
-        });
-
-        // UIを更新
-        parkingButtons.forEach(btn => {
-          const parkingId = btn.dataset.parkingId;
-          const count = likeCounts[parkingId] || 0;
-          const countSpan = btn.querySelector('.parking-like-count');
-          if (countSpan) {
-            countSpan.textContent = count;
-          }
-
-          if (userLikes.has(parkingId)) {
-            btn.classList.add('liked');
-          } else {
-            btn.classList.remove('liked');
-          }
-        });
-      } catch (err) {
-        console.error('駐車場いいね数読み込みエラー:', err);
       }
     }
-
-    // レストランのいいね数を読み込む
-    async function loadRestaurantLikes() {
-      try {
-        // 全てのレストランIDを取得
-        const restaurantButtons = document.querySelectorAll('.restaurant-like-btn');
-        const restaurantIds = Array.from(restaurantButtons).map(btn => parseInt(btn.dataset.restaurantId));
-
-        if (restaurantIds.length === 0) return;
-
-        // いいね数を一括取得
-        const { data: likes, error } = await supabaseClient
-          .from('restaurant_likes')
-          .select('restaurant_id, user_id')
-          .in('restaurant_id', restaurantIds);
-
-        if (error) {
-          console.error('レストランいいね数読み込みエラー:', error);
-          return;
-        }
-
-        // 各レストランのいいね数を集計
-        const likeCounts = {};
-        const userLikes = new Set();
-
-        likes?.forEach(like => {
-          likeCounts[like.restaurant_id] = (likeCounts[like.restaurant_id] || 0) + 1;
-          if (currentUser && like.user_id === currentUser.id) {
-            userLikes.add(like.restaurant_id);
-          }
-        });
-
-        // UIを更新
-        restaurantButtons.forEach(btn => {
-          const restaurantId = parseInt(btn.dataset.restaurantId);
-          const count = likeCounts[restaurantId] || 0;
-          const countSpan = btn.querySelector('.restaurant-like-count');
-          if (countSpan) {
-            countSpan.textContent = count;
-          }
-
-          if (userLikes.has(restaurantId)) {
-            btn.classList.add('liked');
-          } else {
-            btn.classList.remove('liked');
-          }
-        });
-      } catch (err) {
-        console.error('レストランいいね数読み込みエラー:', err);
-      }
-    }
-
-    // 初期化
-    checkAuthStatus();
-    loadParkingLikes();
-    loadRestaurantLikes();
-
-    // 認証状態の変更を監視
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
-        checkAuthStatus();
-        loadParkingLikes();
-        loadRestaurantLikes();
-      }
-    });
   </script>
 </body>
 </html>

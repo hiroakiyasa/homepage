@@ -186,6 +186,46 @@
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -328,12 +368,193 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Authentication UI Styles */
+    .nav-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      margin-bottom: 20px;
+    }
+
+    .nav-auth {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-user-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .btn-login, .btn-logout {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-login {
+      background: #1976d2;
+      color: white;
+    }
+
+    .btn-login:hover {
+      background: #1565c0;
+    }
+
+    .btn-logout {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-logout:hover {
+      background: #d32f2f;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #000;
+    }
+
+    .btn-google {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .btn-google:hover {
+      background: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div style="margin-bottom: 20px;">
+    <div class="nav-header">
       <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+
+      <div class="nav-auth">
+        <div id="nav-logged-in" style="display: none;">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
+            <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
+            <span id="nav-user-name" class="nav-user-name"></span>
+          </a>
+        </div>
+        <button id="nav-btn-login" class="btn-login">ログイン</button>
+        <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
+      </div>
     </div>
 
     <div class="header">
@@ -365,15 +586,112 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 浅草</strong>
-            <a href="https://www.google.com/maps?q=35.7136174,139.792416" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.71359743525323,139.79476238518941" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: コインパーク西浅草３丁目第４</strong>
+              <strong>🥇 1位: パラカ浅草第１３</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="パラカ浅草第１３" data-lat="35.716861" data-lng="139.798004" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.716861,139.798004" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%91%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (467m)</div>
+                <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (120m)</div>
+                <div class="facility-item">🚻 富士公園トイレ (190m)</div>
+                <div class="facility-item">♨️ 足湯カフェ すくなひこな (0.3km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
+            <div class="parking-card-header">
+              <strong>🥈 2位: パラカ浅草第１２</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="パラカ浅草第１２" data-lat="35.717386" data-lng="139.796977" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.717386,139.796977" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%91%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (467m)</div>
+                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (99m)</div>
+                <div class="facility-item">🚻 富士公園トイレ (134m)</div>
+                <div class="facility-item">♨️ 曙湯 (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
+            <div class="parking-card-header">
+              <strong>🥉 3位: リパーク浅草３丁目第５</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="リパーク浅草３丁目第５" data-lat="35.717186" data-lng="139.797066" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.717186,139.797066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%85%E8%8D%89%EF%BC%93%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (450m)</div>
+                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (109m)</div>
+                <div class="facility-item">🚻 富士公園トイレ (153m)</div>
+                <div class="facility-item">♨️ 曙湯 (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <strong>🔵 4位: コインパーク西浅草３丁目第４</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="コインパーク西浅草３丁目第４" data-lat="35.715103" data-lng="139.790277" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.715103,139.790277" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E8%A5%BF%E6%B5%85%E8%8D%89%EF%BC%93%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -381,7 +699,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (254m)</div>
+                <div>📍 徒歩約6分 (439m)</div>
                 <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
               </div>
 
@@ -396,11 +714,15 @@
             </div>
           </div>
 
-          <!-- 駐車場2 -->
-          <div class="parking-card" onclick="showMarker('parking_1')">
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
             <div class="parking-card-header">
-              <strong>🥈 2位: パラカ浅草第１０</strong>
+              <strong>🔵 5位: パラカ浅草第１０</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="パラカ浅草第１０" data-lat="35.711903" data-lng="139.794316" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.711903,139.794316" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%91%EF%BC%90" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -408,7 +730,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (257m)</div>
+                <div>📍 徒歩約3分 (193m)</div>
                 <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
               </div>
 
@@ -423,11 +745,15 @@
             </div>
           </div>
 
-          <!-- 駐車場3 -->
-          <div class="parking-card" onclick="showMarker('parking_2')">
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
-              <strong>🥉 3位: パークジャパン浅草第３</strong>
+              <strong>🔵 6位: パークジャパン浅草第３</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="パークジャパン浅草第３" data-lat="35.715861" data-lng="139.794227" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.715861,139.794227" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -435,7 +761,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (299m)</div>
+                <div>📍 徒歩約4分 (257m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
               </div>
 
@@ -450,11 +776,15 @@
             </div>
           </div>
 
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
             <div class="parking-card-header">
-              <strong>🔵 4位: パークジャパン浅草第２</strong>
+              <strong>🔵 7位: パークジャパン浅草第２</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="パークジャパン浅草第２" data-lat="35.717644" data-lng="139.793141" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.717644,139.793141" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -462,7 +792,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約6分 (453m)</div>
+                <div>📍 徒歩約6分 (474m)</div>
                 <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
               </div>
 
@@ -477,11 +807,15 @@
             </div>
           </div>
 
-          <!-- 駐車場5 -->
-          <div class="parking-card" onclick="showMarker('parking_4')">
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
             <div class="parking-card-header">
-              <strong>🔵 5位: パークジャパン浅草第５</strong>
+              <strong>🔵 8位: パークジャパン浅草第５</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="パークジャパン浅草第５" data-lat="35.717661" data-lng="139.793141" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.717661,139.793141" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -489,7 +823,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約6分 (455m)</div>
+                <div>📍 徒歩約6分 (475m)</div>
                 <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
               </div>
 
@@ -504,38 +838,15 @@
             </div>
           </div>
 
-          <!-- 駐車場6 -->
-          <div class="parking-card" onclick="showMarker('parking_5')">
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <strong>🔵 6位: 千束１丁目</strong>
+              <strong>🔵 9位: エコロパーク　西浅草第３</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.718019,139.792066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E5%8D%83%E6%9D%9F%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約7分 (491m)</div>
-                <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (200m)</div>
-                <div class="facility-item">🚻 千束公園トイレ (185m)</div>
-                <div class="facility-item">♨️ ベッセルイン浅草 つくばエクスプレス (0.1km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場7 -->
-          <div class="parking-card" onclick="showMarker('parking_6')">
-            <div class="parking-card-header">
-              <strong>🔵 7位: エコロパーク　西浅草第３</strong>
-              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="エコロパーク　西浅草第３" data-lat="35.715261" data-lng="139.790316" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.715261,139.790316" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E8%A5%BF%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -543,7 +854,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (264m)</div>
+                <div>📍 徒歩約6分 (442m)</div>
                 <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
               </div>
 
@@ -558,11 +869,15 @@
             </div>
           </div>
 
-          <!-- 駐車場8 -->
-          <div class="parking-card" onclick="showMarker('parking_7')">
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
             <div class="parking-card-header">
-              <strong>🔵 8位: パークジャパン西浅草第１</strong>
+              <strong>🔵 10位: パークジャパン西浅草第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="パークジャパン西浅草第１" data-lat="35.716336" data-lng="139.791666" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.716336,139.791666" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E8%A5%BF%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -570,7 +885,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (310m)</div>
+                <div>📍 徒歩約6分 (414m)</div>
                 <div class="parking-fee">💰 ¥1,300 (18:00-8:00)</div>
               </div>
 
@@ -580,60 +895,6 @@
                 <div class="facility-item">🏪 コンビニ (115m)</div>
                 <div class="facility-item">🚻 金竜公園トイレ (153m)</div>
                 <div class="facility-item">♨️ ベッセルイン浅草 つくばエクスプレス (0.2km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場9 -->
-          <div class="parking-card" onclick="showMarker('parking_8')">
-            <div class="parking-card-header">
-              <strong>🔵 9位: ナビパーク浅草第５</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.716586,139.792927" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%8A%E3%83%93%E3%83%91%E3%83%BC%E3%82%AF%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約5分 (334m)</div>
-                <div class="parking-fee">💰 ¥1,400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (45m)</div>
-                <div class="facility-item">🚻 金竜公園トイレ (263m)</div>
-                <div class="facility-item">♨️ ベッセルイン浅草 つくばエクスプレス (0.2km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
-            <div class="parking-card-header">
-              <strong>🔵 10位: パークジャパン浅草第１</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.717453,139.793305" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%B5%85%E8%8D%89%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約6分 (434m)</div>
-                <div class="parking-fee">💰 ¥1,400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (72m)</div>
-                <div class="facility-item">🚻 千束公園トイレ (161m)</div>
-                <div class="facility-item">♨️ ベッセルイン浅草 つくばエクスプレス (0.1km)</div>
               </div>
 
             </div>
@@ -650,34 +911,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>千葉屋</h3>
-
-          <span class="restaurant-genre">焼き芋・大学芋</span>
-
-          <div class="restaurant-address">📍 東京都台東区浅草3-9-10</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.71686263789708,139.79489538356262" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>浅草浪花家</h3>
-
-          <span class="restaurant-genre">たい焼き・大判焼き</span>
-
-          <div class="restaurant-address">📍 東京都台東区浅草2-12-4</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.71482735237614,139.7927825152297" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%B5%85%E8%8D%89%E6%B5%AA%E8%8A%B1%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>フルーツパーラーゴトー</h3>
 
           <span class="restaurant-genre">フルーツパーラー</span>
@@ -685,27 +918,53 @@
           <div class="restaurant-address">📍 東京都台東区浅草2-15-4</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="フルーツパーラーゴトー" data-lat="35.71576153789743" data-lng="139.79381508355226" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.71576153789743,139.79381508355226" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%E3%83%91%E3%83%BC%E3%83%A9%E3%83%BC%E3%82%B4%E3%83%88%E3%83%BC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>麺 みつヰ</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>亀十</h3>
 
-          <span class="restaurant-genre">ラーメン</span>
+          <span class="restaurant-genre">和菓子</span>
 
-          <div class="restaurant-address">📍 東京都台東区寿2-9-15</div>
+          <div class="restaurant-address">📍 東京都台東区雷門2-18-11</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.70954263790027,139.7903308834919" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%BA%BA%20%E3%81%BF%E3%81%A4%E3%83%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="亀十" data-lat="35.71073333790157" data-lng="139.79678288349936" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.71073333790157,139.79678288349936" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E4%BA%80%E5%8D%81" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>千葉屋</h3>
+
+          <span class="restaurant-genre">焼き芋・大学芋</span>
+
+          <div class="restaurant-address">📍 東京都台東区浅草3-9-10</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="千葉屋" data-lat="35.71686263789708" data-lng="139.79489538356262" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.71686263789708,139.79489538356262" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>鷹匠壽</h3>
 
           <span class="restaurant-genre">鳥料理</span>
@@ -713,8 +972,30 @@
           <div class="restaurant-address">📍 東京都台東区雷門2-14-6</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="鷹匠壽" data-lat="35.7104477379012" data-lng="139.79506728349767" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.7104477379012,139.79506728349767" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E9%B7%B9%E5%8C%A0%E5%A3%BD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>徳太樓</h3>
+
+          <span class="restaurant-genre">和菓子</span>
+
+          <div class="restaurant-address">📍 東京都台東区浅草3-36-2</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="徳太樓" data-lat="35.717563337896785" data-lng="139.7953228835694" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.717563337896785,139.7953228835694" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%BE%B3%E5%A4%AA%E6%A8%93" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -730,6 +1011,262 @@
         iframe.contentWindow.showMarker(markerId);
         // 地図までスクロール
         iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('login-modal')">&times;</span>
+      <h2 style="margin-bottom: 20px;">ログイン</h2>
+
+      <div id="login-error" class="error-message" style="display: none;"></div>
+
+      <button id="google-login" class="btn-google" onclick="signInWithGoogle()">
+        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+        Googleでログイン
+      </button>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
+
+    // モーダル制御
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+    }
+
+    // エラー表示
+    function showError(elementId, message) {
+      const el = document.getElementById(elementId);
+      el.textContent = message;
+      el.style.display = 'block';
+    }
+
+    function hideError(elementId) {
+      document.getElementById(elementId).style.display = 'none';
+    }
+
+    // Google OAuth
+    async function signInWithGoogle() {
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? 'http://localhost:8000' + window.location.pathname
+            : 'https://trailfusionai.com' + window.location.pathname
+        }
+      });
+
+      if (error) {
+        showError('login-error', error.message);
+      }
+    }
+
+    // ログアウト
+    async function signOut() {
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) {
+        console.error('Logout error:', error);
+      } else {
+        updateAuthUI(null);
+      }
+    }
+
+    // UI更新
+    function updateAuthUI(user) {
+      const navLoggedIn = document.getElementById('nav-logged-in');
+      const navBtnLogin = document.getElementById('nav-btn-login');
+      const navBtnLogout = document.getElementById('nav-btn-logout');
+      const navUserName = document.getElementById('nav-user-name');
+      const navUserAvatar = document.getElementById('nav-user-avatar');
+
+      if (user) {
+        navLoggedIn.style.display = 'block';
+        navBtnLogin.style.display = 'none';
+        navBtnLogout.style.display = 'block';
+
+        navUserName.textContent = user.user_metadata?.full_name || user.email || 'ユーザー';
+
+        if (user.user_metadata?.avatar_url) {
+          navUserAvatar.src = user.user_metadata.avatar_url;
+          navUserAvatar.style.display = 'block';
+        } else {
+          navUserAvatar.style.display = 'none';
+        }
+      } else {
+        navLoggedIn.style.display = 'none';
+        navBtnLogin.style.display = 'block';
+        navBtnLogout.style.display = 'none';
+      }
+    }
+
+    // 認証状態監視
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      updateAuthUI(session?.user || null);
+    });
+
+    // イベントリスナー
+    document.getElementById('nav-btn-login').addEventListener('click', () => {
+      openModal('login-modal');
+    });
+
+    document.getElementById('nav-btn-logout').addEventListener('click', signOut);
+
+    // 初期ロード時にセッション確認
+    (async () => {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
+    })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
       }
     }
   </script>

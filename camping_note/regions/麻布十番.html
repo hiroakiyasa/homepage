@@ -186,6 +186,46 @@
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -507,10 +547,10 @@
 
       <div class="nav-auth">
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-          </div>
+          </a>
         </div>
         <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
@@ -546,32 +586,36 @@
           <!-- エリア中心 -->
           <div class="area-center-card" onclick="showMarker('area_center')">
             <strong>🔴 エリア中心: 麻布十番</strong>
-            <a href="https://www.google.com/maps?q=35.6551789,139.7371506" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/maps?q=35.65560852932169,139.7352600800399" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
           </div>
 
 
           <!-- 駐車場1 -->
           <div class="parking-card" onclick="showMarker('parking_0')">
             <div class="parking-card-header">
-              <strong>🥇 1位: パラカ港区三田第７</strong>
+              <strong>🥇 1位: 六本木ヒルズ　Ｐ１１</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.65355,139.740398" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B8%AF%E5%8C%BA%E4%B8%89%E7%94%B0%E7%AC%AC%EF%BC%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="0" data-spot-name="六本木ヒルズ　Ｐ１１" data-lat="35.658741" data-lng="139.731948" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.658741,139.731948" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%83%92%E3%83%AB%E3%82%BA%E3%80%80%EF%BC%B0%EF%BC%91%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (345m)</div>
-                <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
+                <div>📍 徒歩約6分 (460m)</div>
+                <div class="parking-fee">💰 ¥3,000 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (149m)</div>
-                <div class="facility-item">🚻 中ノ橋際公衆トイレ (207m)</div>
-                <div class="facility-item">♨️ 麻布黒美水温泉 竹の湯 (0.6km)</div>
+                <div class="facility-item">🏪 コンビニ (277m)</div>
+                <div class="facility-item">🚻 十番通宮村町公衆トイレ (190m)</div>
+                <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.3km)</div>
               </div>
 
             </div>
@@ -580,25 +624,29 @@
           <!-- 駐車場2 -->
           <div class="parking-card" onclick="showMarker('parking_1')">
             <div class="parking-card-header">
-              <strong>🥈 2位: リパーク三田１丁目</strong>
+              <strong>🥈 2位: リパーク六本木けやき坂下</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.655075,139.739998" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%89%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+                <button class="btn-like" data-spot-type="parking" data-spot-id="1" data-spot-name="リパーク六本木けやき坂下" data-lat="35.657958" data-lng="139.732373" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.657958,139.732373" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%81%91%E3%82%84%E3%81%8D%E5%9D%82%E4%B8%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (258m)</div>
-                <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
+                <div>📍 徒歩約5分 (370m)</div>
+                <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
               </div>
 
 
               <div style="color: #666; flex-shrink: 0;">|</div>
               <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (54m)</div>
-                <div class="facility-item">🚻 中ノ橋際公衆トイレ (165m)</div>
-                <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.6km)</div>
+                <div class="facility-item">🏪 コンビニ (359m)</div>
+                <div class="facility-item">🚻 十番通宮村町公衆トイレ (97m)</div>
+                <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.2km)</div>
               </div>
 
             </div>
@@ -607,35 +655,12 @@
           <!-- 駐車場3 -->
           <div class="parking-card" onclick="showMarker('parking_2')">
             <div class="parking-card-header">
-              <strong>🥉 3位: クレアスパーク　エクシードメゾン三田</strong>
+              <strong>🥉 3位: 麻布十番ＭＡＸパーキング</strong>
               <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.651117,139.737648" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%AF%E3%83%AC%E3%82%A2%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E3%82%A8%E3%82%AF%E3%82%B7%E3%83%BC%E3%83%89%E3%83%A1%E3%82%BE%E3%83%B3%E4%B8%89%E7%94%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約6分 (454m)</div>
-                <div class="parking-fee">💰 ¥2,400 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (271m)</div>
-                <div class="facility-item">🚻 二ノ橋際公衆トイレ (199m)</div>
-                <div class="facility-item">♨️ 麻布黒美水温泉 竹の湯 (0.3km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場4 -->
-          <div class="parking-card" onclick="showMarker('parking_3')">
-            <div class="parking-card-header">
-              <strong>🔵 4位: 麻布十番ＭＡＸパーキング</strong>
-              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="2" data-spot-name="麻布十番ＭＡＸパーキング" data-lat="35.655966" data-lng="139.733935" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.655966,139.733935" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA%EF%BC%AD%EF%BC%A1%EF%BC%B8%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -643,7 +668,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (304m)</div>
+                <div>📍 徒歩約2分 (126m)</div>
                 <div class="parking-fee">💰 ¥8,400 (18:00-8:00)</div>
               </div>
 
@@ -658,11 +683,15 @@
             </div>
           </div>
 
-          <!-- 駐車場5 -->
-          <div class="parking-card" onclick="showMarker('parking_4')">
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
             <div class="parking-card-header">
-              <strong>🔵 5位: エコロパーク麻布十番第１</strong>
+              <strong>🔵 4位: エコロパーク麻布十番第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="3" data-spot-name="エコロパーク麻布十番第１" data-lat="35.655636" data-lng="139.733687" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.655636,139.733687" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -670,7 +699,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約4分 (317m)</div>
+                <div>📍 徒歩約2分 (142m)</div>
                 <div class="parking-fee">💰 ¥11,200 (18:00-8:00)</div>
               </div>
 
@@ -685,11 +714,46 @@
             </div>
           </div>
 
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <strong>🔵 5位: ユアー・パーキング元麻布第１駐車場</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="4" data-spot-name="ユアー・パーキング元麻布第１駐車場" data-lat="35.656141" data-lng="139.731812" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.656141,139.731812" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%A6%E3%82%A2%E3%83%BC%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E5%85%83%E9%BA%BB%E5%B8%83%E7%AC%AC%EF%BC%91%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (317m)</div>
+                <div class="parking-fee">💰 ¥12,600 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (408m)</div>
+                <div class="facility-item">🚻 十番通宮村町公衆トイレ (126m)</div>
+                <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
           <!-- 駐車場6 -->
           <div class="parking-card" onclick="showMarker('parking_5')">
             <div class="parking-card-header">
               <strong>🔵 6位: ザ・パーク六本木５丁目第１</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="5" data-spot-name="ザ・パーク六本木５丁目第１" data-lat="35.658125" data-lng="139.735873" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.658125,139.735873" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E5%85%AD%E6%9C%AC%E6%9C%A8%EF%BC%95%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -697,7 +761,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (348m)</div>
+                <div>📍 徒歩約4分 (286m)</div>
                 <div class="parking-fee">💰 ¥12,600 (18:00-8:00)</div>
               </div>
 
@@ -717,6 +781,10 @@
             <div class="parking-card-header">
               <strong>🔵 7位: 大栄パーク麻布</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="6" data-spot-name="大栄パーク麻布" data-lat="35.655808" data-lng="139.736462" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.655808,139.736462" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E5%A4%A7%E6%A0%84%E3%83%91%E3%83%BC%E3%82%AF%E9%BA%BB%E5%B8%83" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -724,7 +792,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約2分 (94m)</div>
+                <div>📍 徒歩約2分 (111m)</div>
                 <div class="parking-fee">💰 ¥12,600 (18:00-8:00)</div>
               </div>
 
@@ -744,6 +812,10 @@
             <div class="parking-card-header">
               <strong>🔵 8位: リパーク六本木５丁目第４</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="7" data-spot-name="リパーク六本木５丁目第４" data-lat="35.657908" data-lng="139.735284" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.657908,139.735284" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%85%AD%E6%9C%AC%E6%9C%A8%EF%BC%95%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -751,7 +823,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (348m)</div>
+                <div>📍 徒歩約4分 (256m)</div>
                 <div class="parking-fee">💰 ¥13,860 (18:00-8:00)</div>
               </div>
 
@@ -769,8 +841,43 @@
           <!-- 駐車場9 -->
           <div class="parking-card" onclick="showMarker('parking_8')">
             <div class="parking-card-header">
-              <strong>🔵 9位: リパーク六本木５丁目第５</strong>
+              <strong>🔵 9位: エコロパーク元麻布</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="8" data-spot-name="エコロパーク元麻布" data-lat="35.654017" data-lng="139.731732" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
+                <a href="https://www.google.com/maps?q=35.654017,139.731732" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E5%85%83%E9%BA%BB%E5%B8%83" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (365m)</div>
+                <div class="parking-fee">💰 ¥16,800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (295m)</div>
+                <div class="facility-item">🚻 宮村児童遊園トイレ (172m)</div>
+                <div class="facility-item">♨️ 麻布黒美水温泉 竹の湯 (0.4km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
+            <div class="parking-card-header">
+              <strong>🔵 10位: リパーク六本木５丁目第５</strong>
+              <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="9" data-spot-name="リパーク六本木５丁目第５" data-lat="35.658125" data-lng="139.735198" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=35.658125,139.735198" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E5%85%AD%E6%9C%AC%E6%9C%A8%EF%BC%95%E4%B8%81%E7%9B%AE%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -778,7 +885,7 @@
 
             <div class="parking-info">
               <div class="parking-info-left">
-                <div>📍 徒歩約5分 (372m)</div>
+                <div>📍 徒歩約4分 (280m)</div>
                 <div class="parking-fee">💰 ¥18,480 (18:00-8:00)</div>
               </div>
 
@@ -788,33 +895,6 @@
                 <div class="facility-item">🏪 コンビニ (191m)</div>
                 <div class="facility-item">🚻 十番通宮村町公衆トイレ (265m)</div>
                 <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.2km)</div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 駐車場10 -->
-          <div class="parking-card" onclick="showMarker('parking_9')">
-            <div class="parking-card-header">
-              <strong>🔵 10位: エコロパーク　麻布十番第１</strong>
-              <div class="parking-card-buttons">
-                <a href="https://www.google.com/maps?q=35.6555,139.733512" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
-            </div>
-
-            <div class="parking-info">
-              <div class="parking-info-left">
-                <div>📍 徒歩約5分 (331m)</div>
-                <div class="parking-fee">💰 ¥21,000 (18:00-8:00)</div>
-              </div>
-
-
-              <div style="color: #666; flex-shrink: 0;">|</div>
-              <div class="parking-facilities">
-                <div class="facility-item">🏪 コンビニ (269m)</div>
-                <div class="facility-item">🚻 十番通宮村町公衆トイレ (198m)</div>
-                <div class="facility-item">♨️ LEDIAN SPA 麻布十番 (0.1km)</div>
               </div>
 
             </div>
@@ -831,34 +911,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>たきや</h3>
-
-          <span class="restaurant-genre">天ぷら</span>
-
-          <div class="restaurant-address">📍 東京都港区麻布十番2-8-6 ラベイユ麻布十番 2F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.65560183791684,139.73477658298594" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%9F%E3%81%8D%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>麻布 幸村</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 東京都港区麻布十番1-5-5 湯建麻布十番ビル 3F</div>
-
-          <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.65733190127004,139.7329392990647" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%BA%BB%E5%B8%83%20%E5%B9%B8%E6%9D%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>鮨 めい乃</h3>
 
           <span class="restaurant-genre">寿司</span>
@@ -866,13 +918,17 @@
           <div class="restaurant-address">📍 東京都港区麻布十番1-6-1 THE V-CITY 麻布十番 PLACE 6F</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="鮨 めい乃" data-lat="35.65674420887881" data-lng="139.7342289412407" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.65674420887881,139.7342289412407" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E9%AE%A8%20%E3%82%81%E3%81%84%E4%B9%83" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>中国飯店 富麗華</h3>
 
           <span class="restaurant-genre">中華料理</span>
@@ -880,22 +936,66 @@
           <div class="restaurant-address">📍 東京都港区東麻布3-7-5</div>
 
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="中国飯店 富麗華" data-lat="35.65627483791761" data-lng="139.73848418299016" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=35.65627483791761,139.73848418299016" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E4%B8%AD%E5%9B%BD%E9%A3%AF%E5%BA%97%20%E5%AF%8C%E9%BA%97%E8%8F%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>膳司 水光庵</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>麻布 幸村</h3>
 
           <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 東京都港区東麻布2-14-8 フィル•パーク東麻布 1F</div>
+          <div class="restaurant-address">📍 東京都港区麻布十番1-5-5 湯建麻布十番ビル 3F</div>
 
           <div class="restaurant-buttons">
-            <a href="https://www.google.com/maps?q=35.657122693023986,139.7405702947064" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E8%86%B3%E5%8F%B8%20%E6%B0%B4%E5%85%89%E5%BA%B5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="麻布 幸村" data-lat="35.65733190127004" data-lng="139.7329392990647" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.65733190127004,139.7329392990647" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%BA%BB%E5%B8%83%20%E5%B9%B8%E6%9D%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>たきや</h3>
+
+          <span class="restaurant-genre">天ぷら</span>
+
+          <div class="restaurant-address">📍 東京都港区麻布十番2-8-6 ラベイユ麻布十番 2F</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="たきや" data-lat="35.65560183791684" data-lng="139.73477658298594" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.65560183791684,139.73477658298594" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%9F%E3%81%8D%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>鮓 ふじなが</h3>
+
+          <span class="restaurant-genre">寿司</span>
+
+          <div class="restaurant-address">📍 東京都港区麻布十番1-5-18 カートブラン麻布十番 4F</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="鮓 ふじなが" data-lat="35.65657513791591" data-lng="139.7337926829965" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.65657513791591,139.7337926829965" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%AE%93%20%E3%81%B5%E3%81%98%E3%81%AA%E3%81%8C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -936,7 +1036,15 @@
     const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
 
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Supabaseクライアント初期化（認証設定を明示的に指定）
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: 'pkce'
+      }
+    });
 
     // モーダル制御
     function openModal(modalId) {
@@ -1028,7 +1136,139 @@
     (async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
     })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
+      }
+    }
   </script>
 </body>
 </html>
