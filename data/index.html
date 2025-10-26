@@ -151,6 +151,198 @@
                 height: 500px;
             }
         }
+
+        /* Authentication UI Styles */
+        .nav-links {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        .nav-links-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-auth {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-user-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .btn-login, .btn-logout {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-login {
+            background: #1976d2;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background: #1565c0;
+        }
+
+        .btn-logout {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-logout:hover {
+            background: #d32f2f;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .btn-google {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-google:hover {
+            background: #f5f5f5;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #1565c0;
+        }
+
+        .form-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .success-message {
+            color: #4caf50;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -162,10 +354,28 @@
         </div>
 
         <div class="nav-links">
-            <a href="../index.html">← トップページ</a>
-            <a href="terms.html">利用規約</a>
-            <a href="privacy.html">プライバシーポリシー</a>
-            <a href="https://trailfusionai.com" target="_blank">TrailFusion AI</a>
+            <div class="nav-links-left">
+                <a href="../index.html">← トップページ</a>
+                <a href="terms.html">利用規約</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="https://trailfusionai.com" target="_blank">TrailFusion AI</a>
+            </div>
+
+            <div class="nav-auth">
+                <!-- ログイン状態 -->
+                <div id="nav-logged-in" style="display: none;">
+                    <div class="nav-user-info">
+                        <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
+                        <span id="nav-user-name" class="nav-user-name"></span>
+                    </div>
+                </div>
+
+                <!-- ログインボタン -->
+                <button id="nav-btn-login" class="btn-login">ログイン</button>
+
+                <!-- ログアウトボタン -->
+                <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
+            </div>
         </div>
 
         <div class="map-container">
@@ -8992,6 +9202,313 @@
                         <a href="${region.url}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #1976d2; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em;">車中泊スポットを見る</a>
                     </div>
                 `);
+        });
+    </script>
+
+    <!-- ログインモーダル -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeLoginModal()">×</button>
+            <h2>ログイン</h2>
+
+            <div class="login-options">
+                <button id="google-login" class="btn-google" onclick="signInWithGoogle()">
+                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+                    Googleでログイン
+                </button>
+
+                <div class="divider">または</div>
+
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input type="email" id="login-email" placeholder="email@example.com" />
+                </div>
+
+                <div class="form-group">
+                    <label>パスワード（6文字以上）</label>
+                    <input type="password" id="login-password" placeholder="••••••" />
+                </div>
+
+                <div id="login-error" class="error-message"></div>
+
+                <button onclick="handleLogin(event)" class="btn-submit">ログイン</button>
+
+                <div class="form-footer">
+                    <p>アカウントをお持ちでない方は<a href="#" onclick="event.preventDefault(); switchToSignup();">新規登録</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新規登録モーダル -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeSignupModal()">×</button>
+            <h2>新規登録</h2>
+
+            <div class="login-options">
+                <button id="google-signup" class="btn-google" onclick="signInWithGoogle()">
+                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+                    Googleで新規登録
+                </button>
+
+                <div class="divider">または</div>
+
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input type="email" id="signup-email" placeholder="email@example.com" />
+                </div>
+
+                <div class="form-group">
+                    <label>パスワード（6文字以上）</label>
+                    <input type="password" id="signup-password" placeholder="••••••" />
+                </div>
+
+                <div class="form-group">
+                    <label>ニックネーム（任意）</label>
+                    <input type="text" id="signup-nickname" placeholder="例: 旅好き太郎" />
+                </div>
+
+                <div id="signup-error" class="error-message"></div>
+                <div id="signup-success" class="success-message"></div>
+
+                <button onclick="handleSignup(event)" class="btn-submit">新規登録</button>
+
+                <div class="form-footer">
+                    <p>アカウントをお持ちの方は<a href="#" onclick="event.preventDefault(); switchToLogin();">ログイン</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase Authentication Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+
+        // Supabaseクライアント初期化
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let currentUser = null;
+        let userProfile = null;
+
+        // モーダル切り替え関数
+        function switchToSignup() {
+            closeLoginModal();
+            document.getElementById('signup-modal').classList.add('active');
+        }
+
+        function switchToLogin() {
+            closeSignupModal();
+            document.getElementById('login-modal').classList.add('active');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.remove('active');
+            clearErrors();
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.remove('active');
+            clearErrors();
+        }
+
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.add('active');
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            clearErrors();
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                showError('login-error', error.message);
+            } else {
+                closeLoginModal();
+            }
+        }
+
+        async function handleSignup(event) {
+            event.preventDefault();
+            clearErrors();
+
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const displayName = document.getElementById('signup-nickname').value;
+
+            const { data, error } = await supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: {
+                        display_name: displayName
+                    }
+                }
+            });
+
+            if (error) {
+                showError('signup-error', error.message);
+            } else {
+                showSuccess('signup-success', 'メールを確認して認証を完了してください');
+                setTimeout(() => {
+                    closeSignupModal();
+                }, 3000);
+            }
+        }
+
+        async function signInWithGoogle() {
+            const { data, error } = await supabaseClient.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                        ? 'http://localhost:8000' + window.location.pathname
+                        : 'https://trailfusionai.com/camping_note' + window.location.pathname.replace(/.*camping_note/, '')
+                }
+            });
+
+            if (error) {
+                showError('login-error', error.message);
+            }
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error-message, .success-message').forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+        }
+
+        function showError(elementId, message) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = message;
+                element.style.display = 'block';
+            }
+        }
+
+        function showSuccess(elementId, message) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = message;
+                element.style.display = 'block';
+            }
+        }
+
+        // ユーザープロファイル読み込み
+        async function loadUserProfile() {
+            if (!currentUser) return;
+
+            const { data, error } = await supabaseClient
+                .from('user_profiles')
+                .select('*')
+                .eq('id', currentUser.id)
+                .maybeSingle();
+
+            if (!error && data) {
+                userProfile = data;
+            }
+        }
+
+        // 認証状態チェック
+        async function checkAuthStatus() {
+            const { data: { user } } = await supabaseClient.auth.getUser();
+            currentUser = user;
+
+            if (currentUser) {
+                await loadUserProfile();
+            }
+
+            updateAuthUI();
+        }
+
+        // 認証UIを更新
+        function updateAuthUI() {
+            const navLoggedIn = document.getElementById('nav-logged-in');
+            const navUserName = document.getElementById('nav-user-name');
+            const navUserAvatar = document.getElementById('nav-user-avatar');
+            const navBtnLogin = document.getElementById('nav-btn-login');
+            const navBtnLogout = document.getElementById('nav-btn-logout');
+
+            if (currentUser) {
+                // ニックネーム表示（優先順位: user_profiles.display_name → user_metadata.display_name → emailのプレフィックス）
+                const displayName = userProfile?.display_name ||
+                    currentUser.user_metadata?.display_name ||
+                    currentUser.email.split('@')[0];
+
+                navUserName.textContent = displayName;
+
+                // アバター画像
+                const avatarUrl = userProfile?.avatar_url || currentUser.user_metadata?.avatar_url;
+                if (avatarUrl) {
+                    navUserAvatar.src = avatarUrl;
+                    navUserAvatar.style.display = 'block';
+                } else {
+                    navUserAvatar.style.display = 'none';
+                }
+
+                navLoggedIn.style.display = 'block';
+                navBtnLogin.style.display = 'none';
+                navBtnLogout.style.display = 'block';
+            } else {
+                navLoggedIn.style.display = 'none';
+                navBtnLogin.style.display = 'block';
+                navBtnLogout.style.display = 'none';
+            }
+        }
+
+        // モーダルイベントリスナーの設定
+        const loginButton = document.getElementById('nav-btn-login');
+        const logoutButton = document.getElementById('nav-btn-logout');
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+
+        if (loginButton) {
+            loginButton.addEventListener('click', openLoginModal);
+        }
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', async () => {
+                const { error } = await supabaseClient.auth.signOut();
+                if (error) {
+                    console.error('ログアウトエラー:', error);
+                }
+            });
+        }
+
+        // モーダル外クリックで閉じる
+        if (loginModal) {
+            loginModal.addEventListener('click', (e) => {
+                if (e.target.id === 'login-modal') {
+                    closeLoginModal();
+                }
+            });
+        }
+
+        if (signupModal) {
+            signupModal.addEventListener('click', (e) => {
+                if (e.target.id === 'signup-modal') {
+                    closeSignupModal();
+                }
+            });
+        }
+
+        // 初期化
+        checkAuthStatus();
+
+        // 認証状態の変更を監視
+        supabaseClient.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+                checkAuthStatus();
+            }
         });
     </script>
 </body>
