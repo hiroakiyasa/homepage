@@ -634,12 +634,14 @@
             </div>
 
             <div class="rankings-tabs">
-                <button class="rankings-tab active" data-type="parking">🚗 駐車場</button>
+                <button class="rankings-tab active" data-type="region">🗾 地域</button>
+                <button class="rankings-tab" data-type="parking">🚗 駐車場</button>
                 <button class="rankings-tab" data-type="restaurant">🍴 レストラン</button>
             </div>
 
             <div class="rankings-container">
-                <div class="rankings-scroll" id="parking-rankings">
+                <div class="rankings-scroll" id="region-rankings" style="display: flex;"></div>
+                <div class="rankings-scroll" id="parking-rankings" style="display: none;">
                     <!-- 駐車場ランキングがここに表示されます -->
                 </div>
                 <div class="rankings-scroll" id="restaurant-rankings" style="display: none;">
@@ -9872,6 +9874,9 @@
                 // レストランランキング表示
                 displayRankings('restaurant', data.restaurant);
 
+                // 地域ランキング表示
+                displayRankings('region', data.region || []);
+
             } catch (error) {
                 console.error('ランキング読み込みエラー:', error);
                 document.getElementById('rankings-updated').textContent =
@@ -9883,44 +9888,57 @@
             const container = document.getElementById(`${type}-rankings`);
 
             if (!items || items.length === 0) {
+                let typeName = type === "parking" ? "駐車場" : (type === "restaurant" ? "レストラン" : "地域");
                 container.innerHTML = `
                     <div style="padding: 40px; text-align: center; color: #999;">
-                        まだ${type === 'parking' ? '駐車場' : 'レストラン'}のいいねデータがありません。<br>
-                        お気に入りの場所にいいねしてみましょう！
+                        まだ${typeName}のランキングデータがありません。<br>
+                        ${type === "region" ? "準備中です..." : "お気に入りの場所にいいねしてみましょう！"}
                     </div>
                 `;
                 return;
             }
 
-            container.innerHTML = '';
+            container.innerHTML = "";
 
             items.forEach((item) => {
-                const card = createRankingCard(item);
+                const card = createRankingCard(type, item);
                 container.appendChild(card);
             });
         }
 
-        function createRankingCard(item) {
-            const card = document.createElement('div');
-            card.className = 'ranking-card';
+        function createRankingCard(type, item) {
+            const card = document.createElement("div");
+            card.className = "ranking-card";
 
             // メダル表示
             let medal = item.rank;
-            if (item.rank === 1) medal = '🥇';
-            else if (item.rank === 2) medal = '🥈';
-            else if (item.rank === 3) medal = '🥉';
+            if (item.rank === 1) medal = "🥇";
+            else if (item.rank === 2) medal = "🥈";
+            else if (item.rank === 3) medal = "🥉";
 
-            card.innerHTML = `
-                <div class="rank-badge">${medal}</div>
-                <h4>${item.spot_name}</h4>
-                <p class="like-info">❤️ ${item.like_count} いいね</p>
-                <p class="location-info">📍 ${item.nearest_region.name}</p>
-            `;
-
-            // クリックで地域ページへ遷移
-            card.addEventListener('click', () => {
-                window.location.href = item.nearest_region.url;
-            });
+            if (type === "region") {
+                // 地域ランキングカード
+                card.innerHTML = `
+                    <div class="rank-badge">${medal}</div>
+                    <h4>${item.region_name}</h4>
+                    <p class="like-info">🍴 ${item.restaurant_count} 店舗</p>
+                    <p class="location-info">📏 標高 ${item.elevation}m</p>
+                `;
+                card.addEventListener("click", () => {
+                    window.location.href = item.url;
+                });
+            } else {
+                // 駐車場/レストランランキングカード
+                card.innerHTML = `
+                    <div class="rank-badge">${medal}</div>
+                    <h4>${item.spot_name}</h4>
+                    <p class="like-info">❤️ ${item.like_count} いいね</p>
+                    <p class="location-info">📍 ${item.nearest_region.name}</p>
+                `;
+                card.addEventListener("click", () => {
+                    window.location.href = item.nearest_region.url;
+                });
+            }
 
             return card;
         }
@@ -9935,10 +9953,12 @@
 
                 // 表示の切り替え
                 const type = tab.dataset.type;
-                document.getElementById('parking-rankings').style.display =
-                    type === 'parking' ? 'flex' : 'none';
-                document.getElementById('restaurant-rankings').style.display =
-                    type === 'restaurant' ? 'flex' : 'none';
+                document.getElementById("region-rankings").style.display =
+                    type === "region" ? "flex" : "none";
+                document.getElementById("parking-rankings").style.display =
+                    type === "parking" ? "flex" : "none";
+                document.getElementById("restaurant-rankings").style.display =
+                    type === "restaurant" ? "flex" : "none";
             });
         });
 

@@ -166,6 +166,40 @@ async function getRestaurantRankings(regions) {
 }
 
 /**
+ * 地域ランキングを取得
+ * レストラン数とスポット情報に基づいてランキングを生成
+ */
+async function getRegionRankings(regions) {
+  console.log(`${colors.cyan}🗾 地域ランキングを生成中...${colors.reset}`);
+
+  // レストラン数でソートして上位10件を取得
+  const topRegions = regions
+    .filter(r => r.restaurantCount > 0)
+    .sort((a, b) => {
+      // レストラン数で降順ソート
+      if (b.restaurantCount !== a.restaurantCount) {
+        return b.restaurantCount - a.restaurantCount;
+      }
+      // レストラン数が同じ場合は標高が低い方を優先
+      return (a.elevation || 0) - (b.elevation || 0);
+    })
+    .slice(0, 10)
+    .map((region, index) => ({
+      rank: index + 1,
+      region_name: region.name,
+      file_name: region.fileName || region.name,
+      latitude: region.lat,
+      longitude: region.lng,
+      restaurant_count: region.restaurantCount || 0,
+      elevation: region.elevation || 0,
+      url: `regions/${(region.fileName || region.name).replace(/[\/\\:*?"<>|]/g, '_')}.html`
+    }));
+
+  console.log(`   ${colors.green}✓${colors.reset} ${topRegions.length}件の地域ランキングを生成しました`);
+  return topRegions;
+}
+
+/**
  * メイン処理
  */
 async function main() {
@@ -178,21 +212,34 @@ async function main() {
     // ランキング取得
     const parkingRankings = await getParkingRankings(regions);
     const restaurantRankings = await getRestaurantRankings(regions);
+    const regionRankings = await getRegionRankings(regions);
 
     // 出力データ作成
     const output = {
       generated_at: new Date().toISOString(),
       parking: parkingRankings,
-      restaurant: restaurantRankings
+      restaurant: restaurantRankings,
+      region: regionRankings
     };
 
-    // JSONファイルに保存
-    const outputPath = path.join(__dirname, 'data', 'rankings.json');
+    // camping_note/rankings.jsonに保存
+    const outputPath = path.join(__dirname, 'camping_note', 'rankings.json');
+
+    // camping_noteディレクトリが存在しない場合は作成
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+
     fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf8');
 
     console.log(`\n${colors.green}✅ ランキング生成完了${colors.reset}`);
     console.log(`   出力先: ${colors.cyan}${outputPath}${colors.reset}`);
     console.log(`   生成日時: ${colors.cyan}${new Date().toLocaleString('ja-JP')}${colors.reset}`);
+    console.log(`\n${colors.blue}📊 ランキング内容:${colors.reset}`);
+    console.log(`   🚗 駐車場: ${parkingRankings.length}件`);
+    console.log(`   🍴 レストラン: ${restaurantRankings.length}件`);
+    console.log(`   🗾 地域: ${regionRankings.length}件`);
 
   } catch (error) {
     console.error(`\n${colors.red}❌ エラー:${colors.reset}`, error.message);
