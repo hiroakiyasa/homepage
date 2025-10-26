@@ -1,0 +1,24 @@
+# TrailFusion AI - robots.txt
+# https://trailfusionai.com/
+
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://trailfusionai.com/sitemap.xml
+
+# クロール頻度の推奨設定
+Crawl-delay: 1
+
+# 特定のディレクトリを除外（必要に応じて）
+Disallow: /assets/js/
+Disallow: /assets/videos/
+
+# 特定のファイルタイプを除外
+Disallow: /*.pdf$
+
+# 優先的にインデックスしてほしいページ
+Allow: /index.html
+Allow: /camping.html
+Allow: /apps.html
+Allow: /camping_note/

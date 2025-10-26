@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "TrailFusion AI - Wohnmobil DIY & KI-Anwendungsentwicklung",
+    "description": "Von Wohnmobil-DIY-Erstellung bis zur KI-Anwendungsentwicklung. Praktischer Leitfaden zur Umwandlung eines HiAce in ein selbstgebautes Wohnmobil und Vorstellung innovativer KI-Apps."
+  },
+  "nav": {
+    "home": "Startseite",
+    "apps": "KI-Apps",
+    "camping": "Wohnmobil-Herstellung",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "line1": "Freies Reisen und",
+    "line2": "Innovative KI-Erfahrung",
+    "line3": "Erschaffung",
+    "description": "Verwirklichen Sie Ihre Träume mit Wohnmobil-DIY und KI-Anwendungen",
+    "campingButton": "Wohnmobil-Herstellung",
+    "appsButton": "KI-Apps",
+    "scrollText": "Details anzeigen"
+  },
+  "services": {
+    "title": "TrailFusion AI Dienstleistungen",
+    "subtitle": "Kombination von DIY-Expertise mit modernster KI-Technologie zur Unterstützung der Traumverwirklichung der Nutzer",
+    "camping": {
+      "title": "HiAce DIY Camping Leitfaden",
+      "description": "Wir bieten umfassende Leitfäden, damit auch Anfänger professionelle Wohnmobile bauen können. Wir konzentrieren uns besonders auf HiAce-Modifikationen und bieten vollständige Unterstützung bis zur 8-Nummer-Registrierung.",
+      "features": {
+        "f1": "Detailliertes Konstruktionshandbuch",
+        "f2": "Liste der benötigten Materialien und Werkzeuge",
+        "f3": "Checkliste für strukturelle Anforderungen",
+        "f4": "Galerie abgeschlossener Beispiele"
+      },
+      "cta": "Camping-Leitfaden anzeigen"
+    },
+    "ai": {
+      "title": "Innovative KI-Anwendungen",
+      "description": "Wir entwickeln und bieten 6 KI-gestützte Anwendungen zur Bereicherung des täglichen Lebens und Lernens. Mit modernster KI-Technologie machen wir das Leben der Nutzer bequemer und reicher.",
+      "features": {
+        "f1": "GP Teachers: KI-Englisch-Lern-App",
+        "f2": "VoiceLink KI-Dolmetscher: Echtzeit-Übersetzungs-App",
+        "f3": "Word Blaster: Englisch-Vokabel-Lernspiel",
+        "f4": "Andere umfassen Debattierübung und Arbeits-Timer"
+      },
+      "cta": "Apps anzeigen"
+    }
+  },
+  "about": {
+    "title": "Vertreter-Vorstellung",
+    "motto": "Das Leben kann immer verändert werden",
+    "subtitle": "Die Entschlossenheit, das zu tun, was man will, jetzt und nicht im Alter",
+    "callToAction": "Werden Sie sich uns nun nicht auf einem Abenteuer namens Leben ohne Reue anschließen?",
+    "followMe": "Folgen Sie mir",
+    "interests": "Hobbys & Interessen",
+    "tags": ["Kendo", "Wohnmobil", "DIY-Herstellung", "Japan-Tour", "Gourmet", "Heiße Quellen", "App-Entwicklung", "Marathon", "Bergsteigen"]
+  },
+  "mobileNav": {
+    "home": "Startseite",
+    "camping": "Wohnmobil-Herstellung",
+    "apps": "KI-Apps",
+    "contact": "Kontakt"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wenn Sie Fragen oder Beratung haben, zögern Sie nicht, uns zu kontaktieren.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Max Mustermann",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "example@mail.com",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Betreff Ihrer Anfrage",
+      "message": "Nachricht",
+      "messagePlaceholder": "Bitte schreiben Sie Ihre Fragen oder Beratungsinhalte",
+      "charCount": "Zeichen",
+      "submit": "Senden"
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "email": "E-Mail-Adresse",
+      "youtube": "TrailFusion AI Kanal"
+    },
+    "messages": {
+      "success": "Wir haben Ihre Anfrage erhalten. Vielen Dank.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "sending": "Wird gesendet...",
+      "charCount": "Zeichen"
+    }
+  },
+  "form": {
+    "sending": "Wird gesendet...",
+    "success": "Wir haben Ihre Anfrage erhalten. Vielen Dank.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "charCount": "Zeichen"
+  },
+  "apps": {
+    "meta": {
+      "title": "TrailFusion AI - Innovative KI-Anwendungsentwicklung und Showcase",
+      "description": "Entwickeln und präsentieren Sie innovative Anwendungen mit der neuesten KI-Technologie. Probieren Sie verschiedene KI-Apps aus, einschließlich Debate Master, Wood Golem, VoiceLink, Word Blaster und mehr."
+    },
+    "hero": {
+      "title": "Erweitern Sie Ihre Möglichkeiten<br>mit innovativen Apps",
+      "description": "TrailFusion AI entwickelt innovative Anwendungen mit KI-Technologie. Wir bieten modernste Lösungen in verschiedenen Bereichen wie Sprachenlernen, Spiele und Produktivitätssteigerung.",
+      "cta": "Apps anzeigen"
+    },
+    "gpTeachers": {
+      "badge": "KI-Englischlernen",
+      "title": "Englisch lernen zusammen mit KI",
+      "description": "Eine innovative Englisch-Lern-App, die es Ihnen ermöglicht, realistisch mit KI-Englisch-Partnern zu üben. Jederzeit, überall, führen Sie Gespräche mit einzigartigen Lehrern.",
+      "features": [
+        "Natürliche Gespräche mit KI-Englischlehrern mit einzigartigen Persönlichkeiten",
+        "Aussprachebewertung und detaillierte Feedback-Funktionen",
+        "Breites Spektrum von Situationen vom täglichen Gespräch bis zum Business-Englisch",
+        "Unterhaltsame und ansprechende englische Wortschatzspiele mit Lernverfolgung"
+      ]
+    },
+    "woodGolem": {
+      "badge": "Strategiespiel",
+      "title": "Logisches Denken mit Waldabenteuern trainieren",
+      "description": "Begeben Sie sich auf ein großes Waldabenteuer mit dem Stäbchen-Strategiespiel \"Wood Golem\". In einem wunderschönen Wald fordern Sie Stäbchen-Rätsel zusammen mit einem kleinen Wood Golem heraus.",
+      "features": [
+        "Stäbchen-Rätsel in einer wunderschönen Waldwelt",
+        "Über 100 Level mit steigender Schwierigkeit",
+        "Niedliche Wood Golem-Charaktere und Handlung",
+        "Bildungselemente, die logisches und strategisches Denken fördern"
+      ]
+    },
+    "voiceLink": {
+      "badge": "KI-Dolmetscher",
+      "title": "KI-Dolmetscher, der Sprachbarrieren abbaut",
+      "description": "Eine Echtzeit-Sprachübersetzungs-App mit der neuesten KI ausgestattet. Unterstützt 10 Sprachen und liefert sofort natürliche und genaue Übersetzungen.",
+      "features": [
+        "Echtzeit-Sprachübersetzung mit Unterstützung für 10 Sprachen",
+        "Hochpräzise KI-Übersetzungsengine, die Kontext versteht",
+        "Gesprächszusammenfassung und Textspeicher-Funktionen",
+        "Offline-Modus und reisefreundliche Funktionen"
+      ]
+    },
+    "wordBlaster": {
+      "badge": "Englisch-Vokabelspiel",
+      "title": "Schießen Sie englische Wörter im Weltraum ab!",
+      "description": "Ein levelbasiertes Vokabel-Lern-Shooter-Spiel im Weltraum, bei dem Sie englische Wörter abschießen. Sie können Ihre englischen Vokabelfähigkeiten auf aufregende und unterhaltsame Weise verbessern.",
+      "features": [
+        "Aufregendes Shooter-Spiel im Weltraum",
+        "Levelbasiertes englisches Vokabellernen von Anfänger bis Fortgeschrittene",
+        "Mit Freunden über Ranking-System konkurrieren",
+        "Spiele genießen, während Sie Wortaussprache und -bedeutungen lernen"
+      ]
+    },
+    "debateMaster": {
+      "badge": "KI-Debatte",
+      "title": "Logisches Denken durch Debattieren mit KI trainieren",
+      "description": "Eine App, um den KI-Debattenmeister herauszufordern und die stärksten Debattierfähigkeiten zu erwerben. Führen Sie Diskussionen mit KI zu verschiedenen Themen.",
+      "features": [
+        "Fortgeschrittener KI-Debattengegner",
+        "Über 100 verschiedene Debattenthemen",
+        "Detaillierte Analyse- und Feedback-Funktionen",
+        "Praktisches Training zur Entwicklung logischen Denkens und Überzeugungsfähigkeiten"
+      ]
+    },
+    "hackingTimer": {
+      "badge": "Produktivitätssteigerung",
+      "title": "Apple Watch App zur Optimierung des Zeitmanagements",
+      "description": "Ein anpassbarer Intervall-Timer zum Hacken der Konzentration mit Apple Watch. Maximieren Sie die Produktivität und erreichen Sie effizientes Zeitmanagement.",
+      "features": [
+        "Anpassbarer Intervall-Timer",
+        "Vollständige Apple Watch-Unterstützung",
+        "Detaillierte Produktivitätsanalyse und Berichte",
+        "Unterstützung für verschiedene Zeitmanagement-Techniken einschließlich Pomodoro-Technik"
+      ]
+    },
+    "cta": {
+      "title": "Erweitern Sie Ihre Möglichkeiten mit innovativen Apps",
+      "description": "TrailFusion AI-Anwendungen bieten innovative Lösungen in verschiedenen Bereichen wie Sprachenlernen, Spiele und Produktivitätssteigerung mit KI-Technologie.",
+      "emailPlaceholder": "E-Mail-Adresse eingeben",
+      "registerButton": "Registrieren"
+    }
+  },
+  "camping": {
+    "meta": {
+      "title": "HiAce DIY Wohnmobil Bau-Anleitung - Vollständiges Handbuch für Selbstgebaute Wohnmobile",
+      "description": "Detaillierte Anleitung zur Umwandlung eines HiAce in ein selbstgebautes Wohnmobil. Vollständige Erklärung spezifischer Arbeitsverfahren, notwendiger Materialien und Werkzeuge, Kosten und Vorsichtsmaßnahmen basierend auf echter Erfahrung."
+    },
+    "hero": {
+      "authorName": "Hiros DIY Wohnmobil",
+      "authorRole": "Van Life Schöpfer / DIY Enthusiast",
+      "title": "HiAce Super Long DIY Wohnmobil Bau<br>Vollständige Anleitung",
+      "description": "Erklärt den gesamten wissenschaftlich basierten DIY-Wohnmobil-Bauprozess, um professionelle Ergebnisse zu erzielen.",
+      "buttons": {
+        "video": "Videos Ansehen",
+        "gallery": "Galerie",
+        "guide": "Bau-Anleitung",
+        "requirements": "Anforderungen"
+      }
+    },
+    "tiktok": {
+      "badge": "TikTok",
+      "title": "Vollständiger DIY-Bauprozess in Videos Veröffentlicht"
+    },
+    "cta": {
+      "title": "Bauen Sie Ihr Eigenes<br>Wohnmobil",
+      "description": "Folgen Sie dieser Anleitung, um Ihr einzigartiges Wohnmobil zu bauen?"
+    },
+    "pillars": {
+      "title": "4 Säulen des DIY Wohnmobils"
+    },
+    "guide": {
+      "title": "DIY Wohnmobil Bau-Anleitung"
+    }
+  },
+  "common": {
+    "comingSoon": "Demnächst verfügbar"
+  },
+  "footer": {
+    "description": "Erweitern Sie Ihre Möglichkeiten mit innovativen KI-Anwendungen und DIY-Wohnmobil-Bauleitfäden.",
+    "camping": {
+      "title": "Wohnmobil",
+      "items": {
+        "videos": "Vollständiger DIY-Herstellungsprozess in Videos veröffentlicht",
+        "gallery": "Galerie abgeschlossener Beispiele",
+        "guide": "DIY-Wohnmobil-Bauleitfaden",
+        "requirements": "Wohnmobil-Strukturanforderungen"
+      }
+    },
+    "apps": "KI-Apps",
+    "contact": "Kontakt",
+    "info": {
+      "title": "Kontaktinformationen",
+      "email": "E-Mail-Adresse",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "twitter": "X (ehemals Twitter)"
+    }
+  }
+}

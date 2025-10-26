@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "title": "TrailFusion AI - DIY de Motorhome e Desenvolvimento de Aplicações IA",
+    "description": "Da criação DIY de motorhome ao desenvolvimento de aplicações IA. Guia prático para converter um HiAce em motorhome caseiro e apresentação de aplicações IA inovadoras."
+  },
+  "nav": {
+    "home": "Início",
+    "apps": "Apps IA",
+    "camping": "Fabricação de Motorhome",
+    "contact": "Contato"
+  },
+  "hero": {
+    "line1": "Viagem livre e",
+    "line2": "Experiência IA inovadora",
+    "line3": "Criação",
+    "description": "Realize seus sonhos com DIY de motorhome e aplicações IA",
+    "campingButton": "Fabricação de Motorhome",
+    "appsButton": "Apps IA",
+    "scrollText": "Ver detalhes"
+  },
+  "services": {
+    "title": "Serviços TrailFusion AI",
+    "subtitle": "Combinando expertise DIY com tecnologia IA de ponta para apoiar a realização dos sonhos dos usuários",
+    "camping": {
+      "title": "Guia DIY Camping HiAce",
+      "description": "Fornecemos guias abrangentes para que até iniciantes possam construir motorhomes de nível profissional. Focamos particularmente em modificações HiAce e fornecemos suporte completo até o registro de número 8.",
+      "features": {
+        "f1": "Manual de construção detalhado",
+        "f2": "Lista de materiais e ferramentas necessárias",
+        "f3": "Lista de verificação de requisitos estruturais",
+        "f4": "Galeria de exemplos concluídos"
+      },
+      "cta": "Ver guia de camping"
+    },
+    "ai": {
+      "title": "Aplicações IA inovadoras",
+      "description": "Desenvolvemos e fornecemos 6 aplicações baseadas em IA para enriquecer a vida cotidiana e o aprendizado. Usando a mais recente tecnologia IA, tornamos a vida dos usuários mais conveniente e rica.",
+      "features": {
+        "f1": "GP Teachers: App de aprendizado de inglês IA",
+        "f2": "VoiceLink AI Intérprete: App de tradução em tempo real",
+        "f3": "Word Blaster: Jogo de aprendizado de vocabulário inglês",
+        "f4": "Outros incluem prática de debate e cronômetros de trabalho"
+      },
+      "cta": "Ver aplicações"
+    }
+  },
+  "about": {
+    "title": "Apresentação do representante",
+    "motto": "A vida sempre pode ser mudada",
+    "subtitle": "A determinação de fazer o que você quer agora, não na velhice",
+    "callToAction": "Agora, você não se juntará a nós em uma aventura chamada vida sem arrependimentos?",
+    "followMe": "Siga-me",
+    "interests": "Hobbies e Interesses",
+    "tags": ["Kendo", "Motorhome", "Fabricação DIY", "Tour pelo Japão", "Gastronomia", "Fontes Termais", "Desenvolvimento de Apps", "Maratona", "Montanhismo"]
+  },
+  "mobileNav": {
+    "home": "Início",
+    "camping": "Fabricação de Motorhome",
+    "apps": "Apps IA",
+    "contact": "Contato"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Se você tem alguma pergunta ou consulta, sinta-se à vontade para nos contatar.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "João Silva",
+      "email": "Endereço de e-mail",
+      "emailPlaceholder": "example@mail.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Assunto da sua consulta",
+      "message": "Mensagem",
+      "messagePlaceholder": "Por favor, escreva suas perguntas ou conteúdo de consulta",
+      "charCount": "caracteres",
+      "submit": "Enviar"
+    },
+    "info": {
+      "title": "Informações de contato",
+      "email": "Endereço de e-mail",
+      "youtube": "Canal TrailFusion AI"
+    },
+    "messages": {
+      "success": "Recebemos sua consulta. Obrigado.",
+      "error": "Ocorreu um erro. Tente novamente.",
+      "sending": "Enviando...",
+      "charCount": "caracteres"
+    }
+  },
+  "form": {
+    "sending": "Enviando...",
+    "success": "Recebemos sua consulta. Obrigado.",
+    "error": "Ocorreu um erro. Tente novamente.",
+    "charCount": "caracteres"
+  },
+  "apps": {
+    "meta": {
+      "title": "TrailFusion AI - Desenvolvimento e Vitrine de Aplicações IA Inovadoras",
+      "description": "Desenvolver e apresentar aplicações inovadoras usando a mais recente tecnologia IA. Experimente várias aplicações IA incluindo Debate Master, Wood Golem, VoiceLink, Word Blaster, e mais."
+    },
+    "hero": {
+      "title": "Expanda Suas Possibilidades<br>com Aplicações Inovadoras",
+      "description": "TrailFusion AI desenvolve aplicações inovadoras utilizando tecnologia IA. Fornecemos soluções de ponta em vários campos incluindo aprendizado de idiomas, jogos, e melhoria de produtividade.",
+      "cta": "Ver Aplicações"
+    },
+    "gpTeachers": {
+      "badge": "Aprendizado de Inglês IA",
+      "title": "Aprender Inglês Junto com IA",
+      "description": "Uma aplicação inovadora de aprendizado de inglês que permite praticar realisticamente com parceiros ingleses IA.",
+      "features": ["Conversas naturais com professores de inglês IA", "Avaliação de pronúncia", "Situações do cotidiano ao inglês comercial", "Jogos de vocabulário divertidos"]
+    },
+    "woodGolem": {
+      "badge": "Jogo de Estratégia",
+      "title": "Treinar Pensamento Lógico com Aventuras Florestais",
+      "description": "Embarque em uma grande aventura florestal com o jogo de estratégia \"Wood Golem\".",
+      "features": ["Quebra-cabeças em mundo florestal", "Mais de 100 níveis", "Personagens Wood Golem fofinhos", "Elementos educacionais"]
+    },
+    "voiceLink": {
+      "badge": "Intérprete IA",
+      "title": "Intérprete IA que Derruba Barreiras Linguísticas",
+      "description": "Uma aplicação de tradução de voz em tempo real equipada com a mais recente IA.",
+      "features": ["Tradução de voz em tempo real", "Motor de tradução IA de alta precisão", "Resumo de conversas", "Modo offline"]
+    },
+    "wordBlaster": {
+      "badge": "Jogo de Vocabulário Inglês",
+      "title": "Derrube Palavras Inglesas no Espaço!",
+      "description": "Um jogo de tiro de aprendizado de vocabulário baseado em níveis ambientado no espaço.",
+      "features": ["Jogo de tiro emocionante no espaço", "Aprendizado de vocabulário por níveis", "Sistema de ranking", "Aprender pronunciação e significados"]
+    },
+    "debateMaster": {
+      "badge": "Debate IA",
+      "title": "Treinar Pensamento Lógico Debatendo com IA",
+      "description": "Uma aplicação para desafiar o campeão de debate IA e adquirir as mais fortes habilidades de debate.",
+      "features": ["Oponente de debate IA avançado", "Mais de 100 tópicos diversos", "Análise detalhada", "Treinamento prático"]
+    },
+    "hackingTimer": {
+      "badge": "Melhoria de Produtividade",
+      "title": "Aplicação Apple Watch para Otimizar Gestão de Tempo",
+      "description": "Um cronômetro de intervalo personalizável para hackear foco com Apple Watch.",
+      "features": ["Cronômetro personalizável", "Suporte completo Apple Watch", "Análise de produtividade", "Técnica Pomodoro"]
+    },
+    "cta": {
+      "title": "Expanda Suas Possibilidades com Aplicações Inovadoras",
+      "description": "As aplicações TrailFusion AI fornecem soluções inovadoras usando tecnologia IA.",
+      "emailPlaceholder": "Digite endereço de e-mail",
+      "registerButton": "Registrar"
+    }
+  },
+  "camping": {
+    "meta": {
+      "title": "Guia de Construção DIY Motorhome HiAce - Manual Completo de Motorhome Caseiro",
+      "description": "Guia detalhado para converter um HiAce em motorhome caseiro. Explicação completa de procedimentos de trabalho específicos, materiais e ferramentas necessárias, custos e precauções baseadas em experiência real."
+    },
+    "hero": {
+      "authorName": "Motorhome DIY do Hiro",
+      "authorRole": "Criador de Vida em Van / Entusiasta DIY",
+      "title": "Construção DIY Motorhome HiAce Super Longo<br>Guia Completo",
+      "description": "Explica todo o processo de construção de motorhome DIY baseado cientificamente para alcançar resultados de nível profissional.",
+      "buttons": {
+        "video": "Assistir Vídeos",
+        "gallery": "Galeria",
+        "guide": "Guia de Construção",
+        "requirements": "Requisitos"
+      }
+    },
+    "tiktok": {
+      "badge": "TikTok",
+      "title": "Processo Completo de Construção DIY Publicado em Vídeos"
+    },
+    "cta": {
+      "title": "Construa Seu Próprio<br>Motorhome",
+      "description": "Siga este guia para construir seu motorhome único?"
+    },
+    "pillars": {
+      "title": "4 Pilares do Motorhome DIY"
+    },
+    "guide": {
+      "title": "Guia de Construção DIY Motorhome"
+    }
+  },
+  "common": {
+    "comingSoon": "Em Breve"
+  },
+  "footer": {
+    "description": "Expanda suas possibilidades com aplicações IA inovadoras e guias de construção de motorhome DIY.",
+    "camping": {
+      "title": "Motorhome",
+      "items": {
+        "videos": "Processo completo de fabricação DIY publicado em vídeos",
+        "gallery": "Galeria de exemplos concluídos",
+        "guide": "Guia de construção de motorhome DIY",
+        "requirements": "Requisitos estruturais de motorhome"
+      }
+    },
+    "apps": "Apps IA",
+    "contact": "Contato",
+    "info": {
+      "title": "Informações de contato",
+      "email": "Endereço de e-mail",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "twitter": "X (antigo Twitter)"
+    }
+  }
+}

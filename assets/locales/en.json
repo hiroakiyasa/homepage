@@ -1,0 +1,475 @@
+{
+  "meta": {
+    "title": "TrailFusion AI - Camper DIY & AI Application Development",
+    "description": "From camper DIY creation to AI application development. Practical guide to converting a HiAce into a homemade camper and introducing innovative AI apps.",
+    "keywords": "HiAce camper,DIY camper,homemade camper,HiAce conversion,van life,car camping,camper creation,camper DIY,HiAce custom,mobile house"
+  },
+  "nav": {
+    "home": "Home",
+    "apps": "Apps",
+    "camping": "Camper Manufacturing",
+    "contact": "Contact"
+  },
+  "hero": {
+    "line1": "Free Travel and",
+    "line2": "Innovative AI Experience",
+    "line3": "Creating",
+    "description": "Make your dreams come true with camper DIY and AI applications",
+    "campingButton": "Camper Manufacturing",
+    "appsButton": "Apps",
+    "scrollText": "See Details"
+  },
+  "services": {
+    "title": "TrailFusion AI Services",
+    "subtitle": "Combining DIY expertise with cutting-edge AI technology to support users in realizing their dreams",
+    "camping": {
+      "title": "HiAce DIY Camping Guide",
+      "description": "We provide comprehensive guides so that even beginners can build professional-level campers. We focus particularly on HiAce modifications and provide complete support up to 8-number registration.",
+      "features": {
+        "f1": "Detailed construction manual",
+        "f2": "List of required materials and tools",
+        "f3": "Structural requirements checklist",
+        "f4": "Gallery of completed examples"
+      },
+      "cta": "View Camping Guide"
+    },
+    "ai": {
+      "title": "Innovative AI Applications",
+      "description": "We develop and provide six AI-powered applications to enrich daily life and learning. Using the latest AI technology, we make users' lives more convenient and enriched.",
+      "features": {
+        "f1": "GP Teachers: AI English Learning App",
+        "f2": "VoiceLink AI Interpreter: Real-time Translation App",
+        "f3": "Word Blaster: English Vocabulary Learning Game",
+        "f4": "Others include debate practice and work timers"
+      },
+      "cta": "View Apps"
+    }
+  },
+  "about": {
+    "title": "Representative Introduction",
+    "motto": "Life can always be changed",
+    "subtitle": "The determination to do what you want now, not in old age",
+    "story": {
+      "p1": "I loved Japan. The atmospheric streetscapes, hot springs that heal mind and body, local cuisine, and warm people. Someday, traveling throughout this beloved Japan was my dream.",
+      "p2": "However, the reality was that of a busy salaryman. Extended vacations were a pipe dream, and I told myself that 'touring Japan would be a pleasure for retirement' and was almost giving up.",
+      "p3": "Then came a turning point that would change my life 180 degrees. It was my infection with the novel coronavirus.",
+      "p4": "Alone, isolated in a room for a week. In a situation facing the fear of death, only one thought crossed my mind: 'If I want to do something, I must do it now or I'll regret it. Life is far too short.'",
+      "p5": "The day I could leave my room, my second life began. In just one week of isolation, I had finished planning everything needed to build my own camper.",
+      "p6": "Selecting the base vehicle, designing a slide bed for a family of four, arranging a desk for work, identifying requirements for 8-number registration to meet regulations, building a sub-battery system, and even sourcing wood for the interior. The blueprint in my head was completely finished.",
+      "p7": "I immediately bought a 2008 HiAce Super Long (same size as an ambulance!) for 1.7 million yen. From there, for two months, I devoted all available time to DIY - after work on weekdays, weekends, and breaks during remote work.",
+      "p8": "And then came the summer vacation I had been aiming for. Before the first car camping trip with my family, the one-of-a-kind original camper was finally completed.",
+      "p9": "That trip was unimaginably moving. Passing by fully booked hotels, experiencing the excitement of Aomori Nebuta Festival and Nagaoka Fireworks Festival on the front lines. In summer Hokkaido, we enjoyed nature for 10 days without worrying about skyrocketing accommodation costs, surrounded by our children's beaming smiles.",
+      "p10": "Through this experience, I became convinced: 'Can one vehicle enrich life to this extent?'",
+      "p11": "And this free journey gave me the next dream I would stake my life on. That is, to make this camper a 'development base for traveling the world,' creating new value while interacting with cultures and people around the world, without being bound by location.",
+      "p12": "Specifically, developing innovative applications using AI technology and delivering them to users worldwide through the Apple platform. Pouring inspiration gained from travels into development in real-time, making people's lives more convenient and enriched. I found this form of contribution.",
+      "p13": "Dreams I had almost given up on as a salaryman. But in this one life, I don't want to have any more regrets. Travel the world, create value, and fully enjoy encounters. And someday, when I face the end of my life, I want to smile from my heart saying 'It was the best life.' 'TrailfusionAI' is the name of that oath."
+    },
+    "additionalStory": {
+      "p11": "And this free journey gave me the next dream I would stake my life on. That is, to make this camper a 'development base for traveling the world,' creating new value while interacting with cultures and people around the world, without being bound by location.",
+      "p12": "Specifically, developing innovative applications using AI technology and delivering them to users worldwide through the Apple platform. Pouring inspiration gained from travels into development in real-time, making people's lives more convenient and enriched. I found this form of contribution.",
+      "p13": "The flagship to realize this grand vision is 'Trail❌fusion❌AI'.",
+      "p14": "Trail (Road): The physical 'road' of traveling the world with a camper, and the life 'road' leading to a way of life no one has ever walked.",
+      "p15": "Fusion: The 'fusion' of real travel experiences with digital creation of AI app development. And 'fusing' the thoughts of users around the world with ours.",
+      "p16": "AI: The core of our business that opens up our future and creates infinite possibilities.",
+      "p17": "Dreams I had almost given up on as a salaryman. But in this one life, I don't want to have any more regrets. Travel the world, create value, and fully enjoy encounters. And someday, when I face the end of my life, I want to smile from my heart saying 'It was the best life.' 'TrailfusionAI' is the name of that oath.",
+      "finalCta": "Now, won't you join us on an adventure called a life without regrets?"
+    },
+    "callToAction": "Now, won't you join us on an adventure called a life without regrets?",
+    "followMe": "Follow Me",
+    "interests": "Hobbies & Interests",
+    "tags": ["Kendo", "Camper", "DIY Production", "Japan Tour", "Gourmet", "Hot Springs", "App Development", "Marathon", "Mountain Climbing"]
+  },
+  "mobileNav": {
+    "home": "Home",
+    "camping": "Camper Manufacturing",
+    "apps": "Apps",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "If you have any questions or consultations, please feel free to contact us.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "example@mail.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of inquiry",
+      "message": "Message",
+      "messagePlaceholder": "Please write your questions or consultation content",
+      "charCount": "characters",
+      "submit": "Send"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email Address",
+      "youtube": "TrailFusion AI Channel"
+    },
+    "messages": {
+      "success": "We have received your inquiry. Thank you.",
+      "error": "An error occurred. Please try again.",
+      "sending": "Sending...",
+      "charCount": "characters"
+    }
+  },
+  "form": {
+    "sending": "Sending...",
+    "success": "We have received your inquiry. Thank you.",
+    "error": "An error occurred. Please try again.",
+    "charCount": "characters"
+  },
+  "apps": {
+    "meta": {
+      "title": "TrailFusion AI - Innovative AI Application Development & Showcase",
+      "description": "Develop and showcase innovative applications using the latest AI technology. Try various AI apps including Debate Master, Wood Golem, VoiceLink, Word Blaster, and more."
+    },
+    "hero": {
+      "title": "Expand Your Possibilities<br>with Innovative Apps",
+      "description": "TrailFusion AI develops innovative applications utilizing AI technology. We provide cutting-edge solutions in various fields including language learning, games, and productivity enhancement.",
+      "cta": "View Apps"
+    },
+    "gpTeachers": {
+      "badge": "AI English Learning",
+      "title": "Learn English Together with AI",
+      "description": "An innovative English learning app that allows you to practice realistically with AI English partners. Anytime, anywhere, engage in conversations with unique teachers to enhance your practical English conversation skills and improve your English proficiency.",
+      "features": [
+        "Natural conversations with AI English teachers who have unique personalities",
+        "Pronunciation evaluation and detailed feedback features",
+        "Wide range of situations from daily conversations to business English",
+        "Fun and engaging English vocabulary games with learning tracking"
+      ]
+    },
+    "woodGolem": {
+      "badge": "Strategy Game",
+      "title": "Train Logical Thinking with Forest Adventures",
+      "description": "Embark on a great forest adventure with the stick-taking strategy game \"Wood Golem\". Set in a beautiful forest, challenge stick-taking puzzles together with a small Wood Golem. It's a fun strategy game that trains logical thinking skills.",
+      "features": [
+        "Stick-taking puzzles set in a beautiful forest world",
+        "Over 100 levels with increasing difficulty",
+        "Cute Wood Golem characters and storyline",
+        "Educational elements that foster logical and strategic thinking"
+      ]
+    },
+    "voiceLink": {
+      "badge": "AI Interpreter",
+      "title": "AI Interpreter that Breaks Down Language Barriers",
+      "description": "A real-time voice translation app equipped with the latest AI. Supporting 10 languages, it instantly delivers natural and accurate translations. It also features high-precision voice recognition that understands context and conversation summarization functionality.",
+      "features": [
+        "Real-time voice translation supporting 10 languages",
+        "High-precision AI translation engine that understands context",
+        "Conversation summarization and text saving features",
+        "Offline mode and travel-friendly features"
+      ]
+    },
+    "wordBlaster": {
+      "badge": "English Vocabulary Game",
+      "title": "Shoot Down English Words in Space!",
+      "description": "A level-based vocabulary learning shooting game set in space where you shoot down English words. You can improve your English vocabulary skills in an exciting and fun way.",
+      "features": [
+        "Exciting shooting game set in space",
+        "Level-based English vocabulary learning from beginner to advanced",
+        "Compete with friends through ranking system",
+        "Enjoy games while learning word pronunciation and meanings"
+      ]
+    },
+    "debateMaster": {
+      "badge": "AI Debate",
+      "title": "Train Logical Thinking by Debating with AI",
+      "description": "An app for challenging the AI debate champion and acquiring the strongest debate skills. Engage in discussions with AI on various topics to train your logical thinking and persuasive abilities.",
+      "features": [
+        "Advanced AI debate opponent",
+        "Over 100 diverse debate topics",
+        "Detailed analysis and feedback features",
+        "Practical training to develop logical thinking and persuasive skills"
+      ]
+    },
+    "hackingTimer": {
+      "badge": "Productivity Enhancement",
+      "title": "Apple Watch App for Optimizing Time Management",
+      "description": "A customizable interval timer for hacking focus with Apple Watch. Maximize productivity and achieve efficient time management.",
+      "features": [
+        "Customizable interval timer",
+        "Full Apple Watch support",
+        "Detailed productivity analysis and reports",
+        "Support for various time management techniques including Pomodoro Technique"
+      ]
+    },
+    "cta": {
+      "title": "Expand Your Possibilities with Innovative Apps",
+      "description": "TrailFusion AI applications provide innovative solutions in various fields including language learning, games, and productivity enhancement using AI technology. Get the latest information about new apps first.",
+      "emailPlaceholder": "Enter email address",
+      "registerButton": "Register"
+    }
+  },
+  "camping": {
+    "meta": {
+      "title": "HiAce DIY Camper Van Build Guide - Complete Homemade Camper Manual",
+      "description": "Detailed guide to converting a HiAce into a homemade camper van. Complete explanation of specific work procedures, necessary materials and tools, costs, and precautions based on real experience. Practical camper construction manual that even DIY beginners can safely tackle."
+    },
+    "hero": {
+      "authorName": "Hiro's DIY Camper Van",
+      "authorRole": "Van Life Creator / DIY Enthusiast",
+      "authorAlt": "Hiro",
+      "title": "HiAce Super Long DIY Camper Van Build<br>Complete Guide",
+      "description": "Explains the entire process of scientifically-based DIY camper van construction to achieve professional-level results. Detailed step-by-step guide that even beginners can understand.",
+      "buttons": {
+        "video": "Watch Videos",
+        "gallery": "Gallery",
+        "guide": "Build Guide",
+        "requirements": "Requirements"
+      }
+    },
+    "tiktok": {
+      "badge": "TikTok",
+      "title": "Complete DIY Build Process Published in Videos",
+      "description": "From HiAce purchase to completion, detailed documentation of every build step. Easy-to-understand explanations for beginners.",
+      "swipeHint": "← Swipe horizontally to watch videos →",
+      "videos": [
+        {
+          "title": "🏆 DIY Camper Van Registration Complete",
+          "description": "Complete process of DIY camper van registration for HiAce. Real experience of vehicle registration possible even for amateurs"
+        },
+        {
+          "title": "📚 Hokkaido Van Life - Morning Study Time",
+          "description": "Morning study time during HiAce Hokkaido van life journey. Creating a learning environment and concentrated space in camper van"
+        },
+        {
+          "title": "👨‍👩‍👧‍👦 Family Hokkaido Van Life Journey",
+          "description": "HiAce Hokkaido van life journey with two children: son (7 years old) and daughter (5 years old). Family van life experience story"
+        },
+        {
+          "title": "🗾 Top 13 Hokkaido Van Life Spots",
+          "description": "Introducing 13 recommended spots for Hokkaido van life travel. Carefully selected scenic points that will make you want to visit again"
+        },
+        {
+          "title": "🎮 Building Switch Gaming Setup in HiAce",
+          "description": "Building a gaming environment in HiAce where you can play Switch while preparing. Entertainment system for van life"
+        },
+        {
+          "title": "🔥 DIY FF Heater Installation",
+          "description": "Installing FF heater in HiAce with DIY approach. Building heating system for comfortable winter van life"
+        },
+        {
+          "title": "📱 English Learning App Development During Van Life",
+          "description": "Completing English learning app during HiAce van life, working after kids sleep. Efficient development environment inside vehicle"
+        },
+        {
+          "title": "🎬 DIY Projector Installation",
+          "description": "Installing projector in HiAce to build in-car theater environment. Movie viewing system for van life"
+        },
+        {
+          "title": "🌪️ Camper Van Life During Typhoon",
+          "description": "Luxurious time enjoying typhoon days in camper van. Appeal of comfortable interior space even in bad weather"
+        },
+        {
+          "title": "🛏️ DIY Bunk Bed Construction",
+          "description": "DIY construction of bunk beds in HiAce. Bedroom design ideas for effective use of limited space"
+        },
+        {
+          "title": "🏰 Disneyland Van Life",
+          "description": "HiAce van life at Disneyland. Comfortable interior space during lunch break and theme park strategy"
+        },
+        {
+          "title": "❄️ Midwinter Shirakawa-go Van Life",
+          "description": "Van life trip to Shirakawa-go in midwinter with 2WD HiAce. Extreme cold camping experience in snowy landscape"
+        },
+        {
+          "title": "❄️ Chinese Roof AC Installation DIY",
+          "description": "DIY installation of Chinese roof air conditioner in HiAce. Building cooling system for comfortable summer van life"
+        },
+        {
+          "title": "🔧 Roof AC Installation Part 2",
+          "description": "Installing Chinese roof air conditioner in HiAce Part 2. Practical edition of detailed installation procedures and wiring work"
+        },
+        {
+          "title": "🌪️ Comfortable Camper Van Even During Typhoon",
+          "description": "Luxurious time enjoying typhoon days in camper van. Interior space that turns natural threats into enjoyment"
+        }
+      ],
+      "followText": "The construction process is published in detail on TikTok. Follow us to check the latest posts!",
+      "followButton": "Follow TikTok"
+    },
+    "cta": {
+      "badge": "Realize Your Dreams",
+      "title": "Build Your Own<br>Camper Van",
+      "description": "Your ideal mobile home that can't be achieved with commercial camper vans. The joy of DIY creation and days of free travel after completion await you.",
+      "button": "Download Free Guide"
+    },
+    "pillars": {
+      "badge": "Features",
+      "title": "4 Pillars of DIY Camper Van",
+      "description": "Four important elements to achieve professional-level results. By mastering these, you can complete a high-quality mobile home that cannot be achieved with commercial kits.",
+      "items": [
+        {
+          "title": "Perfect Insulation & Soundproofing",
+          "description": "Triple-layer structure based on scientific evidence achieves comfortable indoor environment throughout the four seasons. Mountaintop silence even inside the vehicle."
+        },
+        {
+          "title": "Functional Living Space",
+          "description": "Multifunctional furniture and storage systems that maximize limited space. Comfortable space to relax even by the lakeside."
+        },
+        {
+          "title": "Independent Power System",
+          "description": "Independent solar power generation and large-capacity batteries enable civilized living even in places without power sources. Power security even while listening to waterfall sounds."
+        },
+        {
+          "title": "Four-Season HVAC Equipment",
+          "description": "Combination of air conditioning, FF heater, and ventilation system maintains comfortable room temperature on beaches and snowy mountains."
+        }
+      ]
+    },
+    "guide": {
+      "badge": "Guide",
+      "title": "DIY Camper Van Build Guide",
+      "description": "Detailed step-by-step build process that even beginners can understand. Revealing all the know-how to achieve professional-level results.",
+      "sections": {
+        "foundation": {
+          "badge": "Part 1",
+          "title": "Foundation – Vehicle Shell Preparation",
+          "image": "Insulation Work",
+          "vibrationDamping": {
+            "title": "Creating Silent Space (Vibration Damping, Soundproofing, Insulation)",
+            "description": "Essential process that forms the foundation of comfortable living space and reduces HVAC load for retrofitted systems. A scientifically-based 'triple-layer' approach is essential."
+          },
+          "flooring": {
+            "title": "Perfect Floor Construction",
+            "description": "Building a completely flat and highly insulated floor that serves as the foundation for all furniture."
+          }
+        },
+        "interior": {
+          "badge": "Part 2",
+          "title": "Living Space – Interior Construction",
+          "paneling": {
+            "title": "Wall and Ceiling Paneling",
+            "description": "Using lightweight cedar or red pine tongue-and-groove boards. Cannot be directly attached to curved vehicle walls; must first install wooden sub-frame called 'furring strips' to vehicle metal ribs."
+          },
+          "slideBed": {
+            "title": "Multi-functional Slide Bed",
+            "description": "The heart of space-saving design that functions as sofa during day and bed at night."
+          },
+          "galley": {
+            "title": "Galley (Kitchen Unit)",
+            "description": "Unit equipped with sink and self-contained water supply/drainage system. Composed of 12V submersible pump and water tanks, using food sanitation law compliant hoses."
+          }
+        },
+        "electrical": {
+          "badge": "Part 3",
+          "title": "Powerhouse – Complete Sub-battery Electrical System",
+          "wiring": {
+            "title": "Wiring Guide",
+            "description": "3kW inverter (250A+) requires extra-thick cables like 38sq and 300A class fuses, while 50A driving charger needs 8sq+ cables and 70A class fuses."
+          },
+          "charging": {
+            "title": "3-System Charging Setup",
+            "description": "Centering around Renogy 50A DC-DC charger (with MPPT function) for integrated management of driving charge, solar charge, and external 100V charge."
+          }
+        },
+        "comfort": {
+          "badge": "Part 4",
+          "title": "Ultimate Comfort – HVAC and Entertainment",
+          "hvac": {
+            "title": "Four-Season HVAC System",
+            "description": "Equipment for performing 'major surgery' on vehicle to make it a true 'mobile home'."
+          },
+          "entertainment": {
+            "title": "Entertainment System",
+            "description": "Equipment for comfortable extended van life stays. Installing 12V TV, sound system, Wi-Fi router, etc. to achieve comfortable living environment while mobile."
+          }
+        },
+        "registration": {
+          "badge": "Part 5",
+          "title": "8-Number Registration – Camper Van Completion",
+          "requirements": {
+            "title": "Structural Requirements Verification",
+            "description": "Final verification that legal requirements for registration as 8-number (special purpose vehicle) are met."
+          },
+          "procedure": {
+            "title": "Registration Application Procedure",
+            "description": "Complete procedure for 8-number registration including on-site vehicle inspection at transport bureau. Achieving smooth procedures from document preparation to final registration certificate issuance."
+          }
+        }
+      },
+      "requirements": {
+        "title": "Structural Requirements",
+        "items": {
+          "waterSystem": "Water Supply System",
+          "sleepingFacility": "Sleeping Facility", 
+          "cookingFacility": "Cooking Facility",
+          "floorArea": "Floor Area"
+        }
+      },
+      "timeline": {
+        "period": "Build Period<br>(Weekends only, in months)",
+        "cost": "DIY Camper Van<br>Total Build Cost",
+        "workers": "Required Workers<br>(People)"
+      },
+      "tools": {
+        "badge": "Practical Guide",
+        "title": "DIY Camper Van Build Tools",
+        "description": "Essential tools carefully selected for safe and reliable construction",
+        "items": {
+          "tester": "Tester & Soldering"
+        }
+      },
+      "detailedGuide": {
+        "part1": {
+          "title": "Vibration Damping, Soundproofing, Insulation and Floor Construction (Part 1)"
+        },
+        "part2": {
+          "title": "Interior Construction (Part 2)"
+        }
+      },
+      "gallery": {
+        "sunset": "Sunset with Camper Van",
+        "countryside": "Camper Van in Countryside",
+        "mountain": "Camper Van in Mountains",
+        "snow": "Camper Van in Snow Village",
+        "bluesky": "Blue Sky and Rural Landscape",
+        "farmland": "Vast Farmland",
+        "dramatic": "Dramatic Sky",
+        "twilight": "Twilight Parking",
+        "seaside": "Seaside Sunset"
+      },
+      "reviews": {
+        "tanaka": "Mr. Tanaka",
+        "sato": "Mr. Sato",
+        "yamada": "Mr. Yamada"
+      }
+    }
+  },
+  "common": {
+    "comingSoon": "Coming Soon",
+    "videoNotSupported": "Your browser does not support video playback."
+  },
+  "nav": {
+    "home": "Home",
+    "camping": "Camper Build",
+    "apps": "Apps",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Expand your possibilities with innovative AI applications and DIY camper construction guides.",
+    "camping": {
+      "title": "Camper",
+      "items": {
+        "videos": "Complete DIY production process published in videos",
+        "gallery": "Gallery of completed examples",
+        "guide": "DIY Camper Construction Guide",
+        "requirements": "Camper Structural Requirements"
+      }
+    },
+    "apps": "AI Apps",
+    "contact": "Contact",
+    "info": {
+      "title": "Contact Information",
+      "email": "Email Address",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "twitter": "X (formerly Twitter)"
+    }
+  },
+  "common": {
+    "logo": "TrailFusion AI Logo - Camper DIY and AI Application Development",
+    "videoNotSupported": "Your browser does not support video playback."
+  }
+}

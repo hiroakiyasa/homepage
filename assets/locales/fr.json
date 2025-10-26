@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "title": "TrailFusion AI - DIY Camping-car et Développement d'Applications IA",
+    "description": "De la création DIY de camping-car au développement d'applications IA. Guide pratique pour convertir un HiAce en camping-car fait maison et présentation d'applications IA innovantes."
+  },
+  "nav": {
+    "home": "Accueil",
+    "apps": "Applications IA",
+    "camping": "Fabrication de Camping-car",
+    "contact": "Contact"
+  },
+  "hero": {
+    "line1": "Voyage libre et",
+    "line2": "Expérience IA innovante",
+    "line3": "Création",
+    "description": "Réalisez vos rêves avec le DIY camping-car et les applications IA",
+    "campingButton": "Fabrication de Camping-car",
+    "appsButton": "Applications IA",
+    "scrollText": "Voir les détails"
+  },
+  "services": {
+    "title": "Services TrailFusion AI",
+    "subtitle": "Combinant l'expertise DIY avec la technologie IA de pointe pour soutenir la réalisation des rêves des utilisateurs",
+    "camping": {
+      "title": "Guide DIY Camping HiAce",
+      "description": "Nous fournissons des guides complets pour que même les débutants puissent construire des camping-cars de niveau professionnel. Nous nous concentrons particulièrement sur les modifications HiAce et fournissons un support complet jusqu'à l'enregistrement du numéro 8.",
+      "features": {
+        "f1": "Manuel de construction détaillé",
+        "f2": "Liste des matériaux et outils nécessaires",
+        "f3": "Liste de vérification des exigences structurelles",
+        "f4": "Galerie d'exemples terminés"
+      },
+      "cta": "Voir le guide camping"
+    },
+    "ai": {
+      "title": "Applications IA innovantes",
+      "description": "Nous développons et fournissons 6 applications basées sur l'IA pour enrichir la vie quotidienne et l'apprentissage. En utilisant la dernière technologie IA, nous rendons la vie des utilisateurs plus pratique et plus riche.",
+      "features": {
+        "f1": "GP Teachers: Application d'apprentissage de l'anglais IA",
+        "f2": "VoiceLink AI Interprète: Application de traduction en temps réel",
+        "f3": "Word Blaster: Jeu d'apprentissage de vocabulaire anglais",
+        "f4": "Autres incluent la pratique de débat et les minuteurs de travail"
+      },
+      "cta": "Voir les applications"
+    }
+  },
+  "about": {
+    "title": "Présentation du représentant",
+    "motto": "La vie peut toujours être changée",
+    "subtitle": "La détermination de faire ce que vous voulez maintenant, pas dans la vieillesse",
+    "story": {
+      "p1": "J'aimais le Japon. Les paysages urbains atmosphériques, les sources chaudes qui guérissent l'esprit et le corps, la cuisine locale, et les gens chaleureux. Un jour, voyager à travers ce Japon bien-aimé était mon rêve.",
+      "p2": "Cependant, la réalité était celle d'un salaryman occupé. Les vacances prolongées étaient un rêve impossible, et je me disais que 'faire le tour du Japon serait un plaisir pour la retraite' et j'abandonnais presque.",
+      "p3": "Puis vint un tournant qui changerait ma vie à 180 degrés. C'était mon infection par le nouveau coronavirus.",
+      "p4": "Seul, isolé dans une chambre pendant une semaine. Dans une situation face à la peur de la mort, une seule pensée traversa mon esprit : 'Si je veux faire quelque chose, je dois le faire maintenant ou je le regretterai. La vie est bien trop courte.'",
+      "p5": "Le jour où je pus sortir de ma chambre, ma seconde vie commença. En seulement une semaine d'isolement, j'avais fini de planifier tout ce qui était nécessaire pour construire mon propre camping-car.",
+      "p6": "Sélection du véhicule de base, conception d'un lit coulissant pour une famille de quatre personnes, arrangement d'un bureau pour le travail, identification des exigences d'enregistrement numéro 8 pour respecter les réglementations, construction d'un système de batterie auxiliaire, et même l'approvisionnement en bois pour l'intérieur. Le plan dans ma tête était complètement terminé.",
+      "p7": "J'ai immédiatement acheté un HiAce Super Long 2008 (même taille qu'une ambulance !) pour 1,7 million de yens. À partir de là, pendant deux mois, j'ai consacré tout le temps disponible au DIY - après le travail en semaine, les week-ends, et les pauses pendant le télétravail.",
+      "p8": "Et puis vinrent les vacances d'été que je visais. Avant le premier voyage de camping-car avec ma famille, le camping-car original unique au monde fut enfin terminé.",
+      "p9": "Ce voyage fut incroyablement émouvant. Passant devant des hôtels complets, vivant l'excitation du Festival Nebuta d'Aomori et du Festival de feux d'artifice de Nagaoka en première ligne. Dans l'Hokkaido estival, nous avons profité de la nature pendant 10 jours sans nous soucier des coûts d'hébergement qui montent en flèche, entourés des sourires radieux de nos enfants.",
+      "p10": "À travers cette expérience, j'ai été convaincu : 'Un véhicule peut-il enrichir la vie à ce point ?'"
+    },
+    "additionalStory": {
+      "p11": "Et ce voyage libre m'a donné le rêve suivant, et celui pour lequel je mise ma vie. C'est faire de ce camping-car une 'base de développement pour voyager dans le monde', créant de nouvelles valeurs tout en interagissant avec les cultures et les gens du monde entier, sans être lié par l'emplacement.",
+      "p12": "Spécifiquement, développer des applications innovantes utilisant la technologie IA et les livrer aux utilisateurs du monde entier via la plateforme Apple. Verser l'inspiration obtenue des voyages dans le développement en temps réel, rendant la vie des gens plus pratique et plus riche. J'ai trouvé cette forme de contribution.",
+      "p13": "Le drapeau pour réaliser cette vision grandiose, c'est 'Trail❌fusion❌AI'.",
+      "p14": "Trail (Route) : La 'route' physique de voyager dans le monde avec un camping-car, et la 'route' de vie menant à un mode de vie que personne n'a jamais parcouru.",
+      "p15": "Fusion : La 'fusion' de l'expérience réelle qu'est le voyage avec la création numérique qu'est le développement d'applications IA. Et 'fusionner' les pensées des utilisateurs du monde entier avec les nôtres.",
+      "p16": "AI : Le cœur de notre entreprise qui ouvre notre avenir et crée des possibilités infinies.",
+      "p17": "Rêves que j'avais presque abandonnés en tant que salaryman. Mais dans cette vie unique, je ne veux plus avoir de regrets. Voyager dans le monde, créer de la valeur, et profiter pleinement des rencontres. Et un jour, quand je ferai face à la fin de ma vie, je veux sourire du fond du cœur en disant 'C'était la meilleure vie'. 'TrailfusionAI' est le nom de ce serment.",
+      "finalCta": "Maintenant, ne vous joindrez-vous pas à nous dans une aventure appelée une vie sans regrets ?"
+    },
+    "callToAction": "Maintenant, ne vous joindrez-vous pas à nous dans une aventure appelée une vie sans regrets ?",
+    "followMe": "Suivez-moi",
+    "interests": "Loisirs et Intérêts",
+    "tags": ["Kendo", "Camping-car", "Fabrication DIY", "Tour du Japon", "Gastronomie", "Sources Chaudes", "Développement d'Applications", "Marathon", "Escalade"]
+  },
+  "mobileNav": {
+    "home": "Accueil",
+    "camping": "Fabrication de Camping-car",
+    "apps": "Applications IA",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Si vous avez des questions ou des consultations, n'hésitez pas à nous contacter.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "example@mail.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet de votre demande",
+      "message": "Message",
+      "messagePlaceholder": "Veuillez écrire vos questions ou le contenu de votre consultation",
+      "charCount": "caractères",
+      "submit": "Envoyer"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "email": "Adresse e-mail",
+      "youtube": "Chaîne TrailFusion AI"
+    },
+    "messages": {
+      "success": "Nous avons reçu votre demande. Merci.",
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "sending": "Envoi en cours...",
+      "charCount": "caractères"
+    }
+  },
+  "form": {
+    "sending": "Envoi en cours...",
+    "success": "Nous avons reçu votre demande. Merci.",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "charCount": "caractères"
+  },
+  "apps": {
+    "meta": {
+      "title": "TrailFusion AI - Développement et Vitrine d'Applications IA Innovantes",
+      "description": "Développer et présenter des applications innovantes utilisant la dernière technologie IA. Essayez diverses applications IA incluant Debate Master, Wood Golem, VoiceLink, Word Blaster, et plus."
+    },
+    "hero": {
+      "title": "Élargissez Vos Possibilités<br>avec des Applications Innovantes",
+      "description": "TrailFusion AI développe des applications innovantes utilisant la technologie IA. Nous fournissons des solutions de pointe dans divers domaines incluant l'apprentissage des langues, les jeux, et l'amélioration de la productivité.",
+      "cta": "Voir les Applications"
+    },
+    "gpTeachers": {
+      "badge": "Apprentissage de l'Anglais IA",
+      "title": "Apprendre l'Anglais avec l'IA",
+      "description": "Une application d'apprentissage de l'anglais innovante qui vous permet de pratiquer de manière réaliste avec des partenaires anglais IA. N'importe quand, n'importe où, engagez-vous dans des conversations avec des professeurs uniques pour améliorer vos compétences pratiques en conversation anglaise et améliorer votre maîtrise de l'anglais.",
+      "features": [
+        "Conversations naturelles avec des professeurs d'anglais IA ayant des personnalités uniques",
+        "Évaluation de la prononciation et fonctionnalités de retour détaillé",
+        "Large gamme de situations des conversations quotidiennes à l'anglais des affaires",
+        "Jeux de vocabulaire anglais amusants et engageants avec suivi d'apprentissage"
+      ]
+    },
+    "woodGolem": {
+      "badge": "Jeu de Stratégie",
+      "title": "Entraîner la Pensée Logique avec des Aventures Forestières",
+      "description": "Embarquez dans une grande aventure forestière avec le jeu de stratégie de prise de bâtons \"Wood Golem\". Situé dans une belle forêt, défiez les puzzles de prise de bâtons avec un petit Wood Golem. C'est un jeu de stratégie amusant qui entraîne les compétences de pensée logique.",
+      "features": [
+        "Puzzles de prise de bâtons situés dans un monde forestier magnifique",
+        "Plus de 100 niveaux avec difficulté croissante",
+        "Personnages Wood Golem mignons et histoire",
+        "Éléments éducatifs qui favorisent la pensée logique et stratégique"
+      ]
+    },
+    "voiceLink": {
+      "badge": "Interprète IA",
+      "title": "Interprète IA qui Abat les Barrières Linguistiques",
+      "description": "Une application de traduction vocale en temps réel équipée de la dernière IA. Supportant 10 langues, elle fournit instantanément des traductions naturelles et précises. Elle comprend également une reconnaissance vocale haute précision qui comprend le contexte et une fonctionnalité de résumé de conversation.",
+      "features": [
+        "Traduction vocale en temps réel supportant 10 langues",
+        "Moteur de traduction IA haute précision qui comprend le contexte",
+        "Fonctionnalités de résumé de conversation et de sauvegarde de texte",
+        "Mode hors ligne et fonctionnalités conviviales pour les voyages"
+      ]
+    },
+    "wordBlaster": {
+      "badge": "Jeu de Vocabulaire Anglais",
+      "title": "Abattez les Mots Anglais dans l'Espace !",
+      "description": "Un jeu de tir d'apprentissage de vocabulaire basé sur les niveaux situé dans l'espace où vous abattez des mots anglais. Vous pouvez améliorer vos compétences en vocabulaire anglais de manière excitante et amusante.",
+      "features": [
+        "Jeu de tir excitant situé dans l'espace",
+        "Apprentissage de vocabulaire anglais basé sur les niveaux du débutant à l'avancé",
+        "Concourir avec des amis grâce au système de classement",
+        "Profiter des jeux tout en apprenant la prononciation et les significations des mots"
+      ]
+    },
+    "debateMaster": {
+      "badge": "Débat IA",
+      "title": "Entraîner la Pensée Logique en Débattant avec l'IA",
+      "description": "Une application pour défier le champion de débat IA et acquérir les plus fortes compétences de débat. Engagez-vous dans des discussions avec l'IA sur divers sujets pour entraîner votre pensée logique et vos capacités de persuasion.",
+      "features": [
+        "Adversaire de débat IA avancé",
+        "Plus de 100 sujets de débat divers",
+        "Fonctionnalités d'analyse détaillée et de retour",
+        "Formation pratique pour développer la pensée logique et les compétences de persuasion"
+      ]
+    },
+    "hackingTimer": {
+      "badge": "Amélioration de la Productivité",
+      "title": "Application Apple Watch pour Optimiser la Gestion du Temps",
+      "description": "Un minuteur d'intervalle personnalisable pour pirater la concentration avec Apple Watch. Maximisez la productivité et atteignez une gestion du temps efficace.",
+      "features": [
+        "Minuteur d'intervalle personnalisable",
+        "Support complet d'Apple Watch",
+        "Analyse de productivité détaillée et rapports",
+        "Support pour diverses techniques de gestion du temps incluant la Technique Pomodoro"
+      ]
+    },
+    "cta": {
+      "title": "Élargissez Vos Possibilités avec des Applications Innovantes",
+      "description": "Les applications TrailFusion AI fournissent des solutions innovantes dans divers domaines incluant l'apprentissage des langues, les jeux, et l'amélioration de la productivité utilisant la technologie IA. Obtenez les dernières informations sur les nouvelles applications en premier.",
+      "emailPlaceholder": "Entrer l'adresse e-mail",
+      "registerButton": "S'inscrire"
+    }
+  },
+  "camping": {
+    "meta": {
+      "title": "Guide de Construction DIY Camping-car HiAce - Manuel Complet de Camping-car Fait Maison",
+      "description": "Guide détaillé pour convertir un HiAce en camping-car fait maison. Explication complète des procédures de travail spécifiques, des matériaux et outils nécessaires, des coûts et des précautions basées sur une expérience réelle. Manuel pratique de construction de camping-car que même les débutants DIY peuvent aborder en toute sécurité."
+    },
+    "hero": {
+      "authorName": "Camping-car DIY de Hiro",
+      "authorRole": "Créateur de Vie en Van / Passionné de DIY",
+      "title": "Construction DIY Camping-car HiAce Super Long<br>Guide Complet",
+      "description": "Explique l'ensemble du processus de construction de camping-car DIY basé scientifiquement pour obtenir des résultats de niveau professionnel. Guide détaillé étape par étape que même les débutants peuvent comprendre.",
+      "buttons": {
+        "video": "Regarder Vidéos",
+        "gallery": "Galerie",
+        "guide": "Guide de Construction",
+        "requirements": "Exigences"
+      }
+    },
+    "tiktok": {
+      "badge": "TikTok",
+      "title": "Processus Complet de Construction DIY Publié en Vidéos",
+      "videos": [
+        {
+          "title": "🏆 Enregistrement Camping-car DIY Terminé",
+          "description": "Inspection finale du camping-car DIY avec enregistrement numéro 8 terminé"
+        },
+        {
+          "title": "📚 Vie en Van Hokkaido - Temps d'Étude Matinal",
+          "description": "Environnement d'apprentissage confortable et routine matinale pendant la vie en van"
+        },
+        {
+          "title": "👨‍👩‍👧‍👦 Voyage Familial en Van Hokkaido",
+          "description": "Visite intérieure du camping-car confortable même pour une famille de 4"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Construisez Votre Propre<br>Camping-car",
+      "description": "Suivez ce guide pour construire votre camping-car unique en son genre ?"
+    },
+    "pillars": {
+      "title": "4 Piliers du Camping-car DIY",
+      "items": [
+        {
+          "title": "Isolation et Insonorisation Parfaites",
+          "description": "Fondation pour un environnement de vie confortable toute l'année"
+        },
+        {
+          "title": "Espace de Vie Fonctionnel",
+          "description": "Conception qui maximise l'utilisation de l'espace limité"
+        },
+        {
+          "title": "Système d'Alimentation Indépendant",
+          "description": "Système autonome qui fournit de l'électricité n'importe où"
+        },
+        {
+          "title": "Équipement CVC Quatre Saisons",
+          "description": "Contrôle de température confortable en été chaud et hiver froid"
+        }
+      ]
+    },
+    "guide": {
+      "title": "Guide de Construction DIY Camping-car"
+    }
+  },
+  "common": {
+    "comingSoon": "Bientôt Disponible"
+  },
+  "footer": {
+    "description": "Élargissez vos possibilités avec des applications IA innovantes et des guides de construction de camping-car DIY.",
+    "camping": {
+      "title": "Camping-car",
+      "items": {
+        "videos": "Processus complet de fabrication DIY publié en vidéos",
+        "gallery": "Galerie d'exemples terminés",
+        "guide": "Guide de construction de camping-car DIY",
+        "requirements": "Exigences structurelles de camping-car"
+      }
+    },
+    "apps": "Applications IA",
+    "contact": "Contact",
+    "info": {
+      "title": "Informations de contact",
+      "email": "Adresse e-mail",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "twitter": "X (anciennement Twitter)"
+    }
+  }
+}
