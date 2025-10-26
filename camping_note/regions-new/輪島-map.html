@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>輪島 - 地図</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #map { width: 100%; height: 100%; }
+
+    .custom-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .custom-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    /* コンビニロゴマーカー */
+    .convenience-logo-marker {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: white;
+      border: 2px solid #4caf50;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .convenience-logo-marker:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+
+    .convenience-logo-marker img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .marker-center { background: #d32f2f; }
+    .marker-parking { background: #1976d2; }
+    .marker-toilet { background: #795548; }
+    .marker-onsen { background: #f8bbd0; }
+    .marker-restaurant { background: #ff9800; }
+
+    .leaflet-popup-content { min-width: 200px; }
+    .popup-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+    .popup-info { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // 地図初期化
+    const map = L.map('map').setView([37.39206882088884, 136.9031306330795], 15);
+
+    // OpenStreetMap タイル
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // マーカーデータ
+    const markers = [
+    {
+        "type": "center",
+        "id": "area_center",
+        "lat": 37.39206882088884,
+        "lng": 136.9031306330795,
+        "title": "輪島",
+        "description": "周辺のおすすめ車中泊スポット",
+        "color": "#d32f2f"
+    },
+    {
+        "type": "parking",
+        "id": "parking_0",
+        "lat": 37.391743,
+        "lng": 136.899475,
+        "title": "三角州駐車場",
+        "number": 1,
+        "distance": "325m",
+        "walking": "徒歩約5分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_0_0",
+        "lat": 37.391237049634,
+        "lng": 136.89890235669,
+        "title": "三角州公衆便所",
+        "distance": "76m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_0",
+        "lat": 37.393169,
+        "lng": 136.90213,
+        "title": "輪島KABULET 三ノ湯・七ノ湯",
+        "distance": "0.3km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_1",
+        "lat": 37.393223,
+        "lng": 136.902161,
+        "title": "輪島KABULET 足湯",
+        "distance": "0.3km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_0_2",
+        "lat": 37.395901,
+        "lng": 136.89563,
+        "title": "コミセン鳳至BASE",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_1",
+        "lat": 37.388544,
+        "lng": 136.90646,
+        "title": "道の駅輪島ふらっと訪夢",
+        "number": 2,
+        "distance": "491m",
+        "walking": "徒歩約7分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_1_0",
+        "lat": 37.388955585904,
+        "lng": 136.90615754885,
+        "title": "「道の駅」輪島公衆トイレ",
+        "distance": "53m",
+        "color": "#795548"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_1_1",
+        "lat": 37.390471306715,
+        "lng": 136.90866601295,
+        "title": "一本松総合運動公園　バリアフリーステーション（健康ふれあい広場横公衆便所）",
+        "distance": "290m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_0",
+        "lat": 37.387366,
+        "lng": 136.908664,
+        "title": "ホテルメルカート輪島 長山の湯",
+        "distance": "0.2km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_1",
+        "lat": 37.394127,
+        "lng": 136.905536,
+        "title": "足湯 湯楽里",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_1_2",
+        "lat": 37.393169,
+        "lng": 136.90213,
+        "title": "輪島KABULET 三ノ湯・七ノ湯",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "parking",
+        "id": "parking_2",
+        "lat": 37.3889,
+        "lng": 136.9061,
+        "title": "道の駅 輪島",
+        "number": 3,
+        "distance": "440m",
+        "walking": "徒歩約6分",
+        "color": "#1976d2"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_2_0",
+        "lat": 37.388955585904,
+        "lng": 136.90615754885,
+        "title": "「道の駅」輪島公衆トイレ",
+        "distance": "8m",
+        "color": "#795548"
+    },
+    {
+        "type": "toilet",
+        "id": "toilet_2_1",
+        "lat": 37.390471306715,
+        "lng": 136.90866601295,
+        "title": "一本松総合運動公園　バリアフリーステーション（健康ふれあい広場横公衆便所）",
+        "distance": "287m",
+        "color": "#795548"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_0",
+        "lat": 37.387366,
+        "lng": 136.908664,
+        "title": "ホテルメルカート輪島 長山の湯",
+        "distance": "0.3km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_1",
+        "lat": 37.394127,
+        "lng": 136.905536,
+        "title": "足湯 湯楽里",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "onsen",
+        "id": "onsen_2_2",
+        "lat": 37.393169,
+        "lng": 136.90213,
+        "title": "輪島KABULET 三ノ湯・七ノ湯",
+        "distance": "0.6km",
+        "color": "#f8bbd0"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_0",
+        "lat": 37.39096553591249,
+        "lng": 136.90183920250055,
+        "title": "お宿たなか",
+        "number": 1,
+        "genre": "料理旅館",
+        "address": "石川県輪島市河井町22-38",
+        "color": "#ff9800"
+    },
+    {
+        "type": "restaurant",
+        "id": "restaurant_1",
+        "lat": 37.393172105865176,
+        "lng": 136.90442206365847,
+        "title": "アユート",
+        "number": 2,
+        "genre": "イタリアン",
+        "address": "石川県輪島市河井町3-158-1",
+        "color": "#ff9800"
+    }
+];
+
+    // マーカーオブジェクトを保存
+    const markerObjects = {};
+
+    // アイコン取得関数
+    function getMarkerIcon(type, number) {
+      if (type === 'parking' && number) {
+        return number;
+      }
+      if (type === 'restaurant' && number) {
+        return number;
+      }
+      const icons = {
+        center: '📍',
+        parking: '🅿️',
+        toilet: '🚻',
+        onsen: '♨️',
+        restaurant: '🍴'
+      };
+      return icons[type] || '📌';
+    }
+
+    // マーカーを作成
+    markers.forEach(markerData => {
+      let icon;
+      let zIndexOffset = 0;
+
+      // z-indexの設定（駐車場を最前面に）
+      if (markerData.type === 'parking') {
+        zIndexOffset = 1000;
+      } else if (markerData.type === 'center') {
+        zIndexOffset = 900;
+      } else if (markerData.type === 'restaurant') {
+        zIndexOffset = 800;
+      } else if (markerData.type === 'convenience') {
+        zIndexOffset = 700;
+      } else if (markerData.type === 'toilet') {
+        zIndexOffset = 600;
+      } else if (markerData.type === 'onsen') {
+        zIndexOffset = 500;
+      }
+
+      // コンビニの場合はロゴ画像を使用（Base64埋め込み）
+      if (markerData.type === 'convenience' && markerData.logo) {
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="convenience-logo-marker"><img src="${markerData.logo}" alt="${markerData.subType}"></div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      } else {
+        // その他のマーカーは従来通り
+        icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div class="custom-marker marker-${markerData.type}" style="background-color: ${markerData.color}">${getMarkerIcon(markerData.type, markerData.number)}</div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      }
+
+      // マーカー作成（zIndexOffsetを指定）
+      const marker = L.marker([markerData.lat, markerData.lng], {
+        icon: icon,
+        zIndexOffset: zIndexOffset
+      }).addTo(map);
+
+      // ポップアップ内容
+      let popupContent = `<div class="popup-title">${markerData.title}</div>`;
+
+      if (markerData.subType) {
+        popupContent += `<div class="popup-info">🏪 ${markerData.subType}</div>`;
+      }
+      if (markerData.description) {
+        popupContent += `<div class="popup-info">${markerData.description}</div>`;
+      }
+      if (markerData.distance) {
+        popupContent += `<div class="popup-info">📍 ${markerData.distance}</div>`;
+      }
+      if (markerData.walking) {
+        popupContent += `<div class="popup-info">🚶 ${markerData.walking}</div>`;
+      }
+      if (markerData.genre) {
+        popupContent += `<div class="popup-info">🍽️ ${markerData.genre}</div>`;
+      }
+      if (markerData.address) {
+        popupContent += `<div class="popup-info" style="margin-top: 4px;">${markerData.address}</div>`;
+      }
+
+      marker.bindPopup(popupContent);
+
+      // マーカーオブジェクトを保存
+      markerObjects[markerData.id] = marker;
+    });
+
+    // 外部から呼び出せる関数
+    window.showMarker = function(markerId) {
+      const marker = markerObjects[markerId];
+      if (marker) {
+        // アニメーションで地図を移動
+        map.setView(marker.getLatLng(), 17, {
+          animate: true,
+          duration: 0.5
+        });
+        marker.openPopup();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天王町 - 車中泊おすすめスポット</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-auth {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #f5f5f5;
+      border-radius: 20px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-user-name {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('data:image/jpeg;base64,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');
+      background-size: cover;
+      background-position: center;
+      padding: 50px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .header-left p {
+      color: #fff;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .region-like-button {
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .region-like-button:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+
+    .region-like-button.liked {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    /* 地図とリストのレイアウト */
+    .parking-map-fullwidth {
+      width: 100%;
+      background: #f8f9fa;
+      margin-bottom: 30px;
+    }
+
+    .map-layout-container {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .map-layout-left {
+      flex: 0 0 60%;
+      min-width: 0;
+      height: 700px;
+    }
+
+    .map-layout-left iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .map-layout-right {
+      flex: 0 0 40%;
+      min-width: 0;
+      max-height: 700px;
+      overflow-y: auto;
+      background: white;
+      padding: 20px;
+    }
+
+    .map-layout-right h4 {
+      margin: 0 0 15px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* エリア中心カード */
+    .area-center-card {
+      background: #fff3e0;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .area-center-card strong {
+      color: #d32f2f;
+      font-size: 13px;
+    }
+
+    /* 駐車場カード */
+    .parking-card {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .parking-card:hover {
+      background: #bbdefb;
+    }
+
+    .parking-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .parking-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .parking-card-title strong {
+      color: #1976d2;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .parking-like-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 2px 6px;
+      border-radius: 12px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #666;
+    }
+
+    .parking-like-btn:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .parking-like-btn.liked {
+      color: #f5576c;
+    }
+
+    .parking-card-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .btn-icon {
+      background: #3B82F6;
+      color: white;
+      padding: 6px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    .btn-icon:hover {
+      opacity: 0.8;
+    }
+
+    .btn-search {
+      background: #22D3EE;
+    }
+
+    .parking-info {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      align-items: flex-start;
+    }
+
+    .parking-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .parking-info-left div {
+      color: #666;
+    }
+
+    .parking-fee {
+      color: #d32f2f !important;
+      font-weight: bold;
+    }
+
+    .parking-facilities {
+      color: #555;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 11px;
+      flex-wrap: wrap;
+    }
+
+    .facility-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* レストランセクション */
+    .restaurant-section {
+      margin-top: 30px;
+    }
+
+    .restaurant-section h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .restaurant-card {
+      background: #fff8e1;
+      border-radius: 6px;
+      padding: 12px;
+      border-left: 4px solid #ff9800;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .restaurant-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .restaurant-card h3 {
+      color: #ff9800;
+      font-size: 14px;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .restaurant-like-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 2px 6px;
+      border-radius: 12px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #666;
+    }
+
+    .restaurant-like-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .restaurant-like-btn.liked {
+      color: #f5576c;
+    }
+
+    .restaurant-genre {
+      background: #ff9800;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .restaurant-address {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .restaurant-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .restaurant-buttons .btn-icon {
+      font-size: 14px;
+      padding: 5px 8px;
+    }
+
+    @media (max-width: 1200px) {
+      .map-layout-container {
+        flex-direction: column;
+      }
+
+      .map-layout-left {
+        flex: 0 0 100%;
+        height: 500px;
+      }
+
+      .map-layout-right {
+        flex: 0 0 100%;
+        max-height: none;
+      }
+
+      .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .map-layout-left {
+        height: 400px;
+      }
+
+      .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .restaurant-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* === 認証・いいね・コメント機能のスタイル === */
+    .auth-like-comment-section {
+      margin: 40px auto;
+      max-width: 800px;
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .auth-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-name {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .btn-profile-edit {
+      background: none;
+      border: none;
+      color: #1976d2;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 4px;
+    }
+
+    .btn-profile-edit:hover {
+      opacity: 0.7;
+    }
+
+    .btn-login, .btn-logout {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-login {
+      background: #1976d2;
+      color: white;
+    }
+
+    .btn-login:hover {
+      background: #1565c0;
+    }
+
+    .btn-logout {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-logout:hover {
+      background: #d32f2f;
+    }
+
+    .like-section {
+      text-align: center;
+      padding: 20px;
+      background: #fafafa;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .like-button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .like-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .like-button:active {
+      transform: scale(0.95);
+    }
+
+    .like-button.liked {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .like-count {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    .comments-section {
+      margin-top: 30px;
+    }
+
+    .comments-section h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .comment-form {
+      margin-bottom: 20px;
+    }
+
+    .comment-form textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: #1976d2;
+    }
+
+    .comment-form button {
+      margin-top: 10px;
+      padding: 10px 24px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .comment-form button:hover {
+      background: #1565c0;
+    }
+
+    .comments-list {
+      margin-top: 20px;
+    }
+
+    .comment-item {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      border-left: 3px solid #1976d2;
+    }
+
+    .comment-item.reply {
+      margin-left: 40px;
+      border-left-color: #ff9800;
+      background: #fff8e1;
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .comment-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comment-author img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .comment-author-name {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .comment-date {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .comment-content {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .comment-actions {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .comment-actions button {
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .comment-actions button:hover {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .reply-form-container {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .reply-form-container.active {
+      display: block;
+    }
+
+    .reply-form-container textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .reply-form-actions {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .reply-cancel, .reply-submit {
+      padding: 6px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .reply-cancel {
+      background: #f0f0f0;
+      color: #666;
+    }
+
+    .reply-cancel:hover {
+      background: #e0e0e0;
+    }
+
+    .reply-submit {
+      background: #1976d2;
+      color: white;
+    }
+
+    .reply-submit:hover {
+      background: #1565c0;
+    }
+
+    /* モーダル */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    .modal h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #1976d2;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .form-actions button {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-cancel {
+      background: #f0f0f0;
+      color: #666;
+    }
+
+    .btn-cancel:hover {
+      background: #e0e0e0;
+    }
+
+    .btn-submit {
+      background: #1976d2;
+      color: white;
+    }
+
+    .btn-submit:hover {
+      background: #1565c0;
+    }
+
+    .error-message {
+      color: #f44336;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .success-message {
+      color: #4caf50;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .login-options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn-google {
+      background: white;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .btn-google:hover {
+      background: #f5f5f5;
+      border-color: #bbb;
+    }
+
+    .divider {
+      text-align: center;
+      color: #999;
+      margin: 10px 0;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- トップナビゲーション -->
+    <div class="top-nav">
+      <a href="../index.html" class="back-button">← 全国の車中泊スポットマップに戻る</a>
+
+      <div class="nav-auth">
+        <!-- ログイン状態 -->
+        <div id="nav-logged-in" style="display: none;">
+          <div class="nav-user-info">
+            <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
+            <span id="nav-user-name" class="nav-user-name"></span>
+            <button id="nav-btn-profile-edit" class="btn-profile-edit" title="プロフィールを編集">✏️</button>
+          </div>
+        </div>
+
+        <!-- ログインボタン -->
+        <button id="nav-btn-login" class="btn-login" style="display: none;">ログイン</button>
+
+        <!-- ログアウトボタン -->
+        <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
+      </div>
+    </div>
+
+    <!-- ヒーローセクション -->
+    <div class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1>🚗 天王町</h1>
+          <p>周辺のおすすめ車中泊スポット</p>
+        </div>
+        <div class="header-right">
+          <button id="region-like-button" class="region-like-button">
+            <span>♥️</span>
+            <span id="region-like-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 注意喚起 -->
+    <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px; color: #856404;">
+      <strong>⚠️ 重要なお知らせ</strong>
+      <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+        <li><strong>駐車料金は参考情報です：</strong>本サービスで表示される駐車料金は、あくまで参考情報であり、実際の料金と異なる場合があります。</li>
+        <li><strong>最新情報の確認：</strong>ご利用前に必ず現地または公式サイトで最新の料金、営業時間、利用条件等をご確認ください。</li>
+      </ul>
+    </div>
+
+    <!-- 地図＋駐車場リスト -->
+    <div class="section-title">🚗 車中泊におすすめの駐車場トップ10（18:00-8:00 料金順）</div>
+
+    <div class="parking-map-fullwidth">
+      <div class="map-layout-container">
+        <div class="map-layout-left">
+          <iframe id="parking-map-iframe" src="天王町-map.html"></iframe>
+        </div>
+
+        <div class="map-layout-right">
+          <h4>📍 クリックして地図に表示</h4>
+
+          <!-- エリア中心 -->
+          <div class="area-center-card" onclick="showMarker('area_center')">
+            <strong>🔴 エリア中心: 天王町</strong>
+            <a href="https://www.google.com/maps?q=35.4540049,139.6026308" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+          </div>
+
+
+          <!-- 駐車場1 -->
+          <div class="parking-card" onclick="showMarker('parking_0')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🥇 1位: コインパーク天王町１丁目</strong>
+                <button class="parking-like-btn" data-parking-id="_____________35_456544_139_601643" onclick="event.stopPropagation(); likeParkingSpot('_____________35_456544_139_601643')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.456544,139.601643" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E5%A4%A9%E7%8E%8B%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約4分 (297m)</div>
+                <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (275m)</div>
+                <div class="facility-item">♨️ 喜久の湯 (0.9km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場2 -->
+          <div class="parking-card" onclick="showMarker('parking_1')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🥈 2位: パラカ横浜市神戸町第１</strong>
+                <button class="parking-like-btn" data-parking-id="____________35_452861_139_601343" onclick="event.stopPropagation(); likeParkingSpot('____________35_452861_139_601343')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.452861,139.601343" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%A8%AA%E6%B5%9C%E5%B8%82%E7%A5%9E%E6%88%B8%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (173m)</div>
+                <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (170m)</div>
+                <div class="facility-item">♨️ 朝日湯 (1.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場3 -->
+          <div class="parking-card" onclick="showMarker('parking_2')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🥉 3位: パラカ横浜市久保町第５</strong>
+                <button class="parking-like-btn" data-parking-id="____________35_451069_139_605717" onclick="event.stopPropagation(); likeParkingSpot('____________35_451069_139_605717')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.451069,139.605717" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%A8%AA%E6%B5%9C%E5%B8%82%E4%B9%85%E4%BF%9D%E7%94%BA%E7%AC%AC%EF%BC%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (430m)</div>
+                <div class="parking-fee">💰 ¥400 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (364m)</div>
+                <div class="facility-item">♨️ 朝日湯 (0.8km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場4 -->
+          <div class="parking-card" onclick="showMarker('parking_3')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 4位: パラカ横浜市西久保町第１</strong>
+                <button class="parking-like-btn" data-parking-id="_____________35_450319_139_601482" onclick="event.stopPropagation(); likeParkingSpot('_____________35_450319_139_601482')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.450319,139.601482" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%A8%AA%E6%B5%9C%E5%B8%82%E8%A5%BF%E4%B9%85%E4%BF%9D%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (423m)</div>
+                <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (358m)</div>
+                <div class="facility-item">♨️ 朝日湯 (1.2km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場5 -->
+          <div class="parking-card" onclick="showMarker('parking_4')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 5位: マイパーキング　西横浜</strong>
+                <button class="parking-like-btn" data-parking-id="____________35_451353_139_606781" onclick="event.stopPropagation(); likeParkingSpot('____________35_451353_139_606781')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.451353,139.606781" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%9E%E3%82%A4%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%80%80%E8%A5%BF%E6%A8%AA%E6%B5%9C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約6分 (478m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (269m)</div>
+                <div class="facility-item">🚻 西横浜駅前公衆トイレ (247m)</div>
+                <div class="facility-item">♨️ 朝日湯 (0.7km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場6 -->
+          <div class="parking-card" onclick="showMarker('parking_5')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 6位: 南浅間町ＥＳコインパーキング</strong>
+                <button class="parking-like-btn" data-parking-id="_______________35_453827_139_606703" onclick="event.stopPropagation(); likeParkingSpot('_______________35_453827_139_606703')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.453827,139.606703" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%8D%97%E6%B5%85%E9%96%93%E7%94%BA%EF%BC%A5%EF%BC%B3%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (370m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (225m)</div>
+                <div class="facility-item">🚻 西横浜駅前公衆トイレ (136m)</div>
+                <div class="facility-item">♨️ 朝日湯 (0.7km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場7 -->
+          <div class="parking-card" onclick="showMarker('parking_6')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 7位: コインパーク天王町</strong>
+                <button class="parking-like-btn" data-parking-id="__________35_457552_139_603117" onclick="event.stopPropagation(); likeParkingSpot('__________35_457552_139_603117')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.457552,139.603117" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E5%A4%A9%E7%8E%8B%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (397m)</div>
+                <div class="parking-fee">💰 ¥800 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (275m)</div>
+                <div class="facility-item">♨️ 喜久の湯 (0.9km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場8 -->
+          <div class="parking-card" onclick="showMarker('parking_7')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 8位: グランディーシステムパーク西久保町</strong>
+                <button class="parking-like-btn" data-parking-id="__________________35_453402_139_606303" onclick="event.stopPropagation(); likeParkingSpot('__________________35_453402_139_606303')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.453402,139.606303" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%BC%E3%82%AF%E8%A5%BF%E4%B9%85%E4%BF%9D%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約5分 (340m)</div>
+                <div class="parking-fee">💰 ¥900 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (245m)</div>
+                <div class="facility-item">🚻 西横浜駅前公衆トイレ (160m)</div>
+                <div class="facility-item">♨️ 朝日湯 (0.7km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場9 -->
+          <div class="parking-card" onclick="showMarker('parking_8')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 9位: ナビパーク神戸町第１</strong>
+                <button class="parking-like-btn" data-parking-id="___________35_453136_139_601554" onclick="event.stopPropagation(); likeParkingSpot('___________35_453136_139_601554')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.453136,139.601554" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E3%83%8A%E3%83%93%E3%83%91%E3%83%BC%E3%82%AF%E7%A5%9E%E6%88%B8%E7%94%BA%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約2分 (137m)</div>
+                <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (137m)</div>
+                <div class="facility-item">♨️ 朝日湯 (1.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 駐車場10 -->
+          <div class="parking-card" onclick="showMarker('parking_9')">
+            <div class="parking-card-header">
+              <div class="parking-card-title">
+                <strong>🔵 10位: 名鉄協商横浜天王町</strong>
+                <button class="parking-like-btn" data-parking-id="__________35_453836_139_600343" onclick="event.stopPropagation(); likeParkingSpot('__________35_453836_139_600343')">
+                  <span>♥️</span>
+                  <span class="parking-like-count">0</span>
+                </button>
+              </div>
+              <div class="parking-card-buttons">
+                <a href="https://www.google.com/maps?q=35.453836,139.600343" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+                <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%A8%AA%E6%B5%9C%E5%A4%A9%E7%8E%8B%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+              </div>
+            </div>
+
+            <div class="parking-info">
+              <div class="parking-info-left">
+                <div>📍 徒歩約3分 (208m)</div>
+                <div class="parking-fee">💰 ¥1,100 (18:00-8:00)</div>
+              </div>
+
+
+              <div style="color: #666; flex-shrink: 0;">|</div>
+              <div class="parking-facilities">
+                <div class="facility-item">🏪 コンビニ (181m)</div>
+                <div class="facility-item">♨️ 喜久の湯 (1.1km)</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- レストランセクション -->
+    <div class="restaurant-section">
+      <h2>🍴 おすすめレストラン</h2>
+      <div class="restaurant-grid">
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_0')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
+          <div class="restaurant-card-header">
+            <h3>大石</h3>
+            <button class="restaurant-like-btn" data-restaurant-id="5499" onclick="event.stopPropagation(); likeRestaurant(5499)">
+              <span>♥️</span>
+              <span class="restaurant-like-count">0</span>
+            </button>
+          </div>
+
+          <span class="restaurant-genre">焼肉</span>
+
+          <div class="restaurant-address">📍 神奈川県横浜市保土ケ谷区天王町2-46-11</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.45441053800271,139.60315948104602" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A7%E7%9F%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <div class="restaurant-card-header">
+            <h3>めん処 樹</h3>
+            <button class="restaurant-like-btn" data-restaurant-id="3357" onclick="event.stopPropagation(); likeRestaurant(3357)">
+              <span>♥️</span>
+              <span class="restaurant-like-count">0</span>
+            </button>
+          </div>
+
+          <span class="restaurant-genre">ラーメン</span>
+
+          <div class="restaurant-address">📍 神奈川県横浜市保土ケ谷区天王町1-32-17</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.4576590379997,139.6001857810809" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%81%E3%82%93%E5%87%A6%20%E6%A8%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <div class="restaurant-card-header">
+            <h3>Gentillesse KOMACHI</h3>
+            <button class="restaurant-like-btn" data-restaurant-id="11368" onclick="event.stopPropagation(); likeRestaurant(11368)">
+              <span>♥️</span>
+              <span class="restaurant-like-count">0</span>
+            </button>
+          </div>
+
+          <span class="restaurant-genre">ヨーロッパ料理</span>
+
+          <div class="restaurant-address">📍 神奈川県横浜市保土ケ谷区神戸町3-7 内田ビル １Ｆ</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.45336333800284,139.60144408103662" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=Gentillesse%20KOMACHI" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <div class="restaurant-card-header">
+            <h3>ラーメン 光家</h3>
+            <button class="restaurant-like-btn" data-restaurant-id="10462" onclick="event.stopPropagation(); likeRestaurant(10462)">
+              <span>♥️</span>
+              <span class="restaurant-like-count">0</span>
+            </button>
+          </div>
+
+          <span class="restaurant-genre">ラーメン</span>
+
+          <div class="restaurant-address">📍 神奈川県横浜市西区浅間町5-381-10</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.45719053800202,139.60652568107173" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E5%85%89%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <div class="restaurant-card-header">
+            <h3>松翔苑</h3>
+            <button class="restaurant-like-btn" data-restaurant-id="10474" onclick="event.stopPropagation(); likeRestaurant(10474)">
+              <span>♥️</span>
+              <span class="restaurant-like-count">0</span>
+            </button>
+          </div>
+
+          <span class="restaurant-genre">ホルモン</span>
+
+          <div class="restaurant-address">📍 神奈川県横浜市西区南浅間町32-14</div>
+
+          <div class="restaurant-buttons">
+            <a href="https://www.google.com/maps?q=35.45574633800303,139.6068524810569" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%9D%BE%E7%BF%94%E8%8B%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- コメント機能セクション -->
+    <div class="auth-like-comment-section">
+      <div class="comments-section">
+        <h3>💬 みんなのコメント</h3>
+
+        <!-- コメント投稿フォーム -->
+        <div class="comment-form">
+          <textarea id="comment-input" placeholder="この地域についてコメントを残そう（1-1000文字）" maxlength="1000"></textarea>
+          <button id="comment-submit">投稿</button>
+          <div id="comment-error" class="error-message" style="display: none;"></div>
+        </div>
+
+        <!-- コメント一覧 -->
+        <div id="comments-list" class="comments-list">
+          <!-- コメントがここに表示されます -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 認証モーダル -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeAuthModal()">×</button>
+      <h2>ログイン</h2>
+
+      <div class="login-options">
+        <button id="google-login" class="btn-google">
+          <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4" fill-rule="nonzero"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853" fill-rule="nonzero"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05" fill-rule="nonzero"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335" fill-rule="nonzero"/><path d="M0 0h18v18H0z"/></g></svg>
+          Googleでログイン
+        </button>
+
+        <div class="divider">または</div>
+
+        <div class="form-group">
+          <label>メールアドレス</label>
+          <input type="email" id="login-email" placeholder="email@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label>パスワード（6文字以上）</label>
+          <input type="password" id="login-password" placeholder="••••••" />
+        </div>
+
+        <div id="login-error" class="error-message" style="display: none;"></div>
+
+        <div class="form-actions">
+          <button class="btn-submit" onclick="handleEmailLogin()">ログイン / 新規登録</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- プロフィール編集モーダル -->
+  <div id="profile-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProfileModal()">×</button>
+      <h2>プロフィール編集</h2>
+
+      <form id="profile-form">
+        <div class="form-group">
+          <label>ニックネーム *</label>
+          <input type="text" id="profile-nickname" required maxlength="50" />
+        </div>
+
+        <div class="form-group">
+          <label>アバターURL（オプション）</label>
+          <input type="url" id="profile-avatar-url" placeholder="https://..." />
+        </div>
+
+        <div id="profile-error" class="error-message" style="display: none;"></div>
+        <div id="profile-success" class="success-message" style="display: none;"></div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="closeProfileModal()">キャンセル</button>
+          <button type="submit" class="btn-submit">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://jhqnypyxrkwdrgutzttf.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpocW55cHl4cmt3ZHJndXR6dHRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTk5MjIsImV4cCI6MjA3MDczNTkyMn0.VdbVtE_sIlCFjQd1OAgmyYVoi-uoGVbjKQvdMIgJ5qY';
+    const regionSlug = '天王町';
+
+    // Supabaseクライアント初期化
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    let currentUser = null;
+    let userProfile = null;
+
+    // 地図表示関数
+    function showMarker(markerId) {
+      const iframe = document.getElementById('parking-map-iframe');
+      if (iframe && iframe.contentWindow && iframe.contentWindow.showMarker) {
+        iframe.contentWindow.showMarker(markerId);
+        iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // エラー表示
+    function showError(elementId, message) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.textContent = message;
+        el.style.display = 'block';
+        setTimeout(() => { el.style.display = 'none'; }, 5000);
+      }
+    }
+
+    // 成功メッセージ表示
+    function showSuccess(elementId, message) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.textContent = message;
+        el.style.display = 'block';
+        setTimeout(() => { el.style.display = 'none'; }, 3000);
+      }
+    }
+
+    // エラーメッセージをクリア
+    function clearErrors() {
+      ['login-error', 'comment-error', 'like-error', 'profile-error', 'profile-success'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+    }
+
+    // 認証モーダルを開く
+    function openAuthModal() {
+      document.getElementById('auth-modal').classList.add('active');
+    }
+
+    // 認証モーダルを閉じる
+    function closeAuthModal() {
+      document.getElementById('auth-modal').classList.remove('active');
+      clearErrors();
+    }
+
+    // プロフィールモーダルを開く
+    function openProfileModal() {
+      if (!currentUser) return;
+
+      const nickname = document.getElementById('profile-nickname');
+      const avatarUrl = document.getElementById('profile-avatar-url');
+
+      nickname.value = userProfile?.display_name || currentUser.user_metadata?.display_name || '';
+      avatarUrl.value = userProfile?.avatar_url || '';
+
+      document.getElementById('profile-modal').classList.add('active');
+    }
+
+    // プロフィールモーダルを閉じる
+    function closeProfileModal() {
+      document.getElementById('profile-modal').classList.remove('active');
+      clearErrors();
+    }
+
+    // Googleログイン
+    document.getElementById('google-login')?.addEventListener('click', async () => {
+      const { error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.href
+        }
+      });
+
+      if (error) {
+        showError('login-error', 'Googleログインに失敗しました: ' + error.message);
+      }
+    });
+
+    // メール/パスワードログイン
+    async function handleEmailLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      if (!email || !password) {
+        showError('login-error', 'メールアドレスとパスワードを入力してください');
+        return;
+      }
+
+      if (password.length < 6) {
+        showError('login-error', 'パスワードは6文字以上で入力してください');
+        return;
+      }
+
+      // まずログインを試みる
+      let { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+      // ログイン失敗の場合は新規登録を試みる
+      if (error && error.message.includes('Invalid')) {
+        const result = await supabaseClient.auth.signUp({ email, password });
+        data = result.data;
+        error = result.error;
+
+        if (!error) {
+          alert('確認メールを送信しました。メールを確認してアカウントを有効化してください。');
+        }
+      }
+
+      if (error) {
+        showError('login-error', 'ログインに失敗しました: ' + error.message);
+        return;
+      }
+
+      closeAuthModal();
+      await checkAuthStatus();
+    }
+
+    // ログアウト（ナビゲーション）
+    document.getElementById('nav-btn-logout')?.addEventListener('click', async () => {
+      await supabaseClient.auth.signOut();
+      await checkAuthStatus();
+    });
+
+    // プロフィール編集ボタン（ナビゲーション）
+    document.getElementById('nav-btn-profile-edit')?.addEventListener('click', openProfileModal);
+
+    // ログインボタン（ナビゲーション）
+    document.getElementById('nav-btn-login')?.addEventListener('click', openAuthModal);
+
+    // プロフィール更新
+    document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const nickname = document.getElementById('profile-nickname').value.trim();
+      const avatarUrl = document.getElementById('profile-avatar-url').value.trim();
+
+      if (!nickname) {
+        showError('profile-error', 'ニックネームを入力してください');
+        return;
+      }
+
+      const { error } = await supabaseClient
+        .from('user_profiles')
+        .upsert({
+          id: currentUser.id,
+          display_name: nickname,
+          avatar_url: avatarUrl || null
+        });
+
+      if (error) {
+        showError('profile-error', 'プロフィールの更新に失敗しました: ' + error.message);
+        return;
+      }
+
+      showSuccess('profile-success', 'プロフィールを更新しました');
+      await loadUserProfile();
+      updateAuthUI();
+      await loadComments();
+
+      setTimeout(() => {
+        closeProfileModal();
+      }, 1500);
+    });
+
+    // ユーザープロフィール読み込み
+    async function loadUserProfile() {
+      if (!currentUser) return;
+
+      const { data, error } = await supabaseClient
+        .from('user_profiles')
+        .select('*')
+        .eq('id', currentUser.id)
+        .maybeSingle();
+
+      if (!error && data) {
+        userProfile = data;
+      }
+    }
+
+    // 認証状態チェック
+    async function checkAuthStatus() {
+      const { data: { user } } = await supabaseClient.auth.getUser();
+      currentUser = user;
+
+      if (currentUser) {
+        await loadUserProfile();
+      }
+
+      updateAuthUI();
+      await loadLikeStatus();
+      await loadComments();
+    }
+
+    // 認証UIを更新
+    function updateAuthUI() {
+      const navLoggedIn = document.getElementById('nav-logged-in');
+      const navUserName = document.getElementById('nav-user-name');
+      const navUserAvatar = document.getElementById('nav-user-avatar');
+      const navBtnLogin = document.getElementById('nav-btn-login');
+      const navBtnLogout = document.getElementById('nav-btn-logout');
+
+      if (currentUser) {
+        // ニックネーム表示（優先順位: user_profiles.display_name → user_metadata.display_name → emailのプレフィックス）
+        const displayName = userProfile?.display_name ||
+                           currentUser.user_metadata?.display_name ||
+                           currentUser.email.split('@')[0];
+
+        navUserName.textContent = displayName;
+
+        // アバター表示
+        const avatarUrl = userProfile?.avatar_url || currentUser.user_metadata?.avatar_url;
+        if (avatarUrl) {
+          navUserAvatar.src = avatarUrl;
+          navUserAvatar.style.display = 'block';
+        } else {
+          navUserAvatar.style.display = 'none';
+        }
+
+        navLoggedIn.style.display = 'block';
+        navBtnLogin.style.display = 'none';
+        navBtnLogout.style.display = 'block';
+      } else {
+        navLoggedIn.style.display = 'none';
+        navBtnLogin.style.display = 'block';
+        navBtnLogout.style.display = 'none';
+      }
+    }
+
+    // いいね状態を読み込む
+    async function loadLikeStatus() {
+      try {
+        // 総いいね数を取得
+        const { data: regionData, error: regionError } = await supabaseClient
+          .from('regions')
+          .select('like_count')
+          .eq('slug', regionSlug)
+          .maybeSingle();
+
+        if (!regionError && regionData) {
+          document.getElementById('region-like-count').textContent = regionData.like_count || 0;
+        }
+
+        // ユーザーがログインしている場合、ユーザーのいいね状態を取得
+        if (currentUser) {
+          const { data: userLike, error: likeError } = await supabaseClient
+            .from('region_likes')
+            .select('*')
+            .eq('region_slug', regionSlug)
+            .eq('user_id', currentUser.id)
+            .maybeSingle();
+
+          const likeButton = document.getElementById('region-like-button');
+          if (!likeError && userLike) {
+            likeButton.classList.add('liked');
+          } else {
+            likeButton.classList.remove('liked');
+          }
+        }
+      } catch (err) {
+        console.error('いいね状態読み込みエラー:', err);
+      }
+    }
+
+    // 地域いいねボタン
+    document.getElementById('region-like-button')?.addEventListener('click', async () => {
+      if (!currentUser) {
+        openAuthModal();
+        return;
+      }
+
+      const likeButton = document.getElementById('region-like-button');
+      const isLiked = likeButton.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを取り消す
+        const { error } = await supabaseClient
+          .from('region_likes')
+          .delete()
+          .eq('region_slug', regionSlug)
+          .eq('user_id', currentUser.id);
+
+        if (error) {
+          console.error('地域いいね取り消しエラー:', error);
+          return;
+        }
+
+        likeButton.classList.remove('liked');
+      } else {
+        // いいねを追加する
+        const { error } = await supabaseClient
+          .from('region_likes')
+          .insert({
+            region_slug: regionSlug,
+            user_id: currentUser.id
+          });
+
+        if (error) {
+          console.error('地域いいね追加エラー:', error);
+          if (error.code === '23503') {
+            alert('いいねの追加に失敗しました。地域データが登録されていない可能性があります。');
+          }
+          return;
+        }
+
+        likeButton.classList.add('liked');
+      }
+
+      // いいね数を再読み込み
+      await loadLikeStatus();
+    });
+
+    // コメント投稿
+    document.getElementById('comment-submit')?.addEventListener('click', async () => {
+      console.log('[DEBUG] コメント投稿ボタンがクリックされました');
+      clearErrors();
+
+      if (!currentUser) {
+        console.log('[DEBUG] ユーザーが未ログイン');
+        openAuthModal();
+        return;
+      }
+
+      console.log('[DEBUG] 現在のユーザー:', currentUser.id);
+
+      const input = document.getElementById('comment-input');
+      const content = input.value.trim();
+
+      console.log('[DEBUG] コメント内容:', content, '文字数:', content.length);
+
+      if (!content || content.length < 1 || content.length > 1000) {
+        showError('comment-error', 'コメントは1文字以上1000文字以内で入力してください');
+        return;
+      }
+
+      try {
+        // プロフィールが存在しない場合は自動作成
+        if (!userProfile) {
+          console.log('[DEBUG] プロフィールを自動作成中...');
+          const displayName = currentUser.user_metadata?.display_name ||
+                             currentUser.email?.split('@')[0] ||
+                             'ユーザー' + currentUser.id.slice(0, 8);
+
+          const { error: profileError } = await supabaseClient
+            .from('user_profiles')
+            .upsert({
+              id: currentUser.id,
+              display_name: displayName
+            });
+
+          if (profileError) {
+            console.error('[DEBUG] プロフィール作成エラー:', profileError);
+          } else {
+            console.log('[DEBUG] プロフィール作成成功');
+          }
+
+          await loadUserProfile();
+        }
+
+        console.log('[DEBUG] コメントを投稿中...', {
+          region_slug: regionSlug,
+          user_id: currentUser.id,
+          content: content
+        });
+
+        const { data, error } = await supabaseClient
+          .from('region_comments')
+          .insert({
+            region_slug: regionSlug,
+            user_id: currentUser.id,
+            content: content
+          })
+          .select();
+
+        if (error) {
+          console.error('[DEBUG] コメント投稿エラー:', error);
+          showError('comment-error', 'コメントの投稿に失敗しました: ' + error.message);
+          alert('エラー詳細: ' + JSON.stringify(error, null, 2));
+          return;
+        }
+
+        console.log('[DEBUG] コメント投稿成功:', data);
+        input.value = '';
+
+        console.log('[DEBUG] コメント一覧を再読み込み中...');
+        await loadComments();
+        console.log('[DEBUG] コメント一覧の再読み込み完了');
+      } catch (err) {
+        console.error('[DEBUG] 例外発生:', err);
+        showError('comment-error', '予期しないエラーが発生しました: ' + err.message);
+        alert('例外詳細: ' + err.message);
+      }
+    });
+
+    // コメントを読み込む
+    async function loadComments() {
+      console.log('[DEBUG] コメント読み込み開始');
+      try {
+        console.log('[DEBUG] region_slug:', regionSlug);
+
+        // Step 1: コメントを取得
+        const { data: comments, error: commentsError } = await supabaseClient
+          .from('region_comments')
+          .select(`
+            id,
+            content,
+            like_count,
+            created_at,
+            user_id,
+            is_edited,
+            parent_comment_id
+          `)
+          .eq('region_slug', regionSlug)
+          .order('created_at', { ascending: false });
+
+        console.log('[DEBUG] コメント取得結果:', { comments, commentsError });
+
+        if (commentsError) {
+          console.error('[DEBUG] コメント読み込みエラー:', commentsError);
+          alert('コメント読み込みエラー: ' + commentsError.message);
+          return;
+        }
+
+        const commentsList = document.getElementById('comments-list');
+        console.log('[DEBUG] コメントリスト要素:', commentsList);
+
+        if (!commentsList) {
+          console.error('[DEBUG] コメントリスト要素が見つかりません');
+          return;
+        }
+
+        commentsList.innerHTML = '';
+
+        if (!comments || comments.length === 0) {
+          console.log('[DEBUG] コメントがありません');
+          commentsList.innerHTML = '<p style="text-align: center; color: #999;">まだコメントがありません</p>';
+          return;
+        }
+
+        console.log('[DEBUG] コメント件数:', comments.length);
+
+        // Step 2: ユニークなuser_idを抽出
+        const userIds = [...new Set(comments.map(c => c.user_id))];
+        console.log('[DEBUG] ユーザーID数:', userIds.length);
+
+        // Step 3: user_profilesを取得
+        const { data: profiles, error: profilesError } = await supabaseClient
+          .from('user_profiles')
+          .select('id, display_name, avatar_url')
+          .in('id', userIds);
+
+        console.log('[DEBUG] プロフィール取得結果:', { profiles, profilesError });
+
+        // Step 4: user_idでマッピング
+        const profileMap = {};
+        if (profiles) {
+          profiles.forEach(profile => {
+            profileMap[profile.id] = profile;
+          });
+        }
+
+        // Step 5: コメントにプロフィール情報を追加
+        const commentsWithProfiles = comments.map(comment => ({
+          ...comment,
+          user_profiles: profileMap[comment.user_id] || {
+            display_name: 'ユーザー' + comment.user_id.slice(0, 8),
+            avatar_url: null
+          }
+        }));
+
+        // 親コメントと返信を分ける
+        const parentComments = commentsWithProfiles.filter(c => !c.parent_comment_id);
+        const replies = commentsWithProfiles.filter(c => c.parent_comment_id);
+
+        console.log('[DEBUG] 親コメント:', parentComments.length, '件、返信:', replies.length, '件');
+
+        for (const comment of parentComments) {
+          const commentEl = createCommentElement(comment);
+          commentsList.appendChild(commentEl);
+
+          // この親コメントへの返信を表示
+          const commentReplies = replies.filter(r => r.parent_comment_id === comment.id);
+          for (const reply of commentReplies) {
+            const replyEl = createCommentElement(reply, true);
+            commentsList.appendChild(replyEl);
+          }
+        }
+
+        console.log('[DEBUG] コメント表示完了');
+      } catch (err) {
+        console.error('[DEBUG] コメント読み込み例外:', err);
+        alert('コメント読み込み例外: ' + err.message);
+      }
+    }
+
+    // コメント要素を作成（XSS対策：DOM操作で安全に作成）
+    function createCommentElement(comment, isReply = false) {
+      const div = document.createElement('div');
+      div.className = 'comment-item' + (isReply ? ' reply' : '');
+
+      const displayName = comment.user_profiles?.display_name || 'ユーザー' + comment.user_id.slice(0, 8);
+      const avatarUrl = comment.user_profiles?.avatar_url;
+      const date = new Date(comment.created_at).toLocaleString('ja-JP');
+      const isOwner = currentUser && currentUser.id === comment.user_id;
+
+      // コメントヘッダー
+      const commentHeader = document.createElement('div');
+      commentHeader.className = 'comment-header';
+
+      const commentAuthor = document.createElement('div');
+      commentAuthor.className = 'comment-author';
+
+      if (avatarUrl) {
+        const avatar = document.createElement('img');
+        avatar.src = avatarUrl;
+        avatar.alt = displayName;
+        commentAuthor.appendChild(avatar);
+      }
+
+      const authorName = document.createElement('span');
+      authorName.className = 'comment-author-name';
+      authorName.textContent = displayName;
+      commentAuthor.appendChild(authorName);
+
+      const commentDate = document.createElement('span');
+      commentDate.className = 'comment-date';
+      commentDate.textContent = date;
+
+      commentHeader.appendChild(commentAuthor);
+      commentHeader.appendChild(commentDate);
+
+      // コメント内容（XSS対策：textContentを使用）
+      const commentContent = document.createElement('div');
+      commentContent.className = 'comment-content';
+      commentContent.textContent = comment.content;
+
+      // コメントアクション
+      const commentActions = document.createElement('div');
+      commentActions.className = 'comment-actions';
+
+      const likeButton = document.createElement('button');
+      likeButton.onclick = () => likeComment(comment.id);
+      likeButton.textContent = `♥️ ${comment.like_count || 0}`;
+      commentActions.appendChild(likeButton);
+
+      if (!isReply) {
+        const replyButton = document.createElement('button');
+        replyButton.onclick = () => showReplyForm(comment.id, displayName);
+        replyButton.textContent = '💬 返信';
+        commentActions.appendChild(replyButton);
+      }
+
+      if (isOwner) {
+        const deleteButton = document.createElement('button');
+        deleteButton.onclick = () => deleteComment(comment.id);
+        deleteButton.textContent = '🗑️ 削除';
+        commentActions.appendChild(deleteButton);
+      }
+
+      // 返信フォームコンテナ
+      const replyFormContainer = document.createElement('div');
+      replyFormContainer.id = `reply-form-${comment.id}`;
+      replyFormContainer.className = 'reply-form-container';
+
+      // すべてを組み立て
+      div.appendChild(commentHeader);
+      div.appendChild(commentContent);
+      div.appendChild(commentActions);
+      div.appendChild(replyFormContainer);
+
+      return div;
+    }
+
+    // コメントいいね
+    async function likeComment(commentId) {
+      if (!currentUser) {
+        openAuthModal();
+        return;
+      }
+
+      // いいね状態を確認
+      const { data: existingLike } = await supabaseClient
+        .from('region_comment_likes')
+        .select('*')
+        .eq('comment_id', commentId)
+        .eq('user_id', currentUser.id)
+        .maybeSingle();
+
+      if (existingLike) {
+        // いいね取り消し
+        await supabaseClient
+          .from('region_comment_likes')
+          .delete()
+          .eq('comment_id', commentId)
+          .eq('user_id', currentUser.id);
+      } else {
+        // いいね追加
+        await supabaseClient
+          .from('region_comment_likes')
+          .insert({
+            comment_id: commentId,
+            user_id: currentUser.id
+          });
+      }
+
+      await loadComments();
+    }
+
+    // コメント削除
+    async function deleteComment(commentId) {
+      if (!currentUser) return;
+
+      if (!confirm('このコメントを削除しますか？')) return;
+
+      const { error } = await supabaseClient
+        .from('region_comments')
+        .delete()
+        .eq('id', commentId)
+        .eq('user_id', currentUser.id);
+
+      if (error) {
+        alert('コメントの削除に失敗しました');
+        return;
+      }
+
+      await loadComments();
+    }
+
+    // 返信フォームを表示（XSS対策：DOM操作で安全に作成）
+    function showReplyForm(parentCommentId, parentAuthor) {
+      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
+      replyForm.innerHTML = ''; // クリア
+
+      const textarea = document.createElement('textarea');
+      textarea.id = `reply-input-${parentCommentId}`;
+      textarea.placeholder = `@${parentAuthor} への返信（1-1000文字）`;
+      textarea.maxLength = 1000;
+      textarea.required = true;
+      textarea.value = `@${parentAuthor} `;
+
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'reply-form-actions';
+
+      const cancelButton = document.createElement('button');
+      cancelButton.className = 'reply-cancel';
+      cancelButton.onclick = () => hideReplyForm(parentCommentId);
+      cancelButton.textContent = 'キャンセル';
+
+      const submitButton = document.createElement('button');
+      submitButton.className = 'reply-submit';
+      submitButton.onclick = () => submitReply(parentCommentId);
+      submitButton.textContent = '返信';
+
+      actionsDiv.appendChild(cancelButton);
+      actionsDiv.appendChild(submitButton);
+
+      replyForm.appendChild(textarea);
+      replyForm.appendChild(actionsDiv);
+
+      replyForm.classList.add('active');
+      textarea.focus();
+    }
+
+    // 返信フォームを非表示
+    function hideReplyForm(parentCommentId) {
+      const replyForm = document.getElementById(`reply-form-${parentCommentId}`);
+      replyForm.classList.remove('active');
+      replyForm.innerHTML = '';
+    }
+
+    // 返信を投稿
+    async function submitReply(parentCommentId) {
+      if (!currentUser) {
+        openAuthModal();
+        return;
+      }
+
+      const input = document.getElementById(`reply-input-${parentCommentId}`);
+      const content = input.value.trim();
+
+      if (!content || content.length < 1 || content.length > 1000) {
+        alert('返信は1文字以上1000文字以内で入力してください');
+        return;
+      }
+
+      const { error } = await supabaseClient
+        .from('region_comments')
+        .insert({
+          region_slug: regionSlug,
+          user_id: currentUser.id,
+          content: content,
+          parent_comment_id: parentCommentId
+        });
+
+      if (error) {
+        console.error('返信投稿エラー:', error);
+        alert('返信の投稿に失敗しました');
+        return;
+      }
+
+      hideReplyForm(parentCommentId);
+      await loadComments();
+    }
+
+    // 駐車場いいね機能
+    async function likeParkingSpot(parkingId) {
+      if (!currentUser) {
+        openAuthModal();
+        return;
+      }
+
+      const button = document.querySelector(`[data-parking-id="${parkingId}"]`);
+      const isLiked = button?.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを取り消す
+        const { error } = await supabaseClient
+          .from('parking_spot_likes')
+          .delete()
+          .eq('parking_spot_id', parkingId)
+          .eq('user_id', currentUser.id);
+
+        if (error) {
+          console.error('駐車場いいね取り消しエラー:', error);
+          return;
+        }
+
+        button.classList.remove('liked');
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('parking_spot_likes')
+          .insert({
+            parking_spot_id: parkingId,
+            user_id: currentUser.id
+          });
+
+        if (error) {
+          console.error('駐車場いいね追加エラー:', error);
+          return;
+        }
+
+        button.classList.add('liked');
+      }
+
+      // いいね数を更新
+      await loadParkingLikes();
+    }
+
+    // レストランいいね機能
+    async function likeRestaurant(restaurantId) {
+      if (!currentUser) {
+        openAuthModal();
+        return;
+      }
+
+      const button = document.querySelector(`[data-restaurant-id="${restaurantId}"]`);
+      const isLiked = button?.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを取り消す
+        const { error } = await supabaseClient
+          .from('restaurant_likes')
+          .delete()
+          .eq('restaurant_id', restaurantId)
+          .eq('user_id', currentUser.id);
+
+        if (error) {
+          console.error('レストランいいね取り消しエラー:', error);
+          return;
+        }
+
+        button.classList.remove('liked');
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('restaurant_likes')
+          .insert({
+            restaurant_id: restaurantId,
+            user_id: currentUser.id
+          });
+
+        if (error) {
+          console.error('レストランいいね追加エラー:', error);
+          return;
+        }
+
+        button.classList.add('liked');
+      }
+
+      // いいね数を更新
+      await loadRestaurantLikes();
+    }
+
+    // 駐車場のいいね数を読み込む
+    async function loadParkingLikes() {
+      try {
+        // 全ての駐車場IDを取得
+        const parkingButtons = document.querySelectorAll('.parking-like-btn');
+        const parkingIds = Array.from(parkingButtons).map(btn => btn.dataset.parkingId);
+
+        if (parkingIds.length === 0) return;
+
+        // いいね数を一括取得
+        const { data: likes, error } = await supabaseClient
+          .from('parking_spot_likes')
+          .select('parking_spot_id, user_id')
+          .in('parking_spot_id', parkingIds);
+
+        if (error) {
+          console.error('駐車場いいね数読み込みエラー:', error);
+          return;
+        }
+
+        // 各駐車場のいいね数を集計
+        const likeCounts = {};
+        const userLikes = new Set();
+
+        likes?.forEach(like => {
+          likeCounts[like.parking_spot_id] = (likeCounts[like.parking_spot_id] || 0) + 1;
+          if (currentUser && like.user_id === currentUser.id) {
+            userLikes.add(like.parking_spot_id);
+          }
+        });
+
+        // UIを更新
+        parkingButtons.forEach(btn => {
+          const parkingId = btn.dataset.parkingId;
+          const count = likeCounts[parkingId] || 0;
+          const countSpan = btn.querySelector('.parking-like-count');
+          if (countSpan) {
+            countSpan.textContent = count;
+          }
+
+          if (userLikes.has(parkingId)) {
+            btn.classList.add('liked');
+          } else {
+            btn.classList.remove('liked');
+          }
+        });
+      } catch (err) {
+        console.error('駐車場いいね数読み込みエラー:', err);
+      }
+    }
+
+    // レストランのいいね数を読み込む
+    async function loadRestaurantLikes() {
+      try {
+        // 全てのレストランIDを取得
+        const restaurantButtons = document.querySelectorAll('.restaurant-like-btn');
+        const restaurantIds = Array.from(restaurantButtons).map(btn => parseInt(btn.dataset.restaurantId));
+
+        if (restaurantIds.length === 0) return;
+
+        // いいね数を一括取得
+        const { data: likes, error } = await supabaseClient
+          .from('restaurant_likes')
+          .select('restaurant_id, user_id')
+          .in('restaurant_id', restaurantIds);
+
+        if (error) {
+          console.error('レストランいいね数読み込みエラー:', error);
+          return;
+        }
+
+        // 各レストランのいいね数を集計
+        const likeCounts = {};
+        const userLikes = new Set();
+
+        likes?.forEach(like => {
+          likeCounts[like.restaurant_id] = (likeCounts[like.restaurant_id] || 0) + 1;
+          if (currentUser && like.user_id === currentUser.id) {
+            userLikes.add(like.restaurant_id);
+          }
+        });
+
+        // UIを更新
+        restaurantButtons.forEach(btn => {
+          const restaurantId = parseInt(btn.dataset.restaurantId);
+          const count = likeCounts[restaurantId] || 0;
+          const countSpan = btn.querySelector('.restaurant-like-count');
+          if (countSpan) {
+            countSpan.textContent = count;
+          }
+
+          if (userLikes.has(restaurantId)) {
+            btn.classList.add('liked');
+          } else {
+            btn.classList.remove('liked');
+          }
+        });
+      } catch (err) {
+        console.error('レストランいいね数読み込みエラー:', err);
+      }
+    }
+
+    // 初期化
+    checkAuthStatus();
+    loadParkingLikes();
+    loadRestaurantLikes();
+
+    // 認証状態の変更を監視
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+        checkAuthStatus();
+        loadParkingLikes();
+        loadRestaurantLikes();
+      }
+    });
+  </script>
+</body>
+</html>

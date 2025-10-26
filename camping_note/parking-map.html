@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小樽雪あかりの路 - 駐車場マップ</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    #map { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // 地図の初期化
+    const map = L.map('map').setView([43.1907, 140.9947], 13);
+
+    // タイルレイヤーを追加
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // マーカーデータ
+    const markersData = [
+  {
+    "id": "festival",
+    "name": "小樽雪あかりの路",
+    "lat": 43.1907,
+    "lng": 140.9947,
+    "type": "festival",
+    "icon": "festival"
+  },
+  {
+    "id": "parking_0",
+    "name": "小樽公園",
+    "lat": 43.1879,
+    "lng": 140.9933,
+    "type": "parking",
+    "rank": 1,
+    "fee": 0,
+    "walkingMinutes": 5
+  },
+  {
+    "id": "toilet_0",
+    "name": "小樽公園見晴台トイレ",
+    "lat": 43.188232591016,
+    "lng": 140.9927094936,
+    "type": "toilet",
+    "distance": 61
+  },
+  {
+    "id": "parking_1",
+    "name": "ネクステップ小樽緑１丁目パーキング",
+    "lat": 43.189879,
+    "lng": 140.985888,
+    "type": "parking",
+    "rank": 2,
+    "fee": 0,
+    "walkingMinutes": 10
+  },
+  {
+    "id": "toilet_1",
+    "name": "みどり公園トイレ",
+    "lat": 43.190803694803,
+    "lng": 140.98500705627,
+    "type": "toilet",
+    "distance": 125
+  },
+  {
+    "id": "parking_2",
+    "name": "小樽市駅前広場駐車場",
+    "lat": 43.198112,
+    "lng": 140.994137,
+    "type": "parking",
+    "rank": 3,
+    "fee": 0,
+    "walkingMinutes": 11
+  },
+  {
+    "id": "convenience_2",
+    "name": "セブン‐イレブン 北海道ST小樽",
+    "lat": 43.19765809,
+    "lng": 140.99369796,
+    "type": "convenience",
+    "distance": 62
+  },
+  {
+    "id": "onsen_2",
+    "name": "天然温泉灯の湯ドーミーインPREMIUM小樽",
+    "lat": 43.198278,
+    "lng": 140.994839,
+    "type": "onsen",
+    "distance": 60
+  },
+  {
+    "id": "parking_3",
+    "name": "小樽セイコーマート入船１丁目店",
+    "lat": 43.18883,
+    "lng": 141.005776,
+    "type": "parking",
+    "rank": 4,
+    "fee": 0,
+    "walkingMinutes": 12
+  },
+  {
+    "id": "convenience_3",
+    "name": "セイコーマート入船1丁目店",
+    "lat": 43.1887143,
+    "lng": 141.0058416,
+    "type": "convenience",
+    "distance": 14
+  },
+  {
+    "id": "onsen_3",
+    "name": "神仏湯温泉",
+    "lat": 43.186786,
+    "lng": 141.004323,
+    "type": "onsen",
+    "distance": 256
+  },
+  {
+    "id": "parking_4",
+    "name": "パラカ小樽市花園第１",
+    "lat": 43.192629,
+    "lng": 140.999812,
+    "type": "parking",
+    "rank": 5,
+    "fee": 250,
+    "walkingMinutes": 6
+  },
+  {
+    "id": "convenience_4",
+    "name": "ローソン小樽花園一丁目店",
+    "lat": 43.1917889,
+    "lng": 141.0004139,
+    "type": "convenience",
+    "distance": 106
+  },
+  {
+    "id": "parking_5",
+    "name": "パラカ小樽市花園第４",
+    "lat": 43.192096,
+    "lng": 141.000098,
+    "type": "parking",
+    "rank": 6,
+    "fee": 500,
+    "walkingMinutes": 6
+  },
+  {
+    "id": "convenience_5",
+    "name": "ローソン小樽花園一丁目店",
+    "lat": 43.1917889,
+    "lng": 141.0004139,
+    "type": "convenience",
+    "distance": 43
+  },
+  {
+    "id": "toilet_5",
+    "name": "花園グリーンロード公園トイレ①",
+    "lat": 43.189556531451,
+    "lng": 141.00101051483,
+    "type": "toilet",
+    "distance": 292
+  },
+  {
+    "id": "parking_6",
+    "name": "パラカ小樽市花園第２",
+    "lat": 43.193012,
+    "lng": 140.999076,
+    "type": "parking",
+    "rank": 7,
+    "fee": 700,
+    "walkingMinutes": 6
+  },
+  {
+    "id": "convenience_6",
+    "name": "ローソン小樽花園一丁目店",
+    "lat": 43.1917889,
+    "lng": 141.0004139,
+    "type": "convenience",
+    "distance": 174
+  },
+  {
+    "id": "parking_7",
+    "name": "ナビパーク小樽堺町第１",
+    "lat": 43.195046,
+    "lng": 141.004511,
+    "type": "parking",
+    "rank": 8,
+    "fee": 800,
+    "walkingMinutes": 12
+  },
+  {
+    "id": "convenience_7",
+    "name": "ローソン 小樽堺町店",
+    "lat": 43.19546366,
+    "lng": 141.00294459,
+    "type": "convenience",
+    "distance": 135
+  },
+  {
+    "id": "toilet_7",
+    "name": "運河公衆トイレ",
+    "lat": 43.196836514167,
+    "lng": 141.00474447664,
+    "type": "toilet",
+    "distance": 200
+  },
+  {
+    "id": "parking_8",
+    "name": "ユニカ小樽稲穂第２",
+    "lat": 43.195712,
+    "lng": 140.996587,
+    "type": "parking",
+    "rank": 9,
+    "fee": 1000,
+    "walkingMinutes": 8
+  },
+  {
+    "id": "convenience_8",
+    "name": "ローソン小樽稲穂店",
+    "lat": 43.1956608,
+    "lng": 140.9985193,
+    "type": "convenience",
+    "distance": 157
+  },
+  {
+    "id": "parking_9",
+    "name": "ザ・パーク小樽市山田町",
+    "lat": 43.194262,
+    "lng": 141.000487,
+    "type": "parking",
+    "rank": 10,
+    "fee": 1000,
+    "walkingMinutes": 8
+  },
+  {
+    "id": "convenience_9",
+    "name": "ローソン小樽稲穂店",
+    "lat": 43.1956608,
+    "lng": 140.9985193,
+    "type": "convenience",
+    "distance": 223
+  }
+];
+
+    // マーカーを格納するオブジェクト
+    const markers = {};
+
+    // カスタムアイコンを作成
+    function createCustomIcon(type, number) {
+      if (type === 'festival') {
+        return L.divIcon({
+          html: '<div style="background: #d32f2f; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">🎉</div>',
+          className: '',
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+      } else if (type === 'parking') {
+        return L.divIcon({
+          html: `<div style="background: #1976d2; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">${number}</div>`,
+          className: '',
+          iconSize: [36, 36],
+          iconAnchor: [18, 18]
+        });
+      } else if (type === 'convenience') {
+        return L.divIcon({
+          html: '<div style="background: #4caf50; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">🏪</div>',
+          className: '',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        });
+      } else if (type === 'toilet') {
+        return L.divIcon({
+          html: '<div style="background: #9c27b0; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">🚻</div>',
+          className: '',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        });
+      } else if (type === 'onsen') {
+        return L.divIcon({
+          html: '<div style="background: #ff9800; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">♨️</div>',
+          className: '',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        });
+      }
+      return L.divIcon({
+        html: '<div style="background: #757575; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;">•</div>',
+        className: '',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+    }
+
+    // マーカーを作成
+    markersData.forEach(markerData => {
+      const icon = createCustomIcon(markerData.type, markerData.rank);
+      const marker = L.marker([markerData.lat, markerData.lng], { icon: icon });
+
+      // ポップアップを作成
+      let popupContent = `<div style="min-width: 200px;">
+        <h3 style="margin: 0 0 8px 0; font-size: 14px;">${markerData.name}</h3>`;
+
+      if (markerData.type === 'parking') {
+        const feeText = markerData.fee === 0 ? '無料' : `¥${markerData.fee.toLocaleString()}`;
+        popupContent += `
+          <p style="margin: 4px 0; font-size: 12px;">🔢 駐車場${markerData.rank}</p>
+          <p style="margin: 4px 0; font-size: 12px;">💰 18:00〜8:00: ${feeText}</p>
+          <p style="margin: 4px 0; font-size: 12px;">📍 徒歩約${markerData.walkingMinutes}分</p>`;
+      }
+
+      if (markerData.distance !== undefined) {
+        popupContent += `<p style="margin: 4px 0; font-size: 12px;">📏 ${markerData.distance}m</p>`;
+      }
+
+      popupContent += '</div>';
+      marker.bindPopup(popupContent);
+      marker.addTo(map);
+
+      // マーカーを保存
+      markers[markerData.id] = marker;
+    });
+
+    // マーカーを表示する関数（外部から呼び出し可能）
+    window.showMarker = function(markerId) {
+      const marker = markers[markerId];
+      if (marker) {
+        map.setView(marker.getLatLng(), 16);
+        marker.openPopup();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+{
+  "spots": [
+    {
+      "id": "spot_001",
+      "name": "道の駅 たいら",
+      "prefecture": "富山県",
+      "city": "南砺市",
+      "category": "道の駅",
+      "latitude": 36.4268,
+      "longitude": 136.9654,
+      "description": "五箇山の入り口にある道の駅。世界遺産の合掌造り集落へのアクセスも良好。",
+      "facilities": {
+        "parking": {
+          "capacity": 50,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": true
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 2500,
+        "onsen": 5000,
+        "tourist_spot": 8000
+      },
+      "tags": ["世界遺産近く", "無料", "トイレ完備", "WiFiあり"]
+    },
+    {
+      "id": "spot_002",
+      "name": "道の駅 雨晴",
+      "prefecture": "富山県",
+      "city": "高岡市",
+      "category": "道の駅",
+      "latitude": 36.8089,
+      "longitude": 137.0214,
+      "description": "富山湾越しに立山連峰を望む絶景スポット。朝日の撮影地として人気。",
+      "facilities": {
+        "parking": {
+          "capacity": 30,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 1500,
+        "onsen": 3000,
+        "tourist_spot": 500
+      },
+      "tags": ["絶景", "無料", "海岸沿い", "撮影スポット"]
+    },
+    {
+      "id": "spot_003",
+      "name": "道の駅 カモンパーク新湊",
+      "prefecture": "富山県",
+      "city": "射水市",
+      "category": "道の駅",
+      "latitude": 36.7812,
+      "longitude": 137.0791,
+      "description": "新湊大橋のたもとにある道の駅。白エビなど地元海産物が豊富。",
+      "facilities": {
+        "parking": {
+          "capacity": 100,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": true
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 800,
+        "onsen": 4000,
+        "tourist_spot": 1000
+      },
+      "tags": ["海鮮", "無料", "大型駐車場", "新湊大橋"]
+    },
+    {
+      "id": "spot_004",
+      "name": "黒部峡谷鉄道 宇奈月駅駐車場",
+      "prefecture": "富山県",
+      "city": "黒部市",
+      "category": "観光地駐車場",
+      "latitude": 36.8214,
+      "longitude": 137.5836,
+      "description": "黒部峡谷の玄関口。トロッコ列車の始発駅で、温泉街も近い。",
+      "facilities": {
+        "parking": {
+          "capacity": 200,
+          "fee": 500,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": false,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 100,
+        "convenience_store": 500,
+        "onsen": 300,
+        "tourist_spot": 0
+      },
+      "tags": ["温泉近く", "観光地", "トロッコ列車", "有料"]
+    },
+    {
+      "id": "spot_005",
+      "name": "立山駅駐車場",
+      "prefecture": "富山県",
+      "city": "立山町",
+      "category": "観光地駐車場",
+      "latitude": 36.5709,
+      "longitude": 137.4428,
+      "description": "立山黒部アルペンルートの富山側起点。早朝出発に便利。",
+      "facilities": {
+        "parking": {
+          "capacity": 900,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 2000,
+        "onsen": 5000,
+        "tourist_spot": 0
+      },
+      "tags": ["アルペンルート", "無料", "大型駐車場", "早朝出発向け"]
+    },
+    {
+      "id": "spot_006",
+      "name": "氷見番屋街",
+      "prefecture": "富山県",
+      "city": "氷見市",
+      "category": "観光施設駐車場",
+      "latitude": 36.8565,
+      "longitude": 136.9876,
+      "description": "氷見漁港直送の海鮮が楽しめる。温泉施設も隣接。",
+      "facilities": {
+        "parking": {
+          "capacity": 220,
+          "fee": 0,
+          "overnight": false
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": true
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 1000,
+        "onsen": 100,
+        "tourist_spot": 0
+      },
+      "tags": ["海鮮", "温泉隣接", "無料", "氷見うどん"]
+    },
+    {
+      "id": "spot_007",
+      "name": "道の駅 メルヘンおやべ",
+      "prefecture": "富山県",
+      "city": "小矢部市",
+      "category": "道の駅",
+      "latitude": 36.6754,
+      "longitude": 136.8691,
+      "description": "北陸自動車道に隣接。メルヘン建築の街らしい外観が特徴。",
+      "facilities": {
+        "parking": {
+          "capacity": 150,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": true
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 500,
+        "onsen": 8000,
+        "tourist_spot": 3000
+      },
+      "tags": ["高速道路近く", "無料", "大型駐車場", "24時間営業"]
+    },
+    {
+      "id": "spot_008",
+      "name": "海王丸パーク駐車場",
+      "prefecture": "富山県",
+      "city": "射水市",
+      "category": "公園駐車場",
+      "latitude": 36.7789,
+      "longitude": 137.1058,
+      "description": "帆船海王丸が展示される海辺の公園。新湊大橋の夜景が美しい。",
+      "facilities": {
+        "parking": {
+          "capacity": 600,
+          "fee": 0,
+          "overnight": true
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 50,
+        "convenience_store": 1500,
+        "onsen": 5000,
+        "tourist_spot": 0
+      },
+      "tags": ["夜景", "無料", "海辺", "大型駐車場"]
+    },
+    {
+      "id": "spot_009",
+      "name": "砺波チューリップ公園駐車場",
+      "prefecture": "富山県",
+      "city": "砺波市",
+      "category": "公園駐車場",
+      "latitude": 36.6369,
+      "longitude": 136.9617,
+      "description": "春のチューリップフェア会場。オフシーズンは静かで快適。",
+      "facilities": {
+        "parking": {
+          "capacity": 300,
+          "fee": 0,
+          "overnight": false
+        },
+        "toilet": true,
+        "water": true,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 800,
+        "onsen": 3000,
+        "tourist_spot": 0
+      },
+      "tags": ["チューリップ", "無料", "公園", "季節限定"]
+    },
+    {
+      "id": "spot_010",
+      "name": "称名滝駐車場",
+      "prefecture": "富山県",
+      "city": "立山町",
+      "category": "観光地駐車場",
+      "latitude": 36.5736,
+      "longitude": 137.5256,
+      "description": "日本一の落差を誇る称名滝への玄関口。新緑と紅葉が美しい。",
+      "facilities": {
+        "parking": {
+          "capacity": 250,
+          "fee": 0,
+          "overnight": false
+        },
+        "toilet": true,
+        "water": false,
+        "electricity": false,
+        "shower": false,
+        "wifi": false
+      },
+      "nearbyFacilities": {
+        "toilet": 0,
+        "convenience_store": 10000,
+        "onsen": 8000,
+        "tourist_spot": 1500
+      },
+      "tags": ["絶景", "無料", "滝", "ハイキング"]
+    }
+  ]
+}
