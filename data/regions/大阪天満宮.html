@@ -1331,7 +1331,9 @@
       const { error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.href
+          redirectTo: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? 'http://localhost:8000' + window.location.pathname
+            : 'https://trailfusionai.com/camping_note' + window.location.pathname.replace(/.*camping_note/, '')
         }
       });
 
