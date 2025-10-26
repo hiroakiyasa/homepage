@@ -1,0 +1,58 @@
+name: Update Rankings Daily
+
+on:
+  schedule:
+    # 毎日UTC 0:00 = JST 9:00に実行
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  update-rankings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate rankings
+        run: node generate-rankings.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet data/rankings.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add data/rankings.json
+          git commit -m "🤖 Update rankings [$(date +'%Y-%m-%d %H:%M')]"
+          git push
+
+      - name: Display status
+        run: |
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ Rankings updated successfully"
+          else
+            echo "ℹ️ No changes in rankings"
+          fi

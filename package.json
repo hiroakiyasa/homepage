@@ -21,7 +21,9 @@
     "build-index": "npm run extract-regions && npm run generate-index",
     "generate-all-regions": "node generate-all-regions.js",
     "generate-all-regions-full": "node generate-all-regions-full.js",
-    "test-region-full": "node generate-all-regions-full.js --test"
+    "test-region-full": "node generate-all-regions-full.js --test",
+    "generate-rankings": "node generate-rankings.js",
+    "update-rankings": "node generate-rankings.js"
   },
   "keywords": ["camping", "car-camping", "note", "supabase", "ai"],
   "author": "",

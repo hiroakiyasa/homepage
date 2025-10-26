@@ -131,6 +131,204 @@
             font-size: 0.9em;
         }
 
+        .favorites-separator {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 12px 0;
+        }
+
+        .favorites-toggle {
+            margin-top: 8px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toggle-container input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #e91e63;
+        }
+
+        .toggle-label {
+            font-size: 0.9em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        #favorites-login-prompt {
+            font-style: italic;
+            padding-left: 26px;
+        }
+
+        /* ランキングセクション */
+        .rankings-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .rankings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .rankings-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .rankings-updated {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .rankings-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .rankings-tab {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            cursor: pointer;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .rankings-tab:hover {
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .rankings-tab.active {
+            color: #1976d2;
+            border-bottom-color: #1976d2;
+            font-weight: 600;
+        }
+
+        .rankings-container {
+            margin-bottom: 20px;
+        }
+
+        .rankings-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+
+        .rankings-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .rankings-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .rankings-scroll::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .rankings-scroll::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .ranking-card {
+            min-width: 200px;
+            max-width: 200px;
+            padding: 16px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ranking-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #1976d2;
+        }
+
+        .rank-badge {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .ranking-card h4 {
+            margin: 0;
+            font-size: 1em;
+            color: #333;
+            text-align: center;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ranking-card .like-info {
+            font-size: 0.9em;
+            color: #e91e63;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .ranking-card .location-info {
+            font-size: 0.85em;
+            color: #666;
+            text-align: center;
+        }
+
+        .rankings-login-hint {
+            text-align: center;
+            font-size: 0.9em;
+            color: #999;
+            padding: 16px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .rankings-section {
+                margin: 20px 10px;
+                padding: 16px;
+            }
+
+            .rankings-header h2 {
+                font-size: 1.2em;
+            }
+
+            .ranking-card {
+                min-width: 160px;
+                max-width: 160px;
+            }
+        }
+
         footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -364,10 +562,10 @@
             <div class="nav-auth">
                 <!-- ログイン状態 -->
                 <div id="nav-logged-in" style="display: none;">
-                    <div class="nav-user-info">
+                    <a href="mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
                         <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
                         <span id="nav-user-name" class="nav-user-name"></span>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- ログインボタン -->
@@ -412,7 +610,45 @@
                             <span class="elevation-label">0m</span>
                         </div>
                     </div>
+
+                    <div class="favorites-separator"></div>
+
+                    <div class="favorites-toggle">
+                        <label class="toggle-container">
+                            <input type="checkbox" id="show-favorites-toggle">
+                            <span class="toggle-label">❤️ お気に入りを表示</span>
+                        </label>
+                        <div id="favorites-login-prompt" style="display: none; margin-top: 8px; font-size: 0.8em; color: #999;">
+                            ログインしてお気に入りを表示
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- 人気ランキングセクション -->
+        <div class="rankings-section">
+            <div class="rankings-header">
+                <h2>🏆 人気ランキング TOP10</h2>
+                <span class="rankings-updated" id="rankings-updated">読み込み中...</span>
+            </div>
+
+            <div class="rankings-tabs">
+                <button class="rankings-tab active" data-type="parking">🚗 駐車場</button>
+                <button class="rankings-tab" data-type="restaurant">🍴 レストラン</button>
+            </div>
+
+            <div class="rankings-container">
+                <div class="rankings-scroll" id="parking-rankings">
+                    <!-- 駐車場ランキングがここに表示されます -->
+                </div>
+                <div class="rankings-scroll" id="restaurant-rankings" style="display: none;">
+                    <!-- レストランランキングがここに表示されます -->
+                </div>
+            </div>
+
+            <div class="rankings-login-hint">
+                💡 ログインすると、お気に入りの駐車場を管理できます
             </div>
         </div>
 
@@ -9155,6 +9391,25 @@
             maxZoom: 19
         }).addTo(map);
 
+        // お気に入りマーカー用レイヤーグループ
+        const favoritesLayer = L.layerGroup().addTo(map);
+
+        /**
+         * ハート型のお気に入りマーカーSVGを生成
+         */
+        function createHeartIcon() {
+            const svg = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C16 28 4 20 4 12C4 8.68629 6.68629 6 10 6C12.418 6 14.5 7.418 16 9C17.5 7.418 19.582 6 22 6C25.3137 6 28 8.68629 28 12C28 20 16 28 16 28Z" fill="#e91e63" stroke="white" stroke-width="2"/>
+            </svg>`;
+
+            return L.icon({
+                iconUrl: 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg))),
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+        }
+
         /**
          * 標高から色を計算（0m=青, 1000m=赤のグラデーション）
          */
@@ -9418,6 +9673,72 @@
             }
         }
 
+        // お気に入りをSupabaseから読み込み
+        async function loadFavorites() {
+            if (!currentUser) {
+                return [];
+            }
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from('favorites')
+                    .select('*')
+                    .eq('user_id', currentUser.id);
+
+                if (error) {
+                    console.error('お気に入り読み込みエラー:', error);
+                    return [];
+                }
+
+                return data || [];
+            } catch (err) {
+                console.error('お気に入り読み込み例外:', err);
+                return [];
+            }
+        }
+
+        // お気に入りマーカーを地図に表示
+        async function showFavorites() {
+            const favorites = await loadFavorites();
+            const heartIcon = createHeartIcon();
+
+            favoritesLayer.clearLayers();
+
+            favorites.forEach(favorite => {
+                if (favorite.latitude && favorite.longitude) {
+                    const marker = L.marker([favorite.latitude, favorite.longitude], {
+                        icon: heartIcon,
+                        zIndexOffset: 1000 // 通常のマーカーより上に表示
+                    });
+
+                    let popupContent = `<strong>${favorite.spot_name || 'お気に入り'}</strong>`;
+
+                    if (favorite.spot_type === 'parking') {
+                        popupContent += '<br>タイプ: 駐車場';
+                    } else if (favorite.spot_type === 'restaurant') {
+                        popupContent += '<br>タイプ: レストラン';
+                    } else if (favorite.spot_type === 'region') {
+                        popupContent += '<br>タイプ: 地域';
+                    }
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(favoritesLayer);
+                }
+            });
+        }
+
+        // お気に入りトグルのイベントリスナー
+        const favoritesToggle = document.getElementById('show-favorites-toggle');
+        if (favoritesToggle) {
+            favoritesToggle.addEventListener('change', async (e) => {
+                if (e.target.checked) {
+                    await showFavorites();
+                } else {
+                    favoritesLayer.clearLayers();
+                }
+            });
+        }
+
         // 認証状態チェック
         async function checkAuthStatus() {
             const { data: { user } } = await supabaseClient.auth.getUser();
@@ -9437,6 +9758,8 @@
             const navUserAvatar = document.getElementById('nav-user-avatar');
             const navBtnLogin = document.getElementById('nav-btn-login');
             const navBtnLogout = document.getElementById('nav-btn-logout');
+            const favoritesToggle = document.getElementById('show-favorites-toggle');
+            const favoritesLoginPrompt = document.getElementById('favorites-login-prompt');
 
             if (currentUser) {
                 // ニックネーム表示（優先順位: user_profiles.display_name → user_metadata.display_name → emailのプレフィックス）
@@ -9458,10 +9781,27 @@
                 navLoggedIn.style.display = 'block';
                 navBtnLogin.style.display = 'none';
                 navBtnLogout.style.display = 'block';
+
+                // お気に入りトグルを有効化
+                if (favoritesToggle) {
+                    favoritesToggle.disabled = false;
+                    favoritesLoginPrompt.style.display = 'none';
+                }
             } else {
                 navLoggedIn.style.display = 'none';
                 navBtnLogin.style.display = 'block';
                 navBtnLogout.style.display = 'none';
+
+                // お気に入りトグルを無効化
+                if (favoritesToggle) {
+                    favoritesToggle.disabled = true;
+                    favoritesToggle.checked = false;
+                    favoritesLoginPrompt.style.display = 'block';
+                    // お気に入りマーカーをクリア
+                    if (favoritesLayer) {
+                        favoritesLayer.clearLayers();
+                    }
+                }
             }
         }
 
@@ -9510,6 +9850,100 @@
                 checkAuthStatus();
             }
         });
+
+        // ランキング関連
+        async function loadRankings() {
+            try {
+                const response = await fetch('rankings.json');
+                if (!response.ok) {
+                    throw new Error('ランキングデータの取得に失敗しました');
+                }
+
+                const data = await response.json();
+
+                // 更新日時を表示
+                const date = new Date(data.generated_at);
+                document.getElementById('rankings-updated').textContent =
+                    `最終更新: ${date.toLocaleDateString('ja-JP')}`;
+
+                // 駐車場ランキング表示
+                displayRankings('parking', data.parking);
+
+                // レストランランキング表示
+                displayRankings('restaurant', data.restaurant);
+
+            } catch (error) {
+                console.error('ランキング読み込みエラー:', error);
+                document.getElementById('rankings-updated').textContent =
+                    'ランキングを準備中です...';
+            }
+        }
+
+        function displayRankings(type, items) {
+            const container = document.getElementById(`${type}-rankings`);
+
+            if (!items || items.length === 0) {
+                container.innerHTML = `
+                    <div style="padding: 40px; text-align: center; color: #999;">
+                        まだ${type === 'parking' ? '駐車場' : 'レストラン'}のいいねデータがありません。<br>
+                        お気に入りの場所にいいねしてみましょう！
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '';
+
+            items.forEach((item) => {
+                const card = createRankingCard(item);
+                container.appendChild(card);
+            });
+        }
+
+        function createRankingCard(item) {
+            const card = document.createElement('div');
+            card.className = 'ranking-card';
+
+            // メダル表示
+            let medal = item.rank;
+            if (item.rank === 1) medal = '🥇';
+            else if (item.rank === 2) medal = '🥈';
+            else if (item.rank === 3) medal = '🥉';
+
+            card.innerHTML = `
+                <div class="rank-badge">${medal}</div>
+                <h4>${item.spot_name}</h4>
+                <p class="like-info">❤️ ${item.like_count} いいね</p>
+                <p class="location-info">📍 ${item.nearest_region.name}</p>
+            `;
+
+            // クリックで地域ページへ遷移
+            card.addEventListener('click', () => {
+                window.location.href = item.nearest_region.url;
+            });
+
+            return card;
+        }
+
+        // タブ切り替え
+        const rankingTabs = document.querySelectorAll('.rankings-tab');
+        rankingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // アクティブタブの更新
+                rankingTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // 表示の切り替え
+                const type = tab.dataset.type;
+                document.getElementById('parking-rankings').style.display =
+                    type === 'parking' ? 'flex' : 'none';
+                document.getElementById('restaurant-rankings').style.display =
+                    type === 'restaurant' ? 'flex' : 'none';
+            });
+        });
+
+        // ランキング読み込み
+        loadRankings();
     </script>
 </body>
 </html>

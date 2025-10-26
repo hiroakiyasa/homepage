@@ -854,6 +854,46 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
       background: #22D3EE;
     }
 
+    .btn-like {
+      background: white;
+      border: 2px solid #e0e0e0;
+      color: #666;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-like:hover {
+      border-color: #e91e63;
+      background: #fff0f5;
+    }
+
+    .btn-like.liked {
+      background: #e91e63;
+      border-color: #e91e63;
+      color: white;
+    }
+
+    .btn-like .like-icon {
+      font-size: 16px;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+    }
+
+    .btn-like.liked .like-icon {
+      filter: grayscale(0%);
+    }
+
+    .btn-like .like-count {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
     .parking-info {
       display: flex;
       gap: 10px;
@@ -1175,10 +1215,10 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
 
       <div class="nav-auth">
         <div id="nav-logged-in" style="display: none;">
-          <div class="nav-user-info">
+          <a href="../mypage.html" class="nav-user-info" style="text-decoration: none; color: inherit;">
             <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
             <span id="nav-user-name" class="nav-user-name"></span>
-          </div>
+          </a>
         </div>
         <button id="nav-btn-login" class="btn-login">ログイン</button>
         <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
@@ -1277,6 +1317,10 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
             <div class="parking-card-header">
               <strong>${rankIcon} ${index + 1}位: ${spot.name}</strong>
               <div class="parking-card-buttons">
+                <button class="btn-like" data-spot-type="parking" data-spot-id="${index}" data-spot-name="${spot.name.replace(/"/g, '&quot;')}" data-lat="${spot.lat}" data-lng="${spot.lng}" onclick="event.stopPropagation(); toggleLike(this)">
+                  <span class="like-icon">❤️</span>
+                  <span class="like-count">0</span>
+                </button>
                 <a href="https://www.google.com/maps?q=${spot.lat},${spot.lng}" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
                 <a href="https://www.google.com/search?q=${encodeURIComponent(spot.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
               </div>
@@ -1340,6 +1384,10 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
 
     html += `
           <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="${restaurant.id || index}" data-spot-name="${restaurant.name.replace(/"/g, '&quot;')}" data-lat="${restaurant.latitude}" data-lng="${restaurant.longitude}" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
             <a href="https://www.google.com/maps?q=${restaurant.latitude},${restaurant.longitude}" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=${encodeURIComponent(restaurant.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
@@ -1477,7 +1525,137 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
     (async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       updateAuthUI(session?.user || null);
+      await loadLikes(); // いいねの状態を読み込み
     })();
+
+    // セッションIDの取得または生成（匿名ユーザー用）
+    function getOrCreateSessionId() {
+      let sessionId = localStorage.getItem('anonymous_session_id');
+      if (!sessionId) {
+        sessionId = 'anon_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('anonymous_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // いいね数と状態を読み込み
+    async function loadLikes() {
+      const { data: { user } } = await supabaseClient.auth.getUser();
+      const sessionId = getOrCreateSessionId();
+
+      // すべてのいいねボタンを取得
+      const likeButtons = document.querySelectorAll('.btn-like');
+
+      for (const button of likeButtons) {
+        const spotType = button.dataset.spotType;
+        const spotId = parseInt(button.dataset.spotId);
+
+        // いいね総数を取得
+        const { count: totalLikes, error: countError } = await supabaseClient
+          .from('likes')
+          .select('*', { count: 'exact', head: true })
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (!countError && totalLikes !== null) {
+          button.querySelector('.like-count').textContent = totalLikes;
+        }
+
+        // ユーザーまたはセッションのいいね状態を確認
+        let userLiked = false;
+
+        if (user) {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        } else {
+          const { data, error } = await supabaseClient
+            .from('likes')
+            .select('id')
+            .eq('spot_type', spotType)
+            .eq('spot_id', spotId)
+            .eq('session_id', sessionId)
+            .maybeSingle();
+
+          if (!error && data) {
+            userLiked = true;
+          }
+        }
+
+        if (userLiked) {
+          button.classList.add('liked');
+        }
+      }
+    }
+
+    // いいねの切り替え
+    async function toggleLike(button) {
+      const { data: { user } } = await supabaseClient.auth.getUser();
+      const sessionId = getOrCreateSessionId();
+
+      const spotType = button.dataset.spotType;
+      const spotId = parseInt(button.dataset.spotId);
+      const spotName = button.dataset.spotName;
+      const lat = parseFloat(button.dataset.lat);
+      const lng = parseFloat(button.dataset.lng);
+
+      const likeCountEl = button.querySelector('.like-count');
+      const isLiked = button.classList.contains('liked');
+
+      if (isLiked) {
+        // いいねを削除
+        let query = supabaseClient
+          .from('likes')
+          .delete()
+          .eq('spot_type', spotType)
+          .eq('spot_id', spotId);
+
+        if (user) {
+          query = query.eq('user_id', user.id);
+        } else {
+          query = query.eq('session_id', sessionId);
+        }
+
+        const { error } = await query;
+
+        if (!error) {
+          button.classList.remove('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = Math.max(0, currentCount - 1);
+        } else {
+          console.error('いいね削除エラー:', error);
+        }
+      } else {
+        // いいねを追加
+        const { error } = await supabaseClient
+          .from('likes')
+          .insert({
+            user_id: user?.id || null,
+            session_id: user ? null : sessionId,
+            spot_type: spotType,
+            spot_id: spotId,
+            spot_name: spotName,
+            latitude: lat,
+            longitude: lng
+          });
+
+        if (!error) {
+          button.classList.add('liked');
+          const currentCount = parseInt(likeCountEl.textContent) || 0;
+          likeCountEl.textContent = currentCount + 1;
+        } else {
+          console.error('いいね追加エラー:', error);
+        }
+      }
+    }
   </script>
 </body>
 </html>`;
