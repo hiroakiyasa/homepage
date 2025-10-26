@@ -345,23 +345,24 @@
 
         // 初期化
         async function init() {
-            const { data: { user } } = await supabaseClient.auth.getUser();
+            // セッションを確認
+            const { data: { session } } = await supabaseClient.auth.getSession();
 
-            if (!user) {
+            if (!session) {
                 alert('ログインが必要です');
                 window.location.href = 'index.html';
                 return;
             }
 
-            currentUser = user;
+            currentUser = session.user;
 
             // ユーザー情報表示
             document.getElementById('user-name').textContent =
-                user.user_metadata?.full_name || user.email || 'ユーザー';
+                session.user.user_metadata?.full_name || session.user.email || 'ユーザー';
 
-            if (user.user_metadata?.avatar_url) {
+            if (session.user.user_metadata?.avatar_url) {
                 const avatar = document.getElementById('user-avatar');
-                avatar.src = user.user_metadata.avatar_url;
+                avatar.src = session.user.user_metadata.avatar_url;
                 avatar.style.display = 'block';
             }
 
@@ -546,6 +547,16 @@
         document.getElementById('btn-logout').addEventListener('click', async () => {
             await supabaseClient.auth.signOut();
             window.location.href = 'index.html';
+        });
+
+        // 認証状態の変更を監視
+        supabaseClient.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_OUT') {
+                window.location.href = 'index.html';
+            } else if (event === 'SIGNED_IN' && !currentUser) {
+                // ログインした場合、ページをリロード
+                window.location.reload();
+            }
         });
 
         // 初期化実行

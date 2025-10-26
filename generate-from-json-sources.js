@@ -1540,7 +1540,8 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
 
     // いいね数と状態を読み込み
     async function loadLikes() {
-      const { data: { user } } = await supabaseClient.auth.getUser();
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
       const sessionId = getOrCreateSessionId();
 
       // すべてのいいねボタンを取得
@@ -1598,7 +1599,8 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
 
     // いいねの切り替え
     async function toggleLike(button) {
-      const { data: { user } } = await supabaseClient.auth.getUser();
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      const user = session?.user || null;
       const sessionId = getOrCreateSessionId();
 
       const spotType = button.dataset.spotType;
