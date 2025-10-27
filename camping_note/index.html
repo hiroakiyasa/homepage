@@ -580,40 +580,34 @@
 <body>
     <div class="container">
         <div class="header">
-            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 10px;">
-                <!-- 左端: トップページリンク -->
-                <div style="flex: 0 0 auto;">
-                    <a href="../index.html" style="color: white; text-decoration: none; font-size: 0.9em;">← トップページ</a>
-                </div>
-
-                <!-- 中央: ロゴとタイトル -->
-                <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex: 1;">
-                    <a href="https://trailfusionai.com" style="display: block; line-height: 0;">
-                        <img src="images/logo.png" alt="車旅コンシェルジュ" style="width: 60px; height: 60px; object-fit: contain; cursor: pointer;">
-                    </a>
-                    <h1 style="margin: 0; font-size: 1.3em;">🚗 車旅コンシェルジュ<br>全国車中泊スポットマップ</h1>
-                </div>
-
-                <!-- 右端: ログインボタン -->
-                <div style="flex: 0 0 auto;">
-                    <div class="nav-auth">
-                        <!-- ログイン状態 -->
-                        <div id="nav-logged-in" style="display: none;">
-                            <a href="mypage.html" class="nav-user-info" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-                                <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
-                                <span id="nav-user-name" class="nav-user-name"></span>
-                            </a>
-                        </div>
-
-                        <!-- ログインボタン -->
-                        <button id="nav-btn-login" class="btn-login">ログイン</button>
-
-                        <!-- ログアウトボタン -->
-                        <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
-                    </div>
-                </div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;">
+                <a href="https://trailfusionai.com" style="display: block; line-height: 0;">
+                    <img src="images/logo.png" alt="車旅コンシェルジュ" style="width: 60px; height: 60px; object-fit: contain; cursor: pointer;">
+                </a>
+                <h1 style="margin: 0; font-size: 1.3em;">🚗 車旅コンシェルジュ<br>全国車中泊スポットマップ</h1>
             </div>
             <p style="text-align: center;">日本全国の車中泊スポットを地図上で確認できます</p>
+        </div>
+
+        <!-- ナビゲーションボタン -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: white; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <a href="../index.html" style="color: #1976d2; text-decoration: none; font-size: 0.95em; font-weight: 500;">← トップページ</a>
+
+            <div class="nav-auth">
+                <!-- ログイン状態 -->
+                <div id="nav-logged-in" style="display: none;">
+                    <a href="mypage.html" class="nav-user-info" style="text-decoration: none; color: #333; display: flex; align-items: center; gap: 10px;">
+                        <img id="nav-user-avatar" class="nav-avatar" src="" alt="Avatar" style="display: none;">
+                        <span id="nav-user-name" class="nav-user-name"></span>
+                    </a>
+                </div>
+
+                <!-- ログインボタン -->
+                <button id="nav-btn-login" class="btn-login">ログイン</button>
+
+                <!-- ログアウトボタン -->
+                <button id="nav-btn-logout" class="btn-logout" style="display: none;">ログアウト</button>
+            </div>
         </div>
 
         <div class="map-container">
