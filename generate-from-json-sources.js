@@ -816,38 +816,51 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
       align-items: center;
       justify-content: space-between;
       margin-bottom: 6px;
+      gap: 8px;
     }
 
-    .parking-card-header strong {
+    .parking-card-header .parking-name {
       color: #1976d2;
       font-size: 14px;
       flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      word-break: break-word;
+      line-height: 1.4;
+      min-width: 0;
+    }
+
+    /* 駐車場名が長い場合は自動的にフォントサイズを調整 */
+    @media (max-width: 768px) {
+      .parking-card-header .parking-name {
+        font-size: 12px;
+      }
     }
 
     .parking-card-buttons {
       display: flex;
-      gap: 4px;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 10px;
+      padding: 6px 12px;
       text-decoration: none;
-      border-radius: 4px;
-      font-size: 18px;
-      line-height: 1;
-      display: flex;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.2;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      transition: opacity 0.2s;
+      gap: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
     }
 
     .btn-icon:hover {
       opacity: 0.8;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .btn-search {
@@ -1315,21 +1328,21 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
           <!-- 駐車場${index + 1} -->
           <div class="parking-card" onclick="showMarker('parking_${index}')">
             <div class="parking-card-header">
-              <strong>${rankIcon} ${index + 1}位: ${spot.name}</strong>
-              <div class="parking-card-buttons">
-                <button class="btn-like" data-spot-type="parking" data-spot-id="${index}" data-spot-name="${spot.name.replace(/"/g, '&quot;')}" data-lat="${spot.lat}" data-lng="${spot.lng}" onclick="event.stopPropagation(); toggleLike(this)">
-                  <span class="like-icon">❤️</span>
-                  <span class="like-count">0</span>
-                </button>
-                <a href="https://www.google.com/maps?q=${spot.lat},${spot.lng}" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-                <a href="https://www.google.com/search?q=${encodeURIComponent(spot.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-              </div>
+              <strong class="parking-name">${rankIcon} ${index + 1}位: ${spot.name}</strong>
+              <button class="btn-like" data-spot-type="parking" data-spot-id="${index}" data-spot-name="${spot.name.replace(/"/g, '&quot;')}" data-lat="${spot.lat}" data-lng="${spot.lng}" onclick="event.stopPropagation(); toggleLike(this)">
+                <span class="like-icon">❤️</span>
+                <span class="like-count">0</span>
+              </button>
             </div>
 
             <div class="parking-info">
               <div class="parking-info-left">
                 <div>📍 徒歩約${spot.walking_minutes}分 (${spot.distance_to_center}m)</div>
                 <div class="parking-fee">💰 ${calculatedFeeText}</div>
+                <div class="parking-card-buttons">
+                  <a href="https://www.google.com/maps?q=${spot.lat},${spot.lng}" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
+                  <a href="https://www.google.com/search?q=${encodeURIComponent(spot.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                </div>
               </div>
 
 `;
@@ -1665,6 +1678,28 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
           console.error('いいね追加エラー:', error);
         }
       }
+    }
+
+    // 駐車場名の長さに応じてフォントサイズを調整
+    function adjustParkingNameFontSize() {
+      const parkingNames = document.querySelectorAll('.parking-name');
+      parkingNames.forEach(nameEl => {
+        const textLength = nameEl.textContent.length;
+        if (textLength > 25) {
+          nameEl.style.fontSize = '11px';
+        } else if (textLength > 20) {
+          nameEl.style.fontSize = '12px';
+        } else if (textLength > 15) {
+          nameEl.style.fontSize = '13px';
+        }
+      });
+    }
+
+    // ページロード時に実行
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', adjustParkingNameFontSize);
+    } else {
+      adjustParkingNameFontSize();
     }
   </script>
 </body>
