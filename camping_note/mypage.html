@@ -169,11 +169,17 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s;
+            background: white;
         }
 
         .favorite-item:hover {
             border-color: #1976d2;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .favorite-item a:hover .favorite-name {
+            text-decoration: underline;
         }
 
         .favorite-info {
@@ -274,17 +280,17 @@
             <div class="stat-card">
                 <div class="stat-icon">❤️</div>
                 <div class="stat-value" id="stat-favorites">0</div>
-                <div class="stat-label">お気に入り</div>
+                <div class="stat-label">お気に入り地域</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">👍</div>
                 <div class="stat-value" id="stat-likes">0</div>
-                <div class="stat-label">いいね</div>
+                <div class="stat-label">いいねした投稿</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">📝</div>
+                <div class="stat-icon">💬</div>
                 <div class="stat-value" id="stat-posts">0</div>
-                <div class="stat-label">投稿</div>
+                <div class="stat-label">コメント</div>
             </div>
         </div>
 
@@ -364,13 +370,28 @@
 
             currentUser = session.user;
 
-            // ユーザー情報表示
-            document.getElementById('user-name').textContent =
-                session.user.user_metadata?.full_name || session.user.email || 'ユーザー';
+            // ユーザープロフィール取得
+            const { data: profile } = await supabaseClient
+                .from('user_profiles')
+                .select('display_name, avatar_url')
+                .eq('id', session.user.id)
+                .single();
 
-            if (session.user.user_metadata?.avatar_url) {
+            // ユーザー情報表示
+            const displayName = profile?.display_name ||
+                               session.user.user_metadata?.full_name ||
+                               session.user.user_metadata?.name ||
+                               session.user.email?.split('@')[0] ||
+                               'ユーザー';
+
+            document.getElementById('user-name').textContent = displayName;
+
+            const avatarUrl = profile?.avatar_url ||
+                            session.user.user_metadata?.avatar_url;
+
+            if (avatarUrl) {
                 const avatar = document.getElementById('user-avatar');
-                avatar.src = session.user.user_metadata.avatar_url;
+                avatar.src = avatarUrl;
                 avatar.style.display = 'block';
             }
 
@@ -388,15 +409,35 @@
                 .eq('user_id', currentUser.id);
 
             document.getElementById('stat-favorites').textContent = likeCount || 0;
-            document.getElementById('stat-likes').textContent = 0; // いいねは使用しない
 
-            // 投稿数
-            const { count: postCount } = await supabaseClient
-                .from('posts')
+            // 地域いいね数（region_likesテーブルから取得）
+            const { count: regionLikeCount } = await supabaseClient
+                .from('region_likes')
                 .select('*', { count: 'exact', head: true })
                 .eq('user_id', currentUser.id);
 
-            document.getElementById('stat-posts').textContent = postCount || 0;
+            // 駐車場いいね数（parking_spot_likesテーブルから取得）
+            const { count: parkingLikeCount } = await supabaseClient
+                .from('parking_spot_likes')
+                .select('*', { count: 'exact', head: true })
+                .eq('user_id', currentUser.id);
+
+            // レストランいいね数（restaurant_likesテーブルから取得）
+            const { count: restaurantLikeCount } = await supabaseClient
+                .from('restaurant_likes')
+                .select('*', { count: 'exact', head: true })
+                .eq('user_id', currentUser.id);
+
+            const totalLikes = (regionLikeCount || 0) + (parkingLikeCount || 0) + (restaurantLikeCount || 0);
+            document.getElementById('stat-likes').textContent = totalLikes;
+
+            // 投稿数（コメント数）
+            const { count: commentCount } = await supabaseClient
+                .from('region_comments')
+                .select('*', { count: 'exact', head: true })
+                .eq('user_id', currentUser.id);
+
+            document.getElementById('stat-posts').textContent = commentCount || 0;
         }
 
         // お気に入り読み込み
@@ -446,13 +487,19 @@
             favorites.forEach(fav => {
                 const item = document.createElement('div');
                 item.className = 'favorite-item';
+
+                // 地域名から地域ページのURLを生成
+                const regionUrl = fav.spot_name ? `regions-new/${fav.spot_name}.html` : '#';
+
                 item.innerHTML = `
-                    <div class="favorite-info">
-                        <div class="favorite-name">${fav.spot_name || '名称不明'}</div>
-                        <div class="favorite-details">
-                            <span class="favorite-type">${type === 'parking' ? '駐車場' : 'レストラン'}</span>
-                            📍 ${fav.latitude?.toFixed(5)}, ${fav.longitude?.toFixed(5)}
-                        </div>
+                    <div class="favorite-info" style="flex: 1;">
+                        <a href="${regionUrl}" style="text-decoration: none; color: inherit; display: block;">
+                            <div class="favorite-name" style="color: #1976d2; cursor: pointer;">${fav.spot_name || '名称不明'}</div>
+                            <div class="favorite-details">
+                                <span class="favorite-type">${type === 'parking' ? '駐車場' : 'レストラン'}</span>
+                                ${fav.latitude && fav.longitude ? `📍 ${fav.latitude.toFixed(5)}, ${fav.longitude.toFixed(5)}` : '位置情報なし'}
+                            </div>
+                        </a>
                     </div>
                     <button class="btn-delete" onclick="deleteFavorite('${fav.id}')">削除</button>
                 `;
