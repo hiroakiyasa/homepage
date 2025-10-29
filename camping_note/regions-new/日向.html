@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (287m)</div>
                 <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=32.4234,131.6239" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%97%A5%E5%90%91%E5%B8%82%E5%BD%B9%E6%89%80%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=32.4234,131.6239" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%97%A5%E5%90%91%E5%B8%82%E5%BD%B9%E6%89%80%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 

@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約7分 (489m)</div>
                 <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.694694,135.508362" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E8%A5%BF%E5%A4%A9%E6%BA%80%EF%BC%93%E4%B8%81%E7%9B%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.694694,135.508362" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E8%A5%BF%E5%A4%A9%E6%BA%80%EF%BC%93%E4%B8%81%E7%9B%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約5分 (399m)</div>
                 <div class="parking-fee">💰 ¥1,400 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.699094,135.508823" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%9D%B1%E6%A8%AA%EF%BC%A9%EF%BC%AE%EF%BC%AE%E5%A4%A7%E9%98%AA%E6%A2%85%E7%94%B0%E6%9D%B1%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.699094,135.508823" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%9D%B1%E6%A8%AA%EF%BC%A9%EF%BC%AE%EF%BC%AE%E5%A4%A7%E9%98%AA%E6%A2%85%E7%94%B0%E6%9D%B1%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -675,19 +675,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>大阪天満宮 鮨とよなが</h3>
+          <h3>和食 いいくら</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 大阪府大阪市北区天神橋2-5-3 1Ｆ</div>
+          <div class="restaurant-address">📍 大阪府大阪市北区西天満3-7-20 伊藤ビル 1F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="380" data-spot-name="大阪天満宮 鮨とよなが" data-lat="34.69684113718142" data-lng="135.51341307626066" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1431" data-spot-name="和食 いいくら" data-lat="34.69635993718004" data-lng="135.50820007625944" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.69684113718142,135.51341307626066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E9%AE%A8%E3%81%A8%E3%82%88%E3%81%AA%E3%81%8C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.69635993718004,135.50820007625944" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%92%8C%E9%A3%9F%20%E3%81%84%E3%81%84%E3%81%8F%E3%82%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -711,6 +711,24 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>しまなみふれんち Murakami</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 大阪府大阪市北区天神橋1-13-15 大阪グリーン会館 102</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="613" data-spot-name="しまなみふれんち Murakami" data-lat="34.69462343718243" data-lng="135.51220367623912" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=34.69462343718243,135.51220367623912" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E3%81%B5%E3%82%8C%E3%82%93%E3%81%A1%20Murakami" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>ラ カンロ</h3>
 
           <span class="restaurant-genre">イノベーティブ</span>
@@ -727,39 +745,21 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>和食 いいくら</h3>
-
-          <span class="restaurant-genre">日本料理</span>
-
-          <div class="restaurant-address">📍 大阪府大阪市北区西天満3-7-20 伊藤ビル 1F</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1431" data-spot-name="和食 いいくら" data-lat="34.69635993718004" data-lng="135.50820007625944" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=34.69635993718004,135.50820007625944" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%92%8C%E9%A3%9F%20%E3%81%84%E3%81%84%E3%81%8F%E3%82%89" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>しまなみふれんち Murakami</h3>
+          <h3>大阪天満宮 鮨とよなが</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">寿司</span>
 
-          <div class="restaurant-address">📍 大阪府大阪市北区天神橋1-13-15 大阪グリーン会館 102</div>
+          <div class="restaurant-address">📍 大阪府大阪市北区天神橋2-5-3 1Ｆ</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="613" data-spot-name="しまなみふれんち Murakami" data-lat="34.69462343718243" data-lng="135.51220367623912" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="380" data-spot-name="大阪天満宮 鮨とよなが" data-lat="34.69684113718142" data-lng="135.51341307626066" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.69462343718243,135.51220367623912" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E3%81%B5%E3%82%8C%E3%82%93%E3%81%A1%20Murakami" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.69684113718142,135.51341307626066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E9%AE%A8%E3%81%A8%E3%82%88%E3%81%AA%E3%81%8C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

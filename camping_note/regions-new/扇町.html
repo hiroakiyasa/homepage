@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (451m)</div>
                 <div class="parking-fee">💰 ¥8,400 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.707318,135.507334" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E5%A4%A7%E9%98%AA%E9%BB%92%E5%B4%8E%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.707318,135.507334" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E5%A4%A7%E9%98%AA%E9%BB%92%E5%B4%8E%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -644,42 +644,24 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>山はしる</h3>
+          <h3>フナシェフ</h3>
 
-          <span class="restaurant-genre">焼き鳥</span>
+          <span class="restaurant-genre">フレンチ</span>
 
-          <div class="restaurant-address">📍 大阪府大阪市北区浪花町5-2</div>
+          <div class="restaurant-address">📍 大阪府大阪市北区黒崎町6-4</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1724" data-spot-name="山はしる" data-lat="34.70771113717359" data-lng="135.51053807637248" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="429" data-spot-name="フナシェフ" data-lat="34.70692563717366" data-lng="135.50920097636546" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.70771113717359,135.51053807637248" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%B1%B1%E3%81%AF%E3%81%97%E3%82%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.70692563717366,135.50920097636546" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%95%E3%83%8A%E3%82%B7%E3%82%A7%E3%83%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>ゴメンネJIRO</h3>
-
-          <span class="restaurant-genre">洋食</span>
-
-          <div class="restaurant-address">📍 大阪府大阪市北区池田町8-9</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1558" data-spot-name="ゴメンネJIRO" data-lat="34.707372715140785" data-lng="135.51317565889332" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=34.707372715140785,135.51317565889332" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%B4%E3%83%A1%E3%83%B3%E3%83%8DJIRO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>Patisserie Ravi,e relier</h3>
 
           <span class="restaurant-genre">ケーキ</span>
@@ -693,6 +675,24 @@
             </button>
             <a href="https://www.google.com/maps?q=34.705724237173946,135.5076960763544" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=Patisserie%20Ravi%2Ce%20relier" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>ゴメンネJIRO</h3>
+
+          <span class="restaurant-genre">洋食</span>
+
+          <div class="restaurant-address">📍 大阪府大阪市北区池田町8-9</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1558" data-spot-name="ゴメンネJIRO" data-lat="34.707372715140785" data-lng="135.51317565889332" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=34.707372715140785,135.51317565889332" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%B4%E3%83%A1%E3%83%B3%E3%83%8DJIRO" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -716,19 +716,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>フナシェフ</h3>
+          <h3>山はしる</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">焼き鳥</span>
 
-          <div class="restaurant-address">📍 大阪府大阪市北区黒崎町6-4</div>
+          <div class="restaurant-address">📍 大阪府大阪市北区浪花町5-2</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="429" data-spot-name="フナシェフ" data-lat="34.70692563717366" data-lng="135.50920097636546" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1724" data-spot-name="山はしる" data-lat="34.70771113717359" data-lng="135.51053807637248" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.70692563717366,135.50920097636546" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%95%E3%83%8A%E3%82%B7%E3%82%A7%E3%83%95" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.70771113717359,135.51053807637248" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%B1%B1%E3%81%AF%E3%81%97%E3%82%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

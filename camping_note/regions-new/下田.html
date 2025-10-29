@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (409m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.675472,138.943067" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%8B%E7%94%B0%EF%BC%92%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.675472,138.943067" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%8B%E7%94%B0%EF%BC%92%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約3分 (220m)</div>
                 <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.671931,138.943753" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%8B%E7%94%B0%E3%83%9A%E3%83%AA%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.671931,138.943753" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%8B%E7%94%B0%E3%83%9A%E3%83%AA%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%E5%89%8D" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -676,37 +676,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>テーブル トマト</h3>
+          <h3>小川家</h3>
 
-          <span class="restaurant-genre">ダイニングバー</span>
+          <span class="restaurant-genre">うなぎ</span>
 
-          <div class="restaurant-address">📍 静岡県下田市1-11-18</div>
+          <div class="restaurant-address">📍 静岡県下田市2-8-14</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="テーブル トマト" data-lat="34.67605033828741" data-lng="138.94480817364533" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="小川家" data-lat="34.672662338289605" data-lng="138.94495567361102" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.67605033828741,138.94480817364533" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%20%E3%83%88%E3%83%9E%E3%83%88" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.672662338289605,138.94495567361102" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%B0%8F%E5%B7%9D%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>旬の味 ごろさや</h3>
+          <h3>焼肉食堂 成翠園</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">焼肉</span>
 
-          <div class="restaurant-address">📍 静岡県下田市1丁目5-25</div>
+          <div class="restaurant-address">📍 静岡県下田市1-12-18</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="旬の味 ごろさや" data-lat="34.67699773828676" data-lng="138.944687473655" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="焼肉食堂 成翠園" data-lat="34.67644553828694" data-lng="138.9441327736498" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.67699773828676,138.944687473655" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%97%AC%E3%81%AE%E5%91%B3%20%E3%81%94%E3%82%8D%E3%81%95%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.67644553828694,138.9441327736498" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%84%BC%E8%82%89%E9%A3%9F%E5%A0%82%20%E6%88%90%E7%BF%A0%E5%9C%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -730,37 +730,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>小川家</h3>
+          <h3>旬の味 ごろさや</h3>
 
-          <span class="restaurant-genre">うなぎ</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 静岡県下田市2-8-14</div>
+          <div class="restaurant-address">📍 静岡県下田市1丁目5-25</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="小川家" data-lat="34.672662338289605" data-lng="138.94495567361102" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="旬の味 ごろさや" data-lat="34.67699773828676" data-lng="138.944687473655" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.672662338289605,138.94495567361102" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%B0%8F%E5%B7%9D%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.67699773828676,138.944687473655" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%97%AC%E3%81%AE%E5%91%B3%20%E3%81%94%E3%82%8D%E3%81%95%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>焼肉食堂 成翠園</h3>
+          <h3>テーブル トマト</h3>
 
-          <span class="restaurant-genre">焼肉</span>
+          <span class="restaurant-genre">ダイニングバー</span>
 
-          <div class="restaurant-address">📍 静岡県下田市1-12-18</div>
+          <div class="restaurant-address">📍 静岡県下田市1-11-18</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="焼肉食堂 成翠園" data-lat="34.67644553828694" data-lng="138.9441327736498" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="テーブル トマト" data-lat="34.67605033828741" data-lng="138.94480817364533" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=34.67644553828694,138.9441327736498" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%84%BC%E8%82%89%E9%A3%9F%E5%A0%82%20%E6%88%90%E7%BF%A0%E5%9C%92" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=34.67605033828741,138.94480817364533" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%20%E3%83%88%E3%83%9E%E3%83%88" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

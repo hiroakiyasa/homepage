@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約5分 (375m)</div>
                 <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=34.693468,135.786799" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E4%BA%8C%E6%9D%A1%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=34.693468,135.786799" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%82%B6%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AF%E4%BA%8C%E6%9D%A1%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -644,24 +644,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>ガトー・ド・ボワ A LA MAISON</h3>
-
-          <span class="restaurant-genre">ケーキ</span>
-
-          <div class="restaurant-address">📍 奈良県奈良市西大寺南町1-19-101</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1906" data-spot-name="ガトー・ド・ボワ A LA MAISON" data-lat="34.69356596033662" data-lng="135.78121936253856" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=34.69356596033662,135.78121936253856" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%AC%E3%83%88%E3%83%BC%E3%83%BB%E3%83%89%E3%83%BB%E3%83%9C%E3%83%AF%20A%20LA%20MAISON" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>魚源</h3>
 
           <span class="restaurant-genre">居酒屋</span>
@@ -678,8 +660,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>メンヤ モクモク</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -693,6 +675,24 @@
             </button>
             <a href="https://www.google.com/maps?q=34.69459863726806,135.78101617605043" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%83%A1%E3%83%B3%E3%83%A4%20%E3%83%A2%E3%82%AF%E3%83%A2%E3%82%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>ガトー・ド・ボワ A LA MAISON</h3>
+
+          <span class="restaurant-genre">ケーキ</span>
+
+          <div class="restaurant-address">📍 奈良県奈良市西大寺南町1-19-101</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1906" data-spot-name="ガトー・ド・ボワ A LA MAISON" data-lat="34.69356596033662" data-lng="135.78121936253856" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=34.69356596033662,135.78121936253856" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%AC%E3%83%88%E3%83%BC%E3%83%BB%E3%83%89%E3%83%BB%E3%83%9C%E3%83%AF%20A%20LA%20MAISON" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

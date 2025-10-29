@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (300m)</div>
                 <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.4171,142.4274" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E4%B8%AD%E5%AF%8C%E8%89%AF%E9%87%8E%20%E7%94%BA%E5%96%B6%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.4171,142.4274" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E4%B8%AD%E5%AF%8C%E8%89%AF%E9%87%8E%20%E7%94%BA%E5%96%B6%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -645,24 +645,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>とみたメロンハウス</h3>
-
-          <span class="restaurant-genre">スイーツ</span>
-
-          <div class="restaurant-address">📍 北海道空知郡中富良野町宮町3-32</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6879" data-spot-name="とみたメロンハウス" data-lat="43.41792423384406" data-lng="142.4265306595058" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=43.41792423384406,142.4265306595058" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%A8%E3%81%BF%E3%81%9F%E3%83%A1%E3%83%AD%E3%83%B3%E3%83%8F%E3%82%A6%E3%82%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>ファーム富田</h3>
 
           <span class="restaurant-genre">ソフトクリーム</span>
@@ -676,6 +658,24 @@
             </button>
             <a href="https://www.google.com/maps?q=43.41823571441909,142.42804380110744" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E5%AF%8C%E7%94%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>とみたメロンハウス</h3>
+
+          <span class="restaurant-genre">スイーツ</span>
+
+          <div class="restaurant-address">📍 北海道空知郡中富良野町宮町3-32</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6879" data-spot-name="とみたメロンハウス" data-lat="43.41792423384406" data-lng="142.4265306595058" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=43.41792423384406,142.4265306595058" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%A8%E3%81%BF%E3%81%9F%E3%83%A1%E3%83%AD%E3%83%B3%E3%83%8F%E3%82%A6%E3%82%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

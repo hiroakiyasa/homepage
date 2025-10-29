@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (286m)</div>
                 <div class="parking-fee">💰 ¥1,000 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.009465,135.788399" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E8%B9%B4%E4%B8%8A%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%B3%E8%A5%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.009465,135.788399" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E8%B9%B4%E4%B8%8A%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%B3%E8%A5%BF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -698,24 +698,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>ドミニク・ブシェ・キョート・ル・テッパンヤキ</h3>
-
-          <span class="restaurant-genre">鉄板焼き</span>
-
-          <div class="restaurant-address">📍 京都府京都市東山区粟田口華頂町1</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3397" data-spot-name="ドミニク・ブシェ・キョート・ル・テッパンヤキ" data-lat="35.00892633707057" data-lng="135.78775067922072" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=35.00892633707057,135.78775067922072" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%89%E3%83%9F%E3%83%8B%E3%82%AF%E3%83%BB%E3%83%96%E3%82%B7%E3%82%A7%E3%83%BB%E3%82%AD%E3%83%A7%E3%83%BC%E3%83%88%E3%83%BB%E3%83%AB%E3%83%BB%E3%83%86%E3%83%83%E3%83%91%E3%83%B3%E3%83%A4%E3%82%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
           <h3>南禅寺 順正</h3>
 
           <span class="restaurant-genre">豆腐料理</span>
@@ -729,6 +711,24 @@
             </button>
             <a href="https://www.google.com/maps?q=35.01159848873067,135.79017703136313" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%8D%97%E7%A6%85%E5%AF%BA%20%E9%A0%86%E6%AD%A3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>ドミニク・ブシェ・キョート・ル・テッパンヤキ</h3>
+
+          <span class="restaurant-genre">鉄板焼き</span>
+
+          <div class="restaurant-address">📍 京都府京都市東山区粟田口華頂町1</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3397" data-spot-name="ドミニク・ブシェ・キョート・ル・テッパンヤキ" data-lat="35.00892633707057" data-lng="135.78775067922072" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.00892633707057,135.78775067922072" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%89%E3%83%9F%E3%83%8B%E3%82%AF%E3%83%BB%E3%83%96%E3%82%B7%E3%82%A7%E3%83%BB%E3%82%AD%E3%83%A7%E3%83%BC%E3%83%88%E3%83%BB%E3%83%AB%E3%83%BB%E3%83%86%E3%83%83%E3%83%91%E3%83%B3%E3%83%A4%E3%82%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (405m)</div>
                 <div class="parking-fee">💰 ¥300 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=31.727678,131.064651" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%EF%BC%A2%EF%BC%A2%E3%83%91%E3%83%BC%E3%82%AF%E9%83%BD%E5%9F%8E%E4%B8%AD%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=31.727678,131.064651" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%EF%BC%A2%EF%BC%A2%E3%83%91%E3%83%BC%E3%82%AF%E9%83%BD%E5%9F%8E%E4%B8%AD%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約4分 (309m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=31.724778,131.066162" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%82%A6%E3%82%A8%E3%83%AB%E3%83%8D%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=31.724778,131.066162" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%82%A6%E3%82%A8%E3%83%AB%E3%83%8D%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -680,8 +680,8 @@
                 <div>📍 徒歩約4分 (299m)</div>
                 <div class="parking-fee">💰 ¥1,400 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=31.725519,131.065776" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E9%83%BD%E5%9F%8E%E5%B8%82%E4%B8%AD%E5%BF%83%E5%B8%82%E8%A1%97%E5%9C%B0%E4%B8%AD%E6%A0%B8%E6%96%BD%E8%A8%AD%E9%99%84%E5%B8%AF%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=31.725519,131.065776" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E9%83%BD%E5%9F%8E%E5%B8%82%E4%B8%AD%E5%BF%83%E5%B8%82%E8%A1%97%E5%9C%B0%E4%B8%AD%E6%A0%B8%E6%96%BD%E8%A8%AD%E9%99%84%E5%B8%AF%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -707,24 +707,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>びっくり亭 都城店</h3>
-
-          <span class="restaurant-genre">食堂</span>
-
-          <div class="restaurant-address">📍 宮崎県都城市大王町1-11</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="びっくり亭 都城店" data-lat="31.72871873764987" data-lng="131.06504464939806" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=31.72871873764987,131.06504464939806" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%B3%E3%81%A3%E3%81%8F%E3%82%8A%E4%BA%AD%20%E9%83%BD%E5%9F%8E%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>Bistro Lusso</h3>
 
           <span class="restaurant-genre">フレンチ</span>
@@ -732,12 +714,30 @@
           <div class="restaurant-address">📍 宮崎県都城市前田町4-12</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="Bistro Lusso" data-lat="31.728367837650335" data-lng="131.06581214939396" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="Bistro Lusso" data-lat="31.728367837650335" data-lng="131.06581214939396" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
             <a href="https://www.google.com/maps?q=31.728367837650335,131.06581214939396" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=Bistro%20Lusso" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>びっくり亭 都城店</h3>
+
+          <span class="restaurant-genre">食堂</span>
+
+          <div class="restaurant-address">📍 宮崎県都城市大王町1-11</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="びっくり亭 都城店" data-lat="31.72871873764987" data-lng="131.06504464939806" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=31.72871873764987,131.06504464939806" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%B3%E3%81%A3%E3%81%8F%E3%82%8A%E4%BA%AD%20%E9%83%BD%E5%9F%8E%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

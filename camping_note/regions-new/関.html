@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約3分 (213m)</div>
                 <div class="parking-fee">💰 ¥200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.491596,136.912061" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E9%96%A2%E9%A7%85%E8%A5%BF%E5%8F%A3%E9%A7%85%E5%89%8D%E5%BA%83%E5%A0%B4%EF%BC%88%E9%96%A2%E3%82%B7%E3%83%86%E3%82%A3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%EF%BC%89%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.491596,136.912061" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E9%96%A2%E9%A7%85%E8%A5%BF%E5%8F%A3%E9%A7%85%E5%89%8D%E5%BA%83%E5%A0%B4%EF%BC%88%E9%96%A2%E3%82%B7%E3%83%86%E3%82%A3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%EF%BC%89%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -644,24 +644,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>そばきり 萬屋町 助六</h3>
-
-          <span class="restaurant-genre">そば</span>
-
-          <div class="restaurant-address">📍 岐阜県関市本町8-27</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="そばきり 萬屋町 助六" data-lat="35.487153037125005" data-lng="136.91242378326288" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=35.487153037125005,136.91242378326288" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%9D%E3%81%B0%E3%81%8D%E3%82%8A%20%E8%90%AC%E5%B1%8B%E7%94%BA%20%E5%8A%A9%E5%85%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>辻屋</h3>
 
           <span class="restaurant-genre">うなぎ</span>
@@ -669,12 +651,30 @@
           <div class="restaurant-address">📍 岐阜県関市本町5-14</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="辻屋" data-lat="35.48613643712663" data-lng="136.91549498325045" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="辻屋" data-lat="35.48613643712663" data-lng="136.91549498325045" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
             <a href="https://www.google.com/maps?q=35.48613643712663,136.91549498325045" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E8%BE%BB%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>そばきり 萬屋町 助六</h3>
+
+          <span class="restaurant-genre">そば</span>
+
+          <div class="restaurant-address">📍 岐阜県関市本町8-27</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="そばきり 萬屋町 助六" data-lat="35.487153037125005" data-lng="136.91242378326288" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.487153037125005,136.91242378326288" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%9D%E3%81%B0%E3%81%8D%E3%82%8A%20%E8%90%AC%E5%B1%8B%E7%94%BA%20%E5%8A%A9%E5%85%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

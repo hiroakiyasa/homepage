@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約2分 (139m)</div>
                 <div class="parking-fee">💰 ¥600 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=33.261552,131.356035" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%EF%BC%AE%EF%BC%B0%EF%BC%A3%EF%BC%92%EF%BC%94%EF%BC%A8%E7%94%B1%E5%B8%83%E9%99%A2%E9%A7%85%E5%89%8D%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=33.261552,131.356035" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%EF%BC%AE%EF%BC%B0%EF%BC%A3%EF%BC%92%EF%BC%94%EF%BC%A8%E7%94%B1%E5%B8%83%E9%99%A2%E9%A7%85%E5%89%8D%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約2分 (154m)</div>
                 <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=33.262469,131.35666" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%82%86%E3%81%B5%E5%B1%B1" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=33.262469,131.35666" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%82%86%E3%81%B5%E5%B1%B1" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -680,8 +680,8 @@
                 <div>📍 徒歩約4分 (284m)</div>
                 <div class="parking-fee">💰 ¥5,600 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=33.26436,131.357023" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF%E6%B9%AF%E5%B8%83%E9%99%A2" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=33.26436,131.357023" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF%E6%B9%AF%E5%B8%83%E9%99%A2" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -707,24 +707,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>ゆふいんバーガーハウス</h3>
-
-          <span class="restaurant-genre">ハンバーガー</span>
-
-          <div class="restaurant-address">📍 大分県由布市湯布院町川上3050-2</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="13449" data-spot-name="ゆふいんバーガーハウス" data-lat="33.26461744291713" data-lng="131.3583849032967" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=33.26461744291713,131.3583849032967" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%86%E3%81%B5%E3%81%84%E3%82%93%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%8F%E3%82%A6%E3%82%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>由布院 六花</h3>
 
           <span class="restaurant-genre">料理旅館</span>
@@ -741,8 +723,8 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>由布まぶし 心 駅前支店</h3>
 
           <span class="restaurant-genre">郷土料理</span>
@@ -756,6 +738,24 @@
             </button>
             <a href="https://www.google.com/maps?q=33.262973236767984,131.35568346469168" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E7%94%B1%E5%B8%83%E3%81%BE%E3%81%B6%E3%81%97%20%E5%BF%83%20%E9%A7%85%E5%89%8D%E6%94%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>ゆふいんバーガーハウス</h3>
+
+          <span class="restaurant-genre">ハンバーガー</span>
+
+          <div class="restaurant-address">📍 大分県由布市湯布院町川上3050-2</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="13449" data-spot-name="ゆふいんバーガーハウス" data-lat="33.26461744291713" data-lng="131.3583849032967" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=33.26461744291713,131.3583849032967" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%86%E3%81%B5%E3%81%84%E3%82%93%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%8F%E3%82%A6%E3%82%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (425m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.245942,136.973365" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E5%BD%B9%E6%89%80%E5%8D%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.245942,136.973365" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E5%90%8D%E9%89%84%E5%8D%94%E5%95%86%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E5%BD%B9%E6%89%80%E5%8D%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -644,19 +644,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>フタツボシ</h3>
+          <h3>はる樹</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">ラーメン</span>
 
-          <div class="restaurant-address">📍 愛知県春日井市八田町2-27-27</div>
+          <div class="restaurant-address">📍 愛知県春日井市柏原町5-312</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="フタツボシ" data-lat="35.251417026054" data-lng="136.96822593061873" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="はる樹" data-lat="35.24989003729317" data-lng="136.9672934808278" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.251417026054,136.96822593061873" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%95%E3%82%BF%E3%83%84%E3%83%9C%E3%82%B7" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.24989003729317,136.9672934808278" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%AF%E3%82%8B%E6%A8%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -680,6 +680,24 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>フタツボシ</h3>
+
+          <span class="restaurant-genre">フレンチ</span>
+
+          <div class="restaurant-address">📍 愛知県春日井市八田町2-27-27</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="フタツボシ" data-lat="35.251417026054" data-lng="136.96822593061873" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.251417026054,136.96822593061873" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%95%E3%82%BF%E3%83%84%E3%83%9C%E3%82%B7" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>旨辛タンメン 誠屋</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -687,30 +705,12 @@
           <div class="restaurant-address">📍 愛知県春日井市鳥居松町4-2 BIRD4ビル 1F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="旨辛タンメン 誠屋" data-lat="35.24633403729612" data-lng="136.96949438079034" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="旨辛タンメン 誠屋" data-lat="35.24633403729612" data-lng="136.96949438079034" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
             <a href="https://www.google.com/maps?q=35.24633403729612,136.96949438079034" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E6%97%A8%E8%BE%9B%E3%82%BF%E3%83%B3%E3%83%A1%E3%83%B3%20%E8%AA%A0%E5%B1%8B" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>はる樹</h3>
-
-          <span class="restaurant-genre">ラーメン</span>
-
-          <div class="restaurant-address">📍 愛知県春日井市柏原町5-312</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="はる樹" data-lat="35.24989003729317" data-lng="136.9672934808278" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=35.24989003729317,136.9672934808278" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%AF%E3%82%8B%E6%A8%B9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

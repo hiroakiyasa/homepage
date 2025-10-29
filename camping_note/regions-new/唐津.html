@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (311m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=33.448096,129.970293" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E4%B8%AD%E7%94%BA%E4%B8%AD%E5%A4%AE%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=33.448096,129.970293" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E4%B8%AD%E7%94%BA%E4%B8%AD%E5%A4%AE%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -644,19 +644,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>からつ 鮨 笑咲喜</h3>
+          <h3>キャラバン</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">ステーキ</span>
 
-          <div class="restaurant-address">📍 佐賀県唐津市中町1840-1</div>
+          <div class="restaurant-address">📍 佐賀県唐津市中町1845</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="からつ 鮨 笑咲喜" data-lat="33.44786053620924" data-lng="129.96988956753066" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="キャラバン" data-lat="33.4479308362091" data-lng="129.96961446753158" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=33.44786053620924,129.96988956753066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%8B%E3%82%89%E3%81%A4%20%E9%AE%A8%20%E7%AC%91%E5%92%B2%E5%96%9C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=33.4479308362091,129.96961446753158" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%90%E3%83%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -680,19 +680,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>キャラバン</h3>
+          <h3>日本料理 川島</h3>
 
-          <span class="restaurant-genre">ステーキ</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 佐賀県唐津市中町1845</div>
+          <div class="restaurant-address">📍 佐賀県唐津市京町1775</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="キャラバン" data-lat="33.4479308362091" data-lng="129.96961446753158" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2" data-spot-name="日本料理 川島" data-lat="33.44695528024648" data-lng="129.9693163811542" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=33.4479308362091,129.96961446753158" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%90%E3%83%B3" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=33.44695528024648,129.9693163811542" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86%20%E5%B7%9D%E5%B3%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -716,19 +716,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>日本料理 川島</h3>
+          <h3>からつ 鮨 笑咲喜</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">寿司</span>
 
-          <div class="restaurant-address">📍 佐賀県唐津市京町1775</div>
+          <div class="restaurant-address">📍 佐賀県唐津市中町1840-1</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="日本料理 川島" data-lat="33.44695528024648" data-lng="129.9693163811542" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="からつ 鮨 笑咲喜" data-lat="33.44786053620924" data-lng="129.96988956753066" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=33.44695528024648,129.9693163811542" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86%20%E5%B7%9D%E5%B3%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=33.44786053620924,129.96988956753066" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%8B%E3%82%89%E3%81%A4%20%E9%AE%A8%20%E7%AC%91%E5%92%B2%E5%96%9C" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

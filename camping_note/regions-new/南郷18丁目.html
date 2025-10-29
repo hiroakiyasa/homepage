@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (471m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.026405,141.433218" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AD%E5%B9%8C%E6%A0%84%E9%80%9A%EF%BC%91%EF%BC%98%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.026405,141.433218" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AD%E5%B9%8C%E6%A0%84%E9%80%9A%EF%BC%91%EF%BC%98%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約2分 (133m)</div>
                 <div class="parking-fee">💰 ¥4,200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.031013,141.433896" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%9C%AD%E5%B9%8C%E5%8D%97%E9%83%B7%E9%80%9A%EF%BC%91%EF%BC%98%E4%B8%81%E7%9B%AE%E5%8C%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.031013,141.433896" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%9C%AD%E5%B9%8C%E5%8D%97%E9%83%B7%E9%80%9A%EF%BC%91%EF%BC%98%E4%B8%81%E7%9B%AE%E5%8C%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -680,8 +680,8 @@
                 <div>📍 徒歩約6分 (444m)</div>
                 <div class="parking-fee">💰 ¥4,620 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.027964,141.439631" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AD%E5%B9%8C%E5%8D%97%E9%83%B7%E9%80%9A%EF%BC%92%EF%BC%90%E4%B8%81%E7%9B%AE%E5%8D%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.027964,141.439631" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AD%E5%B9%8C%E5%8D%97%E9%83%B7%E9%80%9A%EF%BC%92%EF%BC%90%E4%B8%81%E7%9B%AE%E5%8D%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -707,24 +707,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>根室花まる 南郷店</h3>
-
-          <span class="restaurant-genre">回転寿司</span>
-
-          <div class="restaurant-address">📍 北海道札幌市白石区南郷通19丁目南8-2</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="9957" data-spot-name="根室花まる 南郷店" data-lat="43.02921413377525" data-lng="141.4352395562743" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=43.02921413377525,141.4352395562743" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%A0%B9%E5%AE%A4%E8%8A%B1%E3%81%BE%E3%82%8B%20%E5%8D%97%E9%83%B7%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>麺乃やました</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -738,6 +720,24 @@
             </button>
             <a href="https://www.google.com/maps?q=43.0262447337767,141.43385405624528" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E9%BA%BA%E4%B9%83%E3%82%84%E3%81%BE%E3%81%97%E3%81%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>根室花まる 南郷店</h3>
+
+          <span class="restaurant-genre">回転寿司</span>
+
+          <div class="restaurant-address">📍 北海道札幌市白石区南郷通19丁目南8-2</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="9957" data-spot-name="根室花まる 南郷店" data-lat="43.02921413377525" data-lng="141.4352395562743" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=43.02921413377525,141.4352395562743" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%A0%B9%E5%AE%A4%E8%8A%B1%E3%81%BE%E3%82%8B%20%E5%8D%97%E9%83%B7%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

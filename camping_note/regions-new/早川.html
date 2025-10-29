@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (275m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.241556,139.146001" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E5%B0%8F%E7%94%B0%E5%8E%9F%E6%97%A9%E5%B7%9D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.241556,139.146001" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B3%E3%83%AD%E3%83%91%E3%83%BC%E3%82%AF%E3%80%80%E5%B0%8F%E7%94%B0%E5%8E%9F%E6%97%A9%E5%B7%9D%E7%AC%AC%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -645,19 +645,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>お食事処 大原</h3>
+          <h3>めし家 やまや</h3>
 
-          <span class="restaurant-genre">食堂</span>
+          <span class="restaurant-genre">海鮮</span>
 
-          <div class="restaurant-address">📍 神奈川県小田原市早川1-6-10</div>
+          <div class="restaurant-address">📍 神奈川県小田原市早川1-6-10 小田原水産会館1F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2629" data-spot-name="お食事処 大原" data-lat="35.24068303799396" data-lng="139.14945057920517" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="11198" data-spot-name="めし家 やまや" data-lat="35.24058523799404" data-lng="139.14947337920418" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.24068303799396,139.14945057920517" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6%20%E5%A4%A7%E5%8E%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.24058523799404,139.14947337920418" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%81%E3%81%97%E5%AE%B6%20%E3%82%84%E3%81%BE%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -681,19 +681,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>めし家 やまや</h3>
+          <h3>イルマーレ</h3>
 
-          <span class="restaurant-genre">海鮮</span>
+          <span class="restaurant-genre">イタリアン</span>
 
-          <div class="restaurant-address">📍 神奈川県小田原市早川1-6-10 小田原水産会館1F</div>
+          <div class="restaurant-address">📍 神奈川県小田原市早川1-11-6</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="11198" data-spot-name="めし家 やまや" data-lat="35.24058523799404" data-lng="139.14947337920418" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2950" data-spot-name="イルマーレ" data-lat="35.2409037379931" data-lng="139.14719057920902" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.24058523799404,139.14947337920418" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%81%E3%81%97%E5%AE%B6%20%E3%82%84%E3%81%BE%E3%82%84" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.2409037379931,139.14719057920902" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -717,19 +717,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>イルマーレ</h3>
+          <h3>お食事処 大原</h3>
 
-          <span class="restaurant-genre">イタリアン</span>
+          <span class="restaurant-genre">食堂</span>
 
-          <div class="restaurant-address">📍 神奈川県小田原市早川1-11-6</div>
+          <div class="restaurant-address">📍 神奈川県小田原市早川1-6-10</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2950" data-spot-name="イルマーレ" data-lat="35.2409037379931" data-lng="139.14719057920902" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="2629" data-spot-name="お食事処 大原" data-lat="35.24068303799396" data-lng="139.14945057920517" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.2409037379931,139.14719057920902" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%82%A4%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%AC" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.24068303799396,139.14945057920517" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6%20%E5%A4%A7%E5%8E%9F" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

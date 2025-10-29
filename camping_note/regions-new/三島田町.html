@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約5分 (391m)</div>
                 <div class="parking-fee">💰 ¥500 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.116956,138.922102" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%89%E5%B3%B6%E6%9D%B1%E6%9C%AC%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.116956,138.922102" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%89%E5%B3%B6%E6%9D%B1%E6%9C%AC%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -648,8 +648,8 @@
                 <div>📍 徒歩約4分 (313m)</div>
                 <div class="parking-fee">💰 ¥700 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.11918,138.918653" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%89%E5%B3%B6%E4%B8%AD%E5%A4%AE%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.11918,138.918653" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%89%E5%B3%B6%E4%B8%AD%E5%A4%AE%E7%94%BA" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -678,8 +678,8 @@
                 <div>📍 徒歩約4分 (303m)</div>
                 <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.118914,138.916439" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%B8%82%E5%96%B6%E4%B8%AD%E5%A4%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.118914,138.916439" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%B8%82%E5%96%B6%E4%B8%AD%E5%A4%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -722,24 +722,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>三島・伊豆素材フレンチ gawa Mishima</h3>
-
-          <span class="restaurant-genre">ヨーロッパ料理</span>
-
-          <div class="restaurant-address">📍 静岡県三島市北田町1-13</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="5788" data-spot-name="三島・伊豆素材フレンチ gawa Mishima" data-lat="35.11802803799758" data-lng="138.91623737812975" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=35.11802803799758,138.91623737812975" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E3%83%BB%E4%BC%8A%E8%B1%86%E7%B4%A0%E6%9D%90%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81%20gawa%20Mishima" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
           <h3>季節料理 あまね</h3>
 
           <span class="restaurant-genre">日本料理</span>
@@ -753,6 +735,24 @@
             </button>
             <a href="https://www.google.com/maps?q=35.117149538803176,138.91516837928333" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E5%AD%A3%E7%AF%80%E6%96%99%E7%90%86%20%E3%81%82%E3%81%BE%E3%81%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>三島・伊豆素材フレンチ gawa Mishima</h3>
+
+          <span class="restaurant-genre">ヨーロッパ料理</span>
+
+          <div class="restaurant-address">📍 静岡県三島市北田町1-13</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="5788" data-spot-name="三島・伊豆素材フレンチ gawa Mishima" data-lat="35.11802803799758" data-lng="138.91623737812975" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.11802803799758,138.91623737812975" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E3%83%BB%E4%BC%8A%E8%B1%86%E7%B4%A0%E6%9D%90%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81%20gawa%20Mishima" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

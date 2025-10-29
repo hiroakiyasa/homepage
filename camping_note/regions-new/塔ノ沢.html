@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約4分 (298m)</div>
                 <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.232922,139.096694" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E5%87%BD%E5%B6%BA%E6%B4%9E%E9%96%80%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.232922,139.096694" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E5%87%BD%E5%B6%BA%E6%B4%9E%E9%96%80%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約4分 (272m)</div>
                 <div class="parking-fee">💰 ¥0 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.2331,139.0965" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E5%87%BD%E5%B6%BA%E6%B4%9E%E9%96%80%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E7%AE%B1%E6%A0%B9%E6%B9%AF%E6%9C%AC%20%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.2331,139.0965" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E5%87%BD%E5%B6%BA%E6%B4%9E%E9%96%80%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E7%AE%B1%E6%A0%B9%E6%B9%AF%E6%9C%AC%20%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -676,24 +676,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>金乃竹 塔ノ澤</h3>
-
-          <span class="restaurant-genre">料理旅館</span>
-
-          <div class="restaurant-address">📍 神奈川県足柄下郡箱根町塔ノ沢191</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="12787" data-spot-name="金乃竹 塔ノ澤" data-lat="35.2337379379791" data-lng="139.08893897917747" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=35.2337379379791,139.08893897917747" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E9%87%91%E4%B9%83%E7%AB%B9%20%E5%A1%94%E3%83%8E%E6%BE%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>瓔珞</h3>
 
           <span class="restaurant-genre">日本料理</span>
@@ -707,6 +689,24 @@
             </button>
             <a href="https://www.google.com/maps?q=35.23290303798164,139.0952574791646" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E7%93%94%E7%8F%9E" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>金乃竹 塔ノ澤</h3>
+
+          <span class="restaurant-genre">料理旅館</span>
+
+          <div class="restaurant-address">📍 神奈川県足柄下郡箱根町塔ノ沢191</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="12787" data-spot-name="金乃竹 塔ノ澤" data-lat="35.2337379379791" data-lng="139.08893897917747" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=35.2337379379791,139.08893897917747" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E9%87%91%E4%B9%83%E7%AB%B9%20%E5%A1%94%E3%83%8E%E6%BE%A4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

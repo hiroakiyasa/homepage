@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約6分 (448m)</div>
                 <div class="parking-fee">💰 ¥11,200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.648984,139.744434" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%B0%E4%B8%89%E7%94%B0%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.648984,139.744434" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%B0%E4%B8%89%E7%94%B0%E7%AC%AC%EF%BC%94" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約4分 (276m)</div>
                 <div class="parking-fee">💰 ¥22,400 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.6545,139.743573" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B8%AF%E5%8C%BA%E4%B8%89%E7%94%B0%E7%AC%AC%EF%BC%91%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.6545,139.743573" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%91%E3%83%A9%E3%82%AB%E6%B8%AF%E5%8C%BA%E4%B8%89%E7%94%B0%E7%AC%AC%EF%BC%91%EF%BC%91" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -676,19 +676,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>すが弥</h3>
+          <h3>綱町三井倶楽部</h3>
 
-          <span class="restaurant-genre">寿司</span>
+          <span class="restaurant-genre">フレンチ</span>
 
-          <div class="restaurant-address">📍 東京都港区東麻布1-29-15 東麻布296ビル 1F</div>
+          <div class="restaurant-address">📍 東京都港区三田2-3-7</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="517" data-spot-name="すが弥" data-lat="35.655312717883255" data-lng="139.74247498280818" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="10779" data-spot-name="綱町三井倶楽部" data-lat="35.651498537921334" data-lng="139.74070218294037" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.655312717883255,139.74247498280818" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%99%E3%81%8C%E5%BC%A5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.651498537921334,139.74070218294037" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%B6%B1%E7%94%BA%E4%B8%89%E4%BA%95%E5%80%B6%E6%A5%BD%E9%83%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -712,19 +712,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_2')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>綱町三井倶楽部</h3>
+          <h3>すが弥</h3>
 
-          <span class="restaurant-genre">フレンチ</span>
+          <span class="restaurant-genre">寿司</span>
 
-          <div class="restaurant-address">📍 東京都港区三田2-3-7</div>
+          <div class="restaurant-address">📍 東京都港区東麻布1-29-15 東麻布296ビル 1F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="10779" data-spot-name="綱町三井倶楽部" data-lat="35.651498537921334" data-lng="139.74070218294037" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="517" data-spot-name="すが弥" data-lat="35.655312717883255" data-lng="139.74247498280818" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.651498537921334,139.74070218294037" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%B6%B1%E7%94%BA%E4%B8%89%E4%BA%95%E5%80%B6%E6%A5%BD%E9%83%A8" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.655312717883255,139.74247498280818" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%99%E3%81%8C%E5%BC%A5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

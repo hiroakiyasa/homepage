@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約5分 (398m)</div>
                 <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.118914,138.916439" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%B8%82%E5%96%B6%E4%B8%AD%E5%A4%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.118914,138.916439" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%B8%82%E5%96%B6%E4%B8%AD%E5%A4%AE%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -648,8 +648,8 @@
                 <div>📍 徒歩約6分 (479m)</div>
                 <div class="parking-fee">💰 ¥2,800 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=35.117788,138.911114" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%BA%83%E5%B0%8F%E8%B7%AF%E3%82%B7%E3%83%B3%E3%82%B3%E3%82%A6%E3%83%91%E3%83%BC%E3%82%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=35.117788,138.911114" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E4%B8%89%E5%B3%B6%E5%BA%83%E5%B0%8F%E8%B7%AF%E3%82%B7%E3%83%B3%E3%82%B3%E3%82%A6%E3%83%91%E3%83%BC%E3%82%AF" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -675,37 +675,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>うなぎ 桜家</h3>
+          <h3>三嶋うなぎ 松子</h3>
 
           <span class="restaurant-genre">うなぎ</span>
 
-          <div class="restaurant-address">📍 静岡県三島市広小路町13-2</div>
+          <div class="restaurant-address">📍 静岡県三島市本町13-14 スルガビル 1F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="うなぎ 桜家" data-lat="35.11877963799576" data-lng="138.91197857814032" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="0" data-spot-name="三嶋うなぎ 松子" data-lat="35.11875030009052" data-lng="138.91512416094156" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.11877963799576,138.91197857814032" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AA%E3%81%8E%20%E6%A1%9C%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.11875030009052,138.91512416094156" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E4%B8%89%E5%B6%8B%E3%81%86%E3%81%AA%E3%81%8E%20%E6%9D%BE%E5%AD%90" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>季節料理 あまね</h3>
+          <h3>dilettante cafe</h3>
 
-          <span class="restaurant-genre">日本料理</span>
+          <span class="restaurant-genre">イタリアン</span>
 
-          <div class="restaurant-address">📍 静岡県三島市南本町16-5</div>
+          <div class="restaurant-address">📍 静岡県三島市緑町1-1</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="季節料理 あまね" data-lat="35.117149538803176" data-lng="138.91516837928333" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="1" data-spot-name="dilettante cafe" data-lat="35.1176480379966" data-lng="138.9123750781286" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.117149538803176,138.91516837928333" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%AD%A3%E7%AF%80%E6%96%99%E7%90%86%20%E3%81%82%E3%81%BE%E3%81%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.1176480379966,138.9123750781286" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=dilettante%20cafe" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -729,37 +729,37 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>dilettante cafe</h3>
+          <h3>季節料理 あまね</h3>
 
-          <span class="restaurant-genre">イタリアン</span>
+          <span class="restaurant-genre">日本料理</span>
 
-          <div class="restaurant-address">📍 静岡県三島市緑町1-1</div>
+          <div class="restaurant-address">📍 静岡県三島市南本町16-5</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="dilettante cafe" data-lat="35.1176480379966" data-lng="138.9123750781286" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3" data-spot-name="季節料理 あまね" data-lat="35.117149538803176" data-lng="138.91516837928333" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.1176480379966,138.9123750781286" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=dilettante%20cafe" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.117149538803176,138.91516837928333" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%AD%A3%E7%AF%80%E6%96%99%E7%90%86%20%E3%81%82%E3%81%BE%E3%81%AD" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_4')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>三嶋うなぎ 松子</h3>
+          <h3>うなぎ 桜家</h3>
 
           <span class="restaurant-genre">うなぎ</span>
 
-          <div class="restaurant-address">📍 静岡県三島市本町13-14 スルガビル 1F</div>
+          <div class="restaurant-address">📍 静岡県三島市広小路町13-2</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="三嶋うなぎ 松子" data-lat="35.11875030009052" data-lng="138.91512416094156" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4" data-spot-name="うなぎ 桜家" data-lat="35.11877963799576" data-lng="138.91197857814032" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=35.11875030009052,138.91512416094156" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E4%B8%89%E5%B6%8B%E3%81%86%E3%81%AA%E3%81%8E%20%E6%9D%BE%E5%AD%90" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=35.11877963799576,138.91197857814032" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%81%86%E3%81%AA%E3%81%8E%20%E6%A1%9C%E5%AE%B6" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

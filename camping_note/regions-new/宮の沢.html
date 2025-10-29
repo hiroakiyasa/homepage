@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約2分 (88m)</div>
                 <div class="parking-fee">💰 ¥1,100 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.090276,141.277756" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E3%83%A6%E3%83%8B%E3%82%AB%E5%AE%AE%E3%81%AE%E6%B2%A2" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.090276,141.277756" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E3%83%A6%E3%83%8B%E3%82%AB%E5%AE%AE%E3%81%AE%E6%B2%A2" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -649,8 +649,8 @@
                 <div>📍 徒歩約3分 (189m)</div>
                 <div class="parking-fee">💰 ¥2,600 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=43.089276,141.275668" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E5%AE%AE%E3%81%AE%E6%B2%A2%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=43.089276,141.275668" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E5%AE%AE%E3%81%AE%E6%B2%A2%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -676,24 +676,6 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>紫檀 手打ち蕎麦と焼鳥</h3>
-
-          <span class="restaurant-genre">そば</span>
-
-          <div class="restaurant-address">📍 北海道札幌市西区宮の沢1条1-6-17</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6291" data-spot-name="紫檀 手打ち蕎麦と焼鳥" data-lat="43.09016343368566" data-lng="141.27545815700194" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=43.09016343368566,141.27545815700194" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%B4%AB%E6%AA%80%20%E6%89%8B%E6%89%93%E3%81%A1%E8%95%8E%E9%BA%A6%E3%81%A8%E7%84%BC%E9%B3%A5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
           <h3>鮨処 なごやか亭 発寒店</h3>
 
           <span class="restaurant-genre">回転寿司</span>
@@ -707,6 +689,24 @@
             </button>
             <a href="https://www.google.com/maps?q=43.08850973368809,141.2798475569822" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
             <a href="https://www.google.com/search?q=%E9%AE%A8%E5%87%A6%20%E3%81%AA%E3%81%94%E3%82%84%E3%81%8B%E4%BA%AD%20%E7%99%BA%E5%AF%92%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_1')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
+          <h3>四代目 いちまる 宮の沢店</h3>
+
+          <span class="restaurant-genre">ラーメン</span>
+
+          <div class="restaurant-address">📍 北海道札幌市西区西町南21-1-20</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="18263" data-spot-name="四代目 いちまる 宮の沢店" data-lat="43.08647363368753" data-lng="141.2740147569657" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=43.08647363368753,141.2740147569657" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%9B%9B%E4%BB%A3%E7%9B%AE%20%E3%81%84%E3%81%A1%E3%81%BE%E3%82%8B%20%E5%AE%AE%E3%81%AE%E6%B2%A2%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
@@ -730,19 +730,19 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_3')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
-          <h3>四代目 いちまる 宮の沢店</h3>
+          <h3>紫檀 手打ち蕎麦と焼鳥</h3>
 
-          <span class="restaurant-genre">ラーメン</span>
+          <span class="restaurant-genre">そば</span>
 
-          <div class="restaurant-address">📍 北海道札幌市西区西町南21-1-20</div>
+          <div class="restaurant-address">📍 北海道札幌市西区宮の沢1条1-6-17</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="18263" data-spot-name="四代目 いちまる 宮の沢店" data-lat="43.08647363368753" data-lng="141.2740147569657" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6291" data-spot-name="紫檀 手打ち蕎麦と焼鳥" data-lat="43.09016343368566" data-lng="141.27545815700194" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=43.08647363368753,141.2740147569657" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%9B%9B%E4%BB%A3%E7%9B%AE%20%E3%81%84%E3%81%A1%E3%81%BE%E3%82%8B%20%E5%AE%AE%E3%81%AE%E6%B2%A2%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=43.09016343368566,141.27545815700194" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%B4%AB%E6%AA%80%20%E6%89%8B%E6%89%93%E3%81%A1%E8%95%8E%E9%BA%A6%E3%81%A8%E7%84%BC%E9%B3%A5" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 

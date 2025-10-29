@@ -170,23 +170,23 @@
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -618,8 +618,8 @@
                 <div>📍 徒歩約2分 (143m)</div>
                 <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=42.788292,141.679249" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%EF%BC%A1%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=42.788292,141.679249" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%EF%BC%A1%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -648,8 +648,8 @@
                 <div>📍 徒歩約3分 (174m)</div>
                 <div class="parking-fee">💰 ¥1,200 (18:00-8:00)</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=42.786576,141.67956" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%EF%BC%A2%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=42.786576,141.67956" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%EF%BC%A2%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
@@ -674,60 +674,24 @@
 
         <div class="restaurant-card" onclick="showMarker('restaurant_0')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">1</div>
-          <h3>北海道牛乳カステラ</h3>
+          <h3>札幌魚河岸 五十七番寿し</h3>
 
-          <span class="restaurant-genre">カステラ</span>
+          <span class="restaurant-genre">立ち食い寿司</span>
 
-          <div class="restaurant-address">📍 北海道千歳市美々987 新千歳空港ターミナルビル 連絡施設3F</div>
+          <div class="restaurant-address">📍 北海道千歳市美々987 新千歳空港ターミナルビル 2F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4282" data-spot-name="北海道牛乳カステラ" data-lat="42.78736460653994" data-lng="141.67999720452573" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="8262" data-spot-name="札幌魚河岸 五十七番寿し" data-lat="42.78761345458155" data-lng="141.6757091055129" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=42.78736460653994,141.67999720452573" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E5%8C%97%E6%B5%B7%E9%81%93%E7%89%9B%E4%B9%B3%E3%82%AB%E3%82%B9%E3%83%86%E3%83%A9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=42.78761345458155,141.6757091055129" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E6%9C%AD%E5%B9%8C%E9%AD%9A%E6%B2%B3%E5%B2%B8%20%E4%BA%94%E5%8D%81%E4%B8%83%E7%95%AA%E5%AF%BF%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
         <div class="restaurant-card" onclick="showMarker('restaurant_1')">
           <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">2</div>
-          <h3>ミルク&パフェ よつ葉ホワイトコージ 新千歳空港店</h3>
-
-          <span class="restaurant-genre">ソフトクリーム</span>
-
-          <div class="restaurant-address">📍 北海道千歳市美々987-22 新千歳空港ターミナルビル 2F</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3505" data-spot-name="ミルク&パフェ よつ葉ホワイトコージ 新千歳空港店" data-lat="42.787136934007066" data-lng="141.6803388536573" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=42.787136934007066,141.6803388536573" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%AB%E3%82%AF%26%E3%83%91%E3%83%95%E3%82%A7%20%E3%82%88%E3%81%A4%E8%91%89%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%82%B8%20%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
-          <h3>美瑛選果 新千歳空港店</h3>
-
-          <span class="restaurant-genre">パン</span>
-
-          <div class="restaurant-address">📍 北海道千歳市美々 新千歳空港 国内線ターミナルビル 2F</div>
-
-          <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6878" data-spot-name="美瑛選果 新千歳空港店" data-lat="42.78776693400665" data-lng="141.68035395366365" onclick="event.stopPropagation(); toggleLike(this)">
-              <span class="like-icon">❤️</span>
-              <span class="like-count">0</span>
-            </button>
-            <a href="https://www.google.com/maps?q=42.78776693400665,141.68035395366365" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
-          </div>
-        </div>
-
-        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
           <h3>えびそば一幻 新千歳空港店</h3>
 
           <span class="restaurant-genre">ラーメン</span>
@@ -744,21 +708,57 @@
           </div>
         </div>
 
-        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
-          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
-          <h3>札幌魚河岸 五十七番寿し</h3>
+        <div class="restaurant-card" onclick="showMarker('restaurant_2')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">3</div>
+          <h3>ミルク&パフェ よつ葉ホワイトコージ 新千歳空港店</h3>
 
-          <span class="restaurant-genre">立ち食い寿司</span>
+          <span class="restaurant-genre">ソフトクリーム</span>
 
-          <div class="restaurant-address">📍 北海道千歳市美々987 新千歳空港ターミナルビル 2F</div>
+          <div class="restaurant-address">📍 北海道千歳市美々987-22 新千歳空港ターミナルビル 2F</div>
 
           <div class="restaurant-buttons">
-            <button class="btn-like" data-spot-type="restaurant" data-spot-id="8262" data-spot-name="札幌魚河岸 五十七番寿し" data-lat="42.78761345458155" data-lng="141.6757091055129" onclick="event.stopPropagation(); toggleLike(this)">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="3505" data-spot-name="ミルク&パフェ よつ葉ホワイトコージ 新千歳空港店" data-lat="42.787136934007066" data-lng="141.6803388536573" onclick="event.stopPropagation(); toggleLike(this)">
               <span class="like-icon">❤️</span>
               <span class="like-count">0</span>
             </button>
-            <a href="https://www.google.com/maps?q=42.78761345458155,141.6757091055129" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
-            <a href="https://www.google.com/search?q=%E6%9C%AD%E5%B9%8C%E9%AD%9A%E6%B2%B3%E5%B2%B8%20%E4%BA%94%E5%8D%81%E4%B8%83%E7%95%AA%E5%AF%BF%E3%81%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+            <a href="https://www.google.com/maps?q=42.787136934007066,141.6803388536573" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%AB%E3%82%AF%26%E3%83%91%E3%83%95%E3%82%A7%20%E3%82%88%E3%81%A4%E8%91%89%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%82%B8%20%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_3')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">4</div>
+          <h3>北海道牛乳カステラ</h3>
+
+          <span class="restaurant-genre">カステラ</span>
+
+          <div class="restaurant-address">📍 北海道千歳市美々987 新千歳空港ターミナルビル 連絡施設3F</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="4282" data-spot-name="北海道牛乳カステラ" data-lat="42.78736460653994" data-lng="141.67999720452573" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=42.78736460653994,141.67999720452573" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E5%8C%97%E6%B5%B7%E9%81%93%E7%89%9B%E4%B9%B3%E3%82%AB%E3%82%B9%E3%83%86%E3%83%A9" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card" onclick="showMarker('restaurant_4')">
+          <div style="font-weight: bold; color: #ff9800; margin-bottom: 4px;">5</div>
+          <h3>美瑛選果 新千歳空港店</h3>
+
+          <span class="restaurant-genre">パン</span>
+
+          <div class="restaurant-address">📍 北海道千歳市美々 新千歳空港 国内線ターミナルビル 2F</div>
+
+          <div class="restaurant-buttons">
+            <button class="btn-like" data-spot-type="restaurant" data-spot-id="6878" data-spot-name="美瑛選果 新千歳空港店" data-lat="42.78776693400665" data-lng="141.68035395366365" onclick="event.stopPropagation(); toggleLike(this)">
+              <span class="like-icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <a href="https://www.google.com/maps?q=42.78776693400665,141.68035395366365" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️</a>
+            <a href="https://www.google.com/search?q=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF%E5%BA%97" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍</a>
           </div>
         </div>
 
