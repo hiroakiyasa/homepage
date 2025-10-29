@@ -838,23 +838,23 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
     .parking-card-buttons {
       display: flex;
       gap: 6px;
-      margin-top: 8px;
-      flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .btn-icon {
       background: #3B82F6;
       color: white;
-      padding: 6px 12px;
+      padding: 4px 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      line-height: 1.2;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
       transition: all 0.2s;
-      white-space: nowrap;
+      min-width: 32px;
+      height: 28px;
     }
 
     .btn-icon:hover {
@@ -1340,8 +1340,8 @@ async function generateMainHTML(regionData, parkingSpots, topRestaurants, conven
                 <div>📍 徒歩約${spot.walking_minutes}分 (${spot.distance_to_center}m)</div>
                 <div class="parking-fee">💰 ${calculatedFeeText}</div>
                 <div class="parking-card-buttons">
-                  <a href="https://www.google.com/maps?q=${spot.lat},${spot.lng}" target="_blank" onclick="event.stopPropagation()" class="btn-icon">🗺️ Google地図</a>
-                  <a href="https://www.google.com/search?q=${encodeURIComponent(spot.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search">🔍 Google検索</a>
+                  <a href="https://www.google.com/maps?q=${spot.lat},${spot.lng}" target="_blank" onclick="event.stopPropagation()" class="btn-icon" title="Google地図">🗺️</a>
+                  <a href="https://www.google.com/search?q=${encodeURIComponent(spot.name)}" target="_blank" onclick="event.stopPropagation()" class="btn-icon btn-search" title="Google検索">🔍</a>
                 </div>
               </div>
 
