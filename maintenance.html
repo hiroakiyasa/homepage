@@ -1061,17 +1061,160 @@ body { font-family: 'Noto Sans JP', sans-serif; }
                     </div>
                 </div>
                 <div class="p-6">
-                    <!-- コンテンツ -->
-                    <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-5 mb-6">
-                        <p class="text-gray-700 text-sm leading-relaxed">
-                            オートマチックトランスミッションを丸ごと載せ替える大手術。変速ショックが大きい、滑る、異音がする場合に必要。<strong class="text-pink-600">DIYは現実的ではなく、プロに任せる項目</strong>です。
-                        </p>
+                    <!-- 概要説明 -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-pink-500"></i>何をする作業？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                エンジンの回転をタイヤに伝える変速機（オートマチック・トランスミッション）を丸ごと交換する作業です。ハイエースのオートマは非常に頑丈ですが、<strong class="text-pink-600">過積載やメンテナンス不足（ATF未交換）で酷使されると、内部のクラッチやギアが摩耗</strong>し、最終的に動力が伝わらなくなります。
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-red-100 border-l-4 border-red-500 p-4 rounded-r-xl mb-3">
+                                <h6 class="font-bold text-red-800 text-sm mb-2"><i class="ri-alarm-warning-fill mr-1"></i>これが出たら末期症状！</h6>
+                                <ul class="text-gray-700 text-xs space-y-1">
+                                    <li><strong>滑り：</strong>アクセルを踏んでもエンジン音だけが「ブォーン」と上がり、スピードが出ない</li>
+                                    <li><strong>変速ショック：</strong>ギアが変わる時に「ドン！」という大きな衝撃</li>
+                                    <li><strong>変速しない：</strong>いつまでも3速固定などになる</li>
+                                    <li><strong>バックしない：</strong>Rに入れても車が動かない</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-200 rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <i class="ri-dashboard-3-fill text-pink-400 text-6xl mb-4"></i>
-                            <p class="text-gray-600 text-sm font-medium">プロに任せる整備項目です</p>
-                            <p class="text-gray-500 text-xs mt-2">特殊工具・設備が必要</p>
+
+                    <!-- 費用内訳 -->
+                    <div class="bg-gray-800 text-white rounded-xl p-5 mb-6">
+                        <h5 class="font-bold mb-4 flex items-center gap-2">
+                            <i class="ri-money-yen-circle-line text-yellow-400"></i>費用の内訳（約31万円）
+                        </h5>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-gray-700 rounded-lg p-3">
+                                <div class="text-yellow-400 font-bold text-lg">¥15〜20万</div>
+                                <div class="text-xs text-gray-300 mt-1">リビルトミッション本体</div>
+                                <div class="text-xs text-gray-400">（中身を新品部品に入れ替えた再生品）</div>
+                            </div>
+                            <div class="bg-gray-700 rounded-lg p-3">
+                                <div class="text-yellow-400 font-bold text-lg">¥8〜10万</div>
+                                <div class="text-xs text-gray-300 mt-1">脱着工賃</div>
+                                <div class="text-xs text-gray-400">（プロでも丸1日かかる重作業）</div>
+                            </div>
+                            <div class="bg-gray-700 rounded-lg p-3">
+                                <div class="text-yellow-400 font-bold text-lg">¥1〜2万</div>
+                                <div class="text-xs text-gray-300 mt-1">ATF（オートマオイル）</div>
+                                <div class="text-xs text-gray-400">（全量交換で大量に必要）</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 難易度と必要設備 -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-red-50 rounded-xl p-4">
+                            <h6 class="font-bold text-red-800 text-sm mb-2"><i class="ri-skull-2-fill mr-1"></i>難易度：超上級・設備必須 ★★★★★</h6>
+                            <ul class="text-gray-700 text-xs space-y-1">
+                                <li>・ミッション本体は<strong class="text-red-600">50kg〜80kg</strong>近い鉄の塊</li>
+                                <li>・リフトで車を持ち上げ、「ミッションジャッキ」という専用の支えがないと、下敷きになって<strong class="text-red-600">命に関わります</strong></li>
+                                <li>・<strong>作業時間：1日〜数日</strong>（プロでも朝から夕方までかかる）</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-tools-line mr-1"></i>必要な部品</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・リビルトATミッション</li>
+                                    <li>・ATF 10〜20L</li>
+                                    <li>・（トヨタ純正オートフルードWS等）</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-hammer-line mr-1"></i>必須設備</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・<strong>リフト</strong>（必須）</li>
+                                    <li>・<strong>ミッションジャッキ</strong></li>
+                                    <li>・1mエクステンションバー</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 作業ステップ（アコーディオン） -->
+                    <div class="mb-6">
+                        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between bg-gradient-to-r from-pink-100 to-rose-100 p-4 rounded-xl text-left hover:from-pink-200 hover:to-rose-200 transition">
+                            <span class="font-bold text-gray-800"><i class="ri-list-ordered mr-2"></i>作業ステップ（5段階）</span>
+                            <i class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"></i>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <div class="p-4 bg-white border border-t-0 border-gray-200 rounded-b-xl space-y-4">
+                                <div class="flex gap-3">
+                                    <span class="step-number bg-pink-500 w-8 h-8 text-sm flex-shrink-0">1</span>
+                                    <div>
+                                        <h6 class="font-bold text-gray-800 text-sm">周辺部品の取り外し</h6>
+                                        <p class="text-gray-600 text-xs">バッテリーのマイナス端子を外す → プロペラシャフト（動力を伝える長い棒）を外す → スターター（セルモーター）を外す → ATFクーラーホースを切り離す（オイルが出ます）</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <span class="step-number bg-pink-500 w-8 h-8 text-sm flex-shrink-0">2</span>
+                                    <div>
+                                        <h6 class="font-bold text-gray-800 text-sm">トルクコンバーターの切り離し（難所）</h6>
+                                        <p class="text-gray-600 text-xs">エンジンとミッションの間にある「トルクコンバーター（ドーナツ型の部品）」とエンジンを繋いでいるボルト（通常6本）を、小さな隙間から回して外します。クランクを回してボルト位置を合わせながら、1本ずつ外す地味で大変な作業です。</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <span class="step-number bg-pink-500 w-8 h-8 text-sm flex-shrink-0">3</span>
+                                    <div>
+                                        <h6 class="font-bold text-gray-800 text-sm">ミッション本体の分離</h6>
+                                        <p class="text-gray-600 text-xs">ミッションジャッキを掛けて支える → エンジンとミッションを結合している太いボルト（ベルハウジングボルト）を全周外す ※上の方のボルトは手が入らないため、1mくらいの延長棒を使って回します</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <span class="step-number bg-pink-500 w-8 h-8 text-sm flex-shrink-0">4</span>
+                                    <div>
+                                        <h6 class="font-bold text-gray-800 text-sm">ミッション下ろし</h6>
+                                        <p class="text-gray-600 text-xs">ミッションをエンジンの反対側へスライドさせて引き抜く → バランスを崩すとミッションが落下して大事故に！慎重にジャッキを下げて車体から出します</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <span class="step-number bg-pink-500 w-8 h-8 text-sm flex-shrink-0">5</span>
+                                    <div>
+                                        <h6 class="font-bold text-gray-800 text-sm">載せ替えとATF注入</h6>
+                                        <p class="text-gray-600 text-xs">新しいリビルトミッションをジャッキに乗せ、逆の手順で組み付け → ATF注入と油面調整：診断機を使って適正な油温（35℃〜45℃）にし、オーバーフロープラグから溢れ出る量で厳密に調整。ここを適当にやると、せっかくの新品ミッションがまた壊れます。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- プロのアドバイス -->
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl p-5">
+                        <h5 class="font-bold mb-4 flex items-center gap-2">
+                            <i class="ri-user-star-fill text-yellow-400"></i>プロのアドバイス・総評
+                        </h5>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex gap-3">
+                                <i class="ri-close-circle-fill text-red-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-red-300">DIYは「やめておくべき」</strong>
+                                    <p class="text-gray-300 text-xs mt-1">他の項目（オルタネーターやラジエーター）はDIYをお勧めしましたが、ミッション載せ替えだけは<strong>「設備（リフト）」がない限り不可能</strong>に近いです。寝板で潜ってやる猛者もいますが、ミッションがお腹の上に落ちて怪我をするリスクが高すぎます。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="ri-alert-fill text-yellow-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-yellow-300">リビルトの品質に注意</strong>
+                                    <p class="text-gray-300 text-xs mt-1">安すぎるリビルト品（10万円以下など）は、中身の清掃だけで部品交換していない「なんちゃってリビルト」の場合があります。信頼できる「リンク品（メーカー系）」や保証付きのものを選んでください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="ri-shield-check-fill text-green-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-green-300">予防整備が最強</strong>
+                                    <p class="text-gray-300 text-xs mt-1">こうならないためには、<strong>「4万キロごとのATF交換」</strong>が最強の予防策です。「無交換でOK」と言われることもありますが、長く乗るハイエースなら交換推奨です。</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-3 mt-4">
+                                <p class="text-gray-200 text-xs">💡 31万円は高額ですが、これを直せばさらに<strong class="text-yellow-300">10万キロ、20万キロ</strong>と走れるようになります。エンジンが元気なら、投資する価値はある修理です。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
