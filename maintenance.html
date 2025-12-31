@@ -363,7 +363,8 @@ body { font-family: 'Noto Sans JP', sans-serif; }
                 <a href="#item-turbo" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ターボ</a>
                 <a href="#item-egr" class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">EGR・インマニ</a>
                 <a href="#item-dpr-clean" class="bg-gradient-to-r from-teal-500 to-green-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">DPR洗浄</a>
-                <a href="#item-dpr-replace" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">DPR交換</a>
+                <a href="#item-exhaust-valve" class="bg-gradient-to-r from-green-500 to-lime-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">排気絞り弁</a>
+                <a href="#item-dpr-replace" class="bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">DPR交換</a>
                 <a href="#item-timing" class="bg-gradient-to-r from-emerald-500 to-lime-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">タイミングベルト</a>
                 <a href="#item-hub" class="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ハブベアリング</a>
                 <a href="#item-hub-stuck" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ハブ固着</a>
@@ -762,6 +763,227 @@ body { font-family: 'Noto Sans JP', sans-serif; }
                             </a>
                         </div>
                         <div class="pdf-canvas-container" data-pdf="document/DPF洗浄.pdf"><div class="pdf-loading"><div class="pdf-spinner"></div><div class="pdf-loading-text">PDFを読み込んでいます...</div><div class="pdf-progress-bar"><div class="pdf-progress-fill" style="width: 0%"></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 排気絞り弁（P047F） -->
+            <div id="item-exhaust-valve" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-green-500 to-lime-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-valve-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">排気絞り弁の清掃・交換（P047F）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">清掃: ¥0〜 / 交換: ¥40,000〜</span>
+                                <span class="text-sm opacity-90">難易度: ★★★☆☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- 概要説明 -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-green-50 to-lime-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-green-500"></i>どんな部品？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                エンジンの暖機を早めたり、DPF再生時に排気温度を上げたりするために、マフラーの途中（フロントパイプ付近）にある「弁（バタフライバルブ）」です。電子制御でパタパタと開閉し、<strong class="text-green-600">排気の流れをわざと詰まらせてエンジン負荷を高める</strong>役割をします。
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-red-100 border-l-4 border-red-500 p-4 rounded-r-xl mb-3">
+                                <h6 class="font-bold text-red-800 text-sm mb-2"><i class="ri-error-warning-fill mr-1"></i>故障の症状（P047F）</h6>
+                                <ul class="text-gray-700 text-xs space-y-1">
+                                    <li><strong>チェックランプ点灯：</strong>P047Fのエラーコードが出る</li>
+                                    <li><strong>DPF再生が終わらない：</strong>排気温度が上がらず再生モードが続く</li>
+                                    <li><strong>出力低下：</strong>弁が中途半端に閉じたまま固着し走らない</li>
+                                    <li><strong>異音：</strong>下回りから「キーキー」という作動音</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 原因と難易度 -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-xl">
+                            <h6 class="font-bold text-yellow-800 text-sm mb-2"><i class="ri-lightbulb-fill mr-1"></i>原因</h6>
+                            <p class="text-gray-700 text-xs">排気ガスに含まれる<strong class="text-yellow-600">大量のカーボン（煤）</strong>が弁の軸にこびりつき、動きが悪くなって固着。また、アクチュエーター（モーター）内部のギア欠けによる作動不良もあります。</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-time-line mr-1"></i>作業時間</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・清掃：約1〜2時間</li>
+                                    <li>・交換：約1時間</li>
+                                    <li>（ボルトが素直に外れれば）</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-check-line mr-1"></i>DIY可能度</h6>
+                                <p class="text-gray-700 text-xs">ジャッキアップさえできればDIYでも挑戦しやすい部類！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 清掃方法（アコーディオン） -->
+                    <div class="mb-4">
+                        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between bg-gradient-to-r from-green-100 to-lime-100 p-4 rounded-xl text-left hover:from-green-200 hover:to-lime-200 transition">
+                            <span class="font-bold text-gray-800"><i class="ri-droplet-fill mr-2 text-blue-500"></i>① 清掃で直す方法（軽症の場合）</span>
+                            <i class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"></i>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <div class="p-4 bg-white border border-t-0 border-gray-200 rounded-b-xl">
+                                <div class="mb-4">
+                                    <h6 class="font-bold text-gray-800 text-sm mb-2"><i class="ri-tools-line mr-1"></i>必要なもの</h6>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div class="bg-gray-50 rounded-lg p-2">・潤滑剤（ラスペネなど）※必須</div>
+                                        <div class="bg-gray-50 rounded-lg p-2">・エンジンコンディショナー（泡タイプ）</div>
+                                        <div class="bg-gray-50 rounded-lg p-2">・ワイヤーブラシ・サンドペーパー</div>
+                                        <div class="bg-gray-50 rounded-lg p-2">・10mm/12mmスパナ・レンチ</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-green-500 w-7 h-7 text-xs flex-shrink-0">1</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">ジャッキアップ</h6>
+                                            <p class="text-gray-600 text-xs">安全に車の下に潜れるようにします。場所は運転席の下あたり、マフラーの途中にある「四角い箱（アクチュエーター）」がついた部分です。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-green-500 w-7 h-7 text-xs flex-shrink-0">2</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">リンクの切り離し</h6>
+                                            <p class="text-gray-600 text-xs">アクチュエーター（モーター）と弁を繋いでいる「ロッド（棒）」のナットを外し、手で弁が動くか確認。ガチガチに固まって動かなければ、煤による固着が確定です。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-green-500 w-7 h-7 text-xs flex-shrink-0">3</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">洗浄剤の噴射</h6>
+                                            <p class="text-gray-600 text-xs">弁の軸部分（外側から見える隙間）に、エンジンコンディショナーと潤滑剤を交互に吹き付けます。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-green-500 w-7 h-7 text-xs flex-shrink-0">4</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">リハビリ（重要！）</h6>
+                                            <p class="text-gray-600 text-xs">プライヤーなどで弁の軸を掴み、<strong>「グリグリ」と強制的に動かします</strong>。最初は硬いですが、潤滑剤を吹いては動かし、を数十分繰り返すと、徐々に「パタンパタン」とスムーズに動くようになります。<br><span class="text-green-600 font-medium">ポイント：完全に抵抗なく、指一本で動くようになるまで根気よく続けます。</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-green-500 w-7 h-7 text-xs flex-shrink-0">5</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">組み戻し</h6>
+                                            <p class="text-gray-600 text-xs">ロッドを繋ぎ直し、エンジンをかけてエラーを消去します。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 交換方法（アコーディオン） -->
+                    <div class="mb-6">
+                        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-xl text-left hover:from-orange-200 hover:to-red-200 transition">
+                            <span class="font-bold text-gray-800"><i class="ri-swap-box-fill mr-2 text-orange-500"></i>② 交換する方法（重症・ギア欠けの場合）</span>
+                            <i class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"></i>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <div class="p-4 bg-white border border-t-0 border-gray-200 rounded-b-xl">
+                                <div class="mb-4">
+                                    <h6 class="font-bold text-gray-800 text-sm mb-2"><i class="ri-tools-line mr-1"></i>必要な部品・ツール</h6>
+                                    <div class="grid md:grid-cols-3 gap-2 text-xs">
+                                        <div class="bg-blue-50 rounded-lg p-3">
+                                            <strong class="text-blue-800">エキゾースト・コントロールバルブ Assy</strong>
+                                            <p class="text-gray-600 mt-1">新品:4〜5万円 / 中古・リビルト:1.5〜3万円</p>
+                                        </div>
+                                        <div class="bg-blue-50 rounded-lg p-3">
+                                            <strong class="text-blue-800">ガスケット（2枚）</strong>
+                                            <p class="text-gray-600 mt-1">パイプの前後に挟むパッキン。再利用不可</p>
+                                        </div>
+                                        <div class="bg-blue-50 rounded-lg p-3">
+                                            <strong class="text-blue-800">ボルト・ナットセット</strong>
+                                            <p class="text-gray-600 mt-1">錆びて再利用できないことが多いのでM10新品を用意</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-orange-500 w-7 h-7 text-xs flex-shrink-0">1</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">カプラー取り外し</h6>
+                                            <p class="text-gray-600 text-xs">アクチュエーターに繋がる電気配線を抜きます。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-orange-500 w-7 h-7 text-xs flex-shrink-0">2</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">フランジボルトの取り外し（最難関）</h6>
+                                            <p class="text-gray-600 text-xs">弁の前後のマフラーパイプを繋いでいるボルト（通常2本×2箇所）を外します。<br><span class="text-red-600 font-medium">注意：ここは非常に高温になるため、ボルトが錆びて痩せていたり、一体化しています。潤滑剤をたっぷり吹き、場合によってはサンダーで切断して外します。</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-orange-500 w-7 h-7 text-xs flex-shrink-0">3</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">本体の摘出</h6>
+                                            <p class="text-gray-600 text-xs">ボルトが外れれば、知恵の輪のように本体が外れます。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-orange-500 w-7 h-7 text-xs flex-shrink-0">4</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">新品取り付け</h6>
+                                            <p class="text-gray-600 text-xs">新品のガスケットを挟み、新しいバルブAssyを取り付け。ボルトには「スレッドコンパウンド（焼き付き防止剤）」を塗っておくと、次回外す時に楽です。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="step-number bg-orange-500 w-7 h-7 text-xs flex-shrink-0">5</span>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800 text-sm">初期学習</h6>
+                                            <p class="text-gray-600 text-xs">交換後、診断機を使ってエラーコードを消去します。自動的に全開・全閉位置を学習する場合が多いですが、診断機で「初期化」が必要な車種もあります。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- プロのアドバイス -->
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl p-5">
+                        <h5 class="font-bold mb-4 flex items-center gap-2">
+                            <i class="ri-user-star-fill text-yellow-400"></i>プロのアドバイス・総評
+                        </h5>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex gap-3">
+                                <i class="ri-first-aid-kit-fill text-green-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-green-300">まず清掃から！</strong>
+                                    <p class="text-gray-300 text-xs mt-1">P047Fが出ても、いきなり5万円の部品を買うのは早計です。<strong>7割くらいは「外部からの潤滑・洗浄リハビリ」で直ります</strong>。まずはラスペネ片手に車の下に潜り、ロッドを外してグリグリしてみてください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="ri-alert-fill text-yellow-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-yellow-300">アクチュエーターの位置に注意</strong>
+                                    <p class="text-gray-300 text-xs mt-1">清掃時、洗浄液をかけすぎてアクチュエーター（黒いプラスチックの箱）の中に液体が入ると、中の基盤やモーターがショートしてトドメを刺してしまいます。箱部分には直接かけないよう注意してください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="ri-error-warning-fill text-red-400 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-red-300">DPFとの関連（放置厳禁！）</strong>
+                                    <p class="text-gray-300 text-xs mt-1">この弁が壊れたまま放置すると、DPF再生が正常に行われず、最終的にDPF自体が詰まって<strong class="text-red-300">30万円コース（DPR交換）</strong>に発展します。エラーが出たら放置せず、早めの対処が財布を守ります。</p>
+                                </div>
+                            </div>
+                            <div class="bg-green-900/50 rounded-lg p-3 mt-4">
+                                <p class="text-gray-200 text-xs">💡 この作業はジャッキアップさえできればDIYでも挑戦しやすい部類です。まずは<strong class="text-green-300">「固着した弁のリハビリ」</strong>から始めてみることを強くお勧めします。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
