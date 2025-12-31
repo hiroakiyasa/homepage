@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **車中泊スポット自動投稿システム** (Car Camping Spot Auto-Publisher) that generates HTML pages for parking spots and camping locations across Japan. It fetches data from Supabase, integrates restaurant data from Tabelog, and creates interactive maps with Leaflet.js.
+This is a **車中泊スポット自動投稿システム** (Car Camping Spot Auto-Publisher) that generates static HTML pages for parking spots and camping locations across Japan. It fetches data from Supabase, integrates restaurant data from Tabelog, and creates interactive maps with Leaflet.js. The site is deployed to GitHub Pages.
 
 ## Common Commands
 
@@ -22,6 +22,9 @@ node generate-from-json-sources.js --test
 # Generate specific region pages
 npm run generate-all-regions-full
 npm run test-region-full  # Test mode
+
+# Update rankings (also runs daily via GitHub Actions)
+npm run generate-rankings
 ```
 
 ### Region-Specific Generation
@@ -50,6 +53,16 @@ npm start              # Daily auto-publish mode
 npm test               # Immediate test publish
 npm run publish-once   # Single publish and exit
 ```
+
+## CI/CD
+
+### GitHub Actions Workflows
+- **Deploy to GitHub Pages** (`.github/workflows/deploy.yml`): Auto-deploys on push to main/master
+- **Update Rankings Daily** (`.github/workflows/update-rankings.yml`): Runs at JST 9:00 (UTC 0:00) to update `camping_note/rankings.json`
+
+### Required GitHub Secrets
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
 
 ## Architecture
 
@@ -86,9 +99,9 @@ npm run publish-once   # Single publish and exit
 Master script for bulk HTML generation. Loads data from two JSON sources, checks for restaurant data in three locations (area files, top5 files, or global dataset), and generates HTML pages for regions with parking data.
 
 **Restaurant Data Priority:**
-1. `/Users/user/WebApp/camping_note/restaurants_data/area_${fileName}.json`
-2. `/Users/user/WebApp/camping_note/restaurants_data_top5/top5_${fileName}.json`
-3. `★all-restaurants-with-ids.json` (fallback for 843 regions without dedicated files)
+1. `../camping_note/restaurants_data/area_${fileName}.json` (area-specific)
+2. `../camping_note/restaurants_data_top5/top5_${fileName}.json` (top 5 only)
+3. `★all-restaurants-with-ids.json` (fallback global dataset with 18,345 restaurants)
 
 #### `generate-index-html.js`
 Creates the main index page with:
@@ -165,46 +178,12 @@ PUBLISH_HOUR=9             # Auto-publish time
 PUBLISH_MINUTE=0
 ```
 
-## Data Structures
+## Key Data Structures
 
-### Region Object
 ```javascript
-{
-  name: "銀座",              // Display name
-  lat: 35.6717,             // Latitude
-  lng: 139.7647,            // Longitude
-  fileName: "銀座",          // Used for HTML file name
-  restaurantCount: 150,     // (Optional)
-  elevation: 5              // Meters above sea level
-}
-```
-
-### Restaurant Object (from Tabelog)
-```javascript
-{
-  id: 1,
-  name: "さわ田",
-  score: 4.71,
-  genre: "寿司",
-  latitude: 35.68193,
-  longitude: 139.78492,
-  address: "東京都中央区...",
-  dinnerBudget: "￥40,000～￥49,999"
-}
-```
-
-### Parking Spot Object (from Supabase)
-```javascript
-{
-  name: "タイムズ銀座",
-  latitude: 35.6717,
-  longitude: 139.7647,
-  overnight_fee: 1500,      // Calculated 14-hour fee
-  max_rate_24h: 2000,
-  night_rate: 800,
-  rate_per_hour: 400,
-  business_hours: "24時間"
-}
+// Region: { name, lat, lng, fileName, elevation }
+// Restaurant (Tabelog): { id, name, score, genre, latitude, longitude, address, dinnerBudget }
+// Parking (Supabase): { name, latitude, longitude, overnight_fee, max_rate_24h, night_rate, rate_per_hour }
 ```
 
 ## Important Patterns
@@ -260,15 +239,15 @@ const key = `${spot.name}_${spot.latitude}_${spot.longitude}`;
 
 - `src/` - Core services (Supabase client, data fetchers, note.com publisher)
 - `data/regions/` - Generated HTML pages (1,352 files + maps)
-- `images/convenience_store_logos/` - Logo files for 6 convenience store chains
+- `camping_note/` - Rankings and camping-related static files
+- `images/` - Logo files for convenience stores
 - `logs/` - Publication history and error logs
+- `assets/js/` - Frontend JavaScript (i18n, translations)
 - Root `*.js` files - Generation scripts and utilities
-- `*.md` files - Documentation and specifications
 
-## Notes for Future Development
+## Notes
 
-- Restaurant data is split across multiple folders; consider consolidating
-- Consider caching Supabase results to reduce API calls
-- The elevation color-coding system expects 0-1000m range
-- WordPress HTML output is in the `-full.js` scripts; standard output is simpler
-- Index page uses different styling than region pages (intentionally)
+- Restaurant data is split across multiple folders (`../camping_note/restaurants_data/`, `../camping_note/restaurants_data_top5/`, and local `★all-restaurants-with-ids.json`)
+- Elevation color-coding expects 0-1000m range (blue=0m, red=1000m+)
+- WordPress-style HTML output is in `-full.js` scripts; standard output is simpler
+- 179 regions are skipped due to no parking data in Supabase (not fixable without data)

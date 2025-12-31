@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>整備記録 - ハイエース 1KDディーゼル 100万km走行を目指す | TrailFusion AI</title>
+<meta name="description" content="ハイエース 1KDディーゼルエンジンの整備記録。100万km走行を目指すための整備費用一覧、DIY難易度、詳細手順を公開。">
+<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981',accent:'#f59e0b',danger:'#ef4444',purple:'#8b5cf6'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+body { font-family: 'Noto Sans JP', sans-serif; }
+.gradient-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+.card-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+.fuel-gradient { background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); }
+.intake-gradient { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.engine-gradient { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.drive-gradient { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); }
+.electric-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+.cooling-gradient { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); }
+/* デフォルトで開いた状態 */
+.item-content {
+    display: block;
+}
+.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); opacity: 1; }
+}
+.pulse-badge {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.star { color: #fbbf24; }
+.star-empty { color: #d1d5db; }
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+/* PDF表示用 */
+.pdf-container {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    background: #f3f4f6;
+}
+.pdf-wrapper {
+    position: relative;
+    background: #f3f4f6;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+.pdf-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    overflow: auto;
+}
+.pdf-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+    border-bottom: 1px solid #d1d5db;
+}
+.pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+.maintenance-item {
+    scroll-margin-top: 100px;
+}
+</style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+
+<!-- Header -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
+      <!-- スマホ・タブレット表示 -->
+      <div class="flex items-center justify-between lg:hidden">
+          <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI ロゴ - キャンピングカーDIYとAIアプリケーション開発" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
+              <div class="text-xs sm:text-sm font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
+          </a>
+
+          <!-- スマホでも表示するメインボタン -->
+          <div class="flex items-center gap-1 sm:gap-2">
+              <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
+                  <span class="sm:hidden">キャンピングカー</span>
+                  <span class="hidden sm:inline">キャンピングカー製作</span>
+              </a>
+              <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap">
+                  <span class="sm:hidden">アプリ</span>
+                  <span class="hidden sm:inline">アプリ紹介</span>
+              </a>
+              <a href="camping_note/index.html" class="bg-orange-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+                  <span class="sm:hidden">車旅</span>
+                  <span class="hidden sm:inline">車旅コンシェルジュ</span>
+              </a>
+              <a href="maintenance.html" class="bg-amber-600 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-amber-700 transition-colors duration-300 whitespace-nowrap hidden sm:inline-block">
+                  整備記録
+              </a>
+              <button id="mobile-menu-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 ml-1">
+                  <i class="ri-menu-line text-lg sm:text-xl"></i>
+              </button>
+          </div>
+      </div>
+
+      <!-- モバイルメニュー -->
+      <nav id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+          <div class="flex flex-col space-y-3">
+              <a href="index.html" class="bg-gray-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-gray-600 transition-colors duration-300">
+                  ホーム
+              </a>
+              <a href="camping.html" class="bg-blue-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-blue-600 transition-colors duration-300">
+                  キャンピングカー製作
+              </a>
+              <a href="apps.html" class="bg-green-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-green-600 transition-colors duration-300">
+                  アプリ紹介
+              </a>
+              <a href="camping_note/index.html" class="bg-orange-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-orange-600 transition-colors duration-300">
+                  車旅コンシェルジュ
+              </a>
+              <a href="maintenance.html" class="bg-amber-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-amber-700 transition-colors duration-300">
+                  整備記録
+              </a>
+              <a href="#pdf-library" class="bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:shadow-lg transition-colors duration-300">
+                  PDF資料
+              </a>
+          </div>
+      </nav>
+
+      <!-- デスクトップ表示 -->
+      <div class="hidden lg:flex items-center justify-between">
+          <a href="index.html" class="flex items-center space-x-2 xl:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
+              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI ロゴ - キャンピングカーDIYとAIアプリケーション開発" class="h-8 xl:h-10 hover:scale-105 transition-transform duration-300">
+              <div class="text-base xl:text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
+          </a>
+
+          <nav class="flex items-center space-x-1 xl:space-x-2">
+              <a href="index.html" class="relative overflow-hidden bg-gray-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10">ホーム</span>
+                  <div class="absolute inset-0 bg-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </a>
+              <a href="camping.html" class="relative overflow-hidden bg-blue-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10">キャンピングカー</span>
+                  <div class="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </a>
+              <a href="apps.html" class="relative overflow-hidden bg-green-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10">アプリ紹介</span>
+                  <div class="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </a>
+              <a href="camping_note/index.html" class="relative overflow-hidden bg-orange-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10">車旅コンシェルジュ</span>
+                  <div class="absolute inset-0 bg-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </a>
+              <a href="maintenance.html" class="relative overflow-hidden bg-amber-600 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10">整備記録</span>
+                  <div class="absolute inset-0 bg-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </a>
+
+              <!-- SNS（大画面のみ表示） -->
+              <div class="hidden xl:flex items-center space-x-1 ml-2">
+                  <a href="https://www.youtube.com/@van_oasis" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-red-500 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/50">
+                      <i class="ri-youtube-fill text-sm xl:ri-xl"></i>
+                  </a>
+                  <a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:from-pink-600 hover:to-purple-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-500/50">
+                      <i class="ri-tiktok-fill text-sm xl:ri-xl"></i>
+                  </a>
+                  <a href="https://x.com/trailfusionai" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-black text-white rounded-full hover:bg-gray-800 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-black/50">
+                      <i class="ri-twitter-x-fill text-sm xl:ri-xl"></i>
+                  </a>
+              </div>
+
+              <a href="#pdf-library" class="relative overflow-hidden bg-gradient-to-r from-orange-400 to-pink-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
+                  <span class="relative z-10"><i class="ri-file-pdf-2-line mr-1"></i>PDF資料</span>
+              </a>
+          </nav>
+      </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="gradient-hero py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 left-10 w-20 h-20 bg-white rounded-full floating"></div>
+        <div class="absolute top-32 right-20 w-16 h-16 bg-yellow-300 rounded-full floating" style="animation-delay: 0.5s"></div>
+        <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-pink-300 rounded-full floating" style="animation-delay: 1s"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full mb-6 pulse-badge">
+            <i class="ri-roadster-fill text-xl"></i>
+            <span class="font-medium">HIACE 1KD DIESEL</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            目指せ！<br>
+            <span class="text-yellow-300 drop-shadow-lg">1,000,000 km</span>
+        </h1>
+
+        <p class="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            愛車ハイエースをもっと深く理解するための整備記録データベース。<br>
+            ディーゼルエンジン特有の癖を知り、100万km走行を実現しよう！
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
+                <div class="text-3xl font-bold">13</div>
+                <div class="text-sm opacity-80">整備項目</div>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
+                <div class="text-3xl font-bold">15</div>
+                <div class="text-sm opacity-80">PDF資料</div>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
+                <div class="text-3xl font-bold text-yellow-300">¥50万+</div>
+                <div class="text-sm opacity-80">DIY節約可能額</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 整備全項目まとめ（トップ表示） -->
+<section id="overview-pdf" class="py-8 px-4 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto max-w-5xl">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-blue-300">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <i class="ri-file-pdf-2-fill text-white text-2xl"></i>
+                    <div>
+                        <h2 class="text-white font-bold text-xl">整備全項目まとめ</h2>
+                        <p class="text-white/80 text-sm">ハイエース1KDディーゼル整備の全体像</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <a href="document/ハイエース整備全項目まとめ.pdf" target="_blank" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                        <i class="ri-fullscreen-line"></i>拡大表示
+                    </a>
+                    <a href="document/ハイエース整備全項目まとめ.pdf" download class="bg-white hover:bg-gray-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                        <i class="ri-download-line"></i>ダウンロード
+                    </a>
+                </div>
+            </div>
+            <div style="height: 700px; background: #374151;">
+                <iframe src="document/ハイエース整備全項目まとめ.pdf#view=FitH" title="整備全項目まとめPDF" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Maintenance Categories -->
+<section id="maintenance-list" class="py-16 px-4">
+    <div class="container mx-auto max-w-7xl">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <i class="ri-tools-fill text-blue-500 mr-2"></i>整備項目一覧
+            </h2>
+            <p class="text-gray-600 mb-6">項目をクリックするとその場所にジャンプします</p>
+
+            <!-- 13項目ナビゲーションボタン -->
+            <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+                <a href="#item-injector" class="bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">インジェクター</a>
+                <a href="#item-scv" class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">SCV</a>
+                <a href="#item-turbo" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ターボ</a>
+                <a href="#item-egr" class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">EGR・インマニ</a>
+                <a href="#item-dpr-clean" class="bg-gradient-to-r from-teal-500 to-green-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">DPR洗浄</a>
+                <a href="#item-dpr-replace" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">DPR交換</a>
+                <a href="#item-timing" class="bg-gradient-to-r from-emerald-500 to-lime-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">タイミングベルト</a>
+                <a href="#item-hub" class="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ハブベアリング</a>
+                <a href="#item-hub-stuck" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ハブ固着</a>
+                <a href="#item-at" class="bg-gradient-to-r from-rose-500 to-red-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ATミッション</a>
+                <a href="#item-alternator" class="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">オルタネーター</a>
+                <a href="#item-ac" class="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">エアコン</a>
+                <a href="#item-radiator" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-3 py-2 rounded-full text-xs font-medium hover:shadow-lg transition hover:scale-105">ラジエーター</a>
+            </div>
+        </div>
+
+        <!-- 燃料系 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="fuel-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-gas-station-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">燃料系</h3>
+                    <p class="text-gray-500 text-sm">Fuel System</p>
+                </div>
+            </div>
+
+            <!-- インジェクター交換 -->
+            <div id="item-injector" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-red-500 to-orange-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-drop-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">インジェクター交換（4本・リビルト）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥231,000</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-red-500"></i>どんな故障？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                燃料を霧状に噴射する装置を4本すべて交換。走行距離10万〜15万キロ超で、<strong class="text-red-600">排ガスが臭くなったり、エンジン音がガラガラ（ノッキング）なったり</strong>した場合に実施。
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-tools-line mr-1"></i>必要な部品</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・リビルトインジェクター4本</li>
+                                    <li>・ヘッドカバーガスケット</li>
+                                    <li>・ノズルホルダーシール</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-hammer-line mr-1"></i>必要な工具</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・トルクレンチ</li>
+                                    <li>・SST</li>
+                                    <li>・<strong class="text-red-600">診断機（必須）</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-xl">
+                            <p class="text-gray-700 text-xs">
+                                <strong>重要:</strong> インジェクターのIDコードをECUに登録必須。診断機（Toyota Techstream等）が絶対に必要。
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-green-600">約10万円</div>
+                                <div class="text-xs text-gray-600">DIY節約額</div>
+                            </div>
+                            <div class="flex-1 text-xs text-gray-700">
+                                リスク高。プロに任せるのが賢明。
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/ハイエースインジェクター交換_プロとDIYの境界線.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/ハイエースインジェクター交換_プロとDIYの境界線.pdf" download class="pdf-btn bg-red-500 text-white hover:bg-red-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/ハイエースインジェクター交換_プロとDIYの境界線.pdf#view=FitH" title="インジェクター交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCV交換 -->
+            <div id="item-scv" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-orange-500 to-yellow-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-settings-3-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">サクションコントロールバルブ（SCV）交換</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥22,700</span>
+                                <span class="text-sm opacity-90">難易度: ★★☆☆☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-orange-500"></i>どんな故障？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                信号待ちで「ブルルン」とエンジン回転数が勝手に上下する（ハンチング）場合や、エンストしそうになる場合。<strong class="text-orange-600">ハイエースディーゼルの定番トラブル</strong>。
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-tools-line mr-1"></i>必要な部品</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・SCV本体キット</li>
+                                    <li>・パーツクリーナー</li>
+                                    <li>・ウエス</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-hammer-line mr-1"></i>必要な工具</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・六角レンチ5mm</li>
+                                    <li>・10mm/12mmソケット</li>
+                                    <li>・OBD2診断機</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h6 class="font-bold text-gray-800 text-sm mb-2"><i class="ri-list-ordered mr-1"></i>作業手順</h6>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="flex gap-2 items-center"><span class="step-number bg-orange-500 w-6 h-6 text-xs">1</span>エンジンルーム開ける</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-orange-500 w-6 h-6 text-xs">2</span>周辺を洗浄</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-orange-500 w-6 h-6 text-xs">3</span>ボルト2本外す</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-orange-500 w-6 h-6 text-xs">4</span>診断機で学習リセット</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-green-600">約5,000円</div>
+                                <div class="text-xs text-gray-600">DIY節約額</div>
+                            </div>
+                            <div class="flex-1 text-xs text-gray-700">
+                                初心者でも挑戦しやすい！
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/サクションコントロールバルブ交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/サクションコントロールバルブ交換.pdf" download class="pdf-btn bg-orange-500 text-white hover:bg-orange-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/サクションコントロールバルブ交換.pdf#view=FitH" title="SCV交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 吸排気系 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="intake-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-windy-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">吸排気系</h3>
+                    <p class="text-gray-500 text-sm">Intake & Exhaust</p>
+                </div>
+            </div>
+
+            <!-- ターボチャージャー交換 -->
+            <div id="item-turbo" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-typhoon-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">ターボチャージャー交換（リビルト）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥196,300</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-blue-500"></i>どんな故障？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                エンジンの排気ガスで「風車」を回し、パワーを出す部品。<strong class="text-blue-600">「キーン」「ヒュイーン」という異音、加速不良、白煙</strong>が故障サイン。
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-tools-line mr-1"></i>必要な部品</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・リビルトターボ（約5〜8万円）</li>
+                                    <li>・ガスケットキット</li>
+                                    <li>・銅ワッシャー</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-hammer-line mr-1"></i>必要な工具</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・ソケットレンチセット</li>
+                                    <li>・エクステンションバー</li>
+                                    <li>・<strong class="text-red-600">浸透潤滑剤（大量！）</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl">
+                            <p class="text-gray-700 text-xs">
+                                <strong>最大の難関:</strong> 排気管のボルトが錆で一体化。折ると走行不能でレッカー必須。初期潤滑を忘れると新品が即座に焼き付きます！
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-green-600">約10万円</div>
+                                <div class="text-xs text-gray-600">DIY節約額</div>
+                            </div>
+                            <div class="flex-1 text-xs text-gray-700">
+                                錆びたボルトとの戦い。覚悟が必要！
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/高額修理の謎_ハイエースターボ交換完全ガイド.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/高額修理の謎_ハイエースターボ交換完全ガイド.pdf" download class="pdf-btn bg-blue-500 text-white hover:bg-blue-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/高額修理の謎_ハイエースターボ交換完全ガイド.pdf#view=FitH" title="ターボ交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EGR・インマニ洗浄 -->
+            <div id="item-egr" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-teal-500 to-cyan-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-bubble-chart-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">EGR・インテークマニホールド洗浄</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥99,200</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-teal-500"></i>エンジンの動脈硬化を治す！
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                ディーゼル特有の「煤」が配管に<strong class="text-teal-600">ヘドロのように溜まる</strong>。加速が鈍い、燃費悪化、黒煙が出る場合に必要。
+                            </p>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-xl">
+                            <p class="text-gray-700 text-xs">
+                                <strong>約10万円の価値:</strong> 作業の大半は「泥臭い洗浄」と「部品脱着」。整備士が真っ黒になって一日作業する手間賃です。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h6 class="font-bold text-gray-800 text-sm mb-2"><i class="ri-list-ordered mr-1"></i>作業手順</h6>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="flex gap-2 items-center"><span class="step-number bg-teal-500 w-6 h-6 text-xs">1</span>各部品を取り外し</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-teal-500 w-6 h-6 text-xs">2</span>煤を掻き出す</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-teal-500 w-6 h-6 text-xs">3</span>灯油浸け置き＋洗浄</div>
+                                <div class="flex gap-2 items-center"><span class="step-number bg-red-500 w-6 h-6 text-xs">!</span>煤を落とさない</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-green-600">約9万円</div>
+                                <div class="text-xs text-gray-600">DIY節約額</div>
+                            </div>
+                            <div class="flex-1 text-xs text-gray-700">
+                                終わった後の加速感は感動モノ！
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/EGR・インテークマニフォールドの洗浄.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/EGR・インテークマニフォールドの洗浄.pdf" download class="pdf-btn bg-teal-500 text-white hover:bg-teal-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/EGR・インテークマニフォールドの洗浄.pdf#view=FitH" title="EGR・インマニ洗浄PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DPR洗浄 -->
+            <div id="item-dpr-clean" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-filter-3-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">DPR洗浄（施工のみ）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥26,400〜¥55,000</span>
+                                <span class="text-sm opacity-90">難易度: ★★★☆☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-cyan-500"></i>DPRとは？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                排気ガスの煤を捕集するフィルター。<strong class="text-cyan-600">「DPRランプ」点滅・点灯、警告音、出力制限</strong>が詰まりのサイン。洗浄は交換前の延命措置。
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1">ケミカル注入洗浄</h6>
+                                <p class="text-gray-700 text-xs">約2〜3万円。マフラー付けたまま洗浄剤注入。</p>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1">マフラー脱着洗浄</h6>
+                                <p class="text-gray-700 text-xs">約4〜6万円。取り外してドブ漬け＋高圧洗浄。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl mb-6">
+                        <p class="text-gray-700 text-xs">
+                            <strong>注意:</strong> アッシュ（オイル由来の燃えカス）は溶けません。洗浄してもすぐ詰まる場合はDPR交換が必要。
+                        </p>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/DPF洗浄.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/DPF洗浄.pdf" download class="pdf-btn bg-cyan-500 text-white hover:bg-cyan-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/DPF洗浄.pdf#view=FitH" title="DPR洗浄PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DPR交換 -->
+            <div id="item-dpr-replace" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-recycle-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">DPR交換（重整備・リビルト）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥120,000〜¥300,000</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-indigo-500"></i>洗浄で直らなかった場合の最終手段
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                フィルター装置を丸ごと交換。<strong class="text-indigo-600">リビルト品（約12万円〜）</strong>か<strong class="text-indigo-600">新品（約30万円〜）</strong>で金額差あり。
+                            </p>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-xl">
+                            <p class="text-gray-700 text-xs">
+                                <strong>詰まりの原因:</strong> 汚れたオイルや規格外オイル（DL-1以外）の使用。オイル交換をサボるとDPR寿命が縮みます！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl mb-6">
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-green-600">数万〜10万円</div>
+                            <div class="text-xs text-gray-600">DIY節約額</div>
+                        </div>
+                        <div class="flex-1 text-xs text-gray-700">
+                            重量物脱着。ジャッキアップ作業で安全確保が命！
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/DRP交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/DRP交換.pdf" download class="pdf-btn bg-indigo-500 text-white hover:bg-indigo-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/DRP交換.pdf#view=FitH" title="DPR交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- エンジン -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="engine-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-settings-5-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">エンジン</h3>
+                    <p class="text-gray-500 text-sm">Engine</p>
+                </div>
+            </div>
+
+            <!-- タイミングベルト・WP一式交換 -->
+            <div id="item-timing" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-timer-flash-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">タイミングベルト・WP一式交換</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥98,800</span>
+                                <span class="text-sm opacity-90">難易度: ★★★☆☆</span>
+                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full font-medium">10万km必須</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-alarm-warning-fill text-red-500"></i>これは時限爆弾です！
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                ベルトが切れるとピストンとバルブが衝突し、<strong class="text-red-600">エンジン全損（廃車コース）</strong>。「T-BELT」警告灯が点灯したら交換の合図！
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-blue-50 rounded-xl p-3">
+                                <h6 class="font-bold text-blue-800 text-xs mb-1"><i class="ri-tools-line mr-1"></i>交換部品キット</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・タイミングベルト</li>
+                                    <li>・オートテンショナー</li>
+                                    <li>・ウォーターポンプ</li>
+                                    <li>・LLC冷却水</li>
+                                </ul>
+                                <p class="text-green-600 text-xs mt-1">部品代：約1.5〜2.5万円</p>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <h6 class="font-bold text-green-800 text-xs mb-1"><i class="ri-hammer-line mr-1"></i>必要な工具</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・ソケットレンチセット</li>
+                                    <li>・22mmソケット</li>
+                                    <li>・トルクレンチ</li>
+                                    <li>・スクレーパー</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl">
+                            <p class="text-gray-700 text-xs">
+                                <strong>位置合わせが命:</strong> クランクの「合いマーク」を正確に合わせないとエンジン破損。1KDは構造が素直で初心者挑戦に人気！
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-green-600">約7万円以上</div>
+                                <div class="text-xs text-gray-600">DIY節約額</div>
+                            </div>
+                            <div class="flex-1 text-xs text-gray-700">
+                                DIY効果が非常に高い項目！
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/タイミングベルトとウォーターポンプ交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/タイミングベルトとウォーターポンプ交換.pdf" download class="pdf-btn bg-green-500 text-white hover:bg-green-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/タイミングベルトとウォーターポンプ交換.pdf#view=FitH" title="タイミングベルト交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 駆動系 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="drive-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-steering-2-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">駆動系</h3>
+                    <p class="text-gray-500 text-sm">Drivetrain</p>
+                </div>
+            </div>
+
+            <!-- ハブベアリング交換（通常） -->
+            <div id="item-hub" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-violet-600 to-purple-600 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-disc-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">フロントハブベアリング交換（通常）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥97,700</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-violet-600"></i>どんな症状？
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                走行中に<strong class="text-violet-600">「ゴォー」「ウォーン」という唸り音</strong>。速度が上がると音も大きく。放置すると<strong class="text-red-600">車輪ロック or 脱落の大事故</strong>に！
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl mb-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>DIYは不可能:</strong> 油圧プレス機（数トン）がないとベアリングを抜くことも入れることもできません。約10万円の半分以上は技術料。
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 rounded-xl p-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>早期発見が鍵:</strong> 音が小さいうちに交換すれば「通常」料金。無理して乗り続けて固着すると下の「43万円コース」に！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper bg-gray-700">
+                        <div class="pdf-toolbar bg-gray-600">
+                            <a href="document/フロントハブベアリング交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/フロントハブベアリング交換.pdf" download class="pdf-btn bg-violet-600 text-white hover:bg-violet-700">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/フロントハブベアリング交換.pdf#view=FitH" title="ハブベアリング交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ハブベアリング交換（固着時） -->
+            <div id="item-hub-stuck" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border-2 border-red-300">
+                <div class="bg-gradient-to-r from-red-600 to-orange-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-fire-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">フロントハブベアリング交換（固着時）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥438,000</span>
+                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full font-medium animate-pulse">最悪のシナリオ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-alarm-warning-fill text-red-500"></i>なぜ43万円もするの？！
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                長年の錆や焼き付きで<strong class="text-red-600">部品同士が溶接されたように一体化</strong>。20トンプレスでもビクともせず、ナックルごと交換に。
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-gray-100 rounded-xl p-3 mb-3">
+                                <h6 class="font-bold text-gray-800 text-xs mb-1">交換部品（足回り全交換）</h6>
+                                <ul class="text-gray-700 text-xs space-y-0.5">
+                                    <li>・ステアリングナックル（左右）</li>
+                                    <li>・フロントハブASSY（左右）</li>
+                                    <li>・センサー類すべて</li>
+                                </ul>
+                                <p class="text-red-600 text-xs mt-1">部品代だけで20〜30万円...</p>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>回避策:</strong> 中古の「ナックル＋ハブセット」を解体屋で探せば、持ち込みで10〜15万円に抑えられる可能性！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper bg-gray-700">
+                        <div class="pdf-toolbar bg-gray-600">
+                            <a href="document/ベアリング交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/ベアリング交換.pdf" download class="pdf-btn bg-red-500 text-white hover:bg-red-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/ベアリング交換.pdf#view=FitH" title="ベアリング交換（固着）PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATミッション載せ替え -->
+            <div id="item-at" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-dashboard-3-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">ATミッション載せ替え（リビルト）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥313,900</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-5 mb-6">
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            オートマチックトランスミッションを丸ごと載せ替える大手術。変速ショックが大きい、滑る、異音がする場合に必要。<strong class="text-pink-600">DIYは現実的ではなく、プロに任せる項目</strong>です。
+                        </p>
+                    </div>
+                    <div class="bg-gray-200 rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center">
+                        <div class="text-center p-6">
+                            <i class="ri-dashboard-3-fill text-pink-400 text-6xl mb-4"></i>
+                            <p class="text-gray-600 text-sm font-medium">プロに任せる整備項目です</p>
+                            <p class="text-gray-500 text-xs mt-2">特殊工具・設備が必要</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 電装系 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="electric-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-flashlight-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">電装系</h3>
+                    <p class="text-gray-500 text-sm">Electrical</p>
+                </div>
+            </div>
+
+            <!-- オルタネーター交換 -->
+            <div id="item-alternator" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-amber-500 to-yellow-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-battery-charge-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">オルタネーター交換（リビルト）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥64,600〜¥83,000</span>
+                                <span class="text-sm opacity-90">難易度: ★★★☆☆</span>
+                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full font-medium">DIY向き！</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-yellow-500"></i>車の充電器！
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                エンジンで電気を作る「発電機」。<strong class="text-yellow-600">「ヒュイーン」という異音、バッテリー警告灯</strong>が故障サイン。壊れると数十分でエンジン停止！
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl mb-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>絶対厳守:</strong> バッテリーのマイナス端子を必ず外してから作業！ショートさせると車両火災の危険。
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                                <div class="text-center">
+                                    <div class="text-xl font-bold text-green-600">約3〜5万円</div>
+                                    <div class="text-xs text-gray-600">DIY節約額</div>
+                                </div>
+                                <div class="flex-1 text-xs text-gray-700">
+                                    初心者の「脱・初心者」にちょうど良い！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/オルタネータ交換.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/オルタネータ交換.pdf" download class="pdf-btn bg-yellow-500 text-white hover:bg-yellow-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/オルタネータ交換.pdf#view=FitH" title="オルタネーター交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 空調・冷却系 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="cooling-gradient w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg">
+                    <i class="ri-temp-cold-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">空調・冷却系</h3>
+                    <p class="text-gray-500 text-sm">A/C & Cooling</p>
+                </div>
+            </div>
+
+            <!-- エアコンコンプレッサー交換 -->
+            <div id="item-ac" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-sky-500 to-blue-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-snowflake-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">エアコンコンプレッサー交換</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥94,600</span>
+                                <span class="text-sm opacity-90">難易度: ★★★★☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-sky-50 to-blue-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-sky-500"></i>エアコンの心臓！
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                冷媒を圧縮して循環させるポンプ。冷風が出ない、ガラガラ音、焼き付いてエンストする場合は交換が必要。
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-xl mb-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>法律違反:</strong> エアコンガスの大気開放は禁止（フロン排出抑制法）。電装屋でガス回収してから作業。
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 rounded-xl p-3 mb-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>真空引きが超重要:</strong> 配管内の空気や水分を完全に抜かないと、すぐ壊れたり冷えが悪くなります。
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                                <div class="text-center">
+                                    <div class="text-xl font-bold text-green-600">約4万円</div>
+                                    <div class="text-xs text-gray-600">DIY節約額</div>
+                                </div>
+                                <div class="flex-1 text-xs text-gray-700">
+                                    冷たい風が出た瞬間の感動は格別！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PDF: 横幅いっぱい -->
+                    <div class="pdf-wrapper">
+                        <div class="pdf-toolbar">
+                            <a href="document/エアコンコンプレッサー_DIY挑戦.pdf" target="_blank" class="pdf-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                                <i class="ri-fullscreen-line"></i>拡大表示
+                            </a>
+                            <a href="document/エアコンコンプレッサー_DIY挑戦.pdf" download class="pdf-btn bg-sky-500 text-white hover:bg-sky-600">
+                                <i class="ri-download-line"></i>ダウンロード
+                            </a>
+                        </div>
+                        <iframe src="document/エアコンコンプレッサー_DIY挑戦.pdf#view=FitH" title="エアコンコンプレッサー交換PDF"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ラジエーター交換 -->
+            <div id="item-radiator" class="maintenance-item bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-500 p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-water-flash-fill text-white text-2xl"></i>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">ラジエーター交換（Assy）</h4>
+                            <div class="flex items-center gap-4 mt-1">
+                                <span class="text-2xl font-bold">¥78,000</span>
+                                <span class="text-sm opacity-90">難易度: ★★★☆☆</span>
+                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full font-medium">DIY効果大！</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- コンテンツ -->
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5">
+                            <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ri-question-line text-blue-500"></i>エンジンの熱交換器
+                            </h5>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                冷却水を走行風で冷やす装置。<strong class="text-blue-600">甘い匂い、地面に赤/緑のシミ、水温計がH振り切り</strong>が故障サイン。オーバーヒートでエンジン焼き付き！
+                            </p>
+                        </div>
+                        <div>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-xl mb-3">
+                                <p class="text-gray-700 text-xs">
+                                    <strong>ハイエース特有:</strong> リアヒーターまで長いパイプが伸びているため、エア抜きに30分〜1時間かかります。
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+                                <div class="text-center">
+                                    <div class="text-xl font-bold text-green-600">約5万円以上</div>
+                                    <div class="text-xs text-gray-600">DIY節約額</div>
+                                </div>
+                                <div class="flex-1 text-xs text-gray-700">
+                                    社外品なら部品代1.5〜2.5万円。DIY効果大！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center">
+                        <div class="text-center p-6">
+                            <i class="ri-water-flash-fill text-blue-400 text-6xl mb-4"></i>
+                            <p class="text-gray-600 text-sm font-medium">DIYで挑戦可能な整備項目</p>
+                            <p class="text-gray-500 text-xs mt-2">エア抜きに時間がかかります</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 総合PDF資料セクション -->
+<section id="pdf-library" class="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <i class="ri-book-open-fill text-blue-500 mr-2"></i>総合PDF資料
+            </h2>
+            <p class="text-gray-600">ハイエース整備の全体像を把握するための総合資料</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- 総合メンテナンス -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 flex items-center justify-between">
+                    <h3 class="text-white font-bold text-sm flex items-center gap-2">
+                        <i class="ri-file-pdf-2-fill"></i>整備全項目まとめ
+                    </h3>
+                    <div class="flex gap-2">
+                        <a href="document/ハイエース整備全項目まとめ.pdf" target="_blank" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded text-xs transition">
+                            <i class="ri-fullscreen-line"></i>
+                        </a>
+                        <a href="document/ハイエース整備全項目まとめ.pdf" download class="bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded text-xs transition">
+                            <i class="ri-download-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div style="height: 600px;">
+                    <iframe src="document/ハイエース整備全項目まとめ.pdf#view=FitH" title="整備全項目まとめPDF" width="100%" height="100%" style="border: none;"></iframe>
+                </div>
+            </div>
+
+            <!-- 吸気系リフレッシュ戦略 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="bg-gradient-to-r from-teal-600 to-cyan-600 px-4 py-3 flex items-center justify-between">
+                    <h3 class="text-white font-bold text-sm flex items-center gap-2">
+                        <i class="ri-file-pdf-2-fill"></i>吸気系リフレッシュ戦略
+                    </h3>
+                    <div class="flex gap-2">
+                        <a href="document/1KD吸気系リフレッシュ戦略_プロとDIYの境界線.pdf" target="_blank" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded text-xs transition">
+                            <i class="ri-fullscreen-line"></i>
+                        </a>
+                        <a href="document/1KD吸気系リフレッシュ戦略_プロとDIYの境界線.pdf" download class="bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded text-xs transition">
+                            <i class="ri-download-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div style="height: 600px;">
+                    <iframe src="document/1KD吸気系リフレッシュ戦略_プロとDIYの境界線.pdf#view=FitH" title="吸気系リフレッシュ戦略PDF" width="100%" height="100%" style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+        <a href="index.html" class="inline-flex items-center gap-3 mb-6">
+            <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-full">
+            <span class="text-2xl font-bold">TrailFusion AI</span>
+        </a>
+        <div class="flex justify-center gap-4 mb-6">
+            <a href="https://www.youtube.com/@van_oasis" target="_blank" class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                <i class="ri-youtube-fill text-xl"></i>
+            </a>
+            <a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="ri-tiktok-fill text-xl"></i>
+            </a>
+            <a href="https://x.com/trailfusionai" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="ri-twitter-x-fill text-xl"></i>
+            </a>
+        </div>
+        <p class="text-gray-400">&copy; 2025 TrailFusion AI. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scrollToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:shadow-xl z-50">
+    <i class="ri-arrow-up-line text-xl"></i>
+</button>
+
+<script>
+function toggleAccordion(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.accordion-icon');
+
+    // Close all other accordions
+    document.querySelectorAll('.accordion-content.open').forEach(el => {
+        if (el !== content) {
+            el.classList.remove('open');
+            el.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+        }
+    });
+
+    // Toggle current
+    content.classList.toggle('open');
+    icon.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+
+// Scroll to top
+const scrollBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollBtn.classList.remove('opacity-0', 'invisible');
+        scrollBtn.classList.add('opacity-100', 'visible');
+    } else {
+        scrollBtn.classList.remove('opacity-100', 'visible');
+        scrollBtn.classList.add('opacity-0', 'invisible');
+    }
+});
+scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+</script>
+</body>
+</html>
