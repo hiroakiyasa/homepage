@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>PDF ビューア</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+            background: #1a1a1a;
+        }
+        #pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+        }
+        .pdf-page {
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            background: white;
+        }
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            color: white;
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #333;
+            border-top-color: #ef4444;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm text-white z-50 shadow-lg">
+        <div class="flex items-center justify-between px-4 py-3">
+            <a href="index.html" class="flex items-center text-white hover:text-red-400 transition-colors">
+                <i class="ri-arrow-left-line text-xl mr-2"></i>
+                <span class="text-sm">一覧へ</span>
+            </a>
+            <h1 id="pdf-title" class="text-sm font-medium truncate mx-4 flex-1 text-center">読み込み中...</h1>
+            <a id="download-btn" href="#" download class="flex items-center text-white hover:text-red-400 transition-colors">
+                <i class="ri-download-line text-xl"></i>
+            </a>
+        </div>
+        <!-- Progress bar -->
+        <div class="h-1 bg-gray-800">
+            <div id="progress-bar" class="h-full bg-red-500 transition-all duration-300" style="width: 0%"></div>
+        </div>
+    </header>
+
+    <!-- PDF Container -->
+    <main class="pt-14">
+        <div id="loading" class="loading">
+            <div class="spinner mb-4"></div>
+            <p id="loading-text">PDFを読み込んでいます...</p>
+        </div>
+        <div id="pdf-container"></div>
+    </main>
+
+    <!-- Page indicator -->
+    <div id="page-indicator" class="fixed bottom-4 right-4 bg-gray-900/90 text-white px-3 py-2 rounded-full text-sm shadow-lg hidden">
+        <span id="current-page">1</span> / <span id="total-pages">1</span>
+    </div>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfFile = urlParams.get('pdf');
+
+        if (!pdfFile) {
+            document.getElementById('loading-text').textContent = 'PDFが指定されていません';
+            throw new Error('No PDF specified');
+        }
+
+        // Set title and download link
+        const title = decodeURIComponent(pdfFile).replace('.pdf', '');
+        document.getElementById('pdf-title').textContent = title;
+        document.title = title + ' - PDF ビューア';
+        document.getElementById('download-btn').href = pdfFile;
+
+        const container = document.getElementById('pdf-container');
+        const loading = document.getElementById('loading');
+        const progressBar = document.getElementById('progress-bar');
+        const pageIndicator = document.getElementById('page-indicator');
+        const currentPageEl = document.getElementById('current-page');
+        const totalPagesEl = document.getElementById('total-pages');
+
+        let pdfDoc = null;
+        let renderedPages = new Set();
+
+        async function renderPage(pageNum, scale) {
+            if (renderedPages.has(pageNum)) return;
+            renderedPages.add(pageNum);
+
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale });
+
+            const canvas = document.createElement('canvas');
+            canvas.className = 'pdf-page';
+            canvas.dataset.page = pageNum;
+
+            const context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            // Insert in correct order
+            const existingCanvases = container.querySelectorAll('canvas');
+            let inserted = false;
+            for (const existing of existingCanvases) {
+                if (parseInt(existing.dataset.page) > pageNum) {
+                    container.insertBefore(canvas, existing);
+                    inserted = true;
+                    break;
+                }
+            }
+            if (!inserted) {
+                container.appendChild(canvas);
+            }
+
+            await page.render({
+                canvasContext: context,
+                viewport: viewport
+            }).promise;
+
+            // Update progress
+            const progress = (renderedPages.size / pdfDoc.numPages) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        async function loadPDF() {
+            try {
+                const loadingTask = pdfjsLib.getDocument(pdfFile);
+                pdfDoc = await loadingTask.promise;
+
+                loading.style.display = 'none';
+                totalPagesEl.textContent = pdfDoc.numPages;
+                pageIndicator.classList.remove('hidden');
+
+                // Calculate scale based on screen width
+                const firstPage = await pdfDoc.getPage(1);
+                const defaultViewport = firstPage.getViewport({ scale: 1 });
+                const containerWidth = window.innerWidth - 16; // padding
+                const scale = containerWidth / defaultViewport.width;
+
+                // Render all pages
+                for (let i = 1; i <= pdfDoc.numPages; i++) {
+                    await renderPage(i, scale);
+                    document.getElementById('loading-text').textContent =
+                        `ページを描画中... ${i}/${pdfDoc.numPages}`;
+                }
+
+                // Hide progress bar after complete
+                setTimeout(() => {
+                    progressBar.style.opacity = '0';
+                }, 1000);
+
+                // Track scroll position for page indicator
+                updatePageIndicator();
+                window.addEventListener('scroll', updatePageIndicator);
+
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+                document.getElementById('loading-text').textContent =
+                    'PDFの読み込みに失敗しました';
+            }
+        }
+
+        function updatePageIndicator() {
+            const canvases = container.querySelectorAll('canvas');
+            const scrollTop = window.scrollY + window.innerHeight / 2;
+
+            for (const canvas of canvases) {
+                const rect = canvas.getBoundingClientRect();
+                const canvasTop = rect.top + window.scrollY;
+                const canvasBottom = canvasTop + rect.height;
+
+                if (scrollTop >= canvasTop && scrollTop <= canvasBottom) {
+                    currentPageEl.textContent = canvas.dataset.page;
+                    break;
+                }
+            }
+        }
+
+        // Handle resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                // Reload on significant resize
+                if (pdfDoc) {
+                    renderedPages.clear();
+                    container.innerHTML = '';
+                    loadPDF();
+                }
+            }, 500);
+        });
+
+        loadPDF();
+    </script>
+</body>
+</html>
