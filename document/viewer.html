@@ -20,8 +20,9 @@
             padding: 8px;
         }
         .pdf-page {
-            width: 100%;
+            display: block;
             max-width: 100%;
+            height: auto !important;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             background: white;
         }
@@ -106,20 +107,35 @@
         let pdfDoc = null;
         let renderedPages = new Set();
 
-        async function renderPage(pageNum, scale) {
+        async function renderPage(pageNum, containerWidth) {
             if (renderedPages.has(pageNum)) return;
             renderedPages.add(pageNum);
 
             const page = await pdfDoc.getPage(pageNum);
+
+            // Calculate scale to fit container width
+            const defaultViewport = page.getViewport({ scale: 1 });
+            const scale = containerWidth / defaultViewport.width;
             const viewport = page.getViewport({ scale });
+
+            // For high DPI displays
+            const outputScale = window.devicePixelRatio || 1;
 
             const canvas = document.createElement('canvas');
             canvas.className = 'pdf-page';
             canvas.dataset.page = pageNum;
 
             const context = canvas.getContext('2d');
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+
+            // Set actual size in memory (scaled for retina)
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+
+            // Set display size (CSS pixels)
+            canvas.style.width = Math.floor(viewport.width) + 'px';
+            canvas.style.height = Math.floor(viewport.height) + 'px';
+
+            context.scale(outputScale, outputScale);
 
             // Insert in correct order
             const existingCanvases = container.querySelectorAll('canvas');
@@ -154,15 +170,12 @@
                 totalPagesEl.textContent = pdfDoc.numPages;
                 pageIndicator.classList.remove('hidden');
 
-                // Calculate scale based on screen width
-                const firstPage = await pdfDoc.getPage(1);
-                const defaultViewport = firstPage.getViewport({ scale: 1 });
-                const containerWidth = window.innerWidth - 16; // padding
-                const scale = containerWidth / defaultViewport.width;
+                // Calculate container width (full width minus padding)
+                const containerWidth = window.innerWidth - 16;
 
                 // Render all pages
                 for (let i = 1; i <= pdfDoc.numPages; i++) {
-                    await renderPage(i, scale);
+                    await renderPage(i, containerWidth);
                     document.getElementById('loading-text').textContent =
                         `ページを描画中... ${i}/${pdfDoc.numPages}`;
                 }
