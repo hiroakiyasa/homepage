@@ -64,16 +64,6 @@ transition: all 0.3s ease;
 .app-nav-button:hover {
 transform: translateY(-5px);
 }
-.tiktok-embed {
-width: 100%;
-max-width: 325px;
-margin: 0 auto;
-}
-.grid-layout {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1rem;
-}
 .app-section {
 scroll-margin-top: 100px;
 }
@@ -81,57 +71,15 @@ scroll-margin-top: 100px;
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 transition: transform 0.3s ease;
 }
-/* 動画の再生ボタンを非表示 - Safari対応強化版 */
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-    -webkit-appearance: none;
-}
-video::-webkit-media-controls {
-    display: none !important;
-}
-video::-webkit-media-controls-enclosure {
-    display: none !important;
-}
-video::-webkit-media-controls-panel {
-    display: none !important;
-}
-video::-webkit-media-controls-timeline {
-    display: none !important;
-}
-video::-webkit-media-controls-current-time-display {
-    display: none !important;
-}
-video::-webkit-media-controls-time-remaining-display {
-    display: none !important;
-}
-video::-webkit-media-controls-mute-button {
-    display: none !important;
-}
-video::-webkit-media-controls-volume-slider {
-    display: none !important;
-}
-video::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-}
-video::-webkit-media-controls-overlay-play-button {
-    display: none !important;
-}
-/* Safari iOS対応 */
-video {
-    -webkit-appearance: none;
-    appearance: none;
-    -webkit-playsinline: true;
-}
-video::before {
-    display: none !important;
-}
-video::after {
-    display: none !important;
-}
-
 .screenshot:hover {
 transform: scale(1.05);
+}
+.tiktok-placeholder {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tiktok-placeholder:hover {
+transform: scale(1.02);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -278,11 +226,7 @@ margin: 0;
 </div>
 <!-- ヒーローセクション -->
 <section class="relative">
-<div class="w-full h-[300px] sm:h-[400px] md:h-[600px] relative overflow-hidden">
-<video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
-<source src="assets/videos/hero-background-video.mp4" type="video/mp4">
-</video>
-<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+<div class="w-full h-[300px] sm:h-[400px] md:h-[500px] relative overflow-hidden bg-gradient-to-br from-primary via-purple-600 to-secondary">
 <div class="container mx-auto px-4 h-full flex items-center relative z-10">
 <div class="max-w-2xl text-white">
 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6" data-i18n="apps.hero.title">革新的なアプリで<br>あなたの可能性を広げる</h1>
@@ -369,12 +313,12 @@ margin: 0;
 </div>
 </div>
 </div>
-<div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7508270118728781063" data-video-id="7508270118728781063">
-<a href="https://www.tiktok.com/@trailfusionai/video/7508270118728781063?is_from_webapp=1&sender_device=pc&web_id=7507421757814834709" data-readdy="true">
-<iframe src="https://www.tiktok.com/embed/7508270118728781063" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</a>
-</blockquote>
+<div class="tiktok-placeholder rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center" style="width: 100%; height: 400px;" data-video-id="7508270118728781063" onclick="loadTikTok(this)">
+<div class="text-center text-white">
+<i class="ri-tiktok-fill text-6xl mb-4"></i>
+<p class="text-lg font-medium">タップして動画を再生</p>
+<p class="text-sm opacity-75">TikTok Video</p>
+</div>
 </div>
 </div>
 </div>
@@ -428,10 +372,12 @@ margin: 0;
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7456950409228307719" data-video-id="7456950409228307719">
-<iframe src="https://www.tiktok.com/embed/7456950409228307719" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</blockquote>
+<div class="tiktok-placeholder rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center" style="width: 100%; height: 400px;" data-video-id="7456950409228307719" onclick="loadTikTok(this)">
+<div class="text-center text-white">
+<i class="ri-tiktok-fill text-6xl mb-4"></i>
+<p class="text-lg font-medium">タップして動画を再生</p>
+<p class="text-sm opacity-75">Wood Golem Demo</p>
+</div>
 </div>
 </div>
 <div class="order-1 md:order-2">
@@ -511,10 +457,12 @@ margin: 0;
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7512851452679752968" data-video-id="7512851452679752968">
-<iframe src="https://www.tiktok.com/embed/7512851452679752968" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</blockquote>
+<div class="tiktok-placeholder rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center" style="width: 100%; height: 400px;" data-video-id="7512851452679752968" onclick="loadTikTok(this)">
+<div class="text-center text-white">
+<i class="ri-tiktok-fill text-6xl mb-4"></i>
+<p class="text-lg font-medium">タップして動画を再生</p>
+<p class="text-sm opacity-75">VoiceLink Demo</p>
+</div>
 </div>
 </div>
 </div>
@@ -568,10 +516,12 @@ margin: 0;
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed">
-<blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg" cite="https://www.tiktok.com/@trailfusionai/video/7506530494054436103" data-video-id="7506530494054436103">
-<iframe src="https://www.tiktok.com/embed/7506530494054436103" style="width: 100%; height: 708.5px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</blockquote>
+<div class="tiktok-placeholder rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center" style="width: 100%; height: 400px;" data-video-id="7506530494054436103" onclick="loadTikTok(this)">
+<div class="text-center text-white">
+<i class="ri-tiktok-fill text-6xl mb-4"></i>
+<p class="text-lg font-medium">タップして動画を再生</p>
+<p class="text-sm opacity-75">WordBlaster Demo</p>
+</div>
 </div>
 </div>
 <div class="order-1 md:order-2">
@@ -815,52 +765,19 @@ behavior: 'smooth'
 });
 });
 </script>
-<script id="tiktok-video-control">
-document.addEventListener('DOMContentLoaded', function() {
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-const iframe = entry.target;
-const videoId = iframe.src.match(/embed\/(\d+)/)?.[1] || 'unknown';
-console.log(`TikTok Video ${videoId}: ${entry.isIntersecting ? 'VISIBLE' : 'HIDDEN'}, ratio: ${entry.intersectionRatio}`);
-
-if (entry.isIntersecting) {
-// iframeが表示領域に入った時
-if (!iframe.hasAttribute('data-loaded')) {
-console.log(`Loading TikTok Video ${videoId}`);
-const currentSrc = iframe.src;
-iframe.src = '';
-
-const delay = 100;
-
-setTimeout(() => {
-iframe.src = currentSrc;
-iframe.setAttribute('data-loaded', 'true');
-console.log(`TikTok Video ${videoId} loaded with ${delay}ms delay`);
-}, delay);
+<script>
+function loadTikTok(el) {
+const videoId = el.getAttribute('data-video-id');
+const iframe = document.createElement('iframe');
+iframe.src = 'https://www.tiktok.com/embed/' + videoId;
+iframe.style.cssText = 'width:100%;height:708px;border:none;';
+iframe.allow = 'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+iframe.allowFullscreen = true;
+el.innerHTML = '';
+el.appendChild(iframe);
+el.onclick = null;
+el.style.cursor = 'default';
 }
-} else {
-// iframeが表示領域から出た時
-if (iframe.hasAttribute('data-loaded')) {
-console.log(`Unloading TikTok Video ${videoId}`);
-const currentSrc = iframe.src;
-iframe.src = '';
-iframe.removeAttribute('data-loaded');
-setTimeout(() => {
-iframe.src = currentSrc;
-console.log(`TikTok Video ${videoId} reloaded for next viewing`);
-}, 100);
-}
-}
-});
-}, {
-threshold: 0.3
-});
-document.querySelectorAll('.tiktok-embed iframe').forEach((iframe, index) => {
-const videoId = iframe.src.match(/embed\/(\d+)/)?.[1] || 'unknown';
-console.log(`Observing TikTok Video ${index + 1}: ${videoId}`);
-observer.observe(iframe);
-});
-});
 </script>
 <script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
