@@ -2808,7 +2808,7 @@ function toggleAllElectricalSteps(open) {
 }
 </script>
 
-<!-- PDF.js ライブラリ -->
+<!-- PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -2834,12 +2834,13 @@ document.querySelectorAll('.pdf-canvas-container[data-pdf]').forEach(container =
 
 async function loadPDF(container) {
     const pdfUrl = container.dataset.pdf;
+    const encodedUrl = encodeURI(pdfUrl);
     const loadingEl = container.querySelector('.pdf-loading');
     const progressFill = container.querySelector('.pdf-progress-fill');
     const loadingText = container.querySelector('.pdf-loading-text');
 
     try {
-        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+        const loadingTask = pdfjsLib.getDocument(encodedUrl);
 
         loadingTask.onProgress = function(progress) {
             if (progress.total > 0) {
@@ -2854,98 +2855,57 @@ async function loadPDF(container) {
         if (loadingEl) loadingEl.remove();
 
         // Calculate container width
-        const containerWidth = container.clientWidth - 32;
+        const containerWidth = container.clientWidth - 16;
 
-        // Load only first 3 pages initially
-        const initialPages = Math.min(3, pdfDoc.numPages);
+        // Render first 3 pages only for performance
+        const maxPages = Math.min(3, pdfDoc.numPages);
 
-        for (let i = 1; i <= initialPages; i++) {
-            await renderPage(pdfDoc, i, container, containerWidth);
+        for (let i = 1; i <= maxPages; i++) {
+            const page = await pdfDoc.getPage(i);
+
+            // Calculate scale to fit container width
+            const defaultViewport = page.getViewport({ scale: 1 });
+            const scale = containerWidth / defaultViewport.width;
+            const viewport = page.getViewport({ scale });
+
+            // For high DPI displays
+            const outputScale = window.devicePixelRatio || 1;
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+
+            // Set actual size in memory (scaled for retina)
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+
+            // Set display size (CSS pixels)
+            canvas.style.width = Math.floor(viewport.width) + 'px';
+            canvas.style.height = Math.floor(viewport.height) + 'px';
+
+            context.scale(outputScale, outputScale);
+
+            container.appendChild(canvas);
+
+            await page.render({
+                canvasContext: context,
+                viewport: viewport
+            }).promise;
         }
 
-        // Add page indicator
-        const pageIndicator = document.createElement('div');
-        pageIndicator.className = 'pdf-page-indicator';
-        pageIndicator.textContent = `${initialPages} / ${pdfDoc.numPages} ページ表示中`;
-        container.appendChild(pageIndicator);
-
-        // If there are more pages, add "全体を表示" button
+        // Add "View More" button if more pages exist
         if (pdfDoc.numPages > 3) {
-            const loadAllBtn = document.createElement('button');
-            loadAllBtn.className = 'pdf-load-all-btn';
-            loadAllBtn.innerHTML = '<i class="ri-file-list-3-line"></i>残り ' + (pdfDoc.numPages - 3) + ' ページを表示';
-
-            loadAllBtn.addEventListener('click', async function() {
-                if (loadAllBtn.classList.contains('loading')) return;
-
-                loadAllBtn.classList.add('loading');
-                loadAllBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i>読み込み中...';
-
-                try {
-                    // Load remaining pages
-                    for (let i = 4; i <= pdfDoc.numPages; i++) {
-                        await renderPage(pdfDoc, i, container, containerWidth);
-                        loadAllBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i>ページ ' + i + '/' + pdfDoc.numPages + ' を読み込み中...';
-                    }
-
-                    // Update page indicator
-                    pageIndicator.textContent = `全 ${pdfDoc.numPages} ページ`;
-
-                    // Remove button
-                    loadAllBtn.remove();
-                } catch (error) {
-                    console.error('Error loading remaining pages:', error);
-                    loadAllBtn.classList.remove('loading');
-                    loadAllBtn.innerHTML = '<i class="ri-error-warning-line"></i>エラー - 再試行';
-                }
-            });
-
-            // Insert button after page indicator
-            container.appendChild(loadAllBtn);
+            const moreBtn = document.createElement('a');
+            moreBtn.href = encodedUrl;
+            moreBtn.target = '_blank';
+            moreBtn.className = 'inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium transition mt-4';
+            moreBtn.innerHTML = '<i class="ri-file-pdf-2-line"></i>全 ' + pdfDoc.numPages + ' ページを見る';
+            container.appendChild(moreBtn);
         }
 
     } catch (error) {
         console.error('PDF load error:', error);
         if (loadingText) loadingText.textContent = 'PDF読み込みエラー';
     }
-}
-
-async function renderPage(pdfDoc, pageNum, container, containerWidth) {
-    const page = await pdfDoc.getPage(pageNum);
-
-    // Calculate scale to fit container width
-    const defaultViewport = page.getViewport({ scale: 1 });
-    const scale = containerWidth / defaultViewport.width;
-    const viewport = page.getViewport({ scale });
-
-    // For high DPI displays
-    const outputScale = window.devicePixelRatio || 1;
-
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-
-    // Set actual size in memory (scaled for retina)
-    canvas.width = Math.floor(viewport.width * outputScale);
-    canvas.height = Math.floor(viewport.height * outputScale);
-
-    // Set display size (CSS pixels)
-    canvas.style.width = Math.floor(viewport.width) + 'px';
-    canvas.style.height = Math.floor(viewport.height) + 'px';
-
-    context.scale(outputScale, outputScale);
-
-    // Insert canvas before page indicator and load-all button
-    const pageIndicator = container.querySelector('.pdf-page-indicator');
-    if (pageIndicator) {
-        container.insertBefore(canvas, pageIndicator);
-    } else {
-        container.appendChild(canvas);
-    }
-
-    await page.render({
-        canvasContext: context,
-        viewport: viewport
-    }).promise;
 }
 </script>
 </body>
