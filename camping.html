@@ -470,6 +470,36 @@ grid-row: span 1;
     text-align: center;
     padding: 8px;
 }
+/* 全体表示ボタン */
+.pdf-load-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pdf-load-all-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+.pdf-load-all-btn:active {
+    transform: translateY(0);
+}
+.pdf-load-all-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 </style>
 <script src="assets/js/i18n.js"></script>
 </head>
@@ -614,9 +644,6 @@ grid-row: span 1;
         <a href="#chapter5" class="px-4 py-2 bg-white/90 text-gray-700 rounded-lg shadow hover:bg-white hover:shadow-md transition-all text-sm font-medium">
           <i class="ri-battery-charge-line mr-1"></i>第5章
         </a>
-        <a href="#chapter6" class="px-4 py-2 bg-white/90 text-gray-700 rounded-lg shadow hover:bg-white hover:shadow-md transition-all text-sm font-medium">
-          <i class="ri-money-yen-circle-line mr-1"></i>第6章
-        </a>
       </div>
 
       <div class="flex flex-wrap gap-4 text-sm">
@@ -673,17 +700,17 @@ grid-row: span 1;
       </div>
       <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
         <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>2つのパス - Mobile Cockpit</span>
+          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>ハイエース空間設計</span>
           <div class="flex gap-2">
-            <a href="document/camping/HiAce_2_Paths_Mobile_Cockpit.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/ハイエース空間設計.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/HiAce_2_Paths_Mobile_Cockpit.pdf" download class="pdf-btn">
+            <a href="document/camping/ハイエース空間設計.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/HiAce_2_Paths_Mobile_Cockpit.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/ハイエース空間設計.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -732,17 +759,17 @@ grid-row: span 1;
       </div>
       <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
         <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Optimal Selection Strategy</span>
+          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>ハイエースの賢い車両選定</span>
           <div class="flex gap-2">
-            <a href="document/camping/HiAce_Optimal_Selection_Strategy.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/ハイエースの賢い車両選定.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/HiAce_Optimal_Selection_Strategy.pdf" download class="pdf-btn">
+            <a href="document/camping/ハイエースの賢い車両選定.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/HiAce_Optimal_Selection_Strategy.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/ハイエースの賢い車両選定.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -807,15 +834,15 @@ grid-row: span 1;
         <div class="pdf-toolbar">
           <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>8ナンバー構造要件</span>
           <div class="flex gap-2">
-            <a href="document/camping/特殊用途自動車_構造要件ガイド.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/８ナンバー構造要件.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/特殊用途自動車_構造要件ガイド.pdf" download class="pdf-btn">
+            <a href="document/camping/８ナンバー構造要件.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/特殊用途自動車_構造要件ガイド.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/８ナンバー構造要件.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -869,17 +896,17 @@ grid-row: span 1;
       </div>
       <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
         <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>断熱・防音・制振の完全ガイド</span>
+          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>制振・断熱の完全ガイド</span>
           <div class="flex gap-2">
-            <a href="document/camping/見えない9割のキャンパー工学.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/制振、断熱.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/見えない9割のキャンパー工学.pdf" download class="pdf-btn">
+            <a href="document/camping/制振、断熱.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/見えない9割のキャンパー工学.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/制振、断熱.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -935,17 +962,17 @@ grid-row: span 1;
       </div>
       <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
         <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>内装・家具製作の基礎工学</span>
+          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>断熱・遮音対策ガイド</span>
           <div class="flex gap-2">
-            <a href="document/camping/HiAce_First_Principles_Engineering.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/断熱、遮音対策.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/HiAce_First_Principles_Engineering.pdf" download class="pdf-btn">
+            <a href="document/camping/断熱、遮音対策.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/HiAce_First_Principles_Engineering.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/断熱、遮音対策.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -1001,97 +1028,17 @@ grid-row: span 1;
       </div>
       <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
         <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>電力システム構築ガイド</span>
+          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>サブバッテリーシステム構築ガイド</span>
           <div class="flex gap-2">
-            <a href="document/camping/Professional_Camper_Power.pdf" target="_blank" class="pdf-btn">
+            <a href="document/camping/サブバッテリーシステム構築ガイド.pdf" target="_blank" class="pdf-btn">
               <i class="ri-fullscreen-line"></i>拡大表示
             </a>
-            <a href="document/camping/Professional_Camper_Power.pdf" download class="pdf-btn">
+            <a href="document/camping/サブバッテリーシステム構築ガイド.pdf" download class="pdf-btn">
               <i class="ri-download-line"></i>ダウンロード
             </a>
           </div>
         </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/Professional_Camper_Power.pdf" data-all-pages="true">
-          <div class="pdf-loading">
-            <div class="pdf-spinner"></div>
-            <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-            <div class="pdf-progress-bar"><div class="pdf-progress-fill" style="width: 0%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 第6章: 財務分析とプロジェクトマネジメント -->
-<section id="chapter6" class="py-16 md:py-24 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <span class="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white text-sm font-medium px-4 py-2 rounded-full mb-4 shadow-lg">
-        CHAPTER 6
-      </span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">財務分析とプロジェクトマネジメント</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">コスト積算、検査・登録、リセールバリュー</p>
-    </div>
-
-    <div class="max-w-4xl mx-auto mb-12">
-      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100">
-        <h3 class="text-xl font-bold text-gray-900 mb-6">製作コストの階層別分析</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gray-100">
-                <th class="px-4 py-3 text-left font-bold rounded-tl-lg">コスト階層</th>
-                <th class="px-4 py-3 text-left font-bold">予算目安</th>
-                <th class="px-4 py-3 text-left font-bold rounded-tr-lg">特徴</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b">
-                <td class="px-4 py-3 font-medium text-green-600">ミニマムDIY</td>
-                <td class="px-4 py-3">12〜15万円</td>
-                <td class="px-4 py-3 text-gray-600">安価な材料、断熱簡易化</td>
-              </tr>
-              <tr class="border-b bg-gray-50">
-                <td class="px-4 py-3 font-medium text-blue-600">スタンダードDIY</td>
-                <td class="px-4 py-3">30〜60万円</td>
-                <td class="px-4 py-3 text-gray-600">快適性と実用性の両立</td>
-              </tr>
-              <tr class="border-b">
-                <td class="px-4 py-3 font-medium text-purple-600">ハイエンドDIY</td>
-                <td class="px-4 py-3">100万円〜</td>
-                <td class="px-4 py-3 text-gray-600">高性能断熱、FFヒーター、ソーラー</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-medium text-rose-600 rounded-bl-lg">プロショップ依頼</td>
-                <td class="px-4 py-3">200万円〜</td>
-                <td class="px-4 py-3 text-gray-600 rounded-br-lg">信頼性、リセールバリュー重視</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- PDF埋め込み -->
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-2 mb-4">
-        <i class="ri-book-open-fill text-rose-500 text-xl"></i>
-        <h3 class="text-xl font-bold text-gray-800">Strategic Blueprint</h3>
-      </div>
-      <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-        <div class="pdf-toolbar">
-          <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>プロジェクト戦略設計</span>
-          <div class="flex gap-2">
-            <a href="document/camping/HiAce_Strategic_Blueprint.pdf" target="_blank" class="pdf-btn">
-              <i class="ri-fullscreen-line"></i>拡大表示
-            </a>
-            <a href="document/camping/HiAce_Strategic_Blueprint.pdf" download class="pdf-btn">
-              <i class="ri-download-line"></i>ダウンロード
-            </a>
-          </div>
-        </div>
-        <div class="pdf-canvas-container" data-pdf="document/camping/HiAce_Strategic_Blueprint.pdf" data-all-pages="true">
+        <div class="pdf-canvas-container" data-pdf="document/camping/サブバッテリーシステム構築ガイド.pdf">
           <div class="pdf-loading">
             <div class="pdf-spinner"></div>
             <div class="pdf-loading-text">PDFを読み込んでいます...</div>
@@ -2887,7 +2834,6 @@ document.querySelectorAll('.pdf-canvas-container[data-pdf]').forEach(container =
 
 async function loadPDF(container) {
     const pdfUrl = container.dataset.pdf;
-    const loadAllPages = container.dataset.allPages === 'true';
     const loadingEl = container.querySelector('.pdf-loading');
     const progressFill = container.querySelector('.pdf-progress-fill');
     const loadingText = container.querySelector('.pdf-loading-text');
@@ -2910,56 +2856,96 @@ async function loadPDF(container) {
         // Calculate container width
         const containerWidth = container.clientWidth - 32;
 
-        // Render all pages or first 3 pages
-        const maxPages = loadAllPages ? pdfDoc.numPages : Math.min(3, pdfDoc.numPages);
+        // Load only first 3 pages initially
+        const initialPages = Math.min(3, pdfDoc.numPages);
 
-        for (let i = 1; i <= maxPages; i++) {
-            const page = await pdfDoc.getPage(i);
-
-            // Calculate scale to fit container width
-            const defaultViewport = page.getViewport({ scale: 1 });
-            const scale = containerWidth / defaultViewport.width;
-            const viewport = page.getViewport({ scale });
-
-            // For high DPI displays
-            const outputScale = window.devicePixelRatio || 1;
-
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-
-            // Set actual size in memory (scaled for retina)
-            canvas.width = Math.floor(viewport.width * outputScale);
-            canvas.height = Math.floor(viewport.height * outputScale);
-
-            // Set display size (CSS pixels)
-            canvas.style.width = Math.floor(viewport.width) + 'px';
-            canvas.style.height = Math.floor(viewport.height) + 'px';
-
-            context.scale(outputScale, outputScale);
-
-            container.appendChild(canvas);
-
-            await page.render({
-                canvasContext: context,
-                viewport: viewport
-            }).promise;
-
-            // Update loading text for progress
-            if (loadingText && loadAllPages) {
-                loadingText.textContent = `ページ ${i}/${pdfDoc.numPages} を読み込み中...`;
-            }
+        for (let i = 1; i <= initialPages; i++) {
+            await renderPage(pdfDoc, i, container, containerWidth);
         }
 
         // Add page indicator
         const pageIndicator = document.createElement('div');
         pageIndicator.className = 'pdf-page-indicator';
-        pageIndicator.textContent = `全 ${pdfDoc.numPages} ページ`;
+        pageIndicator.textContent = `${initialPages} / ${pdfDoc.numPages} ページ表示中`;
         container.appendChild(pageIndicator);
+
+        // If there are more pages, add "全体を表示" button
+        if (pdfDoc.numPages > 3) {
+            const loadAllBtn = document.createElement('button');
+            loadAllBtn.className = 'pdf-load-all-btn';
+            loadAllBtn.innerHTML = '<i class="ri-file-list-3-line"></i>残り ' + (pdfDoc.numPages - 3) + ' ページを表示';
+
+            loadAllBtn.addEventListener('click', async function() {
+                if (loadAllBtn.classList.contains('loading')) return;
+
+                loadAllBtn.classList.add('loading');
+                loadAllBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i>読み込み中...';
+
+                try {
+                    // Load remaining pages
+                    for (let i = 4; i <= pdfDoc.numPages; i++) {
+                        await renderPage(pdfDoc, i, container, containerWidth);
+                        loadAllBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i>ページ ' + i + '/' + pdfDoc.numPages + ' を読み込み中...';
+                    }
+
+                    // Update page indicator
+                    pageIndicator.textContent = `全 ${pdfDoc.numPages} ページ`;
+
+                    // Remove button
+                    loadAllBtn.remove();
+                } catch (error) {
+                    console.error('Error loading remaining pages:', error);
+                    loadAllBtn.classList.remove('loading');
+                    loadAllBtn.innerHTML = '<i class="ri-error-warning-line"></i>エラー - 再試行';
+                }
+            });
+
+            // Insert button after page indicator
+            container.appendChild(loadAllBtn);
+        }
 
     } catch (error) {
         console.error('PDF load error:', error);
         if (loadingText) loadingText.textContent = 'PDF読み込みエラー';
     }
+}
+
+async function renderPage(pdfDoc, pageNum, container, containerWidth) {
+    const page = await pdfDoc.getPage(pageNum);
+
+    // Calculate scale to fit container width
+    const defaultViewport = page.getViewport({ scale: 1 });
+    const scale = containerWidth / defaultViewport.width;
+    const viewport = page.getViewport({ scale });
+
+    // For high DPI displays
+    const outputScale = window.devicePixelRatio || 1;
+
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    // Set actual size in memory (scaled for retina)
+    canvas.width = Math.floor(viewport.width * outputScale);
+    canvas.height = Math.floor(viewport.height * outputScale);
+
+    // Set display size (CSS pixels)
+    canvas.style.width = Math.floor(viewport.width) + 'px';
+    canvas.style.height = Math.floor(viewport.height) + 'px';
+
+    context.scale(outputScale, outputScale);
+
+    // Insert canvas before page indicator and load-all button
+    const pageIndicator = container.querySelector('.pdf-page-indicator');
+    if (pageIndicator) {
+        container.insertBefore(canvas, pageIndicator);
+    } else {
+        container.appendChild(canvas);
+    }
+
+    await page.render({
+        canvasContext: context,
+        viewport: viewport
+    }).promise;
 }
 </script>
 </body>
