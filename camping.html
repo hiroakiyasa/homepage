@@ -2857,8 +2857,8 @@ async function loadPDF(container) {
         // Calculate container width
         const containerWidth = container.clientWidth - 16;
 
-        // Render first 3 pages only for performance
-        const maxPages = Math.min(3, pdfDoc.numPages);
+        // Render first page only for fast initial load
+        const maxPages = 1;
 
         for (let i = 1; i <= maxPages; i++) {
             const page = await pdfDoc.getPage(i);
@@ -2893,7 +2893,7 @@ async function loadPDF(container) {
         }
 
         // Add "View More" button if more pages exist
-        if (pdfDoc.numPages > 3) {
+        if (pdfDoc.numPages > 1) {
             const moreBtn = document.createElement('a');
             moreBtn.href = encodedUrl;
             moreBtn.target = '_blank';
