@@ -13,10 +13,13 @@
       }
     },
     "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer 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"
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
       }
     }
   }
