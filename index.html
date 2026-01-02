@@ -48,11 +48,14 @@
 <!-- Tailwind CSS via CDN - for development/static sites -->
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#ff6b5b',secondary:'#3d5a80'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<!-- Preload critical resources -->
+<link rel="preload" href="assets/videos/a2ecd24a-6985-40d3-8cc8-8d3a0f0beb0c.mp4" as="video" type="video/mp4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"></noscript>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -414,7 +417,7 @@ pointer-events: none;
 <!-- Decorative Elements -->
 <div class="decorative-circle w-96 h-96 bg-primary -top-48 -left-48"></div>
 <div class="decorative-circle w-80 h-80 bg-secondary -bottom-40 -right-40"></div>
-<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background_12370.jpg'); background-size: cover; background-position: center; opacity: 0.15; transform: scale(1.1);"></div>
+<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background.webp'); background-size: cover; background-position: center; opacity: 0.15; transform: scale(1.1);"></div>
 <div class="container mx-auto px-6 relative z-10">
 <div class="text-center mb-20 fade-in">
 <span class="inline-block bg-gradient-to-r from-primary/10 to-secondary/10 text-primary text-sm font-semibold px-6 py-2 rounded-full mb-6 border border-primary/20">OUR SERVICES</span>
@@ -426,7 +429,10 @@ pointer-events: none;
 <!-- キャンピングカー製作カード -->
 <div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #3b82f6; --card-accent-end: #1d4ed8;">
 <div class="relative w-full" style="padding-bottom: 56.25%;">
-<img src="assets/images/camper/camper_sleeping_arrangement（大）.jpeg" alt="ハイエースキャンピングカーの就寝レイアウト - DIY改造完成例" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110">
+<picture>
+<source srcset="assets/images/camper/camper_sleeping_arrangement.webp" type="image/webp">
+<img src="assets/images/camper/camper_sleeping_arrangement.jpg" alt="ハイエースキャンピングカーの就寝レイアウト - DIY改造完成例" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110" loading="lazy">
+</picture>
 <div class="absolute top-4 left-4">
 <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DIY GUIDE</span>
 </div>
@@ -461,7 +467,10 @@ pointer-events: none;
 <!-- AIアプリカード -->
 <div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #10b981; --card-accent-end: #059669;">
 <div class="relative w-full" style="padding-bottom: 56.25%;">
-<img src="assets/images/gp-teachers-screenshot3.jpg" alt="GP Teachers AIアプリケーションのスクリーンショット - 英語学習インターフェース" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110">
+<picture>
+<source srcset="assets/images/gp-teachers-screenshot3.webp" type="image/webp">
+<img src="assets/images/gp-teachers-screenshot3-optimized.jpg" alt="GP Teachers AIアプリケーションのスクリーンショット - 英語学習インターフェース" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110" loading="lazy">
+</picture>
 <div class="absolute top-4 left-4">
 <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">AI APPS</span>
 </div>
@@ -496,7 +505,10 @@ pointer-events: none;
 <!-- 整備記録カード -->
 <div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #f59e0b; --card-accent-end: #d97706;">
 <div class="relative w-full" style="padding-bottom: 56.25%;">
-<img src="assets/images/camper/camper_electrical_system（大）.jpeg" alt="ハイエースディーゼルエンジン整備 - 専門的メンテナンス" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
+<picture>
+<source srcset="assets/images/camper/camper_electrical_system.webp" type="image/webp">
+<img src="assets/images/camper/camper_electrical_system.jpg" alt="ハイエースディーゼルエンジン整備 - 専門的メンテナンス" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110" loading="lazy">
+</picture>
 <div class="absolute top-4 left-4">
 <span class="premium-badge text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MAINTENANCE</span>
 </div>
@@ -554,7 +566,10 @@ pointer-events: none;
         <div class="flex justify-center pb-8 px-6">
           <div class="relative">
             <div class="w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30 transform transition-transform duration-500 hover:scale-105">
-              <img src="assets/images/profile.jpg" alt="シェフチェンコ - TrailFusion AI代表者のプロフィール写真" class="w-full h-full object-cover">
+              <picture>
+<source srcset="assets/images/profile.webp" type="image/webp">
+<img src="assets/images/profile-optimized.jpg" alt="シェフチェンコ - TrailFusion AI代表者のプロフィール写真" class="w-full h-full object-cover" loading="lazy">
+</picture>
             </div>
           </div>
         </div>
@@ -660,7 +675,7 @@ pointer-events: none;
 
 <!-- お問い合わせセクション -->
 <section id="contact" class="py-20 text-white relative">
-<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background_12370.jpg'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
+<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background.webp'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-4xl mx-auto fade-in">
 <div class="text-center mb-12">
