@@ -626,6 +626,9 @@ grid-row: span 1;
 
       <!-- 章ナビゲーション -->
       <div class="flex flex-wrap gap-3 mb-8">
+        <a href="#error-codes" class="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg shadow hover:shadow-md transition-all text-sm font-medium">
+          <i class="ri-error-warning-line mr-1"></i>エラーコード
+        </a>
         <a href="#summary" class="px-4 py-2 bg-white/90 text-gray-700 rounded-lg shadow hover:bg-white hover:shadow-md transition-all text-sm font-medium">
           <i class="ri-file-text-line mr-1"></i>概要
         </a>
@@ -656,6 +659,211 @@ grid-row: span 1;
           <span>動画で見る</span>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- エラーコード一覧 -->
+<section id="error-codes" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-medium px-4 py-2 rounded-full mb-4 shadow-lg">
+        <i class="ri-error-warning-line mr-1"></i>DIAGNOSTIC CODES
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ハイエース 1KDエンジン エラーコード一覧</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">警告灯が点灯した際に「どの部品が怪しいか」の当たりをつけるための予備知識</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-x-auto rounded-2xl shadow-xl border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gradient-to-r from-gray-800 to-gray-700 text-white">
+              <th class="px-4 py-4 text-left font-bold whitespace-nowrap">部品名</th>
+              <th class="px-4 py-4 text-left font-bold whitespace-nowrap">エラーコード</th>
+              <th class="px-4 py-4 text-left font-bold whitespace-nowrap">エラー名称</th>
+              <th class="px-4 py-4 text-left font-bold">発生メカニズム</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="bg-red-50 hover:bg-red-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-red-700 whitespace-nowrap">
+                <i class="ri-drop-fill mr-1"></i>インジェクター
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-mono mb-1">P0201〜P0204</span><br>
+                <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-mono mb-1">P062F</span><br>
+                <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-mono">P0093</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Injector Circuit Open<br>
+                EEPROM Error<br>
+                Fuel Leak (Large)
+              </td>
+              <td class="px-4 py-4 text-gray-600">断線時にP020#が出ます。補正値未登録や内部基盤異常でP062F、燃料漏れでP0093が出るとエンジン振動が激化。</td>
+            </tr>
+            <tr class="bg-orange-50 hover:bg-orange-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-orange-700 whitespace-nowrap">
+                <i class="ri-settings-3-fill mr-1"></i>SCV
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs font-mono mb-1">P0627</span><br>
+                <span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs font-mono">P0628</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Fuel Pump Control Circuit<br>
+                Low/High
+              </td>
+              <td class="px-4 py-4 text-gray-600">サプライポンプへの燃料供給量を制御。固着すると加速不良やエンスト。</td>
+            </tr>
+            <tr class="bg-yellow-50 hover:bg-yellow-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-yellow-700 whitespace-nowrap">
+                <i class="ri-cloud-fill mr-1"></i>ターボチャージャー
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-mono mb-1">P0234</span><br>
+                <span class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-mono">P0299</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Turbo Overboost<br>
+                Turbo Underboost
+              </td>
+              <td class="px-4 py-4 text-gray-600">過給圧が高すぎる/低すぎる場合に発生。アクチュエーター固着やタービン破損が原因。</td>
+            </tr>
+            <tr class="bg-green-50 hover:bg-green-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-green-700 whitespace-nowrap">
+                <i class="ri-refresh-fill mr-1"></i>EGR
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-mono mb-1">P0400</span><br>
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-mono">P0405/P0406</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                EGR Flow Malfunction<br>
+                EGR Sensor Circuit
+              </td>
+              <td class="px-4 py-4 text-gray-600">煤でEGRバルブが詰まり排気ガスが流れなくなるとP0400。センサー故障でP0405等。</td>
+            </tr>
+            <tr class="bg-teal-50 hover:bg-teal-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-teal-700 whitespace-nowrap">
+                <i class="ri-filter-fill mr-1"></i>DPR（洗浄）
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded text-xs font-mono mb-1">P2002</span><br>
+                <span class="inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded text-xs font-mono">P2463</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                DPF Efficiency Below Threshold<br>
+                DPF Soot Accumulation
+              </td>
+              <td class="px-4 py-4 text-gray-600">フィルター詰まりでP2463。効率低下P2002は洗浄で直る場合も。</td>
+            </tr>
+            <tr class="bg-cyan-50 hover:bg-cyan-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-cyan-700 whitespace-nowrap">
+                <i class="ri-filter-off-fill mr-1"></i>DPR（交換）
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-cyan-100 text-cyan-800 px-2 py-1 rounded text-xs font-mono mb-1">P1420</span><br>
+                <span class="inline-block bg-cyan-100 text-cyan-800 px-2 py-1 rounded text-xs font-mono">P200C</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Exhaust Pressure Sensor<br>
+                DPF Over Temperature
+              </td>
+              <td class="px-4 py-4 text-gray-600">完全に詰まって排気圧力異常P1420、高温でフィルター溶損P200Cは交換が必要。</td>
+            </tr>
+            <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-blue-700 whitespace-nowrap">
+                <i class="ri-timer-fill mr-1"></i>タイミングベルト
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-mono mb-1">T-BELT警告灯</span><br>
+                <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-mono">P0340</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                T-BELT Light<br>
+                Camshaft Position Sensor
+              </td>
+              <td class="px-4 py-4 text-gray-600">メーター内の警告灯が点灯。ベルト切れ前兆でP0340が出ることも。</td>
+            </tr>
+            <tr class="bg-indigo-50 hover:bg-indigo-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-indigo-700 whitespace-nowrap">
+                <i class="ri-circle-fill mr-1"></i>ハブベアリング
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs font-mono mb-1">C1203</span><br>
+                <span class="inline-block bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs font-mono">C1336</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                ABS Sensor Signal<br>
+                Wheel Speed Sensor
+              </td>
+              <td class="px-4 py-4 text-gray-600">ベアリング摩耗でABSセンサー信号に異常。ゴロゴロ音が前兆。</td>
+            </tr>
+            <tr class="bg-purple-50 hover:bg-purple-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-purple-700 whitespace-nowrap">
+                <i class="ri-steering-fill mr-1"></i>ATミッション
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-mono mb-1">P0700系</span><br>
+                <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-mono mb-1">P0711</span><br>
+                <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-mono">P2714</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Transmission Control System<br>
+                Temp Sensor<br>
+                Pressure Control Solenoid D
+              </td>
+              <td class="px-4 py-4 text-gray-600">変速ソレノイド固着P2714、ATF油温センサー異常P0711。滑り発生時はコードなしでも体感症状あり。</td>
+            </tr>
+            <tr class="bg-pink-50 hover:bg-pink-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-pink-700 whitespace-nowrap">
+                <i class="ri-flashlight-fill mr-1"></i>オルタネーター
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs font-mono mb-1">P0560</span><br>
+                <span class="inline-block bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs font-mono mb-1">P2503</span><br>
+                <span class="inline-block bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs font-mono">バッテリーランプ</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                System Voltage Malfunction<br>
+                Charging System Voltage Low
+              </td>
+              <td class="px-4 py-4 text-gray-600">発電電圧低下でP0560。通常はメーターのバッテリーマーク（赤）が先に点灯。</td>
+            </tr>
+            <tr class="bg-rose-50 hover:bg-rose-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-rose-700 whitespace-nowrap">
+                <i class="ri-temp-cold-fill mr-1"></i>A/Cコンプレッサー
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded text-xs font-mono mb-1">B1422</span><br>
+                <span class="inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded text-xs font-mono">A/Cランプ点滅</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Compressor Lock Sensor
+              </td>
+              <td class="px-4 py-4 text-gray-600">コンプレッサー焼き付きロック、ベルト滑りで回転数不一致時にA/Cスイッチ点滅、B1422記録。</td>
+            </tr>
+            <tr class="bg-amber-50 hover:bg-amber-100 transition-colors">
+              <td class="px-4 py-4 font-bold text-amber-700 whitespace-nowrap">
+                <i class="ri-water-flash-fill mr-1"></i>ラジエーター
+              </td>
+              <td class="px-4 py-4">
+                <span class="inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-mono mb-1">P0117/P0118</span><br>
+                <span class="inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-mono">水温警告灯</span>
+              </td>
+              <td class="px-4 py-4 text-gray-700">
+                Engine Coolant Temp Low/High
+              </td>
+              <td class="px-4 py-4 text-gray-600">冷却水温センサー異常。ラジエーター漏れ時は警告灯より先に水温上昇や蒸気で気付くことが多い。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-sm mt-4 text-center">
+        <i class="ri-information-line mr-1"></i>
+        これらのエラーコードは OBD2診断機で確認できます。警告灯点灯時は早めの点検をお勧めします。
+      </p>
     </div>
   </div>
 </section>
