@@ -206,6 +206,68 @@ transition: transform 0.3s ease;
 .hover-scale:hover {
 transform: scale(1.1);
 }
+
+/* Premium Design Enhancements */
+.premium-section {
+position: relative;
+}
+.premium-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(255,107,91,0.5), transparent);
+}
+.premium-glow {
+box-shadow: 0 0 60px rgba(255,107,91,0.15), 0 0 100px rgba(61,90,128,0.1);
+}
+.premium-card {
+background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(249,250,251,1) 100%);
+border: 1px solid rgba(0,0,0,0.05);
+position: relative;
+overflow: hidden;
+}
+.premium-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(--card-accent, #ff6b5b), var(--card-accent-end, #3d5a80));
+}
+.premium-card:hover {
+box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+}
+.gradient-text {
+background: linear-gradient(135deg, #ff6b5b 0%, #ff8f85 50%, #3d5a80 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.premium-badge {
+background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+animation: shimmer 2s infinite linear;
+}
+@keyframes shimmer {
+0% { filter: brightness(1); }
+50% { filter: brightness(1.2); }
+100% { filter: brightness(1); }
+}
+.glass-effect {
+background: rgba(255,255,255,0.7);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+}
+.decorative-circle {
+position: absolute;
+border-radius: 50%;
+filter: blur(60px);
+opacity: 0.3;
+pointer-events: none;
+}
 </style>
 <script src="assets/js/i18n.js"></script>
 </head>
@@ -348,97 +410,125 @@ transform: scale(1.1);
 </div>
 </section>
 <!-- サービス概要セクション -->
-<section id="services" class="py-20 relative overflow-hidden">
-<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background_12370.jpg'); background-size: cover; background-position: center; opacity: 0.2; transform: scale(1.1); filter: blur(0px);"></div>
+<section id="services" class="py-24 relative overflow-hidden premium-section">
+<!-- Decorative Elements -->
+<div class="decorative-circle w-96 h-96 bg-primary -top-48 -left-48"></div>
+<div class="decorative-circle w-80 h-80 bg-secondary -bottom-40 -right-40"></div>
+<div class="absolute inset-0 z-0" style="background-image: url('assets/images/generated/nature_background_12370.jpg'); background-size: cover; background-position: center; opacity: 0.15; transform: scale(1.1);"></div>
 <div class="container mx-auto px-6 relative z-10">
-<div class="text-center mb-16 fade-in">
-<h2 class="text-4xl font-bold mb-4" data-i18n="services.title">TrailFusion AI の<br>
-  <span class="text-primary">サービス</span></h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="services.subtitle">DIYの専門知識と最先端のAI技術を組み合わせ、ユーザーの夢の実現をサポートします</p>
+<div class="text-center mb-20 fade-in">
+<span class="inline-block bg-gradient-to-r from-primary/10 to-secondary/10 text-primary text-sm font-semibold px-6 py-2 rounded-full mb-6 border border-primary/20">OUR SERVICES</span>
+<h2 class="text-4xl md:text-5xl font-bold mb-6">TrailFusion AI の<br>
+  <span class="gradient-text">サービス</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-i18n="services.subtitle">DIYの専門知識と最先端のAI技術を組み合わせ、ユーザーの夢の実現をサポートします</p>
 </div>
-<div class="flex flex-col md:flex-row gap-8 md:gap-12">
-<div class="md:w-1/2 service-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- キャンピングカー製作カード -->
+<div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #3b82f6; --card-accent-end: #1d4ed8;">
 <div class="relative w-full" style="padding-bottom: 56.25%;">
 <img src="assets/images/camper/camper_sleeping_arrangement（大）.jpeg" alt="ハイエースキャンピングカーの就寝レイアウト - DIY改造完成例" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110">
+<div class="absolute top-4 left-4">
+<span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DIY GUIDE</span>
 </div>
-<div class="p-8">
-<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-<i class="ri-tools-fill text-primary text-3xl"></i>
 </div>
-<h3 class="text-2xl font-bold mb-4" data-i18n="services.camping.title">ハイエースDIYキャンピングガイド</h3>
-<p class="text-gray-600 mb-6" data-i18n="services.camping.description">初心者でもプロレベルのキャンピングカーを自作できるように、包括的なガイドを提供しています。特にハイエースの改造に焦点を当てており、8ナンバー登録まで完全にサポートします。</p>
-<ul class="space-y-3 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-primary"></i>
+<div class="p-6">
+<div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+<i class="ri-caravan-fill text-blue-600 text-2xl"></i>
 </div>
+<h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="services.camping.title">ハイエースDIYキャンピングガイド</h3>
+<p class="text-gray-600 mb-5 text-sm leading-relaxed" data-i18n="services.camping.description">初心者でもプロレベルのキャンピングカーを自作できるように、包括的なガイドを提供。8ナンバー登録まで完全サポート。</p>
+<ul class="space-y-2 mb-5">
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-blue-500 mr-2"></i>
 <span data-i18n="services.camping.features.f1">詳細な製作手順書</span>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span data-i18n="services.camping.features.f2">必要な材料・工具のリスト</span>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-blue-500 mr-2"></i>
+<span data-i18n="services.camping.features.f2">必要な材料・工具リスト</span>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span data-i18n="services.camping.features.f3">構造要件のチェックリスト</span>
-</li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span data-i18n="services.camping.features.f4">完成例のギャラリー</span>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-blue-500 mr-2"></i>
+<span data-i18n="services.camping.features.f3">構造要件チェックリスト</span>
 </li>
 </ul>
-<a href="camping.html" class="inline-block bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap" data-i18n="services.camping.cta">キャンピングガイドを見る</a>
+<a href="camping.html" class="inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 group">
+<span data-i18n="services.camping.cta">キャンピングガイドを見る</span>
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+</a>
 </div>
 </div>
-<div class="md:w-1/2 service-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+<!-- AIアプリカード -->
+<div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #10b981; --card-accent-end: #059669;">
 <div class="relative w-full" style="padding-bottom: 56.25%;">
 <img src="assets/images/gp-teachers-screenshot3.jpg" alt="GP Teachers AIアプリケーションのスクリーンショット - 英語学習インターフェース" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110">
+<div class="absolute top-4 left-4">
+<span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">AI APPS</span>
 </div>
-<div class="p-8">
-<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-<i class="ri-robot-fill text-secondary text-3xl"></i>
 </div>
-<h3 class="text-2xl font-bold mb-4" data-i18n="services.ai.title">革新的なAIアプリケーション</h3>
-<p class="text-gray-600 mb-6" data-i18n="services.ai.description">日常生活や学習を豊かにするための、AIを活用した6つのアプリケーションを開発・提供しています。最新のAI技術を駆使し、ユーザーの生活をより便利で豊かにします。</p>
-<ul class="space-y-3 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-secondary"></i>
+<div class="p-6">
+<div class="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+<i class="ri-robot-2-fill text-green-600 text-2xl"></i>
 </div>
-<span data-i18n="services.ai.features.f1">GP Teachers: AI英語学習アプリ</span>
+<h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="services.ai.title">革新的なAIアプリケーション</h3>
+<p class="text-gray-600 mb-5 text-sm leading-relaxed" data-i18n="services.ai.description">日常生活や学習を豊かにする6つのAIアプリケーションを開発・提供。最新AI技術で生活をより便利に。</p>
+<ul class="space-y-2 mb-5">
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-green-500 mr-2"></i>
+<span data-i18n="services.ai.features.f1">GP Teachers: AI英語学習</span>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-secondary"></i>
-</div>
-<span data-i18n="services.ai.features.f2">VoiceLink AI通訳: リアルタイム通訳アプリ</span>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-green-500 mr-2"></i>
+<span data-i18n="services.ai.features.f2">VoiceLink AI通訳</span>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-secondary"></i>
-</div>
-<span data-i18n="services.ai.features.f3">Word Blaster: 英単語学習ゲーム</span>
-</li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
-<i class="ri-check-line text-secondary"></i>
-</div>
-<span data-i18n="services.ai.features.f4">その他、ディベート練習や作業タイマーなど</span>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-green-500 mr-2"></i>
+<span data-i18n="services.ai.features.f3">Word Blaster</span>
 </li>
 </ul>
-<a href="apps.html" class="inline-block bg-secondary text-white px-6 py-3 !rounded-button font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap" data-i18n="services.ai.cta">アプリを見る</a>
+<a href="apps.html" class="inline-flex items-center justify-center w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg shadow-green-500/30 group">
+<span data-i18n="services.ai.cta">アプリを見る</span>
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+</a>
+</div>
+</div>
+
+<!-- 整備記録カード -->
+<div class="service-card premium-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in" style="--card-accent: #f59e0b; --card-accent-end: #d97706;">
+<div class="relative w-full" style="padding-bottom: 56.25%;">
+<img src="assets/images/camper/camper_electrical_system（大）.jpeg" alt="ハイエースディーゼルエンジン整備 - 専門的メンテナンス" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
+<div class="absolute top-4 left-4">
+<span class="premium-badge text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MAINTENANCE</span>
+</div>
+</div>
+<div class="p-6">
+<div class="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+<i class="ri-settings-4-fill text-amber-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">ハイエース整備記録</h3>
+<p class="text-gray-600 mb-5 text-sm leading-relaxed">20万km超のハイエース200系1KD-FTVエンジンの実整備記録。DIY費用とプロ依頼費用を徹底比較。故障コード診断も網羅。</p>
+<ul class="space-y-2 mb-5">
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-amber-500 mr-2"></i>
+<span>エラーコード対応表</span>
+</li>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-amber-500 mr-2"></i>
+<span>DIY vs プロ費用比較</span>
+</li>
+<li class="flex items-center text-sm">
+<i class="ri-check-double-line text-amber-500 mr-2"></i>
+<span>12項目の整備ガイド</span>
+</li>
+</ul>
+<a href="maintenance.html" class="inline-flex items-center justify-center w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-xl font-medium hover:from-amber-600 hover:to-amber-700 transition-all duration-300 shadow-lg shadow-amber-500/30 group">
+<span>整備記録を見る</span>
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+</a>
 </div>
 </div>
 </div>
 </div>
-</section>
-<!-- キャンピングカーDIYセクション -->
 </section>
 <!-- 代表者紹介セクション -->
 
@@ -658,13 +748,13 @@ transform: scale(1.1);
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
 <div class="container mx-auto px-4">
-<div class="grid md:grid-cols-4 gap-8 mb-8">
-<div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
+<div class="col-span-2 md:col-span-3 lg:col-span-1">
 <a href="index.html" class="flex items-center gap-4 mb-4 hover:opacity-80 transition-opacity duration-300">
 <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12">
 <span class="text-2xl text-white">TrailFusion AI</span>
 </a>
-<p class="text-gray-400 mb-4" data-i18n="footer.description">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+<p class="text-gray-400 mb-4 text-sm" data-i18n="footer.description">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
 <div class="flex space-x-3">
 <a href="https://www.youtube.com/@van_oasis" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition">
 <i class="ri-youtube-fill"></i>
@@ -679,16 +769,16 @@ transform: scale(1.1);
 </div>
 <div>
 <a href="camping.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block" data-i18n="footer.camping.title">キャンピングカー</a>
-<ul class="space-y-2">
-<li><a href="camping.html#tiktok" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.videos">DIY 製作の全工程を動画で公開</a></li>
-<li><a href="camping.html#gallery" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.gallery">完成例ギャラリー</a></li>
-<li><a href="camping.html#guide" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.guide">DIY キャンピングカー製作ガイド</a></li>
-<li><a href="キャンピングカー〈8ナンバー〉構造要件チェックリスト.pdf" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.requirements">キャンピングカー構造要件</a></li>
+<ul class="space-y-2 text-sm">
+<li><a href="camping.html#tiktok" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.videos">製作動画</a></li>
+<li><a href="camping.html#gallery" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.gallery">ギャラリー</a></li>
+<li><a href="camping.html#guide" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.guide">製作ガイド</a></li>
+<li><a href="キャンピングカー〈8ナンバー〉構造要件チェックリスト.pdf" class="text-gray-400 hover:text-white transition" data-i18n="footer.camping.items.requirements">構造要件</a></li>
 </ul>
 </div>
 <div>
 <a href="apps.html" class="text-lg font-bold mb-4 hover:text-gray-300 transition-colors duration-300 block" data-i18n="footer.apps">AIアプリ</a>
-<ul class="space-y-2">
+<ul class="space-y-2 text-sm">
 <li><a href="apps.html#gp-teachers" class="text-gray-400 hover:text-white transition">GP Teachers</a></li>
 <li><a href="apps.html#wood-golem" class="text-gray-400 hover:text-white transition">Wood Golem</a></li>
 <li><a href="apps.html#voicelink" class="text-gray-400 hover:text-white transition">VoiceLink AI通訳</a></li>
@@ -698,19 +788,23 @@ transform: scale(1.1);
 </ul>
 </div>
 <div>
+<a href="maintenance.html" class="text-lg font-bold mb-4 hover:text-amber-400 transition-colors duration-300 block text-amber-500">整備記録</a>
+<ul class="space-y-2 text-sm">
+<li><a href="maintenance.html#error-codes" class="text-gray-400 hover:text-white transition">エラーコード対応表</a></li>
+<li><a href="maintenance.html#overview-pdf" class="text-gray-400 hover:text-white transition">整備項目まとめ</a></li>
+<li><a href="maintenance.html#maintenance-list" class="text-gray-400 hover:text-white transition">整備全項目一覧</a></li>
+</ul>
+</div>
+<div>
 <h4 class="text-lg font-bold mb-4" data-i18n="footer.contact">お問い合わせ</h4>
-<ul class="space-y-2">
-
-
+<ul class="space-y-2 text-sm">
 <li class="flex items-start">
 <div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
 <i class="ri-mail-line"></i>
 </div>
 <span class="text-gray-400">trailfusionai@gmail.com</span>
 </li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
-
+</ul>
 </div>
 </div>
 <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
