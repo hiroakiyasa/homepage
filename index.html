@@ -48,6 +48,20 @@
 <!-- Tailwind CSS via CDN - for development/static sites -->
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#ff6b5b',secondary:'#3d5a80'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<!-- Immediate Video Autoplay Script -->
+<script>
+(function(){
+    function playVideo(v){
+        v.muted=true;v.defaultMuted=true;
+        v.setAttribute('muted','');v.setAttribute('playsinline','');
+        v.removeAttribute('controls');
+        v.play().catch(function(){setTimeout(function(){v.play().catch(function(){});},100);});
+    }
+    function init(v){v.addEventListener('loadedmetadata',function(){playVideo(v);});v.addEventListener('canplay',function(){playVideo(v);});if(v.readyState>=2)playVideo(v);}
+    new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(n){if(n.nodeName==='VIDEO')init(n);if(n.querySelectorAll)n.querySelectorAll('video').forEach(init);});});}).observe(document.documentElement,{childList:true,subtree:true});
+    document.querySelectorAll('video').forEach(init);
+})();
+</script>
 <!-- Preload critical resources -->
 <link rel="preload" href="assets/videos/a2ecd24a-6985-40d3-8cc8-8d3a0f0beb0c.mp4" as="video" type="video/mp4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -412,7 +426,7 @@ pointer-events: none;
 
 <!-- ヒーローセクション -->
 <section class="hero-section min-h-[60vh] md:min-h-screen flex items-center pt-16 relative overflow-hidden">
-<video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+<video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
 <source src="assets/videos/a2ecd24a-6985-40d3-8cc8-8d3a0f0beb0c.mp4" type="video/mp4">
 </video>
 <div class="hero-overlay absolute inset-0"></div>
@@ -1085,61 +1099,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Video Autoplay Script -->
-<script>
-(function() {
-    function forceAutoplay(video) {
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.removeAttribute('controls');
-        video.load();
-
-        function tryPlay() {
-            video.muted = true;
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    console.log('Video playing');
-                }).catch(function(e) {
-                    console.log('Autoplay retry...');
-                    setTimeout(tryPlay, 500);
-                });
-            }
-        }
-
-        tryPlay();
-        video.addEventListener('loadeddata', tryPlay);
-        video.addEventListener('canplay', tryPlay);
-        video.addEventListener('loadedmetadata', tryPlay);
-
-        setTimeout(tryPlay, 100);
-        setTimeout(tryPlay, 500);
-        setTimeout(tryPlay, 1000);
-        setTimeout(tryPlay, 2000);
-    }
-
-    document.querySelectorAll('video').forEach(forceAutoplay);
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('video').forEach(forceAutoplay);
-    });
-    window.addEventListener('load', function() {
-        document.querySelectorAll('video').forEach(forceAutoplay);
-    });
-
-    ['click', 'touchstart', 'scroll'].forEach(function(event) {
-        document.addEventListener(event, function() {
-            document.querySelectorAll('video').forEach(function(video) {
-                if (video.paused) {
-                    video.muted = true;
-                    video.play().catch(function(){});
-                }
-            });
-        }, { once: true, passive: true });
-    });
-})();
-</script>
 </body>
 </html>
