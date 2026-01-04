@@ -172,12 +172,21 @@ video {
     -webkit-appearance: none;
     appearance: none;
     -webkit-playsinline: true;
+    pointer-events: none;
 }
 video::before {
     display: none !important;
 }
 video::after {
     display: none !important;
+}
+/* 再生ボタン完全非表示 */
+video::-webkit-media-controls-overlay-enclosure {
+    display: none !important;
+}
+*::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 @keyframes iconBounce {
@@ -3691,6 +3700,44 @@ async function loadPDF(container) {
         if (loadingText) loadingText.textContent = 'PDF読み込みエラー';
     }
 }
+</script>
+
+<!-- Video Autoplay Script -->
+<script>
+(function() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(function(video) {
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.removeAttribute('controls');
+
+        function tryPlay() {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() {
+                    setTimeout(tryPlay, 100);
+                });
+            }
+        }
+
+        if (video.readyState >= 2) {
+            tryPlay();
+        } else {
+            video.addEventListener('loadeddata', tryPlay);
+            video.addEventListener('canplay', tryPlay);
+        }
+
+        document.addEventListener('click', function() {
+            if (video.paused) tryPlay();
+        }, { once: true });
+
+        document.addEventListener('touchstart', function() {
+            if (video.paused) tryPlay();
+        }, { once: true });
+    });
+})();
 </script>
 </body>
 </html>
