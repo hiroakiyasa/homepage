@@ -797,8 +797,8 @@ grid-row: span 1;
 
 <!-- Hero Section - ステップバイステップ形式 -->
 <section class="hero-section w-full py-20 md:py-32 min-h-[70vh] flex items-center relative overflow-hidden">
-  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-    <source src="document/camping/22d77f1e-5934-4755-bcf8-129464ffc8f0.MP4" type="video/mp4">
+  <video id="hero-video" autoplay loop muted playsinline webkit-playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="document/camping/camping-hero.mp4" type="video/mp4">
   </video>
   <div class="container mx-auto px-4 w-full relative z-10">
     <div class="max-w-3xl">
@@ -3705,37 +3705,62 @@ async function loadPDF(container) {
 <!-- Video Autoplay Script -->
 <script>
 (function() {
-    const videos = document.querySelectorAll('video');
-    videos.forEach(function(video) {
+    function forceAutoplay(video) {
         video.muted = true;
+        video.defaultMuted = true;
         video.setAttribute('muted', '');
         video.setAttribute('playsinline', '');
         video.setAttribute('webkit-playsinline', '');
         video.removeAttribute('controls');
+        video.load();
 
         function tryPlay() {
+            video.muted = true;
             const playPromise = video.play();
             if (playPromise !== undefined) {
-                playPromise.catch(function() {
-                    setTimeout(tryPlay, 100);
+                playPromise.then(function() {
+                    console.log('Video playing');
+                }).catch(function(e) {
+                    console.log('Autoplay failed, retrying...', e);
+                    setTimeout(tryPlay, 500);
                 });
             }
         }
 
-        if (video.readyState >= 2) {
-            tryPlay();
-        } else {
-            video.addEventListener('loadeddata', tryPlay);
-            video.addEventListener('canplay', tryPlay);
-        }
+        tryPlay();
+        video.addEventListener('loadeddata', tryPlay);
+        video.addEventListener('canplay', tryPlay);
+        video.addEventListener('loadedmetadata', tryPlay);
 
-        document.addEventListener('click', function() {
-            if (video.paused) tryPlay();
-        }, { once: true });
+        setTimeout(tryPlay, 100);
+        setTimeout(tryPlay, 500);
+        setTimeout(tryPlay, 1000);
+        setTimeout(tryPlay, 2000);
+    }
 
-        document.addEventListener('touchstart', function() {
-            if (video.paused) tryPlay();
-        }, { once: true });
+    // Run immediately
+    document.querySelectorAll('video').forEach(forceAutoplay);
+
+    // Run on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('video').forEach(forceAutoplay);
+    });
+
+    // Run on window load
+    window.addEventListener('load', function() {
+        document.querySelectorAll('video').forEach(forceAutoplay);
+    });
+
+    // Fallback on user interaction
+    ['click', 'touchstart', 'scroll'].forEach(function(event) {
+        document.addEventListener(event, function() {
+            document.querySelectorAll('video').forEach(function(video) {
+                if (video.paused) {
+                    video.muted = true;
+                    video.play().catch(function(){});
+                }
+            });
+        }, { once: true, passive: true });
     });
 })();
 </script>
