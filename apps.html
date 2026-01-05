@@ -58,27 +58,175 @@ body {
 font-family: 'Noto Sans JP', sans-serif;
 scroll-behavior: smooth;
 }
-.app-nav-button {
+
+/* Premium Design Styles */
+.premium-hero {
+background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+position: relative;
+overflow: hidden;
+}
+.premium-hero::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+animation: float-orbs 20s ease-in-out infinite;
+}
+@keyframes float-orbs {
+0%, 100% { transform: translate(0, 0) rotate(0deg); }
+25% { transform: translate(2%, 2%) rotate(5deg); }
+50% { transform: translate(-1%, 3%) rotate(-3deg); }
+75% { transform: translate(1%, -2%) rotate(2deg); }
+}
+
+/* Glass Morphism */
+.glass-card {
+background: rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 24px;
+}
+.glass-button {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
 transition: all 0.3s ease;
 }
-.app-nav-button:hover {
-transform: translateY(-5px);
+.glass-button:hover {
+background: rgba(255, 255, 255, 0.2);
+transform: translateY(-2px);
+box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
 }
-.app-section {
-scroll-margin-top: 100px;
+
+/* App Navigation */
+.app-nav-premium {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(20px);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
-.screenshot {
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
+.app-nav-item {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
 }
-.screenshot:hover {
-transform: scale(1.05);
+.app-nav-item::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 50%;
+width: 0;
+height: 3px;
+background: linear-gradient(90deg, #8b5cf6, #6366f1);
+border-radius: 2px;
+transition: all 0.3s ease;
+transform: translateX(-50%);
 }
+.app-nav-item:hover::after,
+.app-nav-item.active::after {
+width: 80%;
+}
+
+/* App Section Premium */
+.app-section-premium {
+position: relative;
+overflow: hidden;
+}
+.app-section-premium::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.02) 100%);
+pointer-events: none;
+}
+
+/* Screenshot Cards */
+.screenshot-premium {
+border-radius: 20px;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+transform: perspective(1000px) rotateY(0deg);
+}
+.screenshot-premium:hover {
+transform: perspective(1000px) rotateY(-5deg) translateY(-10px) scale(1.02);
+box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow Effects */
+.glow-violet {
+box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
+}
+.glow-text {
+text-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
+}
+
+/* Gradient Text */
+.gradient-text {
+background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+/* Fade In Animation */
+.fade-in-up {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-up.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* App Cards */
+.app-card {
+background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+border-radius: 24px;
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.app-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Feature List */
+.feature-item {
+transition: all 0.3s ease;
+}
+.feature-item:hover {
+transform: translateX(8px);
+}
+
+/* TikTok Embed */
 .tiktok-embed {
 width: 100%;
 max-width: 400px;
 margin: 0 auto;
 }
+
+/* Store Buttons */
+.store-button {
+transition: all 0.3s ease;
+}
+.store-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Margin */
+.app-section {
+scroll-margin-top: 140px;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 -webkit-appearance: none;
@@ -191,127 +339,275 @@ margin: 0;
   </div>
 </header>
 
-<!-- アプリナビゲーション -->
-<div class="bg-white shadow-md py-2 sm:py-4 sticky top-16 z-40 overflow-x-auto">
+<!-- プレミアムアプリナビゲーション -->
+<div class="app-nav-premium py-3 sm:py-4 sticky top-16 z-40 overflow-x-auto border-b border-gray-100">
 <div class="container mx-auto px-2 sm:px-4">
-<div class="flex sm:flex-wrap sm:justify-center gap-1 sm:gap-3 min-w-max sm:min-w-0">
-<a href="#gp-teachers" class="app-nav-button bg-blue-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<div class="flex sm:flex-wrap sm:justify-center gap-2 sm:gap-4 min-w-max sm:min-w-0">
+<a href="#gp-teachers" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md group-hover:shadow-blue-500/30 transition-shadow">
+<i class="ri-book-open-line text-sm"></i>
+</span>
 <span class="sm:hidden">GPTeachers</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.gpTeachers">GP Teachers</span>
 </a>
-<a href="#wood-golem" class="app-nav-button bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<a href="#wood-golem" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-green-600 hover:bg-green-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 text-white shadow-md group-hover:shadow-green-500/30 transition-shadow">
+<i class="ri-plant-line text-sm"></i>
+</span>
 <span class="sm:hidden">WoodGolem</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.woodGolem">Wood Golem</span>
 </a>
-<a href="#voicelink" class="app-nav-button bg-purple-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<a href="#voicelink" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-md group-hover:shadow-purple-500/30 transition-shadow">
+<i class="ri-mic-line text-sm"></i>
+</span>
 <span class="sm:hidden">VoiceLink</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.voicelink">VoiceLink AI通訳</span>
 </a>
-<a href="#word-blaster" class="app-nav-button bg-yellow-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<a href="#word-blaster" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-amber-600 hover:bg-amber-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-md group-hover:shadow-amber-500/30 transition-shadow">
+<i class="ri-rocket-line text-sm"></i>
+</span>
 <span class="sm:hidden">WordBlaster</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.wordBlaster">Word Blaster</span>
 </a>
-<a href="#debate-master" class="app-nav-button bg-red-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<a href="#debate-master" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-red-600 hover:bg-red-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-red-500 to-red-600 text-white shadow-md group-hover:shadow-red-500/30 transition-shadow">
+<i class="ri-chat-voice-line text-sm"></i>
+</span>
 <span class="sm:hidden">Debate</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.debateMaster">Debate Master</span>
 </a>
-<a href="#hacking-timer" class="app-nav-button bg-indigo-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-base shadow-md whitespace-nowrap">
+<a href="#hacking-timer" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
+<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md group-hover:shadow-indigo-500/30 transition-shadow">
+<i class="ri-timer-line text-sm"></i>
+</span>
 <span class="sm:hidden">HackingTimer</span>
 <span class="hidden sm:inline" data-i18n="apps.nav.hackingTimer">Hacking Timer</span>
 </a>
 </div>
 </div>
 </div>
-<!-- ヒーローセクション -->
-<section class="relative">
-<div class="w-full h-[300px] sm:h-[400px] md:h-[500px] relative overflow-hidden bg-gradient-to-br from-primary via-purple-600 to-secondary">
-<div class="container mx-auto px-4 h-full flex items-center relative z-10">
-<div class="max-w-2xl text-white">
-<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6" data-i18n="apps.hero.title">革新的なアプリで<br>あなたの可能性を広げる</h1>
-<p class="text-sm sm:text-base md:text-xl mb-4 sm:mb-8" data-i18n="apps.hero.description">TrailFusion AI は、AI 技術を活用した革新的なアプリケーションを開発しています。言語学習、ゲーム、生産性向上など、様々な分野で最先端のソリューションを提供しています。</p>
-<div class="flex flex-wrap gap-4">
-<a href="#gp-teachers" class="bg-white text-primary px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-button font-bold shadow-lg hover:bg-gray-100 transition whitespace-nowrap" data-i18n="apps.hero.cta">アプリを見る</a>
+<!-- プレミアムヒーローセクション -->
+<section class="premium-hero min-h-[500px] sm:min-h-[600px] md:min-h-[700px] relative flex items-center">
+<!-- 浮遊オーブ装飾 -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-20 left-10 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+<div class="absolute top-1/2 left-1/3 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+</div>
 
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<!-- バッジ -->
+<div class="inline-flex items-center gap-2 glass-button px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+<i class="ri-sparkle-fill text-violet-300"></i>
+<span>AI-Powered Applications</span>
+</div>
+
+<!-- メインタイトル -->
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+<span data-i18n="apps.hero.title">革新的なアプリで</span><br>
+<span class="gradient-text glow-text">あなたの可能性を広げる</span>
+</h1>
+
+<!-- 説明文 -->
+<p class="text-base sm:text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="apps.hero.description">
+TrailFusion AI は、AI 技術を活用した革新的なアプリケーションを開発しています。言語学習、ゲーム、生産性向上など、様々な分野で最先端のソリューションを提供しています。
+</p>
+
+<!-- CTAボタン -->
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<a href="#gp-teachers" class="glass-button px-8 py-4 rounded-xl text-white font-bold text-lg flex items-center gap-2 group">
+<span data-i18n="apps.hero.cta">アプリを見る</span>
+<i class="ri-arrow-down-line group-hover:translate-y-1 transition-transform"></i>
+</a>
+<a href="https://apps.apple.com/developer/id1672219014" target="_blank" class="bg-white/10 hover:bg-white/20 backdrop-blur px-8 py-4 rounded-xl text-white font-bold text-lg flex items-center gap-2 transition-all border border-white/20">
+<i class="ri-apple-fill"></i>
+<span>App Store</span>
+</a>
+</div>
+
+<!-- 統計セクション -->
+<div class="grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
+<div class="text-center">
+<div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">6</div>
+<div class="text-xs sm:text-sm text-white/60">アプリ数</div>
+</div>
+<div class="text-center">
+<div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">10+</div>
+<div class="text-xs sm:text-sm text-white/60">対応言語</div>
+</div>
+<div class="text-center">
+<div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">AI</div>
+<div class="text-xs sm:text-sm text-white/60">搭載</div>
 </div>
 </div>
+</div>
+</div>
+
+<!-- 下部波形デコレーション -->
+<div class="absolute bottom-0 left-0 right-0">
+<svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+<path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f9fafb"/>
+</svg>
+</div>
+</section>
+
+<!-- アプリ一覧カードセクション -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" data-i18n="apps.overview.title">すべてのアプリ</h2>
+<p class="text-gray-600 max-w-2xl mx-auto" data-i18n="apps.overview.description">革新的なAI技術を活用した6つのアプリケーション</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+<!-- GP Teachers Card -->
+<a href="#gp-teachers" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/40 transition-shadow">
+<i class="ri-book-open-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">GP Teachers</h3>
+<p class="text-xs sm:text-sm text-gray-500">AI英語学習</p>
+</a>
+<!-- Wood Golem Card -->
+<a href="#wood-golem" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg group-hover:shadow-green-500/40 transition-shadow">
+<i class="ri-plant-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">Wood Golem</h3>
+<p class="text-xs sm:text-sm text-gray-500">戦略パズル</p>
+</a>
+<!-- VoiceLink Card -->
+<a href="#voicelink" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-purple-500/40 transition-shadow">
+<i class="ri-mic-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">VoiceLink</h3>
+<p class="text-xs sm:text-sm text-gray-500">AI通訳</p>
+</a>
+<!-- Word Blaster Card -->
+<a href="#word-blaster" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center shadow-lg group-hover:shadow-amber-500/40 transition-shadow">
+<i class="ri-rocket-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">Word Blaster</h3>
+<p class="text-xs sm:text-sm text-gray-500">英単語ゲーム</p>
+</a>
+<!-- Debate Master Card -->
+<a href="#debate-master" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg group-hover:shadow-red-500/40 transition-shadow">
+<i class="ri-chat-voice-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">Debate Master</h3>
+<p class="text-xs sm:text-sm text-gray-500">AIディベート</p>
+</a>
+<!-- Hacking Timer Card -->
+<a href="#hacking-timer" class="app-card p-4 sm:p-6 text-center group cursor-pointer">
+<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-indigo-500/40 transition-shadow">
+<i class="ri-timer-line text-white text-2xl sm:text-3xl"></i>
+</div>
+<h3 class="font-bold text-gray-900 mb-1 text-sm sm:text-base">Hacking Timer</h3>
+<p class="text-xs sm:text-sm text-gray-500">時間管理</p>
+</a>
 </div>
 </div>
 </section>
+
 <!-- GP Teachers -->
-<section id="gp-teachers" class="py-20 app-section bg-gradient-to-b from-blue-400/10 to-green-400/10 relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.gpTeachers.badge">AI 英語学習</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.gpTeachers.appName">GP Teachers</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.gpTeachers.description">AI 英語パートナーとリアルな練習ができる革新的な英語学習アプリです。いつでもどこでも、ユニークな先生たちと対話しながら実践的な英会話能力を高め、英語力を向上させましょう。</p>
+<section id="gp-teachers" class="py-20 app-section app-section-premium bg-gradient-to-b from-blue-50 via-white to-green-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-green-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-blue-500/30">
+<i class="ri-book-open-line"></i>
+<span data-i18n="apps.gpTeachers.badge">AI 英語学習</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.gpTeachers.appName">GP Teachers</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.gpTeachers.description">AI 英語パートナーとリアルな練習ができる革新的な英語学習アプリです。いつでもどこでも、ユニークな先生たちと対話しながら実践的な英会話能力を高め、英語力を向上させましょう。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div>
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/gp-teachers-screenshot1.jpg" alt="GP Teachers スクリーンショット 1" class="w-full h-auto object-top">
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- スクリーンショット -->
+<div class="fade-in-up">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/gp-teachers-screenshot1.jpg" alt="GP Teachers スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/gp-teachers-screenshot2.jpg" alt="GP Teachers スクリーンショット 2" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/gp-teachers-screenshot2.jpg" alt="GP Teachers スクリーンショット 2" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/gp-teachers-screenshot3.jpg" alt="GP Teachers スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/gp-teachers-screenshot3.jpg" alt="GP Teachers スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
-<div>
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.gpTeachers.title">AI と一緒に英語を学ぼう</h3>
+
+<!-- コンテンツ -->
+<div class="fade-in-up">
+<div class="app-card p-6 sm:p-8 mb-6">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.gpTeachers.title">AI と一緒に英語を学ぼう</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.gpTeachers.features.0">ユニークな性格を持つ AI 英語教師と自然な会話</p>
+<p class="text-gray-700" data-i18n="apps.gpTeachers.features.0">ユニークな性格を持つ AI 英語教師と自然な会話</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.gpTeachers.features.1">発音評価と詳細なフィードバック機能</p>
+<p class="text-gray-700" data-i18n="apps.gpTeachers.features.1">発音評価と詳細なフィードバック機能</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.gpTeachers.features.2">日常会話からビジネス英語まで幅広いシチュエーション</p>
+<p class="text-gray-700" data-i18n="apps.gpTeachers.features.2">日常会話からビジネス英語まで幅広いシチュエーション</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.gpTeachers.features.3">楽しく続けられる英単語ゲームと学習トラッキング</p>
+<p class="text-gray-700" data-i18n="apps.gpTeachers.features.3">楽しく続けられる英単語ゲームと学習トラッキング</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4 mb-8">
-<a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3 mb-6">
+<a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" class="store-button flex items-center bg-black text-white px-6 py-3 rounded-xl font-medium">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.apple">App Store</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-lg mb-8">
+
+<!-- 法的リンク -->
+<div class="bg-blue-50/80 backdrop-blur border border-blue-100 p-4 rounded-xl">
 <div class="flex items-center gap-3">
-<i class="ri-shield-check-line text-2xl text-blue-600"></i>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+<i class="ri-shield-check-line text-xl"></i>
+</div>
 <div class="flex-grow">
-<p class="text-gray-700 text-sm mb-2"><strong>プライバシーポリシーと利用規約 / Privacy Policy & Terms</strong></p>
-<p class="text-gray-600 text-xs mb-3">サブスクリプション規約を含む詳細情報はこちら</p>
-<a href="gpteachers-legal.html" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-md">
-<i class="ri-file-text-line mr-2"></i>
-<span>詳細を見る / View Details</span>
+<p class="text-gray-700 text-sm font-medium mb-1">プライバシーポリシーと利用規約</p>
+<a href="gpteachers-legal.html" target="_blank" class="text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1 transition">
+<span>詳細を見る</span>
+<i class="ri-arrow-right-s-line"></i>
 </a>
 </div>
 </div>
 </div>
-<div class="tiktok-embed rounded-lg overflow-hidden shadow-lg">
+</div>
+
+<!-- TikTok埋め込み -->
+<div class="tiktok-embed rounded-2xl overflow-hidden shadow-2xl">
 <iframe src="https://www.tiktok.com/embed/v2/7508270118728781063?autoplay=1&loop=1" style="width: 100%; height: 700px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
@@ -319,67 +615,83 @@ margin: 0;
 </div>
 </section>
 <!-- Wood Golem -->
-<section id="wood-golem" class="py-20 bg-gradient-to-b from-green-400/10 to-purple-400/10 app-section relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.woodGolem.badge">ストラテジーゲーム</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.woodGolem.appName">Wood Golem</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.woodGolem.description">棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムと一緒に棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。</p>
+<section id="wood-golem" class="py-20 app-section app-section-premium bg-gradient-to-b from-green-50 via-white to-purple-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 left-0 w-96 h-96 bg-green-200/30 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-200/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-green-500/30">
+<i class="ri-plant-line"></i>
+<span data-i18n="apps.woodGolem.badge">ストラテジーゲーム</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.woodGolem.appName">Wood Golem</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.woodGolem.description">棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムと一緒に棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div class="order-2 md:order-1">
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.woodGolem.title">森の冒険で論理的思考力を鍛える</h3>
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- コンテンツ -->
+<div class="fade-in-up order-2 lg:order-1">
+<div class="app-card p-6 sm:p-8 mb-6">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.woodGolem.title">森の冒険で論理的思考力を鍛える</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.woodGolem.features.0">美しい森の世界を舞台にした棒取りパズル</p>
+<p class="text-gray-700" data-i18n="apps.woodGolem.features.0">美しい森の世界を舞台にした棒取りパズル</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.woodGolem.features.1">100 以上のレベルと増加する難易度</p>
+<p class="text-gray-700" data-i18n="apps.woodGolem.features.1">100 以上のレベルと増加する難易度</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.woodGolem.features.2">かわいいウッドゴーレムキャラクターとストーリー</p>
+<p class="text-gray-700" data-i18n="apps.woodGolem.features.2">かわいいウッドゴーレムキャラクターとストーリー</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.woodGolem.features.3">論理的思考力と戦略的思考を育む教育的要素</p>
+<p class="text-gray-700" data-i18n="apps.woodGolem.features.3">論理的思考力と戦略的思考を育む教育的要素</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4 mb-8">
-<a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3 mb-6">
+<a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" class="store-button flex items-center bg-black text-white px-6 py-3 rounded-xl font-medium">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.apple">App Store</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed rounded-lg overflow-hidden shadow-lg">
+</div>
+
+<!-- TikTok埋め込み -->
+<div class="tiktok-embed rounded-2xl overflow-hidden shadow-2xl">
 <iframe src="https://www.tiktok.com/embed/v2/7456950409228307719?autoplay=1&loop=1" style="width: 100%; height: 700px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
-<div class="order-1 md:order-2">
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/wood-golem-screenshot1.jpg" alt="Wood Golem スクリーンショット 1" class="w-full h-auto object-top">
+
+<!-- スクリーンショット -->
+<div class="fade-in-up order-1 lg:order-2">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/wood-golem-screenshot1.jpg" alt="Wood Golem スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/wood-golem-screenshot2.jpg" alt="Wood Golem スクリーンショット 2" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/wood-golem-screenshot2.jpg" alt="Wood Golem スクリーンショット 2" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/wood-golem-screenshot3.jpg" alt="Wood Golem スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/wood-golem-screenshot3.jpg" alt="Wood Golem スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
@@ -387,67 +699,83 @@ margin: 0;
 </div>
 </section>
 <!-- VoiceLink AI通訳 -->
-<section id="voicelink" class="py-20 bg-gradient-to-b from-purple-400/10 to-yellow-400/10 app-section relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-purple-100 text-purple-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.voiceLink.badge">AI 通訳</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.voiceLink.appName">VoiceLink AI通訳</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.voiceLink.description">最新 AI を搭載したリアルタイム音声翻訳アプリです。10 言語に対応し、自然で正確な翻訳を瞬時に実現。文脈を理解する高精度な音声認識と会話の要約機能も備えています。</p>
+<section id="voicelink" class="py-20 app-section app-section-premium bg-gradient-to-b from-purple-50 via-white to-amber-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-purple-500/30">
+<i class="ri-mic-line"></i>
+<span data-i18n="apps.voiceLink.badge">AI 通訳</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.voiceLink.appName">VoiceLink AI通訳</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.voiceLink.description">最新 AI を搭載したリアルタイム音声翻訳アプリです。10 言語に対応し、自然で正確な翻訳を瞬時に実現。文脈を理解する高精度な音声認識と会話の要約機能も備えています。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div>
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/voicelink-screenshot1.jpg" alt="VoiceLink スクリーンショット 1" class="w-full h-auto object-top">
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- スクリーンショット -->
+<div class="fade-in-up">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/voicelink-screenshot1.jpg" alt="VoiceLink スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/voicelink-screenshot2.jpg" alt="VoiceLink スクリーンショット 2" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/voicelink-screenshot2.jpg" alt="VoiceLink スクリーンショット 2" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/voicelink-screenshot3.jpg" alt="VoiceLink スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/voicelink-screenshot3.jpg" alt="VoiceLink スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
-<div>
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.voiceLink.title">言語の壁を取り払うAI通訳</h3>
+
+<!-- コンテンツ -->
+<div class="fade-in-up">
+<div class="app-card p-6 sm:p-8 mb-6">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.voiceLink.title">言語の壁を取り払うAI通訳</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.voiceLink.features.0">10 言語に対応したリアルタイム音声翻訳</p>
+<p class="text-gray-700" data-i18n="apps.voiceLink.features.0">10 言語に対応したリアルタイム音声翻訳</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.voiceLink.features.1">文脈を理解する高精度 AI 翻訳エンジン</p>
+<p class="text-gray-700" data-i18n="apps.voiceLink.features.1">文脈を理解する高精度 AI 翻訳エンジン</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.voiceLink.features.2">会話の要約機能とテキスト保存</p>
+<p class="text-gray-700" data-i18n="apps.voiceLink.features.2">会話の要約機能とテキスト保存</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.voiceLink.features.3">オフラインモードと旅行に便利な機能</p>
+<p class="text-gray-700" data-i18n="apps.voiceLink.features.3">オフラインモードと旅行に便利な機能</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4 mb-8">
-<a href="#" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3 mb-6">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.comingSoon">準備中</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed rounded-lg overflow-hidden shadow-lg">
+</div>
+
+<!-- TikTok埋め込み -->
+<div class="tiktok-embed rounded-2xl overflow-hidden shadow-2xl">
 <iframe src="https://www.tiktok.com/embed/v2/7512851452679752968?autoplay=1&loop=1" style="width: 100%; height: 700px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
@@ -455,67 +783,83 @@ margin: 0;
 </div>
 </section>
 <!-- Word Blaster -->
-<section id="word-blaster" class="py-20 bg-gradient-to-b from-yellow-400/10 to-red-400/10 app-section relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-yellow-100 text-yellow-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.wordBlaster.badge">英単語ゲーム</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.wordBlaster.appName">Word Blaster</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.wordBlaster.description">宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。楽しみながらエキサイティングに英単語力を向上させることができます。</p>
+<section id="word-blaster" class="py-20 app-section app-section-premium bg-gradient-to-b from-amber-50 via-white to-red-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 left-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-red-200/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-amber-500/30">
+<i class="ri-rocket-line"></i>
+<span data-i18n="apps.wordBlaster.badge">英単語ゲーム</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.wordBlaster.appName">Word Blaster</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.wordBlaster.description">宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。楽しみながらエキサイティングに英単語力を向上させることができます。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div class="order-2 md:order-1">
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.wordBlaster.title">宇宙で英単語を撃ち落とせ!</h3>
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- コンテンツ -->
+<div class="fade-in-up order-2 lg:order-1">
+<div class="app-card p-6 sm:p-8 mb-6">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.wordBlaster.title">宇宙で英単語を撃ち落とせ!</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.wordBlaster.features.0">宇宙を舞台にしたエキサイティングなシューティングゲーム</p>
+<p class="text-gray-700" data-i18n="apps.wordBlaster.features.0">宇宙を舞台にしたエキサイティングなシューティングゲーム</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.wordBlaster.features.1">初級から上級まで、レベル別の英単語学習</p>
+<p class="text-gray-700" data-i18n="apps.wordBlaster.features.1">初級から上級まで、レベル別の英単語学習</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.wordBlaster.features.2">ランキングシステムで友達と競争</p>
+<p class="text-gray-700" data-i18n="apps.wordBlaster.features.2">ランキングシステムで友達と競争</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.wordBlaster.features.3">単語の発音と意味を学びながらゲームを楽しめる</p>
+<p class="text-gray-700" data-i18n="apps.wordBlaster.features.3">単語の発音と意味を学びながらゲームを楽しめる</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4 mb-8">
-<a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3 mb-6">
+<a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" class="store-button flex items-center bg-black text-white px-6 py-3 rounded-xl font-medium">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.apple">App Store</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
-<div class="tiktok-embed rounded-lg overflow-hidden shadow-lg">
+</div>
+
+<!-- TikTok埋め込み -->
+<div class="tiktok-embed rounded-2xl overflow-hidden shadow-2xl">
 <iframe src="https://www.tiktok.com/embed/v2/7506530494054436103?autoplay=1&loop=1" style="width: 100%; height: 700px; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
-<div class="order-1 md:order-2">
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/word-blaster-screenshot1.jpg" alt="Word Blaster スクリーンショット 1" class="w-full h-auto object-top">
+
+<!-- スクリーンショット -->
+<div class="fade-in-up order-1 lg:order-2">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/word-blaster-screenshot1.jpg" alt="Word Blaster スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/word-blaster-screenshot2.jpg" alt="Word Blaster スクリーンショット 2" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/word-blaster-screenshot2.jpg" alt="Word Blaster スクリーンショット 2" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/word-blaster-screenshot3.jpg" alt="Word Blaster スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/word-blaster-screenshot3.jpg" alt="Word Blaster スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
@@ -523,145 +867,191 @@ margin: 0;
 </div>
 </section>
 <!-- Debate Master -->
-<section id="debate-master" class="py-20 bg-gradient-to-b from-red-400/10 to-blue-400/10 app-section relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.debateMaster.badge">AI ディベート</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.debateMaster.appName">Debate Master - AI対戦</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.debateMaster.description">AI 論破王に挑戦し、最強のディベートスキルを手に入れるためのアプリです。様々なトピックで AI と議論を交わし、論理的思考力と説得力を鍛えましょう。</p>
+<section id="debate-master" class="py-20 app-section app-section-premium bg-gradient-to-b from-red-50 via-white to-indigo-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-red-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-red-500/30">
+<i class="ri-chat-voice-line"></i>
+<span data-i18n="apps.debateMaster.badge">AI ディベート</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.debateMaster.appName">Debate Master - AI対戦</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.debateMaster.description">AI 論破王に挑戦し、最強のディベートスキルを手に入れるためのアプリです。様々なトピックで AI と議論を交わし、論理的思考力と説得力を鍛えましょう。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div>
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/debate-master-screenshot1.jpg" alt="Debate Master スクリーンショット 1" class="w-full h-auto object-top">
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- スクリーンショット -->
+<div class="fade-in-up">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/debate-master-screenshot1.jpg" alt="Debate Master スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/debate-master-screenshot2.jpg" alt="Debate Master スクリーンショット 2" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/debate-master-screenshot2.jpg" alt="Debate Master スクリーンショット 2" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/debate-master-screenshot3.jpg" alt="Debate Master スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/debate-master-screenshot3.jpg" alt="Debate Master スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
-<div>
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.debateMaster.title">AIと議論して論理的思考力を鍛える</h3>
+
+<!-- コンテンツ -->
+<div class="fade-in-up">
+<div class="app-card p-6 sm:p-8">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.debateMaster.title">AIと議論して論理的思考力を鍛える</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.debateMaster.features.0">高度な AI による議論相手</p>
+<p class="text-gray-700" data-i18n="apps.debateMaster.features.0">高度な AI による議論相手</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.debateMaster.features.1">100 以上の多様なディベートトピック</p>
+<p class="text-gray-700" data-i18n="apps.debateMaster.features.1">100 以上の多様なディベートトピック</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.debateMaster.features.2">詳細な分析とフィードバック機能</p>
+<p class="text-gray-700" data-i18n="apps.debateMaster.features.2">詳細な分析とフィードバック機能</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.debateMaster.features.3">論理的思考力と説得力を鍛える実践的なトレーニング</p>
+<p class="text-gray-700" data-i18n="apps.debateMaster.features.3">論理的思考力と説得力を鍛える実践的なトレーニング</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4">
-<a href="#" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.comingSoon">準備中</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Hacking Timer -->
-<section id="hacking-timer" class="py-20 bg-gradient-to-b from-blue-400/10 to-red-400/10 app-section relative">
-<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-200 to-transparent shadow-sm"></div>
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<span class="inline-block bg-indigo-100 text-indigo-600 px-4 py-1 rounded-full text-sm font-medium mb-3" data-i18n="apps.hackingTimer.badge">生産性向上</span>
-<h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="apps.hackingTimer.appName">Hacking Timer</h2>
-<p class="text-gray-600 max-w-3xl mx-auto" data-i18n="apps.hackingTimer.description">Apple Watch で集中力をハックするためのカスタマイズ可能なインターバルタイマーです。生産性を最大化し、効率的な時間管理を実現します。</p>
+<section id="hacking-timer" class="py-20 app-section app-section-premium bg-gradient-to-b from-indigo-50 via-white to-gray-50 relative overflow-hidden">
+<!-- 背景装飾 -->
+<div class="absolute top-0 left-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-gray-200/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center mb-12 fade-in-up">
+<span class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium mb-4 shadow-lg shadow-indigo-500/30">
+<i class="ri-timer-line"></i>
+<span data-i18n="apps.hackingTimer.badge">生産性向上</span>
+</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900" data-i18n="apps.hackingTimer.appName">Hacking Timer</h2>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg" data-i18n="apps.hackingTimer.description">Apple Watch で集中力をハックするためのカスタマイズ可能なインターバルタイマーです。生産性を最大化し、効率的な時間管理を実現します。</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-<div class="order-2 md:order-1">
-<h3 class="text-2xl font-bold mb-4" data-i18n="apps.hackingTimer.title">時間管理を最適化する Apple Watch アプリ</h3>
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- コンテンツ -->
+<div class="fade-in-up order-2 lg:order-1">
+<div class="app-card p-6 sm:p-8">
+<h3 class="text-2xl font-bold mb-6 text-gray-900" data-i18n="apps.hackingTimer.title">時間管理を最適化する Apple Watch アプリ</h3>
 <ul class="space-y-4 mb-6">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.hackingTimer.features.0">カスタマイズ可能なインターバルタイマー</p>
+<p class="text-gray-700" data-i18n="apps.hackingTimer.features.0">カスタマイズ可能なインターバルタイマー</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.hackingTimer.features.1">Apple Watch 完全対応</p>
+<p class="text-gray-700" data-i18n="apps.hackingTimer.features.1">Apple Watch 完全対応</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.hackingTimer.features.2">詳細な生産性分析とレポート</p>
+<p class="text-gray-700" data-i18n="apps.hackingTimer.features.2">詳細な生産性分析とレポート</p>
 </li>
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mt-1 mr-3">
+<li class="feature-item flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p data-i18n="apps.hackingTimer.features.3">ポモドーロテクニックなど様々な時間管理手法に対応</p>
+<p class="text-gray-700" data-i18n="apps.hackingTimer.features.3">ポモドーロテクニックなど様々な時間管理手法に対応</p>
 </li>
 </ul>
-<div class="flex flex-wrap gap-4">
-<a href="#" class="flex items-center bg-black text-white px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+
+<!-- ストアボタン -->
+<div class="flex flex-wrap gap-3">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-apple-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.comingSoon">準備中</span>
 </a>
-<a href="#" class="flex items-center bg-gray-200 text-gray-700 px-5 py-2 rounded-button whitespace-nowrap opacity-70 cursor-not-allowed">
+<a href="#" class="flex items-center bg-gray-100 text-gray-400 px-6 py-3 rounded-xl font-medium cursor-not-allowed">
 <i class="ri-google-play-fill text-xl mr-2"></i>
 <span data-i18n="apps.store.google">準備中</span>
 </a>
 </div>
 </div>
-<div class="order-1 md:order-2">
-<div class="grid grid-cols-2 gap-4">
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/hacking-timer-screenshot1.jpg" alt="Hacking Timer スクリーンショット 1" class="w-full h-auto object-top">
 </div>
-<div class="screenshot rounded-lg overflow-hidden">
-<img src="assets/images/hacking-timer-screenshot2.jpg" alt="Hacking Timer スクリーンショット 2" class="w-full h-auto object-top">
+
+<!-- スクリーンショット -->
+<div class="fade-in-up order-1 lg:order-2">
+<div class="grid grid-cols-3 gap-3 sm:gap-4">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/hacking-timer-screenshot1.jpg" alt="Hacking Timer スクリーンショット 1" class="w-full h-auto">
 </div>
-<div class="screenshot rounded-lg overflow-hidden col-span-2">
-<img src="assets/images/hacking-timer-screenshot3.jpg" alt="Hacking Timer スクリーンショット 3" class="w-full h-auto object-top">
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/hacking-timer-screenshot2.jpg" alt="Hacking Timer スクリーンショット 2" class="w-full h-auto">
+</div>
+<div class="screenshot-premium overflow-hidden transform hover:z-10">
+<img src="assets/images/hacking-timer-screenshot3.jpg" alt="Hacking Timer スクリーンショット 3" class="w-full h-auto">
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- CTA セクション -->
-<section class="py-20 bg-primary text-white">
-<div class="container mx-auto px-4 text-center">
-<h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="apps.cta.title">革新的なアプリで可能性を広げよう</h2>
-<p class="text-xl mb-10 max-w-3xl mx-auto" data-i18n="apps.cta.description">TrailFusion AI のアプリケーションは、AI 技術を活用して言語学習、ゲーム、生産性向上など様々な分野で革新的なソリューションを提供しています。新しいアプリの情報をいち早くお届けします。</p>
-<div class="max-w-md mx-auto">
-<form class="flex flex-col sm:flex-row gap-4">
-<input type="email" placeholder="メールアドレスを入力" class="flex-grow px-4 py-3 rounded-button border-none text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" data-i18n-placeholder="apps.cta.emailPlaceholder">
-<button type="submit" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-button font-bold transition whitespace-nowrap" data-i18n="apps.cta.registerButton">登録する</button>
+<!-- プレミアムCTAセクション -->
+<section class="py-24 premium-hero relative overflow-hidden">
+<!-- 浮遊オーブ装飾 -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-10 right-20 w-48 h-48 bg-violet-500/20 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-10 left-20 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+</div>
+
+<div class="container mx-auto px-4 text-center relative z-10">
+<div class="max-w-3xl mx-auto">
+<span class="inline-flex items-center gap-2 glass-button px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+<i class="ri-notification-3-line text-violet-300"></i>
+<span>最新情報をお届け</span>
+</span>
+
+<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white" data-i18n="apps.cta.title">
+革新的なアプリで<br><span class="gradient-text">可能性を広げよう</span>
+</h2>
+
+<p class="text-lg md:text-xl mb-10 text-white/80 leading-relaxed" data-i18n="apps.cta.description">TrailFusion AI のアプリケーションは、AI 技術を活用して言語学習、ゲーム、生産性向上など様々な分野で革新的なソリューションを提供しています。新しいアプリの情報をいち早くお届けします。</p>
+
+<div class="max-w-lg mx-auto">
+<form class="flex flex-col sm:flex-row gap-3">
+<input type="email" placeholder="メールアドレスを入力" class="flex-grow px-6 py-4 rounded-xl border-none bg-white/10 backdrop-blur text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-500 transition" data-i18n-placeholder="apps.cta.emailPlaceholder">
+<button type="submit" class="bg-gradient-to-r from-violet-500 to-indigo-500 hover:from-violet-600 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 whitespace-nowrap" data-i18n="apps.cta.registerButton">登録する</button>
 </form>
+<p class="text-white/50 text-sm mt-4">いつでも配信停止できます</p>
+</div>
 </div>
 </div>
 </section>
@@ -775,6 +1165,33 @@ behavior: 'smooth'
 });
 });
 </script>
+
+<!-- Intersection Observer for fade-in animations -->
+<script id="fade-in-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in-up');
+
+const observerOptions = {
+root: null,
+rootMargin: '0px 0px -100px 0px',
+threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+});
+</script>
+
 <script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
 const menuButton = document.getElementById('mobile-menu-toggle');
