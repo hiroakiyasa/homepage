@@ -1065,44 +1065,147 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <span>ドキュメント正規化ツール</span>
 </span>
 <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900">Normalize</h2>
-<p class="text-gray-600 max-w-3xl mx-auto text-lg">PDF・Word・Excel・PowerPointを正規化し、AIに最適なJSON形式に変換するデスクトップアプリケーション。PaddleOCRによる高精度な日本語OCRに対応し、画像抽出も自動で行います。</p>
+<p class="text-gray-600 max-w-3xl mx-auto text-lg">非構造化ドキュメントを、AIが活用可能な「資産」へ変換する。眠っている社内ドキュメントを「AIが活用できる知識」へと変えます。</p>
 </div>
 
-<div class="grid lg:grid-cols-2 gap-12 items-center">
-<!-- コンテンツ -->
+<!-- アプリスクリーンショット -->
+<div class="mb-16 fade-in-up">
+<div class="max-w-5xl mx-auto">
+<img src="assets/images/normalize-screenshot.png" alt="Normalize アプリ画面" class="w-full rounded-2xl shadow-2xl border border-gray-200">
+</div>
+</div>
+
+<!-- 課題セクション -->
+<div class="mb-16 fade-in-up">
+<div class="app-card p-6 sm:p-8">
+<h3 class="text-2xl font-bold mb-6 text-gray-900 text-center">課題：AIは社内ドキュメントをそのまま読めない</h3>
+<p class="text-gray-600 text-center mb-8">ChatGPTやCopilot導入の最大の障壁は、データの「非構造化」にあります。</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-gray-50 p-4 rounded-xl">
+<div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-3">
+<i class="ri-file-list-3-line text-2xl text-violet-600"></i>
+</div>
+<h4 class="font-bold text-gray-900 mb-2">形式がバラバラ</h4>
+<p class="text-sm text-gray-600">PDF、Word、Excel、PowerPointなど、社内には統一されていない形式のファイルが散乱しています。</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-xl">
+<div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-3">
+<i class="ri-image-line text-2xl text-violet-600"></i>
+</div>
+<h4 class="font-bold text-gray-900 mb-2">画像内のテキスト</h4>
+<p class="text-sm text-gray-600">スキャンされたPDFや写真として貼り付けられた文字情報は、通常のテキスト抽出では読み取れません。</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-xl">
+<div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-3">
+<i class="ri-layout-line text-2xl text-violet-600"></i>
+</div>
+<h4 class="font-bold text-gray-900 mb-2">レイアウト情報の喪失</h4>
+<p class="text-sm text-gray-600">単純なテキスト抽出を行うと、表の構造や段組みが崩れ、意味が通じないデータになってしまいます。</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-xl">
+<div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-3">
+<i class="ri-file-info-line text-2xl text-violet-600"></i>
+</div>
+<h4 class="font-bold text-gray-900 mb-2">メタデータの欠落</h4>
+<p class="text-sm text-gray-600">ファイル名、ページ番号、作成日時などの重要なコンテキスト情報が、変換過程で失われがちです。</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 解決策セクション -->
+<div class="mb-16 fade-in-up">
+<div class="app-card p-6 sm:p-8 bg-gradient-to-br from-violet-50 to-indigo-50">
+<h3 class="text-2xl font-bold mb-6 text-gray-900 text-center">解決策：正規化による「構造化データ」への変換</h3>
+<p class="text-gray-600 text-center mb-8">画像、表、メタデータを保持したまま、AIが理解しやすいJSON形式に統一します。</p>
+<div class="flex flex-col lg:flex-row items-center justify-center gap-6">
+<div class="text-center">
+<div class="flex flex-wrap justify-center gap-2 mb-2">
+<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">PDF</span>
+<span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Word</span>
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Excel</span>
+<span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">PowerPoint</span>
+</div>
+<p class="text-sm text-gray-500">入力ファイル</p>
+</div>
+<div class="text-4xl text-violet-500">
+<i class="ri-arrow-right-line hidden lg:block"></i>
+<i class="ri-arrow-down-line lg:hidden"></i>
+</div>
+<div class="bg-gradient-to-r from-violet-500 to-indigo-500 text-white px-6 py-4 rounded-xl shadow-lg">
+<div class="flex items-center gap-3">
+<i class="ri-cpu-line text-2xl"></i>
+<div>
+<p class="font-bold">正規化エンジン</p>
+<p class="text-xs opacity-80">Parsing + OCR + Structuring</p>
+</div>
+</div>
+</div>
+<div class="text-4xl text-violet-500">
+<i class="ri-arrow-right-line hidden lg:block"></i>
+<i class="ri-arrow-down-line lg:hidden"></i>
+</div>
+<div class="text-center">
+<div class="bg-gray-900 text-green-400 px-4 py-3 rounded-lg font-mono text-sm mb-2">
+<span class="text-gray-500">{</span> "chunks", "metadata" <span class="text-gray-500">}</span>
+</div>
+<p class="text-sm text-gray-500">JSON + 画像ファイル</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 機能詳細 -->
+<div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+<!-- 左側：機能リスト -->
 <div class="fade-in-up">
 <div class="app-card p-6 sm:p-8 mb-6">
-<h3 class="text-2xl font-bold mb-6 text-gray-900">ドキュメントをAIに最適化</h3>
+<h3 class="text-2xl font-bold mb-6 text-gray-900">主要機能</h3>
 <ul class="space-y-4 mb-6">
 <li class="feature-item flex items-start">
 <div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p class="text-gray-700">PDF、Word、Excel、PowerPointなどマルチフォーマット対応</p>
+<div>
+<p class="text-gray-900 font-medium">マルチフォーマット対応</p>
+<p class="text-sm text-gray-600">PDF、Word、Excel、PowerPoint、Outlook全てに対応</p>
+</div>
 </li>
 <li class="feature-item flex items-start">
 <div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p class="text-gray-700">PaddleOCRによる高精度な日本語OCR処理</p>
+<div>
+<p class="text-gray-900 font-medium">OCR統合</p>
+<p class="text-sm text-gray-600">Tesseract OCRによる日本語+英語の画像内テキスト抽出</p>
+</div>
 </li>
 <li class="feature-item flex items-start">
 <div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p class="text-gray-700">テキストと関連画像を自動抽出・整理</p>
+<div>
+<p class="text-gray-900 font-medium">構造保持</p>
+<p class="text-sm text-gray-600">表やレイアウトの情報をHTMLテーブルとして保存</p>
+</div>
 </li>
 <li class="feature-item flex items-start">
 <div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p class="text-gray-700">SharePoint連携でクラウドドキュメントも処理可能</p>
+<div>
+<p class="text-gray-900 font-medium">メタデータ豊富</p>
+<p class="text-sm text-gray-600">ページ番号やファイル情報を記録、テキストと画像を自動紐付け</p>
+</div>
 </li>
 <li class="feature-item flex items-start">
 <div class="w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 text-white mr-4 flex-shrink-0 shadow-md">
 <i class="ri-check-line"></i>
 </div>
-<p class="text-gray-700">プレミアムダークテーマの美しいUI</p>
+<div>
+<p class="text-gray-900 font-medium">SharePoint連携</p>
+<p class="text-sm text-gray-600">MFA認証対応、クラウドドキュメントを直接処理・アップロード</p>
+</div>
 </li>
 </ul>
 </div>
@@ -1154,54 +1257,147 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 </details>
 </div>
 
-<!-- アプリプレビュー -->
+<!-- 右側：活用シーン -->
 <div class="fade-in-up">
-<div class="bg-gradient-to-br from-violet-900 to-indigo-900 p-6 rounded-2xl shadow-2xl">
-<div class="bg-gray-900 rounded-lg p-4 shadow-inner">
-<div class="flex items-center gap-2 mb-4">
-<div class="w-3 h-3 rounded-full bg-red-500"></div>
-<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-<div class="w-3 h-3 rounded-full bg-green-500"></div>
-<span class="ml-2 text-gray-400 text-sm">Normalize Dashboard</span>
+<div class="app-card p-6 sm:p-8">
+<h3 class="text-2xl font-bold mb-6 text-gray-900">活用シーン</h3>
+
+<!-- 活用シーン1 -->
+<div class="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+<i class="ri-robot-line text-xl text-white"></i>
 </div>
-<div class="space-y-3">
-<div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
-<i class="ri-file-pdf-2-line text-2xl text-red-400"></i>
-<div class="flex-grow">
-<p class="text-white text-sm font-medium">document.pdf</p>
-<p class="text-gray-400 text-xs">12 チャンク, 5 画像</p>
+<h4 class="font-bold text-gray-900">社内AIチャットボット</h4>
 </div>
-<i class="ri-check-line text-green-400 text-xl"></i>
+<p class="text-sm text-gray-600">正規化されたJSONをナレッジソースとして登録し、Copilot Studioなどで回答精度を向上。出典情報も正確に表示できます。</p>
 </div>
-<div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
-<i class="ri-file-word-2-line text-2xl text-blue-400"></i>
-<div class="flex-grow">
-<p class="text-white text-sm font-medium">report.docx</p>
-<p class="text-gray-400 text-xs">8 チャンク, 2 画像</p>
+
+<!-- 活用シーン2 -->
+<div class="mb-6 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+<i class="ri-search-2-line text-xl text-white"></i>
 </div>
-<i class="ri-check-line text-green-400 text-xl"></i>
+<h4 class="font-bold text-gray-900">セマンティック検索システム</h4>
 </div>
-<div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
-<i class="ri-file-excel-2-line text-2xl text-green-400"></i>
-<div class="flex-grow">
-<p class="text-white text-sm font-medium">data.xlsx</p>
-<p class="text-gray-400 text-xs">処理中...</p>
+<p class="text-sm text-gray-600">Pinecone/Qdrantなどのベクターデータベースと連携。キーワードだけでなく、意味に基づいた検索が可能に。</p>
 </div>
-<i class="ri-loader-4-line text-yellow-400 text-xl animate-spin"></i>
+
+<!-- 活用シーン3 -->
+<div class="p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+<i class="ri-bar-chart-box-line text-xl text-white"></i>
 </div>
+<h4 class="font-bold text-gray-900">データ分析の自動化</h4>
 </div>
-<div class="mt-4 bg-gray-800 rounded-lg p-3">
-<div class="flex justify-between text-xs text-gray-400 mb-2">
-<span>進捗状況</span>
-<span>67%</span>
-</div>
-<div class="w-full bg-gray-700 rounded-full h-2">
-<div class="bg-gradient-to-r from-violet-500 to-indigo-500 h-2 rounded-full" style="width: 67%"></div>
+<p class="text-sm text-gray-600">大量の報告書から数値を自動抽出し、集計・分析を自動化。例：全支店の月次データを統合してレポート作成。</p>
 </div>
 </div>
+
+<!-- 処理時間の目安 -->
+<div class="app-card p-4 mt-6">
+<h4 class="font-bold text-gray-700 mb-3 flex items-center gap-2">
+<i class="ri-timer-line text-violet-600"></i>
+処理時間の目安
+</h4>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-2">
+<div class="w-24 text-gray-600">&lt; 1MB</div>
+<div class="flex-grow bg-gray-200 rounded-full h-2">
+<div class="bg-green-500 h-2 rounded-full" style="width: 15%"></div>
+</div>
+<div class="w-20 text-gray-600 text-right">5-15秒</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-24 text-gray-600">1-5MB</div>
+<div class="flex-grow bg-gray-200 rounded-full h-2">
+<div class="bg-yellow-500 h-2 rounded-full" style="width: 35%"></div>
+</div>
+<div class="w-20 text-gray-600 text-right">15-60秒</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-24 text-gray-600">5-10MB</div>
+<div class="flex-grow bg-gray-200 rounded-full h-2">
+<div class="bg-orange-500 h-2 rounded-full" style="width: 60%"></div>
+</div>
+<div class="w-20 text-gray-600 text-right">1-3分</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-24 text-gray-600">&gt; 10MB</div>
+<div class="flex-grow bg-gray-200 rounded-full h-2">
+<div class="bg-red-500 h-2 rounded-full" style="width: 100%"></div>
+</div>
+<div class="w-20 text-gray-600 text-right">3-10分</div>
 </div>
 </div>
-<p class="text-center text-gray-500 text-sm mt-4">※ 実際のアプリケーション画面イメージ</p>
+<p class="text-xs text-gray-500 mt-2">※ OCR処理（スキャンPDF）を含む場合、処理時間が増加します。</p>
+</div>
+</div>
+</div>
+
+<!-- 出力データ構造 -->
+<div class="fade-in-up">
+<div class="app-card p-6 sm:p-8">
+<h3 class="text-2xl font-bold mb-6 text-gray-900 text-center">出力データの構造</h3>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-gray-900 rounded-xl p-4 text-sm font-mono overflow-x-auto">
+<pre class="text-green-400"><code>{
+  "source_file": "2024年度報告書.pdf",
+  "total_chunks": 45,
+  "chunks": [
+    {
+      "chunk_id": "chunk_001",
+      "text": "第1章 エグゼクティブサマリー",
+      "element_type": "Title",
+      "page_number": 1,
+      "related_images": ["img_001", "img_002"],
+      "metadata": { "languages": ["jpn"] }
+    },
+    ...
+  ]
+}</code></pre>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-braces-line text-orange-600"></i>
+</div>
+<div>
+<p class="font-bold text-gray-900">Chunks</p>
+<p class="text-sm text-gray-600">文書を意味のあるブロック単位に分割</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-price-tag-3-line text-blue-600"></i>
+</div>
+<div>
+<p class="font-bold text-gray-900">Element Type</p>
+<p class="text-sm text-gray-600">テキストの役割（タイトル、本文、表など）を分類</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-image-2-line text-green-600"></i>
+</div>
+<div>
+<p class="font-bold text-gray-900">Related Images</p>
+<p class="text-sm text-gray-600">同じページの画像を自動的に紐付け</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-database-2-line text-purple-600"></i>
+</div>
+<div>
+<p class="font-bold text-gray-900">Metadata</p>
+<p class="text-sm text-gray-600">ページ番号や言語情報を保持</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
