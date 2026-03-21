@@ -64,7 +64,7 @@ export const translations = {
                     title: "革新的なAIアプリケーション",
                     description: "日常生活や学習を豊かにするための、AIを活用した6つのアプリケーションを開発・提供しています。最新のAI技術を駆使し、ユーザーの生活をより便利で豊かにします。",
                     features: [
-                        "GP Teachers: AI英語学習アプリ",
+                        "BuddyTalk: AI英語学習アプリ",
                         "VoiceLink AI通訳: リアルタイム通訳アプリ",
                         "Word Blaster: 英単語学習ゲーム",
                         "その他、ディベート練習や作業タイマーなど"

@@ -35,7 +35,7 @@ const indexTranslations = {
                 title: "革新的なAIアプリケーション",
                 description: "日常生活や学習を豊かにするための、AIを活用した6つのアプリケーションを開発・提供しています。最新のAI技術を駆使し、ユーザーの生活をより便利で豊かにします。",
                 features: {
-                    f1: "GP Teachers: AI英語学習アプリ",
+                    f1: "BuddyTalk: AI英語学習アプリ",
                     f2: "VoiceLink AI通訳: リアルタイム通訳アプリ",
                     f3: "Word Blaster: 英単語学習ゲーム",
                     f4: "その他、ディベート練習や作業タイマーなど"
@@ -151,7 +151,7 @@ const indexTranslations = {
                 title: "Innovative AI Applications",
                 description: "We develop and provide six AI-powered applications to enrich daily life and learning. Using the latest AI technology, we make users' lives more convenient and enriched.",
                 features: {
-                    f1: "GP Teachers: AI English Learning App",
+                    f1: "BuddyTalk: AI English Learning App",
                     f2: "VoiceLink AI Interpreter: Real-time Translation App",
                     f3: "Word Blaster: English Vocabulary Learning Game",
                     f4: "Others include debate practice and work timers"
@@ -267,7 +267,7 @@ const indexTranslations = {
                 title: "创新AI应用",
                 description: "我们开发并提供六个AI驱动的应用程序，以丰富日常生活和学习。使用最新的AI技术，让用户的生活更加便利和充实。",
                 features: {
-                    f1: "GP Teachers：AI英语学习应用",
+                    f1: "BuddyTalk：AI英语学习应用",
                     f2: "VoiceLink AI翻译：实时翻译应用",
                     f3: "Word Blaster：英语词汇学习游戏",
                     f4: "其他包括辩论练习和工作计时器"
@@ -381,7 +381,7 @@ const indexTranslations = {
                 title: "혁신적인 AI 애플리케이션",
                 description: "일상생활과 학습을 풍요롭게 하기 위한 AI 기반 6개 애플리케이션을 개발 및 제공합니다. 최신 AI 기술을 활용하여 사용자의 삶을 더욱 편리하고 풍요롭게 만듭니다.",
                 features: {
-                    f1: "GP Teachers: AI 영어 학습 앱",
+                    f1: "BuddyTalk: AI 영어 학습 앱",
                     f2: "VoiceLink AI 통역: 실시간 통역 앱",
                     f3: "Word Blaster: 영어 단어 학습 게임",
                     f4: "기타 토론 연습 및 작업 타이머 등"
@@ -495,7 +495,7 @@ const indexTranslations = {
                 title: "Applications IA innovantes",
                 description: "Nous développons et fournissons six applications alimentées par l'IA pour enrichir la vie quotidienne et l'apprentissage. En utilisant la dernière technologie IA, nous rendons la vie des utilisateurs plus pratique et enrichie.",
                 features: {
-                    f1: "GP Teachers : Application d'apprentissage de l'anglais IA",
+                    f1: "BuddyTalk : Application d'apprentissage de l'anglais IA",
                     f2: "VoiceLink AI Interprète : Application de traduction en temps réel",
                     f3: "Word Blaster : Jeu d'apprentissage du vocabulaire anglais",
                     f4: "D'autres incluent la pratique du débat et les minuteries de travail"
@@ -609,7 +609,7 @@ const indexTranslations = {
                 title: "Aplicações IA inovadoras",
                 description: "Desenvolvemos e fornecemos seis aplicações alimentadas por IA para enriquecer a vida diária e o aprendizado. Usando a mais recente tecnologia IA, tornamos a vida dos usuários mais conveniente e enriquecida.",
                 features: {
-                    f1: "GP Teachers: Aplicativo de aprendizado de inglês IA",
+                    f1: "BuddyTalk: Aplicativo de aprendizado de inglês IA",
                     f2: "VoiceLink AI Intérprete: Aplicativo de tradução em tempo real",
                     f3: "Word Blaster: Jogo de aprendizado de vocabulário inglês",
                     f4: "Outros incluem prática de debate e cronômetros de trabalho"
@@ -723,7 +723,7 @@ const indexTranslations = {
                 title: "नवीन AI एप्लिकेशन",
                 description: "हम दैनिक जीवन और सीखने को समृद्ध करने के लिए छह AI-संचालित एप्लिकेशन विकसित और प्रदान करते हैं। नवीनतम AI तकनीक का उपयोग करके, हम उपयोगकर्ताओं के जीवन को अधिक सुविधाजनक और समृद्ध बनाते हैं।",
                 features: {
-                    f1: "GP Teachers: AI अंग्रेजी सीखने का ऐप",
+                    f1: "BuddyTalk: AI अंग्रेजी सीखने का ऐप",
                     f2: "VoiceLink AI दुभाषिया: रीयल-टाइम अनुवाद ऐप",
                     f3: "Word Blaster: अंग्रेजी शब्दावली सीखने का गेम",
                     f4: "अन्य में बहस अभ्यास और कार्य टाइमर शामिल हैं"
@@ -837,7 +837,7 @@ const indexTranslations = {
                 title: "Innovative KI-Anwendungen",
                 description: "Wir entwickeln und bieten sechs KI-gestützte Anwendungen zur Bereicherung des täglichen Lebens und Lernens. Mit modernster KI-Technologie machen wir das Leben der Nutzer bequemer und bereichernder.",
                 features: {
-                    f1: "GP Teachers: KI-Englisch-Lern-App",
+                    f1: "BuddyTalk: KI-Englisch-Lern-App",
                     f2: "VoiceLink KI-Dolmetscher: Echtzeit-Übersetzungs-App",
                     f3: "Word Blaster: Englisch-Vokabel-Lernspiel",
                     f4: "Weitere umfassen Debattenübungen und Arbeits-Timer"
@@ -951,7 +951,7 @@ const indexTranslations = {
                 title: "Aplicaciones IA innovadoras",
                 description: "Desarrollamos y proporcionamos seis aplicaciones impulsadas por IA para enriquecer la vida diaria y el aprendizaje. Utilizando la última tecnología IA, hacemos la vida de los usuarios más conveniente y enriquecida.",
                 features: {
-                    f1: "GP Teachers: Aplicación de aprendizaje de inglés IA",
+                    f1: "BuddyTalk: Aplicación de aprendizaje de inglés IA",
                     f2: "VoiceLink Intérprete IA: Aplicación de traducción en tiempo real",
                     f3: "Word Blaster: Juego de aprendizaje de vocabulario inglés",
                     f4: "Otros incluyen práctica de debate y temporizadores de trabajo"
@@ -1065,7 +1065,7 @@ const indexTranslations = {
                 title: "Инновационные AI приложения",
                 description: "Мы разрабатываем и предоставляем шесть приложений на базе AI для обогащения повседневной жизни и обучения. Используя новейшие AI технологии, мы делаем жизнь пользователей более удобной и насыщенной.",
                 features: {
-                    f1: "GP Teachers: AI приложение для изучения английского",
+                    f1: "BuddyTalk: AI приложение для изучения английского",
                     f2: "VoiceLink AI переводчик: Приложение для перевода в реальном времени",
                     f3: "Word Blaster: Игра для изучения английской лексики",
                     f4: "Другие включают практику дебатов и рабочие таймеры"
