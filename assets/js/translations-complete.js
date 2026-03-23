@@ -123,7 +123,7 @@ const completeTranslations = {
             },
             
             // BuddyTalk section
-            gpTeachers: {
+            buddyTalk: {
                 badge: "AI 英語学習",
                 title: "AI と一緒に英語を学ぼう",
                 description: "AI 英語パートナーとリアルな練習ができる革新的な英語学習アプリです。いつでもどこでも、ユニークな先生たちと対話しながら実践的な英会話能力を高め、英語力を向上させましょう。",
@@ -384,7 +384,7 @@ const completeTranslations = {
             },
             
             // BuddyTalk section
-            gpTeachers: {
+            buddyTalk: {
                 badge: "AI English Learning",
                 title: "Learn English Together with AI",
                 description: "An innovative English learning app that allows you to practice realistically with AI English partners. Anytime, anywhere, engage in conversations with unique teachers to enhance your practical English conversation skills and improve your English proficiency.",

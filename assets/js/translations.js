@@ -104,7 +104,7 @@ export const translations = {
                 title: "革新的なアプリで<br>あなたの可能性を広げる",
                 description: "TrailFusion AI は、AI 技術を活用した革新的なアプリケーションを開発しています。言語学習、ゲーム、生産性向上など、様々な分野で最先端のソリューションを提供しています。"
             },
-            gpTeachers: {
+            buddyTalk: {
                 badge: "AI 英語学習",
                 title: "AI と一緒に英語を学ぼう",
                 description: "AI 英語パートナーとリアルな練習ができる革新的な英語学習アプリです。いつでもどこでも、ユニークな先生たちと対話しながら実践的な英会話能力を高め、英語力を向上させましょう。",
