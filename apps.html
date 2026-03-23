@@ -391,69 +391,76 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 </section>
 
 <!-- アプリ一覧カードセクション -->
-<section class="py-20 sm:py-24">
-<div class="container mx-auto px-4">
+<section class="relative py-24 sm:py-32 overflow-hidden">
+<!-- ダークグラデーション背景 -->
+<div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900"></div>
+<div class="absolute inset-0 noise-texture"></div>
+<!-- デコレーション -->
+<div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-[150px]"></div>
+<div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px]"></div>
+
+<div class="container mx-auto px-4 relative z-10">
 <div class="text-center mb-16">
-<p class="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 mb-4">Our Products</p>
-<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 tracking-tight" data-i18n="apps.overview.title">すべてのアプリ</h2>
-<p class="text-slate-500 max-w-2xl mx-auto" data-i18n="apps.overview.description">革新的なAI技術を活用した6つのアプリケーション</p>
+<p class="text-sm font-medium tracking-[0.2em] uppercase text-violet-400/80 mb-4">Our Products</p>
+<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight" data-i18n="apps.overview.title">すべてのアプリ</h2>
+<p class="text-slate-400 max-w-2xl mx-auto text-lg" data-i18n="apps.overview.description">革新的なAI技術を活用した6つのアプリケーション</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 sm:gap-5">
 <!-- BuddyTalk Card -->
-<a href="#buddytalk" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-<i class="ri-book-open-line text-2xl sm:text-3xl"></i>
+<a href="#buddytalk" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-blue-400/30 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow duration-300">
+<i class="ri-book-open-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">BuddyTalk</h3>
-<p class="text-xs sm:text-sm text-slate-400">AI英語学習</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">BuddyTalk</h3>
+<p class="text-xs sm:text-sm text-slate-500">AI英語学習</p>
 </a>
 <!-- Wood Golem Card -->
-<a href="#wood-golem" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-green-200 hover:shadow-lg hover:shadow-green-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-green-50 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
-<i class="ri-plant-line text-2xl sm:text-3xl"></i>
+<a href="#wood-golem" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-green-400/30 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-green-500/25 group-hover:shadow-green-500/40 transition-shadow duration-300">
+<i class="ri-plant-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Wood Golem</h3>
-<p class="text-xs sm:text-sm text-slate-400">戦略パズル</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">Wood Golem</h3>
+<p class="text-xs sm:text-sm text-slate-500">戦略パズル</p>
 </a>
 <!-- VoiceLink Card -->
-<a href="#voicelink" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
-<i class="ri-mic-line text-2xl sm:text-3xl"></i>
+<a href="#voicelink" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-purple-400/30 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-shadow duration-300">
+<i class="ri-mic-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">VoiceLink</h3>
-<p class="text-xs sm:text-sm text-slate-400">AI通訳</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">VoiceLink</h3>
+<p class="text-xs sm:text-sm text-slate-500">AI通訳</p>
 </a>
 <!-- Word Blaster Card -->
-<a href="#word-blaster" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-amber-200 hover:shadow-lg hover:shadow-amber-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-<i class="ri-rocket-line text-2xl sm:text-3xl"></i>
+<a href="#word-blaster" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-amber-400/30 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/25 group-hover:shadow-amber-500/40 transition-shadow duration-300">
+<i class="ri-rocket-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Word Blaster</h3>
-<p class="text-xs sm:text-sm text-slate-400">英単語ゲーム</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">Word Blaster</h3>
+<p class="text-xs sm:text-sm text-slate-500">英単語ゲーム</p>
 </a>
 <!-- Debate Master Card -->
-<a href="#debate-master" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-red-200 hover:shadow-lg hover:shadow-red-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center text-red-500 group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
-<i class="ri-chat-voice-line text-2xl sm:text-3xl"></i>
+<a href="#debate-master" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-red-400/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white shadow-lg shadow-red-500/25 group-hover:shadow-red-500/40 transition-shadow duration-300">
+<i class="ri-chat-voice-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Debate Master</h3>
-<p class="text-xs sm:text-sm text-slate-400">AIディベート</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">Debate Master</h3>
+<p class="text-xs sm:text-sm text-slate-500">AIディベート</p>
 </a>
 <!-- Hacking Timer Card -->
-<a href="#hacking-timer" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
-<i class="ri-timer-line text-2xl sm:text-3xl"></i>
+<a href="#hacking-timer" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-indigo-400/30 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-shadow duration-300">
+<i class="ri-timer-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Hacking Timer</h3>
-<p class="text-xs sm:text-sm text-slate-400">時間管理</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">Hacking Timer</h3>
+<p class="text-xs sm:text-sm text-slate-500">時間管理</p>
 </a>
 <!-- Doc2JSON AI Card -->
-<a href="#doc2json" class="app-card p-4 sm:p-6 text-center group cursor-pointer hover:border-violet-200 hover:shadow-lg hover:shadow-violet-500/5 col-span-2 md:col-span-3 lg:col-span-6">
-<div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-500 group-hover:bg-violet-500 group-hover:text-white transition-all duration-300">
-<i class="ri-file-transfer-line text-2xl sm:text-3xl"></i>
+<a href="#doc2json" class="group cursor-pointer rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 text-center hover:bg-white/[0.08] hover:border-violet-400/30 hover:shadow-lg hover:shadow-violet-500/10 transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center text-white shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow duration-300">
+<i class="ri-file-transfer-line text-2xl"></i>
 </div>
-<h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Doc2JSON AI</h3>
-<p class="text-xs sm:text-sm text-slate-400">ドキュメント正規化</p>
+<h3 class="font-semibold text-white mb-1 text-sm sm:text-base">Doc2JSON AI</h3>
+<p class="text-xs sm:text-sm text-slate-500">ドキュメント正規化</p>
 </a>
 </div>
 </div>
@@ -465,7 +472,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <section id="buddytalk" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <!-- 背景画像 -->
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/buddytalk-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/buddytalk-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/3"></div>
 
@@ -570,7 +577,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <!-- Wood Golem -->
 <section id="wood-golem" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/woodgolem-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/woodgolem-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-green-100/40 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"></div>
 
@@ -659,7 +666,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <!-- VoiceLink AI通訳 -->
 <section id="voicelink" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/voicelink-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/voicelink-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-100/40 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/3"></div>
 
@@ -748,7 +755,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <!-- Word Blaster -->
 <section id="word-blaster" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/wordblaster-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/wordblaster-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"></div>
 
@@ -837,7 +844,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <!-- Debate Master -->
 <section id="debate-master" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/debate-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/debate-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-100/40 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/3"></div>
 
@@ -921,7 +928,7 @@ TrailFusion AI は、AI 技術を活用した革新的なアプリケーショ�
 <!-- Hacking Timer -->
 <section id="hacking-timer" class="py-24 sm:py-32 app-section relative overflow-hidden">
 <div class="absolute inset-0">
-<img src="assets/images/unsplash/hackingtimer-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.06]">
+<img src="assets/images/unsplash/hackingtimer-bg.jpg" alt="" class="w-full h-full object-cover opacity-[0.15]">
 </div>
 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-100/40 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"></div>
 
