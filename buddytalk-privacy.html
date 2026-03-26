@@ -3,11 +3,541 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="0;url=buddytalk-legal.html#privacy">
-<title>BuddyTalk - Privacy Policy</title>
-<script>window.location.replace('buddytalk-legal.html#privacy');</script>
+<title>BuddyTalk - プライバシーポリシー / Privacy Policy</title>
+<meta name="description" content="BuddyTalk アプリのプライバシーポリシー - Privacy Policy for BuddyTalk App">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<style>
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
+}
+.language-content {
+display: none;
+}
+.language-content.active {
+display: block;
+}
+</style>
 </head>
-<body>
-<p>Redirecting to <a href="buddytalk-legal.html#privacy">BuddyTalk Privacy Policy</a>...</p>
+<body class="bg-gray-50">
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-6 shadow-lg sticky top-0 z-50">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold">BuddyTalk</h1>
+<p class="text-sm md:text-base opacity-90 mt-1" id="headerSubtitle">プライバシーポリシー</p>
+</div>
+<!-- Language Selector -->
+<div class="relative">
+<select id="languageSelector" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-md font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-300">
+<option value="ja">🇯🇵 日本語</option>
+<option value="en">🇺🇸 English</option>
+<option value="zh-Hans">🇨🇳 简体中文</option>
+<option value="fr">🇫🇷 Français</option>
+<option value="de">🇩🇪 Deutsch</option>
+<option value="es">🇪🇸 Español</option>
+<option value="ko">🇰🇷 한국어</option>
+<option value="hi">🇮🇳 हिन्दी</option>
+<option value="pt-BR">🇧🇷 Português</option>
+<option value="ru">🇷🇺 Русский</option>
+</select>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8 max-w-5xl">
+
+<div id="content-ja" class="language-content active">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">プライバシーポリシー</h2>
+<p class="text-gray-600 mb-4">最終更新日: 2026年3月</p>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 収集する情報</h3>
+<p class="text-gray-700 mb-3">BuddyTalkアプリは、以下の情報を収集します：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>音声データ：</strong>発音練習と評価のために音声を録音します。音声データは処理後、デバイスから削除されます。</li>
+<li><strong>学習進捗：</strong>学習履歴、完了したレッスン、単語の進捗状況を保存します。</li>
+<li><strong>サブスクリプション情報：</strong>App Storeを通じて処理される購入とサブスクリプションのステータス。</li>
+<li><strong>デバイス情報：</strong>アプリのパフォーマンス向上とバグ修正のための技術データ。</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 情報の使用方法</h3>
+<p class="text-gray-700 mb-3">収集した情報は以下の目的で使用されます：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>発音評価とフィードバックの提供</li>
+<li>パーソナライズされた学習体験の提供</li>
+<li>アプリの機能改善とバグ修正</li>
+<li>カスタマーサポートの提供</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. 第三者サービス</h3>
+<p class="text-gray-700 mb-3">BuddyTalkは以下の第三者サービスを使用します：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Google Gemini AI：</strong>会話生成と発音評価</li>
+<li><strong>Apple Speech Recognition：</strong>音声からテキストへの変換</li>
+<li><strong>Supabase：</strong>セキュアなデータストレージ</li>
+<li><strong>Firebase Analytics：</strong>アプリ使用状況の分析</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 Google Gemini AIへのデータ送信</h3>
+<p class="text-gray-700 mb-3">本アプリでは、AI会話機能を提供するために以下のデータをGoogle Gemini APIに送信します：</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>音声テキスト：</strong>音声認識で変換されたテキストデータがAI応答生成のために送信されます。</li>
+<li><strong>プロフィール情報：</strong>お名前、趣味、興味など（設定された場合）が会話のパーソナライズに使用されます。</li>
+<li><strong>会話履歴：</strong>自然な対話を維持するために、セッション中の会話コンテキストが送信されます。</li>
+</ul>
+</div>
+<p class="text-gray-700 mb-2">データの取り扱いはGoogleのAPI利用規約に準じます。アプリ初回使用時または更新時に、ユーザーの同意を取得します。</p>
+<p class="text-gray-700">詳細は<a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Google Gemini API利用規約</a>をご確認ください。</p>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. データセキュリティ</h3>
+<p class="text-gray-700">お客様の情報を保護するため、業界標準のセキュリティ対策を実施しています。音声データは処理後すぐに削除され、個人情報は暗号化されて保存されます。</p>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. お客様の権利</h3>
+<p class="text-gray-700 mb-3">お客様には以下の権利があります：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>個人データへのアクセス</li>
+<li>データの訂正</li>
+<li>データの削除</li>
+<li>データ処理の制限</li>
+</ul>
+</section>
+
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. お問い合わせ</h3>
+<p class="text-gray-700">プライバシーポリシーに関するご質問は、<a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a>までお問い合わせください。</p>
+</section>
+</div>
+</div>
+
+<div id="content-en" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Privacy Policy</h2>
+<p class="text-gray-600 mb-4">Last Updated: March 2026</p>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Information We Collect</h3>
+<p class="text-gray-700 mb-3">BuddyTalk app collects the following information:</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Voice Data:</strong> We record audio for pronunciation practice and evaluation. Voice data is deleted from the device after processing.</li>
+<li><strong>Learning Progress:</strong> We save your learning history, completed lessons, and word progress.</li>
+<li><strong>Subscription Information:</strong> Purchase and subscription status processed through the App Store.</li>
+<li><strong>Device Information:</strong> Technical data for improving app performance and fixing bugs.</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. How We Use Information</h3>
+<p class="text-gray-700 mb-3">We use collected information for:</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>Providing pronunciation evaluation and feedback</li>
+<li>Offering personalized learning experiences</li>
+<li>Improving app features and fixing bugs</li>
+<li>Providing customer support</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Third-Party Services</h3>
+<p class="text-gray-700 mb-3">BuddyTalk uses the following third-party services:</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Google Gemini AI:</strong> Conversation generation and pronunciation evaluation</li>
+<li><strong>Apple Speech Recognition:</strong> Voice-to-text conversion</li>
+<li><strong>Supabase:</strong> Secure data storage</li>
+<li><strong>Firebase Analytics:</strong> App usage analysis</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 Data Sent to Google Gemini AI</h3>
+<p class="text-gray-700 mb-3">To provide AI conversation features, the following data is sent to the Google Gemini API:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Speech Text:</strong> Text converted from speech recognition is sent to generate AI responses.</li>
+<li><strong>Profile Information:</strong> Your name, hobbies, and interests (if provided) are used to personalize conversations.</li>
+<li><strong>Conversation History:</strong> Session conversation context is sent to maintain natural dialogue flow.</li>
+</ul>
+</div>
+<p class="text-gray-700 mb-2">Data handling is subject to Google's API Terms of Service. User consent is obtained during initial app setup or upon update.</p>
+<p class="text-gray-700">For details, see the <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Google Gemini API Terms of Service</a>.</p>
+</section>
+
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Data Security</h3>
+<p class="text-gray-700">We implement industry-standard security measures to protect your information. Voice data is deleted immediately after processing, and personal information is encrypted for storage.</p>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. Your Rights</h3>
+<p class="text-gray-700 mb-3">You have the right to:</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>Access your personal data</li>
+<li>Correct your data</li>
+<li>Delete your data</li>
+<li>Restrict data processing</li>
+</ul>
+</section>
+
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. Contact Us</h3>
+<p class="text-gray-700">For questions about our privacy policy, contact us at <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-zh-Hans" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">隐私政策</h2>
+<p class="text-gray-600 mb-4">最后更新: 2026年3月</p>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 我们收集的信息</h3>
+<p class="text-gray-700 mb-3">BuddyTalk应用程序收集以下信息：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>语音数据：</strong>我们录制音频用于发音练习和评估。处理后语音数据将从设备中删除。</li>
+<li><strong>学习进度：</strong>我们保存您的学习历史、已完成的课程和单词进度。</li>
+<li><strong>订阅信息：</strong>通过App Store处理的购买和订阅状态。</li>
+<li><strong>设备信息：</strong>用于改善应用程序性能和修复错误的技术数据。</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 我们如何使用信息</h3>
+<p class="text-gray-700 mb-3">我们使用收集的信息用于：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>提供发音评估和反馈</li>
+<li>提供个性化的学习体验</li>
+<li>改进应用功能和修复错误</li>
+<li>提供客户支持</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. 第三方服务</h3>
+<p class="text-gray-700 mb-3">BuddyTalk使用以下第三方服务：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Google Gemini AI：</strong>对话生成和发音评估</li>
+<li><strong>Apple Speech Recognition：</strong>语音转文本</li>
+<li><strong>Supabase：</strong>安全数据存储</li>
+<li><strong>Firebase Analytics：</strong>应用使用分析</li>
+</ul>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 发送至Google Gemini AI的数据</h3>
+<p class="text-gray-700 mb-3">为提供AI对话功能，以下数据将发送至Google Gemini API：</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>语音文本：</strong>语音识别转换的文本将用于生成AI回复。</li>
+<li><strong>个人信息：</strong>您的姓名、爱好和兴趣（如已提供）将用于个性化对话。</li>
+<li><strong>对话历史：</strong>会话中的对话上下文将被发送以维持自然的对话流程。</li>
+</ul>
+</div>
+<p class="text-gray-700 mb-2">数据处理受Google API服务条款约束。在首次使用或更新时将获取用户同意。</p>
+<p class="text-gray-700">详情请参阅<a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Google Gemini API服务条款</a>。</p>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. 数据安全</h3>
+<p class="text-gray-700">我们采用行业标准安全措施保护您的信息。语音数据在处理后立即删除，个人信息经过加密存储。</p>
+</section>
+
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. 您的权利</h3>
+<p class="text-gray-700 mb-3">您有权：</p>
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li>访问您的个人数据</li>
+<li>更正您的数据</li>
+<li>删除您的数据</li>
+<li>限制数据处理</li>
+</ul>
+</section>
+
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. 联系我们</h3>
+<p class="text-gray-700">如有关于隐私政策的问题，请联系 <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-fr" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Politique de confidentialité</h2>
+<p class="text-gray-600 mb-4">Dernière mise à jour: Mars 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Informations collectées</h3>
+<p class="text-gray-700">L'application BuddyTalk collecte des données vocales, des progrès d'apprentissage, des informations d'abonnement et des données de l'appareil pour améliorer votre expérience.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Utilisation des informations</h3>
+<p class="text-gray-700">Nous utilisons les informations pour l'évaluation de prononciation, les expériences d'apprentissage personnalisées et l'amélioration de l'application.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Données envoyées à Google Gemini AI</h3>
+<p class="text-gray-700 mb-3">Pour fournir les fonctionnalités de conversation IA, les données suivantes sont envoyées à l'API Google Gemini :</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Texte vocal :</strong> Le texte converti par la reconnaissance vocale est envoyé pour générer des réponses IA.</li>
+<li><strong>Informations de profil :</strong> Votre nom, loisirs et intérêts (si fournis) sont utilisés pour personnaliser les conversations.</li>
+<li><strong>Historique des conversations :</strong> Le contexte de la session est envoyé pour maintenir un dialogue naturel.</li>
+</ul>
+</div>
+<p class="text-gray-700">Le traitement des données est soumis aux <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">conditions d'utilisation de l'API Google Gemini</a>.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contact</h3>
+<p class="text-gray-700">Contactez-nous à <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-de" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Datenschutzrichtlinie</h2>
+<p class="text-gray-600 mb-4">Letzte Aktualisierung: März 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Gesammelte Informationen</h3>
+<p class="text-gray-700">Die BuddyTalk App sammelt Sprachdaten, Lernfortschritte, Abonnementinformationen und Gerätedaten zur Verbesserung Ihrer Erfahrung.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Verwendung der Informationen</h3>
+<p class="text-gray-700">Wir verwenden die Informationen für Aussprachebewertung, personalisierte Lernerfahrungen und App-Verbesserungen.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. An Google Gemini AI gesendete Daten</h3>
+<p class="text-gray-700 mb-3">Für KI-Konversationsfunktionen werden folgende Daten an die Google Gemini API gesendet:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Sprachtext:</strong> Der durch Spracherkennung konvertierte Text wird zur Generierung von KI-Antworten gesendet.</li>
+<li><strong>Profilinformationen:</strong> Ihr Name, Hobbys und Interessen (falls angegeben) werden zur Personalisierung von Gesprächen verwendet.</li>
+<li><strong>Gesprächsverlauf:</strong> Der Sitzungskontext wird gesendet, um einen natürlichen Dialog aufrechtzuerhalten.</li>
+</ul>
+</div>
+<p class="text-gray-700">Die Datenverarbeitung unterliegt den <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">API-Nutzungsbedingungen von Google Gemini</a>.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Kontakt</h3>
+<p class="text-gray-700">Kontaktieren Sie uns unter <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-es" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Política de privacidad</h2>
+<p class="text-gray-600 mb-4">Última actualización: Marzo 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Información recopilada</h3>
+<p class="text-gray-700">La aplicación BuddyTalk recopila datos de voz, progreso de aprendizaje, información de suscripción y datos del dispositivo para mejorar su experiencia.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Uso de la información</h3>
+<p class="text-gray-700">Utilizamos la información para evaluación de pronunciación, experiencias de aprendizaje personalizadas y mejoras de la aplicación.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Datos enviados a Google Gemini AI</h3>
+<p class="text-gray-700 mb-3">Para proporcionar funciones de conversación con IA, los siguientes datos se envían a la API de Google Gemini:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Texto de voz:</strong> El texto convertido por reconocimiento de voz se envía para generar respuestas de IA.</li>
+<li><strong>Información del perfil:</strong> Tu nombre, pasatiempos e intereses (si se proporcionan) se usan para personalizar las conversaciones.</li>
+<li><strong>Historial de conversación:</strong> El contexto de la sesión se envía para mantener un diálogo natural.</li>
+</ul>
+</div>
+<p class="text-gray-700">El manejo de datos está sujeto a los <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Términos de Servicio de la API de Google Gemini</a>.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contacto</h3>
+<p class="text-gray-700">Contáctenos en <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-ko" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">개인정보 처리방침</h2>
+<p class="text-gray-600 mb-4">최종 업데이트: 2026년 3월</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 수집하는 정보</h3>
+<p class="text-gray-700">BuddyTalk 앱은 음성 데이터, 학습 진도, 구독 정보 및 기기 데이터를 수집하여 사용자 경험을 개선합니다.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 정보 사용 방법</h3>
+<p class="text-gray-700">발음 평가, 개인화된 학습 경험 및 앱 개선을 위해 정보를 사용합니다.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Google Gemini AI에 전송되는 데이터</h3>
+<p class="text-gray-700 mb-3">AI 대화 기능을 제공하기 위해 다음 데이터가 Google Gemini API로 전송됩니다:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>음성 텍스트:</strong> 음성 인식으로 변환된 텍스트가 AI 응답 생성을 위해 전송됩니다.</li>
+<li><strong>프로필 정보:</strong> 이름, 취미, 관심사(제공된 경우)가 대화 개인화를 위해 사용됩니다.</li>
+<li><strong>대화 기록:</strong> 자연스러운 대화 흐름을 유지하기 위해 세션 컨텍스트가 전송됩니다.</li>
+</ul>
+</div>
+<p class="text-gray-700">데이터 처리는 <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Google Gemini API 서비스 약관</a>에 따릅니다.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. 문의하기</h3>
+<p class="text-gray-700"><a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a>으로 문의해주세요</p>
+</section>
+</div>
+</div>
+
+<div id="content-hi" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">गोपनीयता नीति</h2>
+<p class="text-gray-600 mb-4">अंतिम अपडेट: मार्च 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. एकत्रित जानकारी</h3>
+<p class="text-gray-700">BuddyTalk ऐप आपके अनुभव को बेहतर बनाने के लिए वॉयस डेटा, सीखने की प्रगति, सदस्यता जानकारी और डिवाइस डेटा एकत्र करता है।</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. जानकारी का उपयोग</h3>
+<p class="text-gray-700">हम उच्चारण मूल्यांकन, व्यक्तिगत सीखने के अनुभव और ऐप सुधार के लिए जानकारी का उपयोग करते हैं।</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Google Gemini AI को भेजा जाने वाला डेटा</h3>
+<p class="text-gray-700 mb-3">AI बातचीत सुविधाएं प्रदान करने के लिए, निम्नलिखित डेटा Google Gemini API को भेजा जाता है:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>वाक् पाठ:</strong> वॉयस रिकग्निशन द्वारा बदला गया टेक्स्ट AI प्रतिक्रिया उत्पन्न करने के लिए भेजा जाता है।</li>
+<li><strong>प्रोफ़ाइल जानकारी:</strong> आपका नाम, शौक और रुचियां (यदि प्रदान की गई हों) बातचीत को व्यक्तिगत बनाने के लिए उपयोग की जाती हैं।</li>
+<li><strong>बातचीत इतिहास:</strong> स्वाभाविक संवाद बनाए रखने के लिए सत्र संदर्भ भेजा जाता है।</li>
+</ul>
+</div>
+<p class="text-gray-700">डेटा प्रबंधन <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Google Gemini API सेवा शर्तों</a> के अधीन है।</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. संपर्क करें</h3>
+<p class="text-gray-700"><a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a> पर हमसे संपर्क करें</p>
+</section>
+</div>
+</div>
+
+<div id="content-pt-BR" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Política de Privacidade</h2>
+<p class="text-gray-600 mb-4">Última atualização: Março de 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Informações coletadas</h3>
+<p class="text-gray-700">O aplicativo BuddyTalk coleta dados de voz, progresso de aprendizado, informações de assinatura e dados do dispositivo para melhorar sua experiência.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Uso das informações</h3>
+<p class="text-gray-700">Usamos as informações para avaliação de pronúncia, experiências de aprendizado personalizadas e melhorias no aplicativo.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Dados enviados ao Google Gemini AI</h3>
+<p class="text-gray-700 mb-3">Para fornecer recursos de conversação com IA, os seguintes dados são enviados à API do Google Gemini:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Texto de fala:</strong> O texto convertido pelo reconhecimento de voz é enviado para gerar respostas de IA.</li>
+<li><strong>Informações do perfil:</strong> Seu nome, hobbies e interesses (se fornecidos) são usados para personalizar conversas.</li>
+<li><strong>Histórico de conversa:</strong> O contexto da sessão é enviado para manter um fluxo de diálogo natural.</li>
+</ul>
+</div>
+<p class="text-gray-700">O tratamento de dados está sujeito aos <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Termos de Serviço da API do Google Gemini</a>.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contato</h3>
+<p class="text-gray-700">Entre em contato conosco em <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<div id="content-ru" class="language-content">
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<h2 class="text-3xl font-bold text-blue-600 mb-6">Политика конфиденциальности</h2>
+<p class="text-gray-600 mb-4">Последнее обновление: Март 2026</p>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Собираемая информация</h3>
+<p class="text-gray-700">Приложение BuddyTalk собирает голосовые данные, прогресс обучения, информацию о подписке и данные устройства для улучшения вашего опыта.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Использование информации</h3>
+<p class="text-gray-700">Мы используем информацию для оценки произношения, персонализированного обучения и улучшения приложения.</p>
+</section>
+<section class="mb-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Данные, отправляемые в Google Gemini AI</h3>
+<p class="text-gray-700 mb-3">Для обеспечения функций ИИ-разговоров следующие данные отправляются в API Google Gemini:</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+<li><strong>Текст речи:</strong> Текст, преобразованный распознаванием речи, отправляется для генерации ответов ИИ.</li>
+<li><strong>Информация профиля:</strong> Ваше имя, хобби и интересы (при наличии) используются для персонализации разговоров.</li>
+<li><strong>История разговоров:</strong> Контекст сессии отправляется для поддержания естественного диалога.</li>
+</ul>
+</div>
+<p class="text-gray-700">Обработка данных регулируется <a href="https://ai.google.dev/gemini-api/terms" class="text-blue-600 hover:underline" target="_blank">Условиями использования API Google Gemini</a>.</p>
+</section>
+<section>
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Контакты</h3>
+<p class="text-gray-700">Свяжитесь с нами по адресу <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">trailfusionai@gmail.com</a></p>
+</section>
+</div>
+</div>
+
+<p class="text-center mt-8"><a href="buddytalk-terms.html" class="text-blue-600 hover:underline font-medium" id="crossLink">利用規約はこちら →</a></p>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8 mt-16">
+<div class="container mx-auto px-4 text-center">
+<p class="text-gray-400">&copy; 2025 TrailFusion AI. All rights reserved.</p>
+<p class="text-gray-500 mt-2">
+<a href="mailto:trailfusionai@gmail.com" class="hover:text-blue-400 transition">trailfusionai@gmail.com</a>
+</p>
+</div>
+</footer>
+
+<!-- Language Switcher Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const languageSelector = document.getElementById('languageSelector');
+const allContent = document.querySelectorAll('.language-content');
+const subtitles = {"ja": "プライバシーポリシー", "en": "Privacy Policy", "zh-Hans": "隐私政策", "fr": "Politique de confidentialité", "de": "Datenschutzrichtlinie", "es": "Política de privacidad", "ko": "개인정보 보호정책", "hi": "गोपनीयता नीति", "pt-BR": "Política de Privacidade", "ru": "Политика конфиденциальности"};
+const crossTexts = {"ja": "利用規約はこちら →", "en": "View Terms of Service →", "zh-Hans": "查看服务条款 →", "fr": "Voir les conditions d"utilisation →", "de": "Nutzungsbedingungen ansehen →", "es": "Ver términos de servicio →", "ko": "이용약관 보기 →", "hi": "सेवा की शर्तें देखें →", "pt-BR": "Ver Termos de Serviço →", "ru": "Условия использования →"};
+
+// Get saved language or default to Japanese
+const savedLanguage = localStorage.getItem('buddytalk-language') || 'ja';
+languageSelector.value = savedLanguage;
+showLanguage(savedLanguage);
+
+languageSelector.addEventListener('change', function() {
+const selectedLang = this.value;
+localStorage.setItem('buddytalk-language', selectedLang);
+showLanguage(selectedLang);
+});
+
+function showLanguage(lang) {
+allContent.forEach(content => {
+content.classList.remove('active');
+});
+const activeContent = document.getElementById('content-' + lang);
+if (activeContent) {
+activeContent.classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.getElementById('headerSubtitle').textContent = subtitles[lang] || subtitles['ja'];
+const crossLink = document.getElementById('crossLink');
+if (crossLink) crossLink.textContent = crossTexts[lang] || crossTexts['ja'];
+}
+});
+</script>
 </body>
 </html>
