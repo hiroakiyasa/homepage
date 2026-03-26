@@ -24,7 +24,7 @@ display: block;
 <div class="container mx-auto px-4">
 <div class="flex items-center justify-between">
 <div>
-<h1 class="text-2xl md:text-3xl font-bold">BuddyTalk</h1>
+<a href="apps.html#buddytalk" class="hover:opacity-80 transition"><h1 class="text-2xl md:text-3xl font-bold">BuddyTalk</h1></a>
 <p class="text-sm md:text-base opacity-90 mt-1" id="headerSubtitle">利用規約</p>
 </div>
 <!-- Language Selector -->
@@ -523,6 +523,22 @@ display: block;
 </div>
 </div>
 
+<!-- App Info Card -->
+<div class="mt-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 md:p-8 text-white text-center">
+<h3 class="text-xl md:text-2xl font-bold mb-2" id="appCardTitle">BuddyTalk で英語を楽しく学ぼう</h3>
+<p class="opacity-90 mb-5 text-sm md:text-base" id="appCardDesc">AI 英語パートナーとリアルな会話練習ができる学習アプリ</p>
+<div class="flex flex-wrap justify-center gap-3">
+<a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" class="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-5 py-2.5 rounded-xl font-semibold text-sm transition">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+<span id="appStoreBtn">App Store でダウンロード</span>
+</a>
+<a href="apps.html#buddytalk" class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition" id="appInfoLink">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+<span id="appInfoBtn">アプリの詳細を見る</span>
+</a>
+</div>
+</div>
+
 <p class="text-center mt-8"><a href="buddytalk-privacy.html" class="text-blue-600 hover:underline font-medium" id="crossLink">プライバシーポリシーはこちら →</a></p>
 </main>
 
@@ -543,6 +559,10 @@ const languageSelector = document.getElementById('languageSelector');
 const allContent = document.querySelectorAll('.language-content');
 const subtitles = {"ja": "利用規約", "en": "Terms of Service", "zh-Hans": "服务条款", "fr": "Conditions d"utilisation", "de": "Nutzungsbedingungen", "es": "Términos de servicio", "ko": "이용약관", "hi": "सेवा की शर्तें", "pt-BR": "Termos de Serviço", "ru": "Условия использования"};
 const crossTexts = {"ja": "プライバシーポリシーはこちら →", "en": "View Privacy Policy →", "zh-Hans": "查看隐私政策 →", "fr": "Voir la politique de confidentialité →", "de": "Datenschutzrichtlinie ansehen →", "es": "Ver política de privacidad →", "ko": "개인정보 보호정책 보기 →", "hi": "गोपनीयता नीति देखें →", "pt-BR": "Ver Política de Privacidade →", "ru": "Политика конфиденциальности →"};
+const appCardTitles = {"ja": "BuddyTalk で英語を楽しく学ぼう", "en": "Learn English with BuddyTalk", "zh-Hans": "用 BuddyTalk 轻松学英语", "fr": "Apprenez l'anglais avec BuddyTalk", "de": "Englisch lernen mit BuddyTalk", "es": "Aprende inglés con BuddyTalk", "ko": "BuddyTalk으로 영어를 즐겁게 배우세요", "hi": "BuddyTalk से अंग्रेज़ी सीखें", "pt-BR": "Aprenda inglês com o BuddyTalk", "ru": "Учите английский с BuddyTalk"};
+const appCardDescs = {"ja": "AI 英語パートナーとリアルな会話練習ができる学習アプリ", "en": "Practice real conversations with your AI English partner", "zh-Hans": "与 AI 英语伙伴进行真实对话练习", "fr": "Pratiquez des conversations réelles avec votre partenaire IA", "de": "Üben Sie echte Gespräche mit Ihrem KI-Englischpartner", "es": "Practica conversaciones reales con tu compañero de IA", "ko": "AI 영어 파트너와 실전 회화 연습", "hi": "AI अंग्रेज़ी पार्टनर के साथ वास्तविक बातचीत का अभ्यास करें", "pt-BR": "Pratique conversas reais com seu parceiro de IA", "ru": "Практикуйте реальные разговоры с вашим ИИ-партнёром"};
+const appStoreBtns = {"ja": "App Store でダウンロード", "en": "Download on App Store", "zh-Hans": "在 App Store 下载", "fr": "Télécharger sur l'App Store", "de": "Im App Store laden", "es": "Descargar en App Store", "ko": "App Store에서 다운로드", "hi": "App Store से डाउनलोड करें", "pt-BR": "Baixar na App Store", "ru": "Загрузить в App Store"};
+const appInfoBtns = {"ja": "アプリの詳細を見る", "en": "Learn more about the app", "zh-Hans": "了解应用详情", "fr": "En savoir plus sur l'app", "de": "Mehr über die App erfahren", "es": "Más información de la app", "ko": "앱 상세 정보 보기", "hi": "ऐप के बारे में और जानें", "pt-BR": "Saiba mais sobre o app", "ru": "Подробнее о приложении"};
 
 // Get saved language or default to Japanese
 const savedLanguage = localStorage.getItem('buddytalk-language') || 'ja';
@@ -567,6 +587,10 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 document.getElementById('headerSubtitle').textContent = subtitles[lang] || subtitles['ja'];
 const crossLink = document.getElementById('crossLink');
 if (crossLink) crossLink.textContent = crossTexts[lang] || crossTexts['ja'];
+document.getElementById('appCardTitle').textContent = appCardTitles[lang] || appCardTitles['ja'];
+document.getElementById('appCardDesc').textContent = appCardDescs[lang] || appCardDescs['ja'];
+document.getElementById('appStoreBtn').textContent = appStoreBtns[lang] || appStoreBtns['ja'];
+document.getElementById('appInfoBtn').textContent = appInfoBtns[lang] || appInfoBtns['ja'];
 }
 });
 </script>
