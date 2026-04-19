@@ -439,113 +439,111 @@
     </div>
   </header>
   <!-- Gamified Navigation (Quest Log) -->
-  <nav id="quest-nav" class="sticky top-[72px] z-40 quest-nav hidden lg:block">
-    <div class="container mx-auto px-4">
+  <nav id="quest-nav" class="sticky top-[72px] z-40 quest-nav hidden lg:block bg-navy/95 backdrop-blur-md border-b-[3px] border-sun">
+    <div class="container mx-auto px-4 py-2">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <a href="#step1" class="quest-step active" data-step="1">
-            <div class="quest-icon bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-              <i class="ri-lightbulb-flash-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-indigo-300 uppercase tracking-widest">Step 01</div>
-              <div class="text-sm font-bold text-white">Vision</div>
-            </div>
+          <a href="#step1" class="quest-step active text-white hover:text-sun transition" data-step="1">
+            <div class="w-8 h-8 rounded-full bg-coral text-white font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">1</div>
+            <div class="hidden xl:block font-display font-black">夢を描く</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step2" class="quest-step" data-step="2">
-            <div class="quest-icon bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              <i class="ri-car-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-emerald-300 uppercase tracking-widest">Step 02</div>
-              <div class="text-sm font-bold text-white">Base</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+          
+          <a href="#step2" class="quest-step text-white hover:text-sun transition" data-step="2">
+            <div class="w-8 h-8 rounded-full bg-ocean text-navy font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">2</div>
+            <div class="hidden xl:block font-display font-black">車両</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step3" class="quest-step" data-step="3">
-            <div class="quest-icon bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
-              <i class="ri-layout-masonry-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-cyan-300 uppercase tracking-widest">Step 03</div>
-              <div class="text-sm font-bold text-white">Foundations</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+          
+          <a href="#step3" class="quest-step text-white hover:text-sun transition" data-step="3">
+            <div class="w-8 h-8 rounded-full bg-peach text-navy font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">3</div>
+            <div class="hidden xl:block font-display font-black">基礎工事</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step4" class="quest-step" data-step="4">
-            <div class="quest-icon bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              <i class="ri-home-gear-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-amber-300 uppercase tracking-widest">Step 04</div>
-              <div class="text-sm font-bold text-white">Interior</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+          
+          <a href="#step4" class="quest-step text-white hover:text-sun transition" data-step="4">
+            <div class="w-8 h-8 rounded-full bg-grass text-navy font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">4</div>
+            <div class="hidden xl:block font-display font-black">内装造作</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step5" class="quest-step" data-step="5">
-            <div class="quest-icon bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
-              <i class="ri-flashlight-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-yellow-300 uppercase tracking-widest">Step 05</div>
-              <div class="text-sm font-bold text-white">Power</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+          
+          <a href="#step5" class="quest-step text-white hover:text-sun transition" data-step="5">
+            <div class="w-8 h-8 rounded-full bg-sun text-navy font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">5</div>
+            <div class="hidden xl:block font-display font-black">電装</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step6" class="quest-step" data-step="6">
-            <div class="quest-icon bg-purple-500/20 text-purple-400 border border-purple-500/30">
-              <i class="ri-sofa-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-purple-300 uppercase tracking-widest">Step 06</div>
-              <div class="text-sm font-bold text-white">Living</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+          
+          <a href="#step6" class="quest-step text-white hover:text-sun transition" data-step="6">
+            <div class="w-8 h-8 rounded-full bg-sky text-navy font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]">6</div>
+            <div class="hidden xl:block font-display font-black">登録</div>
           </a>
-          <div class="w-8 h-[1px] bg-white/10"></div>
-          <a href="#step7" class="quest-step" data-step="7">
-            <div class="quest-icon bg-green-500/20 text-green-400 border border-green-500/30">
-              <i class="ri-government-line"></i>
-            </div>
-            <div class="hidden xl:block">
-              <div class="text-[10px] text-green-300 uppercase tracking-widest">Step 07</div>
-              <div class="text-sm font-bold text-white">Legal</div>
-            </div>
+          <div class="w-4 h-[3px] bg-white/20"></div>
+
+          <a href="#gallery" class="quest-step text-white hover:text-sun transition" data-step="gallery">
+            <div class="w-8 h-8 rounded-full bg-berry text-white font-black grid place-items-center border-2 border-navy shadow-[2px_2px_0_#FFD84D]"><i class="ri-flag-fill"></i></div>
+            <div class="hidden xl:block font-display font-black">完成</div>
           </a>
         </div>
 
-        <div class="flex items-center gap-4 pl-8 border-l border-white/10">
+        <div class="flex items-center gap-4 pl-8 border-l-[3px] border-white/20">
           <div class="text-right">
-            <div class="text-[10px] text-gray-400 uppercase tracking-widest">Progress</div>
-            <div class="text-lg font-bold text-white font-mono"><span id="progress-percent">0</span>%</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">PROGRESS</div>
+            <div class="text-lg font-black text-white font-display"><span id="progress-percent">0</span>%</div>
           </div>
-          <div class="w-32 h-2 bg-gray-800 rounded-full overflow-hidden">
-            <div id="progress-fill"
-              class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 w-0">
-            </div>
+          <div class="w-32 h-4 bg-navy border-2 border-white/20 rounded-full overflow-hidden p-0.5">
+            <div id="progress-fill" class="h-full bg-coral rounded-full transition-all duration-300 w-0"></div>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <!-- ============================== -->
+  <!-- Mobile Floating Nav (Chunky) -->
+  <div id="mobile-step-nav" class="mobile-step-nav lg:hidden hidden">
+    <div id="mobile-step-nav-menu" class="mobile-step-nav-menu p-3 bg-white border-[3px] border-navy shadow-[8px_8px_0_#1F2E4D] rounded-2xl mb-4" style="bottom: 70px; right: 0;">
+      <div class="flex flex-col gap-2">
+        <a href="#step1" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-coral text-white grid place-items-center border-2 border-navy">1</div>
+          <span>夢を描く</span>
+        </a>
+        <a href="#step2" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-ocean text-navy grid place-items-center border-2 border-navy">2</div>
+          <span>車両</span>
+        </a>
+        <a href="#step3" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-peach text-navy grid place-items-center border-2 border-navy">3</div>
+          <span>基礎工事</span>
+        </a>
+        <a href="#step4" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-grass text-navy grid place-items-center border-2 border-navy">4</div>
+          <span>内装造作</span>
+        </a>
+        <a href="#step5" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-sun text-navy grid place-items-center border-2 border-navy">5</div>
+          <span>電装</span>
+        </a>
+        <a href="#step6" onclick="closeMobileStepNav()" class="flex items-center gap-3 p-2 hover:bg-cream rounded-xl font-bold text-navy">
+          <div class="w-8 h-8 rounded-full bg-sky text-navy grid place-items-center border-2 border-navy">6</div>
+          <span>登録</span>
+        </a>
+      </div>
+    </div>
+    <button id="mobile-step-nav-btn" class="w-14 h-14 bg-coral text-white border-[3px] border-navy rounded-full shadow-[4px_4px_0_#1F2E4D] flex items-center justify-center text-2xl z-50 fixed bottom-4 right-4" onclick="toggleMobileStepNav()">
+      <i class="ri-route-line"></i>
+    </button>
+  </div>
+
   <!-- HERO -->
-  <!-- ============================== -->
   <section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 30%, #B5EFE6 0%, #4ECDC4 35%, #3BB8B0 70%, #1F2E4D 100%);">
     <div class="absolute inset-0 dot-pattern opacity-25"></div>
-    <!-- AI: campervan illustration as the visual focal -->
     <img src="assets/images/ai/camping-hero-van.jpg" alt="" aria-hidden="true" class="absolute right-[-80px] bottom-0 w-[55%] max-w-[700px] object-contain opacity-90 hidden md:block">
-    <!-- AI: forest decoration on left -->
     <img src="assets/images/ai/camping-bg-forest.jpg" alt="" aria-hidden="true" class="absolute -left-32 -top-32 w-[420px] h-[420px] object-cover rounded-full opacity-40 blur-sm pointer-events-none">
 
-    <!-- Floating sticker decorations -->
     <div class="absolute top-[10%] left-[4%] hidden md:block float pointer-events-none" style="--r:-10deg;">
       <div class="sticker sticker-coral">🚐 HIACE DIY</div>
     </div>
     <div class="absolute bottom-[20%] left-[6%] hidden md:block float-slow pointer-events-none" style="--r:6deg;">
-      <div class="sticker sticker-sun">⚡ 7 STEPS</div>
+      <div class="sticker sticker-sun">⚡ 6 STEPS</div>
     </div>
     <div class="absolute top-[20%] right-[42%] hidden lg:block float pointer-events-none" style="--r:-4deg; animation-delay: -1.5s;">
       <div class="sticker sticker-grass">⛰️ ADVENTURE</div>
@@ -555,7 +553,7 @@
       <div class="max-w-3xl">
         <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
           <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
-          <span class="font-bold text-sm text-navy">Ultimate DIY Guide v2.0</span>
+          <span class="font-bold text-sm text-navy">Ultimate DIY Guide v3.0</span>
         </div>
 
         <h1 class="display-xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-navy mb-6 leading-[1.05]">
@@ -566,7 +564,7 @@
         </h1>
 
         <p class="text-lg md:text-xl text-navy/85 mb-8 max-w-xl font-medium leading-relaxed pop-in" style="animation-delay: 0.55s;">
-          設計・製作・登録まで、7つのクエストを攻略して<br>
+          設計・製作・登録まで、6つのクエストを攻略して<br>
           <span class="hand-font text-2xl md:text-3xl text-coral">あなただけの物語を始めよう。</span>
         </p>
 
@@ -590,1073 +588,607 @@
   </section>
 
   <!-- ========================================== -->
-  <!-- STEP 1: 夢を描く (Dream & Vision) -->
+  <!-- STEP 1: 夢を描く -->
   <!-- ========================================== -->
-  <!-- ========================================== -->
-  <!-- STEP 1: 夢を描く (Dream & Vision) -->
-  <!-- ========================================== -->
-  <section id="step1" class="step-section relative overflow-hidden">
-    <!-- Parallax Background -->
-    <div class="absolute inset-0 z-0">
-      <div
-        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1655192151428-7bb461ef70ef?w=1920')] bg-cover bg-center bg-fixed opacity-40">
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#0f172a]/80 to-[#0f172a]"></div>
-    </div>
-
-    <div class="step-bg-text">DREAM</div>
-
+  <section id="step1" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-40"></div>
     <div class="container mx-auto px-4 relative z-10">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-3 glass-panel px-6 py-3 rounded-full mb-6">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white font-bold text-lg shadow-[0_0_20px_rgba(99,102,241,0.5)]">1</span>
-          <span class="text-sm font-medium tracking-wider text-indigo-200">STEP ONE</span>
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-coral border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">1</span>
+          <span class="text-sm font-bold text-white tracking-widest">STEP ONE</span>
         </div>
-        <h2
-          class="text-4xl md:text-6xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-          夢を描く</h2>
-        <p class="text-xl text-indigo-300 max-w-2xl mx-auto font-light">Dream & Vision</p>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">夢を描く</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Plan & Layout</p>
       </div>
 
-      <!-- ストーリーカード -->
-      <div class="max-w-4xl mx-auto mb-20">
-        <div class="glass-card p-8 md:p-12">
-          <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-            <div
-              class="w-20 h-20 flex-shrink-0 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.4)]">
-              <i class="ri-lightbulb-flash-fill text-white text-4xl"></i>
-            </div>
-            <div>
-              <h3 class="text-3xl font-bold mb-4 text-white">すべてはここから始まる</h3>
-              <p class="text-gray-300 leading-relaxed text-lg">
-                週末の旅、家族との冒険、自由な暮らし。あなたの理想のバンライフを思い描くことから、すべてが始まります。
-                DIYキャンピングカー製作は、単なる改造ではなく、<strong class="text-indigo-400">あなただけの移動する家</strong>を創る旅路です。
-              </p>
-            </div>
-          </div>
-
-          <!-- DIY vs プロ比較 -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              class="bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-[1.02]">
-              <div class="flex items-center gap-3 mb-6">
-                <i class="ri-hammer-fill text-2xl text-amber-400"></i>
-                <h4 class="font-bold text-xl text-white">DIY架装</h4>
-              </div>
-              <div class="space-y-4">
-                <div class="flex justify-between items-center pb-2 border-b border-white/5">
-                  <span class="text-gray-400">初期投資</span>
-                  <span class="font-bold text-amber-400 text-lg">10万円〜</span>
-                </div>
-                <div class="flex justify-between items-center pb-2 border-b border-white/5">
-                  <span class="text-gray-400">自由度</span>
-                  <span class="font-bold text-green-400 text-lg">無限大</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-400">達成感</span>
-                  <span class="font-bold text-pink-400 text-lg">最高</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-[1.02]">
-              <div class="flex items-center gap-3 mb-6">
-                <i class="ri-building-fill text-2xl text-blue-400"></i>
-                <h4 class="font-bold text-xl text-white">プロ架装</h4>
-              </div>
-              <div class="space-y-4">
-                <div class="flex justify-between items-center pb-2 border-b border-white/5">
-                  <span class="text-gray-400">初期投資</span>
-                  <span class="font-bold text-blue-400 text-lg">200万円〜</span>
-                </div>
-                <div class="flex justify-between items-center pb-2 border-b border-white/5">
-                  <span class="text-gray-400">自由度</span>
-                  <span class="font-bold text-yellow-400 text-lg">標準設計</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-400">手軽さ</span>
-                  <span class="font-bold text-green-400 text-lg">お任せ</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料（タブ切り替え） -->
-      <div class="max-w-4xl mx-auto">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
-          <h3 class="text-2xl font-bold text-white">技術資料 <span class="text-sm font-normal text-gray-400 ml-2">Technical
-              Documents</span></h3>
-        </div>
-
-        <!-- PDFタブ -->
-        <div class="flex gap-4 mb-6">
-          <button
-            class="pdf-tab active px-6 py-3 bg-indigo-600/20 border border-indigo-500/50 text-indigo-300 rounded-xl text-sm font-bold hover:bg-indigo-600/40 transition-all flex items-center gap-2"
-            data-target="step1-pdf1">
-            <i class="ri-file-text-line"></i> 日本語版
-          </button>
-          <button
-            class="pdf-tab px-6 py-3 bg-white/5 border border-white/10 text-gray-400 rounded-xl text-sm font-bold hover:bg-white/10 transition-all flex items-center gap-2"
-            data-target="step1-pdf2">
-            <i class="ri-english-input"></i> English
-          </button>
-        </div>
-
-        <!-- PDF 1: 日本語 -->
-        <div id="step1-pdf1" class="pdf-tab-content">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-indigo-400"></i> ハイエース空間設計.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/ハイエース空間設計.pdf" target="_blank" class="holo-btn"><i
-                    class="ri-fullscreen-line"></i> 拡大</a>
-                <a href="document/camping/ハイエース空間設計.pdf" download class="holo-btn"><i class="ri-download-line"></i>
-                  DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]" data-pdf="document/camping/ハイエース空間設計.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading System Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 2: English -->
-        <div id="step1-pdf2" class="pdf-tab-content hidden">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-indigo-400"></i> Layout Architecture.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Hiace Camping CarLayout Architecture and DIY Design Analysis.pdf"
-                  target="_blank" class="holo-btn"><i class="ri-fullscreen-line"></i> View</a>
-                <a href="document/camping/Hiace Camping CarLayout Architecture and DIY Design Analysis.pdf" download
-                  class="holo-btn"><i class="ri-download-line"></i> DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]"
-              data-pdf="document/camping/Hiace Camping CarLayout Architecture and DIY Design Analysis.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading System Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========================================== -->
-  <!-- STEP 2: 車両を選ぶ (Vehicle Selection) -->
-  <!-- ========================================== -->
-  <!-- ========================================== -->
-  <!-- STEP 2: 車両を選ぶ (Vehicle Selection) -->
-  <!-- ========================================== -->
-  <section id="step2" class="step-section relative overflow-hidden">
-    <div class="step-bg-text right-0 transform translate-x-1/2">VEHICLE</div>
-
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-3 glass-panel px-6 py-3 rounded-full mb-6">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-500 text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.5)]">2</span>
-          <span class="text-sm font-medium tracking-wider text-emerald-200">STEP TWO</span>
-        </div>
-        <h2
-          class="text-4xl md:text-6xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-400">
-          車両を選ぶ</h2>
-        <p class="text-xl text-emerald-300 max-w-2xl mx-auto font-light">Vehicle Selection</p>
-      </div>
-
-      <!-- 車両選択のポイント -->
-      <div class="max-w-6xl mx-auto mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="glass-card p-6 text-center hover:bg-white/5 transition-all group">
-            <div
-              class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <i class="ri-car-fill text-white text-3xl"></i>
-            </div>
-            <h4 class="font-bold text-xl text-white mb-2">ボディタイプ</h4>
-            <p class="text-gray-400 text-sm">標準・ワイド・スーパーロング<br>使用目的に合わせた選択</p>
-          </div>
-
-          <div class="glass-card p-6 text-center hover:bg-white/5 transition-all group">
-            <div
-              class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <i class="ri-calendar-line text-white text-3xl"></i>
-            </div>
-            <h4 class="font-bold text-xl text-white mb-2">年式・型式</h4>
-            <p class="text-gray-400 text-sm">200系1型〜7型<br>予算と信頼性のバランス</p>
-          </div>
-
-          <div class="glass-card p-6 text-center hover:bg-white/5 transition-all group">
-            <div
-              class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <i class="ri-ruler-2-line text-white text-3xl"></i>
-            </div>
-            <h4 class="font-bold text-xl text-white mb-2">室内寸法</h4>
-            <p class="text-gray-400 text-sm">8ナンバー要件：高さ1600mm<br>レイアウトの自由度</p>
-          </div>
-
-          <div class="glass-card p-6 text-center hover:bg-white/5 transition-all group">
-            <div
-              class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <i class="ri-money-yen-circle-line text-white text-3xl"></i>
-            </div>
-            <h4 class="font-bold text-xl text-white mb-2">リセール</h4>
-            <p class="text-gray-400 text-sm">資産価値を考慮した<br>賢い車両選び</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料（タブ切り替え） -->
-      <div class="max-w-4xl mx-auto">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-1 h-8 bg-emerald-500 rounded-full"></div>
-          <h3 class="text-2xl font-bold text-white">技術資料 <span class="text-sm font-normal text-gray-400 ml-2">Technical
-              Documents</span></h3>
-        </div>
-
-        <!-- PDFタブ -->
-        <div class="flex flex-wrap gap-3 mb-6">
-          <button
-            class="pdf-tab active px-5 py-2.5 bg-emerald-600/20 border border-emerald-500/50 text-emerald-300 rounded-xl text-sm font-bold hover:bg-emerald-600/40 transition-all"
-            data-target="step2-pdf1">車両選定ガイド</button>
-          <button
-            class="pdf-tab px-5 py-2.5 bg-white/5 border border-white/10 text-gray-400 rounded-xl text-sm font-bold hover:bg-white/10 transition-all"
-            data-target="step2-pdf2">ベース車両比較</button>
-          <button
-            class="pdf-tab px-5 py-2.5 bg-white/5 border border-white/10 text-gray-400 rounded-xl text-sm font-bold hover:bg-white/10 transition-all"
-            data-target="step2-pdf3">技術的変遷</button>
-          <button
-            class="pdf-tab px-5 py-2.5 bg-white/5 border border-white/10 text-gray-400 rounded-xl text-sm font-bold hover:bg-white/10 transition-all"
-            data-target="step2-pdf4">リスク管理</button>
-          <button
-            class="pdf-tab px-5 py-2.5 bg-white/5 border border-white/10 text-gray-400 rounded-xl text-sm font-bold hover:bg-white/10 transition-all"
-            data-target="step2-pdf5">経済分析</button>
-        </div>
-
-        <!-- PDF 1 -->
-        <div id="step2-pdf1" class="pdf-tab-content">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-emerald-400"></i> ハイエースの賢い車両選定.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/ハイエースの賢い車両選定.pdf" target="_blank" class="holo-btn"><i
-                    class="ri-fullscreen-line"></i> 拡大</a>
-                <a href="document/camping/ハイエースの賢い車両選定.pdf" download class="holo-btn"><i class="ri-download-line"></i>
-                  DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]" data-pdf="document/camping/ハイエースの賢い車両選定.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 2 -->
-        <div id="step2-pdf2" class="pdf-tab-content hidden">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-emerald-400"></i> Base Vehicle Analysis.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Japan DIY Camper Base Vehicle Analysis Report.pdf" target="_blank"
-                  class="holo-btn"><i class="ri-fullscreen-line"></i> View</a>
-                <a href="document/camping/Japan DIY Camper Base Vehicle Analysis Report.pdf" download
-                  class="holo-btn"><i class="ri-download-line"></i> DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]"
-              data-pdf="document/camping/Japan DIY Camper Base Vehicle Analysis Report.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 3 -->
-        <div id="step2-pdf3" class="pdf-tab-content hidden">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-emerald-400"></i> 200 Series Evolution.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Toyota Hiace 200 Series Evolution and Technical Analys.pdf" target="_blank"
-                  class="holo-btn"><i class="ri-fullscreen-line"></i> View</a>
-                <a href="document/camping/Toyota Hiace 200 Series Evolution and Technical Analys.pdf" download
-                  class="holo-btn"><i class="ri-download-line"></i> DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]"
-              data-pdf="document/camping/Toyota Hiace 200 Series Evolution and Technical Analys.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 4 -->
-        <div id="step2-pdf4" class="pdf-tab-content hidden">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-emerald-400"></i> Risk Management.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Toyota Hiace 200 Series Evolution, Engineering, and Risk Management.pdf"
-                  target="_blank" class="holo-btn"><i class="ri-fullscreen-line"></i> View</a>
-                <a href="document/camping/Toyota Hiace 200 Series Evolution, Engineering, and Risk Management.pdf"
-                  download class="holo-btn"><i class="ri-download-line"></i> DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]"
-              data-pdf="document/camping/Toyota Hiace 200 Series Evolution, Engineering, and Risk Management.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 5 -->
-        <div id="step2-pdf5" class="pdf-tab-content hidden">
-          <div class="data-pad">
-            <div class="pad-toolbar">
-              <span class="text-gray-300 font-mono text-sm flex items-center gap-2"><i
-                  class="ri-database-2-line text-emerald-400"></i> Economic Analysis.pdf</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Toyota Hiace A Strategic Technical and Economic Analysis.pdf" target="_blank"
-                  class="holo-btn"><i class="ri-fullscreen-line"></i> View</a>
-                <a href="document/camping/Toyota Hiace A Strategic Technical and Economic Analysis.pdf" download
-                  class="holo-btn"><i class="ri-download-line"></i> DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container bg-[#0f172a]"
-              data-pdf="document/camping/Toyota Hiace A Strategic Technical and Economic Analysis.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading Data...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 次のステップへ -->
-      <div class="text-center mt-16">
-        <a href="#step3"
-          class="inline-flex items-center gap-2 bg-white text-emerald-900 px-8 py-4 rounded-full font-bold hover:bg-emerald-100 transition-colors shadow-xl">
-          次へ：基礎工事
-          <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- STEP 3: 基礎工事 (Foundation Work) -->
-  <!-- ========================================== -->
-  <section id="step3" class="py-20 md:py-28 relative"
-    style="background: linear-gradient(rgba(6, 182, 212, 0.88), rgba(37, 99, 235, 0.85)), url('https://images.unsplash.com/photo-1610264146566-c233419fb1c7?w=1920') center/cover no-repeat;">
-    <div class="container mx-auto px-4">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6 shadow-lg">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-cyan-600 font-bold text-lg">3</span>
-          <span class="text-sm font-medium tracking-wider">STEP THREE</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">基礎工事</h2>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">Foundation Work ― 見えない9割の工学</p>
-      </div>
-
-      <!-- 基礎工事の3つのポイント -->
-      <div class="max-w-5xl mx-auto mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-              <i class="ri-volume-down-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">制振施工</h4>
-            <p class="text-gray-600 text-sm">ブチルゴム・アルミシートで走行時の振動・騒音を大幅軽減</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-              <i class="ri-temp-hot-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">断熱処理</h4>
-            <p class="text-gray-600 text-sm">「夏はオーブン、冬は冷蔵庫」を解消する熱制御</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center">
-              <i class="ri-layout-grid-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">床下地</h4>
-            <p class="text-gray-600 text-sm">根太組みと合板敷設で家具設置の土台を作る</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料 -->
-      <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30">
-        <div class="flex items-center gap-2 mb-6">
-          <i class="ri-file-pdf-2-fill text-cyan-600 text-2xl"></i>
-          <h3 class="text-xl font-bold text-gray-800">技術資料</h3>
-          <span class="ml-auto text-sm text-gray-500">3本のPDF</span>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-4">
-          <button class="pdf-tab active px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium"
-            data-target="step3-pdf1">制振・断熱</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step3-pdf2">遮音対策</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step3-pdf3">Thermal Engineering</button>
-        </div>
-
-        <div id="step3-pdf1" class="pdf-tab-content">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>制振・断熱</span>
-              <div class="flex gap-2">
-                <a href="document/camping/制振_断熱.pdf" target="_blank" class="pdf-btn"><i
-                    class="ri-fullscreen-line"></i>拡大</a>
-                <a href="document/camping/制振_断熱.pdf" download class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container" data-pdf="document/camping/制振_断熱.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="step3-pdf2" class="pdf-tab-content hidden">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>断熱・遮音対策</span>
-              <div class="flex gap-2">
-                <a href="document/camping/断熱_遮音対策.pdf" target="_blank" class="pdf-btn"><i
-                    class="ri-fullscreen-line"></i>拡大</a>
-                <a href="document/camping/断熱_遮音対策.pdf" download class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container" data-pdf="document/camping/断熱_遮音対策.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="step3-pdf3" class="pdf-tab-content hidden">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Thermal Engineering</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf"
-                  target="_blank" class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf" download
-                  class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 次のステップへ -->
-      <div class="text-center mt-16">
-        <a href="#step4"
-          class="inline-flex items-center gap-2 bg-white text-cyan-700 px-8 py-4 rounded-full font-bold hover:bg-cyan-50 transition-colors shadow-xl">
-          次へ：内装造作
-          <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- STEP 4: 内装造作 (Interior Construction) -->
-  <!-- ========================================== -->
-  <section id="step4" class="py-20 md:py-28 relative"
-    style="background: linear-gradient(rgba(245, 158, 11, 0.88), rgba(249, 115, 22, 0.85)), url('https://images.unsplash.com/photo-1664361238207-164532d1934e?w=1920') center/cover no-repeat;">
-    <div class="container mx-auto px-4">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6 shadow-lg">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-amber-600 font-bold text-lg">4</span>
-          <span class="text-sm font-medium tracking-wider">STEP FOUR</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">内装造作</h2>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">Interior Construction ― 家具・キッチン・ベッドの製作</p>
-      </div>
-
-      <!-- 内装造作のポイント -->
-      <div class="max-w-5xl mx-auto mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
-              <i class="ri-hammer-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">家具設計</h4>
-            <p class="text-gray-600 text-sm">軽量化・難燃性・車両振動への対応を考慮した設計</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
-              <i class="ri-restaurant-2-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">キッチン設備</h4>
-            <p class="text-gray-600 text-sm">調理台0.3m×0.2m以上、天井高1,600mm要件</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-              <i class="ri-hotel-bed-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">就寝設備</h4>
-            <p class="text-gray-600 text-sm">1,800mm×500mm以上の寝具スペース確保</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料 -->
-      <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30">
-        <div class="flex items-center gap-2 mb-6">
-          <i class="ri-file-pdf-2-fill text-amber-600 text-2xl"></i>
-          <h3 class="text-xl font-bold text-gray-800">技術資料</h3>
-          <span class="ml-auto text-sm text-gray-500">2本のPDF</span>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-4">
-          <button class="pdf-tab active px-4 py-2 bg-amber-600 text-white rounded-lg text-sm font-medium"
-            data-target="step4-pdf1">施工エンジニアリング</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step4-pdf2">8ナンバー構造要件</button>
-        </div>
-
-        <div id="step4-pdf1" class="pdf-tab-content">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Campervan Conversion
-                Engineering</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Toyota Hiace Campervan Conversion Engineering and Construction Report.pdf"
-                  target="_blank" class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/Toyota Hiace Campervan Conversion Engineering and Construction Report.pdf"
-                  download class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/Toyota Hiace Campervan Conversion Engineering and Construction Report.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="step4-pdf2" class="pdf-tab-content hidden">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>8ナンバー構造要件</span>
-              <div class="flex gap-2">
-                <a href="document/camping/８ナンバー構造要件.pdf" target="_blank" class="pdf-btn"><i
-                    class="ri-fullscreen-line"></i>拡大</a>
-                <a href="document/camping/８ナンバー構造要件.pdf" download class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container" data-pdf="document/camping/８ナンバー構造要件.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 次のステップへ -->
-      <div class="text-center mt-16">
-        <a href="#step5"
-          class="inline-flex items-center gap-2 bg-white text-amber-700 px-8 py-4 rounded-full font-bold hover:bg-amber-50 transition-colors shadow-xl">
-          次へ：電装システム
-          <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- STEP 5: 電装システム (Electrical System) -->
-  <!-- ========================================== -->
-  <section id="step5" class="py-20 md:py-28 relative"
-    style="background: linear-gradient(rgba(234, 179, 8, 0.88), rgba(245, 158, 11, 0.85)), url('https://images.unsplash.com/photo-1660196585845-6719349155f0?w=1920') center/cover no-repeat;">
-    <div class="container mx-auto px-4">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6 shadow-lg">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-yellow-600 font-bold text-lg">5</span>
-          <span class="text-sm font-medium tracking-wider">STEP FIVE</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">電装システム</h2>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">Electrical System ― サブバッテリー・ソーラー・インバーター</p>
-      </div>
-
-      <!-- 電装のポイント -->
-      <div class="max-w-5xl mx-auto mb-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30 text-center">
-            <i class="ri-battery-2-charge-fill text-3xl text-yellow-600 mb-2"></i>
-            <h5 class="font-bold text-gray-800 text-sm">サブバッテリー</h5>
-            <p class="text-xs text-gray-600 mt-1">LiFePO4推奨</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30 text-center">
-            <i class="ri-sun-fill text-3xl text-orange-500 mb-2"></i>
-            <h5 class="font-bold text-gray-800 text-sm">ソーラーパネル</h5>
-            <p class="text-xs text-gray-600 mt-1">走行充電との併用</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30 text-center">
-            <i class="ri-plug-2-fill text-3xl text-blue-500 mb-2"></i>
-            <h5 class="font-bold text-gray-800 text-sm">インバーター</h5>
-            <p class="text-xs text-gray-600 mt-1">正弦波2000W〜</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30 text-center">
-            <i class="ri-flashlight-fill text-3xl text-green-500 mb-2"></i>
-            <h5 class="font-bold text-gray-800 text-sm">配線設計</h5>
-            <p class="text-xs text-gray-600 mt-1">火災リスク対策</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料 -->
-      <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30">
-        <div class="flex items-center gap-2 mb-6">
-          <i class="ri-file-pdf-2-fill text-yellow-600 text-2xl"></i>
-          <h3 class="text-xl font-bold text-gray-800">技術資料</h3>
-          <span class="ml-auto text-sm text-gray-500">2本のPDF</span>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-4">
-          <button class="pdf-tab active px-4 py-2 bg-yellow-600 text-white rounded-lg text-sm font-medium"
-            data-target="step5-pdf1">サブバッテリー構築</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step5-pdf2">Thermal Engineering</button>
-        </div>
-
-        <div id="step5-pdf1" class="pdf-tab-content">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>サブバッテリーシステム構築ガイド</span>
-              <div class="flex gap-2">
-                <a href="document/camping/サブバッテリーシステム構築ガイド.pdf" target="_blank" class="pdf-btn"><i
-                    class="ri-fullscreen-line"></i>拡大</a>
-                <a href="document/camping/サブバッテリーシステム構築ガイド.pdf" download class="pdf-btn"><i
-                    class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container" data-pdf="document/camping/サブバッテリーシステム構築ガイド.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="step5-pdf2" class="pdf-tab-content hidden">
-          <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Thermal Engineering（電装関連）</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf"
-                  target="_blank" class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf" download
-                  class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/Thermal Engineering and Climate Control in Mobile Living Spaces.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 次のステップへ -->
-      <div class="text-center mt-16">
-        <a href="#step6"
-          class="inline-flex items-center gap-2 bg-white text-yellow-700 px-8 py-4 rounded-full font-bold hover:bg-yellow-50 transition-colors shadow-xl">
-          次へ：快適化＆仕上げ
-          <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- STEP 6: 快適化＆仕上げ (Comfort & Finishing) -->
-  <!-- ========================================== -->
-  <section id="step6" class="py-20 md:py-28 relative"
-    style="background: linear-gradient(rgba(168, 85, 247, 0.88), rgba(236, 72, 153, 0.85)), url('https://images.unsplash.com/photo-1632052856028-6674c111bb6c?w=1920') center/cover no-repeat;">
-    <div class="container mx-auto px-4">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6 shadow-lg">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-purple-600 font-bold text-lg">6</span>
-          <span class="text-sm font-medium tracking-wider">STEP SIX</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">快適化＆仕上げ</h2>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">Comfort & Finishing ― 乗り心地改善・パワスラ・メンテナンス</p>
-      </div>
-
-      <!-- 快適化のポイント -->
-      <div class="max-w-5xl mx-auto mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-              <i class="ri-door-open-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">パワースライドドア</h4>
-            <p class="text-gray-600 text-sm">手動ドアの電動化改造（片側17〜19万円）</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-              <i class="ri-road-map-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">乗り心地改善</h4>
-            <p class="text-gray-600 text-sm">ショック・タイヤ・バンプストッパー交換</p>
-          </div>
-          <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30">
-            <div
-              class="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-              <i class="ri-tools-fill text-white text-2xl"></i>
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2">メンテナンス</h4>
-            <p class="text-gray-600 text-sm">ラジエーター交換・エア抜き作業</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料 -->
-      <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30">
-        <div class="flex items-center gap-2 mb-6">
-          <i class="ri-file-pdf-2-fill text-purple-600 text-2xl"></i>
-          <h3 class="text-xl font-bold text-gray-800">技術資料</h3>
-          <span class="ml-auto text-sm text-gray-500">3本のPDF</span>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-4">
-          <button class="pdf-tab active px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-medium"
-            data-target="step6-pdf1">パワスラ後付け</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step6-pdf2">乗り心地改善</button>
-          <button class="pdf-tab px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            data-target="step6-pdf3">ラジエーター交換</button>
-        </div>
-
-        <!-- PDF 1: パワスラ後付け -->
-        <div id="step6-pdf1" class="pdf-tab-content">
-          <p class="text-gray-700 mb-4 text-sm leading-relaxed">
-            手動スライドドアの電動化（パワースライドドア化）を技術面・費用面から徹底解説。ラック＆ピニオン方式の仕組み、イージークローザーの前提条件、専門ショップ依頼時の相場（片側約17〜19万円）を提示。DIYと専門施工のメリット・リスクを比較分析。
-          </p>
-          <div class="pdf-wrapper shadow-lg rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Power Slide Door Retrofit
-                Analysis</span>
-              <div class="flex gap-2">
-                <a href="document/camping/Power Slide Door Retrofit Analysis Technical and Cost Report.pdf"
-                  target="_blank" class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/Power Slide Door Retrofit Analysis Technical and Cost Report.pdf" download
-                  class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/Power Slide Door Retrofit Analysis Technical and Cost Report.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 2: 乗り心地改善 -->
-        <div id="step6-pdf2" class="pdf-tab-content hidden">
-          <p class="text-gray-700 mb-4 text-sm leading-relaxed">
-            商用車特有の突き上げ感や揺れを改善するための工学的アプローチ。タイヤ、ショックアブソーバー、バンプストッパーの交換による効果を製品別に比較。空気圧調整（無料）から構造変更を伴う本格改修まで、予算に応じた快適化ロードマップを提案。
-          </p>
-          <div class="pdf-wrapper shadow-lg rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Ride Quality Improvement
-                Report</span>
-              <div class="flex gap-2">
-                <a href="document/camping/thoughtful Toyota Hiace 200 Series Ride Quality Improvement Report.pdf"
-                  target="_blank" class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/thoughtful Toyota Hiace 200 Series Ride Quality Improvement Report.pdf"
-                  download class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/thoughtful Toyota Hiace 200 Series Ride Quality Improvement Report.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PDF 3: ラジエーター交換 -->
-        <div id="step6-pdf3" class="pdf-tab-content hidden">
-          <p class="text-gray-700 mb-4 text-sm leading-relaxed">
-            長期運用に不可欠なラジエーター交換の手順を詳細解説。経年劣化のサイン（樹脂パーツ割れ・冷却水漏れ）の見分け方、社外新品を活用したコスト削減術、ハイエース特有のエア抜き作業の難しさ、オートマ車のオイルホース取り扱いまで網羅。エンジン寿命を延ばすメンテナンスの要。
-          </p>
-          <div class="pdf-wrapper shadow-lg rounded-xl overflow-hidden">
-            <div class="pdf-toolbar">
-              <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>Radiator Replacement Guide</span>
-              <div class="flex gap-2">
-                <a href="document/camping/The Hiace Radiator Replacement and Maintenance Guide.pdf" target="_blank"
-                  class="pdf-btn"><i class="ri-fullscreen-line"></i>View</a>
-                <a href="document/camping/The Hiace Radiator Replacement and Maintenance Guide.pdf" download
-                  class="pdf-btn"><i class="ri-download-line"></i>DL</a>
-              </div>
-            </div>
-            <div class="pdf-canvas-container"
-              data-pdf="document/camping/The Hiace Radiator Replacement and Maintenance Guide.pdf">
-              <div class="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <div class="pdf-loading-text">Loading PDF...</div>
-                <div class="pdf-progress-bar">
-                  <div class="pdf-progress-fill" style="width: 0%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 次のステップへ -->
-      <div class="text-center mt-16">
-        <a href="#step7"
-          class="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition-colors shadow-xl">
-          次へ：8ナンバー登録
-          <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- STEP 7: 8ナンバー登録 (Registration) -->
-  <!-- ========================================== -->
-  <section id="step7" class="py-20 md:py-28 relative"
-    style="background: linear-gradient(rgba(34, 197, 94, 0.88), rgba(16, 185, 129, 0.85)), url('https://images.unsplash.com/photo-1695331156743-5e529a0652ca?w=1920') center/cover no-repeat;">
-
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- ステップヘッダー -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full mb-6 shadow-lg border border-white/30">
-          <span
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-green-600 font-bold text-lg">7</span>
-          <span class="text-sm font-medium tracking-wider">FINAL STEP</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">8ナンバー登録</h2>
-        <p class="text-xl text-white/90 max-w-2xl mx-auto">Registration Complete!</p>
-      </div>
-
-      <!-- 登録プロセス -->
-      <div class="max-w-4xl mx-auto mb-16">
-        <div class="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl p-8 md:p-12 border border-white/30">
-          <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">登録までのチェックリスト</h3>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-200">
-              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-green-500 flex items-center justify-center">
-                <i class="ri-check-line text-white text-xl"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-800">構造要件の確認</h4>
-                <p class="text-sm text-gray-600">就寝・調理・水回り設備の寸法クリア</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-200">
-              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-green-500 flex items-center justify-center">
-                <i class="ri-check-line text-white text-xl"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-800">書類準備</h4>
-                <p class="text-sm text-gray-600">車検証・改造自動車届出書・計算書類</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-200">
-              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-green-500 flex items-center justify-center">
-                <i class="ri-check-line text-white text-xl"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-800">陸運局での検査</h4>
-                <p class="text-sm text-gray-600">構造変更検査・ユーザー車検</p>
-              </div>
-            </div>
-            <div
-              class="flex items-center gap-4 p-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl text-white">
-              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-white flex items-center justify-center">
-                <i class="ri-trophy-fill text-green-500 text-xl"></i>
-              </div>
-              <div>
-                <h4 class="font-bold">8ナンバー取得完了！</h4>
-                <p class="text-sm text-white/80">おめでとうございます！あなたのDIYキャンピングカーが完成しました</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDF資料 -->
-      <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30">
-        <div class="flex items-center gap-2 mb-4">
-          <i class="ri-file-pdf-2-fill text-green-600 text-2xl"></i>
-          <h3 class="text-xl font-bold text-gray-800">登録完全マニュアル</h3>
-        </div>
-        <p class="text-gray-700 mb-4 text-sm leading-relaxed">
-          2022年規制緩和・2025年新基準に完全対応した登録手続きの決定版マニュアル。就寝・炊事設備の設置基準、重量分布計算、難燃性素材の選定、保安基準適合のチェックリストを体系化。ユーザー車検「一発合格」のための当日の流れ、検査官とのやり取り、よくある不合格理由と対策、登録後の任意保険加入の注意点まで完全カバー。
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-coral pb-2 inline-block">はじめに：なぜハイエースなのか</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          ハイエースがDIYキャンピングカーのベース車として選ばれる理由は3つあります。まず<strong>車内が圧倒的に広い</strong>こと、次に<strong>最低限の装備しかなくDIYしやすい</strong>こと、そして<strong>カスタムパーツが豊富</strong>なことです。特にバンタイプは荷室がシンプルな構造で、キャンプ道具をたくさん収納しながら広々としたベッドスペースも確保できます。
         </p>
-        <div class="pdf-wrapper shadow-xl rounded-xl overflow-hidden">
-          <div class="pdf-toolbar">
-            <span class="pdf-toolbar-title"><i class="ri-file-pdf-2-line mr-1"></i>DIYキャンピング車8ナンバー構造変更登録の完全マニュアル</span>
-            <div class="flex gap-2">
-              <a href="document/camping/DIYキャンピング車8ナンバー構造変更登録の完全マニュアル.pdf" target="_blank" class="pdf-btn"><i
-                  class="ri-fullscreen-line"></i>拡大</a>
-              <a href="document/camping/DIYキャンピング車8ナンバー構造変更登録の完全マニュアル.pdf" download class="pdf-btn"><i
-                  class="ri-download-line"></i>DL</a>
-            </div>
-          </div>
-          <div class="pdf-canvas-container" data-pdf="document/camping/DIYキャンピング車8ナンバー構造変更登録の完全マニュアル.pdf">
-            <div class="pdf-loading">
-              <div class="pdf-spinner"></div>
-              <div class="pdf-loading-text">PDFを読み込んでいます...</div>
-              <div class="pdf-progress-bar">
-                <div class="pdf-progress-fill" style="width: 0%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          バンには「ナローボディ（標準ボディ）」と「ワイドボディ」の2種類があり、ワイドボディのほうが横幅が広く快適ですが、普段使いや駐車を考えるとナローボディのほうが扱いやすいという考え方もあります。
+        </p>
 
-      <!-- 完成お祝い -->
-      <div class="text-center mt-16">
-        <div
-          class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold shadow-xl border border-white/30">
-          <i class="ri-sparkling-fill text-2xl"></i>
-          <span>完成おめでとうございます！</span>
-          <i class="ri-sparkling-fill text-2xl"></i>
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-ocean pb-2 inline-block mt-8">DIY前に決めておくべき「3つの質問」</h3>
+        <p class="text-navy/80 leading-relaxed mb-4">レイアウトを決める前に、以下の3点を明確にしておくことが最重要です。これを決めないと、作り直しになることがほとんどです。</p>
+        <div class="bg-sun/20 border-2 border-sun rounded-xl p-6 mb-8">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><i class="ri-checkbox-circle-fill text-coral text-2xl"></i><span class="text-navy/80 font-bold text-lg pt-1">誰が何人寝るのか？（大人の人数・子供の人数・年齢）</span></li>
+            <li class="flex items-start gap-3"><i class="ri-checkbox-circle-fill text-coral text-2xl"></i><span class="text-navy/80 font-bold text-lg pt-1">どんな目的で使うのか？（週末キャンプ・長期旅行・仕事・趣味など）</span></li>
+            <li class="flex items-start gap-3"><i class="ri-checkbox-circle-fill text-coral text-2xl"></i><span class="text-navy/80 font-bold text-lg pt-1">荷物は何を積むのか？（サーフボード・自転車・スキー板など）</span></li>
+          </ul>
         </div>
-        <p class="text-white/90 mt-6 max-w-xl mx-auto drop-shadow">
-          完成したキャンピングカーの写真をぜひ下のギャラリーでご覧ください。また、TikTokでDIYの様子を詳しく紹介しています。</p>
-        <a href="#gallery"
-          class="inline-flex items-center gap-2 mt-6 bg-white text-green-600 px-6 py-3 rounded-full font-bold hover:bg-green-50 transition-colors shadow-lg border border-white/30">
-          完成例ギャラリーを見る
-          <i class="ri-arrow-down-line"></i>
-        </a>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-6 border-b-4 border-grass pb-2 inline-block mt-8">用途別レイアウト6選</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#4ECDC4] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-ocean text-navy font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人1名</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-fishing-line text-ocean"></i> ① ソロ・趣味仕様</h4>
+            <p class="text-navy/70 text-sm mb-4">1人で趣味を楽しみたいソロユーザー。荷物が多く、道具を積んで寝たい方向け。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>車内片側に跳ね上げ式ベッドを設置</li>
+              <li>反対側に収納棚 or 荷物スペース</li>
+              <li>荷室中央をフリーにすることで長物がそのまま積める</li>
+              <li>テーブルはバーに板を掛けるだけのシンプルな折りたたみ式</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: イレクターパイプ＋コンパネで自作最安（3〜8万円程度）</p>
+          </div>
+
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#FFB3BA] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-peach text-navy font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人1名</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-macbook-line text-peach"></i> ② ソロ・ノマドワーク仕様</h4>
+            <p class="text-navy/70 text-sm mb-4">リモートワーカー・フリーランスなど、車内で仕事もしたい方向け。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>常設ベッドを片側に、もう片側に作業デスクを配置</li>
+              <li>運転席と荷室の間のバーを利用して折りたたみデスクを設置するだけでOK</li>
+              <li>AC電源は必須。27インチモニター設置例も</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: サブバッテリー＋ソーラー基本（10〜20万円程度）</p>
+          </div>
+
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#FF6B5B] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-coral text-white font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人2名</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-heart-3-line text-coral"></i> ③ カップル・2人旅仕様</h4>
+            <p class="text-navy/70 text-sm mb-4">大人2名で長期旅行を楽しみたい方向け。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>常設ダブルベッドを後部に配置</li>
+              <li>キッチンを片側にまとめる</li>
+              <li>前部にダイネット（食事スペース）を配置</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: ベッド下は収納スペース。キッチン設置で高くなる（15〜30万円程度）</p>
+          </div>
+
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#FFD84D] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-sun text-navy font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人2+子2</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-parent-line text-sun"></i> ④ ファミリー仕様</h4>
+            <p class="text-navy/70 text-sm mb-4">家族4人でキャンプ。子供が小学生以下の場合に最適。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>荷室全面フラットベッド＋2段ベッド</li>
+              <li>下段に大人2名、上段に子供2名</li>
+              <li>ワイドボディなら女性でも横向き就寝可能</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: ベッドへの容易な展開設計がカギ（10〜20万円程度）</p>
+          </div>
+
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#7DD87A] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-grass text-navy font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人2+子3〜4</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-group-line text-grass"></i> ⑤ 大家族仕様（スパロン）</h4>
+            <p class="text-navy/70 text-sm mb-4">子供が多い大家族・5人以上の旅行。スーパーロング推奨。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>コの字型ダイネット＋後部2段ベッドの「2ルーム」構成</li>
+              <li>ダイネットのボードを渡して追加ベッドに</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: 間仕切り壁で2部屋感覚に（20〜40万円程度）</p>
+          </div>
+
+          <div class="border-[3px] border-navy rounded-2xl p-6 hover:shadow-[6px_6px_0_#E85A9A] transition-shadow bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-berry text-white font-black px-3 py-1 border-l-[3px] border-b-[3px] border-navy rounded-bl-xl text-sm">大人1〜2名</div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-riding-line text-berry"></i> ⑥ 趣味特化＋キャンプ仕様</h4>
+            <p class="text-navy/70 text-sm mb-4">大きな道具を積みながら車内でも快適に寝たい方。</p>
+            <ul class="text-sm text-navy/80 space-y-1 mb-4 list-disc pl-5">
+              <li>天井付近にルーフラックを取り付け</li>
+              <li>荷室下部（床下）に長物スライドイン構造</li>
+              <li>片側跳ね上げベッド＋道具置き場</li>
+            </ul>
+            <p class="text-xs font-bold text-coral">DIYポイント: 床材はFRPなどで水濡れ対策（8〜15万円程度）</p>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-coral pb-2 inline-block">DIY基礎工事：最初にやること</h3>
+        <p class="text-navy/80 leading-relaxed mb-4">どのレイアウトを選んでも、以下の「基礎工事」は共通して必要です。これを先に済ませてから家具を作ると失敗が少なくなります。</p>
+        <div class="overflow-x-auto mb-8">
+          <table class="table-chunky">
+            <thead><tr><th>工程</th><th>内容</th><th>費用目安</th></tr></thead>
+            <tbody>
+              <tr><td>①床のフラット化</td><td>純正マットを剥がし、コンパネ＋フロアシートを敷く</td><td>1〜3万円</td></tr>
+              <tr><td>②防音・断熱</td><td>制振シート＋吸音材＋断熱材をボディ内側に貼る</td><td>3〜10万円</td></tr>
+              <tr><td>③内張りのウッド化</td><td>羽目板やパネルをサイドウォールに貼る</td><td>3〜10万円</td></tr>
+              <tr><td>④電源システム</td><td>サブバッテリー or ポータブル電源＋ソーラーパネル</td><td>5〜15万円</td></tr>
+              <tr><td>⑤カーテン設置</td><td>遮光カーテン＋防虫ネット</td><td>1〜3万円</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          <strong>特に大切な「断熱」：</strong> ハイエースは元々断熱処理がほとんどされていません。断熱材を入れることで夏は涼しく、冬は暖かくなり、エアコンの効きが良くなります。1台全面施工で約10万円以内でDIYできます。<br>
+          <strong>電源システム：</strong> 週末キャンプなら大容量ポータブル電源（500〜1000Wh）で十分。連泊ならソーラー＋サブバッテリーの構築を検討。
+        </p>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sun pb-2 inline-block">初心者が陥りやすい失敗と対策</h3>
+        <ul class="space-y-4 mb-8">
+          <li class="bg-cream p-4 rounded-xl border-[3px] border-navy"><strong>失敗① 収納を考えずにベッドを作った：</strong> 高さを最初から収納スペースとして設計しましょう。</li>
+          <li class="bg-cream p-4 rounded-xl border-[3px] border-navy"><strong>失敗② 電源が足りない：</strong> ソーラーパネルとの組み合わせか、2台体制を最初から考えましょう。</li>
+          <li class="bg-cream p-4 rounded-xl border-[3px] border-navy"><strong>失敗③ 断熱なしで夏・冬に後悔：</strong> 内装をきれいに作った後に断熱工事をしようとすると全部バラす必要があります。</li>
+          <li class="bg-cream p-4 rounded-xl border-[3px] border-navy"><strong>失敗④ レイアウト変更ができない固定式にしてしまった：</strong> 取り外し・移動可能な設計を意識しましょう。</li>
+          <li class="bg-cream p-4 rounded-xl border-[3px] border-navy"><strong>失敗⑤ 工具を揃えるのを後回しにした：</strong> 電動ドライバー・ジグソー・サンダー・パイプカッターは最初に揃えましょう。</li>
+        </ul>
+        
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-peach pb-2 inline-block">DIY費用のざっくり目安</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="table-chunky">
+            <thead><tr><th>仕様レベル</th><th>内容</th><th>費用目安</th></tr></thead>
+            <tbody>
+              <tr><td>最低限（床＋ベッドのみ）</td><td>床貼り＋ベッドキット</td><td>5〜10万円</td></tr>
+              <tr><td>標準（断熱＋電源あり）</td><td>断熱＋床＋ベッド＋電源</td><td>15〜25万円</td></tr>
+              <tr><td>快適仕様（キッチン・収納充実）</td><td>上記＋キッチン・内装仕上げ</td><td>30〜50万円</td></tr>
+              <tr><td>本格フルDIY</td><td>全面断熱＋家具造作＋電装</td><td>50〜100万円以上</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <a href="#step2" class="btn-chunky btn-chunky-ocean text-lg">
+            NEXT: 車両を選ぶ <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+        
       </div>
     </div>
   </section>
+  
+  <!-- ========================================== -->
+  <!-- STEP 2: 車両を選ぶ -->
+  <!-- ========================================== -->
+  <section id="step2" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-ocean border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">2</span>
+          <span class="text-sm font-bold text-white tracking-widest">STEP TWO</span>
+        </div>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">車両を選ぶ</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Vehicle Selection</p>
+      </div>
 
-  <!-- 完成例ギャラリーセクション -->
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-ocean pb-2 inline-block">はじめに：なぜハイエースが選ばれるのか</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          ハイエース200系はDIYキャンピングカーのベース車両として圧倒的な人気を誇ります。その理由は：<br>
+          1. <strong>室内の広さ</strong>：フラットな床、高い天井、四角い空間構造がDIYに最適<br>
+          2. <strong>パーツの豊富さ</strong>：20年以上続く同一プラットフォームでカスタムパーツが豊富<br>
+          3. <strong>リセールバリューの高さ</strong>：10年以上経った車体でも価値が落ちにくい
+        </p>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-coral pb-2 inline-block mt-8">ボディタイプを選ぼう</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="table-chunky">
+            <thead><tr><th>ボディタイプ</th><th>室内長</th><th>室内幅</th><th>室内高</th><th>用途・特徴</th></tr></thead>
+            <tbody>
+              <tr><td><strong>標準ボディ・標準ルーフ</strong></td><td>約2,285mm</td><td>1,520mm</td><td>1,220mm</td><td>最もコンパクト。普通駐車場OK。小型キャンプ向き</td></tr>
+              <tr><td><strong>標準ボディ・ハイルーフ</strong></td><td>約2,285mm</td><td>1,520mm</td><td>1,825mm</td><td><span class="text-coral font-bold">立って動ける！DIYの定番。</span></td></tr>
+              <tr><td><strong>ワイドボディ・ミドルルーフ</strong></td><td>約2,570mm</td><td>1,735mm</td><td>1,395mm</td><td>幅が広く横幅余裕あり。立体駐車場はほぼ不可</td></tr>
+              <tr><td><strong>ワイド・スパロン・ハイルーフ</strong></td><td>約3,110mm</td><td>1,735mm</td><td>1,895mm</td><td>最大空間。本格的な居住DIYに最適だが取り回し難</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sun pb-2 inline-block mt-8">グレード・エンジン・駆動方式</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-cream border-[3px] border-navy rounded-xl p-5">
+            <h4 class="font-black text-lg text-ocean mb-2">スーパーGL vs DX</h4>
+            <p class="text-sm text-navy/80 mb-2"><strong>スーパーGL</strong>：内装がある程度整っており、追加DIYの手間が少ない。初心者にもおすすめ。<br>
+            <strong>DX</strong>：内装を全部自分で作りたい人に最適。価格が安い分DIYコストに回せる。防音・断熱処理が必須。</p>
+          </div>
+          <div class="bg-cream border-[3px] border-navy rounded-xl p-5">
+            <h4 class="font-black text-lg text-ocean mb-2">ガソリン vs ディーゼル</h4>
+            <p class="text-sm text-navy/80 mb-2"><strong>ガソリン</strong>：初期費用が安く静か。近距離・街乗り・年間1万km未満向け。<br>
+            <strong>ディーゼル</strong>：燃費が良くトルク大。長距離・重い荷物・山岳路向け。</p>
+          </div>
+          <div class="bg-cream border-[3px] border-navy rounded-xl p-5 md:col-span-2">
+            <h4 class="font-black text-lg text-ocean mb-2">2WD vs 4WD</h4>
+            <p class="text-sm text-navy/80">関東〜近畿の太平洋側在住なら、年間を通じた豪雪路は少なく2WD＋スタッドレスで大半のキャンプ地は問題ありません。東北・北海道・山間部キャンプ多めなら4WD推奨。</p>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-grass pb-2 inline-block mt-8">200系「1型〜9型」の違いを知ろう</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="table-chunky text-sm">
+            <thead><tr><th>型</th><th>発売年月</th><th>主な変更点</th><th>DIY観点での評価</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1〜2型</strong></td><td>2004〜</td><td>初期型、ディーゼル追加等</td><td>安価だが老朽化注意・要整備</td></tr>
+              <tr><td><strong>3〜4型</strong></td><td>2010〜</td><td>エクステリア刷新、装備充実</td><td>コスパ◎。予算重視(〜250万)</td></tr>
+              <tr><td><strong>5〜6型</strong></td><td>2017〜</td><td><strong>Toyota Safety Sense初採用</strong></td><td>安全性向上。バランス最高(250〜380万)</td></tr>
+              <tr><td><strong>7〜8型</strong></td><td>2021〜</td><td>ディーゼルエンジン改良</td><td>ほぼ新車品質(350万〜)</td></tr>
+              <tr><td><strong>9型</strong></td><td>2026〜</td><td><strong>全車速追従ACC標準化</strong></td><td>最新型。予算余裕あれば</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-peach pb-2 inline-block mt-8">維持費の理解（4ナンバー vs 1ナンバー）</h3>
+        <p class="text-navy/80 mb-6">DIY目的なら4ナンバー（小型貨物）のまま維持するのが最も経済的（年間30〜50万円目安）。1ナンバー（普通貨物）は高速料金が中型車料金になり割高。内装を大幅に変えると「8ナンバー（キャンピング車）」への変更が必要になります。</p>
+        
+        <div class="bg-coral text-white p-6 rounded-2xl border-[3px] border-navy shadow-[4px_4px_0_#1F2E4D]">
+          <h4 class="font-black text-xl mb-2"><i class="ri-thumb-up-fill"></i> 初めてのDIY向けベスト構成</h4>
+          <p class="font-bold text-lg mb-2">トヨタ ハイエース200系 5〜6型（2017〜2021年式） スーパーGL 標準ボディ・ハイルーフ ディーゼル 2WD</p>
+          <ul class="list-disc pl-5 text-sm space-y-1">
+            <li>Toyota Safety Sense搭載で安全</li>
+            <li>室内高1,825mmで大人が立って動ける</li>
+            <li>中古相場250〜380万円でコストと品質のバランスが良い</li>
+          </ul>
+        </div>
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <a href="#step3" class="btn-chunky btn-chunky-peach text-lg">
+            NEXT: 基礎工事 <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================== -->
+  <!-- STEP 3: 基礎工事 -->
+  <!-- ========================================== -->
+  <section id="step3" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-40"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-peach border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">3</span>
+          <span class="text-sm font-bold text-white tracking-widest">STEP THREE</span>
+        </div>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">基礎工事</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Foundation Work</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-peach pb-2 inline-block">概要と作業時間の目安</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          ハイエースの車中泊仕様化における「ステップ2：基礎工事（制振・防音・断熱・床下地・電気配線）」は、最終的に見えなくなる部分ですが、車内の静粛性・断熱性・結露リスク・メンテ作業性に大きく影響します。<br>
+          <strong>作業時間の目安：</strong> 延べ40〜60時間程度（週末作業で3〜5週くらい）。
+        </p>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sun pb-2 inline-block mt-8">工程の流れ</h3>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-4 p-4 bg-cream rounded-xl border-2 border-navy">
+            <span class="w-8 h-8 rounded-full bg-coral text-white font-black grid place-items-center">1</span>
+            <div class="text-navy/80">内装の分解と清掃（フロアマット・床板等の取り外し、脱脂）</div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-cream rounded-xl border-2 border-navy">
+            <span class="w-8 h-8 rounded-full bg-ocean text-white font-black grid place-items-center">2</span>
+            <div class="text-navy/80">制振・防音（レジェトレックス等で鉄板の共振を抑える）</div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-cream rounded-xl border-2 border-navy">
+            <span class="w-8 h-8 rounded-full bg-sun text-navy font-black grid place-items-center">3</span>
+            <div class="text-navy/80">断熱材施工（グラスウールやスタイロフォームで天井・側面・床を断熱）</div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-cream rounded-xl border-2 border-navy">
+            <span class="w-8 h-8 rounded-full bg-grass text-navy font-black grid place-items-center">4</span>
+            <div class="text-navy/80 font-bold text-coral">電気配線の仮配線（床や壁を塞ぐ前に配線ルートを通しておく）</div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-cream rounded-xl border-2 border-navy">
+            <span class="w-8 h-8 rounded-full bg-peach text-navy font-black grid place-items-center">5</span>
+            <div class="text-navy/80">床下地（根太組み）とコンパネでの床板づくり、仕上げ材貼り</div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-grass pb-2 inline-block">制振・防音（デッドニング）</h3>
+            <p class="text-navy/80 mb-4 text-sm">雨音・ロードノイズ・共振音を低減し、会話や睡眠の快適性を向上させます。</p>
+            <ul class="list-disc pl-5 text-sm text-navy/80 space-y-1 mb-4">
+              <li>フロント足元〜フロア全面、ホイールハウス、天井に施工</li>
+              <li>ブチル系制振シート（レジェトレックス等）をローラーで圧着</li>
+              <li>「車体全面ベタ貼り」より、振動が大きい部位を重点的に貼る方がコスパが高い</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-ocean pb-2 inline-block">断熱の基本と施工</h3>
+            <p class="text-navy/80 mb-4 text-sm">夏の車内温度上昇を抑え、冬の暖房効率を上げます。結露リスクも低減。</p>
+            <ul class="list-disc pl-5 text-sm text-navy/80 space-y-1 mb-4">
+              <li>グラスウール、スタイロフォーム等を使用</li>
+              <li>グラスウールは防湿フィルムで包み繊維飛散と湿気を防ぐ</li>
+              <li>床は荷重がかかるため柔らかい断熱材だけで支えず、必ず根太と合板で構造を作る</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-berry pb-2 inline-block mt-8">床下地（根太）とコンパネ床</h3>
+        <p class="text-navy/80 mb-6">根太は荷重を分散し、床をフラットにする構造材です。また、断熱材を受ける枠、配線を通すルートとしても機能します。</p>
+        <ul class="list-disc pl-5 text-navy/80 space-y-2 mb-6">
+          <li>車体のリブ（凸部）の上に根太を載せることで、面で支える。</li>
+          <li>1820×910mmの12mm合板（コンパネ）を2〜3枚使用。</li>
+          <li>型取りは段ボールや紙を使って現物合わせをする。</li>
+          <li>仕上げは防水性が高くコスパの良いクッションフロア（CF）が定番。</li>
+        </ul>
+
+        <div class="bg-sky/20 border-2 border-sky rounded-xl p-6">
+          <h4 class="font-black text-lg text-navy mb-2"><i class="ri-alert-fill text-coral"></i> 電気の「仮配線」を忘れずに</h4>
+          <p class="text-sm text-navy/80">床下地を組み上げてから配線を通そうとすると非常に困難になります。サブバッテリーシステムや照明・コンセント位置を想定した上で、少なくとも「幹線」となる配線（保護チューブ入り）は根太の隙間等に先に通しておくのがセオリーです。</p>
+        </div>
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <a href="#step4" class="btn-chunky btn-chunky-grass text-lg">
+            NEXT: 内装造作 <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================== -->
+  <!-- STEP 4: 内装造作 -->
+  <!-- ========================================== -->
+  <section id="step4" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-grass border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">4</span>
+          <span class="text-sm font-bold text-navy tracking-widest">STEP FOUR</span>
+        </div>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">内装造作</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Interior Construction</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-grass pb-2 inline-block">内装仕上げの概要</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          基礎工事が完了したらいよいよ「見える部分」の内装仕上げです。完成度が外観に直結するため、設計と段取りが重要になります。<br>
+          <strong>所要時間：</strong> 週末3〜5回（延べ10〜15日）<br>
+          <strong>材料費目安：</strong> 合計3〜10万円程度
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-tools-fill text-grass"></i> 工程1：天井板張り</h4>
+            <ul class="list-disc pl-5 text-sm text-navy/80 space-y-2">
+              <li>杉羽目板が定番。取付前に塗装しておく。</li>
+              <li>ハイエース天井内のフレーム位置にビスで固定。</li>
+              <li>ダウンライト用の穴開けと通線の引き出しをこの時点で行う。</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-black text-xl text-navy mb-3"><i class="ri-layout-masonry-fill text-grass"></i> 工程2：壁パネル（サイドパネル）</h4>
+            <ul class="list-disc pl-5 text-sm text-navy/80 space-y-2">
+              <li>ダンボールで窓枠やホイールハウスの型紙を作成。</li>
+              <li>固定にはエビナット（M3等）やターンナットを使用。</li>
+              <li>9mm合板を下地にし、その上に羽目板等で化粧。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-coral pb-2 inline-block mt-8">家具・ベッドキットの製作</h3>
+        <p class="text-navy/80 mb-6">走行中の安全性では、家具自体の強度よりも<strong>「車体にどう固定するか」</strong>が重要です。L字金具や平金具で床・側面へ多点固定します。</p>
+        
+        <div class="space-y-6 mb-8">
+          <div class="border-2 border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-black text-lg text-coral mb-2">ベッドキット</h4>
+            <p class="text-sm text-navy/80">初心者には<strong>2×4材＋構造用合板</strong>の組み合わせがベター。左右の収納箱の上に天板（12mm合板＋ウレタンスポンジ＋ビニールレザー）を渡す形が最も作りやすいです。</p>
+          </div>
+          <div class="border-2 border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-bold text-lg text-ocean mb-2">簡易ギャレー</h4>
+            <p class="text-sm text-navy/80">給水タンク、排水タンク、小型シンク、ポンプを箱に納めた着脱式ユニットが扱いやすいです。水漏れや臭い対策のためホース接続部は確実に固定。</p>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sun pb-2 inline-block mt-8">初心者向け おすすめの進め方</h3>
+        <div class="bg-white border-[3px] border-navy rounded-2xl p-6 shadow-[6px_6px_0_#FFD84D]">
+          <ol class="space-y-3 text-navy/80 font-bold">
+            <li>1. 壁・天井の下地と木張り</li>
+            <li>2. 常設または簡易折りたたみベッド</li>
+            <li>3. ベッド下収納</li>
+            <li>4. 取り外し式簡易ギャレー</li>
+          </ol>
+          <p class="text-sm text-navy/70 mt-4">先に大型ギャレーや複雑なスライドベッドを作ると、後から通路幅や配線が窮屈になります。仮組みして一度使い、改善点を見つけながら固定化していくのが実用車DIYのコツです。</p>
+        </div>
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <a href="#step5" class="btn-chunky btn-chunky-sun text-lg">
+            NEXT: 電装システム <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================== -->
+  <!-- STEP 5: 電装システム -->
+  <!-- ========================================== -->
+  <section id="step5" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-40"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-sun border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">5</span>
+          <span class="text-sm font-bold text-navy tracking-widest">STEP FIVE</span>
+        </div>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">電装システム</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Electrical System</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sun pb-2 inline-block">電装設計の基本：容量より「整合性」</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          DIYサブバッテリーシステムは、単に大きなバッテリーを積めばよいのではありません。使用家電の消費電力、充電源、配線の許容電流、保護機器、熱対策をセットで設計する必要があります。実際の事故リスクは、<strong>ケーブル太さ不足、ヒューズ位置不適切、接続端子の圧着不良</strong>などに集中しています。
+        </p>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-coral pb-2 inline-block mt-8">主要コンポーネント</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-black text-lg text-navy mb-2"><i class="ri-battery-2-charge-fill text-sun"></i> LiFePO4（リン酸鉄リチウム）</h4>
+            <p class="text-sm text-navy/80">鉛より軽く、実用放電率が高く、サイクル寿命が長い。照明・PC程度なら100Ah級、冷蔵庫等も含めるなら200Ah級、エアコン運用なら300Ah以上が目安。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-black text-lg text-navy mb-2"><i class="ri-car-fill text-ocean"></i> DC-DC走行充電器</h4>
+            <p class="text-sm text-navy/80">LiFePO4への適切な充電制御のために必須。20Aは軽負荷向け、40Aは標準的。高出力機ほど太いケーブルが必要。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-black text-lg text-navy mb-2"><i class="ri-sun-fill text-coral"></i> ソーラーとMPPT</h4>
+            <p class="text-sm text-navy/80">停車中の待機負荷補填に有効。ハイエースなら100W〜200W程度が導入しやすい。チャージコントローラーは変換効率の高いMPPTが有力。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-cream">
+            <h4 class="font-black text-lg text-navy mb-2"><i class="ri-plug-2-fill text-grass"></i> インバーター (100V)</h4>
+            <p class="text-sm text-navy/80">純正弦波が基本。電子レンジやドライヤーを使うと1000W〜2000W級が必要。大電流が流れるため、ケーブルやヒューズの徹底した安全設計が不可欠。</p>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-berry pb-2 inline-block mt-8">空調（FFヒーターとエアコン）</h3>
+        <p class="text-navy/80 mb-4">
+          <strong>エアコン：</strong> サブバッテリーDIYで最も高コスト・高難度。夏の冷房をバッテリーだけで一晩動かすには膨大な電力量（300Ah以上）が必要です。<br>
+          <strong>FFヒーター：</strong> 冬の暖房用途として効率が高い。床面開口、燃料系統、排気ルートの安全施工が最重要です。
+        </p>
+
+        <div class="bg-coral text-white border-[3px] border-navy rounded-2xl p-6 shadow-[6px_6px_0_#1F2E4D] mt-8">
+          <h4 class="font-black text-xl mb-3"><i class="ri-shield-check-fill"></i> 安全設計の鉄則</h4>
+          <ul class="list-disc pl-5 space-y-2 font-bold">
+            <li>大電流区間（バッテリー〜インバーター等）は短く太いケーブルを使う。</li>
+            <li>ヒューズは「機器」ではなく「配線」を守るために入れる。バッテリープラス端子の直後に主ヒューズを配置する。</li>
+            <li>車体貫通部ではグロメットや保護チューブを使用し、ショートを防ぐ。</li>
+            <li>12Vで済むもの（照明・冷蔵庫・換気）はDCで完結させ、AC100Vは高出力家電のみに限定する。</li>
+          </ul>
+        </div>
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <a href="#step6" class="btn-chunky btn-chunky-sky text-lg">
+            NEXT: 8ナンバー登録 <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================== -->
+  <!-- STEP 6: 8ナンバー登録 -->
+  <!-- ========================================== -->
+  <section id="step6" class="py-20 md:py-28 bg-cream relative overflow-hidden border-b-[3px] border-navy">
+    <div class="absolute inset-0 dot-pattern opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-sky border-2 border-navy px-6 py-2 rounded-full mb-6 shadow-[4px_4px_0_#1F2E4D]">
+          <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-navy font-black text-lg border-2 border-navy">6</span>
+          <span class="text-sm font-bold text-navy tracking-widest">STEP SIX</span>
+        </div>
+        <h2 class="display-xl text-4xl md:text-5xl lg:text-6xl text-navy mb-4">8ナンバー登録</h2>
+        <p class="text-xl text-navy/70 font-bold max-w-2xl mx-auto hand-font">Registration</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        
+      <div class="card-chunky p-8 md:p-12 mb-12 bg-white reveal">
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-sky pb-2 inline-block">キャンピング車（8ナンバー）の構造要件</h3>
+        <p class="text-navy/80 leading-relaxed mb-6">
+          1ナンバー・4ナンバーから8ナンバーへ変更すると、保険や車検サイクル（2年）の面でメリットがありますが、構造要件を満たす必要があります。主に以下の4つの設備が「恒久的に設置（簡単に外せない）」されていることが求められます。
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-white">
+            <h4 class="font-black text-lg text-sky mb-2">1. 就寝設備</h4>
+            <p class="text-sm text-navy/80">就寝定員分の平坦なベッド面積があり、フレームが車体に固定されていること。走行中に動かないか確認されます。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-white">
+            <h4 class="font-black text-lg text-sky mb-2">2. 炊事設備</h4>
+            <p class="text-sm text-navy/80">調理台（天板）があり、コンロを安全に設置できるスペースがあること。シンクを含むキッチンブロックとして固定されていることが望ましいです。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-white">
+            <h4 class="font-black text-lg text-sky mb-2">3. 給排水設備</h4>
+            <p class="text-sm text-navy/80">給水タンクと排水タンクが別体で区別でき、走行中に動かないよう固定されていること。排水が必ずタンクに入る構造であること。</p>
+          </div>
+          <div class="border-[3px] border-navy rounded-xl p-5 bg-white">
+            <h4 class="font-black text-lg text-sky mb-2">4. 収納・テーブル</h4>
+            <p class="text-sm text-navy/80">食器や調理器具を収納できる固定収納。テーブルとして使用できる設備（着脱式可）があること。</p>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-ocean pb-2 inline-block mt-8">書類準備と諸元計算書</h3>
+        <p class="text-navy/80 mb-4">
+          構造変更審査では、図面（平面・側面・断面図）と「諸元計算書」が必要です。<br>
+          <strong>諸元計算書：</strong> 改造後の装備品重量を合算し、車両総重量・前後軸重が許容範囲内か、就寝設備の面積と定員の整合性を証明します。また、シートやマットの<strong>難燃証明書</strong>の提出を求められることが多いため、必ず用意してください。
+        </p>
+
+        <h3 class="font-display font-black text-2xl text-navy mb-4 border-b-4 border-grass pb-2 inline-block mt-8">車検当日の流れとよくある不合格例</h3>
+        <ul class="list-disc pl-5 text-navy/80 space-y-3 mb-8">
+          <li><strong>通常検査＋構造検査：</strong> 普通の車検項目の後、キャンピング設備の寸法や固定状況を入念にチェックされます。</li>
+          <li><strong>重量測定：</strong> 給水タンクは実使用に近い水量を入れておくことが推奨されます。</li>
+          <li><strong class="text-coral">よくある不合格① 設備固定不足：</strong> ベッドやキッチンがボルトで確実に固定されていない。</li>
+          <li><strong class="text-coral">よくある不合格② 難燃証明なし：</strong> 自作の場合でも難燃性能が明記された材料を選びカタログを持参すること。</li>
+        </ul>
+
+        <div class="flex items-center gap-4 p-6 bg-gradient-to-r from-grass to-ocean rounded-2xl text-white border-[3px] border-navy shadow-[6px_6px_0_#1F2E4D]">
+          <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center border-[3px] border-navy shrink-0">
+            <i class="ri-trophy-fill text-coral text-3xl"></i>
+          </div>
+          <div>
+            <h4 class="font-black text-2xl mb-1">8ナンバー取得完了！</h4>
+            <p class="font-bold">おめでとうございます！あなただけのDIYキャンピングカーが完成しました。</p>
+          </div>
+        </div>
+      </div>
+    
+        
+        
+        <div class="text-center reveal mt-8">
+          <p class="text-navy/80 mt-6 max-w-xl mx-auto font-bold mb-6">
+            完成したキャンピングカーの写真をぜひ下のギャラリーでご覧ください。
+          </p>
+          <a href="#gallery" class="btn-chunky btn-chunky-berry text-lg">
+            <i class="ri-image-2-line"></i> 完成例ギャラリーを見る
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
   <section id="gallery" class="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 relative overflow-hidden">
     <!-- 背景装飾 -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-indigo-50/20 to-purple-50/30"></div>
