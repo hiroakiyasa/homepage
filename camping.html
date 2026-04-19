@@ -1425,3 +1425,2228 @@
     </div>
   </section>
   
+  <!-- ============================== -->
+  <!-- GALLERY & TICKTOK & FOOTER -->
+  <!-- ============================== -->
+<section id="gallery" class="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 relative overflow-hidden">
+    <!-- 背景装飾 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-indigo-50/20 to-purple-50/30"></div>
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-full blur-3xl">
+      </div>
+      <div
+        class="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full blur-3xl">
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-200 to-teal-200 rounded-full blur-3xl">
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- ヘッダー -->
+      <div class="text-center mb-16 fade-in-up">
+        <span
+          class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium px-6 py-2 rounded-full mb-6 shadow-lg">
+          PREMIUM GALLERY
+        </span>
+        <h2
+          class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+          完成例ギャラリー
+        </h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          プロフェッショナルな仕上がりを実現したキャンピングカーの数々。<br>
+          あなたの理想の一台を見つけてください。
+        </p>
+        <div class="text-center mt-6 md:hidden">
+          <p class="text-sm text-gray-500">← 横にスワイプして写真を見る →</p>
+        </div>
+      </div>
+
+      <!-- フィルター -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button
+          class="gallery-filter-btn active px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+          data-filter="all">
+          すべて
+        </button>
+        <button
+          class="gallery-filter-btn px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-medium shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
+          data-filter="exterior">
+          エクステリア
+        </button>
+        <button
+          class="gallery-filter-btn px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-medium shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
+          data-filter="interior">
+          インテリア
+        </button>
+        <button
+          class="gallery-filter-btn px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-medium shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
+          data-filter="system">
+          システム
+        </button>
+        <button
+          class="gallery-filter-btn px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-medium shadow-md transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
+          data-filter="travel">
+          旅先風景
+        </button>
+      </div>
+
+
+      <!-- ギャラリーグリッド -->
+      <!-- Mobile: Horizontal scroll, Desktop: Grid -->
+      <div class="overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 gallery-scroll-container"
+        style="scrollbar-width: none; -ms-overflow-style: none;" id="gallery-scroll-container">
+        <style>
+          .overflow-x-auto::-webkit-scrollbar {
+            display: none;
+          }
+        </style>
+        <div
+          class="gallery-grid flex md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 w-max md:w-auto">
+
+          <!-- エクステリア画像 1 -->
+          <div class="gallery-item exterior flex-shrink-0 w-72 md:w-auto" data-category="exterior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_exterior_countryside（大）.jpeg" alt="田園風景とキャンピングカー"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">田園風景</h3>
+                <p class="text-sm text-gray-200">のどかな風景の中で</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                エクステリア</div>
+            </div>
+          </div>
+
+          <!-- エクステリア画像 2 -->
+          <div class="gallery-item exterior flex-shrink-0 w-72 md:w-auto" data-category="exterior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_blue_sky_fields（大）.jpeg" alt="青空と田園"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">青空と田園</h3>
+                <p class="text-sm text-gray-200">爽やかな青空の下で</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                エクステリア</div>
+            </div>
+          </div>
+
+          <!-- エクステリア画像 3 -->
+          <div class="gallery-item exterior flex-shrink-0 w-72 md:w-auto" data-category="exterior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_countryside_sunset（大） copy.jpeg" alt="夕暮れの田園"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">夕暮れの田園</h3>
+                <p class="text-sm text-gray-200">美しいサンセット</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                エクステリア</div>
+            </div>
+          </div>
+
+          <!-- インテリア画像 1 -->
+          <div class="gallery-item interior flex-shrink-0 w-72 md:w-auto" data-category="interior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_interior_bed_area（大）.jpeg" alt="ベッドエリア"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">快適なベッド</h3>
+                <p class="text-sm text-gray-200">ゆったり就寝スペース</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                インテリア</div>
+            </div>
+          </div>
+
+          <!-- インテリア画像 2 -->
+          <div class="gallery-item interior flex-shrink-0 w-72 md:w-auto" data-category="interior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_interior_dining（大）.jpeg" alt="ダイニング"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">ダイニング</h3>
+                <p class="text-sm text-gray-200">家族で食事を楽しむ</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                インテリア</div>
+            </div>
+          </div>
+
+          <!-- インテリア画像 3 -->
+          <div class="gallery-item interior flex-shrink-0 w-72 md:w-auto" data-category="interior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_kitchen_area（大）.jpeg" alt="キッチン"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">機能的キッチン</h3>
+                <p class="text-sm text-gray-200">本格料理も可能</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                インテリア</div>
+            </div>
+          </div>
+
+          <!-- インテリア画像 4 -->
+          <div class="gallery-item interior flex-shrink-0 w-72 md:w-auto" data-category="interior">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_bunk_bed_layout（大）.jpeg" alt="2段ベッド"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">2段ベッド</h3>
+                <p class="text-sm text-gray-200">家族4人就寝可能</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                インテリア</div>
+            </div>
+          </div>
+
+          <!-- システム画像 1 -->
+          <div class="gallery-item system flex-shrink-0 w-72 md:w-auto" data-category="system">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_electrical_system（大）.jpeg" alt="電装システム"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">電装システム</h3>
+                <p class="text-sm text-gray-200">安全な電力供給</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                システム</div>
+            </div>
+          </div>
+
+          <!-- システム画像 2 -->
+          <div class="gallery-item system flex-shrink-0 w-72 md:w-auto" data-category="system">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_solar_panels_roof（大）.jpeg" alt="ソーラーパネル"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">ソーラーパネル</h3>
+                <p class="text-sm text-gray-200">エコな発電システム</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                システム</div>
+            </div>
+          </div>
+
+          <!-- 旅先風景 1 -->
+          <div class="gallery-item travel flex-shrink-0 w-72 md:w-auto" data-category="travel">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_mount_fuji_view（大）.jpeg" alt="富士山ビュー"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">富士山ビュー</h3>
+                <p class="text-sm text-gray-200">日本を代表する絶景</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                旅先風景</div>
+            </div>
+          </div>
+
+          <!-- 旅先風景 2 -->
+          <div class="gallery-item travel flex-shrink-0 w-72 md:w-auto" data-category="travel">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_seaside_sunset（大）.JPEG" alt="海辺の夕焼け"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">海辺の夕焼け</h3>
+                <p class="text-sm text-gray-200">美しいサンセット</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                旅先風景</div>
+            </div>
+          </div>
+
+          <!-- 旅先風景 3 -->
+          <div class="gallery-item travel flex-shrink-0 w-72 md:w-auto" data-category="travel">
+            <div
+              class="relative group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+              <img src="assets/images/camper/camper_snow_village（大）.jpg" alt="雪景色の村"
+                class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-lg font-bold mb-2">雪景色の村</h3>
+                <p class="text-sm text-gray-200">冬のキャンピング</p>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                旅先風景</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- スクロール矢印（下） -->
+      <div class="flex justify-center mt-8 mb-4 md:hidden">
+        <button id="gallery-scroll-left-bottom"
+          class="mr-4 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:from-blue-700 hover:to-purple-700 transition-colors duration-300">
+          <i class="ri-arrow-left-line text-xl"></i>
+        </button>
+        <button id="gallery-scroll-right-bottom"
+          class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:from-blue-700 hover:to-purple-700 transition-colors duration-300">
+          <i class="ri-arrow-right-line text-xl"></i>
+        </button>
+      </div>
+
+      <!-- 詳細モーダル表示ボタン -->
+
+    </div>
+  </section>
+
+  <!-- TikTok Video Section (moved after gallery) -->
+  <section id="tiktok" class="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-medium px-4 py-2 rounded-full mb-3 shadow-lg"
+          data-i18n="camping.tiktok.badge">TikTok</span>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="camping.tiktok.title">DIY 製作の全工程を動画で公開</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto" data-i18n="camping.tiktok.description">
+          ハイエース購入から完成まで、すべての製作工程を詳しく発信。初心者でも分かりやすい解説付き。</p>
+      </div>
+
+      <!-- カテゴリタブ -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button
+          class="video-category-tab active px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-primary text-white shadow-md"
+          data-category="all">
+          <i class="ri-apps-line mr-1"></i>すべて
+        </button>
+        <button
+          class="video-category-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary"
+          data-category="diy">
+          <i class="ri-tools-line mr-1"></i>DIY製作
+        </button>
+        <button
+          class="video-category-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary"
+          data-category="travel">
+          <i class="ri-caravan-line mr-1"></i>車中泊・旅
+        </button>
+        <button
+          class="video-category-tab px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary"
+          data-category="comfort">
+          <i class="ri-gamepad-line mr-1"></i>快適装備
+        </button>
+      </div>
+
+      <div class="text-center mb-6 md:hidden">
+        <p class="text-sm text-gray-500" data-i18n="camping.tiktok.swipeHint">← 横にスワイプして動画を見る →</p>
+      </div>
+
+      <!-- Mobile: Horizontal scroll, Desktop: Grid -->
+      <div class="overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 tiktok-scroll-container"
+        style="scrollbar-width: none; -ms-overflow-style: none;" id="tiktok-scroll-container">
+        <style>
+          .overflow-x-auto::-webkit-scrollbar {
+            display: none;
+          }
+        </style>
+        <div class="flex md:grid md:grid-cols-4 gap-4 md:gap-6 w-max md:w-auto" id="tiktok-container">
+          <!-- TikTok Video 1 - DIY製作 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="diy">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7123740258549714178"
+              data-video-id="7123740258549714178">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7123740258549714178?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7123740258549714178"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-tools-line"></i> DIY製作</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.0.title">
+                DIYキャンピング車登録完了</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.0.description">
+                ハイエースをDIYでキャンピング車登録した全過程をまとめて紹介</p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 2 - 車中泊・旅 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="travel">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7130760214931852545"
+              data-video-id="7130760214931852545">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7130760214931852545?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7130760214931852545"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-caravan-line"></i> 車中泊・旅</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.1.title">
+                北海道車中泊・朝の勉強時間</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.1.description">
+                キャンピングカーでの学習環境と集中できる空間作り</p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 3 - 車中泊・旅 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="travel">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7133978765453036801"
+              data-video-id="7133978765453036801">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7133978765453036801?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7133978765453036801"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-caravan-line"></i> 車中泊・旅</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.2.title">
+                家族で北海道車中泊の旅</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.2.description">家族でのバンライフ体験記
+              </p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 4 - 車中泊・旅 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="travel">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7159810576485453057"
+              data-video-id="7159810576485453057">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7159810576485453057?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7159810576485453057"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-caravan-line"></i> 車中泊・旅</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.3.title">
+                北海道車中泊おすすめ13選</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.3.description">
+                絶対行きたくなる絶景ポイント厳選</p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 5 - 快適装備 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="comfort">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7185920419822685441"
+              data-video-id="7185920419822685441">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7185920419822685441?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7185920419822685441"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-gamepad-line"></i> 快適装備</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.4.title">
+                ハイエースでSwitch環境構築</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.4.description">車中泊での娯楽システム
+              </p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 6 - DIY製作 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="diy">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7193309273533795585"
+              data-video-id="7193309273533795585">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7193309273533795585?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7193309273533795585"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-tools-line"></i> DIY製作</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.5.title">
+                FFヒーター自作DIY</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.5.description">
+                冬の車中泊を快適にする暖房システム構築</p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 7 - 快適装備 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="comfort">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7282008286222716162"
+              data-video-id="7282008286222716162">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7282008286222716162?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7282008286222716162"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-gamepad-line"></i> 快適装備</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.6.title">
+                車中泊で英語学習アプリ開発</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.6.description">車内での効率的な開発環境
+              </p>
+            </div>
+          </div>
+
+          <!-- TikTok Video 8 - DIY製作 -->
+          <div class="tiktok-video-item flex-shrink-0 w-80 md:w-auto" data-video-category="diy">
+            <blockquote class="tiktok-embed rounded-lg overflow-hidden shadow-lg"
+              cite="https://www.tiktok.com/@trailfusionai/video/7331749376387321089"
+              data-video-id="7331749376387321089">
+              <a href="https://www.tiktok.com/@trailfusionai/video/7331749376387321089?is_from_webapp=1&sender_device=pc"
+                data-readdy="true">
+                <iframe src="https://www.tiktok.com/embed/7331749376387321089"
+                  style="width: 100%; height: 568px; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </a>
+            </blockquote>
+            <div class="p-3 md:p-4">
+              <span class="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full mb-2"><i
+                  class="ri-tools-line"></i> DIY製作</span>
+              <h3 class="font-bold text-sm md:text-lg mb-1 md:mb-2" data-i18n="camping.tiktok.videos.7.title">
+                プロジェクター設置DIY</h3>
+              <p class="text-gray-600 text-xs md:text-sm" data-i18n="camping.tiktok.videos.7.description">車内シアター環境を構築
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- スクロール矢印（下） -->
+      <div class="flex justify-center mt-8 mb-4 md:hidden">
+        <button id="tiktok-scroll-left-bottom"
+          class="mr-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors duration-300">
+          <i class="ri-arrow-left-line text-xl"></i>
+        </button>
+        <button id="tiktok-scroll-right-bottom"
+          class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors duration-300">
+          <i class="ri-arrow-right-line text-xl"></i>
+        </button>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-8" data-i18n="camping.tiktok.followText">製作の様子は TikTok
+          で詳しく公開しています。フォローして最新の投稿をチェックしてください！</p>
+        <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener"
+          class="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-button hover:from-pink-600 hover:to-purple-600 transition">
+          <i class="ri-tiktok-fill mr-2"></i>
+          <span data-i18n="camping.tiktok.followButton">TikTok をフォロー</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .gallery-item {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.5s ease;
+    }
+
+    .gallery-item.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gallery-filter-btn.active {
+      background: linear-gradient(to right, #2563eb, #7c3aed);
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    }
+  </style>
+
+  <script>
+    // ギャラリーフィルター機能
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // アクティブボタンの切り替え
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          // アイテムの表示/非表示
+          galleryItems.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // スクロールアニメーション
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationDelay = Math.random() * 0.5 + 's';
+            entry.target.classList.add('fade-in-up');
+          }
+        });
+      }, observerOptions);
+
+      galleryItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+
+    // タブUI切り替え機能
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.guide-tab');
+      const contents = document.querySelectorAll('.guide-tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = tab.getAttribute('data-tab');
+
+          // すべてのタブを非アクティブに
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.querySelector('span:first-child').classList.remove('text-primary', 'font-bold');
+            t.querySelector('span:first-child').classList.add('text-gray-600');
+          });
+
+          // クリックしたタブをアクティブに
+          tab.classList.add('active');
+          tab.querySelector('span:first-child').classList.remove('text-gray-600');
+          tab.querySelector('span:first-child').classList.add('text-primary', 'font-bold');
+
+          // すべてのコンテンツを非表示
+          contents.forEach(content => {
+            content.classList.add('hidden');
+          });
+
+          // 対象コンテンツを表示
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    });
+
+    // 動画カテゴリフィルター機能
+    document.addEventListener('DOMContentLoaded', function () {
+      const categoryTabs = document.querySelectorAll('.video-category-tab');
+      const videoItems = document.querySelectorAll('.tiktok-video-item');
+
+      categoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const category = tab.getAttribute('data-category');
+
+          // すべてのタブを非アクティブに
+          categoryTabs.forEach(t => {
+            t.classList.remove('bg-primary', 'text-white', 'shadow-md');
+            t.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+          });
+
+          // クリックしたタブをアクティブに
+          tab.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+          tab.classList.add('bg-primary', 'text-white', 'shadow-md');
+
+          // 動画のフィルタリング
+          videoItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-video-category');
+            if (category === 'all' || itemCategory === category) {
+              item.classList.remove('hidden');
+              item.style.display = '';
+            } else {
+              item.classList.add('hidden');
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <span class="inline-block bg-primary text-white text-xs font-medium px-3 py-1 rounded-full mb-2">お問い合わせ</span>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">ご質問・ご相談はこちら</h2>
+          <p class="text-gray-700 mb-6">DIY キャンピングカー製作に関するご質問やご相談を受け付けています。お気軽にお問い合わせください。</p>
+          <div class="mb-6">
+            <h3 class="font-bold text-xl mb-3">お問い合わせ方法</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <div class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-3">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <span class="text-gray-700">trailfusionai@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-3">SNS</h3>
+            <div class="flex space-x-4">
+              <a href="#"
+                class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-primary hover:bg-red-200 transition">
+                <i class="ri-youtube-line"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-primary hover:bg-red-200 transition">
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-primary hover:bg-red-200 transition">
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a href="#"
+                class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-primary hover:bg-red-200 transition">
+                <i class="ri-facebook-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-8">
+          <div class="bg-white p-6 rounded shadow-lg">
+            <h3 class="font-bold text-xl mb-4 text-gray-900">お問い合わせフォーム</h3>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">お名前</label>
+                <input type="text" id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="山田 太郎">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">メールアドレス</label>
+                <input type="email" id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="example@email.com">
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="block text-gray-700 font-medium mb-2">件名</label>
+                <input type="text" id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="お問い合わせ内容の件名">
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2">メッセージ</label>
+                <textarea id="message" rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="お問い合わせ内容を入力してください"></textarea>
+              </div>
+              <button type="submit"
+                class="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap hover:bg-red-600 transition w-full">送信する</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FOOTER -->
+  <!-- ============================== -->
+  <footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20">
+    <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+    <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+      <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+        <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+        <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+        <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+        <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+        <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+        <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 py-14 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+        <div class="col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+            <div>
+              <div class="font-display font-black text-xl">TrailFusion AI</div>
+              <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+            </div>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">
+            革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。
+          </p>
+          <div class="flex gap-2">
+            <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+            <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+            <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-black text-sun mb-3 flex items-center gap-2">🚐 キャンパー</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="#step1" class="hover:text-sun transition">STEP 1: 夢を描く</a></li>
+            <li><a href="#step2" class="hover:text-sun transition">STEP 2: 車両選定</a></li>
+            <li><a href="#step3" class="hover:text-sun transition">STEP 3: 基礎工事</a></li>
+            <li><a href="#step4" class="hover:text-sun transition">STEP 4: 内装造作</a></li>
+            <li><a href="#step5" class="hover:text-sun transition">STEP 5: 電装</a></li>
+            <li><a href="#step7" class="hover:text-sun transition">STEP 7: 登録</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 AIアプリ</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="apps.html#gp-teachers" class="hover:text-ocean transition">GP Teachers</a></li>
+            <li><a href="apps.html#wood-golem" class="hover:text-ocean transition">Wood Golem</a></li>
+            <li><a href="apps.html#voicelink" class="hover:text-ocean transition">VoiceLink</a></li>
+            <li><a href="apps.html#word-blaster" class="hover:text-ocean transition">Word Blaster</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-black text-coral mb-3 flex items-center gap-2">🔧 その他</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="maintenance.html" class="hover:text-coral transition">整備記録</a></li>
+            <li><a href="car-concierge.html" class="hover:text-coral transition">車旅コンシェルジュ</a></li>
+            <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">プライバシー</a></li>
+            <li><a href="buddytalk-terms.html" class="hover:text-coral transition">利用規約</a></li>
+            <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <p class="text-white/50">© 2025-2026 TrailFusion AI. All rights reserved.</p>
+        <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+  <script src="assets/js/trailfusion-ui.js"></script>
+
+  <!-- 画像拡大モーダル -->
+  <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center p-4"
+    style="z-index: 9999;">
+    <div class="relative max-w-7xl max-h-full">
+      <button id="close-modal"
+        class="absolute -top-10 right-0 bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold hover:bg-gray-200 transition-colors duration-200 z-20">&times;</button>
+      <img id="modal-image" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+      <div id="modal-caption"
+        class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-70 p-4 rounded-b-lg">
+        <h3 id="modal-title" class="text-xl font-bold mb-2"></h3>
+        <p id="modal-description" class="text-gray-200"></p>
+      </div>
+    </div>
+  </div>
+  <!-- Legacy mobile-menu script removed; trailfusion-ui.js handles toggle via #mobile-toggle -->
+  <script id="form-validation-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+          let isValid = true;
+          if (!name) {
+            isValid = false;
+            document.getElementById('name').classList.add('border-red-500');
+          } else {
+            document.getElementById('name').classList.remove('border-red-500');
+          }
+          if (!email || !email.includes('@')) {
+            isValid = false;
+            document.getElementById('email').classList.add('border-red-500');
+          } else {
+            document.getElementById('email').classList.remove('border-red-500');
+          }
+          if (!subject) {
+            isValid = false;
+            document.getElementById('subject').classList.add('border-red-500');
+          } else {
+            document.getElementById('subject').classList.remove('border-red-500');
+          }
+          if (!message) {
+            isValid = false;
+            document.getElementById('message').classList.add('border-red-500');
+          } else {
+            document.getElementById('message').classList.remove('border-red-500');
+          }
+          if (isValid) {
+            alert('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。');
+            form.reset();
+          }
+        });
+      }
+    });
+  </script>
+  <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+      <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line ri-lg"></i>
+      </button>
+      <h3 class="font-bold text-xl mb-4 text-gray-900">お問い合わせフォーム</h3>
+      <form id="modal-contact-form">
+        <div class="mb-4">
+          <label for="modal-name" class="block text-gray-700 font-medium mb-2">お名前</label>
+          <input type="text" id="modal-name"
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="山田 太郎">
+        </div>
+        <div class="mb-4">
+          <label for="modal-email" class="block text-gray-700 font-medium mb-2">メールアドレス</label>
+          <input type="email" id="modal-email"
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="example@email.com">
+        </div>
+        <div class="mb-4">
+          <label for="modal-subject" class="block text-gray-700 font-medium mb-2">件名</label>
+          <input type="text" id="modal-subject"
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="お問い合わせ内容の件名">
+        </div>
+        <div class="mb-6">
+          <label for="modal-message" class="block text-gray-700 font-medium mb-2">メッセージ</label>
+          <textarea id="modal-message" rows="5"
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="お問い合わせ内容を入力してください"></textarea>
+        </div>
+        <button type="submit"
+          class="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap hover:bg-red-600 transition w-full">送信する</button>
+      </form>
+    </div>
+  </div>
+  <script id="modal-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactButton = document.getElementById('contact-button');
+      const modal = document.getElementById('contact-modal');
+      const closeButton = document.getElementById('close-modal');
+      const form = document.getElementById('modal-contact-form');
+      if (!contactButton || !modal || !closeButton || !form) return;
+      function openModal(type) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        form.dataset.downloadType = type;
+        const title = document.querySelector('#download-modal h3');
+        const description = document.querySelector('#download-modal p');
+        if (type === 'checklist') {
+          title.textContent = 'キャンピングカー〈8ナンバー〉構造要件チェックリスト';
+          description.textContent = '8ナンバー登録に必要な構造要件のチェックリストをダウンロードするには、以下の情報を入力してください。';
+        } else {
+          title.textContent = '資料ダウンロード';
+          description.textContent = '詳細な材料・工具リストをダウンロードするには、以下の情報を入力してください。';
+        }
+      }
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      contactButton.addEventListener('click', openModal);
+      closeButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('modal-name').value;
+        const email = document.getElementById('modal-email').value;
+        const subject = document.getElementById('modal-subject').value;
+        const message = document.getElementById('modal-message').value;
+        let isValid = true;
+        [
+          { id: 'modal-name', value: name },
+          { id: 'modal-email', value: email, validator: (v) => v.includes('@') },
+          { id: 'modal-subject', value: subject },
+          { id: 'modal-message', value: message }
+        ].forEach(field => {
+          const element = document.getElementById(field.id);
+          if (!field.value || (field.validator && !field.validator(field.value))) {
+            isValid = false;
+            element.classList.add('border-red-500');
+          } else {
+            element.classList.remove('border-red-500');
+          }
+        });
+        if (isValid) {
+          const successMessage = document.createElement('div');
+          successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg';
+          successMessage.textContent = 'お問い合わせありがとうございます。担当者より折り返しご連絡いたします。';
+          document.body.appendChild(successMessage);
+          setTimeout(() => {
+            successMessage.remove();
+          }, 3000);
+          form.reset();
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <div id="download-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+      <button id="close-download-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line ri-lg"></i>
+      </button>
+      <h3 class="font-bold text-xl mb-4 text-gray-900">資料ダウンロード</h3>
+      <p class="text-gray-600 mb-6">詳細な材料・工具リストをダウンロードするには、以下の情報を入力してください。</p>
+      <form id="download-form">
+        <div class="mb-4">
+          <label for="download-name" class="block text-gray-700 font-medium mb-2">お名前</label>
+          <input type="text" id="download-name" required
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="山田 太郎">
+        </div>
+        <div class="mb-6">
+          <label for="download-email" class="block text-gray-700 font-medium mb-2">メールアドレス</label>
+          <input type="email" id="download-email" required
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            placeholder="example@email.com">
+        </div>
+        <button type="submit"
+          class="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap hover:bg-red-600 transition w-full">ダウンロード</button>
+      </form>
+    </div>
+  </div>
+  <script id="examples-modal-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      const showMoreButton = document.getElementById('show-more-examples');
+      const modal = document.getElementById('examples-modal');
+      const closeButton = document.getElementById('close-examples-modal');
+      if (!showMoreButton || !modal || !closeButton) return;
+      function openModal(type) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        form.dataset.downloadType = type;
+        const title = document.querySelector('#download-modal h3');
+        const description = document.querySelector('#download-modal p');
+        if (type === 'checklist') {
+          title.textContent = 'キャンピングカー〈8ナンバー〉構造要件チェックリスト';
+          description.textContent = '8ナンバー登録に必要な構造要件のチェックリストをダウンロードするには、以下の情報を入力してください。';
+        } else {
+          title.textContent = '資料ダウンロード';
+          description.textContent = '詳細な材料・工具リストをダウンロードするには、以下の情報を入力してください。';
+        }
+      }
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      showMoreButton.addEventListener('click', openModal);
+      closeButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <script id="download-modal-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      const downloadButton = document.getElementById('download-button');
+      const checklistDownloadButton = document.getElementById('checklist-download-button');
+      const modal = document.getElementById('download-modal');
+      const closeButton = document.getElementById('close-download-modal');
+      const form = document.getElementById('download-form');
+      if (!modal || !closeButton || !form) return;
+      function openModal(type) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        form.dataset.downloadType = type;
+        const title = document.querySelector('#download-modal h3');
+        const description = document.querySelector('#download-modal p');
+        if (type === 'checklist') {
+          title.textContent = 'キャンピングカー〈8ナンバー〉構造要件チェックリスト';
+          description.textContent = '8ナンバー登録に必要な構造要件のチェックリストをダウンロードするには、以下の情報を入力してください。';
+        } else {
+          title.textContent = '資料ダウンロード';
+          description.textContent = '詳細な材料・工具リストをダウンロードするには、以下の情報を入力してください。';
+        }
+      }
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      if (downloadButton) downloadButton.addEventListener('click', () => {
+        openModal('tools');
+      });
+      if (checklistDownloadButton) checklistDownloadButton.addEventListener('click', () => {
+        openModal('checklist');
+      });
+      closeButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('download-name').value;
+        const email = document.getElementById('download-email').value;
+        if (name && email && email.includes('@')) {
+          const successMessage = document.createElement('div');
+          successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50';
+          successMessage.textContent = 'ダウンロードを開始します';
+          document.body.appendChild(successMessage);
+          const downloadType = form.dataset.downloadType;
+          const filename = downloadType === 'checklist' ? 'camper-structure-requirements-checklist.pdf' : 'diy-camper-materials.pdf';
+          setTimeout(() => {
+            successMessage.remove();
+            // PDF download functionality has been disabled for local version
+            alert('PDF download functionality has been disabled for local version');
+          }, 1500);
+          form.reset();
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+  <script id="video-loop-script">
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hero Video Loop Enhancement
+      const heroVideo = document.querySelector('.hero-section video');
+
+      if (heroVideo) {
+        console.log('Hero video found, setting up loop functionality');
+
+        // Ensure video properties are correctly set
+        heroVideo.loop = true;
+        heroVideo.muted = true;
+        heroVideo.autoplay = true;
+        heroVideo.playsInline = true;
+
+        // Handle video loading
+        heroVideo.addEventListener('loadeddata', function () {
+          console.log('Video loaded, attempting to play');
+          this.play().catch(e => {
+            console.log('Autoplay prevented:', e);
+            // Show play button or handle autoplay restriction
+          });
+        });
+
+        // Ensure loop functionality
+        heroVideo.addEventListener('ended', function () {
+          console.log('Video ended, restarting');
+          this.currentTime = 0;
+          this.play();
+        });
+
+        // Handle video errors
+        heroVideo.addEventListener('error', function (e) {
+          console.error('Video error:', e);
+        });
+
+        // Intersection Observer for play when visible
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              console.log('Video is visible, ensuring it plays');
+              heroVideo.play().catch(e => {
+                console.log('Play prevented:', e);
+              });
+            } else {
+              console.log('Video is not visible, pausing');
+              heroVideo.pause();
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+
+        observer.observe(heroVideo);
+
+        // Additional fallback - check every 5 seconds if video should be playing
+        setInterval(() => {
+          if (heroVideo.paused && !heroVideo.ended) {
+            console.log('Video is paused unexpectedly, restarting');
+            heroVideo.play().catch(e => {
+              console.log('Restart prevented:', e);
+            });
+          }
+        }, 5000);
+      } else {
+        console.log('Hero video not found');
+      }
+
+      // Gallery Show More/Less functionality
+      const showMoreBtn = document.getElementById('show-more-btn');
+      const showLessBtn = document.getElementById('show-less-btn');
+      const moreGallery = document.getElementById('more-gallery');
+
+      if (showMoreBtn && showLessBtn && moreGallery) {
+        // Show More button click handler
+        showMoreBtn.addEventListener('click', function () {
+          // Show the hidden gallery section with smooth animation
+          moreGallery.style.opacity = '0';
+          moreGallery.classList.remove('hidden');
+
+          // Smooth fade-in animation
+          setTimeout(() => {
+            moreGallery.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+            moreGallery.style.transform = 'translateY(20px)';
+            moreGallery.style.opacity = '1';
+            moreGallery.style.transform = 'translateY(0)';
+          }, 10);
+
+          // Hide "Show More" button and show "Close" button
+          showMoreBtn.classList.add('hidden');
+          showLessBtn.classList.remove('hidden');
+
+          // Smooth scroll to the gallery section
+          setTimeout(() => {
+            moreGallery.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 100);
+        });
+
+        // Show Less button click handler
+        showLessBtn.addEventListener('click', function () {
+          // Smooth fade-out animation
+          moreGallery.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+          moreGallery.style.opacity = '0';
+          moreGallery.style.transform = 'translateY(-20px)';
+
+          setTimeout(() => {
+            // Hide the gallery section
+            moreGallery.classList.add('hidden');
+            moreGallery.style.transform = 'translateY(0)';
+
+            // Show "Show More" button and hide "Close" button
+            showMoreBtn.classList.remove('hidden');
+            showLessBtn.classList.add('hidden');
+
+            // Smooth scroll back to the "Show More" button
+            showMoreBtn.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }, 500);
+        });
+      } else {
+        console.log('Gallery elements not found');
+      }
+    });
+  </script>
+
+  <script id="image-modal-script">
+    // 遅延実行でギャラリーフィルターの後に実行
+    setTimeout(function () {
+      console.log('Image modal script loaded');
+
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('modal-image');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const closeModal = document.getElementById('close-modal');
+
+      if (!modal) {
+        console.error('Modal not found');
+        return;
+      }
+
+      // ギャラリー画像にクリックイベントを追加
+      const galleryImages = document.querySelectorAll('.gallery-item img');
+      console.log('Found gallery images:', galleryImages.length);
+
+      galleryImages.forEach((img, index) => {
+        // カーソルスタイルを追加
+        img.style.cursor = 'pointer';
+
+        img.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          console.log('Image clicked:', index);
+
+          // 画像の情報を取得
+          const imgSrc = this.src;
+          const imgAlt = this.alt;
+
+          // タイトルと説明を親要素から取得
+          const parentItem = this.closest('.gallery-item');
+          const titleElement = parentItem ? parentItem.querySelector('h3') : null;
+          const descElement = parentItem ? parentItem.querySelector('p') : null;
+
+          const title = titleElement ? titleElement.textContent : imgAlt;
+          const description = descElement ? descElement.textContent : '';
+
+          console.log('Image info:', { title, description, src: imgSrc });
+
+          // モーダルに情報を設定
+          modalImage.src = imgSrc;
+          modalImage.alt = imgAlt;
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+
+          // モーダルを表示
+          modal.classList.remove('hidden');
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+
+          console.log('Modal should be visible now');
+        });
+      });
+
+      // モーダルを閉じる機能
+      function closeImageModal() {
+        console.log('Closing modal');
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      // 閉じるボタンのクリック
+      if (closeModal) {
+        closeModal.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeImageModal();
+        });
+      }
+
+      // モーダル背景のクリック
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeImageModal();
+        }
+      });
+
+      // ESCキーで閉じる
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeImageModal();
+        }
+      });
+    }, 1000); // 1秒遅延
+  </script>
+
+  <!-- 強化版スワイプ制御とTikTok自動再生スクリプト -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // モバイルでのページ全体スワイプを防止し、特定のコンテナのみスワイプ可能にする
+      function preventPageSwipe() {
+        // TikTokコンテナとギャラリーコンテナを取得
+        const tiktokContainer = document.querySelector('.tiktok-scroll-container');
+        const galleryContainer = document.querySelector('.gallery-scroll-container');
+        const scrollContainers = [tiktokContainer, galleryContainer];
+
+        // グローバル変数でタッチ状態を管理
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartElement = null;
+        let isInAllowedContainer = false;
+
+        // タッチ開始時の処理
+        function handleTouchStart(e) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartElement = e.target;
+
+          // タッチ開始点がスクロール許可コンテナ内かチェック
+          isInAllowedContainer = false;
+          for (let container of scrollContainers) {
+            if (container && (container.contains(touchStartElement) || container === touchStartElement)) {
+              isInAllowedContainer = true;
+              break;
+            }
+          }
+        }
+
+        // タッチ移動時の処理
+        function handleTouchMove(e) {
+          // タッチ情報がない場合は何もしない
+          if (!e.touches || e.touches.length === 0) return;
+
+          const currentX = e.touches[0].clientX;
+          const currentY = e.touches[0].clientY;
+          const deltaX = Math.abs(currentX - touchStartX);
+          const deltaY = Math.abs(currentY - touchStartY);
+
+          // 水平スワイプの判定（縦スワイプより横スワイプが大きい）
+          const isHorizontalSwipe = deltaX > deltaY && deltaX > 5;
+
+          if (isHorizontalSwipe) {
+            // 許可されたコンテナ外での水平スワイプを完全に防止
+            if (!isInAllowedContainer) {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+          }
+        }
+
+        // body全体にイベントリスナーを追加（capture: true で確実にキャッチ）
+        document.body.addEventListener('touchstart', handleTouchStart, { passive: true, capture: true });
+        document.body.addEventListener('touchmove', handleTouchMove, { passive: false, capture: true });
+
+        // 許可されたスクロールコンテナにのみ特別な処理を適用
+        scrollContainers.forEach(container => {
+          if (container) {
+            // コンテナ内でのタッチは許可
+            container.addEventListener('touchstart', function (e) {
+              isInAllowedContainer = true;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', function (e) {
+              // コンテナ内でのスクロールは許可し、外部への伝播を停止
+              e.stopPropagation();
+            }, { passive: true });
+
+            // コンテナから離れた時の処理
+            container.addEventListener('touchend', function (e) {
+              // タッチ終了時にリセット
+              isInAllowedContainer = false;
+            }, { passive: true });
+          }
+        });
+
+        // document全体に対する水平スワイプの完全な防止
+        document.addEventListener('touchmove', function (e) {
+          if (e.touches && e.touches.length > 0) {
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            const deltaX = Math.abs(currentX - touchStartX);
+            const deltaY = Math.abs(currentY - touchStartY);
+
+            // 水平スワイプで、かつ許可されたコンテナ外の場合
+            if (deltaX > deltaY && deltaX > 3 && !isInAllowedContainer) {
+              e.preventDefault();
+              return false;
+            }
+          }
+        }, { passive: false, capture: true });
+      }
+
+      // TikTok動画の自動再生制御（apps.htmlと同じシンプルな方式）
+      function setupTikTokAutoplay() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const iframe = entry.target;
+            if (entry.isIntersecting) {
+              // 動画が画面に表示されたらiframeを再読み込みして自動再生
+              const currentSrc = iframe.src;
+              iframe.src = currentSrc;
+            } else {
+              // 動画が画面から消えたら一時停止
+              const currentSrc = iframe.src;
+              iframe.src = '';
+              iframe.src = currentSrc;
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+
+        document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+          observer.observe(iframe);
+        });
+      }
+
+      // モバイルデバイスチェック
+      function isMobile() {
+        return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+
+      // 初期化
+      if (isMobile()) {
+        preventPageSwipe();
+      }
+      setupTikTokAutoplay();
+
+      // ウィンドウリサイズ時の再初期化
+      window.addEventListener('resize', function () {
+        if (isMobile()) {
+          preventPageSwipe();
+        }
+      });
+    });
+  </script>
+
+  <!-- PDFタブ切り替え機能 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // PDFタブのクリックイベント
+      document.querySelectorAll('.pdf-tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+          const targetId = this.getAttribute('data-target');
+          if (!targetId) return;
+
+          // 同じ親要素内のタブとコンテンツを取得
+          const parent = this.closest('div').parentElement;
+          const tabs = parent.querySelectorAll('.pdf-tab');
+          const contents = parent.querySelectorAll('.pdf-tab-content');
+
+          // すべてのタブを非アクティブに
+          tabs.forEach(t => {
+            t.classList.remove('active', 'bg-white/20', 'bg-emerald-600', 'bg-purple-600', 'bg-cyan-600', 'text-white');
+            t.classList.add('bg-white/10', 'bg-gray-200', 'text-gray-700');
+          });
+
+          // クリックしたタブをアクティブに
+          this.classList.remove('bg-white/10', 'bg-gray-200', 'text-gray-700');
+          this.classList.add('active');
+
+          // 背景色をステップに応じて設定
+          if (targetId.includes('step0')) {
+            this.classList.add('bg-white/20');
+          } else if (targetId.includes('step1')) {
+            this.classList.add('bg-emerald-600', 'text-white');
+          } else if (targetId.includes('step2')) {
+            this.classList.add('bg-purple-600', 'text-white');
+          } else if (targetId.includes('step3-1')) {
+            this.classList.add('bg-cyan-600', 'text-white');
+          } else if (targetId.includes('step3-4')) {
+            this.classList.add('bg-purple-600', 'text-white');
+          } else {
+            this.classList.add('bg-amber-600', 'text-white');
+          }
+
+          // すべてのコンテンツを非表示
+          contents.forEach(content => {
+            content.classList.add('hidden');
+          });
+
+          // 対象コンテンツを表示
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- STEP 3 アコーディオン制御 -->
+  <script>
+    function toggleStep3Accordion(stepId) {
+      const content = document.getElementById(stepId + '-content');
+      const icon = document.getElementById(stepId + '-icon');
+
+      if (!content || !icon) return;
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+
+  <!-- プログレスバー追跡 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const progressBar = document.getElementById('progress-bar');
+      const progressFill = document.getElementById('progress-fill');
+      const progressPercent = document.getElementById('progress-percent');
+      const progressSteps = document.querySelectorAll('.progress-step');
+
+      if (!progressBar || !progressFill || !progressPercent) return;
+
+      // セクションの位置を取得
+      const sections = ['step0', 'step1', 'step2', 'step3', 'step4', 'gallery'];
+      const sectionElements = sections.map(id => document.getElementById(id)).filter(el => el);
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight - windowHeight;
+
+        // 全体の進捗率
+        const scrollPercent = Math.min(Math.round((scrollTop / docHeight) * 100), 100);
+        progressFill.style.width = scrollPercent + '%';
+        progressPercent.textContent = scrollPercent + '%';
+
+        // 現在のセクションを特定
+        let currentSection = null;
+        sectionElements.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= windowHeight / 2) {
+            currentSection = sections[index];
+          }
+        });
+
+        // プログレスステップのハイライト
+        progressSteps.forEach(step => {
+          const stepNum = step.getAttribute('data-step');
+          step.classList.remove('bg-indigo-100', 'bg-emerald-100', 'bg-purple-100', 'bg-amber-100', 'bg-green-100');
+
+          if (currentSection === 'step' + stepNum ||
+            (currentSection === 'gallery' && stepNum === 'complete')) {
+            step.classList.add('bg-gradient-to-r', 'from-gray-100', 'to-white', 'shadow-md');
+          } else {
+            step.classList.remove('bg-gradient-to-r', 'from-gray-100', 'to-white', 'shadow-md');
+          }
+        });
+
+        // プログレスバーの表示/非表示
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          if (heroBottom < 0) {
+            progressBar.classList.remove('hidden');
+          } else {
+            progressBar.classList.add('hidden');
+          }
+        }
+      }
+
+      // スクロールイベントの最適化
+      let ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateProgress();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // 初期状態を設定
+      updateProgress();
+    });
+  </script>
+
+  <!-- モバイルフローティングナビ制御 -->
+  <script>
+    function toggleMobileStepNav() {
+      const menu = document.getElementById('mobile-step-nav-menu');
+      const btn = document.getElementById('mobile-step-nav-btn');
+      if (menu && btn) {
+        menu.classList.toggle('open');
+        // ボタンアイコン切り替え
+        const icon = btn.querySelector('i');
+        if (menu.classList.contains('open')) {
+          icon.className = 'ri-close-line text-2xl';
+        } else {
+          icon.className = 'ri-route-line text-2xl';
+        }
+      }
+    }
+
+    function closeMobileStepNav() {
+      const menu = document.getElementById('mobile-step-nav-menu');
+      const btn = document.getElementById('mobile-step-nav-btn');
+      if (menu && btn) {
+        menu.classList.remove('open');
+        const icon = btn.querySelector('i');
+        icon.className = 'ri-route-line text-2xl';
+      }
+    }
+
+    // モバイルナビの表示/非表示（Heroセクション通過後に表示）
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileNav = document.getElementById('mobile-step-nav');
+      const heroSection = document.querySelector('.hero-section');
+
+      if (!mobileNav || !heroSection) return;
+
+      function updateMobileNavVisibility() {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        if (heroBottom < 0) {
+          mobileNav.classList.remove('hidden');
+        } else {
+          mobileNav.classList.add('hidden');
+          closeMobileStepNav();
+        }
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateMobileNavVisibility();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      updateMobileNavVisibility();
+
+      // メニュー外クリックで閉じる
+      document.addEventListener('click', function (e) {
+        const nav = document.getElementById('mobile-step-nav');
+        if (nav && !nav.contains(e.target)) {
+          closeMobileStepNav();
+        }
+      });
+    });
+  </script>
+
+  <!-- JSON-LD構造化データ -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ハイエース DIYキャンピングカー製作ガイド - 自作キャンパー完全マニュアル",
+  "description": "ハイエースを自作キャンピングカーに改造する詳細ガイド。実体験に基づく具体的な作業手順、必要な材料・工具、費用、注意点を完全解説。DIY初心者でも安心して取り組める実践的なキャンパー制作マニュアル。",
+  "image": "https://trailfusionai.com/assets/images/camper/camper_exterior_countryside.jpg",
+  "url": "https://trailfusionai.com/camping.html",
+  "datePublished": "2024-01-01",
+  "dateModified": "2024-07-06",
+  "author": {
+    "@type": "Person",
+    "name": "ひろ",
+    "description": "キャンピングカーDIY愛好家"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TrailFusion AI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://trailfusionai.com/camping.html"
+  },
+  "inLanguage": "ja",
+  "keywords": "ハイエース キャンピングカー,DIY キャンパー,自作 キャンピングカー,ハイエース 改造,バンライフ,車中泊,キャンパー制作"
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ハイエースDIYキャンピングカー製作方法",
+  "description": "ハイエースを自作キャンピングカーに改造する完全ガイド",
+  "image": "https://trailfusionai.com/assets/images/camper/camper_exterior_countryside.jpg",
+  "totalTime": "P30D",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": "500000"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "ハイエース車両"
+    },
+    {
+      "@type": "HowToSupply", 
+      "name": "断熱材"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "内装材"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "電動ドリル"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ノコギリ"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "断熱工事",
+      "text": "車内の断熱材を取り付ける"
+    },
+    {
+      "@type": "HowToStep", 
+      "position": 2,
+      "name": "内装工事",
+      "text": "内装パネルを取り付ける"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "電装工事", 
+      "text": "電気系統を配線する"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "空調システム",
+      "text": "換気システムを設置する"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "8ナンバー登録",
+      "text": "構造変更登録を行う"
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://trailfusionai.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "キャンピングカー製作ガイド",
+      "item": "https://trailfusionai.com/camping.html"
+    }
+  ]
+}
+</script>
+
+  <!-- Scroll Arrow Controls Script -->
+  <script id="scroll-arrow-controls">
+    document.addEventListener('DOMContentLoaded', function () {
+      // TikTok scroll controls
+      const tiktokContainer = document.getElementById('tiktok-scroll-container');
+
+      // Function to center nearest TikTok video
+      function centerNearestTikTokVideo() {
+        const videos = tiktokContainer.querySelectorAll('.tiktok-embed');
+        const containerLeft = tiktokContainer.scrollLeft;
+        const containerWidth = tiktokContainer.clientWidth;
+        const containerCenter = containerLeft + containerWidth / 2;
+
+        let nearestVideo = null;
+        let minDistance = Infinity;
+
+        videos.forEach(video => {
+          const videoLeft = video.offsetLeft;
+          const videoWidth = video.offsetWidth;
+          const videoCenter = videoLeft + videoWidth / 2;
+          const distance = Math.abs(videoCenter - containerCenter);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            nearestVideo = video;
+          }
+        });
+
+        if (nearestVideo) {
+          const videoLeft = nearestVideo.offsetLeft;
+          const videoWidth = nearestVideo.offsetWidth;
+          const scrollTo = videoLeft - (containerWidth - videoWidth) / 2;
+          tiktokContainer.scrollTo({ left: scrollTo, behavior: 'smooth' });
+        }
+      }
+
+      // TikTok Left buttons
+      document.getElementById('tiktok-scroll-left-bottom').addEventListener('click', () => {
+        tiktokContainer.scrollBy({ left: -320, behavior: 'smooth' });
+        setTimeout(centerNearestTikTokVideo, 300);
+      });
+
+      // TikTok Right buttons
+      document.getElementById('tiktok-scroll-right-bottom').addEventListener('click', () => {
+        tiktokContainer.scrollBy({ left: 320, behavior: 'smooth' });
+        setTimeout(centerNearestTikTokVideo, 300);
+      });
+
+      // Gallery scroll controls
+      const galleryContainer = document.getElementById('gallery-scroll-container');
+
+      // Function to center nearest gallery image
+      function centerNearestGalleryImage() {
+        const images = galleryContainer.querySelectorAll('img');
+        const containerLeft = galleryContainer.scrollLeft;
+        const containerWidth = galleryContainer.clientWidth;
+        const containerCenter = containerLeft + containerWidth / 2;
+
+        let nearestImage = null;
+        let minDistance = Infinity;
+
+        images.forEach(image => {
+          const imageLeft = image.offsetLeft;
+          const imageWidth = image.offsetWidth;
+          const imageCenter = imageLeft + imageWidth / 2;
+          const distance = Math.abs(imageCenter - containerCenter);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            nearestImage = image;
+          }
+        });
+
+        if (nearestImage) {
+          const imageLeft = nearestImage.offsetLeft;
+          const imageWidth = nearestImage.offsetWidth;
+          const scrollTo = imageLeft - (containerWidth - imageWidth) / 2;
+          galleryContainer.scrollTo({ left: scrollTo, behavior: 'smooth' });
+        }
+      }
+
+      // Gallery Left buttons
+      document.getElementById('gallery-scroll-left-bottom').addEventListener('click', () => {
+        galleryContainer.scrollBy({ left: -288, behavior: 'smooth' });
+        setTimeout(centerNearestGalleryImage, 300);
+      });
+
+      // Gallery Right buttons
+      document.getElementById('gallery-scroll-right-bottom').addEventListener('click', () => {
+        galleryContainer.scrollBy({ left: 288, behavior: 'smooth' });
+        setTimeout(centerNearestGalleryImage, 300);
+      });
+
+      // Mouse swipe functionality for TikTok container
+      let tiktokStartX = 0;
+      let tiktokIsDown = false;
+      let tiktokScrollLeft = 0;
+
+      tiktokContainer.addEventListener('mousedown', (e) => {
+        tiktokIsDown = true;
+        tiktokContainer.style.cursor = 'grabbing';
+        tiktokStartX = e.pageX - tiktokContainer.offsetLeft;
+        tiktokScrollLeft = tiktokContainer.scrollLeft;
+      });
+
+      tiktokContainer.addEventListener('mouseleave', () => {
+        tiktokIsDown = false;
+        tiktokContainer.style.cursor = 'grab';
+        if (tiktokIsDown) {
+          setTimeout(centerNearestTikTokVideo, 100);
+        }
+      });
+
+      tiktokContainer.addEventListener('mouseup', () => {
+        tiktokIsDown = false;
+        tiktokContainer.style.cursor = 'grab';
+        setTimeout(centerNearestTikTokVideo, 100);
+      });
+
+      tiktokContainer.addEventListener('mousemove', (e) => {
+        if (!tiktokIsDown) return;
+        e.preventDefault();
+        const x = e.pageX - tiktokContainer.offsetLeft;
+        const walk = (x - tiktokStartX) * 2;
+        tiktokContainer.scrollLeft = tiktokScrollLeft - walk;
+      });
+
+      // Mouse swipe functionality for Gallery container
+      let galleryStartX = 0;
+      let galleryIsDown = false;
+      let galleryScrollLeft = 0;
+
+      galleryContainer.addEventListener('mousedown', (e) => {
+        galleryIsDown = true;
+        galleryContainer.style.cursor = 'grabbing';
+        galleryStartX = e.pageX - galleryContainer.offsetLeft;
+        galleryScrollLeft = galleryContainer.scrollLeft;
+      });
+
+      galleryContainer.addEventListener('mouseleave', () => {
+        galleryIsDown = false;
+        galleryContainer.style.cursor = 'grab';
+        if (galleryIsDown) {
+          setTimeout(centerNearestGalleryImage, 100);
+        }
+      });
+
+      galleryContainer.addEventListener('mouseup', () => {
+        galleryIsDown = false;
+        galleryContainer.style.cursor = 'grab';
+        setTimeout(centerNearestGalleryImage, 100);
+      });
+
+      galleryContainer.addEventListener('mousemove', (e) => {
+        if (!galleryIsDown) return;
+        e.preventDefault();
+        const x = e.pageX - galleryContainer.offsetLeft;
+        const walk = (x - galleryStartX) * 2;
+        galleryContainer.scrollLeft = galleryScrollLeft - walk;
+      });
+
+      // Set initial cursor style
+      tiktokContainer.style.cursor = 'grab';
+      galleryContainer.style.cursor = 'grab';
+    });
+  </script>
+
+  <!-- TikTok Autoplay Script (apps.html style) -->
+  <script id="tiktok-video-control">
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const iframe = entry.target;
+          if (entry.isIntersecting) {
+            const currentSrc = iframe.src;
+            iframe.src = currentSrc;
+          } else {
+            const currentSrc = iframe.src;
+            iframe.src = '';
+            iframe.src = currentSrc;
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      document.querySelectorAll('.tiktok-embed iframe').forEach(iframe => {
+        observer.observe(iframe);
+      });
+    });
+  </script>
+
+  <!-- Multi-language Support for Camping (Japanese and English only) -->
+  <script src="assets/js/camping-i18n.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const campingI18n = new CampingI18N();
+    });
+  </script>
+
+  <!-- 電装システム施工ステップ アコーディオン制御 -->
+  <script>
+    function toggleElectricalStep(stepNumber) {
+      const content = document.getElementById(`step${stepNumber}-content`);
+      const icon = document.getElementById(`step${stepNumber}-icon`);
+
+      if (content.classList.contains('hidden')) {
+        // 開く
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        // 閉じる
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // 全ステップを開く/閉じるボタン用（オプション）
+    function toggleAllElectricalSteps(open) {
+      for (let i = 1; i <= 5; i++) {
+        const content = document.getElementById(`step${i}-content`);
+        const icon = document.getElementById(`step${i}-icon`);
+
+        if (open) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        }
+      }
+    }
+  </script>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    // Intersection Observer for lazy loading PDFs
+    const pdfObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const container = entry.target;
+          if (!container.dataset.loaded) {
+            container.dataset.loaded = 'true';
+            loadPDF(container);
+          }
+          pdfObserver.unobserve(container);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    // Observe all PDF containers
+    document.querySelectorAll('.pdf-canvas-container[data-pdf]').forEach(container => {
+      pdfObserver.observe(container);
+    });
+
+    async function loadPDF(container) {
+      const pdfUrl = container.dataset.pdf;
+      const encodedUrl = encodeURI(pdfUrl);
+      const loadingEl = container.querySelector('.pdf-loading');
+      const progressFill = container.querySelector('.pdf-progress-fill');
+      const loadingText = container.querySelector('.pdf-loading-text');
+
+      try {
+        const loadingTask = pdfjsLib.getDocument(encodedUrl);
+
+        loadingTask.onProgress = function (progress) {
+          if (progress.total > 0) {
+            const percent = Math.round((progress.loaded / progress.total) * 100);
+            if (progressFill) progressFill.style.width = percent + '%';
+          }
+        };
+
+        const pdfDoc = await loadingTask.promise;
+
+        // Remove loading indicator
+        if (loadingEl) loadingEl.remove();
+
+        // Calculate container width
+        const containerWidth = container.clientWidth - 16;
+
+        // Render first 3 pages only for performance
+        const maxPages = Math.min(3, pdfDoc.numPages);
+
+        for (let i = 1; i <= maxPages; i++) {
+          const page = await pdfDoc.getPage(i);
+
+          // Calculate scale to fit container width
+          const defaultViewport = page.getViewport({ scale: 1 });
+          const scale = containerWidth / defaultViewport.width;
+          const viewport = page.getViewport({ scale });
+
+          // For high DPI displays
+          const outputScale = window.devicePixelRatio || 1;
+
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+
+          // Set actual size in memory (scaled for retina)
+          canvas.width = Math.floor(viewport.width * outputScale);
+          canvas.height = Math.floor(viewport.height * outputScale);
+
+          // Set display size (CSS pixels)
+          canvas.style.width = Math.floor(viewport.width) + 'px';
+          canvas.style.height = Math.floor(viewport.height) + 'px';
+
+          context.scale(outputScale, outputScale);
+
+          container.appendChild(canvas);
+
+          await page.render({
+            canvasContext: context,
+            viewport: viewport
+          }).promise;
+        }
+
+        // Add "View More" button if more pages exist
+        if (pdfDoc.numPages > 3) {
+          const moreBtn = document.createElement('a');
+          moreBtn.href = encodedUrl;
+          moreBtn.target = '_blank';
+          moreBtn.className = 'inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium transition mt-4';
+          moreBtn.innerHTML = '<i class="ri-file-pdf-2-line"></i>全 ' + pdfDoc.numPages + ' ページを見る';
+          container.appendChild(moreBtn);
+        }
+
+      } catch (error) {
+        console.error('PDF load error:', error);
+        if (loadingText) loadingText.textContent = 'PDF読み込みエラー';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
