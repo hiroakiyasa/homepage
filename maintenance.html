@@ -18,7 +18,26 @@
 
 <!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981',accent:'#f59e0b',danger:'#ef4444',purple:'#8b5cf6'}}}}</script>
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{
+        primary:'#3b82f6',secondary:'#10b981',accent:'#f59e0b',danger:'#ef4444',purple:'#8b5cf6',
+        cream:'#FFFBF2', sun:'#FFD84D', coral:'#FF6B5B', ocean:'#4ECDC4',
+        navy:'#1F2E4D', peach:'#FFB3BA', grass:'#7DD87A', sky:'#A5E3F5', berry:'#E85A9A'
+      },
+      fontFamily:{
+        display:['"M PLUS Rounded 1c"','sans-serif'],
+        accent:['"Archivo Black"','sans-serif'],
+        fun:['"Fredoka"','sans-serif'],
+        hand:['"Caveat"','cursive']
+      },
+      borderRadius:{ 'blob':'48% 52% 62% 38% / 52% 42% 58% 48%', 'button':'999px' }
+    }
+  }
+}
+</script>
 <!-- Immediate Video Autoplay Script -->
 <script>
 (function(){
@@ -35,10 +54,11 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="assets/css/trailfusion.css">
 <style>
-body { font-family: 'Noto Sans JP', sans-serif; }
+body { font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif; background: #FFFBF2; color: #1F2E4D; }
 /* 動画の再生ボタンを完全非表示 */
 video::-webkit-media-controls-play-button,
 video::-webkit-media-controls-start-playback-button,
@@ -207,147 +227,142 @@ video::before, video::after {
 .maintenance-item {
     scroll-margin-top: 100px;
 }
+/* Override item cards (rounded-2xl shadow-xl) to chunky look */
+.bg-white.rounded-2xl.shadow-xl,
+.bg-white.rounded-2xl.shadow-lg,
+.bg-white.rounded-xl.shadow-xl {
+  border: 3px solid #1F2E4D !important;
+  border-radius: 28px !important;
+  box-shadow: 8px 8px 0 #1F2E4D !important;
+}
 </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+<body class="bg-cream">
 
-<!-- Header -->
-<header class="bg-white shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4">
-      <!-- スマホ・タブレット表示 -->
-      <div class="flex items-center justify-between lg:hidden">
-          <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI ロゴ - キャンピングカーDIYとAIアプリケーション開発" class="h-8 sm:h-10 hover:scale-105 transition-transform duration-300">
-              <div class="text-xs sm:text-sm font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
-          </a>
+<!-- ============================== -->
+<!-- HEADER -->
+<!-- ============================== -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div>
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
 
-          <!-- スマホでも表示するメインボタン -->
-          <div class="flex items-center gap-1 sm:gap-2">
-              <a href="camping.html" class="bg-blue-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">
-                  <span class="sm:hidden">キャンピングカー</span>
-                  <span class="hidden sm:inline">キャンピングカー製作</span>
-              </a>
-              <a href="apps.html" class="bg-green-500 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-green-600 transition-colors duration-300 whitespace-nowrap">
-                  <span class="sm:hidden">アプリ</span>
-                  <span class="hidden sm:inline">アプリ紹介</span>
-              </a>
-              <a href="maintenance.html" class="bg-amber-600 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm font-medium hover:bg-amber-700 transition-colors duration-300 whitespace-nowrap hidden sm:inline-block">
-                  整備記録
-              </a>
-              <button id="mobile-menu-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 ml-1">
-                  <i class="ri-menu-line text-lg sm:text-xl"></i>
-              </button>
-          </div>
-      </div>
-
-      <!-- モバイルメニュー -->
-      <nav id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
-          <div class="flex flex-col space-y-3">
-              <a href="index.html" class="bg-gray-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-gray-600 transition-colors duration-300">
-                  ホーム
-              </a>
-              <a href="camping.html" class="bg-blue-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-blue-600 transition-colors duration-300">
-                  キャンピングカー製作
-              </a>
-              <a href="apps.html" class="bg-green-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-green-600 transition-colors duration-300">
-                  アプリ紹介
-              </a>
-              <a href="maintenance.html" class="bg-amber-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:bg-amber-700 transition-colors duration-300">
-                  整備記録
-              </a>
-              <a href="#pdf-library" class="bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium text-center hover:shadow-lg transition-colors duration-300">
-                  PDF資料
-              </a>
-          </div>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" aria-current="page">整備記録</a>
       </nav>
 
-      <!-- デスクトップ表示 -->
-      <div class="hidden lg:flex items-center justify-between">
-          <a href="index.html" class="flex items-center space-x-2 xl:space-x-3 hover:opacity-80 transition-opacity duration-300 flex-shrink-0">
-              <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI ロゴ - キャンピングカーDIYとAIアプリケーション開発" class="h-8 xl:h-10 hover:scale-105 transition-transform duration-300">
-              <div class="text-base xl:text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">TrailFusion AI</div>
-          </a>
-
-          <nav class="flex items-center space-x-1 xl:space-x-2">
-              <a href="index.html" class="relative overflow-hidden bg-gray-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                  <span class="relative z-10">ホーム</span>
-                  <div class="absolute inset-0 bg-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
-              <a href="camping.html" class="relative overflow-hidden bg-blue-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                  <span class="relative z-10">キャンピングカー</span>
-                  <div class="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
-              <a href="apps.html" class="relative overflow-hidden bg-green-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                  <span class="relative z-10">アプリ紹介</span>
-                  <div class="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
-              <a href="maintenance.html" class="relative overflow-hidden bg-amber-600 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                  <span class="relative z-10">整備記録</span>
-                  <div class="absolute inset-0 bg-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
-
-              <!-- SNS（大画面のみ表示） -->
-              <div class="hidden xl:flex items-center space-x-1 ml-2">
-                  <a href="https://www.youtube.com/@van_oasis" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-red-500 text-white rounded-full hover:bg-red-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/50">
-                      <i class="ri-youtube-fill text-sm xl:ri-xl"></i>
-                  </a>
-                  <a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:from-pink-600 hover:to-purple-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-500/50">
-                      <i class="ri-tiktok-fill text-sm xl:ri-xl"></i>
-                  </a>
-                  <a href="https://x.com/trailfusionai" target="_blank" class="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 bg-black text-white rounded-full hover:bg-gray-800 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-black/50">
-                      <i class="ri-twitter-x-fill text-sm xl:ri-xl"></i>
-                  </a>
-              </div>
-
-              <a href="#pdf-library" class="relative overflow-hidden bg-gradient-to-r from-orange-400 to-pink-500 text-white px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base whitespace-nowrap group hover:shadow-lg transition-all duration-300 ease-in-out">
-                  <span class="relative z-10"><i class="ri-file-pdf-2-line mr-1"></i>PDF資料</span>
-              </a>
-          </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#pdf-library" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">
+          <i class="ri-file-pdf-2-line"></i>
+          PDF資料
+        </a>
+        <a href="camping.html" class="mobile-pill bg-sky lg:hidden">
+          <i class="ri-caravan-line"></i><span class="hidden sm:inline">キャンパー</span>
+        </a>
+        <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
+          <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
+        </a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
       </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
+        <a href="#pdf-library" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">📄 PDF資料</a>
+      </div>
+    </nav>
   </div>
 </header>
 
-<!-- Hero Section -->
-<section class="py-16 md:py-24 relative overflow-hidden">
-    <!-- Video Background -->
-    <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
-        <source src="document/camping/hero-video.mov" type="video/quicktime">
-        <source src="document/camping/hero-video.mov" type="video/mp4">
-    </video>
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-indigo-800/70 to-pink-700/60"></div>
+<!-- ============================== -->
+<!-- HERO -->
+<!-- ============================== -->
+<section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #FFE57A 0%, #FFD84D 30%, #FFC93D 60%, #FFBB2A 100%);">
+    <div class="absolute inset-0 dot-pattern opacity-40"></div>
+    <!-- AI: engine technical illustration as soft background on right -->
+    <img src="assets/images/ai/maint-hero-engine.jpg" alt="" aria-hidden="true" class="hidden md:block absolute right-[-100px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover rounded-full opacity-30 mix-blend-multiply pointer-events-none">
+    <!-- AI: engine doodles tile -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: url('assets/images/ai/deco-arrows.jpg'); background-size: 520px; background-repeat: repeat; mix-blend-mode: multiply;"></div>
 
-    <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full mb-6 pulse-badge">
-            <i class="ri-roadster-fill text-xl"></i>
-            <span class="font-medium">HIACE 1KD DIESEL</span>
+    <!-- Floating sticker decorations -->
+    <div class="absolute top-[8%] left-[4%] hidden md:block float pointer-events-none" style="--r:-10deg;">
+      <div class="sticker sticker-coral">🔧 1KD DIESEL</div>
+    </div>
+    <div class="absolute top-[18%] right-[8%] hidden md:block float-slow pointer-events-none" style="--r:8deg;">
+      <div class="sticker sticker-ocean">🛠 13 項目</div>
+    </div>
+    <div class="absolute bottom-[20%] left-[6%] hidden lg:block float pointer-events-none" style="--r:-6deg; animation-delay: -1.5s;">
+      <div class="sticker sticker-grass">📄 15 PDF</div>
+    </div>
+
+    <div class="absolute top-12 right-8 sm:top-20 sm:right-16 z-10 spin-slow pointer-events-none hidden sm:block">
+      <div class="rotating-disc">
+        <div class="text-center leading-tight">
+          <div class="font-accent text-[10px] sm:text-xs text-navy">GOAL</div>
+          <div class="font-accent text-2xl sm:text-3xl text-coral">1M</div>
+          <div class="font-accent text-[8px] sm:text-[10px] text-navy tracking-widest">KILOMETERS</div>
         </div>
+      </div>
+    </div>
 
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-            目指せ！<br>
-            <span class="text-yellow-300 drop-shadow-lg">1,000,000 km</span>
-        </h1>
-
-        <p class="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            愛車ハイエースをもっと深く理解するための整備記録データベース。<br>
-            ディーゼルエンジン特有の癖を知り、100万km走行を実現しよう！
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
-                <div class="text-3xl font-bold">13</div>
-                <div class="text-sm opacity-80">整備項目</div>
+    <div class="container mx-auto px-4 pt-16 pb-24 md:pt-24 md:pb-32 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
+                <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
+                <i class="ri-roadster-fill text-coral"></i>
+                <span class="font-bold text-sm text-navy">HIACE 1KD DIESEL</span>
             </div>
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
-                <div class="text-3xl font-bold">15</div>
-                <div class="text-sm opacity-80">PDF資料</div>
-            </div>
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 text-white">
-                <div class="text-3xl font-bold text-yellow-300">¥50万+</div>
-                <div class="text-sm opacity-80">DIY節約可能額</div>
+
+            <h1 class="display-xl text-4xl md:text-6xl lg:text-7xl text-navy mb-6 leading-tight">
+                <span class="block pop-in" style="animation-delay: 0.2s;">目指せ！</span>
+                <span class="block pop-in" style="animation-delay: 0.4s;">
+                  <span class="gradient-text gradient-animated">1,000,000 km</span>
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-navy/80 mb-8 max-w-2xl mx-auto font-medium leading-relaxed pop-in" style="animation-delay: 0.55s;">
+                愛車ハイエースをもっと深く理解するための整備記録データベース。<br>
+                <span class="hand-font text-2xl md:text-3xl text-coral">ディーゼル特有の癖を知って、100万km走破！</span>
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto reveal-stagger">
+                <div class="card-chunky py-4 px-2 sm:py-5 sm:px-4">
+                    <div class="font-accent text-3xl sm:text-4xl text-coral mb-1">13</div>
+                    <div class="text-xs sm:text-sm text-navy/70 font-bold">整備項目</div>
+                </div>
+                <div class="card-chunky py-4 px-2 sm:py-5 sm:px-4">
+                    <div class="font-accent text-3xl sm:text-4xl text-ocean mb-1">15</div>
+                    <div class="text-xs sm:text-sm text-navy/70 font-bold">PDF資料</div>
+                </div>
+                <div class="card-chunky py-4 px-2 sm:py-5 sm:px-4">
+                    <div class="font-accent text-2xl sm:text-3xl text-berry mb-1">¥50万+</div>
+                    <div class="text-xs sm:text-sm text-navy/70 font-bold">DIY節約</div>
+                </div>
             </div>
         </div>
     </div>
+
+    <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
+    </svg>
 </section>
 
 <!-- エラーコード一覧（トップ表示） -->
@@ -2008,102 +2023,78 @@ video::before, video::after {
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-12">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-8">
-<!-- ロゴ & ソーシャル -->
-<div class="col-span-2 md:col-span-3 lg:col-span-2">
-<a href="index.html" class="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity duration-300">
-<img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-lg">
-<span class="text-xl font-bold text-white">TrailFusion AI</span>
-</a>
-<p class="text-gray-400 mb-4 text-sm leading-relaxed">革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
-<div class="flex space-x-3">
-<a href="https://www.youtube.com/@van_oasis" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-500 transition" aria-label="YouTube">
-<i class="ri-youtube-fill text-lg"></i>
-</a>
-<a href="https://www.tiktok.com/@trailfusionai" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-600 transition" aria-label="TikTok">
-<i class="ri-tiktok-fill text-lg"></i>
-</a>
-<a href="https://x.com/trailfusionai" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-600 transition" aria-label="X">
-<i class="ri-twitter-x-fill text-lg"></i>
-</a>
-</div>
-</div>
-<!-- ホーム -->
-<div>
-<a href="index.html" class="text-base font-bold mb-4 hover:text-primary transition-colors duration-300 flex items-center gap-2">
-<i class="ri-home-4-line"></i>
-<span>ホーム</span>
-</a>
-<ul class="space-y-2 text-sm mt-3">
-<li><a href="index.html#apps" class="text-gray-400 hover:text-white transition">アプリ紹介</a></li>
-<li><a href="index.html#camping" class="text-gray-400 hover:text-white transition">キャンピングカー</a></li>
-<li><a href="index.html#tiktok" class="text-gray-400 hover:text-white transition">TikTok動画</a></li>
-</ul>
-</div>
-<!-- キャンピングカー -->
-<div>
-<a href="camping.html" class="text-base font-bold mb-4 hover:text-green-400 transition-colors duration-300 flex items-center gap-2 text-green-400">
-<i class="ri-caravan-line"></i>
-<span>キャンピングカー</span>
-</a>
-<ul class="space-y-1.5 text-sm mt-3">
-<li><a href="camping.html#step1" class="text-gray-400 hover:text-white transition">STEP 1: 夢を描く</a></li>
-<li><a href="camping.html#step2" class="text-gray-400 hover:text-white transition">STEP 2: 車両選定</a></li>
-<li><a href="camping.html#step3" class="text-gray-400 hover:text-white transition">STEP 3: 基礎工事</a></li>
-<li><a href="camping.html#step4" class="text-gray-400 hover:text-white transition">STEP 4: 内装造作</a></li>
-<li><a href="camping.html#step5" class="text-gray-400 hover:text-white transition">STEP 5: 電装システム</a></li>
-<li><a href="camping.html#step6" class="text-gray-400 hover:text-white transition">STEP 6: 快適化</a></li>
-<li><a href="camping.html#step7" class="text-gray-400 hover:text-white transition">STEP 7: 8ナンバー登録</a></li>
-</ul>
-</div>
-<!-- AIアプリ -->
-<div>
-<a href="apps.html" class="text-base font-bold mb-4 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 text-blue-400">
-<i class="ri-apps-2-line"></i>
-<span>AIアプリ</span>
-</a>
-<ul class="space-y-2 text-sm mt-3">
-<li><a href="apps.html#buddytalk" class="text-gray-400 hover:text-white transition">BuddyTalk</a></li>
-<li><a href="apps.html#wood-golem" class="text-gray-400 hover:text-white transition">Wood Golem</a></li>
-<li><a href="apps.html#voicelink" class="text-gray-400 hover:text-white transition">VoiceLink AI通訳</a></li>
-<li><a href="apps.html#word-blaster" class="text-gray-400 hover:text-white transition">Word Blaster</a></li>
-</ul>
-</div>
-<!-- 整備記録 & お問い合わせ -->
-<div>
-<a href="maintenance.html" class="text-base font-bold mb-4 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 text-amber-400">
-<i class="ri-tools-line"></i>
-<span>整備記録</span>
-</a>
-<ul class="space-y-2 text-sm mt-3">
-<li><a href="maintenance.html#error-codes" class="text-gray-400 hover:text-white transition">エラーコード表</a></li>
-<li><a href="maintenance.html#maintenance-list" class="text-gray-400 hover:text-white transition">整備項目一覧</a></li>
-</ul>
-<h4 class="text-base font-bold mt-6 mb-3 flex items-center gap-2">
-<i class="ri-mail-line"></i>
-<span>お問い合わせ</span>
-</h4>
-<a href="mailto:trailfusionai@gmail.com" class="text-gray-400 hover:text-white transition text-sm break-all">trailfusionai@gmail.com</a>
-</div>
-</div>
-<!-- コピーライト -->
-<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-<p>© 2025 TrailFusion AI. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="buddytalk-legal.html" class="hover:text-white transition">プライバシーポリシー</a>
-<a href="buddytalk-legal.html#terms" class="hover:text-white transition">利用規約</a>
-</div>
-</div>
-</div>
+<!-- ============================== -->
+<!-- FOOTER -->
+<!-- ============================== -->
+<footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20">
+  <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+  <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+    <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 py-14 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+          <div>
+            <div class="font-display font-black text-xl">TrailFusion AI</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">
+          革新的なAIアプリケーションとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。
+        </p>
+        <div class="flex gap-2">
+          <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-black text-sun mb-3 flex items-center gap-2">🚐 キャンパー</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html#step1" class="hover:text-sun transition">STEP 1: 夢を描く</a></li>
+          <li><a href="camping.html#step3" class="hover:text-sun transition">STEP 3: 基礎工事</a></li>
+          <li><a href="camping.html#step5" class="hover:text-sun transition">STEP 5: 電装</a></li>
+          <li><a href="camping.html#step7" class="hover:text-sun transition">STEP 7: 登録</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 AIアプリ</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html#buddytalk" class="hover:text-ocean transition">BuddyTalk</a></li>
+          <li><a href="apps.html#wood-golem" class="hover:text-ocean transition">Wood Golem</a></li>
+          <li><a href="apps.html#voicelink" class="hover:text-ocean transition">VoiceLink</a></li>
+          <li><a href="apps.html#word-blaster" class="hover:text-ocean transition">Word Blaster</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-coral mb-3 flex items-center gap-2">🔧 整備</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="maintenance.html#error-codes" class="hover:text-coral transition">エラーコード</a></li>
+          <li><a href="maintenance.html#maintenance-list" class="hover:text-coral transition">整備項目</a></li>
+          <li><a href="maintenance.html#pdf-library" class="hover:text-coral transition">PDF資料</a></li>
+          <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">プライバシー</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-white/50">© 2025-2026 TrailFusion AI. All rights reserved.</p>
+      <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+    </div>
+  </div>
 </footer>
 
-<!-- Scroll to Top -->
-<button id="scrollToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:shadow-xl z-50">
-    <i class="ri-arrow-up-line text-xl"></i>
-</button>
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+<script src="assets/js/trailfusion-ui.js"></script>
 
 <!-- PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>

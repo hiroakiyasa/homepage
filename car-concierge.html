@@ -1,158 +1,512 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>車旅コンシェルジュ - P2P駐車場シェアリングサービス</title>
-  <meta name="description" content="車旅コンシェルジュは、個人オーナーの空き駐車場とドライバーをマッチングするP2P駐車場シェアリングサービスです。">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://hiroakiyasa.github.io/homepage/car-concierge.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>車旅コンシェルジュ - P2P駐車場シェアリングサービス | TrailFusion AI</title>
+<meta name="description" content="車旅コンシェルジュは、個人オーナーの空き駐車場とドライバーをマッチングするP2P駐車場シェアリングサービスです。">
+<meta name="keywords" content="P2P 駐車場,シェアリング,車旅,駐車場マッチング,TrailFusion AI">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/car-concierge.html">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="車旅コンシェルジュ - P2P駐車場シェアリングサービス">
-  <meta property="og:description" content="個人オーナーの空き駐車場とドライバーをマッチングするサービス">
-  <meta property="og:url" content="https://hiroakiyasa.github.io/homepage/car-concierge.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="車旅コンシェルジュ - P2P駐車場シェアリングサービス">
+<meta property="og:description" content="個人オーナーの空き駐車場とドライバーをマッチングするP2P駐車場シェアリングサービス">
+<meta property="og:url" content="https://trailfusionai.com/car-concierge.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<meta property="og:locale" content="ja_JP">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Noto Sans JP', sans-serif; }
-  </style>
+<meta name="theme-color" content="#FFD84D">
+<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{
+        cream:'#FFFBF2',
+        sun:'#FFD84D',
+        coral:'#FF6B5B',
+        ocean:'#4ECDC4',
+        navy:'#1F2E4D',
+        peach:'#FFB3BA',
+        grass:'#7DD87A',
+        sky:'#A5E3F5',
+        berry:'#E85A9A'
+      },
+      fontFamily:{
+        display:['"M PLUS Rounded 1c"','sans-serif'],
+        accent:['"Archivo Black"','sans-serif'],
+        fun:['"Fredoka"','sans-serif'],
+        hand:['"Caveat"','cursive']
+      },
+      borderRadius:{
+        'blob':'48% 52% 62% 38% / 52% 42% 58% 48%',
+        'button':'999px'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="assets/css/trailfusion.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-cream">
 
-  <!-- Header -->
-  <header class="bg-blue-600 text-white py-6">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-bold">車旅コンシェルジュ</h1>
-      <p class="text-blue-100 mt-2">P2P駐車場シェアリングサービス</p>
-    </div>
-  </header>
+<!-- ============================== -->
+<!-- HEADER -->
+<!-- ============================== -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div>
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
 
-  <main class="container mx-auto px-4 py-8 max-w-4xl">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html#contact" class="nav-item text-navy">お問い合わせ</a>
+      </nav>
 
-    <!-- Service Description -->
-    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">サービス概要</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        車旅コンシェルジュは、<strong>個人オーナーが所有する空き駐車スペース</strong>と、
-        <strong>駐車場を探すドライバー</strong>をマッチングするP2P駐車場シェアリングサービスです。
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>空いている自宅駐車場を有効活用したいオーナー様</li>
-        <li>目的地周辺で安くて便利な駐車場を探しているドライバー様</li>
-        <li>双方にメリットのあるマッチングを実現します</li>
-      </ul>
-    </section>
-
-    <!-- Business Info -->
-    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">運営者情報</h2>
-      <table class="w-full text-left">
-        <tbody>
-          <tr class="border-b">
-            <th class="py-3 pr-4 text-gray-600 w-1/3">サービス名</th>
-            <td class="py-3">車旅コンシェルジュ</td>
-          </tr>
-          <tr class="border-b">
-            <th class="py-3 pr-4 text-gray-600">運営者</th>
-            <td class="py-3">安 博明（Hiroaki Yasa）</td>
-          </tr>
-          <tr class="border-b">
-            <th class="py-3 pr-4 text-gray-600">所在地</th>
-            <td class="py-3">日本</td>
-          </tr>
-          <tr>
-            <th class="py-3 pr-4 text-gray-600">お問い合わせ</th>
-            <td class="py-3">
-              <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">
-                trailfusionai@gmail.com
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Pricing -->
-    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">料金について</h2>
-      <p class="text-gray-700 mb-4">
-        駐車料金はオーナー様が設定した金額に基づきます。料金はアプリ内で明確に表示されます。
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>料金はアプリ内に表示された価格に準じます</li>
-        <li>支払方法: クレジットカード、Apple Pay、Google Pay</li>
-        <li>決済は予約確定時に行われます</li>
-      </ul>
-    </section>
-
-    <!-- Cancellation & Refund Policy -->
-    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">キャンセル・返金ポリシー</h2>
-
-      <h3 class="text-lg font-semibold text-gray-800 mt-4 mb-2">キャンセルポリシー</h3>
-      <table class="w-full text-left mb-4">
-        <thead class="bg-gray-100">
-          <tr>
-            <th class="py-2 px-3 border">キャンセルタイミング</th>
-            <th class="py-2 px-3 border">返金額</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="py-2 px-3 border">利用開始24時間前まで</td>
-            <td class="py-2 px-3 border text-green-600 font-semibold">全額返金</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-3 border">利用開始24時間以内</td>
-            <td class="py-2 px-3 border text-yellow-600 font-semibold">50%返金</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-3 border">利用開始後</td>
-            <td class="py-2 px-3 border text-red-600 font-semibold">返金不可</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3 class="text-lg font-semibold text-gray-800 mt-4 mb-2">返金ポリシー</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>返金はお支払いに使用されたカードに返金されます</li>
-        <li>返金処理には5〜10営業日かかる場合があります</li>
-        <li>オーナー都合によるキャンセルの場合は全額返金いたします</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">お問い合わせ</h2>
-      <p class="text-gray-700 mb-4">
-        サービスに関するご質問・ご要望は、下記までお問い合わせください。
-      </p>
-      <div class="bg-blue-50 p-4 rounded-lg">
-        <p class="text-gray-700">
-          <strong>メール:</strong>
-          <a href="mailto:trailfusionai@gmail.com" class="text-blue-600 hover:underline">
-            trailfusionai@gmail.com
-          </a>
-        </p>
-        <p class="text-gray-500 text-sm mt-2">
-          ※ 通常2〜3営業日以内にご返信いたします
-        </p>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="mailto:trailfusionai@gmail.com" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">
+          <i class="ri-mail-send-line"></i>
+          お問い合わせ
+        </a>
+        <a href="camping.html" class="mobile-pill bg-sky lg:hidden">
+          <i class="ri-caravan-line"></i><span class="hidden sm:inline">キャンパー</span>
+        </a>
+        <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
+          <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
+        </a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
       </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-400">&copy; 2024-2026 車旅コンシェルジュ All Rights Reserved.</p>
-      <p class="text-gray-500 text-sm mt-2">運営: TrailFusion AI</p>
     </div>
-  </footer>
 
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
+        <a href="index.html#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">✉️ お問い合わせ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================== -->
+<!-- HERO -->
+<!-- ============================== -->
+<section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #B5EFE6 0%, #4ECDC4 40%, #3BB8B0 100%);">
+  <div class="absolute inset-0 dot-pattern opacity-30"></div>
+  <!-- AI: aerial parking illustration as soft background on right -->
+  <img src="assets/images/ai/concierge-hero-parking.jpg" alt="" aria-hidden="true" class="hidden md:block absolute right-[-80px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover rounded-full opacity-40 mix-blend-multiply pointer-events-none">
+
+  <!-- Floating decorations -->
+  <div class="absolute top-[10%] left-[5%] hidden md:block float" style="--r:-8deg;">
+    <div class="sticker sticker-coral">🅿️ 駐車場シェア</div>
+  </div>
+  <div class="absolute top-[18%] right-[8%] hidden md:block float-slow" style="--r:6deg;">
+    <div class="sticker sticker-sun">🚙 マッチング</div>
+  </div>
+  <div class="absolute bottom-[20%] left-[8%] hidden lg:block float-slow" style="--r:-4deg; animation-delay: -2s;">
+    <div class="sticker sticker-peach">💰 副収入</div>
+  </div>
+
+  <div class="absolute top-12 right-8 sm:top-20 sm:right-16 z-10 spin-slow pointer-events-none hidden sm:block">
+    <div class="rotating-disc">
+      <div class="text-center leading-tight">
+        <div class="font-accent text-[10px] sm:text-xs text-navy">P2P</div>
+        <div class="font-accent text-2xl sm:text-3xl text-coral">PARK</div>
+        <div class="font-accent text-[8px] sm:text-[10px] text-navy tracking-widest">SHARING</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 pt-16 pb-24 md:pt-24 md:pb-32 relative z-10">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
+        <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
+        <span class="font-bold text-sm text-navy">P2P PARKING SHARING SERVICE</span>
+      </div>
+
+      <h1 class="display-xl text-navy mb-6">
+        <span class="block pop-in" style="animation-delay: 0.2s;">
+          <span class="highlight">空き駐車場</span>を、
+        </span>
+        <span class="block pop-in" style="animation-delay: 0.35s;">
+          みんなで使う。
+        </span>
+        <span class="block pop-in" style="animation-delay: 0.5s;">
+          <span class="gradient-text gradient-animated">車旅コンシェルジュ。</span>
+        </span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in" style="animation-delay: 0.65s;">
+        個人オーナーの空き駐車場と、駐車場を探すドライバーをマッチング。<br>
+        <span class="hand-font text-2xl md:text-3xl text-navy">駐車スペースに、新しい価値を。</span>
+      </p>
+
+      <div class="flex flex-wrap gap-4 pop-in" style="animation-delay: 0.8s;">
+        <a href="#service" class="btn-chunky btn-chunky-coral text-base">
+          <i class="ri-information-line text-xl"></i>
+          サービス詳細
+        </a>
+        <a href="#contact" class="btn-chunky btn-chunky-sun text-base">
+          <i class="ri-mail-send-line text-xl"></i>
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
+  </svg>
+</section>
+
+<!-- ============================== -->
+<!-- SERVICE OVERVIEW -->
+<!-- ============================== -->
+<section id="service" class="py-20 md:py-28 bg-cream relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-50"></div>
+  <div class="absolute top-20 -left-20 w-80 h-80 bg-peach rounded-blob opacity-30 blur-2xl"></div>
+  <div class="absolute bottom-10 -right-20 w-96 h-96 bg-sky rounded-blob opacity-30 blur-2xl"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <span class="sticker sticker-coral mb-6">SERVICE</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">
+        サービス概要
+      </h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto">
+        オーナーとドライバー、双方にメリットのある駐車場シェアリングを実現します。
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto card-chunky p-8 md:p-10 mb-12 reveal">
+      <p class="text-navy/80 leading-relaxed text-lg mb-6">
+        車旅コンシェルジュは、<strong class="text-coral">個人オーナーが所有する空き駐車スペース</strong>と、
+        <strong class="text-coral">駐車場を探すドライバー</strong>をマッチングする
+        P2P駐車場シェアリングサービスです。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+      <div class="card-chunky overflow-hidden">
+        <div class="aspect-[4/3] border-b-[3px] border-navy bg-sun overflow-hidden">
+          <img src="assets/images/ai/concierge-icon-host.jpg" alt="オーナー" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">オーナー様へ</h3>
+          <p class="text-navy/70 leading-relaxed">空いている自宅駐車場を有効活用。眠っているスペースが、新しい収入源に。</p>
+        </div>
+      </div>
+      <div class="card-chunky overflow-hidden">
+        <div class="aspect-[4/3] border-b-[3px] border-navy bg-coral overflow-hidden">
+          <img src="assets/images/ai/concierge-icon-driver.jpg" alt="ドライバー" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">ドライバー様へ</h3>
+          <p class="text-navy/70 leading-relaxed">目的地周辺で、安くて便利な駐車場をスマホひとつで予約。観光・出張に最適。</p>
+        </div>
+      </div>
+      <div class="card-chunky overflow-hidden">
+        <div class="aspect-[4/3] border-b-[3px] border-navy bg-ocean overflow-hidden">
+          <img src="assets/images/ai/concierge-hero-parking.jpg" alt="マッチング" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">Win-Win マッチング</h3>
+          <p class="text-navy/70 leading-relaxed">オーナーは収益化、ドライバーは利便性UP。地域の遊休資産を活用します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- BUSINESS INFO -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,216,77,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-12 reveal">
+      <span class="sticker sticker-ocean mb-6">OPERATOR</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-white mt-6">
+        運営者情報
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="card-chunky p-2">
+        <table class="table-chunky" style="box-shadow: none; border: none; border-radius: 0;">
+          <tbody>
+            <tr>
+              <th class="w-1/3 bg-sun text-navy">サービス名</th>
+              <td>車旅コンシェルジュ</td>
+            </tr>
+            <tr>
+              <th class="bg-sun text-navy">運営者</th>
+              <td>安 博明（Hiroaki Yasa）</td>
+            </tr>
+            <tr>
+              <th class="bg-sun text-navy">所在地</th>
+              <td>日本</td>
+            </tr>
+            <tr>
+              <th class="bg-sun text-navy">お問い合わせ</th>
+              <td>
+                <a href="mailto:trailfusionai@gmail.com" class="text-coral underline font-bold">
+                  trailfusionai@gmail.com
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- PRICING -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-cream relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-30"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <span class="sticker sticker-grass mb-6">PRICING</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">料金について</h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto">
+        料金はオーナー様が設定した金額に基づき、アプリ内で明確に表示されます。
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto card-chunky p-8 md:p-10 reveal">
+      <ul class="space-y-4">
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-sun border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-navy">1</div>
+          <p class="text-navy/80 leading-relaxed pt-1">料金はアプリ内に表示された価格に準じます</p>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-coral border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-white">2</div>
+          <p class="text-navy/80 leading-relaxed pt-1">支払方法: クレジットカード、Apple Pay、Google Pay</p>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-ocean border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-navy">3</div>
+          <p class="text-navy/80 leading-relaxed pt-1">決済は予約確定時に行われます</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CANCELLATION & REFUND -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-cream relative overflow-hidden border-t-[3px] border-navy/10">
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <span class="sticker sticker-berry mb-6">CANCELLATION & REFUND</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">キャンセル・返金ポリシー</h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto reveal">
+      <h3 class="font-display font-black text-2xl text-navy mb-4 flex items-center gap-2">
+        <i class="ri-calendar-close-line text-coral"></i> キャンセルポリシー
+      </h3>
+      <div class="overflow-x-auto mb-12">
+        <table class="table-chunky">
+          <thead>
+            <tr>
+              <th>キャンセルタイミング</th>
+              <th>返金額</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>利用開始 24 時間前まで</td>
+              <td><span class="sticker sticker-grass">全額返金</span></td>
+            </tr>
+            <tr>
+              <td>利用開始 24 時間以内</td>
+              <td><span class="sticker">50% 返金</span></td>
+            </tr>
+            <tr>
+              <td>利用開始後</td>
+              <td><span class="sticker sticker-coral">返金不可</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-display font-black text-2xl text-navy mb-4 flex items-center gap-2">
+        <i class="ri-refund-2-line text-ocean"></i> 返金ポリシー
+      </h3>
+      <div class="card-chunky p-8">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
+            <p class="text-navy/80 leading-relaxed">返金はお支払いに使用されたカードに返金されます</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
+            <p class="text-navy/80 leading-relaxed">返金処理には 5〜10 営業日かかる場合があります</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
+            <p class="text-navy/80 leading-relaxed">オーナー都合によるキャンセルの場合は全額返金いたします</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CONTACT -->
+<!-- ============================== -->
+<section id="contact" class="py-20 md:py-28 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <span class="sticker sticker-coral mb-6">CONTACT</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-white mt-6 mb-6">お問い合わせ</h2>
+      <p class="text-white/70 text-lg mb-10">
+        サービスに関するご質問・ご要望は、下記までお気軽にお問い合わせください。
+      </p>
+
+      <div class="card-chunky p-8 md:p-10 text-left">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-14 h-14 bg-coral border-2 border-navy rounded-2xl grid place-items-center">
+            <i class="ri-mail-send-line text-2xl text-white"></i>
+          </div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">EMAIL</div>
+            <a href="mailto:trailfusionai@gmail.com" class="font-display font-black text-xl md:text-2xl text-navy underline decoration-2 underline-offset-4 hover:text-coral transition">
+              trailfusionai@gmail.com
+            </a>
+          </div>
+        </div>
+        <p class="text-navy/60 text-sm pl-[72px]">※ 通常 2〜3 営業日以内にご返信いたします</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- FOOTER -->
+<!-- ============================== -->
+<footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20">
+  <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+
+  <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+    <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+      <span class="mx-6">やりたい事は、今やる。</span>
+      <span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span>
+      <span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span>
+      <span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span>
+      <span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span>
+      <span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span>
+      <span class="mx-6 text-ocean">✦</span>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-14 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+          <div>
+            <div class="font-display font-black text-xl">TrailFusion AI</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">
+          キャンピングカーDIYとAIアプリで、場所に縛られない人生を創ろう。あなたの「やってみたい」を、応援します。
+        </p>
+        <div class="flex gap-2">
+          <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-black text-sun mb-3 flex items-center gap-2">🚐 キャンパー</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html" class="hover:text-sun transition">DIYガイド</a></li>
+          <li><a href="maintenance.html" class="hover:text-sun transition">整備記録</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 AIアプリ</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html" class="hover:text-ocean transition">アプリ一覧</a></li>
+          <li><a href="car-concierge.html" class="hover:text-ocean transition">車旅コンシェルジュ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-coral mb-3 flex items-center gap-2">📄 法務</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">プライバシー</a></li>
+          <li><a href="buddytalk-terms.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="index.html#contact" class="hover:text-coral transition">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-white/50">© 2024-2026 車旅コンシェルジュ / TrailFusion AI. All rights reserved.</p>
+      <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+
+<script src="assets/js/trailfusion-ui.js"></script>
 </body>
 </html>

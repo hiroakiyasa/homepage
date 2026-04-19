@@ -471,8 +471,10 @@ video { pointer-events: none; }
 <!-- HERO -->
 <!-- ============================== -->
 <section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #FFE57A 0%, #FFD84D 30%, #FFC93D 60%, #FFBB2A 100%);">
+  <!-- AI: hand-drawn sun doodles tiled overlay (very subtle) -->
+  <div class="absolute inset-0 opacity-25 pointer-events-none" style="background-image: url('assets/images/ai/hero-pattern-sun.jpg'); background-size: 480px; background-repeat: repeat; mix-blend-mode: multiply;"></div>
   <!-- Decorative dots -->
-  <div class="absolute inset-0 dot-pattern opacity-40"></div>
+  <div class="absolute inset-0 dot-pattern opacity-30"></div>
 
   <!-- Floating sticker decorations -->
   <div class="absolute top-[8%] left-[4%] hidden md:block float" style="--r:-10deg;">
@@ -597,9 +599,9 @@ video { pointer-events: none; }
 <section class="py-24 md:py-32 bg-cream relative overflow-hidden">
   <div class="absolute inset-0 grid-pattern opacity-50"></div>
 
-  <!-- Decorative blob -->
-  <div class="absolute top-20 -left-20 w-80 h-80 bg-peach rounded-blob opacity-40 blur-2xl"></div>
-  <div class="absolute bottom-10 -right-20 w-96 h-96 bg-sky rounded-blob opacity-40 blur-2xl"></div>
+  <!-- AI: organic blob shapes -->
+  <img src="assets/images/ai/blob-peach.jpg" alt="" aria-hidden="true" class="ai-blob top-10 -left-32 w-[420px] h-[420px] object-cover rounded-blob">
+  <img src="assets/images/ai/blob-ocean.jpg" alt="" aria-hidden="true" class="ai-blob bottom-10 -right-32 w-[480px] h-[480px] object-cover rounded-blob">
 
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-4xl mx-auto text-center reveal">
