@@ -1,0 +1,17 @@
+{
+    "name": "homepage",
+    "version": "1.0.0",
+    "description": "TrailFusion AI Homepage and Camping Spot Auto-Poster",
+    "main": "generate-rankings.js",
+    "scripts": {
+        "start": "node generate-rankings.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:css": "tailwindcss -i input.css -o assets/css/tailwind-compiled.css --minify"
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.39.0"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.17"
+    }
+}
