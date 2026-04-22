@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TrailFusion AI</title>
+    <meta name="description" content="TrailFusion AI のプライバシーポリシー。データの収集、利用、保管、第三者連携、TikTok・X・Instagram・YouTube API 連携時の取り扱いを記載。">
+    <link rel="canonical" href="https://trailfusionai.com/privacy-policy.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800">TrailFusion AI</a>
+            <nav class="space-x-4 text-sm">
+                <a href="/apps.html" class="text-gray-600 hover:text-gray-900">Apps</a>
+                <a href="/privacy-policy.html" class="text-gray-900 font-semibold">Privacy</a>
+                <a href="/terms-of-service.html" class="text-gray-600 hover:text-gray-900">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <h1 class="text-4xl font-bold mb-4">Privacy Policy for TrailFusion AI</h1>
+        <p class="text-gray-500 mb-8">Last Updated: April 22, 2026 / 最終更新日: 2026年4月22日</p>
+
+        <div class="bg-white rounded-lg shadow p-8 mb-8 prose max-w-none">
+            <p>
+                This Privacy Policy describes how <strong>TrailFusion AI</strong>
+                ("we", "us", "our", or "the App") collects, uses, discloses, and
+                safeguards your information when you use our application and the
+                website located at <a href="https://trailfusionai.com">https://trailfusionai.com</a>.
+                By using TrailFusion AI, you consent to the data practices
+                described in this policy.
+            </p>
+
+            <p class="mt-4">
+                本プライバシーポリシーは、<strong>TrailFusion AI</strong>
+                （以下「本アプリ」「当方」）が、ユーザーによる本アプリおよび
+                <a href="https://trailfusionai.com">https://trailfusionai.com</a>
+                の利用にあたって、どのような情報を収集・利用・保管・共有するかを定めるものです。
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">1. Information TrailFusion AI Collects</h2>
+            <p>TrailFusion AI may collect the following categories of information depending on the features you use:</p>
+            <ul class="list-disc pl-6">
+                <li><strong>Account Identifiers</strong>: Your username, user ID, display name, and profile picture from the connected social platform (X/Twitter, TikTok, Instagram, YouTube).</li>
+                <li><strong>Content You Upload</strong>: Images, videos, captions, titles, tags, and any metadata you explicitly submit to TrailFusion AI for publishing.</li>
+                <li><strong>Authentication Tokens</strong>: OAuth access tokens and refresh tokens required to post on your behalf. Tokens are stored securely and are never shared with third parties.</li>
+                <li><strong>Operational Logs</strong>: Timestamps, endpoint paths, and status codes of API calls made by TrailFusion AI, for debugging and abuse prevention only.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">2. How TrailFusion AI Uses Information</h2>
+            <p>TrailFusion AI uses information solely to:</p>
+            <ul class="list-disc pl-6">
+                <li>Authenticate you to the social platforms you connect.</li>
+                <li>Publish the content you explicitly authorize (images, videos, captions).</li>
+                <li>Return the result (success/failure, post URL) back to you.</li>
+                <li>Improve stability and debug failures.</li>
+            </ul>
+            <p>TrailFusion AI does <strong>not</strong> use your information for advertising, profiling, or sale to third parties.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">3. TikTok API Usage (Content Posting API)</h2>
+            <p>When you connect your TikTok account, TrailFusion AI requests the following scopes:</p>
+            <ul class="list-disc pl-6">
+                <li><code>user.info.basic</code> — to identify your TikTok account.</li>
+                <li><code>video.upload</code> — to upload videos that you authorize for publishing.</li>
+                <li><code>video.publish</code> — to publish those videos on your TikTok profile.</li>
+            </ul>
+            <p>
+                TrailFusion AI complies with the
+                <a href="https://www.tiktok.com/legal/page/global/developers-terms/en" class="text-blue-600 underline">TikTok Developer Terms of Service</a>
+                and the TikTok Community Guidelines. Data retrieved from the
+                TikTok API is used exclusively to complete the posting flow you
+                initiate and is not stored beyond the session required to
+                complete that flow.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">4. X (Twitter), Instagram, and YouTube API Usage</h2>
+            <p>
+                TrailFusion AI also integrates with X (Twitter) API v2,
+                Instagram Graph API, and YouTube Data API v3 under the
+                respective platforms' developer agreements. The data accessed
+                is limited to what is strictly needed to publish the content
+                you authorize.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">5. Data Retention</h2>
+            <p>
+                TrailFusion AI retains authentication tokens only as long as
+                needed to deliver the service. You may revoke TrailFusion AI's
+                access at any time from the settings of each social platform,
+                after which the tokens are invalidated.
+                Operational logs are retained for up to 30 days for abuse
+                prevention, then automatically deleted.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">6. Data Sharing</h2>
+            <p>
+                TrailFusion AI does <strong>not</strong> sell, rent, or share
+                your personal data with third parties, except as required by
+                law or to comply with the API terms of the connected
+                platforms.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">7. Security</h2>
+            <p>
+                TrailFusion AI stores credentials in encrypted environment
+                variables and uses HTTPS for all API calls. Despite these
+                safeguards, no method of electronic storage is 100% secure; we
+                cannot guarantee absolute security.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">8. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul class="list-disc pl-6">
+                <li>Request access to the data TrailFusion AI holds about you.</li>
+                <li>Request deletion of your data.</li>
+                <li>Revoke TrailFusion AI's access at any time.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">9. Children's Privacy</h2>
+            <p>
+                TrailFusion AI is not intended for children under 13. We do not
+                knowingly collect personal information from children under 13.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">10. Changes to This Policy</h2>
+            <p>
+                TrailFusion AI may update this Privacy Policy from time to
+                time. Material changes will be posted on this page with an
+                updated "Last Updated" date.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">11. Contact</h2>
+            <p>
+                Questions about this policy or TrailFusion AI's data practices:
+                <br>
+                Email:
+                <a href="mailto:support@trailfusionai.com" class="text-blue-600 underline">support@trailfusionai.com</a>
+                <br>
+                Website:
+                <a href="https://trailfusionai.com" class="text-blue-600 underline">https://trailfusionai.com</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2026 TrailFusion AI. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="/" class="hover:text-white">Home</a>
+                <a href="/apps.html" class="hover:text-white">Apps</a>
+                <a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/terms-of-service.html" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
