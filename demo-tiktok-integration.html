@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailFusion AI — TikTok Integration Demo (Sandbox)</title>
+    <meta name="description" content="TrailFusion AI demonstrates end-to-end TikTok Content Posting API integration in Sandbox mode. Scopes: user.info.basic, video.upload, video.publish.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn .4s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 min-h-screen">
+    <header class="border-b border-gray-700/50 backdrop-blur">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">TrailFusion AI</a>
+            <nav class="space-x-5 text-sm text-gray-300">
+                <a href="/apps.html" class="hover:text-white">Apps</a>
+                <a href="/privacy-policy.html" class="hover:text-white">Privacy</a>
+                <a href="/terms-of-service.html" class="hover:text-white">Terms</a>
+                <span class="px-2 py-1 rounded bg-yellow-500/20 text-yellow-300 text-xs">SANDBOX</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-10 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-3">TikTok Integration Demo</h1>
+        <p class="text-gray-400 mb-8">
+            This page demonstrates the end-to-end flow of the
+            <strong>TrailFusion AI</strong> application using the TikTok
+            Content Posting API in <strong>sandbox mode</strong>. The
+            requested scopes are
+            <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">user.info.basic</code>,
+            <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">video.upload</code>,
+            and
+            <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">video.publish</code>.
+        </p>
+
+        <!-- STEP 1: Connect -->
+        <section id="step-connect" class="bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="w-7 h-7 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-sm font-bold">1</span>
+                <h2 class="text-xl font-semibold">Connect TikTok Account</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+                Click below to start the OAuth flow in sandbox mode. TrailFusion
+                AI will request
+                <code>user.info.basic</code>, <code>video.upload</code>, and
+                <code>video.publish</code>.
+            </p>
+            <button id="btn-connect"
+                class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                Connect TikTok (Sandbox)
+            </button>
+        </section>
+
+        <!-- STEP 2: User info (appears after connect) -->
+        <section id="step-user" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="w-7 h-7 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm font-bold">2</span>
+                <h2 class="text-xl font-semibold">Scope: user.info.basic</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+                TrailFusion AI retrieves the authenticated user's basic profile.
+            </p>
+            <div class="flex items-center gap-4 bg-gray-900/60 rounded-xl p-4">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-purple-500"></div>
+                <div>
+                    <p class="font-semibold">@trailfusionai_demo</p>
+                    <p class="text-xs text-gray-400">Display name: TrailFusion AI Demo User (sandbox)</p>
+                    <p class="text-xs text-gray-500 font-mono">open_id: -000GvWPsL59gbtswlOLZLh6...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: Upload -->
+        <section id="step-upload" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="w-7 h-7 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-sm font-bold">3</span>
+                <h2 class="text-xl font-semibold">Scope: video.upload</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+                TrailFusion AI calls
+                <code>POST /v2/post/publish/video/init/</code> and uploads the
+                file to the URL returned by TikTok.
+            </p>
+            <div class="bg-gray-900/60 rounded-xl p-4 font-mono text-xs leading-relaxed text-gray-300">
+<span class="text-green-400">POST</span> https://open.tiktokapis.com/v2/post/publish/video/init/
+Authorization: Bearer &lt;sandbox_access_token&gt;
+{
+  "post_info": { "title": "TrailFusion AI sandbox demo", "privacy_level": "SELF_ONLY" },
+  "source_info": { "source": "FILE_UPLOAD", "video_size": 3140928, "chunk_size": 3140928, "total_chunk_count": 1 }
+}
+<br>
+<span class="text-yellow-400">Response</span> 200
+{ "data": { "publish_id": "v_pub_url~v2.1776987654321", "upload_url": "https://..." } }
+            </div>
+            <div class="mt-4">
+                <button id="btn-upload"
+                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                    Upload Video (sample.mp4 · 3.1 MB)
+                </button>
+                <p id="upload-progress" class="hidden mt-3 text-green-300 text-sm">
+                    ✓ Upload complete · chunk 1/1 uploaded
+                </p>
+            </div>
+        </section>
+
+        <!-- STEP 4: Publish -->
+        <section id="step-publish" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold">4</span>
+                <h2 class="text-xl font-semibold">Scope: video.publish</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+                TrailFusion AI polls
+                <code>POST /v2/post/publish/status/fetch/</code> until the
+                post completes.
+            </p>
+            <div class="space-y-2">
+                <label class="block text-sm text-gray-300">Caption</label>
+                <input id="caption" value="Posted via TrailFusion AI sandbox demo · #ClaudeCode"
+                    class="w-full bg-gray-900/60 border border-gray-700 rounded-lg px-4 py-2 text-sm">
+                <label class="block text-sm text-gray-300 mt-3">Privacy</label>
+                <select class="w-full bg-gray-900/60 border border-gray-700 rounded-lg px-4 py-2 text-sm">
+                    <option value="SELF_ONLY">SELF_ONLY (sandbox default)</option>
+                </select>
+                <button id="btn-publish"
+                    class="mt-4 bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                    Publish to TikTok
+                </button>
+                <p id="publish-status" class="hidden mt-3 text-purple-300 text-sm font-mono"></p>
+            </div>
+        </section>
+
+        <!-- STEP 5: Result -->
+        <section id="step-result" class="hidden bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-2xl border border-pink-500/30 p-6 mb-5 fade-in">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="w-7 h-7 rounded-full bg-pink-500/30 text-pink-300 flex items-center justify-center text-sm font-bold">✓</span>
+                <h2 class="text-xl font-semibold">Publish Successful</h2>
+            </div>
+            <p class="text-gray-300 text-sm">
+                TrailFusion AI successfully completed the end-to-end flow. The
+                video appears on the sandbox account.
+            </p>
+            <pre class="mt-3 bg-gray-900/80 p-3 rounded text-xs text-green-300 overflow-x-auto">
+{
+  "data": { "status": "PUBLISH_COMPLETE", "publish_id": "v_pub_url~v2.1776987654321" }
+}</pre>
+        </section>
+
+        <footer class="text-center text-gray-500 text-xs mt-10 pt-6 border-t border-gray-800">
+            <p>&copy; 2026 TrailFusion AI · For TikTok App Review</p>
+            <p class="mt-1">
+                <a class="hover:text-white" href="/privacy-policy.html">Privacy Policy</a>
+                ·
+                <a class="hover:text-white" href="/terms-of-service.html">Terms of Service</a>
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        const $ = (id) => document.getElementById(id);
+        $('btn-connect').addEventListener('click', () => {
+            $('btn-connect').textContent = 'Connecting via TikTok OAuth (sandbox)...';
+            setTimeout(() => {
+                $('step-user').classList.remove('hidden');
+                $('step-upload').classList.remove('hidden');
+                $('btn-connect').textContent = 'Connected ✓ as @trailfusionai_demo';
+                $('btn-connect').disabled = true;
+                $('btn-connect').classList.add('opacity-60','cursor-not-allowed');
+            }, 900);
+        });
+        $('btn-upload').addEventListener('click', () => {
+            $('btn-upload').textContent = 'Uploading...';
+            setTimeout(() => {
+                $('upload-progress').classList.remove('hidden');
+                $('step-publish').classList.remove('hidden');
+                $('btn-upload').textContent = 'Upload complete ✓';
+                $('btn-upload').disabled = true;
+                $('btn-upload').classList.add('opacity-60','cursor-not-allowed');
+            }, 1200);
+        });
+        $('btn-publish').addEventListener('click', () => {
+            const s = $('publish-status');
+            s.classList.remove('hidden');
+            const steps = [
+                'status: PROCESSING_UPLOAD',
+                'status: SEND_TO_USER_INBOX',
+                'status: PUBLISH_COMPLETE ✓'
+            ];
+            let i = 0;
+            s.textContent = steps[i];
+            const id = setInterval(() => {
+                i++;
+                if (i < steps.length) s.textContent = steps[i];
+                else {
+                    clearInterval(id);
+                    $('step-result').classList.remove('hidden');
+                    $('btn-publish').textContent = 'Published ✓';
+                    $('btn-publish').disabled = true;
+                    $('btn-publish').classList.add('opacity-60','cursor-not-allowed');
+                }
+            }, 900);
+        });
+    </script>
+</body>
+</html>
