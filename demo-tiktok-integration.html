@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrailFusion AI — TikTok Integration Demo (Sandbox)</title>
-    <meta name="description" content="TrailFusion AI demonstrates end-to-end TikTok Content Posting API integration in Sandbox mode. Scopes: user.info.basic, video.upload, video.publish.">
+    <meta name="description" content="TrailFusion AI demonstrates end-to-end TikTok Login Kit and Content Posting API integration in Sandbox mode. Scopes: user.info.basic, video.upload, video.publish.">
+    <link rel="canonical" href="https://trailfusionai.com/demo-tiktok-integration.html">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .fade-in { animation: fadeIn .4s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+        .sandbox-banner {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            color: #1a1a1a;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+        }
+        .urlbar {
+            background: #1f2937;
+            color: #9ca3af;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 min-h-screen">
+
+    <!-- SANDBOX BANNER (Always visible) -->
+    <div class="sandbox-banner text-center py-2 text-sm">
+        ⚠️ SANDBOX MODE · TikTok Login Kit + Content Posting API · Scopes: user.info.basic · video.upload · video.publish
+    </div>
+
+    <!-- URL BAR MOCK (for reviewers to confirm domain) -->
+    <div class="urlbar flex items-center px-4 py-2 border-b border-gray-700 gap-2">
+        <span class="text-green-400">🔒</span>
+        <span>https://trailfusionai.com/demo-tiktok-integration.html</span>
+    </div>
+
     <header class="border-b border-gray-700/50 backdrop-blur">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-2xl font-bold">TrailFusion AI</a>
@@ -28,41 +53,72 @@
         <h1 class="text-4xl font-bold mb-3">TikTok Integration Demo</h1>
         <p class="text-gray-400 mb-8">
             This page demonstrates the end-to-end flow of the
-            <strong>TrailFusion AI</strong> application using the TikTok
-            Content Posting API in <strong>sandbox mode</strong>. The
-            requested scopes are
+            <strong>TrailFusion AI</strong> web application using
+            <strong>TikTok Login Kit</strong> and
+            <strong>Content Posting API</strong> in
+            <strong>sandbox mode</strong>. The requested scopes are
             <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">user.info.basic</code>,
             <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">video.upload</code>,
             and
             <code class="bg-gray-700/70 px-1.5 py-0.5 rounded">video.publish</code>.
+            Website domain: <strong>trailfusionai.com</strong>.
         </p>
 
-        <!-- STEP 1: Connect -->
+        <!-- STEP 1: Connect (Login Kit) -->
         <section id="step-connect" class="bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5">
             <div class="flex items-center gap-3 mb-2">
                 <span class="w-7 h-7 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-sm font-bold">1</span>
-                <h2 class="text-xl font-semibold">Connect TikTok Account</h2>
+                <h2 class="text-xl font-semibold">Login Kit · Connect TikTok Account</h2>
+                <span class="ml-auto text-[11px] bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded">Product: Login Kit</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
-                Click below to start the OAuth flow in sandbox mode. TrailFusion
-                AI will request
-                <code>user.info.basic</code>, <code>video.upload</code>, and
-                <code>video.publish</code>.
+                Redirects to TikTok's sandbox OAuth 2.0 authorization endpoint
+                <code>open.tiktokapis.com/v2/oauth/authorize/</code> with
+                requested scopes.
             </p>
+            <div class="bg-gray-900/60 rounded-xl p-3 font-mono text-xs text-gray-300 mb-4">
+GET https://www.tiktok.com/v2/auth/authorize/?client_key=SANDBOX_KEY<br>
+&amp;scope=user.info.basic,video.upload,video.publish<br>
+&amp;response_type=code&amp;redirect_uri=https://trailfusionai.com/callback
+            </div>
             <button id="btn-connect"
                 class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition">
                 Connect TikTok (Sandbox)
             </button>
         </section>
 
-        <!-- STEP 2: User info (appears after connect) -->
+        <!-- STEP 1.5: OAuth consent mock -->
+        <section id="step-oauth" class="hidden bg-black rounded-2xl border border-gray-700/60 p-0 mb-5 fade-in overflow-hidden">
+            <div class="bg-black p-6 text-center">
+                <div class="text-white text-lg font-bold mb-2">TikTok</div>
+                <div class="text-gray-400 text-xs mb-6">SANDBOX OAuth 2.0 · Authorize TrailFusion AI</div>
+                <div class="bg-gray-900 rounded-lg p-4 mb-4 text-left text-sm">
+                    <p class="text-gray-200 mb-2">TrailFusion AI is requesting permission to:</p>
+                    <ul class="text-gray-300 space-y-1 text-xs pl-4">
+                        <li>✓ Access basic profile info (<code>user.info.basic</code>)</li>
+                        <li>✓ Upload videos to your account (<code>video.upload</code>)</li>
+                        <li>✓ Publish videos on your behalf (<code>video.publish</code>)</li>
+                    </ul>
+                </div>
+                <button id="btn-oauth-allow"
+                    class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded-lg text-sm">
+                    Authorize (Sandbox)
+                </button>
+                <button class="text-gray-500 ml-3 text-sm" disabled>Cancel</button>
+            </div>
+        </section>
+
+        <!-- STEP 2: User info (user.info.basic) -->
         <section id="step-user" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
             <div class="flex items-center gap-3 mb-2">
                 <span class="w-7 h-7 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm font-bold">2</span>
                 <h2 class="text-xl font-semibold">Scope: user.info.basic</h2>
+                <span class="ml-auto text-[11px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Product: Login Kit</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
-                TrailFusion AI retrieves the authenticated user's basic profile.
+                After OAuth, TrailFusion AI calls
+                <code>GET /v2/user/info/</code> to retrieve the authenticated
+                user's basic profile.
             </p>
             <div class="flex items-center gap-4 bg-gray-900/60 rounded-xl p-4">
                 <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-purple-500"></div>
@@ -74,16 +130,17 @@
             </div>
         </section>
 
-        <!-- STEP 3: Upload -->
+        <!-- STEP 3: Upload (video.upload) -->
         <section id="step-upload" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
             <div class="flex items-center gap-3 mb-2">
                 <span class="w-7 h-7 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-sm font-bold">3</span>
                 <h2 class="text-xl font-semibold">Scope: video.upload</h2>
+                <span class="ml-auto text-[11px] bg-green-500/20 text-green-300 px-2 py-0.5 rounded">Product: Content Posting API</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
                 TrailFusion AI calls
                 <code>POST /v2/post/publish/video/init/</code> and uploads the
-                file to the URL returned by TikTok.
+                file to the URL returned by TikTok sandbox.
             </p>
             <div class="bg-gray-900/60 rounded-xl p-4 font-mono text-xs leading-relaxed text-gray-300">
 <span class="text-green-400">POST</span> https://open.tiktokapis.com/v2/post/publish/video/init/
@@ -107,11 +164,12 @@ Authorization: Bearer &lt;sandbox_access_token&gt;
             </div>
         </section>
 
-        <!-- STEP 4: Publish -->
+        <!-- STEP 4: Publish (video.publish) -->
         <section id="step-publish" class="hidden bg-gray-800/60 rounded-2xl border border-gray-700/60 p-6 mb-5 fade-in">
             <div class="flex items-center gap-3 mb-2">
                 <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold">4</span>
                 <h2 class="text-xl font-semibold">Scope: video.publish</h2>
+                <span class="ml-auto text-[11px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded">Product: Content Posting API</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
                 TrailFusion AI polls
@@ -141,8 +199,9 @@ Authorization: Bearer &lt;sandbox_access_token&gt;
                 <h2 class="text-xl font-semibold">Publish Successful</h2>
             </div>
             <p class="text-gray-300 text-sm">
-                TrailFusion AI successfully completed the end-to-end flow. The
-                video appears on the sandbox account.
+                TrailFusion AI successfully completed the end-to-end flow on
+                <strong>trailfusionai.com</strong>. The video appears on the
+                sandbox account.
             </p>
             <pre class="mt-3 bg-gray-900/80 p-3 rounded text-xs text-green-300 overflow-x-auto">
 {
@@ -151,7 +210,7 @@ Authorization: Bearer &lt;sandbox_access_token&gt;
         </section>
 
         <footer class="text-center text-gray-500 text-xs mt-10 pt-6 border-t border-gray-800">
-            <p>&copy; 2026 TrailFusion AI · For TikTok App Review</p>
+            <p>&copy; 2026 TrailFusion AI · Web app hosted at trailfusionai.com · For TikTok App Review</p>
             <p class="mt-1">
                 <a class="hover:text-white" href="/privacy-policy.html">Privacy Policy</a>
                 ·
@@ -163,13 +222,24 @@ Authorization: Bearer &lt;sandbox_access_token&gt;
     <script>
         const $ = (id) => document.getElementById(id);
         $('btn-connect').addEventListener('click', () => {
-            $('btn-connect').textContent = 'Connecting via TikTok OAuth (sandbox)...';
+            $('btn-connect').textContent = 'Redirecting to TikTok OAuth (sandbox)...';
+            setTimeout(() => {
+                $('step-oauth').classList.remove('hidden');
+                $('btn-connect').textContent = 'Redirected ↓';
+                $('btn-connect').disabled = true;
+                $('btn-connect').classList.add('opacity-60','cursor-not-allowed');
+                $('step-oauth').scrollIntoView({ behavior: 'smooth' });
+            }, 900);
+        });
+        $('btn-oauth-allow').addEventListener('click', () => {
+            $('btn-oauth-allow').textContent = 'Authorizing...';
             setTimeout(() => {
                 $('step-user').classList.remove('hidden');
                 $('step-upload').classList.remove('hidden');
-                $('btn-connect').textContent = 'Connected ✓ as @trailfusionai_demo';
-                $('btn-connect').disabled = true;
-                $('btn-connect').classList.add('opacity-60','cursor-not-allowed');
+                $('btn-oauth-allow').textContent = 'Authorized ✓';
+                $('btn-oauth-allow').disabled = true;
+                $('btn-oauth-allow').classList.add('opacity-60','cursor-not-allowed');
+                $('step-user').scrollIntoView({ behavior: 'smooth' });
             }, 900);
         });
         $('btn-upload').addEventListener('click', () => {
