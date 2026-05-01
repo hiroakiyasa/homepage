@@ -38,7 +38,39 @@
 <!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
-<!-- Tailwind -->
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#FFFBF2',
+          navy: '#1F2E4D',
+          coral: '#FF6B5B',
+          sun: '#FFD84D',
+          ocean: '#4ECDC4',
+          peach: '#FFB3BA',
+          sky: '#A7D8F5',
+          grass: '#7DD87A',
+          berry: '#E85A9A',
+        },
+        fontFamily: {
+          display: ['"M PLUS Rounded 1c"', 'sans-serif'],
+          accent: ['"Archivo Black"', 'sans-serif'],
+          hand: ['Caveat', 'cursive'],
+        },
+        borderRadius: {
+          blob: '50% 40% 55% 45% / 45% 55% 40% 60%',
+        },
+        container: {
+          center: true,
+          padding: '1rem',
+        },
+      },
+    },
+  };
+</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 
@@ -363,6 +395,28 @@ video { pointer-events: none; }
   .rotating-disc { width: 120px; height: 120px; }
 }
 
+/* ヒーロー写真と動画の実寸バランス */
+.hero-media-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+.hero-hiace-frame { height: clamp(235px, 21vw, 315px); }
+.hero-dev-frame { height: clamp(430px, 40vw, 560px); }
+@media (min-width: 1024px) {
+  .hero-media-layout {
+    display: grid;
+    grid-template-columns: minmax(360px, 1fr) minmax(390px, 0.95fr);
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1440px) {
+  .hero-dev-frame { height: clamp(660px, 38vw, 760px); }
+}
+
 /* 統計の巨大数字 */
 .stat-num {
   font-family: 'Archivo Black', sans-serif;
@@ -371,8 +425,7 @@ video { pointer-events: none; }
   letter-spacing: -0.04em;
 }
 </style>
-  <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
-  <link rel="stylesheet" href="assets/css/trailfusion.css?v=20260419">
+
 </head>
 <body class="bg-cream">
 
@@ -410,16 +463,9 @@ video { pointer-events: none; }
           <i class="ri-mail-send-line"></i>
           お問い合わせ
         </a>
-        <!-- Mobile pills -->
-        <a href="camping.html" class="mobile-pill bg-sky lg:hidden">
-          <i class="ri-caravan-line"></i><span class="hidden sm:inline">キャンパー</span>
-        </a>
-        <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
-          <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
-        </a>
         <!-- Mobile menu button -->
-        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
-          <i class="ri-menu-line text-xl"></i>
+        <button id="mobile-toggle" class="lg:hidden w-11 h-11 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー" style="box-shadow: 3px 3px 0 #1F2E4D;">
+          <i class="ri-menu-line text-2xl"></i>
         </button>
       </div>
     </div>
@@ -441,88 +487,122 @@ video { pointer-events: none; }
 <!-- ============================== -->
 <!-- HERO -->
 <!-- ============================== -->
-<section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #FFE57A 0%, #FFD84D 30%, #FFC93D 60%, #FFBB2A 100%);">
-  <!-- AI: hand-drawn sun doodles tiled overlay (very subtle) -->
-  <div class="absolute inset-0 opacity-25 pointer-events-none" style="background-image: url('assets/images/ai/hero-pattern-sun.jpg'); background-size: 480px; background-repeat: repeat; mix-blend-mode: multiply;"></div>
-  <!-- Decorative dots -->
-  <div class="absolute inset-0 dot-pattern opacity-30"></div>
+<section class="relative overflow-hidden" style="background: radial-gradient(circle at 78% 18%, #FFE57A 0%, #FFD84D 34%, #FFC93D 66%, #FFB52A 100%);">
+  <div class="absolute inset-0 dot-pattern opacity-25 pointer-events-none"></div>
 
-  <!-- Floating sticker decorations -->
-  <div class="absolute top-[8%] left-[4%] hidden md:block float" style="--r:-10deg;">
-    <div class="sticker sticker-coral">🌏 日本一周</div>
-  </div>
-  <div class="absolute top-[15%] right-[8%] hidden md:block float-slow" style="--r:8deg;">
-    <div class="sticker sticker-ocean">🤖 AI開発</div>
-  </div>
-  <div class="absolute bottom-[25%] left-[6%] hidden lg:block float" style="--r:-6deg; animation-delay: -1.5s;">
-    <div class="sticker sticker-peach">🚐 DIY</div>
-  </div>
-  <div class="absolute top-[45%] right-[4%] hidden lg:block float-slow" style="--r:12deg; animation-delay: -2.5s;">
-    <div class="sticker sticker-grass">⛰️ 冒険</div>
-  </div>
+  <div class="container mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-24 relative z-10">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-10 items-center">
 
-  <!-- Big rotating disc -->
-  <div class="absolute top-12 right-8 sm:top-20 sm:right-16 z-20 spin-slow pointer-events-none">
-    <div class="rotating-disc">
-      <div class="text-center leading-tight">
-        <div class="font-accent text-[10px] sm:text-xs text-navy">SINCE</div>
-        <div class="font-accent text-2xl sm:text-4xl text-coral">2022</div>
-        <div class="font-accent text-[8px] sm:text-[10px] text-navy tracking-widest">TRAIL・FUSION・AI</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mx-auto px-4 pt-16 pb-20 md:pt-24 md:pb-32 relative z-10">
-    <div class="max-w-5xl">
-      <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in" style="animation-delay: 0.1s;">
-        <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
-        <span class="font-bold text-sm text-navy">旅 × 開発 × ものづくり</span>
-      </div>
-
-      <!-- Main headline -->
-      <h1 class="display-xl text-navy mb-6">
-        <span class="block pop-in" style="animation-delay: 0.2s;">
-          <span class="highlight">「好き」</span>を力に、
-        </span>
-        <span class="block pop-in" style="animation-delay: 0.35s;">
-          世界を旅する
-        </span>
-        <span class="block pop-in" style="animation-delay: 0.5s;">
-          <span class="gradient-text gradient-animated">開発拠点を創ろう。</span>
-        </span>
-      </h1>
-
-      <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in" style="animation-delay: 0.65s;">
-        ハイエースをDIYでキャンピングカーに改造、AIアプリを世界中に届ける。<br>
-        <span class="hand-font text-2xl md:text-3xl text-coral">やりたい事は、老後じゃなく今やる。</span>
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-wrap gap-4 mb-12 pop-in" style="animation-delay: 0.8s;">
-        <a href="camping.html" class="btn-chunky btn-chunky-coral text-base">
-          <i class="ri-caravan-line text-xl"></i>
-          キャンピングカー製作
-          <i class="ri-arrow-right-line"></i>
-        </a>
-        <a href="apps.html" class="btn-chunky btn-chunky-ocean text-base">
-          <i class="ri-sparkling-2-fill text-xl"></i>
-          AIアプリを見る
-        </a>
-      </div>
-
-      <!-- Hero image collage -->
-      <div class="grid grid-cols-12 gap-3 md:gap-4 max-w-4xl pop-in" style="animation-delay: 1s;">
-        <div class="col-span-6 md:col-span-5 aspect-[4/5] overflow-hidden border-[3px] border-navy rounded-3xl" style="box-shadow: 8px 8px 0 #1F2E4D; transform: rotate(-2deg);">
-          <img src="assets/images/unsplash/homepage/campervan-travel.jpg" alt="キャンピングカーで旅" class="w-full h-full object-cover" loading="eager">
+      <!-- LEFT: Copy -->
+      <div class="text-center lg:text-left order-2 lg:order-1">
+        <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in" style="animation-delay: 0.1s; box-shadow: 4px 4px 0 #1F2E4D;">
+          <span class="w-2.5 h-2.5 bg-coral rounded-full bounce-soft"></span>
+          <span class="font-bold text-sm md:text-base text-navy">旅 × 開発 × ものづくり</span>
         </div>
-        <div class="col-span-6 md:col-span-4 aspect-[4/5] overflow-hidden border-[3px] border-navy rounded-3xl mt-6 md:mt-10" style="box-shadow: 8px 8px 0 #1F2E4D; transform: rotate(2deg);">
-          <img src="assets/images/unsplash/homepage/mountain-lake.jpg" alt="山と湖の絶景" class="w-full h-full object-cover" loading="eager">
-        </div>
-        <div class="col-span-12 md:col-span-3 aspect-[3/4] md:aspect-auto overflow-hidden border-[3px] border-navy rounded-3xl" style="box-shadow: 8px 8px 0 #1F2E4D; transform: rotate(-1deg);">
-          <img src="assets/images/unsplash/homepage/ai-technology.jpg" alt="AI・テクノロジー" class="w-full h-full object-cover" loading="lazy">
+
+        <h1 class="display-xl text-navy mb-6" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+          <span class="block pop-in" style="animation-delay: 0.2s;">
+            <span class="highlight">好き</span>を力に、
+          </span>
+          <span class="block pop-in" style="animation-delay: 0.35s;">
+            旅する
+          </span>
+          <span class="block pop-in" style="animation-delay: 0.5s;">
+            <span class="gradient-text gradient-animated">開発拠点へ。</span>
+          </span>
+        </h1>
+
+        <p class="text-base md:text-lg text-navy/85 mb-4 leading-relaxed font-bold pop-in max-w-xl mx-auto lg:mx-0" style="animation-delay: 0.65s;">
+          ハイエースをDIYでキャンピングカーに改造し、<br class="hidden sm:inline">旅先の体験をAIアプリ開発につなげる。
+        </p>
+        <p class="hand-font text-2xl md:text-3xl text-coral mb-8 pop-in" style="animation-delay: 0.7s;">
+          旅する家を、開発拠点にする。
+        </p>
+
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start pop-in" style="animation-delay: 0.8s;">
+          <a href="camping.html" class="btn-chunky btn-chunky-coral text-sm md:text-base justify-center">
+            <i class="ri-caravan-line text-xl"></i>
+            <span>キャンピングカー製作</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+          <a href="apps.html" class="btn-chunky btn-chunky-ocean text-sm md:text-base justify-center">
+            <i class="ri-sparkling-2-fill text-xl"></i>
+            <span>AIアプリを見る</span>
+          </a>
         </div>
       </div>
+
+      <!-- RIGHT: Media — オロロンライン写真 & AIアプリ開発動画を高さを揃えて並列 -->
+      <div class="order-1 lg:order-2 pop-in lg:-mr-6 xl:-mr-12" style="animation-delay: 0.55s;">
+        <div class="relative max-w-lg sm:max-w-3xl lg:max-w-none mx-auto">
+
+          <!-- Floating sticker -->
+          <div class="absolute -top-4 -right-2 sm:-top-5 sm:-right-3 z-30 float" style="--r:8deg;">
+            <span class="sticker sticker-coral">🌏 実写の旅</span>
+          </div>
+
+          <!-- レイアウト: 左=AI動画(縦長) / 右=上にSINCEバッジ・下にオロロンライン写真(横長) -->
+          <div class="flex items-start gap-3 sm:gap-4">
+
+            <!-- 左カラム: AIアプリ開発 (9:16縦長) -->
+            <div class="relative overflow-hidden border-[3px] sm:border-[4px] border-navy rounded-[1.5rem] bg-white p-2 sm:p-3 flex flex-col gap-2 basis-[36%] grow-0 shrink-0" style="box-shadow: 7px 7px 0 #4ECDC4; transform: rotate(-1.5deg);">
+              <div class="rounded-[1rem] overflow-hidden bg-navy/5" style="aspect-ratio: 9/16;">
+                <video class="w-full h-full object-cover" src="assets/videos/real/ai-development-hero.mp4" poster="assets/images/real/ai-development-hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="AIアプリ開発環境の動画"></video>
+              </div>
+              <div class="px-1">
+                <div class="flex items-center gap-1 font-accent text-[9px] sm:text-[10px] tracking-widest" style="color:#2BAFA6;">
+                  <i class="ri-sparkling-2-fill"></i>
+                  <span>DEV BASE</span>
+                </div>
+                <div class="font-bold text-xs sm:text-sm text-navy leading-tight mt-0.5">AIアプリ<span class="hidden sm:inline">開発環境</span></div>
+              </div>
+            </div>
+
+            <!-- 右カラム: 上=SINCEバッジ / 下=オロロンライン写真(16:9横長) -->
+            <div class="grow min-w-0 flex flex-col gap-4 sm:gap-5">
+
+              <!-- 右上: SINCE 2022 TRAILFUSION バッジ -->
+              <div class="flex justify-end pt-2 pr-2 sm:pr-4">
+                <div class="spin-slow">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full bg-sun border-[3px] border-navy grid place-items-center" style="box-shadow: 4px 4px 0 #1F2E4D;">
+                    <div class="text-center leading-tight">
+                      <div class="font-accent text-[8px] sm:text-[9px] text-navy">SINCE</div>
+                      <div class="font-accent text-xl sm:text-2xl text-coral">2022</div>
+                      <div class="font-accent text-[7px] sm:text-[8px] text-navy tracking-widest">TRAILFUSION</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右下: 北海道オロロンライン夕日 (16:9横長) -->
+              <div class="relative overflow-hidden border-[3px] sm:border-[4px] border-navy rounded-[1.5rem] bg-white p-2 sm:p-3 flex flex-col gap-2 sm:gap-3" style="box-shadow: 7px 7px 0 #1F2E4D; transform: rotate(1.5deg);">
+                <div class="rounded-[1rem] overflow-hidden bg-navy/5" style="aspect-ratio: 16/9;">
+                  <img src="assets/images/real/hiace-road-trip.jpg" alt="北海道オロロンラインの夕日とハイエース" class="w-full h-full object-cover" loading="eager">
+                </div>
+                <div class="rounded-[0.85rem] bg-sun/40 border-2 border-navy/15 px-2.5 py-2 sm:px-3 sm:py-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-1 text-coral font-accent text-[9px] sm:text-[11px] tracking-widest">
+                        <i class="ri-map-pin-line"></i>
+                        <span>HOKKAIDO</span>
+                      </div>
+                      <div class="font-bold text-sm sm:text-base text-navy leading-tight mt-0.5 truncate">オロロンラインの夕日</div>
+                    </div>
+                    <div class="hidden sm:flex shrink-0 items-center gap-1 text-[10px] font-bold text-navy/70">
+                      <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>
+                      <span>SUNSET</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -530,312 +610,6 @@ video { pointer-events: none; }
   <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
     <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
   </svg>
-</section>
-
-<!-- ============================== -->
-<!-- MARQUEE KEYWORDS -->
-<!-- ============================== -->
-<section class="py-6 bg-navy overflow-hidden border-y-[3px] border-navy">
-  <div class="marquee-track whitespace-nowrap text-white font-accent text-3xl md:text-5xl">
-    <span class="mx-8 flex items-center gap-6">
-      <span>キャンピングカー DIY</span>
-      <span class="text-sun text-4xl">✦</span>
-      <span>AI開発</span>
-      <span class="text-coral text-4xl">✦</span>
-      <span>BANLIFE</span>
-      <span class="text-ocean text-4xl">✦</span>
-      <span>日本一周</span>
-      <span class="text-peach text-4xl">✦</span>
-      <span>ものづくり</span>
-      <span class="text-grass text-4xl">✦</span>
-    </span>
-    <span class="mx-8 flex items-center gap-6">
-      <span>キャンピングカー DIY</span>
-      <span class="text-sun text-4xl">✦</span>
-      <span>AI開発</span>
-      <span class="text-coral text-4xl">✦</span>
-      <span>BANLIFE</span>
-      <span class="text-ocean text-4xl">✦</span>
-      <span>日本一周</span>
-      <span class="text-peach text-4xl">✦</span>
-      <span>ものづくり</span>
-      <span class="text-grass text-4xl">✦</span>
-    </span>
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- MISSION / VALUE -->
-<!-- ============================== -->
-<section class="py-24 md:py-32 bg-cream relative overflow-hidden">
-  <div class="absolute inset-0 grid-pattern opacity-50"></div>
-
-  <!-- AI: organic blob shapes -->
-  <img src="assets/images/ai/blob-peach.jpg" alt="" aria-hidden="true" class="ai-blob top-10 -left-32 w-[420px] h-[420px] object-cover rounded-blob">
-  <img src="assets/images/ai/blob-ocean.jpg" alt="" aria-hidden="true" class="ai-blob bottom-10 -right-32 w-[480px] h-[480px] object-cover rounded-blob">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-4xl mx-auto text-center reveal">
-      <span class="sticker sticker-coral mb-6">MISSION</span>
-      <h2 class="display-xl text-4xl md:text-6xl text-navy mb-8">
-        人生は、いつだって<br>
-        <span class="highlight-coral">変えられる。</span>
-      </h2>
-      <p class="text-lg md:text-xl leading-relaxed text-navy/80 mb-12">
-        サラリーマンとして諦めかけた夢。<br>
-        でも、一度きりの人生、もう後悔はしたくない。<br>
-        <strong>世界中を旅し、価値を創造し、出会いを楽しみ尽くす。</strong><br>
-        そんな想いで、TrailFusion AI は動いています。
-      </p>
-
-      <!-- Three concept pills -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 reveal-stagger">
-        <div class="card-chunky p-6 text-left" style="--r:-1deg;">
-          <div class="w-14 h-14 bg-sun rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle">
-            <span class="text-3xl">🛤️</span>
-          </div>
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">Trail</h3>
-          <p class="text-navy/70 leading-relaxed">キャンピングカーで世界を旅する物理的な「道」。誰も歩んだことのない生き方へ続く、人生の道。</p>
-        </div>
-        <div class="card-chunky p-6 text-left" style="--r:1deg;">
-          <div class="w-14 h-14 bg-coral rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle" style="animation-delay: -0.5s;">
-            <span class="text-3xl">🔀</span>
-          </div>
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">Fusion</h3>
-          <p class="text-navy/70 leading-relaxed">旅というリアルな体験と、AIアプリ開発というデジタルな創造。世界中のユーザーと想いを融合させる。</p>
-        </div>
-        <div class="card-chunky p-6 text-left" style="--r:-1deg;">
-          <div class="w-14 h-14 bg-ocean rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle" style="animation-delay: -1s;">
-            <span class="text-3xl">✨</span>
-          </div>
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">AI</h3>
-          <p class="text-navy/70 leading-relaxed">私たちの未来を切り拓き、無限の可能性を生み出す事業の核。最新AIで人々の生活をより豊かに。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- SERVICES -->
-<!-- ============================== -->
-<section id="services" class="py-24 md:py-32 bg-navy relative overflow-hidden">
-  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,216,77,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-16 reveal">
-      <span class="sticker sticker-ocean mb-6">WHAT WE DO</span>
-      <h2 class="display-xl text-4xl md:text-6xl text-white mb-4">
-        3つのフィールドで、<br>
-        <span class="text-sun">夢を形にする。</span>
-      </h2>
-      <p class="text-white/70 text-lg max-w-2xl mx-auto">
-        DIYの専門知識と最先端AI技術。あなたの「やってみたい」を全力サポート。
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-stagger">
-
-      <!-- キャンピングカー -->
-      <a href="camping.html" class="group relative">
-        <div class="card-chunky overflow-hidden h-full">
-          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
-            <img src="assets/images/unsplash/homepage/campervan-diy.jpg" alt="キャンピングカー DIY" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span class="sticker sticker-coral">STEP 1-7</span>
-            </div>
-            <div class="absolute bottom-4 right-4 w-16 h-16 bg-sun rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
-              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
-            </div>
-          </div>
-          <div class="p-7 bg-white">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-3xl">🚐</span>
-              <span class="font-accent text-xs text-coral tracking-widest">DIY GUIDE</span>
-            </div>
-            <h3 class="font-display font-black text-2xl text-navy mb-3">ハイエースDIY<br>キャンピング製作</h3>
-            <p class="text-navy/70 text-sm leading-relaxed mb-4">
-              夢の構想から8ナンバー登録まで、7つのステップで完全解説。17本の技術資料と実体験で、あなたの愛車を旅する家に変える。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">構造要件</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">材料リスト</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">登録方法</span>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- AIアプリ -->
-      <a href="apps.html" class="group relative lg:mt-8">
-        <div class="card-chunky overflow-hidden h-full">
-          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
-            <img src="assets/images/unsplash/homepage/ai-app.jpg" alt="AIアプリケーション" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span class="sticker sticker-grass">6 APPS</span>
-            </div>
-            <div class="absolute bottom-4 right-4 w-16 h-16 bg-coral rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
-              <i class="ri-arrow-right-up-line text-2xl text-white"></i>
-            </div>
-          </div>
-          <div class="p-7 bg-white">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-3xl">🤖</span>
-              <span class="font-accent text-xs text-ocean tracking-widest">AI APPS</span>
-            </div>
-            <h3 class="font-display font-black text-2xl text-navy mb-3">革新的な<br>AIアプリケーション</h3>
-            <p class="text-navy/70 text-sm leading-relaxed mb-4">
-              BuddyTalk、VoiceLink、Word Blasterなど6つのAIアプリ。最新技術で日常をちょっと便利に、もっと楽しく。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">英語学習</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">翻訳</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">生産性</span>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- 整備記録 -->
-      <a href="maintenance.html" class="group relative">
-        <div class="card-chunky overflow-hidden h-full">
-          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
-            <img src="assets/images/unsplash/homepage/hiace-maintenance.jpg" alt="ハイエース整備" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span class="sticker sticker-peach">20万km超</span>
-            </div>
-            <div class="absolute bottom-4 right-4 w-16 h-16 bg-ocean rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
-              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
-            </div>
-          </div>
-          <div class="p-7 bg-white">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-3xl">🔧</span>
-              <span class="font-accent text-xs text-berry tracking-widest">MAINTENANCE</span>
-            </div>
-            <h3 class="font-display font-black text-2xl text-navy mb-3">ハイエース<br>整備記録アーカイブ</h3>
-            <p class="text-navy/70 text-sm leading-relaxed mb-4">
-              200系1KD-FTVの実整備記録。DIYとプロ依頼の費用を徹底比較。故障コード診断も完全網羅。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">エラー診断</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">費用比較</span>
-              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">12項目</span>
-            </div>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- GALLERY SHOWCASE -->
-<!-- ============================== -->
-<section class="py-24 md:py-32 bg-cream relative overflow-hidden">
-  <div class="absolute inset-0 dot-pattern opacity-30"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6 reveal">
-      <div>
-        <span class="sticker sticker-peach mb-4">GALLERY</span>
-        <h2 class="display-xl text-4xl md:text-6xl text-navy mt-4">
-          冒険の記録、<br>
-          <span class="gradient-text">一枚ずつ。</span>
-        </h2>
-      </div>
-      <p class="text-navy/70 text-lg max-w-md">
-        青森ねぶた祭、長岡花火、北海道の大自然 — <br>キャンピングカーで訪れた絶景と、開発拠点の日常。
-      </p>
-    </div>
-
-    <!-- Polaroid grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-stagger">
-      <div class="polaroid" style="transform: rotate(-3deg);">
-        <div class="aspect-[4/5]">
-          <img src="assets/images/unsplash/homepage/japan-landscape.jpg" alt="日本の風景" loading="lazy">
-        </div>
-        <div class="text-center hand-font text-xl text-navy mt-2">Japan Road 🗾</div>
-      </div>
-      <div class="polaroid mt-8" style="transform: rotate(2deg);">
-        <div class="aspect-[4/5]">
-          <img src="assets/images/unsplash/homepage/mountain-view.jpg" alt="山の風景" loading="lazy">
-        </div>
-        <div class="text-center hand-font text-xl text-navy mt-2">Mt. Fuji 🗻</div>
-      </div>
-      <div class="polaroid" style="transform: rotate(-1deg);">
-        <div class="aspect-[4/5]">
-          <img src="assets/images/unsplash/homepage/vanlife.jpg" alt="バンライフ" loading="lazy">
-        </div>
-        <div class="text-center hand-font text-xl text-navy mt-2">Van Life 🚐</div>
-      </div>
-      <div class="polaroid mt-8" style="transform: rotate(3deg);">
-        <div class="aspect-[4/5]">
-          <img src="assets/images/unsplash/homepage/sunset-travel.jpg" alt="夕焼け旅" loading="lazy">
-        </div>
-        <div class="text-center hand-font text-xl text-navy mt-2">Sunset 🌇</div>
-      </div>
-    </div>
-
-    <!-- Big feature image -->
-    <div class="mt-16 card-chunky overflow-hidden reveal">
-      <div class="grid md:grid-cols-5 gap-0">
-        <div class="md:col-span-3 aspect-[16/10] md:aspect-auto overflow-hidden">
-          <img src="assets/images/unsplash/homepage/countryside.jpg" alt="日本の田園風景" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="md:col-span-2 p-8 md:p-10 bg-sun flex flex-col justify-center">
-          <span class="hand-font text-3xl text-coral mb-2">Season 2024</span>
-          <h3 class="display-xl text-3xl md:text-4xl text-navy mb-4">
-            家族4人で<br>10日間の<br>
-            <span class="highlight-coral">北海道旅</span>
-          </h3>
-          <p class="text-navy/80 leading-relaxed">
-            高騰する宿代を気にすることなく、大自然を満喫。子どもたちの満面の笑みに包まれた、忘れられない夏。
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- STATS -->
-<!-- ============================== -->
-<section class="py-20 md:py-28 bg-coral relative overflow-hidden border-y-[3px] border-navy">
-  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px); background-size: 40px 40px;"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-12 reveal">
-      <h2 class="display-xl text-3xl md:text-5xl text-white mb-2">
-        数字で見る、TrailFusion AI
-      </h2>
-      <p class="text-white/80 hand-font text-2xl">Numbers don't lie 🔥</p>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 reveal-stagger">
-      <div class="text-center text-white">
-        <div class="stat-num">6</div>
-        <div class="font-bold mt-2">AIアプリ</div>
-        <div class="text-sm text-white/70">App Store 公開中</div>
-      </div>
-      <div class="text-center text-white">
-        <div class="stat-num">17</div>
-        <div class="font-bold mt-2">技術資料</div>
-        <div class="text-sm text-white/70">DIY完全マニュアル</div>
-      </div>
-      <div class="text-center text-white">
-        <div class="stat-num">20<span class="text-3xl">万km</span></div>
-        <div class="font-bold mt-2">走行実績</div>
-        <div class="text-sm text-white/70">ハイエース整備記録</div>
-      </div>
-      <div class="text-center text-white">
-        <div class="stat-num">∞</div>
-        <div class="font-bold mt-2">可能性</div>
-        <div class="text-sm text-white/70">あなたの人生も</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ============================== -->
@@ -934,6 +708,242 @@ video { pointer-events: none; }
             <span class="text-sm bg-white border-2 border-navy rounded-full px-4 py-2 font-bold">⛰️ 山登り</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================== -->
+<!-- MARQUEE KEYWORDS -->
+<!-- ============================== -->
+<section class="py-6 bg-navy overflow-hidden border-y-[3px] border-navy">
+  <div class="marquee-track whitespace-nowrap text-white font-accent text-3xl md:text-5xl">
+    <span class="mx-8 flex items-center gap-6">
+      <span>キャンピングカー DIY</span>
+      <span class="text-sun text-4xl">✦</span>
+      <span>AI開発</span>
+      <span class="text-coral text-4xl">✦</span>
+      <span>BANLIFE</span>
+      <span class="text-ocean text-4xl">✦</span>
+      <span>日本一周</span>
+      <span class="text-peach text-4xl">✦</span>
+      <span>ものづくり</span>
+      <span class="text-grass text-4xl">✦</span>
+    </span>
+    <span class="mx-8 flex items-center gap-6">
+      <span>キャンピングカー DIY</span>
+      <span class="text-sun text-4xl">✦</span>
+      <span>AI開発</span>
+      <span class="text-coral text-4xl">✦</span>
+      <span>BANLIFE</span>
+      <span class="text-ocean text-4xl">✦</span>
+      <span>日本一周</span>
+      <span class="text-peach text-4xl">✦</span>
+      <span>ものづくり</span>
+      <span class="text-grass text-4xl">✦</span>
+    </span>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- MISSION / VALUE -->
+<!-- ============================== -->
+<section class="py-24 md:py-32 bg-cream relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-50"></div>
+  <div class="absolute top-10 -left-32 w-[420px] h-[420px] bg-peach rounded-blob opacity-30"></div>
+  <div class="absolute bottom-10 -right-32 w-[480px] h-[480px] bg-sky rounded-blob opacity-30"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <span class="sticker sticker-coral mb-6">MISSION</span>
+      <h2 class="display-xl text-4xl md:text-6xl text-navy mb-8">
+        人生は、いつだって<br>
+        <span class="highlight-coral">変えられる。</span>
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed text-navy/80 mb-12">
+        サラリーマンとして諦めかけた夢。<br>
+        でも、一度きりの人生、もう後悔はしたくない。<br>
+        <strong>世界中を旅し、価値を創造し、出会いを楽しみ尽くす。</strong><br>
+        そんな想いで、TrailFusion AI は動いています。
+      </p>
+
+      <!-- Three concept pills -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 reveal-stagger">
+        <div class="card-chunky p-6 text-left" style="--r:-1deg;">
+          <div class="w-14 h-14 bg-sun rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle">
+            <span class="text-3xl">🛤️</span>
+          </div>
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">Trail</h3>
+          <p class="text-navy/70 leading-relaxed">キャンピングカーで世界を旅する物理的な「道」。誰も歩んだことのない生き方へ続く、人生の道。</p>
+        </div>
+        <div class="card-chunky p-6 text-left" style="--r:1deg;">
+          <div class="w-14 h-14 bg-coral rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle" style="animation-delay: -0.5s;">
+            <span class="text-3xl">🔀</span>
+          </div>
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">Fusion</h3>
+          <p class="text-navy/70 leading-relaxed">旅というリアルな体験と、AIアプリ開発というデジタルな創造。世界中のユーザーと想いを融合させる。</p>
+        </div>
+        <div class="card-chunky p-6 text-left" style="--r:-1deg;">
+          <div class="w-14 h-14 bg-ocean rounded-2xl border-2 border-navy grid place-items-center mb-4 wiggle" style="animation-delay: -1s;">
+            <span class="text-3xl">✨</span>
+          </div>
+          <h3 class="font-display font-black text-2xl mb-2 text-navy">AI</h3>
+          <p class="text-navy/70 leading-relaxed">私たちの未来を切り拓き、無限の可能性を生み出す事業の核。最新AIで人々の生活をより豊かに。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SERVICES -->
+<!-- ============================== -->
+<section id="services" class="py-24 md:py-32 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,216,77,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <span class="sticker sticker-ocean mb-6">WHAT WE DO</span>
+      <h2 class="display-xl text-4xl md:text-6xl text-white mb-4">
+        3つのフィールドで、<br>
+        <span class="text-sun">夢を形にする。</span>
+      </h2>
+      <p class="text-white/70 text-lg max-w-2xl mx-auto">
+        DIYの専門知識と最先端AI技術。あなたの「やってみたい」を全力サポート。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-stagger">
+
+      <!-- キャンピングカー -->
+      <a href="camping.html" class="group relative">
+        <div class="card-chunky overflow-hidden h-full">
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
+            <img src="assets/images/real/vanlife-camp.jpg" alt="羊蹄山を背景にしたハイエースキャンピングカー" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="sticker sticker-coral">STEP 1-7</span>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 bg-sun rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
+              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
+            </div>
+          </div>
+          <div class="p-7 bg-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-3xl">🚐</span>
+              <span class="font-accent text-xs text-coral tracking-widest">DIY GUIDE</span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-navy mb-3">ハイエースDIY<br>キャンピング製作</h3>
+            <p class="text-navy/70 text-sm leading-relaxed mb-4">
+              夢の構想から8ナンバー登録まで、7つのステップで完全解説。17本の技術資料と実体験で、あなたの愛車を旅する家に変える。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">構造要件</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">材料リスト</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">登録方法</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- AIアプリ -->
+      <a href="apps.html" class="group relative lg:mt-8">
+        <div class="card-chunky overflow-hidden h-full">
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
+            <img src="assets/images/real/ai-development-hero.jpg" alt="AIアプリ開発中のワークステーション" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="sticker sticker-grass">6 APPS</span>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 bg-coral rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
+              <i class="ri-arrow-right-up-line text-2xl text-white"></i>
+            </div>
+          </div>
+          <div class="p-7 bg-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-3xl">🤖</span>
+              <span class="font-accent text-xs text-ocean tracking-widest">AI APPS</span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-navy mb-3">開発現場から生まれる<br>AIアプリケーション</h3>
+            <p class="text-navy/70 text-sm leading-relaxed mb-4">
+              実際の開発環境で磨いているBuddyTalk、VoiceLink、Word BlasterなどのAIアプリ。日常をちょっと便利に、もっと楽しく。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">英語学習</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">翻訳</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">生産性</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 整備記録 -->
+      <a href="maintenance.html" class="group relative">
+        <div class="card-chunky overflow-hidden h-full">
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
+            <video class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/videos/real/maintenance-undercarriage.mp4" poster="assets/images/real/maintenance-undercarriage-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ハイエース下回り整備の実写動画"></video>
+            <div class="absolute top-4 left-4">
+              <span class="sticker sticker-peach">実整備</span>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 bg-ocean rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
+              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
+            </div>
+          </div>
+          <div class="p-7 bg-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-3xl">🔧</span>
+              <span class="font-accent text-xs text-berry tracking-widest">MAINTENANCE</span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-navy mb-3">ハイエース<br>整備記録アーカイブ</h3>
+            <p class="text-navy/70 text-sm leading-relaxed mb-4">
+              下回り点検から200系1KD-FTVの記録まで。DIYとプロ依頼の費用を比較し、故障コード診断も整理。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">エラー診断</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">費用比較</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">12項目</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- STATS -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-coral relative overflow-hidden border-y-[3px] border-navy">
+  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px); background-size: 40px 40px;"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-12 reveal">
+      <h2 class="display-xl text-3xl md:text-5xl text-white mb-2">
+        数字で見る、TrailFusion AI
+      </h2>
+      <p class="text-white/80 hand-font text-2xl">Numbers don't lie 🔥</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 reveal-stagger">
+      <div class="text-center text-white">
+        <div class="stat-num">6</div>
+        <div class="font-bold mt-2">AIアプリ</div>
+        <div class="text-sm text-white/70">App Store 公開中</div>
+      </div>
+      <div class="text-center text-white">
+        <div class="stat-num">17</div>
+        <div class="font-bold mt-2">技術資料</div>
+        <div class="text-sm text-white/70">DIY完全マニュアル</div>
+      </div>
+      <div class="text-center text-white">
+        <div class="stat-num">20<span class="text-3xl">万km</span></div>
+        <div class="font-bold mt-2">走行実績</div>
+        <div class="text-sm text-white/70">ハイエース整備記録</div>
+      </div>
+      <div class="text-center text-white">
+        <div class="stat-num">∞</div>
+        <div class="font-bold mt-2">可能性</div>
+        <div class="text-sm text-white/70">あなたの人生も</div>
       </div>
     </div>
   </div>
@@ -1076,13 +1086,13 @@ video { pointer-events: none; }
   <!-- Marquee bottom -->
   <div class="border-b-2 border-white/10 py-3 overflow-hidden">
     <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
-      <span class="mx-6">やりたい事は、今やる。</span>
+      <span class="mx-6">旅する開発拠点。</span>
       <span class="mx-6 text-coral">✦</span>
       <span class="mx-6">好きを力に。</span>
       <span class="mx-6 text-peach">✦</span>
       <span class="mx-6">後悔しない人生を。</span>
       <span class="mx-6 text-ocean">✦</span>
-      <span class="mx-6">やりたい事は、今やる。</span>
+      <span class="mx-6">実体験からつくる。</span>
       <span class="mx-6 text-coral">✦</span>
       <span class="mx-6">好きを力に。</span>
       <span class="mx-6 text-peach">✦</span>
