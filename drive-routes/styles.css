@@ -638,29 +638,62 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .logo-text { font-size: 13px; }
   .ghost-btn { padding: 6px 10px; font-size: 11px; }
 
+  /* Filter dock at the bottom; hidden when a route is selected so the
+     detail sheet can take its place and the map stays visible above. */
   .filter-dock {
     top: auto;
     bottom: calc(8px + var(--safe-bottom));
     left: 8px;
     right: 8px;
     width: auto;
-    max-height: 50vh;
+    max-height: 55vh;
     padding: 12px;
     gap: 8px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
   }
-  .results-list { max-height: 26vh; }
+  body.detail-open .filter-dock {
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .results-list { max-height: 28vh; }
 
+  /* Detail sheet pinned to the bottom — the map remains visible above. */
   .detail-sheet {
-    bottom: auto;
-    top: 64px;
-    left: 8px;
-    right: 8px;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: auto;
     max-width: none;
-    max-height: calc(100vh - 80px);
-    transform: translateY(-20px);
+    max-height: 65vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: 0;
+    box-shadow: 0 -4px 0 var(--navy), 0 -16px 32px -8px rgba(31, 46, 77, 0.25);
+    padding-bottom: var(--safe-bottom);
+    transform: translateY(100%);
   }
   .detail-sheet[aria-hidden="false"] { transform: translateY(0); }
+
+  /* iOS-style drag handle hint at the top of the sheet */
+  .detail-sheet::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 44px; height: 5px;
+    border-radius: 999px;
+    background: rgba(31, 46, 77, 0.18);
+    z-index: 1;
+  }
+  .sheet-head { padding-top: 22px; }
+  .sheet-close {
+    top: 14px;
+    right: 14px;
+  }
+  .sheet-actions {
+    padding-bottom: calc(20px + var(--safe-bottom));
+  }
 }
 
 /* ====================================================================== */

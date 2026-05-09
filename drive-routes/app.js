@@ -198,7 +198,17 @@ function selectSegment(key, { fly = true } = {}) {
 
   if (fly && seg.polyline?.length) {
     const bounds = L.latLngBounds(seg.polyline.map((p) => [p.lat, p.lng]));
-    map.flyToBounds(bounds, { padding: [60, 60], maxZoom: 13, duration: 0.8 });
+    // On mobile, the bottom-anchored detail sheet covers ~65% of the viewport.
+    // Reserve that space so the active route stays in the visible map area.
+    const isMobile = window.matchMedia('(max-width: 720px)').matches;
+    const padTop = isMobile ? [40, 80] : [60, 60];
+    const padBottom = isMobile ? [40, Math.round(window.innerHeight * 0.62)] : [60, 60];
+    map.flyToBounds(bounds, {
+      paddingTopLeft: padTop,
+      paddingBottomRight: padBottom,
+      maxZoom: 13,
+      duration: 0.8,
+    });
   }
 
   showDetailSheet(seg);
@@ -231,6 +241,7 @@ function showDetailSheet(seg) {
   const sheet = document.getElementById('detailSheet');
   sheet.dataset.cat = seg.category;
   sheet.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('detail-open');
 
   document.getElementById('sheetCat').textContent = cat.label;
   document.getElementById('sheetName').textContent = seg.name || '';
@@ -261,6 +272,7 @@ function showDetailSheet(seg) {
 
 function hideDetailSheet() {
   document.getElementById('detailSheet').setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('detail-open');
 }
 
 function drawElevationProfile(profile, category) {
@@ -412,7 +424,12 @@ document.getElementById('zoomBtn').addEventListener('click', () => {
   const seg = STATE.segments.find((s) => s._key === STATE.activeId);
   if (!seg?.polyline?.length) return;
   const bounds = L.latLngBounds(seg.polyline.map((p) => [p.lat, p.lng]));
-  map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+  const isMobile = window.matchMedia('(max-width: 720px)').matches;
+  map.fitBounds(bounds, {
+    paddingTopLeft: isMobile ? [30, 80] : [40, 40],
+    paddingBottomRight: isMobile ? [30, Math.round(window.innerHeight * 0.62)] : [40, 40],
+    maxZoom: 14,
+  });
 });
 
 map.on('click', clearSelection);
