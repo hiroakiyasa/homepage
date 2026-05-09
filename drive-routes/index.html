@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ドライブルート図鑑｜TrailFusion AI</title>
+<meta name="description" content="日本全国の絶景ロード・峠道・酷道を地図で楽しく探せるドライブルート図鑑。タップで詳細表示、ワンタップでGoogleマップに連携。">
+<meta name="theme-color" content="#FFD84D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="../index.html" aria-label="TrailFusion AI">
+    <span class="logo-emoji">🗾</span>
+    <span class="logo-text">
+      <b>ドライブルート</b><i>図鑑</i>
+    </span>
+  </a>
+  <div class="topbar-spacer"></div>
+  <a href="../index.html" class="ghost-btn">← ホーム</a>
+  <button id="aboutBtn" class="ghost-btn ghost-btn-primary" aria-haspopup="dialog">このサイトについて</button>
+</header>
+
+<main id="map" aria-label="日本全国のドライブルート地図"></main>
+
+<aside class="filter-dock" role="region" aria-label="カテゴリフィルター">
+  <div class="filter-title">表示するルート</div>
+  <div class="filter-pills">
+    <button class="pill" data-cat="scenic" aria-pressed="true">
+      <span class="pill-dot pill-dot-scenic"></span>
+      絶景ロード <span class="pill-count" id="count-scenic">0</span>
+    </button>
+    <button class="pill" data-cat="pass" aria-pressed="true">
+      <span class="pill-dot pill-dot-pass"></span>
+      峠道 <span class="pill-count" id="count-pass">0</span>
+    </button>
+    <button class="pill" data-cat="kokudo" aria-pressed="true">
+      <span class="pill-dot pill-dot-kokudo"></span>
+      酷道 <span class="pill-count" id="count-kokudo">0</span>
+    </button>
+  </div>
+  <label class="filter-search">
+    <span aria-hidden="true">🔍</span>
+    <input id="searchInput" type="search" placeholder="名前・都道府県で検索…" autocomplete="off">
+    <kbd>/</kbd>
+  </label>
+  <ul id="resultsList" class="results-list" aria-label="検索結果"></ul>
+</aside>
+
+<section id="detailSheet" class="detail-sheet" aria-hidden="true">
+  <button class="sheet-close" aria-label="閉じる" id="sheetClose">×</button>
+  <header class="sheet-head">
+    <span class="sheet-cat" id="sheetCat">絶景ロード</span>
+    <h2 id="sheetName">—</h2>
+    <p class="sheet-pref" id="sheetPref"></p>
+  </header>
+  <div class="sheet-stats">
+    <div class="stat">
+      <span class="stat-label">総距離</span>
+      <span class="stat-value" id="sheetLength">—</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">高低差</span>
+      <span class="stat-value" id="sheetElevRange">—</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">最高 / 最低</span>
+      <span class="stat-value" id="sheetElevHL">—</span>
+    </div>
+  </div>
+  <div class="sheet-elev" id="sheetElev"></div>
+  <p class="sheet-desc" id="sheetDesc">—</p>
+  <div class="sheet-actions">
+    <a class="btn-chunky btn-chunky-primary" id="googleMapsBtn" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">📍</span>
+      <span>Googleマップで開く</span>
+    </a>
+    <button class="btn-chunky btn-chunky-ghost" id="zoomBtn">
+      <span>ルートを画面いっぱいに表示</span>
+    </button>
+  </div>
+</section>
+
+<dialog id="aboutDialog" class="about-dialog">
+  <button class="dialog-close" aria-label="閉じる" data-close>×</button>
+  <h2>ドライブルート図鑑について</h2>
+  <p>日本全国の<b>絶景ロード</b>、<b>峠道</b>、<b>酷道</b>を地図上で楽しく探索できるTrailFusion AIのコンテンツです。</p>
+  <ul class="about-list">
+    <li><span class="pill-dot pill-dot-scenic"></span><div><b>絶景ロード</b><br>海岸・山岳・高原の景観に優れたドライブルート</div></li>
+    <li><span class="pill-dot pill-dot-pass"></span><div><b>峠道</b><br>全国の名峠・古道を含むワインディング</div></li>
+    <li><span class="pill-dot pill-dot-kokudo"></span><div><b>酷道</b><br>国道なのに通行困難な伝説のルート</div></li>
+  </ul>
+  <p>ルート線をタップすると名前・距離・高低差などの詳細を確認できます。「Googleマップで開く」を押すと、出発地・経由地・目的地を登録した状態のGoogleマップに直接ジャンプ。</p>
+  <p class="muted">出典: 「謎のツーリング組織 EZ TOURING jp」「JAF Mate 日本の絶景ドライブルート」ほか公開情報をもとに整理。</p>
+</dialog>
+
+<div class="loading" id="loading">
+  <div class="loading-inner">
+    <div class="loading-emoji">🚗</div>
+    <p>ルートデータを読み込み中…</p>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -452,6 +452,7 @@ video { pointer-events: none; }
         <a href="index.html" class="nav-item text-navy">ホーム</a>
         <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
         <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
         <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
         <a href="#about" class="nav-item text-navy">ストーリー</a>
       </nav>
@@ -476,6 +477,7 @@ video { pointer-events: none; }
         <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
         <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
         <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-sun border-2 border-navy font-bold">🗾 ドライブルート</a>
         <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
         <a href="#about" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold col-span-2">📖 ストーリー</a>
         <a href="#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">✉️ お問い合わせ</a>
@@ -814,7 +816,7 @@ video { pointer-events: none; }
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-stagger">
 
       <!-- キャンピングカー -->
       <a href="camping.html" class="group relative">
@@ -871,6 +873,38 @@ video { pointer-events: none; }
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">英語学習</span>
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">翻訳</span>
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">生産性</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- ドライブルート図鑑 -->
+      <a href="drive-routes/" class="group relative">
+        <div class="card-chunky overflow-hidden h-full">
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy" style="background: linear-gradient(135deg, #4ECDC4 0%, #BFE7FF 50%, #FFD84D 100%);">
+            <div class="absolute inset-0 grid place-items-center">
+              <span class="text-[6rem] md:text-[7rem] drop-shadow-lg" style="filter: drop-shadow(3px 3px 0 #1F2E4D);">🗾</span>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="sticker sticker-coral">269 ROUTES</span>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 bg-sun rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
+              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
+            </div>
+          </div>
+          <div class="p-7 bg-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-3xl">🗺️</span>
+              <span class="font-accent text-xs text-ocean tracking-widest">DRIVE ROUTES</span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-navy mb-3">日本のドライブルート<br>図鑑</h3>
+            <p class="text-navy/70 text-sm leading-relaxed mb-4">
+              絶景ロード・峠道・酷道の269ルートを地図で楽しく検索。タップで詳細表示、ワンタップでGoogleマップに連携。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">絶景ロード</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">峠道</span>
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">酷道</span>
             </div>
           </div>
         </div>
@@ -1157,6 +1191,7 @@ video { pointer-events: none; }
       <div>
         <h4 class="font-black text-coral mb-3 flex items-center gap-2">🔧 その他</h4>
         <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="drive-routes/" class="hover:text-coral transition">ドライブルート図鑑</a></li>
           <li><a href="maintenance.html" class="hover:text-coral transition">整備記録</a></li>
           <li><a href="#about" class="hover:text-coral transition">ストーリー</a></li>
           <li><a href="#contact" class="hover:text-coral transition">お問い合わせ</a></li>
