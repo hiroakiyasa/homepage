@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ドライブルート図鑑｜TrailFusion AI</title>
-<meta name="description" content="日本全国の絶景ロード・峠道・酷道を地図で楽しく探せるドライブルート図鑑。タップで詳細表示、ワンタップでGoogleマップに連携。">
+<meta name="description" content="日本全国の絶景ロードを地図で楽しく探せるドライブルート図鑑。タップで詳細表示、ワンタップでGoogleマップに連携。">
 <meta name="theme-color" content="#FFD84D">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,14 +37,6 @@
     <button class="pill" data-cat="scenic" aria-pressed="true">
       <span class="pill-dot pill-dot-scenic"></span>
       絶景ロード <span class="pill-count" id="count-scenic">0</span>
-    </button>
-    <button class="pill" data-cat="pass" aria-pressed="true">
-      <span class="pill-dot pill-dot-pass"></span>
-      峠道 <span class="pill-count" id="count-pass">0</span>
-    </button>
-    <button class="pill" data-cat="kokudo" aria-pressed="true">
-      <span class="pill-dot pill-dot-kokudo"></span>
-      酷道 <span class="pill-count" id="count-kokudo">0</span>
     </button>
   </div>
   <label class="filter-search">
@@ -92,11 +84,9 @@
 <dialog id="aboutDialog" class="about-dialog">
   <button class="dialog-close" aria-label="閉じる" data-close>×</button>
   <h2>ドライブルート図鑑について</h2>
-  <p>日本全国の<b>絶景ロード</b>、<b>峠道</b>、<b>酷道</b>を地図上で楽しく探索できるTrailFusion AIのコンテンツです。</p>
+  <p>日本全国の<b>絶景ロード</b>を地図上で楽しく探索できるTrailFusion AIのコンテンツです。</p>
   <ul class="about-list">
     <li><span class="pill-dot pill-dot-scenic"></span><div><b>絶景ロード</b><br>海岸・山岳・高原の景観に優れたドライブルート</div></li>
-    <li><span class="pill-dot pill-dot-pass"></span><div><b>峠道</b><br>全国の名峠・古道を含むワインディング</div></li>
-    <li><span class="pill-dot pill-dot-kokudo"></span><div><b>酷道</b><br>国道なのに通行困難な伝説のルート</div></li>
   </ul>
   <p>ルート線をタップすると名前・距離・高低差などの詳細を確認できます。「Googleマップで開く」を押すと、出発地・経由地・目的地を登録した状態のGoogleマップに直接ジャンプ。</p>
   <p class="muted">出典: 「謎のツーリング組織 EZ TOURING jp」「JAF Mate 日本の絶景ドライブルート」ほか公開情報をもとに整理。</p>

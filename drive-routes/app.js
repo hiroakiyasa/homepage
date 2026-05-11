@@ -4,8 +4,6 @@
 
 const CATEGORIES = [
   { id: 'scenic', label: '絶景ロード', color: '#4ECDC4', file: 'data/scenic.json' },
-  { id: 'pass',   label: '峠道',       color: '#FF6B5B', file: 'data/pass.json'   },
-  { id: 'kokudo', label: '酷道',       color: '#FFB52A', file: 'data/kokudo.json' },
 ];
 const CAT_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -73,11 +71,9 @@ function render() {
   STATE.layers.forEach((layer) => map.removeLayer(layer));
   STATE.layers.clear();
 
-  const counts = { scenic: 0, pass: 0, kokudo: 0 };
+  const counts = { scenic: 0 };
   for (const seg of STATE.segments) counts[seg.category]++;
   document.getElementById('count-scenic').textContent = counts.scenic;
-  document.getElementById('count-pass').textContent = counts.pass;
-  document.getElementById('count-kokudo').textContent = counts.kokudo;
 
   const visible = STATE.segments.filter((seg) => STATE.visibleCats.has(seg.category));
   const filtered = filterByQuery(visible, STATE.query);
@@ -303,7 +299,7 @@ function drawElevationProfile(profile, category) {
     .join(' ');
   const fillPath = `${linePath} L${W},${H} L0,${H} Z`;
 
-  const colorMap = { scenic: '#4ECDC4', pass: '#FF6B5B', kokudo: '#FFB52A' };
+  const colorMap = { scenic: '#4ECDC4' };
   const color = colorMap[category] || '#4ECDC4';
 
   const svg = document.createElementNS(SVG_NS, 'svg');
@@ -453,7 +449,7 @@ loadAll().catch((err) => {
   if (inner) {
     inner.textContent = '';
     const p1 = document.createElement('p');
-    p1.style.color = 'var(--c-pass)';
+    p1.style.color = 'var(--c-coral)';
     p1.textContent = 'データの読み込みに失敗しました';
     const p2 = document.createElement('p');
     p2.style.cssText = 'font-size: 11px; margin-top: 8px; color: var(--muted);';

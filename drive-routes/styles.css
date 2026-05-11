@@ -22,8 +22,6 @@
 
   /* Category mapping (matches TrailFusion palette) */
   --c-scenic: var(--c-ocean);
-  --c-pass:   var(--c-coral);
-  --c-kokudo: var(--c-yellow);
 
   --shadow-chunky: 5px 5px 0 var(--navy);
   --shadow-chunky-lg: 7px 7px 0 var(--navy);
@@ -220,8 +218,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border: 1.5px solid var(--navy);
 }
 .pill-dot-scenic { background: var(--c-scenic); }
-.pill-dot-pass   { background: var(--c-pass); }
-.pill-dot-kokudo { background: var(--c-kokudo); }
 
 .pill-count {
   font-family: 'Inter', sans-serif;
@@ -520,12 +516,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* category-themed sheet header backgrounds */
 .detail-sheet[data-cat="scenic"] { --cat-bg: var(--c-ocean); }
-.detail-sheet[data-cat="pass"]   { --cat-bg: var(--c-coral); }
-.detail-sheet[data-cat="kokudo"] { --cat-bg: var(--c-yellow); }
-
-.detail-sheet[data-cat="pass"] .sheet-head h2,
-.detail-sheet[data-cat="pass"] .sheet-pref { color: #fff; }
-.detail-sheet[data-cat="pass"] .sheet-cat { background: #fff; color: var(--navy); }
 
 /* ====================================================================== */
 /* ABOUT DIALOG                                                            */
