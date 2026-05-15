@@ -497,23 +497,110 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('sheetClose').addEventListener('click', clearSelection);
 
 /* ----------------------------------------------------------------------- */
-/* DOCK OPEN/CLOSE                                                         */
+/* DOCK OPEN/CLOSE & BOTTOM-SHEET DRAG (mobile)                            */
 /* ----------------------------------------------------------------------- */
 
 const dockOpenFab = document.getElementById('dockOpen');
+const dockEl = document.querySelector('.filter-dock');
+const dockGrip = document.getElementById('dockGrip');
+const DOCK_STATES = ['closed', 'half', 'full'];
+const mobileMQ = window.matchMedia('(max-width: 720px)');
+
+function isMobile() { return mobileMQ.matches; }
+
+// Mobile: state is one of "half" | "full" | "closed".
+// Desktop: only "open" vs "closed" matters.
+function setDockState(state) {
+  const body = document.body;
+  body.classList.remove('dock-closed', 'dock-half', 'dock-full');
+  if (state === 'closed') {
+    body.classList.add('dock-closed');
+  } else if (isMobile()) {
+    body.classList.add(state === 'full' ? 'dock-full' : 'dock-half');
+  }
+  dockOpenFab.hidden = state !== 'closed';
+}
 
 function setDockClosed(closed) {
-  document.body.classList.toggle('dock-closed', closed);
-  dockOpenFab.hidden = !closed;
+  setDockState(closed ? 'closed' : (isMobile() ? 'half' : 'open'));
 }
 
-document.getElementById('dockClose').addEventListener('click', () => setDockClosed(true));
-dockOpenFab.addEventListener('click', () => setDockClosed(false));
+document.getElementById('dockClose').addEventListener('click', () => setDockState('closed'));
+dockOpenFab.addEventListener('click', () => setDockState(isMobile() ? 'half' : 'open'));
 
-// On mobile, start with the dock closed so users see the map first.
-if (window.matchMedia('(max-width: 720px)').matches) {
-  setDockClosed(true);
-}
+// Initialize: mobile defaults to half-open bottom sheet so users see the map and the cards.
+setDockState(isMobile() ? 'half' : 'open');
+
+// Drag-to-resize on mobile via the grip handle.
+(() => {
+  let pointerId = null;
+  let startY = 0;
+  let startTranslate = 0;
+  let lastY = 0;
+  let lastT = 0;
+  let velocity = 0;
+  let dockHeight = 0;
+
+  function currentTranslatePx() {
+    // Translate is expressed as % of dock height in CSS; compute current px.
+    if (document.body.classList.contains('dock-full')) return 0;
+    if (document.body.classList.contains('dock-closed')) return dockHeight;
+    return dockHeight * 0.5; // half
+  }
+
+  function onDown(e) {
+    if (!isMobile()) return;
+    pointerId = e.pointerId;
+    dockHeight = dockEl.getBoundingClientRect().height;
+    startY = e.clientY;
+    lastY = e.clientY;
+    lastT = e.timeStamp;
+    velocity = 0;
+    startTranslate = currentTranslatePx();
+    dockEl.classList.add('dragging');
+    dockGrip.setPointerCapture(pointerId);
+  }
+
+  function onMove(e) {
+    if (pointerId == null) return;
+    const dy = e.clientY - startY;
+    const next = Math.max(0, Math.min(dockHeight, startTranslate + dy));
+    dockEl.style.transform = `translateY(${next}px)`;
+    velocity = (e.clientY - lastY) / Math.max(1, e.timeStamp - lastT);
+    lastY = e.clientY;
+    lastT = e.timeStamp;
+  }
+
+  function onUp(e) {
+    if (pointerId == null) return;
+    try { dockGrip.releasePointerCapture(pointerId); } catch {}
+    pointerId = null;
+    dockEl.classList.remove('dragging');
+    dockEl.style.transform = '';
+
+    const endPx = Math.max(0, Math.min(dockHeight, startTranslate + (e.clientY - startY)));
+    const ratio = endPx / dockHeight;
+
+    // Flick-based snap: fast downward flick → close, fast upward → full.
+    if (velocity > 0.8) return setDockState('closed');
+    if (velocity < -0.8) return setDockState('full');
+
+    // Position-based snap.
+    if (ratio < 0.25) setDockState('full');
+    else if (ratio < 0.78) setDockState('half');
+    else setDockState('closed');
+  }
+
+  dockGrip.addEventListener('pointerdown', onDown);
+  dockGrip.addEventListener('pointermove', onMove);
+  dockGrip.addEventListener('pointerup', onUp);
+  dockGrip.addEventListener('pointercancel', onUp);
+  // Double-tap on the grip toggles between half and full.
+  dockGrip.addEventListener('dblclick', () => {
+    if (!isMobile()) return;
+    setDockState(document.body.classList.contains('dock-full') ? 'half' : 'full');
+  });
+})();
 
 document.getElementById('zoomBtn').addEventListener('click', () => {
   if (!STATE.activeId) return;

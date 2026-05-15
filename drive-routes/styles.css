@@ -192,6 +192,29 @@ body.dock-closed .filter-dock {
   box-shadow: 2px 2px 0 var(--navy);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
+
+.dock-grip {
+  display: none;
+  width: 100%;
+  padding: 8px 0 4px;
+  flex-shrink: 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.dock-grip:active { cursor: grabbing; }
+.dock-grip > span {
+  display: block;
+  margin: 0 auto;
+  width: 48px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(31, 46, 77, 0.28);
+  transition: background 0.15s ease;
+}
+.dock-grip:hover > span,
+.dock-grip:active > span { background: rgba(31, 46, 77, 0.55); }
 .dock-close:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--navy); }
 .dock-close:active { transform: translate(0, 0); box-shadow: 1px 1px 0 var(--navy); }
 
@@ -826,20 +849,32 @@ body.detail-open .dock-open-fab {
   .logo-text { font-size: 13px; }
   .ghost-btn { padding: 6px 10px; font-size: 11px; }
 
-  /* Filter dock fills most of the screen on mobile, with a close button.
-     Hidden when a route is selected or user explicitly closes the dock. */
+  /* Filter dock as bottom-sheet on mobile.
+     Three snap states: half (default), full, closed (FAB visible). */
   .filter-dock {
-    top: 70px;
-    bottom: calc(8px + var(--safe-bottom));
-    left: 8px;
-    right: 8px;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: auto;
     max-width: none;
-    max-height: none;
-    padding: 14px 12px 12px;
+    height: 92vh;
+    max-height: 92vh;
+    padding: 6px 14px calc(12px + var(--safe-bottom));
     gap: 10px;
-    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    border-radius: 22px 22px 0 0;
+    border-bottom: 0;
+    box-shadow: 0 -4px 0 var(--navy), 0 -16px 32px -8px rgba(31, 46, 77, 0.25);
+    transform: translateY(50%);
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    overscroll-behavior: contain;
   }
+  body.dock-full .filter-dock { transform: translateY(0); }
+  body.dock-half .filter-dock { transform: translateY(50%); }
+  .filter-dock.dragging { transition: none; }
+  .dock-grip { display: block; }
+  .filter-title { margin-top: 0; }
   body.detail-open .filter-dock {
     transform: translateY(115%);
     opacity: 0;
