@@ -4,6 +4,7 @@
 
 const CATEGORIES = [
   { id: 'scenic', label: '絶景ロード', color: '#4ECDC4', file: 'data/scenic.json' },
+  { id: 'pass',   label: '峠道',       color: '#FF6B5B', file: 'data/pass.json' },
 ];
 const CAT_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -71,9 +72,12 @@ function render() {
   STATE.layers.forEach((layer) => map.removeLayer(layer));
   STATE.layers.clear();
 
-  const counts = { scenic: 0 };
+  const counts = { scenic: 0, pass: 0 };
   for (const seg of STATE.segments) counts[seg.category]++;
-  document.getElementById('count-scenic').textContent = counts.scenic;
+  for (const cat of CATEGORIES) {
+    const el = document.getElementById(`count-${cat.id}`);
+    if (el) el.textContent = counts[cat.id] ?? 0;
+  }
 
   const visible = STATE.segments.filter((seg) => STATE.visibleCats.has(seg.category));
   const filtered = filterByQuery(visible, STATE.query);
@@ -130,35 +134,84 @@ function renderResultsList(items) {
   ul.textContent = '';
 
   const sorted = items.slice().sort((a, b) => (b.length_km || 0) - (a.length_km || 0));
-  const list = sorted.slice(0, 200);
+  const list = sorted;
 
   for (const seg of list) {
     const cat = CAT_BY_ID[seg.category];
     const li = document.createElement('li');
-    li.className = 'result-item' + (seg._key === STATE.activeId ? ' active' : '');
+    li.className = 'result-card' + (seg._key === STATE.activeId ? ' active' : '');
     li.dataset.key = seg._key;
+    li.dataset.cat = seg.category;
     li.style.setProperty('--c', cat.color);
 
-    const swatch = document.createElement('span');
-    swatch.className = 'result-swatch';
-    li.appendChild(swatch);
+    if (seg.cover_image) {
+      const img = document.createElement('img');
+      img.className = 'result-card-bg';
+      img.src = `images/${seg.cover_image}`;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.onerror = () => { img.remove(); li.classList.add('no-image'); };
+      li.appendChild(img);
+    } else {
+      li.classList.add('no-image');
+    }
 
-    const text = document.createElement('div');
-    text.className = 'result-text';
+    const scrim = document.createElement('div');
+    scrim.className = 'result-card-scrim';
+    li.appendChild(scrim);
+
+    const topRow = document.createElement('div');
+    topRow.className = 'result-card-top';
+    const catBadge = document.createElement('span');
+    catBadge.className = 'result-card-cat';
+    catBadge.textContent = cat.label;
+    topRow.appendChild(catBadge);
+    if (seg.prefecture) {
+      const pref = document.createElement('span');
+      pref.className = 'result-card-pref';
+      pref.textContent = seg.prefecture;
+      topRow.appendChild(pref);
+    }
+    li.appendChild(topRow);
+
+    const bottom = document.createElement('div');
+    bottom.className = 'result-card-bottom';
     const name = document.createElement('div');
-    name.className = 'result-name';
+    name.className = 'result-card-name';
     name.textContent = seg.name || '';
-    const meta = document.createElement('div');
-    meta.className = 'result-meta';
-    meta.textContent = [cat.label, seg.prefecture].filter(Boolean).join(' · ');
-    text.appendChild(name);
-    text.appendChild(meta);
-    li.appendChild(text);
+    bottom.appendChild(name);
 
-    const len = document.createElement('span');
-    len.className = 'result-len';
-    len.textContent = seg.length_km ? `${formatNumber(seg.length_km)} km` : '';
-    li.appendChild(len);
+    const stats = document.createElement('div');
+    stats.className = 'result-card-stats';
+    if (seg.length_km) {
+      const len = document.createElement('span');
+      len.className = 'result-card-stat result-card-stat-len';
+      const lenIcon = document.createElement('span');
+      lenIcon.setAttribute('aria-hidden', 'true');
+      lenIcon.textContent = '📏';
+      len.appendChild(lenIcon);
+      len.appendChild(document.createTextNode(` ${formatNumber(seg.length_km)} km`));
+      stats.appendChild(len);
+    }
+    const elevDiff =
+      seg.elevation_range != null
+        ? Math.round(seg.elevation_range)
+        : seg.elevation_max != null && seg.elevation_min != null
+        ? Math.round(seg.elevation_max - seg.elevation_min)
+        : null;
+    if (elevDiff != null) {
+      const elev = document.createElement('span');
+      elev.className = 'result-card-stat result-card-stat-elev';
+      const elevIcon = document.createElement('span');
+      elevIcon.setAttribute('aria-hidden', 'true');
+      elevIcon.textContent = '⛰️';
+      elev.appendChild(elevIcon);
+      elev.appendChild(document.createTextNode(` ${elevDiff} m`));
+      stats.appendChild(elev);
+    }
+    if (stats.childElementCount > 0) bottom.appendChild(stats);
+    li.appendChild(bottom);
 
     li.addEventListener('click', () => selectSegment(seg._key, { fly: true }));
     ul.appendChild(li);
@@ -223,11 +276,11 @@ function clearSelection() {
 }
 
 function updateActiveListItem(key) {
-  document.querySelectorAll('.result-item').forEach((el) => {
+  document.querySelectorAll('.result-card').forEach((el) => {
     el.classList.toggle('active', el.dataset.key === key);
   });
   if (key) {
-    const el = document.querySelector(`.result-item[data-key="${key}"]`);
+    const el = document.querySelector(`.result-card[data-key="${key}"]`);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
@@ -238,6 +291,34 @@ function showDetailSheet(seg) {
   sheet.dataset.cat = seg.category;
   sheet.setAttribute('aria-hidden', 'false');
   document.body.classList.add('detail-open');
+
+  const hero = document.getElementById('sheetHero');
+  const heroImg = document.getElementById('sheetHeroImg');
+  const heroCaption = document.getElementById('sheetHeroCaption');
+  if (seg.cover_image) {
+    heroImg.src = `images/${seg.cover_image}`;
+    heroImg.alt = seg.name || '';
+    hero.classList.remove('no-image');
+    hero.setAttribute('aria-hidden', 'false');
+    const attr = seg.cover_attribution;
+    if (attr && (attr.author || attr.title || attr.source_url)) {
+      const parts = [];
+      if (attr.title) parts.push(attr.title);
+      if (attr.author) parts.push(attr.author);
+      heroCaption.textContent = parts.length ? `© ${parts.join(' / ')}` : '';
+      heroCaption.hidden = parts.length === 0;
+    } else {
+      heroCaption.textContent = '';
+      heroCaption.hidden = true;
+    }
+  } else {
+    heroImg.removeAttribute('src');
+    heroImg.alt = '';
+    hero.classList.add('no-image');
+    hero.setAttribute('aria-hidden', 'true');
+    heroCaption.textContent = '';
+    heroCaption.hidden = true;
+  }
 
   document.getElementById('sheetCat').textContent = cat.label;
   document.getElementById('sheetName').textContent = seg.name || '';
@@ -299,7 +380,7 @@ function drawElevationProfile(profile, category) {
     .join(' ');
   const fillPath = `${linePath} L${W},${H} L0,${H} Z`;
 
-  const colorMap = { scenic: '#4ECDC4' };
+  const colorMap = { scenic: '#4ECDC4', pass: '#FF6B5B' };
   const color = colorMap[category] || '#4ECDC4';
 
   const svg = document.createElementNS(SVG_NS, 'svg');

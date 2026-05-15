@@ -38,6 +38,10 @@
       <span class="pill-dot pill-dot-scenic"></span>
       絶景ロード <span class="pill-count" id="count-scenic">0</span>
     </button>
+    <button class="pill" data-cat="pass" aria-pressed="true">
+      <span class="pill-dot pill-dot-pass"></span>
+      峠道 <span class="pill-count" id="count-pass">0</span>
+    </button>
   </div>
   <label class="filter-search">
     <span aria-hidden="true">🔍</span>
@@ -49,6 +53,10 @@
 
 <section id="detailSheet" class="detail-sheet" aria-hidden="true">
   <button class="sheet-close" aria-label="閉じる" id="sheetClose">×</button>
+  <figure class="sheet-hero" id="sheetHero" aria-hidden="true">
+    <img id="sheetHeroImg" alt="" loading="lazy">
+    <figcaption class="sheet-hero-caption" id="sheetHeroCaption"></figcaption>
+  </figure>
   <header class="sheet-head">
     <span class="sheet-cat" id="sheetCat">絶景ロード</span>
     <h2 id="sheetName">—</h2>
@@ -87,6 +95,7 @@
   <p>日本全国の<b>絶景ロード</b>を地図上で楽しく探索できるTrailFusion AIのコンテンツです。</p>
   <ul class="about-list">
     <li><span class="pill-dot pill-dot-scenic"></span><div><b>絶景ロード</b><br>海岸・山岳・高原の景観に優れたドライブルート</div></li>
+    <li><span class="pill-dot pill-dot-pass"></span><div><b>峠道</b><br>標高差・カーブの妙が楽しめるドライバーズロード</div></li>
   </ul>
   <p>ルート線をタップすると名前・距離・高低差などの詳細を確認できます。「Googleマップで開く」を押すと、出発地・経由地・目的地を登録した状態のGoogleマップに直接ジャンプ。</p>
   <p class="muted">出典: 「謎のツーリング組織 EZ TOURING jp」「JAF Mate 日本の絶景ドライブルート」ほか公開情報をもとに整理。</p>
