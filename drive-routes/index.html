@@ -31,7 +31,13 @@
 
 <main id="map" aria-label="日本全国のドライブルート地図"></main>
 
+<button id="dockOpen" class="dock-open-fab" type="button" aria-label="ルート一覧を開く" hidden>
+  <span class="dock-open-fab-icon" aria-hidden="true">🔍</span>
+  <span class="dock-open-fab-label">ルートを探す</span>
+</button>
+
 <aside class="filter-dock" role="region" aria-label="カテゴリフィルター">
+  <button class="dock-close" id="dockClose" aria-label="一覧を閉じる" type="button">×</button>
   <div class="filter-title">表示するルート</div>
   <div class="filter-pills">
     <button class="pill" data-cat="scenic" aria-pressed="true">

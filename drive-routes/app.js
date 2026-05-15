@@ -496,6 +496,25 @@ document.addEventListener('keydown', (e) => {
 
 document.getElementById('sheetClose').addEventListener('click', clearSelection);
 
+/* ----------------------------------------------------------------------- */
+/* DOCK OPEN/CLOSE                                                         */
+/* ----------------------------------------------------------------------- */
+
+const dockOpenFab = document.getElementById('dockOpen');
+
+function setDockClosed(closed) {
+  document.body.classList.toggle('dock-closed', closed);
+  dockOpenFab.hidden = !closed;
+}
+
+document.getElementById('dockClose').addEventListener('click', () => setDockClosed(true));
+dockOpenFab.addEventListener('click', () => setDockClosed(false));
+
+// On mobile, start with the dock closed so users see the map first.
+if (window.matchMedia('(max-width: 720px)').matches) {
+  setDockClosed(true);
+}
+
 document.getElementById('zoomBtn').addEventListener('click', () => {
   if (!STATE.activeId) return;
   const seg = STATE.segments.find((s) => s._key === STATE.activeId);

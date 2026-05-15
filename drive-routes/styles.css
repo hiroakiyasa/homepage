@@ -161,12 +161,69 @@ button { font: inherit; color: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
+  padding: 16px 16px 16px 16px;
   background: #fff;
   border: 2.5px solid var(--navy);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-chunky-lg);
   overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+body.dock-closed .filter-dock {
+  transform: translate(-12px, 12px) scale(0.96);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dock-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--navy);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  z-index: 5;
+  box-shadow: 2px 2px 0 var(--navy);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.dock-close:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--navy); }
+.dock-close:active { transform: translate(0, 0); box-shadow: 1px 1px 0 var(--navy); }
+
+.dock-open-fab {
+  position: fixed;
+  top: 80px;
+  left: 18px;
+  z-index: 901;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--c-yellow);
+  border: 2.5px solid var(--navy);
+  color: var(--navy);
+  border-radius: var(--radius-pill);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-chunky);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+.dock-open-fab:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-chunky-lg);
+}
+.dock-open-fab:active { transform: translate(0, 0); box-shadow: 2px 2px 0 var(--navy); }
+.dock-open-fab[hidden] { display: none !important; }
+.dock-open-fab-icon { font-size: 16px; line-height: 1; }
+body.detail-open .dock-open-fab {
+  opacity: 0;
+  pointer-events: none;
 }
 .filter-title {
   font-size: 11px;
@@ -769,35 +826,51 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .logo-text { font-size: 13px; }
   .ghost-btn { padding: 6px 10px; font-size: 11px; }
 
-  /* Filter dock at the bottom; hidden when a route is selected so the
-     detail sheet can take its place and the map stays visible above. */
+  /* Filter dock fills most of the screen on mobile, with a close button.
+     Hidden when a route is selected or user explicitly closes the dock. */
   .filter-dock {
-    top: auto;
+    top: 70px;
     bottom: calc(8px + var(--safe-bottom));
     left: 8px;
     right: 8px;
     width: auto;
     max-width: none;
-    max-height: 60vh;
-    padding: 12px;
-    gap: 8px;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    max-height: none;
+    padding: 14px 12px 12px;
+    gap: 10px;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
   }
   body.detail-open .filter-dock {
-    transform: translateY(120%);
+    transform: translateY(115%);
     opacity: 0;
     pointer-events: none;
   }
   .results-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-auto-rows: min-content;
+    align-items: start;
+    gap: 14px;
     padding: 4px;
+  }
+  .result-card {
+    aspect-ratio: 4 / 3;
+  }
+  .result-card-scrim {
+    background:
+      linear-gradient(to top,
+        rgba(31, 46, 77, 0.92) 0%,
+        rgba(31, 46, 77, 0.65) 35%,
+        rgba(31, 46, 77, 0.2) 70%,
+        rgba(31, 46, 77, 0.55) 100%);
   }
   .result-card-name { font-size: 13px; }
   .result-card-cat { font-size: 9px; padding: 2px 8px; }
   .result-card-pref { font-size: 10px; }
-  .result-card-stat { font-size: 10px; padding: 2px 7px; }
+  .result-card-stat { font-size: 10px; padding: 2px 7px; gap: 3px; }
+  .result-card-bottom { left: 8px; right: 8px; bottom: 8px; gap: 5px; }
+  .result-card-top { top: 8px; left: 8px; right: 8px; }
+  .result-card-stats { gap: 4px; }
 
   /* Detail sheet pinned to the bottom — the map remains visible above. */
   .detail-sheet {
