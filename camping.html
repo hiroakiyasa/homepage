@@ -93,6 +93,43 @@
     box-shadow: 10px 10px 0 #1F2E4D;
   }
 
+  /* エンジン・駆動方式インフォグラフィック（フルワイド） */
+  .engine-guide-figure {
+    margin: 0;
+    background: #fff;
+    border: 3px solid #FFD84D;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 rgba(255, 216, 77, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .engine-guide-figure:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 12px 12px 0 rgba(255, 216, 77, 0.5);
+  }
+  .engine-guide-figure a {
+    display: block;
+    line-height: 0;
+  }
+  .engine-guide-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .engine-guide-figure figcaption {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 216, 77, 0.3);
+  }
+  @media (min-width: 768px) {
+    .engine-guide-figure figcaption {
+      font-size: 0.875rem;
+    }
+  }
+
   /* 比較表用ヘッダー色バリエーション */
   .th-coral { background: #FF6B5B !important; color: #fff !important; }
   .th-ocean { background: #4ECDC4 !important; color: #1F2E4D !important; }
@@ -1648,28 +1685,41 @@
           <p class="text-white/70 mt-1">ガソリン vs ディーゼル／2WD vs 4WD の損益分岐点。</p>
         </div>
       </div>
-      <div class="grid md:grid-cols-2 gap-6 items-start">
-        <div class="chapter-image premium aspect-[4/3]">
-          <img src="assets/images/camper/camper_control_tower%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="ハイエースのコックピット" class="w-full h-full object-cover">
-          <span class="cinema-caption"><span class="dot"></span> COCKPIT / 2TR ・ 1GD-FTV</span>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="table-chunky text-sm">
-            <thead>
-              <tr><th></th><th class="th-coral">ガソリン 2TR-FE</th><th class="th-ocean">ディーゼル 1GD-FTV</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>最高出力</td><td>152ps</td><td><strong>177ps</strong></td></tr>
-              <tr><td>最大トルク</td><td>241N·m</td><td><strong>450N·m</strong></td></tr>
-              <tr><td>燃費</td><td>9〜10km/L</td><td><strong>11〜12km/L</strong></td></tr>
-              <tr><td>年間燃料費</td><td>15〜18万円</td><td><strong>11〜14万円</strong></td></tr>
-              <tr><td>初期費用差</td><td>基準</td><td>+25〜30万円</td></tr>
-              <tr><td>向いている</td><td>街乗り・近距離</td><td>長距離・山岳・重荷</td></tr>
-            </tbody>
-          </table>
-        </div>
+
+      <!-- フルワイド・インフォグラフィック -->
+      <figure class="engine-guide-figure mb-8">
+        <a href="assets/images/camper/hiace-engine-drivetrain-guide.png" target="_blank" rel="noopener" aria-label="ハイエース200系 エンジンと駆動方式まるわかりガイドを拡大表示">
+          <img
+            src="assets/images/camper/hiace-engine-drivetrain-guide.png"
+            alt="ハイエース200系 エンジンと駆動方式まるわかりガイド：5種類のエンジン比較、2WD/4WDの違い、用途別おすすめ、キャンピングカーDIYベースのランキング"
+            loading="lazy"
+            decoding="async"
+            class="block w-full h-auto"
+          >
+        </a>
+        <figcaption class="cinema-caption mt-3">
+          <span class="dot"></span> ENGINE × DRIVETRAIN — 1TR / 2TR / 2KD / 1KD / 1GD-FTV ＆ 2WD vs 4WD まるわかりガイド
+        </figcaption>
+      </figure>
+
+      <!-- 補足: ガソリン vs ディーゼル詳細比較 -->
+      <div class="overflow-x-auto mb-6">
+        <table class="table-chunky text-sm">
+          <thead>
+            <tr><th></th><th class="th-coral">ガソリン 2TR-FE</th><th class="th-ocean">ディーゼル 1GD-FTV</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>最高出力</td><td>152ps</td><td><strong>177ps</strong></td></tr>
+            <tr><td>最大トルク</td><td>241N·m</td><td><strong>450N·m</strong></td></tr>
+            <tr><td>燃費</td><td>9〜10km/L</td><td><strong>11〜12km/L</strong></td></tr>
+            <tr><td>年間燃料費</td><td>15〜18万円</td><td><strong>11〜14万円</strong></td></tr>
+            <tr><td>初期費用差</td><td>基準</td><td>+25〜30万円</td></tr>
+            <tr><td>向いている</td><td>街乗り・近距離</td><td>長距離・山岳・重荷</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="grid md:grid-cols-2 gap-4 mt-6">
+
+      <div class="grid md:grid-cols-2 gap-4">
         <div class="bg-white/10 border border-white/20 rounded-xl p-5">
           <div class="font-black text-sun mb-1">2WD（FR）</div>
           <p class="text-white/80 text-sm">燃費良好、車高低め、スタッドレスで関東〜近畿の雪道は対応可能。普段使い重視の人向け。</p>
