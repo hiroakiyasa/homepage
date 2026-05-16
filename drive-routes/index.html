@@ -55,6 +55,16 @@
     <input id="searchInput" type="search" placeholder="名前・都道府県で検索…" autocomplete="off">
     <kbd>/</kbd>
   </label>
+  <div class="filter-sort" role="group" aria-label="並び順">
+    <span class="filter-sort-label">並び順</span>
+    <div class="sort-pills">
+      <button type="button" class="sort-pill active" data-sort="length" aria-pressed="true">距離が長い順</button>
+      <button type="button" class="sort-pill" data-sort="nearest" aria-pressed="false">📍 近い順</button>
+      <button type="button" class="sort-pill" data-sort="north-south" aria-pressed="false">北 → 南</button>
+      <button type="button" class="sort-pill" data-sort="south-north" aria-pressed="false">南 → 北</button>
+    </div>
+    <p class="filter-sort-hint" id="sortHint" hidden></p>
+  </div>
   <ul id="resultsList" class="results-list" aria-label="検索結果"></ul>
 </aside>
 

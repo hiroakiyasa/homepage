@@ -15,6 +15,8 @@ const STATE = {
   query: '',
   activeId: null,
   layers: new Map(),
+  sortBy: 'length', // 'length' | 'nearest' | 'north-south' | 'south-north'
+  userLocation: null, // { lat, lng } when granted
 };
 
 /* ----------------------------------------------------------------------- */
@@ -129,12 +131,69 @@ function filterByQuery(items, q) {
 /* RESULTS LIST                                                            */
 /* ----------------------------------------------------------------------- */
 
+function segmentMidpoint(seg) {
+  const poly = seg.polyline;
+  if (!poly || poly.length === 0) return null;
+  if (seg._midCache) return seg._midCache;
+  const mid = poly[Math.floor(poly.length / 2)];
+  seg._midCache = { lat: mid.lat, lng: mid.lng };
+  return seg._midCache;
+}
+
+function haversineKm(a, b) {
+  const R = 6371;
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const lat1 = toRad(a.lat);
+  const lat2 = toRad(b.lat);
+  const x = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(x));
+}
+
+function sortSegments(items) {
+  const sorted = items.slice();
+  switch (STATE.sortBy) {
+    case 'nearest': {
+      if (!STATE.userLocation) return sorted;
+      const here = STATE.userLocation;
+      sorted.sort((a, b) => {
+        const ma = segmentMidpoint(a);
+        const mb = segmentMidpoint(b);
+        const da = ma ? haversineKm(here, ma) : Infinity;
+        const db = mb ? haversineKm(here, mb) : Infinity;
+        return da - db;
+      });
+      return sorted;
+    }
+    case 'north-south': {
+      sorted.sort((a, b) => {
+        const ma = segmentMidpoint(a);
+        const mb = segmentMidpoint(b);
+        return (mb?.lat ?? -Infinity) - (ma?.lat ?? -Infinity);
+      });
+      return sorted;
+    }
+    case 'south-north': {
+      sorted.sort((a, b) => {
+        const ma = segmentMidpoint(a);
+        const mb = segmentMidpoint(b);
+        return (ma?.lat ?? Infinity) - (mb?.lat ?? Infinity);
+      });
+      return sorted;
+    }
+    case 'length':
+    default:
+      sorted.sort((a, b) => (b.length_km || 0) - (a.length_km || 0));
+      return sorted;
+  }
+}
+
 function renderResultsList(items) {
   const ul = document.getElementById('resultsList');
   ul.textContent = '';
 
-  const sorted = items.slice().sort((a, b) => (b.length_km || 0) - (a.length_km || 0));
-  const list = sorted;
+  const list = sortSegments(items);
 
   for (const seg of list) {
     const cat = CAT_BY_ID[seg.category];
@@ -502,6 +561,77 @@ function formatNumber(n) {
 /* EVENT WIRING                                                            */
 /* ----------------------------------------------------------------------- */
 
+/* ----------------------------------------------------------------------- */
+/* SORT PILLS                                                              */
+/* ----------------------------------------------------------------------- */
+
+function setSortHint(text, tone) {
+  const el = document.getElementById('sortHint');
+  if (!el) return;
+  if (!text) {
+    el.hidden = true;
+    el.textContent = '';
+    el.classList.remove('hint-err', 'hint-info');
+    return;
+  }
+  el.hidden = false;
+  el.textContent = text;
+  el.classList.toggle('hint-err', tone === 'err');
+  el.classList.toggle('hint-info', tone === 'info');
+}
+
+function applySort(sortKey) {
+  STATE.sortBy = sortKey;
+  document.querySelectorAll('.sort-pill').forEach((p) => {
+    const on = p.dataset.sort === sortKey;
+    p.classList.toggle('active', on);
+    p.setAttribute('aria-pressed', String(on));
+  });
+  render();
+}
+
+function requestUserLocationAndSort() {
+  if (!('geolocation' in navigator)) {
+    setSortHint('この端末では位置情報を取得できません。距離が長い順に戻します。', 'err');
+    applySort('length');
+    return;
+  }
+  setSortHint('現在地を取得中…', 'info');
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      STATE.userLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      setSortHint(`現在地から近い順 (${pos.coords.latitude.toFixed(2)}, ${pos.coords.longitude.toFixed(2)})`, 'info');
+      applySort('nearest');
+    },
+    (err) => {
+      const msg = err.code === err.PERMISSION_DENIED
+        ? '位置情報の許可が得られませんでした。距離が長い順に戻します。'
+        : '現在地を取得できませんでした。距離が長い順に戻します。';
+      setSortHint(msg, 'err');
+      // Revert UI to length
+      applySort('length');
+    },
+    { enableHighAccuracy: false, timeout: 8000, maximumAge: 60_000 }
+  );
+}
+
+document.querySelectorAll('.sort-pill').forEach((pill) => {
+  pill.addEventListener('click', () => {
+    const key = pill.dataset.sort;
+    if (key === 'nearest') {
+      if (STATE.userLocation) {
+        applySort('nearest');
+        setSortHint(null);
+      } else {
+        requestUserLocationAndSort();
+      }
+      return;
+    }
+    setSortHint(null);
+    applySort(key);
+  });
+});
+
 document.querySelectorAll('.pill[data-cat]').forEach((pill) => {
   pill.addEventListener('click', () => {
     const cat = pill.dataset.cat;
@@ -677,7 +807,7 @@ document.getElementById('zoomBtn').addEventListener('click', () => {
 function getVisibleSegmentList() {
   const visible = STATE.segments.filter((seg) => STATE.visibleCats.has(seg.category));
   const filtered = filterByQuery(visible, STATE.query);
-  return filtered.slice().sort((a, b) => (b.length_km || 0) - (a.length_km || 0));
+  return sortSegments(filtered);
 }
 
 function navigateSegment(delta) {
