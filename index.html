@@ -230,6 +230,8 @@ body {
 .btn-chunky-coral:hover { box-shadow: 7px 7px 0 #1F2E4D; }
 .btn-chunky-ocean { background: #4ECDC4; color: #1F2E4D; box-shadow: 5px 5px 0 #1F2E4D; }
 .btn-chunky-ocean:hover { box-shadow: 7px 7px 0 #1F2E4D; }
+.btn-chunky-sun { background: #FFD84D; color: #1F2E4D; box-shadow: 5px 5px 0 #1F2E4D; }
+.btn-chunky-sun:hover { box-shadow: 7px 7px 0 #1F2E4D; }
 
 /* ============================== */
 /* カード */
@@ -451,8 +453,9 @@ video { pointer-events: none; }
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
         <a href="index.html" class="nav-item text-navy" aria-current="page">ホーム</a>
         <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="camping.html#drive-routes" class="nav-item text-navy">ドライブルート</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
         <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
         <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
       </nav>
 
@@ -475,8 +478,9 @@ video { pointer-events: none; }
       <div class="grid grid-cols-2 gap-2">
         <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
         <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
-        <a href="camping.html#drive-routes" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
         <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-sun border-2 border-navy font-bold">🗾 ドライブルート</a>
         <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
         <a href="#about" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">📖 ストーリー</a>
         <a href="#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">✉️ お問い合わせ</a>
@@ -525,6 +529,10 @@ video { pointer-events: none; }
             <i class="ri-caravan-line text-xl"></i>
             <span>キャンピングカー製作</span>
             <i class="ri-arrow-right-line"></i>
+          </a>
+          <a href="drive-routes/" class="btn-chunky btn-chunky-sun text-sm md:text-base justify-center">
+            <i class="ri-road-map-line text-xl"></i>
+            <span>ドライブルートを探す</span>
           </a>
           <a href="apps.html" class="btn-chunky btn-chunky-ocean text-sm md:text-base justify-center">
             <i class="ri-sparkling-2-fill text-xl"></i>
@@ -815,7 +823,7 @@ video { pointer-events: none; }
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-stagger">
 
       <!-- キャンピングカー -->
       <a href="camping.html" class="group relative">
@@ -872,6 +880,45 @@ video { pointer-events: none; }
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">英語学習</span>
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">翻訳</span>
               <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">生産性</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- ドライブルート図鑑 -->
+      <a href="drive-routes/" class="group relative">
+        <div class="card-chunky overflow-hidden h-full">
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
+            <img
+              src="drive-routes/images/pass-911c1ef92d88.jpg"
+              alt="三国峠（紅葉と松見大橋）"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-navy/15 pointer-events-none"></div>
+            <div class="absolute top-4 left-4">
+              <span class="sticker sticker-coral">384 ROUTES</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-20 text-white">
+              <p class="font-display font-black text-xl md:text-2xl leading-tight drop-shadow-[2px_2px_0_rgba(31,46,77,0.85)]">三国峠</p>
+              <p class="text-xs md:text-sm font-bold opacity-95 drop-shadow-[1px_1px_0_rgba(31,46,77,0.85)]">国道273号 / 北海道・上士幌町</p>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 bg-sun rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
+              <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
+            </div>
+          </div>
+          <div class="p-7 bg-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-3xl">🗺️</span>
+              <span class="font-accent text-xs text-ocean tracking-widest">DRIVE ROUTES</span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-navy mb-3">日本のドライブルート<br>図鑑</h3>
+            <p class="text-navy/70 text-sm leading-relaxed mb-4">
+              日本全国の絶景ロード176本を地図で楽しく検索。タップで詳細表示、ワンタップでGoogleマップに連携。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-cream border-2 border-navy rounded-full px-3 py-1 font-bold">絶景ロード</span>
             </div>
           </div>
         </div>
@@ -1146,12 +1193,12 @@ video { pointer-events: none; }
       <div>
         <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🗺️ ドライブルート</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">本栖湖と富士山</a></li>
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">角島大橋</a></li>
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">阿蘇ミルクロード</a></li>
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">瀬戸内の島々</a></li>
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">日本海一本道</a></li>
-          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">すべてのルートを見る →</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">本栖湖と富士山</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">角島大橋</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">阿蘇ミルクロード</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">瀬戸内の島々</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">日本海一本道</a></li>
+          <li><a href="drive-routes/" class="hover:text-ocean transition">すべてのルートを見る →</a></li>
         </ul>
       </div>
 
@@ -1171,6 +1218,7 @@ video { pointer-events: none; }
       <div>
         <h4 class="font-black text-coral mb-3 flex items-center gap-2">🔧 その他</h4>
         <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="drive-routes/" class="hover:text-coral transition">ドライブルート図鑑</a></li>
           <li><a href="maintenance.html" class="hover:text-coral transition">整備記録</a></li>
           <li><a href="#about" class="hover:text-coral transition">ストーリー</a></li>
           <li><a href="#contact" class="hover:text-coral transition">お問い合わせ</a></li>
