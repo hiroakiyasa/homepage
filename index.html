@@ -449,11 +449,11 @@ video { pointer-events: none; }
 
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="index.html" class="nav-item text-navy" aria-current="page">ホーム</a>
         <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="camping.html#drive-routes" class="nav-item text-navy">ドライブルート</a>
         <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
         <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
-        <a href="#about" class="nav-item text-navy">ストーリー</a>
       </nav>
 
       <!-- Actions -->
@@ -475,9 +475,10 @@ video { pointer-events: none; }
       <div class="grid grid-cols-2 gap-2">
         <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
         <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="camping.html#drive-routes" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
         <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
         <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
-        <a href="#about" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold col-span-2">📖 ストーリー</a>
+        <a href="#about" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">📖 ストーリー</a>
         <a href="#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">✉️ お問い合わせ</a>
       </div>
     </nav>
@@ -1102,7 +1103,7 @@ video { pointer-events: none; }
   </div>
 
   <div class="container mx-auto px-4 py-14 relative z-10">
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-10">
       <!-- Brand -->
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-4">
@@ -1132,12 +1133,25 @@ video { pointer-events: none; }
       <div>
         <h4 class="font-black text-sun mb-3 flex items-center gap-2">🚐 キャンパー</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="camping.html#step1" class="hover:text-sun transition">STEP 1: 夢を描く</a></li>
-          <li><a href="camping.html#step2" class="hover:text-sun transition">STEP 2: 車両選定</a></li>
-          <li><a href="camping.html#step3" class="hover:text-sun transition">STEP 3: 基礎工事</a></li>
-          <li><a href="camping.html#step4" class="hover:text-sun transition">STEP 4: 内装造作</a></li>
-          <li><a href="camping.html#step5" class="hover:text-sun transition">STEP 5: 電装</a></li>
-          <li><a href="camping.html#step7" class="hover:text-sun transition">STEP 7: 登録</a></li>
+          <li><a href="camping.html#why" class="hover:text-sun transition">01. はじまりの章</a></li>
+          <li><a href="camping.html#layouts" class="hover:text-sun transition">02. 用途別レイアウト</a></li>
+          <li><a href="camping.html#base-car" class="hover:text-sun transition">03. ベース車両選び</a></li>
+          <li><a href="camping.html#foundation" class="hover:text-sun transition">04. 基礎工事</a></li>
+          <li><a href="camping.html#electrical" class="hover:text-sun transition">07. 電装</a></li>
+          <li><a href="camping.html#registration" class="hover:text-sun transition">08. 8ナンバー登録</a></li>
+        </ul>
+      </div>
+
+      <!-- Drive Routes -->
+      <div>
+        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🗺️ ドライブルート</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">本栖湖と富士山</a></li>
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">角島大橋</a></li>
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">阿蘇ミルクロード</a></li>
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">瀬戸内の島々</a></li>
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">日本海一本道</a></li>
+          <li><a href="camping.html#drive-routes" class="hover:text-ocean transition">すべてのルートを見る →</a></li>
         </ul>
       </div>
 
