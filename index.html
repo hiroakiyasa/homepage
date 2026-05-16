@@ -887,12 +887,21 @@ video { pointer-events: none; }
       <!-- ドライブルート図鑑 -->
       <a href="drive-routes/" class="group relative">
         <div class="card-chunky overflow-hidden h-full">
-          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy" style="background: linear-gradient(135deg, #4ECDC4 0%, #BFE7FF 50%, #FFD84D 100%);">
-            <div class="absolute inset-0 grid place-items-center">
-              <span class="text-[6rem] md:text-[7rem] drop-shadow-lg" style="filter: drop-shadow(3px 3px 0 #1F2E4D);">🗾</span>
-            </div>
+          <div class="relative aspect-[4/3] overflow-hidden border-b-[3px] border-navy">
+            <img
+              src="drive-routes/images/pass-911c1ef92d88.jpg"
+              alt="三国峠（紅葉と松見大橋）"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-navy/15 pointer-events-none"></div>
             <div class="absolute top-4 left-4">
               <span class="sticker sticker-coral">384 ROUTES</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-20 text-white">
+              <p class="font-display font-black text-xl md:text-2xl leading-tight drop-shadow-[2px_2px_0_rgba(31,46,77,0.85)]">三国峠</p>
+              <p class="text-xs md:text-sm font-bold opacity-95 drop-shadow-[1px_1px_0_rgba(31,46,77,0.85)]">国道273号 / 北海道・上士幌町</p>
             </div>
             <div class="absolute bottom-4 right-4 w-16 h-16 bg-sun rounded-full border-2 border-navy grid place-items-center group-hover:rotate-[360deg] transition-transform duration-700">
               <i class="ri-arrow-right-up-line text-2xl text-navy"></i>
