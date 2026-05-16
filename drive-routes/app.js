@@ -247,11 +247,13 @@ function selectSegment(key, { fly = true } = {}) {
 
   if (fly && seg.polyline?.length) {
     const bounds = L.latLngBounds(seg.polyline.map((p) => [p.lat, p.lng]));
-    // On mobile, the bottom-anchored detail sheet covers ~65% of the viewport.
+    // On mobile, the bottom-anchored detail sheet covers ~60vh of the viewport.
     // Reserve that space so the active route stays in the visible map area.
     const isMobile = window.matchMedia('(max-width: 720px)').matches;
-    const padTop = isMobile ? [40, 80] : [60, 60];
-    const padBottom = isMobile ? [40, Math.round(window.innerHeight * 0.62)] : [60, 60];
+    const padTop = isMobile ? [24, 72] : [60, 60];
+    const padBottom = isMobile
+      ? [24, Math.round(window.innerHeight * 0.6) + 16]
+      : [60, 60];
     map.flyToBounds(bounds, {
       paddingTopLeft: padTop,
       paddingBottomRight: padBottom,
@@ -291,6 +293,7 @@ function showDetailSheet(seg) {
   sheet.dataset.cat = seg.category;
   sheet.setAttribute('aria-hidden', 'false');
   document.body.classList.add('detail-open');
+  if (!document.body.classList.contains('sheet-full')) setSheetMode('half');
 
   const hero = document.getElementById('sheetHero');
   const heroImg = document.getElementById('sheetHeroImg');
@@ -349,12 +352,13 @@ function showDetailSheet(seg) {
 
 function hideDetailSheet() {
   document.getElementById('detailSheet').setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('detail-open');
+  document.body.classList.remove('detail-open', 'sheet-full', 'sheet-half');
 }
 
 function drawElevationProfile(profile, category) {
   const host = document.getElementById('sheetElev');
   host.textContent = '';
+  host.classList.remove('elev-host');
   if (!profile || profile.length < 2) return;
 
   const valid = profile.filter((p) => p && p.el != null);
@@ -366,9 +370,29 @@ function drawElevationProfile(profile, category) {
   const maxEl = Math.max(...els);
   const span = Math.max(1, maxEl - minEl);
 
-  const W = 340;
-  const H = 60;
+  const colorMap = { scenic: '#4ECDC4', pass: '#FF6B5B' };
+  const color = colorMap[category] || '#4ECDC4';
 
+  // The host needs explicit class for layout: y-axis column + plot column + x-axis row.
+  host.classList.add('elev-host');
+
+  // Y-axis column (left): max top, min bottom.
+  const yAxis = document.createElement('div');
+  yAxis.className = 'elev-y';
+  const yMax = document.createElement('span');
+  yMax.textContent = `${Math.round(maxEl)} m`;
+  const yMin = document.createElement('span');
+  yMin.textContent = `${Math.round(minEl)} m`;
+  yAxis.appendChild(yMax);
+  yAxis.appendChild(yMin);
+  host.appendChild(yAxis);
+
+  // Plot column — SVG stretches; axis labels are HTML overlays so they stay crisp.
+  const plot = document.createElement('div');
+  plot.className = 'elev-plot';
+
+  const W = 100; // arbitrary; we draw in 100x100 viewBox and let it stretch via preserveAspectRatio=none.
+  const H = 100;
   const points = valid.map((p) => {
     const x = (p.km / maxKm) * W;
     const y = H - ((p.el - minEl) / span) * H;
@@ -376,17 +400,15 @@ function drawElevationProfile(profile, category) {
   });
 
   const linePath = points
-    .map((pt, i) => `${i === 0 ? 'M' : 'L'}${pt[0].toFixed(1)},${pt[1].toFixed(1)}`)
+    .map((pt, i) => `${i === 0 ? 'M' : 'L'}${pt[0].toFixed(2)},${pt[1].toFixed(2)}`)
     .join(' ');
   const fillPath = `${linePath} L${W},${H} L0,${H} Z`;
-
-  const colorMap = { scenic: '#4ECDC4', pass: '#FF6B5B' };
-  const color = colorMap[category] || '#4ECDC4';
 
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('preserveAspectRatio', 'none');
   svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('class', 'elev-svg');
 
   const defs = document.createElementNS(SVG_NS, 'defs');
   const grad = document.createElementNS(SVG_NS, 'linearGradient');
@@ -418,12 +440,28 @@ function drawElevationProfile(profile, category) {
   line.setAttribute('d', linePath);
   line.setAttribute('fill', 'none');
   line.setAttribute('stroke', color);
-  line.setAttribute('stroke-width', '1.6');
+  line.setAttribute('stroke-width', '1.5');
   line.setAttribute('stroke-linecap', 'round');
   line.setAttribute('stroke-linejoin', 'round');
+  line.setAttribute('vector-effect', 'non-scaling-stroke');
   svg.appendChild(line);
 
-  host.appendChild(svg);
+  plot.appendChild(svg);
+  host.appendChild(plot);
+
+  // X-axis row (below plot, aligned to the plot column).
+  const xAxis = document.createElement('div');
+  xAxis.className = 'elev-x';
+  const x0 = document.createElement('span');
+  x0.textContent = '0 km';
+  const xMid = document.createElement('span');
+  xMid.textContent = `${formatNumber(maxKm / 2)} km`;
+  const xMax = document.createElement('span');
+  xMax.textContent = `${formatNumber(maxKm)} km`;
+  xAxis.appendChild(x0);
+  xAxis.appendChild(xMid);
+  xAxis.appendChild(xMax);
+  host.appendChild(xAxis);
 }
 
 function buildGoogleMapsUrl(seg) {
@@ -490,11 +528,26 @@ document.addEventListener('keydown', (e) => {
     searchInput.select();
   }
   if (e.key === 'Escape') {
-    if (STATE.activeId) clearSelection();
+    if (document.body.classList.contains('sheet-full')) {
+      setSheetMode('half');
+    } else if (STATE.activeId) {
+      clearSelection();
+    }
+  }
+  if (STATE.activeId && document.activeElement !== searchInput) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); navigateSegment(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); navigateSegment(1); }
   }
 });
 
-document.getElementById('sheetClose').addEventListener('click', clearSelection);
+document.getElementById('sheetClose').addEventListener('click', () => {
+  // Full → half. Half → close.
+  if (document.body.classList.contains('sheet-full')) {
+    setSheetMode('half');
+  } else {
+    clearSelection();
+  }
+});
 
 /* ----------------------------------------------------------------------- */
 /* DOCK OPEN/CLOSE & BOTTOM-SHEET DRAG (mobile)                            */
@@ -609,11 +662,161 @@ document.getElementById('zoomBtn').addEventListener('click', () => {
   const bounds = L.latLngBounds(seg.polyline.map((p) => [p.lat, p.lng]));
   const isMobile = window.matchMedia('(max-width: 720px)').matches;
   map.fitBounds(bounds, {
-    paddingTopLeft: isMobile ? [30, 80] : [40, 40],
-    paddingBottomRight: isMobile ? [30, Math.round(window.innerHeight * 0.62)] : [40, 40],
+    paddingTopLeft: isMobile ? [24, 72] : [40, 40],
+    paddingBottomRight: isMobile
+      ? [24, Math.round(window.innerHeight * 0.6) + 16]
+      : [40, 40],
     maxZoom: 14,
   });
 });
+
+/* ----------------------------------------------------------------------- */
+/* SWIPE NAVIGATION — next/prev route on the detail sheet                  */
+/* ----------------------------------------------------------------------- */
+
+function getVisibleSegmentList() {
+  const visible = STATE.segments.filter((seg) => STATE.visibleCats.has(seg.category));
+  const filtered = filterByQuery(visible, STATE.query);
+  return filtered.slice().sort((a, b) => (b.length_km || 0) - (a.length_km || 0));
+}
+
+function navigateSegment(delta) {
+  if (!STATE.activeId) return;
+  const list = getVisibleSegmentList();
+  if (list.length < 2) return;
+  const idx = list.findIndex((s) => s._key === STATE.activeId);
+  if (idx < 0) return;
+  const nextIdx = (idx + delta + list.length) % list.length;
+  const next = list[nextIdx];
+  if (next) selectSegment(next._key, { fly: true });
+}
+
+document.getElementById('swipePrevBtn').addEventListener('click', () => navigateSegment(-1));
+document.getElementById('swipeNextBtn').addEventListener('click', () => navigateSegment(1));
+
+function setSheetMode(mode) {
+  // 'half' | 'full'
+  const body = document.body;
+  body.classList.toggle('sheet-full', mode === 'full');
+  body.classList.toggle('sheet-half', mode === 'half');
+}
+
+(() => {
+  const sheet = document.getElementById('detailSheet');
+  let startX = 0;
+  let startY = 0;
+  let lastDx = 0;
+  let lastDy = 0;
+  let tracking = false;
+  let axis = null; // 'x' | 'y' | null
+  let pointerId = null;
+
+  function shouldIgnore(target) {
+    // Don't hijack swipes on interactive controls.
+    return target.closest('button, a, input, textarea');
+  }
+
+  function resetTransform(animate = true) {
+    if (animate) sheet.classList.add('swipe-snap');
+    sheet.style.removeProperty('--swipe-dx');
+    sheet.style.removeProperty('--swipe-dy');
+    sheet.style.removeProperty('--swipe-opacity');
+    if (animate) {
+      setTimeout(() => sheet.classList.remove('swipe-snap'), 260);
+    }
+  }
+
+  function animateOut(direction, onDone) {
+    sheet.classList.add('swipe-snap');
+    const w = sheet.getBoundingClientRect().width || window.innerWidth;
+    sheet.style.setProperty('--swipe-dx', `${direction * w}px`);
+    sheet.style.setProperty('--swipe-opacity', '0');
+    setTimeout(() => {
+      sheet.style.removeProperty('--swipe-dx');
+      sheet.style.removeProperty('--swipe-opacity');
+      sheet.classList.remove('swipe-snap');
+      onDone();
+    }, 220);
+  }
+
+  sheet.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
+    if (sheet.getAttribute('aria-hidden') === 'true') return;
+    if (shouldIgnore(e.target)) return;
+    pointerId = e.pointerId;
+    startX = e.clientX;
+    startY = e.clientY;
+    lastDx = 0;
+    lastDy = 0;
+    tracking = true;
+    axis = null;
+  });
+
+  sheet.addEventListener('pointermove', (e) => {
+    if (!tracking || e.pointerId !== pointerId) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (axis == null) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      axis = Math.abs(dy) > Math.abs(dx) ? 'y' : 'x';
+      sheet.classList.add('swipe-dragging');
+      try { sheet.setPointerCapture(pointerId); } catch {}
+    }
+    e.preventDefault();
+    if (axis === 'x') {
+      lastDx = dx;
+      sheet.style.setProperty('--swipe-dx', `${dx}px`);
+      const w = sheet.getBoundingClientRect().width || 1;
+      const op = Math.max(0.35, 1 - Math.abs(dx) / w * 0.9);
+      sheet.style.setProperty('--swipe-opacity', String(op));
+    } else {
+      lastDy = dy;
+      const isFull = document.body.classList.contains('sheet-full');
+      // In half state we only react to drag up; in full state only drag down.
+      const visible = isFull ? Math.max(0, dy) : Math.min(0, dy);
+      sheet.style.setProperty('--swipe-dy', `${visible}px`);
+    }
+  }, { passive: false });
+
+  function onEnd(e) {
+    if (!tracking || e.pointerId !== pointerId) return;
+    tracking = false;
+    try { sheet.releasePointerCapture(pointerId); } catch {}
+    sheet.classList.remove('swipe-dragging');
+    if (axis === 'x') {
+      const w = sheet.getBoundingClientRect().width || 1;
+      const ratio = Math.abs(lastDx) / w;
+      if (ratio > 0.22) {
+        const dir = lastDx < 0 ? 1 : -1;
+        animateOut(-dir, () => navigateSegment(dir));
+      } else {
+        resetTransform(true);
+      }
+    } else if (axis === 'y') {
+      const isFull = document.body.classList.contains('sheet-full');
+      const h = window.innerHeight;
+      const ratio = Math.abs(lastDy) / h;
+      if (isFull && lastDy > 0 && ratio > 0.12) {
+        setSheetMode('half');
+      } else if (!isFull && lastDy < 0 && ratio > 0.08) {
+        setSheetMode('full');
+      }
+      resetTransform(true);
+    } else {
+      resetTransform(false);
+    }
+    axis = null;
+  }
+
+  sheet.addEventListener('pointerup', onEnd);
+  sheet.addEventListener('pointercancel', (e) => {
+    if (e.pointerId !== pointerId) return;
+    tracking = false;
+    axis = null;
+    sheet.classList.remove('swipe-dragging');
+    resetTransform(true);
+  });
+})();
 
 map.on('click', clearSelection);
 
