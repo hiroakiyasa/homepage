@@ -71,7 +71,10 @@ function hideLoading() {
 /* ----------------------------------------------------------------------- */
 
 function render() {
-  STATE.layers.forEach((layer) => map.removeLayer(layer));
+  STATE.layers.forEach((layer) => {
+    if (layer._hit) map.removeLayer(layer._hit);
+    map.removeLayer(layer);
+  });
   STATE.layers.clear();
 
   const counts = { scenic: 0, pass: 0 };
@@ -84,12 +87,18 @@ function render() {
   const visible = STATE.segments.filter((seg) => STATE.visibleCats.has(seg.category));
   const filtered = filterByQuery(visible, STATE.query);
 
+  // Touch devices need a much larger hit target than the visual stroke width.
+  const isCoarsePointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const HIT_WEIGHT = isCoarsePointer ? 36 : 22;
+
   for (const seg of visible) {
     if (!seg.polyline || seg.polyline.length < 2) continue;
     const cat = CAT_BY_ID[seg.category];
     const latlngs = seg.polyline.map((p) => [p.lat, p.lng]);
 
     const isActive = STATE.activeId === seg._key;
+
+    // Visible stroke — purely decorative, no pointer events.
     const line = L.polyline(latlngs, {
       color: cat.color,
       weight: isActive ? 7 : 5,
@@ -97,18 +106,33 @@ function render() {
       lineCap: 'round',
       lineJoin: 'round',
       className: 'route-line',
+      interactive: false,
     });
 
-    line.on('click', (e) => {
+    // Wider invisible "hit" polyline catches taps that miss the thin line.
+    const hit = L.polyline(latlngs, {
+      weight: HIT_WEIGHT,
+      opacity: 0,
+      color: cat.color,
+      lineCap: 'round',
+      lineJoin: 'round',
+      interactive: true,
+      bubblingMouseEvents: false,
+      className: 'route-hit',
+    });
+
+    hit.on('click', (e) => {
       L.DomEvent.stopPropagation(e);
       selectSegment(seg._key, { fly: false });
     });
-    line.on('mouseover', () => line.setStyle({ weight: 7 }));
-    line.on('mouseout', () => {
+    hit.on('mouseover', () => line.setStyle({ weight: 7 }));
+    hit.on('mouseout', () => {
       if (STATE.activeId !== seg._key) line.setStyle({ weight: 5 });
     });
 
+    hit.addTo(map);
     line.addTo(map);
+    line._hit = hit;
     STATE.layers.set(seg._key, line);
   }
 
@@ -295,6 +319,9 @@ function selectSegment(key, { fly = true } = {}) {
     const cat = CAT_BY_ID[k.split('-')[0]];
     if (k === key) {
       layer.setStyle({ weight: 7, opacity: 1, color: cat.color });
+      // Bring both the hit polyline and the visible stroke to the top so the
+      // active route's tap zone wins over neighbouring overlapping routes.
+      if (layer._hit) layer._hit.bringToFront();
       layer.bringToFront();
     } else {
       layer.setStyle({ weight: 5, opacity: 0.35, color: cat.color });

@@ -144,8 +144,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .leaflet-control-attribution a { color: var(--navy) !important; font-weight: 700; }
 
-/* Polylines render via Canvas; CSS class effects don't apply, but className is set */
-.route-line { /* placeholder */ }
+/* Polylines: visible stroke is non-interactive; the .route-hit sibling
+   (fat, fully transparent) handles taps for a forgiving touch target. */
+.route-line { pointer-events: none; }
+.route-hit { cursor: pointer; }
 
 /* ====================================================================== */
 /* FILTER DOCK                                                             */
