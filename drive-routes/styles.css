@@ -112,6 +112,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .ghost-btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--navy); }
 .ghost-btn-primary { background: var(--c-coral); color: #fff; }
+.ghost-btn-rank { background: #FFD84D; color: var(--navy); }
+.ghost-btn-rank .ghost-btn-icon { font-size: 14px; line-height: 1; }
+.ghost-btn-rank:hover { background: #FFC93D; }
+@media (max-width: 480px) {
+  .ghost-btn-rank .ghost-btn-text { display: none; }
+  .ghost-btn-rank { padding: 6px 10px; }
+  .ghost-btn-rank .ghost-btn-icon { font-size: 16px; }
+}
 
 /* ====================================================================== */
 /* MAP                                                                    */
@@ -1260,26 +1268,12 @@ body.detail-open .dock-open-fab {
   fill: currentColor;
 }
 
-.comments-toggle-line {
+.comments-count {
   flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: rgba(31, 46, 77, 0.7);
-}
-.comments-count { font-weight: 700; }
-.comments-toggle {
-  background: transparent;
-  border: none;
-  color: #FF6B5B;
   font: 700 13px inherit;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 999px;
+  color: rgba(31, 46, 77, 0.75);
+  text-align: right;
 }
-.comments-toggle:hover { background: rgba(255, 107, 91, 0.1); }
 
 .comments-section {
   padding: 4px 0 10px;
@@ -1386,51 +1380,37 @@ body.detail-open .dock-open-fab {
 .comment-submit:hover:not([disabled]) { background: #FF6B5B; }
 
 /* ====================================================================== */
-/* RANKING                                                                 */
+/* RANKING — centered modal (desktop) / bottom sheet (mobile)              */
 /* ====================================================================== */
-.ranking-fab {
+.ranking-backdrop {
   position: fixed;
-  right: 16px;
-  bottom: 80px;
-  z-index: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFD84D;
-  color: #1F2E4D;
-  border: 2.5px solid #1F2E4D;
-  border-radius: 999px;
-  padding: 10px 18px 10px 14px;
-  font: 800 14px inherit;
-  cursor: pointer;
-  box-shadow: 4px 4px 0 #1F2E4D;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(31, 46, 77, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
-.ranking-fab:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F2E4D; }
-.ranking-fab:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #1F2E4D; }
-.ranking-fab-icon { font-size: 18px; line-height: 1; }
-@media (max-width: 720px) {
-  .ranking-fab { right: 12px; bottom: 14px; padding: 9px 14px 9px 11px; font-size: 13px; }
-  body.detail-open .ranking-fab { display: none; }
-  body.dock-open .ranking-fab,
-  body.dock-full .ranking-fab { display: none; }
+.ranking-backdrop[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .ranking-sheet {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 700;
-  width: min(420px, calc(100vw - 24px));
-  max-height: min(80vh, 720px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%) scale(0.96);
+  z-index: 1110;
+  width: min(440px, calc(100vw - 32px));
+  max-height: min(80vh, 760px);
   background: #fff;
   border: 3px solid #1F2E4D;
   border-radius: 24px;
-  box-shadow: 10px 10px 0 rgba(31, 46, 77, 0.2);
+  box-shadow: 12px 12px 0 rgba(31, 46, 77, 0.18);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: translateY(20px) scale(0.96);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
@@ -1438,7 +1418,7 @@ body.detail-open .dock-open-fab {
 .ranking-sheet[aria-hidden="false"] {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 .ranking-header {
   display: flex;
@@ -1568,13 +1548,20 @@ body.detail-open .dock-open-fab {
 .ranking-likes svg { display: block; }
 
 @media (max-width: 720px) {
+  /* Bottom sheet on mobile, sits above the detail sheet */
   .ranking-sheet {
-    right: 0;
+    top: auto;
     left: 0;
+    right: 0;
     bottom: 0;
+    transform: translateY(20px);
     width: 100%;
+    max-width: none;
     border-radius: 24px 24px 0 0;
-    box-shadow: 0 -8px 24px rgba(31, 46, 77, 0.2);
-    max-height: 80vh;
+    box-shadow: 0 -8px 24px rgba(31, 46, 77, 0.25);
+    max-height: 85vh;
+  }
+  .ranking-sheet[aria-hidden="false"] {
+    transform: translateY(0);
   }
 }

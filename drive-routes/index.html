@@ -37,6 +37,10 @@
     </span>
   </a>
   <div class="topbar-spacer"></div>
+  <button id="rankingBtn" class="ghost-btn ghost-btn-rank" type="button" aria-haspopup="dialog" aria-label="人気ランキングを開く">
+    <span class="ghost-btn-icon" aria-hidden="true">🏆</span>
+    <span class="ghost-btn-text">ランキング</span>
+  </button>
   <a href="../index.html" class="ghost-btn">← ホーム</a>
   <button id="aboutBtn" class="ghost-btn ghost-btn-primary" aria-haspopup="dialog">このサイトについて</button>
 </header>
@@ -133,13 +137,10 @@
       </svg>
       <span class="like-count" id="likeCount">0</span>
     </button>
-    <div class="comments-toggle-line">
-      <span id="commentsCount" class="comments-count">コメント 0</span>
-      <button id="commentsToggle" class="comments-toggle" type="button" aria-expanded="false">表示</button>
-    </div>
+    <span id="commentsCount" class="comments-count">コメント 0</span>
   </div>
 
-  <div id="commentsSection" class="comments-section" hidden>
+  <div id="commentsSection" class="comments-section">
     <ul id="commentsList" class="comments-list"></ul>
     <form id="commentForm" class="comment-form" autocomplete="off">
       <div class="comment-form-row">
@@ -162,16 +163,11 @@
   </div>
 </section>
 
-<!-- Ranking trigger button -->
-<button id="rankingBtn" class="ranking-fab" type="button" aria-label="人気ランキングを開く">
-  <span class="ranking-fab-icon" aria-hidden="true">🏆</span>
-  <span class="ranking-fab-label">ランキング</span>
-</button>
-
-<!-- Ranking sheet -->
-<section id="rankingSheet" class="ranking-sheet" aria-hidden="true">
+<!-- Ranking modal (opened via topbar button) -->
+<div id="rankingBackdrop" class="ranking-backdrop" aria-hidden="true"></div>
+<section id="rankingSheet" class="ranking-sheet" role="dialog" aria-modal="true" aria-labelledby="rankingTitle" aria-hidden="true">
   <header class="ranking-header">
-    <h2>人気ランキング</h2>
+    <h2 id="rankingTitle">人気ランキング</h2>
     <button class="ranking-close" id="rankingClose" aria-label="閉じる">×</button>
   </header>
   <div class="ranking-tabs" role="tablist">

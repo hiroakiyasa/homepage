@@ -1166,18 +1166,6 @@ function setupEngagementUI() {
 
   const commentForm = document.getElementById('commentForm');
   if (commentForm) commentForm.addEventListener('submit', handleCommentSubmit);
-
-  const commentsToggle = document.getElementById('commentsToggle');
-  const commentsSection = document.getElementById('commentsSection');
-  if (commentsToggle && commentsSection) {
-    commentsToggle.addEventListener('click', () => {
-      const expanded = commentsToggle.getAttribute('aria-expanded') === 'true';
-      const next = !expanded;
-      commentsToggle.setAttribute('aria-expanded', next ? 'true' : 'false');
-      commentsToggle.textContent = next ? '隠す' : '表示';
-      commentsSection.hidden = !next;
-    });
-  }
 }
 
 /* ----- RANKING ----- */
@@ -1271,20 +1259,29 @@ function renderRanking(tab) {
 }
 
 function openRanking() {
-  document.getElementById('rankingSheet').setAttribute('aria-hidden', 'false');
-  document.body.classList.add('ranking-open');
-  const activeTab = document.querySelector('.ranking-tab.active')?.dataset.tab || 'all';
-  renderRanking(activeTab);
+  // Refresh latest counts before showing (cheap, fewer than 400 rows in the view).
+  refreshLikeCounts().finally(() => {
+    document.getElementById('rankingSheet').setAttribute('aria-hidden', 'false');
+    document.getElementById('rankingBackdrop').setAttribute('aria-hidden', 'false');
+    document.body.classList.add('ranking-open');
+    const activeTab = document.querySelector('.ranking-tab.active')?.dataset.tab || 'all';
+    renderRanking(activeTab);
+  });
 }
 
 function closeRanking() {
   document.getElementById('rankingSheet').setAttribute('aria-hidden', 'true');
+  document.getElementById('rankingBackdrop').setAttribute('aria-hidden', 'true');
   document.body.classList.remove('ranking-open');
 }
 
 function setupRankingUI() {
   document.getElementById('rankingBtn')?.addEventListener('click', openRanking);
   document.getElementById('rankingClose')?.addEventListener('click', closeRanking);
+  document.getElementById('rankingBackdrop')?.addEventListener('click', closeRanking);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('ranking-open')) closeRanking();
+  });
   document.querySelectorAll('.ranking-tab').forEach((tab) => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.ranking-tab').forEach((t) => {
