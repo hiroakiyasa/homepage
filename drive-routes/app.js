@@ -56,6 +56,8 @@ async function loadAll() {
     })
   );
   STATE.segments = results.flat();
+  // Fetch engagement state in parallel — failure is non-fatal.
+  await Promise.allSettled([refreshLikeCounts(), refreshMyLikes()]);
   render();
   hideLoading();
 }
@@ -349,6 +351,7 @@ function selectSegment(key, { fly = true } = {}) {
   }
 
   showDetailSheet(seg);
+  updateEngagementUI(seg);
   updateActiveListItem(key);
 }
 
@@ -987,8 +990,318 @@ aboutDialog.addEventListener('click', (e) => {
 });
 
 /* ----------------------------------------------------------------------- */
+/* ENGAGEMENT — likes, comments, ranking                                   */
+/* ----------------------------------------------------------------------- */
+
+STATE.likeCounts = new Map();   // route_key -> count
+STATE.myLikes = new Set();      // route_key (this device has liked)
+STATE.commentsCache = new Map(); // route_key -> comments[]
+
+async function refreshLikeCounts() {
+  if (!window.engagementAPI) return;
+  try {
+    const rows = await window.engagementAPI.fetchLikeCounts();
+    STATE.likeCounts = new Map(rows.map((r) => [r.route_key, r.like_count]));
+  } catch (e) {
+    console.warn('[engagement] fetchLikeCounts failed', e);
+  }
+}
+
+async function refreshMyLikes() {
+  if (!window.engagementAPI) return;
+  try {
+    STATE.myLikes = await window.engagementAPI.fetchMyLikes();
+  } catch (e) {
+    console.warn('[engagement] fetchMyLikes failed', e);
+  }
+}
+
+function getLikeCount(routeKey) {
+  return STATE.likeCounts.get(routeKey) || 0;
+}
+
+function updateLikeUI(routeKey) {
+  const btn = document.getElementById('likeBtn');
+  const count = document.getElementById('likeCount');
+  if (!btn || !count) return;
+  const liked = STATE.myLikes.has(routeKey);
+  btn.classList.toggle('liked', liked);
+  btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
+  count.textContent = String(getLikeCount(routeKey));
+}
+
+async function handleLikeClick() {
+  if (!STATE.activeId || !window.engagementAPI) return;
+  const seg = STATE.segments.find((s) => s._key === STATE.activeId);
+  if (!seg) return;
+  const btn = document.getElementById('likeBtn');
+  btn.disabled = true;
+  try {
+    const result = await window.engagementAPI.toggleLike(seg._key, seg.category);
+    if (result.liked) STATE.myLikes.add(seg._key);
+    else STATE.myLikes.delete(seg._key);
+    STATE.likeCounts.set(seg._key, result.like_count);
+    updateLikeUI(seg._key);
+  } catch (e) {
+    console.warn('[engagement] toggleLike failed', e);
+    alert('いいねを保存できませんでした。時間を置いて再度お試しください。');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function fmtRelativeTime(iso) {
+  const d = new Date(iso);
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 60) return 'たった今';
+  if (diff < 3600) return `${Math.floor(diff / 60)}分前`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}時間前`;
+  if (diff < 86400 * 7) return `${Math.floor(diff / 86400)}日前`;
+  return d.toLocaleDateString('ja-JP');
+}
+
+function renderComments(_routeKey, comments) {
+  const list = document.getElementById('commentsList');
+  const countEl = document.getElementById('commentsCount');
+  list.textContent = '';
+  countEl.textContent = `コメント ${comments.length}`;
+  if (comments.length === 0) {
+    const li = document.createElement('li');
+    li.className = 'comment-empty';
+    li.textContent = '最初のコメントを投稿してみよう。';
+    list.appendChild(li);
+    return;
+  }
+  for (const c of comments) {
+    const li = document.createElement('li');
+    li.className = 'comment-item';
+    const head = document.createElement('div');
+    head.className = 'comment-head';
+    const nick = document.createElement('span');
+    nick.className = 'comment-nick';
+    nick.textContent = c.nickname;
+    const when = document.createElement('time');
+    when.className = 'comment-time';
+    when.dateTime = c.created_at;
+    when.textContent = fmtRelativeTime(c.created_at);
+    head.appendChild(nick);
+    head.appendChild(when);
+    const body = document.createElement('p');
+    body.className = 'comment-body';
+    body.textContent = c.body;
+    li.appendChild(head);
+    li.appendChild(body);
+    list.appendChild(li);
+  }
+}
+
+async function loadCommentsFor(routeKey) {
+  if (!window.engagementAPI) return;
+  try {
+    const list = await window.engagementAPI.fetchComments(routeKey);
+    STATE.commentsCache.set(routeKey, list);
+    if (STATE.activeId === routeKey) renderComments(routeKey, list);
+  } catch (e) {
+    console.warn('[engagement] fetchComments failed', e);
+  }
+}
+
+function updateEngagementUI(seg) {
+  updateLikeUI(seg._key);
+  const cached = STATE.commentsCache.get(seg._key);
+  if (cached) renderComments(seg._key, cached);
+  else {
+    document.getElementById('commentsList').textContent = '';
+    document.getElementById('commentsCount').textContent = 'コメント …';
+    loadCommentsFor(seg._key);
+  }
+  // Reset form
+  document.getElementById('commentStatus').textContent = '';
+  // Restore last nickname for convenience
+  const lastNick = localStorage.getItem('tf_last_nickname') || '';
+  document.getElementById('commentNickname').value = lastNick;
+  document.getElementById('commentBody').value = '';
+}
+
+async function handleCommentSubmit(e) {
+  e.preventDefault();
+  if (!STATE.activeId || !window.engagementAPI) return;
+  const seg = STATE.segments.find((s) => s._key === STATE.activeId);
+  if (!seg) return;
+  const nick = document.getElementById('commentNickname').value.trim();
+  const body = document.getElementById('commentBody').value.trim();
+  const status = document.getElementById('commentStatus');
+  if (!nick || !body) {
+    status.textContent = 'ニックネームと本文を入力してください。';
+    return;
+  }
+  const submitBtn = e.target.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  status.textContent = '送信中…';
+  try {
+    await window.engagementAPI.addComment(seg._key, seg.category, nick, body);
+    localStorage.setItem('tf_last_nickname', nick);
+    document.getElementById('commentBody').value = '';
+    status.textContent = '投稿しました ✓';
+    setTimeout(() => { status.textContent = ''; }, 2200);
+    await loadCommentsFor(seg._key);
+  } catch (err) {
+    console.warn('[engagement] addComment failed', err);
+    const msg = (err && err.message) || '';
+    if (msg.includes('rate_limited')) {
+      status.textContent = '少し時間を置いてから投稿してください。';
+    } else if (msg.includes('invalid_')) {
+      status.textContent = '入力内容を確認してください。';
+    } else {
+      status.textContent = '送信に失敗しました。';
+    }
+  } finally {
+    submitBtn.disabled = false;
+  }
+}
+
+function setupEngagementUI() {
+  const likeBtn = document.getElementById('likeBtn');
+  if (likeBtn) likeBtn.addEventListener('click', handleLikeClick);
+
+  const commentForm = document.getElementById('commentForm');
+  if (commentForm) commentForm.addEventListener('submit', handleCommentSubmit);
+
+  const commentsToggle = document.getElementById('commentsToggle');
+  const commentsSection = document.getElementById('commentsSection');
+  if (commentsToggle && commentsSection) {
+    commentsToggle.addEventListener('click', () => {
+      const expanded = commentsToggle.getAttribute('aria-expanded') === 'true';
+      const next = !expanded;
+      commentsToggle.setAttribute('aria-expanded', next ? 'true' : 'false');
+      commentsToggle.textContent = next ? '隠す' : '表示';
+      commentsSection.hidden = !next;
+    });
+  }
+}
+
+/* ----- RANKING ----- */
+
+function buildHeartIcon() {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('width', '14');
+  svg.setAttribute('height', '14');
+  svg.setAttribute('aria-hidden', 'true');
+  const path = document.createElementNS(SVG_NS, 'path');
+  path.setAttribute('d', 'M12 21s-7.5-4.6-10-9.5C0 7.4 2.4 4 5.8 4c2 0 3.7 1.1 4.7 2.7C11.5 5.1 13.2 4 15.2 4 18.6 4 21 7.4 19 11.5 17 16.4 12 21 12 21z');
+  path.setAttribute('fill', 'currentColor');
+  svg.appendChild(path);
+  return svg;
+}
+
+function getRankingFor(tab) {
+  return STATE.segments
+    .filter((s) => tab === 'all' || s.category === tab)
+    .map((s) => ({ seg: s, count: getLikeCount(s._key) }))
+    .filter((r) => r.count > 0)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 30);
+}
+
+function renderRanking(tab) {
+  const ol = document.getElementById('rankingList');
+  ol.textContent = '';
+  const items = getRankingFor(tab);
+  if (items.length === 0) {
+    const li = document.createElement('li');
+    li.className = 'ranking-empty';
+    li.textContent = 'まだいいねされたルートがありません。気に入ったルートにハートを押してみよう。';
+    ol.appendChild(li);
+    return;
+  }
+  items.forEach((r, idx) => {
+    const seg = r.seg;
+    const cat = CAT_BY_ID[seg.category];
+    const li = document.createElement('li');
+    li.className = 'ranking-item';
+    li.style.setProperty('--c', cat.color);
+    li.dataset.key = seg._key;
+
+    const rank = document.createElement('span');
+    rank.className = 'ranking-rank';
+    if (idx === 0) rank.classList.add('rank-gold');
+    else if (idx === 1) rank.classList.add('rank-silver');
+    else if (idx === 2) rank.classList.add('rank-bronze');
+    rank.textContent = String(idx + 1);
+
+    const body = document.createElement('div');
+    body.className = 'ranking-body';
+    const name = document.createElement('div');
+    name.className = 'ranking-name';
+    name.textContent = seg.name || '(no name)';
+    const meta = document.createElement('div');
+    meta.className = 'ranking-meta';
+    const catLabel = document.createElement('span');
+    catLabel.className = 'ranking-cat';
+    catLabel.textContent = cat.label;
+    meta.appendChild(catLabel);
+    if (seg.prefecture) {
+      const pref = document.createElement('span');
+      pref.className = 'ranking-pref';
+      pref.textContent = seg.prefecture;
+      meta.appendChild(pref);
+    }
+    body.appendChild(name);
+    body.appendChild(meta);
+
+    const likes = document.createElement('div');
+    likes.className = 'ranking-likes';
+    likes.appendChild(buildHeartIcon());
+    const cnt = document.createElement('span');
+    cnt.textContent = String(r.count);
+    likes.appendChild(cnt);
+
+    li.appendChild(rank);
+    li.appendChild(body);
+    li.appendChild(likes);
+
+    li.addEventListener('click', () => {
+      closeRanking();
+      selectSegment(seg._key, { fly: true });
+    });
+
+    ol.appendChild(li);
+  });
+}
+
+function openRanking() {
+  document.getElementById('rankingSheet').setAttribute('aria-hidden', 'false');
+  document.body.classList.add('ranking-open');
+  const activeTab = document.querySelector('.ranking-tab.active')?.dataset.tab || 'all';
+  renderRanking(activeTab);
+}
+
+function closeRanking() {
+  document.getElementById('rankingSheet').setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('ranking-open');
+}
+
+function setupRankingUI() {
+  document.getElementById('rankingBtn')?.addEventListener('click', openRanking);
+  document.getElementById('rankingClose')?.addEventListener('click', closeRanking);
+  document.querySelectorAll('.ranking-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.ranking-tab').forEach((t) => {
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      renderRanking(tab.dataset.tab);
+    });
+  });
+}
+
+/* ----------------------------------------------------------------------- */
 /* BOOT                                                                    */
 /* ----------------------------------------------------------------------- */
+
+setupEngagementUI();
+setupRankingUI();
 
 loadAll().catch((err) => {
   console.error(err);
