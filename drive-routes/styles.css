@@ -727,6 +727,31 @@ body.detail-open .dock-open-fab {
 .icon-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--navy); }
 .icon-btn:active { transform: translate(0, 0); box-shadow: 1px 1px 0 var(--navy); }
 .icon-btn-primary { background: var(--c-coral); color: #fff; border-color: var(--navy); }
+
+/* Like button — sits in the sheet header, to the right of the route name. */
+.like-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px 0 11px;
+  background: #fff;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 var(--navy);
+  font: 800 13px/1 'Inter', 'M PLUS Rounded 1c', sans-serif;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+.like-btn-pill:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--navy); }
+.like-btn-pill:active { transform: translate(0, 0); box-shadow: 1px 1px 0 var(--navy); }
+.like-btn-pill[disabled] { opacity: 0.55; cursor: progress; }
+.like-btn-pill .like-icon { display: block; flex-shrink: 0; }
+.like-btn-pill .like-count { font-variant-numeric: tabular-nums; min-width: 12px; text-align: left; }
+.like-btn-pill.liked { background: var(--c-coral); color: #fff; }
+.like-btn-pill.liked .like-icon path { fill: currentColor; }
 .sheet-cat {
   display: inline-block;
   padding: 2px 10px;
@@ -788,9 +813,24 @@ body.detail-open .dock-open-fab {
   text-overflow: ellipsis;
 }
 
+.sheet-elev-section {
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(31, 46, 77, 0.1);
+  background: #fff;
+}
+.sheet-elev-title {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(31, 46, 77, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sheet-elev-section:has(.sheet-elev:empty) { display: none; }
+
 .sheet-elev {
-  height: 70px;
-  padding: 6px 12px 4px;
+  height: 84px;
+  padding: 0;
   background: #fff;
 }
 .sheet-elev:empty { display: none; }
@@ -1086,13 +1126,14 @@ body.detail-open .dock-open-fab {
     right: 0;
     width: auto;
     max-width: none;
-    max-height: 75vh;
+    max-height: 65vh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: 0;
     box-shadow: 0 -4px 0 var(--navy), 0 -16px 32px -8px rgba(31, 46, 77, 0.25);
     padding-bottom: env(safe-area-inset-bottom);
-    /* Make the whole sheet a single scroll container — every section gets its
-       natural height; the description is never clipped. */
+    /* Whole sheet scrolls — each section gets its natural height; the
+       description is shown in full, and the elevation profile / comments
+       are reachable by scrolling. */
     display: block;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -1105,12 +1146,6 @@ body.detail-open .dock-open-fab {
     line-height: 1.75;
     padding: 14px 18px 12px;
     margin: 0;
-  }
-  /* Elevation profile shifts to below the description and gets a clear header. */
-  .detail-sheet > .sheet-elev {
-    height: 92px;
-    padding: 10px 16px 6px;
-    border-top: 1px dashed rgba(31, 46, 77, 0.18);
   }
   .detail-sheet[aria-hidden="false"] {
     transform: translate(var(--swipe-dx, 0px), var(--swipe-dy, 0px));
@@ -1236,47 +1271,15 @@ body.detail-open .dock-open-fab {
 /* ENGAGEMENT — like button, comments, ranking                             */
 /* ====================================================================== */
 .sheet-engagement {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px 8px;
+  padding: 12px 16px 6px;
   margin-top: 4px;
   border-top: 1px solid rgba(31, 46, 77, 0.1);
 }
 
-.like-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: #fff;
-  color: var(--navy, #1F2E4D);
-  border: 2px solid var(--navy, #1F2E4D);
-  border-radius: 999px;
-  padding: 7px 14px 7px 12px;
-  font: 700 14px/1 inherit;
-  cursor: pointer;
-  box-shadow: 3px 3px 0 var(--navy, #1F2E4D);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  user-select: none;
-}
-.like-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--navy, #1F2E4D); }
-.like-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--navy, #1F2E4D); }
-.like-btn[disabled] { opacity: 0.6; cursor: progress; }
-.like-btn .like-icon { display: block; }
-.like-btn .like-count { font-variant-numeric: tabular-nums; }
-.like-btn.liked {
-  background: #FF6B5B;
-  color: #fff;
-}
-.like-btn.liked .like-icon path {
-  fill: currentColor;
-}
-
 .comments-count {
-  flex: 1;
-  font: 700 13px inherit;
-  color: rgba(31, 46, 77, 0.75);
-  text-align: right;
+  display: block;
+  font: 800 13px inherit;
+  color: var(--navy, #1F2E4D);
 }
 
 .comments-section {

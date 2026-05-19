@@ -98,6 +98,12 @@
         <p class="sheet-pref" id="sheetPref"></p>
       </div>
       <div class="sheet-head-actions">
+        <button id="likeBtn" class="like-btn-pill" type="button" aria-pressed="false" aria-label="いいね">
+          <svg class="like-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M12 21s-7.5-4.6-10-9.5C0 7.4 2.4 4 5.8 4c2 0 3.7 1.1 4.7 2.7C11.5 5.1 13.2 4 15.2 4 18.6 4 21 7.4 19 11.5 17 16.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="like-count" id="likeCount">0</span>
+        </button>
         <button class="icon-btn" id="zoomBtn" type="button" aria-label="ルートを画面いっぱいに表示" title="ルートを画面いっぱいに表示">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,16 +133,9 @@
     </div>
   </div>
   <p class="sheet-desc" id="sheetDesc">—</p>
-  <div class="sheet-elev" id="sheetElev"></div>
 
-  <!-- Engagement: Like + Comments -->
+  <!-- Comments header (count only — like button moved into the head bar) -->
   <div class="sheet-engagement">
-    <button id="likeBtn" class="like-btn" type="button" aria-pressed="false" aria-label="いいね">
-      <svg class="like-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path d="M12 21s-7.5-4.6-10-9.5C0 7.4 2.4 4 5.8 4c2 0 3.7 1.1 4.7 2.7C11.5 5.1 13.2 4 15.2 4 18.6 4 21 7.4 19 11.5 17 16.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-      <span class="like-count" id="likeCount">0</span>
-    </button>
     <span id="commentsCount" class="comments-count">コメント 0</span>
   </div>
 
@@ -154,6 +153,13 @@
         <button type="submit" class="comment-submit">投稿する</button>
       </div>
     </form>
+  </div>
+
+  <!-- Elevation profile — placed last so the description and comments are
+       prioritised in the visible (half-sheet) area on mobile. -->
+  <div class="sheet-elev-section">
+    <h3 class="sheet-elev-title">高低差プロファイル</h3>
+    <div class="sheet-elev" id="sheetElev"></div>
   </div>
 
   <div class="sheet-swipe-hint" aria-hidden="true">
