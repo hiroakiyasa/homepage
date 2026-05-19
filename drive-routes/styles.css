@@ -1086,25 +1086,31 @@ body.detail-open .dock-open-fab {
     right: 0;
     width: auto;
     max-width: none;
-    max-height: 65vh;
+    max-height: 75vh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: 0;
     box-shadow: 0 -4px 0 var(--navy), 0 -16px 32px -8px rgba(31, 46, 77, 0.25);
-    padding-bottom: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom);
+    /* Make the whole sheet a single scroll container — every section gets its
+       natural height; the description is never clipped. */
+    display: block;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     transform: translateY(100%);
   }
-  .detail-sheet > .sheet-hero,
-  .detail-sheet > .sheet-head,
-  .detail-sheet > .sheet-stats,
-  .detail-sheet > .sheet-elev,
-  .detail-sheet > .sheet-swipe-hint { flex: 0 0 auto; }
+  /* Description gets readable size from the moment the sheet opens. */
   .detail-sheet > .sheet-desc {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.75;
+    padding: 14px 18px 12px;
+    margin: 0;
+  }
+  /* Elevation profile shifts to below the description and gets a clear header. */
+  .detail-sheet > .sheet-elev {
+    height: 92px;
+    padding: 10px 16px 6px;
+    border-top: 1px dashed rgba(31, 46, 77, 0.18);
   }
   .detail-sheet[aria-hidden="false"] {
     transform: translate(var(--swipe-dx, 0px), var(--swipe-dy, 0px));
@@ -1147,10 +1153,8 @@ body.detail-open .dock-open-fab {
   body.sheet-full .sheet-elev { height: 110px; padding: 12px 18px 6px; }
   body.sheet-full .sheet-desc {
     padding: 16px 22px 20px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.85;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
   body.sheet-full .sheet-swipe-hint { padding: 8px 14px calc(14px + var(--safe-bottom)); }
   body.sheet-full .swipe-arrow { width: 30px; height: 30px; font-size: 20px; }
@@ -1235,9 +1239,9 @@ body.detail-open .dock-open-fab {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 0 6px;
+  padding: 12px 16px 8px;
   margin-top: 4px;
-  border-top: 1px solid rgba(31, 46, 77, 0.08);
+  border-top: 1px solid rgba(31, 46, 77, 0.1);
 }
 
 .like-btn {
@@ -1276,7 +1280,7 @@ body.detail-open .dock-open-fab {
 }
 
 .comments-section {
-  padding: 4px 0 10px;
+  padding: 4px 16px 16px;
 }
 .comments-list {
   list-style: none;
