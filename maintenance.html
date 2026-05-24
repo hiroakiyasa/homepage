@@ -17,7 +17,23 @@ body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-syst
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     html=html.replace('<h1 class="hero-title">愛車、今日はどんな<br><span class="underline">「声」</span>してる？</h1>','<h1 class="hero-title"><span class="hero-title-nowrap">愛車、今日はどんな</span><br><span class="underline">「声」</span>してる？</h1>');
-    html=html.replace('</style>', '.hero-title-nowrap{white-space:nowrap;display:inline-block}@media(max-width:900px){.hero-title{font-size:clamp(1.9rem,9.4vw,3rem)!important;letter-spacing:-.055em}.hero-title-nowrap{white-space:nowrap;display:inline-block}}@media(max-width:380px){.hero-title{font-size:clamp(1.72rem,8.8vw,2.55rem)!important}}</style>');
+    const fixedCss = `
+.hero-title-nowrap{white-space:nowrap;display:inline-block}
+/* 整備カード画像は常に大きく展開表示。PCでも折りたたみ・トリミングしない */
+#items .cards{display:grid!important;grid-template-columns:1fr!important;gap:3.25rem!important;width:100%!important}
+#items .item{display:flex!important;flex-direction:column!important;overflow:visible!important}
+#items .item-img-wrap,
+#items button.item-img-wrap,
+#items .open-img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;overflow:visible!important;visibility:visible!important;opacity:1!important;clip-path:none!important;border-bottom:3.5px solid var(--navy)!important;background:#16213a!important;padding:0!important}
+#items .item-img-wrap img,
+#items .open-img img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;object-fit:contain!important;object-position:center top!important;visibility:visible!important;opacity:1!important;transform:none!important}
+#items .item:hover .item-img-wrap img{transform:none!important}
+#items details.pro{display:block!important}
+@media(min-width:901px){#items .container{max-width:1240px!important}#items .item-img-wrap img,#items .open-img img{width:100%!important;height:auto!important;max-height:none!important}.item-body{padding-top:1.8rem!important}}
+@media(max-width:900px){.hero-title{font-size:clamp(1.9rem,9.4vw,3rem)!important;letter-spacing:-.055em}.hero-title-nowrap{white-space:nowrap;display:inline-block}}
+@media(max-width:380px){.hero-title{font-size:clamp(1.72rem,8.8vw,2.55rem)!important}}
+`;
+    html=html.replace('</style>', fixedCss + '</style>');
     document.open();document.write(html);document.close();
   }catch(e){
     document.body.classList.add('error');
