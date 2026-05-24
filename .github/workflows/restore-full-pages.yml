@@ -1,0 +1,70 @@
+name: Restore full HTML pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore full maintenance and index pages without loader flash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+
+          base = '259bd788a76fcb0a81bbc361bbe70fcd8e2cc88b'
+
+          def git_show(path: str) -> str:
+              return subprocess.check_output(['git', 'show', f'{base}:{path}']).decode('utf-8')
+
+          # Restore the full maintenance page from the completed page commit.
+          maintenance = git_show('maintenance.html')
+          maintenance = maintenance.replace(
+              '<h1 class="hero-title">愛車、今日はどんな<br><span class="underline">「声」</span>してる？</h1>',
+              '<h1 class="hero-title"><span class="hero-title-nowrap">愛車、今日はどんな</span><br><span class="underline">「声」</span>してる？</h1>'
+          )
+          if '.hero-title-nowrap' not in maintenance:
+              maintenance = maintenance.replace(
+                  '</style>',
+                  '.hero-title-nowrap{white-space:nowrap;display:inline-block}@media(max-width:900px){.hero-title{font-size:clamp(1.9rem,9.4vw,3rem)!important;letter-spacing:-.055em}.hero-title-nowrap{white-space:nowrap;display:inline-block}}@media(max-width:380px){.hero-title{font-size:clamp(1.72rem,8.8vw,2.55rem)!important}}</style>',
+                  1
+              )
+          Path('maintenance.html').write_text(maintenance, encoding='utf-8')
+
+          # Restore the full index page and insert maintenance CTA below AI app CTA.
+          index = git_show('index.html')
+          if '整備記録を見る' not in index:
+              target = '''          <a href="apps.html" class="btn-chunky btn-chunky-ocean text-sm md:text-base justify-center">
+            <i class="ri-sparkling-2-fill text-xl"></i>
+            <span>AIアプリを見る</span>
+          </a>'''
+              insert = target + '''
+          <a href="maintenance.html" class="btn-chunky text-sm md:text-base justify-center" style="background:#7DD87A;color:#1F2E4D;box-shadow:5px 5px 0 #1F2E4D;">
+            <i class="ri-tools-fill text-xl"></i>
+            <span>整備記録を見る</span>
+          </a>'''
+              if target not in index:
+                  raise SystemExit('AI app CTA target block not found in index.html')
+              index = index.replace(target, insert, 1)
+          Path('index.html').write_text(index, encoding='utf-8')
+          PY
+      - name: Commit restored pages
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html maintenance.html
+          git commit -m "Restore full pages and keep maintenance hero title on one line"
+          git push
