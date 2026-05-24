@@ -24,7 +24,7 @@ body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-syst
   gtag('config', 'G-S57KSMSB8Y', { page_path: '/maintenance.html', page_title: 'ハイエース200系 整備ガイド' });
 <\/script>
 `;
-  const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer><\\/script>';
+  const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     if(!html.includes('G-S57KSMSB8Y')){
