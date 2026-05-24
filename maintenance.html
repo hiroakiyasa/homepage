@@ -24,10 +24,14 @@ body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-syst
   gtag('config', 'G-S57KSMSB8Y', { page_path: '/maintenance.html', page_title: 'ハイエース200系 整備ガイド' });
 <\/script>
 `;
+  const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer><\\/script>';
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     if(!html.includes('G-S57KSMSB8Y')){
       html=html.replace('</head>', analyticsTag+'</head>');
+    }
+    if(!html.includes('visitor-counter.js')){
+      html=html.replace('</body>', visitorCounterScript+'</body>');
     }
     html=html.replace('<h1 class="hero-title">愛車、今日はどんな<br><span class="underline">「声」</span>してる？</h1>','<h1 class="hero-title"><span class="hero-title-nowrap">愛車、今日はどんな</span><br><span class="underline">「声」</span>してる？</h1>');
     const fixedCss = `
