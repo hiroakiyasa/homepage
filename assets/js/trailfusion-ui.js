@@ -6,6 +6,57 @@
 (function () {
   'use strict';
 
+  function defaultJapanVisitorsToJapanese() {
+    try {
+      const hasSavedLanguage = Boolean(localStorage.getItem('preferred-language'));
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (!hasSavedLanguage && timeZone === 'Asia/Tokyo') {
+        localStorage.setItem('preferred-language', 'ja');
+      }
+    } catch (_) {
+      // Ignore storage/timezone errors and keep the existing page behavior.
+    }
+  }
+
+  function prioritizeRikaQuestOnAppsPage() {
+    const rikaSection = document.getElementById('rika-quest');
+    if (!rikaSection) return;
+
+    const rikaNav = document.querySelector('.app-nav-premium a[href="#rika-quest"]');
+    const navList = rikaNav && rikaNav.parentElement;
+    if (rikaNav && navList && navList.firstElementChild !== rikaNav) {
+      navList.prepend(rikaNav);
+    }
+
+    const rikaCard = document.querySelector('section.bg-cream a[href="#rika-quest"].app-card');
+    const cardGrid = rikaCard && rikaCard.parentElement;
+    if (rikaCard && cardGrid && cardGrid.firstElementChild !== rikaCard) {
+      cardGrid.prepend(rikaCard);
+    }
+
+    const firstAppSection = document.querySelector('section[id].app-section-v2');
+    if (firstAppSection && firstAppSection !== rikaSection) {
+      firstAppSection.parentNode.insertBefore(rikaSection, firstAppSection);
+    }
+
+    const heroCta = document.querySelector('section.premium-hero a[href="#gp-teachers"]');
+    if (heroCta) heroCta.setAttribute('href', '#rika-quest');
+
+    const rikaBadge = rikaSection.querySelector('.app-progress-chip');
+    if (rikaBadge) {
+      rikaBadge.innerHTML = '<span>PICK UP</span><span class="line"></span><span>01</span>';
+    }
+  }
+
+  function loadVisitorCounter() {
+    if (document.querySelector('script[data-trailfusion-visitor-counter]') || window.TrailFusionVisitorCounterLoaded) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/visitor-counter.js';
+    script.defer = true;
+    script.dataset.trailfusionVisitorCounter = 'true';
+    document.head.appendChild(script);
+  }
+
   // Mobile menu toggle
   function initMobileMenu() {
     const btn = document.getElementById('mobile-toggle');
@@ -73,11 +124,15 @@
   }
 
   function init() {
+    prioritizeRikaQuestOnAppsPage();
     initMobileMenu();
     initReveal();
     initScrollTop();
     initSmoothAnchors();
+    loadVisitorCounter();
   }
+
+  defaultJapanVisitorsToJapanese();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
