@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>理科クエスト - 中学受験理科を楽しく攻略 | TrailFusion AI</title>
+<meta name="description" content="2000問以上の問題と、進化するマスコット「リカちゃん」と一緒に、中学受験理科を冒険しよう！全28単元を網羅した圧倒的なボリューム。">
+<meta name="keywords" content="中学受験, 理科, 学習アプリ, 理科クエスト, 勉強アプリ, 小学生">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/rika-quest.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="理科クエスト - 中学受験理科を楽しく攻略">
+<meta property="og:description" content="2000問以上の問題と、進化するマスコット「リカちゃん」と一緒に、理科を冒険しよう！">
+<meta property="og:url" content="https://trailfusionai.com/rika-quest.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/rika-quest/rika-quest-1.png">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="theme-color" content="#FFD84D">
+<link rel="icon" type="image/png" href="assets/images/rika-quest/rika-quest-1.png">
+<link rel="apple-touch-icon" href="assets/images/rika-quest/rika-quest-1.png">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Tailwind -->
+<link rel="stylesheet" href="assets/css/tailwind-compiled.css">
+<link rel="stylesheet" href="assets/css/trailfusion.css">
+
+<style>
+  .app-screenshot {
+    border: 3px solid #1F2E4D;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 #1F2E4D;
+    transition: transform 0.3s ease;
+  }
+  .app-screenshot:hover {
+    transform: scale(1.05) rotate(1deg);
+  }
+</style>
+</head>
+<body class="bg-cream">
+
+<!-- ============================== -->
+<!-- HEADER -->
+<!-- ============================== -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div>
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
+          <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
+        </a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== -->
+<!-- HERO -->
+<!-- ============================== -->
+<section class="relative overflow-hidden bg-sun py-16 md:py-24">
+  <div class="absolute inset-0 dot-pattern opacity-30"></div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
+          <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
+          <span class="font-bold text-sm text-navy">中学受験理科 攻略アプリ</span>
+        </div>
+
+        <h1 class="display-xl text-navy mb-6">
+          <span class="block pop-in" style="animation-delay: 0.2s;">
+            理科を<span class="highlight">「冒険」</span>に。
+          </span>
+          <span class="block pop-in" style="animation-delay: 0.35s;">
+            <span class="gradient-text gradient-animated">理科クエスト</span>登場。
+          </span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in" style="animation-delay: 0.5s;">
+          2000問以上の厳選問題と、進化するマスコット「リカちゃん」と一緒に、楽しく中学受験理科をマスターしよう！
+        </p>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 pop-in" style="animation-delay: 0.65s;">
+          <a href="#" class="btn-chunky btn-chunky-navy text-base">
+            <i class="ri-apple-fill text-xl"></i>
+            App Store
+          </a>
+          <a href="#" class="btn-chunky btn-chunky-navy text-base">
+            <i class="ri-google-play-fill text-xl"></i>
+            Google Play
+          </a>
+        </div>
+      </div>
+      
+      <div class="flex-1 flex justify-center pop-in" style="animation-delay: 0.8s;">
+        <div class="relative max-w-[300px]">
+          <img src="assets/images/rika-quest/rika-quest-1.png" alt="理科クエスト スクリーンショット" class="app-screenshot relative z-10">
+          <div class="absolute -top-6 -right-6 w-24 h-24 bg-coral rounded-full border-3 border-navy flex items-center justify-center rotate-12 z-20 shadow-chunky">
+            <span class="text-white font-black text-xl text-center leading-tight">無料<br>配信中!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
+  </svg>
+</section>
+
+<!-- ============================== -->
+<!-- FEATURES -->
+<!-- ============================== -->
+<section class="py-20 bg-cream">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <span class="sticker sticker-coral">FEATURES</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6">理科クエストの魅力</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Feature 1 -->
+      <div class="card-chunky p-8 flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-peach rounded-2xl border-3 border-navy flex items-center justify-center mb-6 shadow-chunky">
+          <i class="ri-book-open-line text-4xl text-navy"></i>
+        </div>
+        <h3 class="text-2xl font-black text-navy mb-4">全28単元を完全網羅</h3>
+        <p class="text-navy/70 leading-relaxed">
+          生命・地球・物質・エネルギーの4分野すべてをカバー。中学受験に必要な知識がこれ一つで身につきます。
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="card-chunky p-8 flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-ocean rounded-2xl border-3 border-navy flex items-center justify-center mb-6 shadow-chunky">
+          <i class="ri-question-line text-4xl text-navy"></i>
+        </div>
+        <h3 class="text-2xl font-black text-navy mb-4">2000問以上の圧倒的演習量</h3>
+        <p class="text-navy/70 leading-relaxed">
+          基礎から応用まで、2000問を超える問題を収録。反復学習で確かな実力を養成します。
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="card-chunky p-8 flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-grass rounded-2xl border-3 border-navy flex items-center justify-center mb-6 shadow-chunky">
+          <i class="ri-ghost-line text-4xl text-navy"></i>
+        </div>
+        <h3 class="text-2xl font-black text-navy mb-4">進化するリカちゃん</h3>
+        <p class="text-navy/70 leading-relaxed">
+          学習を進めるとマスコットの「リカちゃん」が進化！成長を見守る楽しさが、学習の継続を支えます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SCREENSHOTS -->
+<!-- ============================== -->
+<section class="py-20 bg-navy text-white relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-10"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="display-xl text-4xl md:text-5xl text-sun">アプリ画面紹介</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <img src="assets/images/rika-quest/rika-quest-1.png" alt="Screen 1" class="app-screenshot">
+      <img src="assets/images/rika-quest/rika-quest-2.png" alt="Screen 2" class="app-screenshot">
+      <img src="assets/images/rika-quest/rika-quest-3.png" alt="Screen 3" class="app-screenshot">
+      <img src="assets/images/rika-quest/rika-quest-4.png" alt="Screen 4" class="app-screenshot">
+      <img src="assets/images/rika-quest/rika-quest-5.png" alt="Screen 5" class="app-screenshot">
+      <img src="assets/images/rika-quest/rika-quest-6.png" alt="Screen 6" class="app-screenshot">
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- LINKS -->
+<!-- ============================== -->
+<section class="py-20 bg-cream">
+  <div class="container mx-auto px-4 max-w-2xl">
+    <div class="card-chunky p-10 bg-white">
+      <h3 class="text-3xl font-black text-navy text-center mb-8">規約・ポリシー</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="rika-quest-terms.html" class="btn-chunky btn-chunky-ocean justify-center">
+          <i class="ri-file-list-3-line"></i>
+          利用規約
+        </a>
+        <a href="rika-quest-privacy.html" class="btn-chunky btn-chunky-peach justify-center">
+          <i class="ri-shield-user-line"></i>
+          プライバシーポリシー
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-navy py-12 text-white border-t-[3px] border-navy">
+  <div class="container mx-auto px-4 text-center">
+    <a href="index.html" class="inline-flex items-center gap-3 mb-6">
+      <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-8 rounded-lg border-2 border-white">
+      <span class="font-display font-black text-xl">TrailFusion AI</span>
+    </a>
+    <p class="text-white/60">&copy; 2026 TrailFusion AI. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+</body>
+</html>
