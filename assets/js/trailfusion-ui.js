@@ -6,6 +6,36 @@
 (function () {
   'use strict';
 
+  function prioritizeRikaQuestOnAppsPage() {
+    const rikaSection = document.getElementById('rika-quest');
+    if (!rikaSection) return;
+
+    const rikaNav = document.querySelector('.app-nav-premium a[href="#rika-quest"]');
+    const navList = rikaNav && rikaNav.parentElement;
+    if (rikaNav && navList && navList.firstElementChild !== rikaNav) {
+      navList.prepend(rikaNav);
+    }
+
+    const rikaCard = document.querySelector('section.bg-cream a[href="#rika-quest"].app-card');
+    const cardGrid = rikaCard && rikaCard.parentElement;
+    if (rikaCard && cardGrid && cardGrid.firstElementChild !== rikaCard) {
+      cardGrid.prepend(rikaCard);
+    }
+
+    const firstAppSection = document.querySelector('section[id].app-section-v2');
+    if (firstAppSection && firstAppSection !== rikaSection) {
+      firstAppSection.parentNode.insertBefore(rikaSection, firstAppSection);
+    }
+
+    const heroCta = document.querySelector('section.premium-hero a[href="#gp-teachers"]');
+    if (heroCta) heroCta.setAttribute('href', '#rika-quest');
+
+    const rikaBadge = rikaSection.querySelector('.app-progress-chip');
+    if (rikaBadge) {
+      rikaBadge.innerHTML = '<span>PICK UP</span><span class="line"></span><span>01</span>';
+    }
+  }
+
   // Mobile menu toggle
   function initMobileMenu() {
     const btn = document.getElementById('mobile-toggle');
@@ -73,6 +103,7 @@
   }
 
   function init() {
+    prioritizeRikaQuestOnAppsPage();
     initMobileMenu();
     initReveal();
     initScrollTop();
