@@ -48,6 +48,15 @@
     }
   }
 
+  function loadVisitorCounter() {
+    if (document.querySelector('script[data-trailfusion-visitor-counter]') || window.TrailFusionVisitorCounterLoaded) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/visitor-counter.js';
+    script.defer = true;
+    script.dataset.trailfusionVisitorCounter = 'true';
+    document.head.appendChild(script);
+  }
+
   // Mobile menu toggle
   function initMobileMenu() {
     const btn = document.getElementById('mobile-toggle');
@@ -120,6 +129,7 @@
     initReveal();
     initScrollTop();
     initSmoothAnchors();
+    loadVisitorCounter();
   }
 
   defaultJapanVisitorsToJapanese();
