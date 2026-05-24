@@ -5,17 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrailFusion AI</title>
 <style>
-  body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:grid;min-height:100vh;place-items:center;text-align:center;padding:24px}
-  .box{max-width:560px;background:#fff;border:3px solid #1f2e4d;border-radius:28px;box-shadow:8px 8px 0 #1f2e4d;padding:28px}
+  body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+  .box{display:none;max-width:560px;background:#fff;border:3px solid #1f2e4d;border-radius:28px;box-shadow:8px 8px 0 #1f2e4d;padding:28px;text-align:center;margin:24px auto}
+  body.error{display:grid;place-items:center;text-align:center;padding:24px}
+  body.error .box{display:block}
   a{display:inline-flex;margin-top:16px;padding:14px 22px;border:3px solid #1f2e4d;border-radius:999px;background:#7dd87a;color:#1f2e4d;font-weight:900;text-decoration:none;box-shadow:5px 5px 0 #1f2e4d}
 </style>
 </head>
 <body>
-<div class="box" id="fallback">
-  <h1>TrailFusion AI</h1>
-  <p>ページを読み込み中です。</p>
-  <a href="maintenance.html">🔧 整備記録を見る</a>
-</div>
+<div class="box" id="fallback"></div>
 <script>
 (async()=>{
   const source='https://raw.githubusercontent.com/hiroakiyasa/homepage/259bd788a76fcb0a81bbc361bbe70fcd8e2cc88b/index.html';
@@ -35,7 +33,8 @@
     document.write(html);
     document.close();
   }catch(e){
-    document.getElementById('fallback').innerHTML='<h1>TrailFusion AI</h1><p>トップページの読み込みに失敗しました。</p><a href="maintenance.html">🔧 整備記録を見る</a>';
+    document.body.classList.add('error');
+    document.getElementById('fallback').innerHTML='<h1>TrailFusion AI</h1><p>トップページの読み込みに失敗しました。</p><a href="maintenance.html">整備記録を見る</a>';
   }
 })();
 </script>
