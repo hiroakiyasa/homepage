@@ -26,9 +26,13 @@
             <i class="ri-tools-fill text-xl"></i>
             <span>整備記録を見る</span>
           </a>`;
+  const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer><\\/script>';
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     html=html.replace(target,maintenanceButton);
+    if(!html.includes('visitor-counter.js')){
+      html=html.replace('</body>', visitorCounterScript+'</body>');
+    }
     document.open();
     document.write(html);
     document.close();
