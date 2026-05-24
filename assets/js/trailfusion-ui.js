@@ -6,6 +6,18 @@
 (function () {
   'use strict';
 
+  function defaultJapanVisitorsToJapanese() {
+    try {
+      const hasSavedLanguage = Boolean(localStorage.getItem('preferred-language'));
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (!hasSavedLanguage && timeZone === 'Asia/Tokyo') {
+        localStorage.setItem('preferred-language', 'ja');
+      }
+    } catch (_) {
+      // Ignore storage/timezone errors and keep the existing page behavior.
+    }
+  }
+
   function prioritizeRikaQuestOnAppsPage() {
     const rikaSection = document.getElementById('rika-quest');
     if (!rikaSection) return;
@@ -109,6 +121,8 @@
     initScrollTop();
     initSmoothAnchors();
   }
+
+  defaultJapanVisitorsToJapanese();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
