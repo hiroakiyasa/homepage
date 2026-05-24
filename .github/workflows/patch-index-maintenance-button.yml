@@ -1,0 +1,49 @@
+name: Patch index maintenance CTA
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Insert maintenance button under AI app button
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          s = path.read_text(encoding='utf-8')
+          if '整備記録を見る' in s:
+              print('Maintenance CTA already exists.')
+              raise SystemExit(0)
+          target = '''          <a href="apps.html" class="btn-chunky btn-chunky-ocean text-sm md:text-base justify-center">
+            <i class="ri-sparkling-2-fill text-xl"></i>
+            <span>AIアプリを見る</span>
+          </a>'''
+          insert = target + '''
+          <a href="maintenance.html" class="btn-chunky btn-chunky-grass text-sm md:text-base justify-center" style="background:#7DD87A;color:#1F2E4D;box-shadow:5px 5px 0 #1F2E4D;">
+            <i class="ri-tools-fill text-xl"></i>
+            <span>整備記録を見る</span>
+          </a>'''
+          if target not in s:
+              raise SystemExit('Target AI app CTA block not found.')
+          s = s.replace(target, insert, 1)
+          path.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit change
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Add maintenance CTA button to home hero"
+          git push
