@@ -27,11 +27,15 @@
             <span>整備記録を見る</span>
           </a>`;
   const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
+  const removeHeroTripBadgeScript='<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".sticker").forEach(function(el){if((el.textContent||"").includes("実写の旅")){var p=el.closest(".float")||el.parentElement;if(p)p.remove();else el.remove();}});});</'+'script>';
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     html=html.replace(target,maintenanceButton);
     if(!html.includes('visitor-counter.js')){
       html=html.replace('</body>', visitorCounterScript+'</body>');
+    }
+    if(!html.includes('removeHeroTripBadgeScript')){
+      html=html.replace('</body>', removeHeroTripBadgeScript+'</body>');
     }
     document.open();
     document.write(html);
