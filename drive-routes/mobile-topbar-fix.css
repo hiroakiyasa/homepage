@@ -1,0 +1,64 @@
+/* Mobile topbar fix for Drive Routes
+   Keep header chips readable on narrow screens by allowing horizontal scroll
+   instead of squeezing every item into the viewport. */
+@media (max-width: 720px) {
+  .topbar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: calc(8px + env(safe-area-inset-top)) 10px 12px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    white-space: nowrap !important;
+    pointer-events: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    touch-action: pan-x !important;
+  }
+  .topbar::-webkit-scrollbar { display: none !important; }
+  .topbar > * {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    pointer-events: auto !important;
+  }
+  .topbar-spacer {
+    display: none !important;
+    flex: 0 0 0 !important;
+  }
+  .logo {
+    padding: 7px 11px !important;
+    gap: 7px !important;
+    box-shadow: 3px 3px 0 var(--navy) !important;
+  }
+  .logo-emoji { font-size: 16px !important; }
+  .logo-text { font-size: 12px !important; gap: 4px !important; }
+  .logo-text i { font-size: 10px !important; }
+  .ghost-btn {
+    padding: 7px 11px !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 3px 3px 0 var(--navy) !important;
+  }
+  .ghost-btn-rank .ghost-btn-text {
+    display: inline !important;
+  }
+  .topbar .tf-visitor-counter {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    position: static !important;
+    margin: 0 4px 0 0 !important;
+    transform: none !important;
+    max-width: 132px !important;
+    min-width: auto !important;
+  }
+  .topbar .tf-visitor-counter img {
+    max-width: 92px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .logo-text i { display: none !important; }
+  .ghost-btn { padding: 7px 10px !important; }
+  .topbar .tf-visitor-counter img { max-width: 82px !important; }
+}
