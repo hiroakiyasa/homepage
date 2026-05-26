@@ -28,15 +28,19 @@
           </a>`;
   const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
   const removeHeroTripBadgeScript='<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".sticker").forEach(function(el){if((el.textContent||"").includes("実写の旅")){var p=el.closest(".float")||el.parentElement;if(p)p.remove();else el.remove();}});});</'+'script>';
+  const renameAiAppLabelsScript='<script>document.addEventListener("DOMContentLoaded",function(){function walk(n){if(n.nodeType===3){n.nodeValue=n.nodeValue.replace(/AIアプリを見る/g,"開発したアプリを見る").replace(/AIアプリ/g,"開発したアプリ");return;}if(n.nodeType!==1||["SCRIPT","STYLE","NOSCRIPT","TEXTAREA"].includes(n.tagName))return;Array.from(n.childNodes).forEach(walk);}walk(document.body);});</'+'script>';
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     html=html.replace(target,maintenanceButton);
     if(!html.includes('visitor-counter.js')){
       html=html.replace('</body>', visitorCounterScript+'</body>');
     }
-    if(!html.includes('removeHeroTripBadgeScript')){
+    if(!html.includes('実写の旅')){
+      html=html.replace('</body>', removeHeroTripBadgeScript+'</body>');
+    } else {
       html=html.replace('</body>', removeHeroTripBadgeScript+'</body>');
     }
+    html=html.replace('</body>', renameAiAppLabelsScript+'</body>');
     document.open();
     document.write(html);
     document.close();
