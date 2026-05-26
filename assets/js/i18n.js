@@ -33,9 +33,6 @@ class I18N {
     }
 
     detectBrowserLanguage() {
-        // The apps page should open in Japanese by default, even if an older
-        // saved global preference is English. A user can still switch language
-        // from the selector; that page-specific choice is remembered separately.
         if (this.isAppsPage()) {
             const appsLang = localStorage.getItem('preferred-language-apps');
             if (appsLang && this.supportedLanguages[appsLang]) {
@@ -163,17 +160,17 @@ class I18N {
     }
 
     normalizeAppLabels() {
-        // User-facing wording: avoid the label 「AIアプリ」 and use 「開発したアプリ」.
         const replaceMap = [
             [/AIアプリを見る/g, '開発したアプリを見る'],
             [/AIアプリ/g, '開発したアプリ'],
-            [/AIアプリケーション/g, '開発したアプリケーション']
+            [/AIアプリケーション/g, '開発したアプリケーション'],
+            [/アプリ紹介/g, '開発したアプリ']
         ];
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
             acceptNode(node) {
                 const parent = node.parentElement;
                 if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-                return node.nodeValue && /AIアプリ/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+                return node.nodeValue && /(AIアプリ|アプリ紹介)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
             }
         });
         const nodes = [];
@@ -186,6 +183,16 @@ class I18N {
     }
 
     getTranslation(key) {
+        if (this.currentLang === 'ja') {
+            if (key === 'nav.apps') return '開発したアプリ';
+            if (key === 'mobileNav.apps') return '✨ 開発したアプリ';
+            if (key === 'apps.hero.cta') return '開発したアプリを見る';
+            if (key === 'apps.overview.title') return '開発したアプリ一覧';
+        }
+        if (this.currentLang === 'en') {
+            if (key === 'nav.apps') return 'Developed Apps';
+            if (key === 'mobileNav.apps') return '✨ Developed Apps';
+        }
         const keys = key.split('.');
         const tryLang = (lang) => {
             let value = this.translations[lang];
