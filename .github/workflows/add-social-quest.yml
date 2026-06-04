@@ -25,17 +25,13 @@ jobs:
           p.write_text(html, encoding='utf-8')
 
           js = r"""
-          document.addEventListener('DOMContentLoaded', async () => {
+          document.addEventListener('DOMContentLoaded', () => {
             if (document.getElementById('social-quest')) return;
+            const ver = '2';
             const keys = ['logo','history','score','units','quiz','ranking'];
             const img = {};
-            for (const k of keys) {
-              try {
-                const r = await fetch('assets/images/social-quest/' + k + '.txt', { cache: 'force-cache' });
-                img[k] = r.ok ? (await r.text()).trim() : '';
-              } catch(e) { img[k] = ''; }
-            }
-            const logo = img.logo || img.history;
+            for (const k of keys) img[k] = 'assets/images/social-quest/' + k + '.png?v=' + ver;
+            const logo = img.logo;
             const style = document.createElement('style');
             style.textContent = '#social-quest .sq-panel{border:3px solid #1F2E4D;border-radius:26px;background:#fff;box-shadow:8px 8px 0 #1F2E4D;overflow:hidden}#social-quest .sq-img{border:3px solid #1F2E4D;border-radius:18px;background:#fff;box-shadow:6px 6px 0 #1F2E4D;overflow:hidden}#social-quest .sq-img img{width:100%;height:auto;display:block}';
             document.head.appendChild(style);
