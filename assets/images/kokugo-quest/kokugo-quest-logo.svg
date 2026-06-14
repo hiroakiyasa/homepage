@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="合格！国語クエスト ロゴ">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#87ceff"/><stop offset=".55" stop-color="#fff7d6"/><stop offset="1" stop-color="#ffd6e7"/></linearGradient></defs>
+<rect width="1024" height="1024" rx="130" fill="url(#bg)"/>
+<circle cx="805" cy="170" r="95" fill="#ffd84d" opacity=".85"/>
+<path d="M0 250c150-80 210-70 320-28 120 44 210 28 315-30 170-95 265-75 389 20v-212H0z" fill="#b9ecff" opacity=".7"/>
+<g fill="#ff8fb3"><circle cx="135" cy="135" r="22"/><circle cx="195" cy="92" r="16"/><circle cx="870" cy="290" r="18"/><circle cx="760" cy="100" r="14"/></g>
+<path d="M725 150h165v330H725z" rx="18" fill="#c7443e" stroke="#1f2e4d" stroke-width="14"/>
+<path d="M745 175h125v35H745zM745 250h125v35H745zM745 325h125v35H745z" fill="#ffd84d"/>
+<ellipse cx="500" cy="390" rx="245" ry="230" fill="#f7b91e" stroke="#1f2e4d" stroke-width="18"/>
+<path d="M345 245c-50-135 95-150 120-42M655 245c55-135-92-150-118-42" fill="#f7b91e" stroke="#1f2e4d" stroke-width="18"/>
+<g fill="#1f2e4d"><circle cx="405" cy="305" r="36"/><circle cx="595" cy="305" r="36"/><circle cx="330" cy="380" r="22"/><circle cx="688" cy="393" r="22"/><circle cx="455" cy="220" r="19"/><circle cx="565" cy="220" r="21"/></g>
+<circle cx="418" cy="292" r="11" fill="#fff"/><circle cx="608" cy="292" r="11" fill="#fff"/>
+<path d="M480 365c18 22 42 22 60 0" fill="none" stroke="#1f2e4d" stroke-width="12" stroke-linecap="round"/>
+<path d="M500 345l-33-18h66z" fill="#e74747"/>
+<rect x="185" y="505" width="654" height="182" rx="34" fill="#fff" stroke="#1f2e4d" stroke-width="16"/>
+<text x="512" y="635" text-anchor="middle" font-size="104" font-family="sans-serif" font-weight="900" fill="#198041">国語</text>
+<rect x="255" y="700" width="514" height="120" rx="28" fill="#ffd84d" stroke="#1f2e4d" stroke-width="14"/>
+<text x="512" y="785" text-anchor="middle" font-size="68" font-family="sans-serif" font-weight="900" fill="#1f2e4d">クエスト</text>
+<text x="238" y="490" font-size="64" font-family="sans-serif" font-weight="900" fill="#e83b4d" stroke="#fff" stroke-width="12" paint-order="stroke">合格！</text>
+<path d="M255 260c-55 70-65 160-30 250" fill="none" stroke="#0d78bd" stroke-width="54" stroke-linecap="round"/>
+<path d="M245 260c-30 85-28 150 15 230" fill="none" stroke="#fff" stroke-width="8" opacity=".55"/>
+<rect x="150" y="270" width="95" height="190" rx="12" fill="#fff7d6" stroke="#1f2e4d" stroke-width="8" transform="rotate(-12 150 270)"/>
+<text x="175" y="360" writing-mode="tb" font-size="38" font-family="serif" fill="#1f2e4d">いろは</text>
+<rect x="755" y="510" width="110" height="150" rx="12" fill="#fff7d6" stroke="#1f2e4d" stroke-width="8" transform="rotate(12 755 510)"/>
+<text x="795" y="590" writing-mode="tb" font-size="34" font-family="serif" fill="#1f2e4d">物語</text>
+</svg>
