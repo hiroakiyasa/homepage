@@ -1,198 +1,250 @@
 // Multi-language support system for TrailFusion AI
-// Lightweight, page-safe i18n bootstrap used across static pages.
+// Page-safe i18n bootstrap and app-page maintenance hooks.
 class I18N {
-    constructor() {
-        this.currentLang = 'ja';
-        this.fallbackLang = 'ja';
-        this.translations = {};
-        this.supportedLanguages = {
-            'ja': { name: '日本語', flag: '🇯🇵' },
-            'en': { name: 'English', flag: '🇺🇸' },
-            'zh': { name: '中文', flag: '🇨🇳' },
-            'ko': { name: '한국어', flag: '🇰🇷' },
-            'es': { name: 'Español', flag: '🇪🇸' },
-            'fr': { name: 'Français', flag: '🇫🇷' },
-            'de': { name: 'Deutsch', flag: '🇩🇪' },
-            'pt': { name: 'Português', flag: '🇧🇷' },
-            'ru': { name: 'Русский', flag: '🇷🇺' },
-            'hi': { name: 'हिन्दी', flag: '🇮🇳' }
-        };
-        this.init();
-    }
+  constructor() {
+    this.currentLang = 'ja';
+    this.fallbackLang = 'ja';
+    this.translations = {};
+    this.supportedLanguages = {
+      ja: { name: '日本語', flag: '🇯🇵' },
+      en: { name: 'English', flag: '🇺🇸' },
+      zh: { name: '中文', flag: '🇨🇳' },
+      ko: { name: '한국어', flag: '🇰🇷' },
+      es: { name: 'Español', flag: '🇪🇸' },
+      fr: { name: 'Français', flag: '🇫🇷' },
+      de: { name: 'Deutsch', flag: '🇩🇪' },
+      pt: { name: 'Português', flag: '🇧🇷' },
+      ru: { name: 'Русский', flag: '🇷🇺' },
+      hi: { name: 'हिन्दी', flag: '🇮🇳' }
+    };
+    this.init();
+  }
 
-    isAppsPage() {
-        return /(^|\/)apps\.html$/.test(window.location.pathname || '');
-    }
+  isAppsPage() {
+    return /(^|\/)apps\.html$/.test(window.location.pathname || '');
+  }
 
-    async init() {
-        await this.loadTranslations();
-        this.detectBrowserLanguage();
-        this.createLanguageSelector();
-        this.createMobileLanguageSelector();
-        this.translatePage();
-    }
+  async init() {
+    await this.loadTranslations();
+    this.detectBrowserLanguage();
+    this.createLanguageSelector();
+    this.createMobileLanguageSelector();
+    this.translatePage();
+  }
 
-    detectBrowserLanguage() {
-        if (this.isAppsPage()) {
-            const appsLang = localStorage.getItem('preferred-language-apps');
-            if (appsLang && this.supportedLanguages[appsLang]) {
-                this.currentLang = appsLang;
-                return;
-            }
-            this.currentLang = 'ja';
-            try { localStorage.setItem('preferred-language', 'ja'); } catch (_) {}
-            return;
+  detectBrowserLanguage() {
+    if (this.isAppsPage()) {
+      const appsLang = localStorage.getItem('preferred-language-apps');
+      this.currentLang = appsLang && this.supportedLanguages[appsLang] ? appsLang : 'ja';
+      try { localStorage.setItem('preferred-language', this.currentLang); } catch (_) {}
+      return;
+    }
+    const savedLang = localStorage.getItem('preferred-language');
+    if (savedLang && this.supportedLanguages[savedLang]) {
+      this.currentLang = savedLang;
+      return;
+    }
+    const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'ja';
+    const langCode = browserLang.split('-')[0];
+    if (this.supportedLanguages[langCode]) this.currentLang = langCode;
+  }
+
+  buildSelectorHtml(prefix, mobile) {
+    const current = this.supportedLanguages[this.currentLang] || this.supportedLanguages.ja;
+    const buttonClass = mobile
+      ? 'w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300'
+      : 'flex items-center space-x-2 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary';
+    const dropdownClass = mobile
+      ? 'hidden absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-50 max-h-64 overflow-y-auto'
+      : 'hidden absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50';
+    const optionClass = mobile
+      ? 'mobile-lang-option w-full text-left px-3 py-2 text-sm hover:bg-gray-100 flex items-center space-x-2'
+      : 'lang-option w-full text-left px-4 py-2 text-sm hover:bg-gray-100 flex items-center space-x-3';
+    return `
+      <div class="relative">
+        <button id="${prefix}-button" class="${buttonClass}" type="button" aria-label="Language">
+          <span class="${mobile ? 'text-base sm:text-lg' : 'text-lg'}">${current.flag}</span>
+          ${mobile ? '' : `<span class="text-sm font-medium text-gray-700">${current.name}</span><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`}
+        </button>
+        <div id="${prefix}-dropdown" class="${dropdownClass}">
+          ${Object.entries(this.supportedLanguages).map(([code, info]) => `
+            <button class="${optionClass} ${code === this.currentLang ? 'bg-gray-50' : ''}" data-lang="${code}" type="button">
+              <span class="${mobile ? 'text-base' : 'text-lg'}">${info.flag}</span>
+              <span class="${mobile ? 'text-xs' : ''}">${info.name}</span>
+            </button>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  createLanguageSelector() {
+    const selector = document.getElementById('language-selector');
+    if (!selector) return;
+    selector.innerHTML = this.buildSelectorHtml('lang', false);
+    this.attachLanguageSelectorEvents('lang');
+  }
+
+  createMobileLanguageSelector() {
+    const selector = document.getElementById('mobile-language-selector');
+    if (!selector) return;
+    selector.innerHTML = this.buildSelectorHtml('mobile-lang', true);
+    this.attachLanguageSelectorEvents('mobile-lang');
+  }
+
+  attachLanguageSelectorEvents(prefix) {
+    const button = document.getElementById(`${prefix}-button`);
+    const dropdown = document.getElementById(`${prefix}-dropdown`);
+    if (!button || !dropdown) return;
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle('hidden');
+    });
+    document.addEventListener('click', () => dropdown.classList.add('hidden'));
+    dropdown.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const option = event.target.closest('[data-lang]');
+      if (!option) return;
+      this.setLanguage(option.dataset.lang);
+      dropdown.classList.add('hidden');
+    });
+  }
+
+  setLanguage(lang) {
+    if (!this.supportedLanguages[lang]) return;
+    this.currentLang = lang;
+    try {
+      localStorage.setItem('preferred-language', lang);
+      if (this.isAppsPage()) localStorage.setItem('preferred-language-apps', lang);
+    } catch (_) {}
+    this.translatePage();
+    this.createLanguageSelector();
+    this.createMobileLanguageSelector();
+    this.updateMetaTags();
+  }
+
+  updateMetaTags() {
+    document.documentElement.lang = this.currentLang;
+    const localeMap = { ja: 'ja_JP', en: 'en_US', zh: 'zh_CN', ko: 'ko_KR', fr: 'fr_FR', pt: 'pt_BR', hi: 'hi_IN', de: 'de_DE', es: 'es_ES', ru: 'ru_RU' };
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.content = localeMap[this.currentLang] || 'ja_JP';
+  }
+
+  translatePage() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const translation = this.getTranslation(element.dataset.i18n);
+      if (!translation) return;
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') element.placeholder = translation;
+      else element.innerHTML = translation;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+      const translation = this.getTranslation(element.dataset.i18nPlaceholder);
+      if (translation) element.placeholder = translation;
+    });
+    const title = this.getTranslation('meta.title') || this.getTranslation('apps.meta.title');
+    const description = this.getTranslation('meta.description') || this.getTranslation('apps.meta.description');
+    if (title) document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && description) metaDesc.content = description;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && title) ogTitle.content = title;
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && description) ogDesc.content = description;
+    this.updateMetaTags();
+    this.normalizeAppLabels();
+    this.removeRetiredApps();
+    this.injectKokugoQuest();
+    this.removeRetiredApps();
+    this.updateAppsCount();
+  }
+
+  normalizeAppLabels() {
+    const replaceMap = [
+      [/AIアプリを見る/g, '開発したアプリを見る'],
+      [/AIアプリ/g, '開発したアプリ'],
+      [/AIアプリケーション/g, '開発したアプリケーション'],
+      [/アプリ紹介/g, '開発したアプリ']
+    ];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        return node.nodeValue && /(AIアプリ|アプリ紹介)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      let text = node.nodeValue;
+      replaceMap.forEach(([pattern, replacement]) => { text = text.replace(pattern, replacement); });
+      node.nodeValue = text;
+    });
+  }
+
+  removeRetiredApps() {
+    if (!this.isAppsPage()) return;
+    ['voicelink', 'debate-master'].forEach(id => {
+      document.getElementById(id)?.remove();
+      document.querySelectorAll(`a[href="#${id}"], a[href="apps.html#${id}"]`).forEach(anchor => {
+        const removable = anchor.classList.contains('app-card') ? anchor : anchor.closest('li') || anchor;
+        removable.remove();
+      });
+    });
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+      if (!/VoiceLink|Debate Master/.test(script.textContent || '')) return;
+      try {
+        const data = JSON.parse(script.textContent);
+        if (Array.isArray(data.mainEntity)) {
+          data.mainEntity = data.mainEntity.filter(app => !['VoiceLink', 'Debate Master'].includes(app.name));
+          script.textContent = JSON.stringify(data, null, 2);
         }
+      } catch (_) {}
+    });
+  }
 
-        const savedLang = localStorage.getItem('preferred-language');
-        if (savedLang && this.supportedLanguages[savedLang]) {
-            this.currentLang = savedLang;
-            return;
-        }
+  updateAppsCount() {
+    if (!this.isAppsPage()) return;
+    const countText = this.currentLang === 'ja' ? '6つのアプリを、わかりやすく美しいデザインで紹介しています' : 'Six applications powered by innovative technology';
+    const overviewDesc = document.querySelector('[data-i18n="apps.overview.description"]');
+    if (overviewDesc) overviewDesc.textContent = countText;
+    document.querySelectorAll('.sticker').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(/🚀\s*[0-9]+\s*APPS/g, '🚀 6 APPS');
+    });
+    document.querySelectorAll('.card-chunky .font-accent').forEach(el => {
+      const label = el.parentElement?.querySelector('div:last-child')?.textContent?.trim();
+      if (label === 'Apps') el.textContent = '6';
+    });
+  }
 
-        const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'ja';
-        const langCode = browserLang.split('-')[0];
-        if (this.supportedLanguages[langCode]) this.currentLang = langCode;
+  injectKokugoQuest() {
+    if (!this.isAppsPage() || document.getElementById('kokugo-quest')) return;
+    const logo = 'assets/images/kokugo-quest/kokugo-quest-logo.svg';
+    const shots = [1, 2, 3, 4, 5, 6].map(n => `assets/images/kokugo-quest/kokugo-quest-${n}.svg`);
+
+    const navRow = document.querySelector('.app-nav-premium .flex');
+    if (navRow && !navRow.querySelector('a[href="#kokugo-quest"]')) {
+      navRow.insertAdjacentHTML('afterbegin', `<a href="#kokugo-quest" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group"><span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="${logo}" class="w-full h-full object-cover" alt=""></span><span class="sm:hidden">国語クエ</span><span class="hidden sm:inline">国語クエスト</span></a>`);
     }
 
-    createLanguageSelector() {
-        const selector = document.getElementById('language-selector');
-        if (!selector) return;
-        selector.innerHTML = this.buildSelectorHtml('lang', false);
-        this.attachLanguageSelectorEvents('lang', false);
+    const firstCard = document.querySelector('a.app-card[href="#rika-quest"]');
+    if (firstCard && !firstCard.parentElement.querySelector('a[href="#kokugo-quest"]')) {
+      firstCard.parentElement.style.gridTemplateColumns = 'repeat(auto-fit,minmax(140px,1fr))';
+      firstCard.insertAdjacentHTML('beforebegin', `<a href="#kokugo-quest" class="app-card p-4 sm:p-5 text-center group cursor-pointer"><div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-coral"><img src="${logo}" alt="合格！国語クエスト ロゴ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy"></div><h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">国語クエスト</h3><p class="text-xs sm:text-sm text-navy/60 font-bold">Japanese Quiz Adventure</p></a>`);
     }
 
-    createMobileLanguageSelector() {
-        const selector = document.getElementById('mobile-language-selector');
-        if (!selector) return;
-        selector.innerHTML = this.buildSelectorHtml('mobile-lang', true);
-        this.attachLanguageSelectorEvents('mobile-lang', true);
-    }
-
-    buildSelectorHtml(prefix, mobile) {
-        const current = this.supportedLanguages[this.currentLang] || this.supportedLanguages.ja;
-        const buttonClass = mobile
-            ? 'w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300'
-            : 'flex items-center space-x-2 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary';
-        const dropdownClass = mobile
-            ? 'hidden absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-50 max-h-64 overflow-y-auto'
-            : 'hidden absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50';
-        const optionClass = mobile
-            ? 'mobile-lang-option w-full text-left px-3 py-2 text-sm hover:bg-gray-100 flex items-center space-x-2'
-            : 'lang-option w-full text-left px-4 py-2 text-sm hover:bg-gray-100 flex items-center space-x-3';
-        return `
-            <div class="relative">
-                <button id="${prefix}-button" class="${buttonClass}" type="button" aria-label="Language">
-                    <span class="${mobile ? 'text-base sm:text-lg' : 'text-lg'}">${current.flag}</span>
-                    ${mobile ? '' : `<span class="text-sm font-medium text-gray-700">${current.name}</span><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`}
-                </button>
-                <div id="${prefix}-dropdown" class="${dropdownClass}">
-                    ${Object.entries(this.supportedLanguages).map(([code, info]) => `
-                        <button class="${optionClass} ${code === this.currentLang ? 'bg-gray-50' : ''}" data-lang="${code}" type="button">
-                            <span class="${mobile ? 'text-base' : 'text-lg'}">${info.flag}</span>
-                            <span class="${mobile ? 'text-xs' : ''}">${info.name}</span>
-                        </button>
-                    `).join('')}
-                </div>
-            </div>`;
-    }
-
-    attachLanguageSelectorEvents(prefix) {
-        const button = document.getElementById(`${prefix}-button`);
-        const dropdown = document.getElementById(`${prefix}-dropdown`);
-        if (!button || !dropdown) return;
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdown.classList.toggle('hidden');
-        });
-        document.addEventListener('click', () => dropdown.classList.add('hidden'));
-        dropdown.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const option = e.target.closest('[data-lang]');
-            if (!option) return;
-            this.setLanguage(option.dataset.lang);
-            dropdown.classList.add('hidden');
-        });
-    }
-
-    setLanguage(lang) {
-        if (!this.supportedLanguages[lang]) return;
-        this.currentLang = lang;
-        try {
-            localStorage.setItem('preferred-language', lang);
-            if (this.isAppsPage()) localStorage.setItem('preferred-language-apps', lang);
-        } catch (_) {}
-        this.translatePage();
-        this.createLanguageSelector();
-        this.createMobileLanguageSelector();
-        this.updateMetaTags();
-    }
-
-    updateMetaTags() {
-        document.documentElement.lang = this.currentLang;
-        const localeMap = { ja:'ja_JP', en:'en_US', zh:'zh_CN', ko:'ko_KR', fr:'fr_FR', pt:'pt_BR', hi:'hi_IN', de:'de_DE', es:'es_ES', ru:'ru_RU' };
-        const ogLocale = document.querySelector('meta[property="og:locale"]');
-        if (ogLocale) ogLocale.content = localeMap[this.currentLang] || 'ja_JP';
-    }
-
-    translatePage() {
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const translation = this.getTranslation(element.dataset.i18n);
-            if (!translation) return;
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') element.placeholder = translation;
-            else element.innerHTML = translation;
-        });
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-            const translation = this.getTranslation(element.dataset.i18nPlaceholder);
-            if (translation) element.placeholder = translation;
-        });
-        const title = this.getTranslation('meta.title') || this.getTranslation('apps.meta.title');
-        const description = this.getTranslation('meta.description') || this.getTranslation('apps.meta.description');
-        if (title) document.title = title;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc && description) metaDesc.content = description;
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle && title) ogTitle.content = title;
-        const ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc && description) ogDesc.content = description;
-        this.updateMetaTags();
-        this.normalizeAppLabels();
-        this.injectKokugoQuest();
-    }
-
-    injectKokugoQuest() {
-        if (!this.isAppsPage() || document.getElementById('kokugo-quest')) return;
-        const logo = 'assets/images/kokugo-quest/kokugo-quest-logo.svg';
-        const shots = [1,2,3,4,5,6].map(n => `assets/images/kokugo-quest/kokugo-quest-${n}.svg`);
-
-        const navRow = document.querySelector('.app-nav-premium .flex');
-        if (navRow) navRow.insertAdjacentHTML('afterbegin', `<a href="#kokugo-quest" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group"><span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="${logo}" class="w-full h-full object-cover" alt=""></span><span class="sm:hidden">国語クエ</span><span class="hidden sm:inline">国語クエスト</span></a>`);
-
-        const firstCard = document.querySelector('a.app-card[href="#rika-quest"]');
-        if (firstCard) {
-            firstCard.parentElement.style.gridTemplateColumns = 'repeat(auto-fit,minmax(140px,1fr))';
-            firstCard.insertAdjacentHTML('beforebegin', `<a href="#kokugo-quest" class="app-card p-4 sm:p-5 text-center group cursor-pointer"><div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-coral"><img src="${logo}" alt="合格！国語クエスト ロゴ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy"></div><h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">国語クエスト</h3><p class="text-xs sm:text-sm text-navy/60 font-bold">Japanese Quiz Adventure</p></a>`);
-        }
-
-        document.querySelectorAll('.font-accent').forEach(el => { if (el.textContent.trim() === '6') el.textContent = '8'; });
-        document.querySelectorAll('.sticker').forEach(el => { el.innerHTML = el.innerHTML.replace('🚀 6 APPS', '🚀 8 APPS'); });
-        const overviewDesc = document.querySelector('[data-i18n="apps.overview.description"]');
-        if (overviewDesc) overviewDesc.textContent = 'Eight applications powered by innovative technology';
-
-        const rika = document.getElementById('rika-quest');
-        if (rika) rika.insertAdjacentHTML('beforebegin', `
+    const rika = document.getElementById('rika-quest');
+    if (rika) {
+      rika.insertAdjacentHTML('beforebegin', `
 <section id="kokugo-quest" class="app-section-v2 app-bg-coral py-14 md:py-20">
   <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up visible">
-      <div class="flex items-center gap-3 flex-wrap"><span class="app-progress-chip"><span>08</span><span class="line"></span><span>08</span></span><span class="sticker sticker-coral"><i class="ri-book-open-line mr-1"></i><span>国語クエスト</span></span><span class="sticker sticker-sun">中学受験</span></div>
+      <div class="flex items-center gap-3 flex-wrap"><span class="app-progress-chip"><span>06</span><span class="line"></span><span>06</span></span><span class="sticker sticker-coral"><i class="ri-book-open-line mr-1"></i><span>国語クエスト</span></span><span class="sticker sticker-sun">中学受験</span></div>
       <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Japanese Adventure with illustrations ✦</span>
     </div>
     <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up visible">
       <img src="${shots[0]}" alt="" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 app-banner-overlay"></div>
       <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4"><div class="app-icon-tile-sm"><img src="${logo}" alt="合格！国語クエスト ロゴ"></div><div class="flex flex-col"><span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span><span class="font-accent text-sm text-white">08 / 08</span></div></div>
+        <div class="flex items-center gap-3 mb-3 md:mb-4"><div class="app-icon-tile-sm"><img src="${logo}" alt="合格！国語クエスト ロゴ"></div><div class="flex flex-col"><span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span><span class="font-accent text-sm text-white">06 / 06</span></div></div>
         <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3">国語クエスト</h2>
         <p class="text-white/90 text-sm md:text-base leading-relaxed">中学受験の国語を、イラスト・読み上げ・対戦・ランキングで楽しく攻略。</p>
       </div>
@@ -203,107 +255,87 @@ class I18N {
     </div>
   </div>
 </section>`);
-
-        const aiList = Array.from(document.querySelectorAll('footer a[href="rika-quest.html"]'))[0];
-        if (aiList) aiList.insertAdjacentHTML('beforebegin', '<li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>');
     }
 
-    normalizeAppLabels() {
-        const replaceMap = [
-            [/AIアプリを見る/g, '開発したアプリを見る'],
-            [/AIアプリ/g, '開発したアプリ'],
-            [/AIアプリケーション/g, '開発したアプリケーション'],
-            [/アプリ紹介/g, '開発したアプリ']
-        ];
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-            acceptNode(node) {
-                const parent = node.parentElement;
-                if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-                return node.nodeValue && /(AIアプリ|アプリ紹介)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
-            }
-        });
-        const nodes = [];
-        while (walker.nextNode()) nodes.push(walker.currentNode);
-        nodes.forEach(node => {
-            let text = node.nodeValue;
-            replaceMap.forEach(([pattern, replacement]) => { text = text.replace(pattern, replacement); });
-            node.nodeValue = text;
-        });
+    const rikaFooter = document.querySelector('footer a[href="rika-quest.html"]');
+    if (rikaFooter && !document.querySelector('footer a[href="kokugo-quest.html"]')) {
+      rikaFooter.insertAdjacentHTML('beforebegin', '<li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>');
     }
+  }
 
-    getTranslation(key) {
-        if (this.currentLang === 'ja') {
-            if (key === 'nav.apps') return '開発したアプリ';
-            if (key === 'mobileNav.apps') return '✨ 開発したアプリ';
-            if (key === 'apps.hero.cta') return '開発したアプリを見る';
-            if (key === 'apps.overview.title') return '開発したアプリ一覧';
-            if (key === 'apps.overview.description') return '8つのアプリを、わかりやすく美しいデザインで紹介しています';
-        }
-        if (this.currentLang === 'en') {
-            if (key === 'nav.apps') return 'Developed Apps';
-            if (key === 'mobileNav.apps') return '✨ Developed Apps';
-            if (key === 'apps.overview.description') return 'Eight applications powered by innovative technology';
-        }
-        const keys = key.split('.');
-        const tryLang = (lang) => {
-            let value = this.translations[lang];
-            for (const k of keys) {
-                if (value && Object.prototype.hasOwnProperty.call(value, k)) value = value[k];
-                else return null;
-            }
-            return typeof value === 'string' ? value : null;
-        };
-        return tryLang(this.currentLang) || tryLang(this.fallbackLang);
+  getTranslation(key) {
+    if (this.currentLang === 'ja') {
+      if (key === 'nav.apps') return '開発したアプリ';
+      if (key === 'mobileNav.apps') return '✨ 開発したアプリ';
+      if (key === 'apps.hero.cta') return '開発したアプリを見る';
+      if (key === 'apps.overview.title') return '開発したアプリ一覧';
+      if (key === 'apps.overview.description') return '6つのアプリを、わかりやすく美しいデザインで紹介しています';
     }
+    if (this.currentLang === 'en') {
+      if (key === 'nav.apps') return 'Developed Apps';
+      if (key === 'mobileNav.apps') return '✨ Developed Apps';
+      if (key === 'apps.overview.description') return 'Six applications powered by innovative technology';
+    }
+    const keys = key.split('.');
+    const tryLang = (lang) => {
+      let value = this.translations[lang];
+      for (const k of keys) {
+        if (value && Object.prototype.hasOwnProperty.call(value, k)) value = value[k];
+        else return null;
+      }
+      return typeof value === 'string' ? value : null;
+    };
+    return tryLang(this.currentLang) || tryLang(this.fallbackLang);
+  }
 
-    async loadTranslations() {
+  async loadTranslations() {
+    try {
+      const translations = {};
+      for (const langCode of Object.keys(this.supportedLanguages)) {
         try {
-            const translations = {};
-            for (const langCode of Object.keys(this.supportedLanguages)) {
-                try {
-                    const response = await fetch(`assets/locales/${langCode}.json`);
-                    if (response.ok) translations[langCode] = await response.json();
-                } catch (_) {}
-            }
-            if (Object.keys(translations).length > 0) {
-                this.translations = translations;
-                return;
-            }
+          const response = await fetch(`assets/locales/${langCode}.json`);
+          if (response.ok) translations[langCode] = await response.json();
         } catch (_) {}
+      }
+      if (Object.keys(translations).length > 0) {
+        this.translations = translations;
+        return;
+      }
+    } catch (_) {}
 
-        try {
-            if (typeof completeTranslations !== 'undefined') {
-                this.translations = completeTranslations;
-                return;
-            }
-            const script = document.createElement('script');
-            script.src = 'assets/js/translations-complete.js';
-            await new Promise((resolve, reject) => {
-                script.onload = resolve;
-                script.onerror = reject;
-                document.head.appendChild(script);
-            });
-            if (typeof completeTranslations !== 'undefined') {
-                this.translations = completeTranslations;
-                return;
-            }
-        } catch (_) {}
+    try {
+      if (typeof completeTranslations !== 'undefined') {
+        this.translations = completeTranslations;
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'assets/js/translations-complete.js';
+      await new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+      if (typeof completeTranslations !== 'undefined') {
+        this.translations = completeTranslations;
+        return;
+      }
+    } catch (_) {}
 
-        this.translations = {
-            ja: {
-                meta: { title: 'TrailFusion AI', description: 'TrailFusion AI' },
-                nav: { home: 'ホーム', apps: '開発したアプリ', camping: 'キャンピングカー', driveRoutes: 'ドライブルート', maintenance: '整備記録', contact: 'お問い合わせ' },
-                mobileNav: { home: '🏠 ホーム', apps: '✨ 開発したアプリ', camping: '🚐 キャンパー', driveRoutes: '🗺️ ドライブルート', maintenance: '🔧 整備記録', contact: '✉️ お問い合わせ' }
-            },
-            en: {
-                meta: { title: 'TrailFusion AI', description: 'TrailFusion AI' },
-                nav: { home: 'Home', apps: 'Developed Apps', camping: 'Camper', driveRoutes: 'Drive Routes', maintenance: 'Maintenance', contact: 'Contact' },
-                mobileNav: { home: '🏠 Home', apps: '✨ Developed Apps', camping: '🚐 Camper', driveRoutes: '🗺️ Drive Routes', maintenance: '🔧 Maintenance', contact: '✉️ Contact' }
-            }
-        };
-    }
+    this.translations = {
+      ja: {
+        meta: { title: 'TrailFusion AI', description: 'TrailFusion AI' },
+        nav: { home: 'ホーム', apps: '開発したアプリ', camping: 'キャンピングカー', driveRoutes: 'ドライブルート', maintenance: '整備記録', contact: 'お問い合わせ' },
+        mobileNav: { home: '🏠 ホーム', apps: '✨ 開発したアプリ', camping: '🚐 キャンパー', driveRoutes: '🗺️ ドライブルート', maintenance: '🔧 整備記録', contact: '✉️ お問い合わせ' }
+      },
+      en: {
+        meta: { title: 'TrailFusion AI', description: 'TrailFusion AI' },
+        nav: { home: 'Home', apps: 'Developed Apps', camping: 'Camper', driveRoutes: 'Drive Routes', maintenance: 'Maintenance', contact: 'Contact' },
+        mobileNav: { home: '🏠 Home', apps: '✨ Developed Apps', camping: '🚐 Camper', driveRoutes: '🗺️ Drive Routes', maintenance: '🔧 Maintenance', contact: '✉️ Contact' }
+      }
+    };
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (!window.i18n) window.i18n = new I18N();
+  if (!window.i18n) window.i18n = new I18N();
 });
