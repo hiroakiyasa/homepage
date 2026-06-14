@@ -97,7 +97,7 @@ class I18N {
             </div>`;
     }
 
-    attachLanguageSelectorEvents(prefix, mobile) {
+    attachLanguageSelectorEvents(prefix) {
         const button = document.getElementById(`${prefix}-button`);
         const dropdown = document.getElementById(`${prefix}-dropdown`);
         if (!button || !dropdown) return;
@@ -157,6 +157,55 @@ class I18N {
         if (ogDesc && description) ogDesc.content = description;
         this.updateMetaTags();
         this.normalizeAppLabels();
+        this.injectKokugoQuest();
+    }
+
+    injectKokugoQuest() {
+        if (!this.isAppsPage() || document.getElementById('kokugo-quest')) return;
+        const logo = 'assets/images/kokugo-quest/kokugo-quest-logo.svg';
+        const shots = [1,2,3,4,5,6].map(n => `assets/images/kokugo-quest/kokugo-quest-${n}.svg`);
+
+        const navRow = document.querySelector('.app-nav-premium .flex');
+        if (navRow) navRow.insertAdjacentHTML('afterbegin', `<a href="#kokugo-quest" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group"><span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="${logo}" class="w-full h-full object-cover" alt=""></span><span class="sm:hidden">国語クエ</span><span class="hidden sm:inline">国語クエスト</span></a>`);
+
+        const firstCard = document.querySelector('a.app-card[href="#rika-quest"]');
+        if (firstCard) {
+            firstCard.parentElement.style.gridTemplateColumns = 'repeat(auto-fit,minmax(140px,1fr))';
+            firstCard.insertAdjacentHTML('beforebegin', `<a href="#kokugo-quest" class="app-card p-4 sm:p-5 text-center group cursor-pointer"><div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-coral"><img src="${logo}" alt="合格！国語クエスト ロゴ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy"></div><h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">国語クエスト</h3><p class="text-xs sm:text-sm text-navy/60 font-bold">Japanese Quiz Adventure</p></a>`);
+        }
+
+        document.querySelectorAll('.font-accent').forEach(el => { if (el.textContent.trim() === '6') el.textContent = '8'; });
+        document.querySelectorAll('.sticker').forEach(el => { el.innerHTML = el.innerHTML.replace('🚀 6 APPS', '🚀 8 APPS'); });
+        const overviewDesc = document.querySelector('[data-i18n="apps.overview.description"]');
+        if (overviewDesc) overviewDesc.textContent = 'Eight applications powered by innovative technology';
+
+        const rika = document.getElementById('rika-quest');
+        if (rika) rika.insertAdjacentHTML('beforebegin', `
+<section id="kokugo-quest" class="app-section-v2 app-bg-coral py-14 md:py-20">
+  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up visible">
+      <div class="flex items-center gap-3 flex-wrap"><span class="app-progress-chip"><span>08</span><span class="line"></span><span>08</span></span><span class="sticker sticker-coral"><i class="ri-book-open-line mr-1"></i><span>国語クエスト</span></span><span class="sticker sticker-sun">中学受験</span></div>
+      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Japanese Adventure with illustrations ✦</span>
+    </div>
+    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up visible">
+      <img src="${shots[0]}" alt="" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 app-banner-overlay"></div>
+      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
+        <div class="flex items-center gap-3 mb-3 md:mb-4"><div class="app-icon-tile-sm"><img src="${logo}" alt="合格！国語クエスト ロゴ"></div><div class="flex flex-col"><span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span><span class="font-accent text-sm text-white">08 / 08</span></div></div>
+        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3">国語クエスト</h2>
+        <p class="text-white/90 text-sm md:text-base leading-relaxed">中学受験の国語を、イラスト・読み上げ・対戦・ランキングで楽しく攻略。</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
+      <div class="lg:col-span-7 fade-in-up visible"><div class="card-chunky p-6 md:p-8 h-full flex flex-col"><div class="flex items-center gap-3 mb-4"><div class="w-11 h-11 bg-coral rounded-xl border-2 border-navy grid place-items-center" style="box-shadow:3px 3px 0 #1F2E4D;"><i class="ri-book-open-fill text-xl text-white"></i></div><h3 class="font-display font-black text-lg md:text-xl text-navy">中学受験国語を、楽しくまるごと攻略</h3></div><p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5">漢字・熟語、語彙・言葉、文法・意味、文学・詩歌、文章題まで。イラストで見て、音声で聞いて、友達と競いながら学べる国語学習アプリです。</p><ul class="space-y-2.5 mb-6"><li class="flex items-start gap-3"><span class="feat-num">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">中学受験の国語に必要な全4分野・約65単元を網羅</p></li><li class="flex items-start gap-3"><span class="feat-num">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">ことわざ・慣用句もイラストで意味がひと目でわかる</p></li><li class="flex items-start gap-3"><span class="feat-num">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">問題読み上げで、目と耳から楽しく記憶に定着</p></li><li class="flex items-start gap-3"><span class="feat-num">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">対戦・ランキング・学習レポートで継続意欲を高める</p></li></ul><div class="flex flex-wrap gap-3 mb-4"><span class="store-pill store-pill-disabled"><i class="ri-apple-fill text-xl"></i><span>App Store 準備中</span></span><a href="kokugo-quest.html" class="store-pill"><i class="ri-external-link-line text-xl"></i><span>詳しく見る</span></a></div><div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4"><span class="dl-chip"><i class="ri-book-2-fill text-coral"></i>全4分野</span><span class="dl-chip"><i class="ri-image-fill text-coral"></i>イラスト学習</span><span class="dl-chip"><i class="ri-volume-up-fill text-coral"></i>読み上げ</span><span class="dl-chip"><i class="ri-trophy-fill text-coral"></i>ランキング</span></div><a href="kokugo-quest-privacy.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-navy/60 hover:text-coral transition"><i class="ri-shield-check-line"></i><span>Privacy Policy</span><i class="ri-arrow-right-line"></i></a></div></div>
+      <div class="lg:col-span-5 fade-in-up visible"><div class="grid grid-cols-2 gap-4">${shots.slice(1).map(src => `<img src="${src}" alt="" class="app-screenshot">`).join('')}</div></div>
+    </div>
+  </div>
+</section>`);
+
+        const aiList = Array.from(document.querySelectorAll('footer a[href="rika-quest.html"]'))[0];
+        if (aiList) aiList.insertAdjacentHTML('beforebegin', '<li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>');
     }
 
     normalizeAppLabels() {
@@ -188,10 +237,12 @@ class I18N {
             if (key === 'mobileNav.apps') return '✨ 開発したアプリ';
             if (key === 'apps.hero.cta') return '開発したアプリを見る';
             if (key === 'apps.overview.title') return '開発したアプリ一覧';
+            if (key === 'apps.overview.description') return '8つのアプリを、わかりやすく美しいデザインで紹介しています';
         }
         if (this.currentLang === 'en') {
             if (key === 'nav.apps') return 'Developed Apps';
             if (key === 'mobileNav.apps') return '✨ Developed Apps';
+            if (key === 'apps.overview.description') return 'Eight applications powered by innovative technology';
         }
         const keys = key.split('.');
         const tryLang = (lang) => {
