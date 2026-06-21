@@ -792,6 +792,66 @@ margin: 0;
 </div>
 </section>
 
+<!-- ===== Reel Make (NEW · featured, 15-language) ===== -->
+<section id="reel-make" class="app-section-v2 app-bg-violet py-14 md:py-20">
+  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="app-progress-chip"><span>NEW</span><span class="line"></span><span>★</span></span>
+        <span class="sticker sticker-sun"><i class="ri-movie-2-line mr-1"></i><span>Reel Make</span></span>
+      </div>
+      <label class="flex items-center gap-2 bg-white border-2 border-navy rounded-full px-3 py-1.5" style="box-shadow:3px 3px 0 #1F2E4D;">
+        <i class="ri-translate-2 text-navy"></i>
+        <select id="rm-lang" aria-label="Language" class="bg-transparent text-navy font-bold text-sm focus:outline-none cursor-pointer pr-1"></select>
+      </label>
+    </div>
+
+    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up" style="background:linear-gradient(135deg,#b537f2 0%,#ff2d68 55%,#ff5e3a 100%);">
+      <div class="absolute inset-0 app-banner-overlay"></div>
+      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
+        <div class="flex items-center gap-3 mb-3 md:mb-4">
+          <div class="app-icon-tile-sm"><img src="assets/reelmake/logo.png" alt="Reel Make"></div>
+          <div class="flex flex-col">
+            <span class="font-accent text-[10px] tracking-widest text-white/70 uppercase">NEW APP</span>
+            <span class="font-accent text-sm text-white">Reel Make</span>
+          </div>
+        </div>
+        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-rm-title>Reel Make</h2>
+        <p class="text-white/90 text-sm md:text-base leading-relaxed" data-rm-subtitle></p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
+      <div class="lg:col-span-7 fade-in-up">
+        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl border-2 border-navy grid place-items-center" style="background:#b537f2;box-shadow:3px 3px 0 #1F2E4D;">
+              <i class="ri-magic-fill text-xl text-white"></i>
+            </div>
+            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-rm-subtitle></h3>
+          </div>
+          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-rm-promo></p>
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="btn-chunky btn-chunky-coral text-sm" style="cursor:default;"><i class="ri-apple-fill"></i> Coming Soon</span>
+            <a href="reelmake-support.html" class="store-pill"><i class="ri-lifebuoy-line text-xl"></i><span>Support</span></a>
+            <a href="reelmake-privacy.html" class="store-pill"><i class="ri-shield-check-line text-xl"></i><span>Privacy</span></a>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
+            <span class="dl-chip"><i class="ri-translate-2 text-coral"></i>15 languages</span>
+            <span class="dl-chip"><i class="ri-mic-fill text-coral"></i>32 AI voices</span>
+            <span class="dl-chip"><i class="ri-music-2-fill text-coral"></i>BGM &amp; captions</span>
+            <span class="dl-chip"><i class="ri-movie-2-fill text-coral"></i>9:16 export</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 fade-in-up flex items-center justify-center">
+        <img data-rm-shot src="assets/reelmake/shot-ja.png" alt="Reel Make" class="w-auto max-h-[560px] rounded-[2rem] border-4 border-navy" style="box-shadow:8px 8px 0 #1F2E4D;">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GP Teachers -->
 <section id="rika-quest" class="app-section-v2 app-bg-sun py-14 md:py-20">
   <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
@@ -1651,6 +1711,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<script src="assets/js/reelmake.js" defer></script>
 <script src="assets/js/social-quest.js" defer></script>
 </body>
 </html>

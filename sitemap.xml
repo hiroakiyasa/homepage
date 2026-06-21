@@ -82,4 +82,16 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://trailfusionai.com/reelmake-support.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trailfusionai.com/reelmake-privacy.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
