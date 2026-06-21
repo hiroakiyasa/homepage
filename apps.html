@@ -792,6 +792,14 @@ margin: 0;
 </div>
 </section>
 
+<style>
+.rm-gallery{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.35rem .15rem 1rem;-webkit-overflow-scrolling:touch}
+.rm-gallery::-webkit-scrollbar{height:8px}
+.rm-gallery::-webkit-scrollbar-track{background:transparent}
+.rm-gallery::-webkit-scrollbar-thumb{background:rgba(31,46,77,.28);border-radius:99px}
+.rm-shot{height:clamp(360px,54vh,520px);width:auto;flex:0 0 auto;scroll-snap-align:start;border:4px solid #1F2E4D;border-radius:1.75rem;box-shadow:6px 6px 0 #1F2E4D;background:#000}
+#reel-make[dir="rtl"] .rm-gallery{direction:rtl}
+</style>
 <!-- ===== Reel Make (NEW · featured, 15-language) ===== -->
 <section id="reel-make" class="app-section-v2 app-bg-violet py-14 md:py-20">
   <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
@@ -822,8 +830,11 @@ margin: 0;
       </div>
     </div>
 
+    <!-- localized screenshot gallery — ALL screens, swaps per language -->
+    <div id="rm-gallery" data-rm-gallery class="rm-gallery mb-7 md:mb-9 fade-in-up"></div>
+
     <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-7 fade-in-up">
+      <div class="lg:col-span-8 fade-in-up">
         <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-11 h-11 rounded-xl border-2 border-navy grid place-items-center" style="background:#b537f2;box-shadow:3px 3px 0 #1F2E4D;">
@@ -832,21 +843,20 @@ margin: 0;
             <h3 class="font-display font-black text-lg md:text-xl text-navy" data-rm-subtitle></h3>
           </div>
           <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-rm-promo></p>
-          <div class="flex flex-wrap gap-3 mb-4">
+          <div class="flex flex-wrap gap-3 mt-auto pt-2">
             <span class="btn-chunky btn-chunky-coral text-sm" style="cursor:default;"><i class="ri-apple-fill"></i> Coming Soon</span>
             <a href="reelmake-support.html" class="store-pill"><i class="ri-lifebuoy-line text-xl"></i><span>Support</span></a>
             <a href="reelmake-privacy.html" class="store-pill"><i class="ri-shield-check-line text-xl"></i><span>Privacy</span></a>
           </div>
-          <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-translate-2 text-coral"></i>15 languages</span>
-            <span class="dl-chip"><i class="ri-mic-fill text-coral"></i>32 AI voices</span>
-            <span class="dl-chip"><i class="ri-music-2-fill text-coral"></i>BGM &amp; captions</span>
-            <span class="dl-chip"><i class="ri-movie-2-fill text-coral"></i>9:16 export</span>
-          </div>
         </div>
       </div>
-      <div class="lg:col-span-5 fade-in-up flex items-center justify-center">
-        <img data-rm-shot src="assets/reelmake/shot-ja.png" alt="Reel Make" class="w-auto max-h-[560px] rounded-[2rem] border-4 border-navy" style="box-shadow:8px 8px 0 #1F2E4D;">
+      <div class="lg:col-span-4 fade-in-up">
+        <div class="card-chunky p-6 h-full flex flex-col justify-center gap-3">
+          <span class="dl-chip"><i class="ri-translate-2 text-coral"></i>15 languages</span>
+          <span class="dl-chip"><i class="ri-mic-fill text-coral"></i>32 AI voices</span>
+          <span class="dl-chip"><i class="ri-music-2-fill text-coral"></i>BGM &amp; captions</span>
+          <span class="dl-chip"><i class="ri-movie-2-fill text-coral"></i>9:16 vertical export</span>
+        </div>
       </div>
     </div>
   </div>
