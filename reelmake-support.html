@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reel Make Support / サポート</title>
-<meta name="description" content="Support page for Reel Make — AI Reel Maker. Reel Make（AIリール動画生成）のサポートページ。">
+<meta name="description" content="Support page for Reel Make — AI Reel Maker, localized in 15 languages. Reel Make（AIリール動画生成）のサポートページ。">
 <link rel="canonical" href="https://trailfusionai.com/reelmake-support.html">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
-<style>body{font-family:'M PLUS Rounded 1c',sans-serif;background:#FFFBF2;color:#1F2E4D}.k-card{background:#fff;border:3px solid #1F2E4D;border-radius:28px;box-shadow:8px 8px 0 #1F2E4D}.k-soft{background:linear-gradient(180deg,#F6ECFF 0%,#FFFBF2 100%)}</style>
+<style>
+body{font-family:'M PLUS Rounded 1c',sans-serif;background:#FFFBF2;color:#1F2E4D}
+.k-card{background:#fff;border:3px solid #1F2E4D;border-radius:28px;box-shadow:8px 8px 0 #1F2E4D}
+.k-soft{background:linear-gradient(180deg,#F6ECFF 0%,#FFFBF2 100%)}
+#rm-lang{border:2px solid #1F2E4D;border-radius:10px;padding:4px 8px;background:#fff;color:#1F2E4D;font-weight:700;font-size:13px}
+[dir="rtl"] .k-card{box-shadow:-8px 8px 0 #1F2E4D}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy"><div class="container mx-auto px-4 py-3 flex items-center justify-between"><a href="index.html" class="font-display font-black text-navy text-xl">TrailFusion AI</a><a href="apps.html" class="btn-chunky btn-chunky-coral text-sm">Apps</a></div></header>
-<main><section class="k-soft py-14"><div class="container mx-auto px-4"><div class="k-card p-8 md:p-10 max-w-3xl mx-auto text-center">
-<img src="assets/reelmake/logo.png" alt="Reel Make" class="w-32 h-32 rounded-3xl border-2 border-navy object-cover mx-auto mb-6">
-<span class="sticker sticker-coral">SUPPORT</span>
-<h1 class="display-xl text-3xl md:text-5xl text-navy mt-5 mb-5">Reel Make Support</h1>
-<p class="text-navy/75 leading-relaxed mb-2">For questions, feedback, or bug reports about Reel Make, please contact us by email. We usually reply within a few business days.</p>
-<p class="text-navy/75 leading-relaxed mb-6">アプリの使い方・ご要望・不具合のお問い合わせは、下記メールまでご連絡ください。数営業日以内に返信します。</p>
-<a href="mailto:trailfusionai@gmail.com?subject=Reel%20Make%20Support" class="text-lg font-black text-coral">trailfusionai@gmail.com</a>
-<div class="mt-6 text-left max-w-xl mx-auto">
-  <h2 class="font-display font-black text-navy text-lg mb-2">FAQ</h2>
-  <p class="text-navy/75 text-sm leading-relaxed mb-2"><b>How do I make a reel? / リールの作り方は？</b><br>Pick photos/videos, choose a theme &amp; voice, then tap “Create”. 写真や動画を選び、テーマと声を選んで「作成」をタップするだけです。</p>
-  <p class="text-navy/75 text-sm leading-relaxed mb-2"><b>Languages / 対応言語</b><br>15 languages with native AI voices. ネイティブAI音声つき15言語に対応。</p>
-  <p class="text-navy/75 text-sm leading-relaxed"><b>Subscriptions / 課金</b><br>Free / Pro / MAX plans. Manage or cancel anytime in your App Store / Google Play account. プランの管理・解約はApp Store / Google Playのアカウントからいつでも可能です。</p>
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy"><div class="container mx-auto px-4 py-3 flex items-center justify-between"><a href="index.html" class="font-display font-black text-navy text-xl">TrailFusion AI</a><div class="flex items-center gap-2"><select id="rm-lang" aria-label="Language"></select><a href="apps.html" class="btn-chunky btn-chunky-coral text-sm" id="rm-nav-apps">Apps</a></div></div></header>
+<main><section class="k-soft py-14"><div class="container mx-auto px-4">
+<div class="k-card p-8 md:p-10 max-w-3xl mx-auto text-center" id="rm-content">
+<noscript><p>For support, contact <a href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a>. サポートは trailfusionai@gmail.com まで。</p></noscript>
 </div>
-<div class="mt-8 flex flex-wrap justify-center gap-3"><a href="apps.html#reel-make" class="btn-chunky btn-chunky-coral">App Info</a><a href="reelmake-privacy.html" class="btn-chunky btn-chunky-ocean">Privacy Policy</a></div>
-</div></div></section></main>
-<footer class="bg-navy text-white py-10"><div class="container mx-auto px-4 flex justify-between gap-4 text-sm"><p class="text-white/60">© 2025-2026 TrailFusion AI.</p><a href="apps.html" class="hover:text-sun">Apps</a></div></footer>
+</div></section></main>
+<footer class="bg-navy text-white py-10"><div class="container mx-auto px-4 flex justify-between gap-4 text-sm"><p class="text-white/60" id="rm-foot">© 2025-2026 TrailFusion AI.</p><a href="apps.html" class="hover:text-sun">Apps</a></div></footer>
+<script src="assets/reelmake/i18n.js"></script>
+<script>renderReelmake('support');</script>
 </body></html>
