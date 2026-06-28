@@ -12,21 +12,21 @@
   const UPDATED = "2026-06-21";
 
   const UI = {
-    en: { apps: "Apps", appInfo: "App Info", privacy: "Privacy Policy", support: "Support", footer: "© 2025-2026 TrailFusion AI." },
-    ja: { apps: "アプリ", appInfo: "アプリ情報", privacy: "プライバシーポリシー", support: "サポート", footer: "© 2025-2026 TrailFusion AI." },
-    "zh-Hans": { apps: "应用", appInfo: "应用信息", privacy: "隐私政策", support: "支持", footer: "© 2025-2026 TrailFusion AI." },
-    ko: { apps: "앱", appInfo: "앱 정보", privacy: "개인정보처리방침", support: "지원", footer: "© 2025-2026 TrailFusion AI." },
-    es: { apps: "Apps", appInfo: "Información", privacy: "Política de privacidad", support: "Soporte", footer: "© 2025-2026 TrailFusion AI." },
-    "pt-BR": { apps: "Apps", appInfo: "Sobre o app", privacy: "Política de privacidade", support: "Suporte", footer: "© 2025-2026 TrailFusion AI." },
-    fr: { apps: "Apps", appInfo: "Infos de l'app", privacy: "Confidentialité", support: "Assistance", footer: "© 2025-2026 TrailFusion AI." },
-    de: { apps: "Apps", appInfo: "App-Info", privacy: "Datenschutz", support: "Support", footer: "© 2025-2026 TrailFusion AI." },
-    it: { apps: "App", appInfo: "Info app", privacy: "Privacy", support: "Assistenza", footer: "© 2025-2026 TrailFusion AI." },
-    ru: { apps: "Приложения", appInfo: "Об app", privacy: "Конфиденциальность", support: "Поддержка", footer: "© 2025-2026 TrailFusion AI." },
-    tr: { apps: "Uygulamalar", appInfo: "Uygulama bilgisi", privacy: "Gizlilik", support: "Destek", footer: "© 2025-2026 TrailFusion AI." },
-    vi: { apps: "Ứng dụng", appInfo: "Thông tin app", privacy: "Quyền riêng tư", support: "Hỗ trợ", footer: "© 2025-2026 TrailFusion AI." },
-    th: { apps: "แอป", appInfo: "ข้อมูลแอป", privacy: "ความเป็นส่วนตัว", support: "ฝ่ายสนับสนุน", footer: "© 2025-2026 TrailFusion AI." },
-    hi: { apps: "ऐप्स", appInfo: "ऐप जानकारी", privacy: "गोपनीयता नीति", support: "सहायता", footer: "© 2025-2026 TrailFusion AI." },
-    ar: { apps: "التطبيقات", appInfo: "معلومات التطبيق", privacy: "سياسة الخصوصية", support: "الدعم", footer: "© 2025-2026 TrailFusion AI." },
+    en: { apps: "Apps", appInfo: "App Info", privacy: "Privacy Policy", support: "Support", terms: "Terms of Service", footer: "© 2025-2026 TrailFusion AI." },
+    ja: { apps: "アプリ", appInfo: "アプリ情報", privacy: "プライバシーポリシー", support: "サポート", terms: "利用規約", footer: "© 2025-2026 TrailFusion AI." },
+    "zh-Hans": { apps: "应用", appInfo: "应用信息", privacy: "隐私政策", support: "支持", terms: "服务条款", footer: "© 2025-2026 TrailFusion AI." },
+    ko: { apps: "앱", appInfo: "앱 정보", privacy: "개인정보처리방침", support: "지원", terms: "이용약관", footer: "© 2025-2026 TrailFusion AI." },
+    es: { apps: "Apps", appInfo: "Información", privacy: "Política de privacidad", support: "Soporte", terms: "Términos del servicio", footer: "© 2025-2026 TrailFusion AI." },
+    "pt-BR": { apps: "Apps", appInfo: "Sobre o app", privacy: "Política de privacidade", support: "Suporte", terms: "Termos de Serviço", footer: "© 2025-2026 TrailFusion AI." },
+    fr: { apps: "Apps", appInfo: "Infos de l'app", privacy: "Confidentialité", support: "Assistance", terms: "Conditions d'utilisation", footer: "© 2025-2026 TrailFusion AI." },
+    de: { apps: "Apps", appInfo: "App-Info", privacy: "Datenschutz", support: "Support", terms: "Nutzungsbedingungen", footer: "© 2025-2026 TrailFusion AI." },
+    it: { apps: "App", appInfo: "Info app", privacy: "Privacy", support: "Assistenza", terms: "Termini di servizio", footer: "© 2025-2026 TrailFusion AI." },
+    ru: { apps: "Приложения", appInfo: "Об app", privacy: "Конфиденциальность", support: "Поддержка", terms: "Условия использования", footer: "© 2025-2026 TrailFusion AI." },
+    tr: { apps: "Uygulamalar", appInfo: "Uygulama bilgisi", privacy: "Gizlilik", support: "Destek", terms: "Kullanım Şartları", footer: "© 2025-2026 TrailFusion AI." },
+    vi: { apps: "Ứng dụng", appInfo: "Thông tin app", privacy: "Quyền riêng tư", support: "Hỗ trợ", terms: "Điều khoản dịch vụ", footer: "© 2025-2026 TrailFusion AI." },
+    th: { apps: "แอป", appInfo: "ข้อมูลแอป", privacy: "ความเป็นส่วนตัว", support: "ฝ่ายสนับสนุน", terms: "ข้อกำหนดการให้บริการ", footer: "© 2025-2026 TrailFusion AI." },
+    hi: { apps: "ऐप्स", appInfo: "ऐप जानकारी", privacy: "गोपनीयता नीति", support: "सहायता", terms: "सेवा की शर्तें", footer: "© 2025-2026 TrailFusion AI." },
+    ar: { apps: "التطبيقات", appInfo: "معلومات التطبيق", privacy: "سياسة الخصوصية", support: "الدعم", terms: "شروط الخدمة", footer: "© 2025-2026 TrailFusion AI." },
   };
 
   const SUPPORT = {
@@ -217,6 +217,43 @@
     ["9. التغييرات", "<p>قد نحدّث هذه السياسة، وسيتغير تاريخ \"آخر تحديث\" وفقًا لذلك.</p>"],
   ]);
 
+  // terms: sections = [ [heading, bodyHTML], ... ]. Same shape as privacy.
+  // Date is hardcoded per-language (not derived from Date.now()).
+  const TERMS = {};
+  const TERMS_UPDATED = { en: "June 2026", ja: "2026年6月" };
+  function T(lang, h1, updatedLabel, intro, secs) { TERMS[lang] = { badge: ((UI[lang] || UI.en).terms || "Terms of Service").toUpperCase(), h1, updatedLabel, intro, sections: secs }; }
+
+  T("en", "Reel Make — Terms of Service", "Last updated", "These Terms of Service (\"Terms\") govern your use of <b>Reel Make</b> (\"the App\"), an AI reel-video generator operated by TrailFusion AI (\"we\", \"us\"). By downloading, accessing, or using the App, you agree to these Terms. If you do not agree, do not use the App.", [
+    ["1. Agreement to Terms", "<p>By using the App you confirm that you have read, understood, and agree to be bound by these Terms and by our <a href=\"reelmake-privacy.html\">Privacy Policy</a>. We may also reference additional rules from the Apple App Store or Google Play, which apply to your use of the App.</p>"],
+    ["2. Service Description", "<p>The App lets you select your own photos and videos, enter a prompt, theme, voice, and other settings, and then generates a finished short-form \"reel\" video using AI. Generation is performed on our cloud services. Features, formats, and limits may change over time as we improve the App.</p>"],
+    ["3. Eligibility & Accounts", "<p>You must be old enough to form a binding contract and meet the minimum age required by your app store. The App does not require you to create an account with us; access is tied to your device and your Apple or Google account. You are responsible for activity that occurs through your device.</p>"],
+    ["4. Subscriptions & Billing", "<p>The App offers a free tier and paid auto-renewing subscriptions:</p><ul><li><b>Free</b> — basic access with limited renders, features, and a watermark, subject to the limits shown in the App.</li><li><b>Pro</b> and <b>MAX</b> — expanded limits, faster processing, and additional features.</li></ul><p>Subscriptions are billed through your <b>Apple App Store</b> or <b>Google Play</b> account at the price shown at purchase. <b>Prices may vary by region</b> and may change with notice as permitted by the stores.</p><p><b>Auto-renewal:</b> subscriptions renew automatically for the same period unless you cancel at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the period ends.</p><p><b>How to cancel:</b> manage or cancel your subscription anytime in your device's store account settings (Apple: Settings &gt; your name &gt; Subscriptions; Google Play: Subscriptions). Uninstalling the App does not cancel a subscription. Cancellation takes effect at the end of the current billing period; you keep paid access until then.</p>"],
+    ["5. Credits (Consumable Purchases)", "<p>The App may offer <b>credits</b> as consumable in-app purchases. Credits are a limited license to use generation features and are consumed each time you render. Credits are <b>one-time purchases</b>, have no cash value, are not transferable, and are <b>non-refundable except where required by law</b>. Unused credits may expire if stated at purchase. We are not responsible for credits lost due to misuse or violations of these Terms.</p>"],
+    ["6. Refunds", "<p>All purchases (subscriptions and credits) are processed by Apple or Google. <b>Refunds are handled by Apple or Google under their respective policies</b>, not by us. Please direct refund requests to the App Store or Google Play. We do not receive or store your payment-card details.</p>"],
+    ["7. User Content & Conduct", "<p>You retain ownership of the photos, videos, and text you supply (\"User Content\"). You represent that you own or have all necessary rights, licenses, and consents to your User Content and to its processing by the App. You must not upload or generate content that:</p><ul><li>is illegal, infringing, defamatory, or violates others' privacy or intellectual-property rights;</li><li>uses another person's likeness, name, or voice without their consent;</li><li>is sexually explicit involving minors, or is hateful, harassing, or violent;</li><li>attempts to disrupt, reverse-engineer, or abuse the App or its providers.</li></ul><p>You are solely responsible for your User Content and how you use the generated videos.</p>"],
+    ["8. Intellectual Property", "<p>The App, its software, design, and branding are owned by us and our licensors and are protected by law. Subject to these Terms and your payment of any applicable fees, we grant you a limited, non-exclusive, non-transferable license to use the App. As between you and us, you own the output video you generate from your own User Content, and you may use it for personal or commercial purposes, provided you comply with these Terms and the terms of any third-party AI providers.</p>"],
+    ["9. AI-Generated Content", "<p>The App uses third-party AI models to generate scripts, narration, on-screen text, and video composition. AI output may be inaccurate, unexpected, or similar to content generated for others, and may not reflect your exact intent. Results are provided without any guarantee of accuracy, suitability, or originality. You are responsible for reviewing generated content before publishing or sharing it.</p>"],
+    ["10. Disclaimers & Limitation of Liability", "<p>The App is provided <b>\"as is\"</b> and <b>\"as available\"</b> without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, and non-infringement. To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or punitive damages, or for loss of data, profits, or content, arising from your use of the App. Our total liability for any claim is limited to the amount you paid for the App in the 12 months before the claim.</p>"],
+    ["11. Termination", "<p>You may stop using the App at any time. We may suspend or terminate your access if you violate these Terms or use the App in a way that harms us, other users, or our providers. Sections that by their nature should survive termination (including intellectual property, disclaimers, and limitation of liability) will continue to apply.</p>"],
+    ["12. Changes to Terms", "<p>We may update these Terms from time to time. When we make material changes, we will update the \"Last updated\" date below. Your continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>"],
+    ["13. Governing Law & Contact", "<p>These Terms are governed by the laws of Japan, without regard to conflict-of-law rules. For questions about these Terms, contact <a class=\"rm-mail\">EMAIL</a>.</p>"],
+  ]);
+  T("ja", "Reel Make — 利用規約", "最終更新日", "本利用規約（以下「本規約」）は、TrailFusion AI（以下「当社」）が提供するAIリール動画生成アプリ <b>Reel Make</b>（以下「本アプリ」）の利用条件を定めるものです。本アプリをダウンロード・アクセス・利用することで、本規約に同意したものとみなします。同意いただけない場合は本アプリをご利用にならないでください。", [
+    ["1. 本規約への同意", "<p>本アプリを利用することで、本規約および<a href=\"reelmake-privacy.html\">プライバシーポリシー</a>を読み、理解し、これらに拘束されることに同意したものとみなします。あわせて Apple App Store または Google Play の規約も適用されます。</p>"],
+    ["2. サービス内容", "<p>本アプリでは、ご自身の写真・動画を選択し、プロンプト・テーマ・音声などの設定を入力すると、AIが短尺の「リール」動画を生成します。生成処理は当社のクラウド上で行われます。機能・出力形式・各種上限は、品質向上のため随時変更されることがあります。</p>"],
+    ["3. 利用資格", "<p>本アプリを利用するには、有効な契約を締結できる年齢、かつ各ストアが定める最低年齢に達している必要があります。本アプリの利用に当社へのアカウント登録は不要で、アクセスはお使いの端末および Apple／Google アカウントに紐づきます。端末を通じて行われる操作についてはお客様が責任を負います。</p>"],
+    ["4. 自動更新サブスクリプションと課金", "<p>本アプリは無料プランと、自動更新の有料サブスクリプションを提供します。</p><ul><li><b>Free</b> … 基本機能。レンダリング回数や機能に制限があり、透かしが入る場合があります（アプリ内表示の上限に従います）。</li><li><b>Pro</b>・<b>MAX</b> … 上限の拡大、処理の高速化、追加機能。</li></ul><p>課金は購入時に表示される価格で、<b>Apple App Store</b> または <b>Google Play</b> のアカウントを通じて行われます。<b>価格は地域により異なる</b>場合があり、各ストアが認める範囲で告知のうえ変更されることがあります。</p><p><b>自動更新：</b>現在の期間終了の少なくとも24時間前に解約しない限り、サブスクリプションは同じ期間で自動的に更新されます。更新料金は期間終了前24時間以内に請求されます。</p><p><b>解約方法：</b>解約はいつでも端末のストアアカウント設定から行えます（Apple：設定＞ユーザー名＞サブスクリプション／Google Play：定期購入）。本アプリを削除しても解約にはなりません。解約は現在の請求期間の終了時に有効となり、それまでは有料機能をご利用いただけます。</p>"],
+    ["5. クレジット（消耗型アプリ内課金）", "<p>本アプリは <b>クレジット</b> を消耗型のアプリ内課金として提供する場合があります。クレジットは生成機能を利用するための限定的なライセンスであり、レンダリングのたびに消費されます。クレジットは<b>都度購入</b>で、現金的価値はなく、譲渡できず、<b>法令で求められる場合を除き返金されません</b>。購入時に明示された場合、未使用クレジットは有効期限により失効することがあります。誤用や本規約違反により失われたクレジットについて当社は責任を負いません。</p>"],
+    ["6. 返金", "<p>すべての購入（サブスクリプションおよびクレジット）は Apple または Google が処理します。<b>返金は当社ではなく、Apple または Google の各ポリシーに従って取り扱われます</b>。返金のご依頼は App Store または Google Play へお願いします。当社がカード情報を受領・保存することはありません。</p>"],
+    ["7. ユーザーコンテンツと禁止事項", "<p>お客様が提供する写真・動画・テキスト（以下「ユーザーコンテンツ」）の権利はお客様に帰属します。お客様は、ユーザーコンテンツおよびそれを本アプリで処理することについて、必要なすべての権利・ライセンス・同意を有していることを表明します。次のコンテンツのアップロードや生成は禁止します。</p><ul><li>違法・権利侵害・名誉毀損にあたるもの、他者のプライバシーや知的財産権を侵害するもの</li><li>本人の同意なく第三者の肖像・氏名・声を使用するもの</li><li>未成年が関わる性的表現、差別的・嫌がらせ的・暴力的なもの</li><li>本アプリやその提供者の妨害・リバースエンジニアリング・不正利用を試みるもの</li></ul><p>ユーザーコンテンツおよび生成された動画の利用については、お客様が単独で責任を負います。</p>"],
+    ["8. 知的財産", "<p>本アプリ、そのソフトウェア・デザイン・ブランドは当社およびライセンサーに帰属し、法律で保護されています。本規約の遵守および該当する料金の支払いを条件に、当社はお客様に対し、本アプリを利用するための限定的・非独占的・譲渡不可のライセンスを付与します。当社とお客様との関係において、ご自身のユーザーコンテンツから生成した出力動画はお客様に帰属し、本規約および各AI提供者の規約を遵守する限り、個人利用・商用利用いずれにも使用できます。</p>"],
+    ["9. AI生成物に関する免責", "<p>本アプリは第三者のAIモデルを用いて、台本・ナレーション・画面テキスト・動画構成を生成します。AIの生成結果は不正確・予期しないもの・他者向けの生成物と類似する場合があり、お客様の意図を正確に反映しないことがあります。結果は正確性・適合性・独自性についていかなる保証もなく提供されます。公開・共有の前に、生成内容をご自身で確認する責任はお客様にあります。</p>"],
+    ["10. 免責・責任の制限", "<p>本アプリは<b>現状有姿（\"as is\"）</b>かつ<b>提供可能な範囲（\"as available\"）</b>で提供され、商品性・特定目的への適合性・非侵害を含む明示黙示のいかなる保証も行いません。法令で許容される最大限の範囲で、当社は本アプリの利用に起因する間接的・付随的・特別・結果的・懲罰的損害、データ・利益・コンテンツの喪失について責任を負いません。当社の賠償責任の総額は、請求の発生前12か月間にお客様が本アプリに支払った金額を上限とします。</p>"],
+    ["11. 利用停止", "<p>お客様はいつでも本アプリの利用を中止できます。お客様が本規約に違反した場合、または当社・他の利用者・提供者に損害を与える方法で本アプリを利用した場合、当社はアクセスを停止または終了できます。性質上存続すべき条項（知的財産、免責、責任の制限を含む）は終了後も有効に存続します。</p>"],
+    ["12. 規約の変更", "<p>当社は本規約を随時改定することがあります。重要な変更を行う場合、下記の「最終更新日」を更新します。変更の発効後も本アプリを継続して利用した場合、改定後の規約に同意したものとみなします。</p>"],
+    ["13. 準拠法・お問い合わせ", "<p>本規約は日本法に準拠し、抵触法の規定は適用されません。本規約に関するお問い合わせは <a class=\"rm-mail\">EMAIL</a> までご連絡ください。</p>"],
+  ]);
+
   // sub-processor list (section 4) — localize labels, keep provider names
   const SUB = {
     en: ["<b>Google (Gemini)</b> — image understanding & script generation", "<b>xAI (Grok)</b> — text-to-speech narration", "<b>Cloudflare R2</b> — temporary storage of uploads & rendered videos", "<b>Supabase</b> — secure server-side key management", "<b>RevenueCat, Apple, Google</b> — subscription purchases & entitlement status"],
@@ -277,22 +314,27 @@
         `<div class="mt-6 ${rtl ? "text-right" : "text-left"} max-w-xl mx-auto"><h2 class="font-display font-black text-navy text-lg mb-2">${esc(d.faqTitle)}</h2>` +
         d.faq.map(([q, a]) => `<p class="text-navy/75 text-sm leading-relaxed mb-2"><b>${esc(q)}</b><br>${esc(a)}</p>`).join("") +
         `</div>` +
-        `<div class="mt-8 flex flex-wrap justify-center gap-3"><a href="apps.html#reel-make" class="btn-chunky btn-chunky-coral">${esc(ui.appInfo)}</a><a href="reelmake-privacy.html" class="btn-chunky btn-chunky-ocean">${esc(ui.privacy)}</a></div>`;
+        `<div class="mt-8 flex flex-wrap justify-center gap-3"><a href="apps.html#reel-make" class="btn-chunky btn-chunky-coral">${esc(ui.appInfo)}</a><a href="reelmake-privacy.html" class="btn-chunky btn-chunky-ocean">${esc(ui.privacy)}</a><a href="reelmake-terms.html" class="btn-chunky btn-chunky-sun">${esc(ui.terms)}</a></div>`;
     } else {
-      const d = PRIVACY[lang] || PRIVACY.en;
+      const isTerms = page === "terms";
+      const d = isTerms ? (TERMS[lang] || TERMS.en) : (PRIVACY[lang] || PRIVACY.en);
+      const updatedVal = isTerms ? (TERMS_UPDATED[lang] || TERMS_UPDATED.en) : UPDATED;
       const secHtml = d.sections.map(([h, body]) => {
         let b = body;
         if (b === null) b = "<ul>" + subFor(lang).map((li) => `<li>${li}</li>`).join("") + "</ul>";
         else b = b.replace('<a class="rm-mail">EMAIL</a>', mail);
         return `<h2>${esc(h)}</h2>${b}`;
       }).join("");
+      const links = `<a href="apps.html#reel-make" class="btn-chunky btn-chunky-coral">${esc(ui.appInfo)}</a>` + (isTerms
+        ? `<a href="reelmake-privacy.html" class="btn-chunky btn-chunky-ocean">${esc(ui.privacy)}</a><a href="reelmake-support.html" class="btn-chunky btn-chunky-sun">${esc(ui.support)}</a>`
+        : `<a href="reelmake-terms.html" class="btn-chunky btn-chunky-ocean">${esc(ui.terms)}</a><a href="reelmake-support.html" class="btn-chunky btn-chunky-sun">${esc(ui.support)}</a>`);
       inner =
         `<div class="text-center mb-6"><img src="assets/reelmake/logo.png" alt="Reel Make" class="w-24 h-24 rounded-2xl border-2 border-navy object-cover mx-auto mb-4">` +
         `<span class="sticker sticker-coral">${esc(d.badge)}</span>` +
         `<h1 class="display-xl text-2xl md:text-4xl text-navy mt-4">${esc(d.h1)}</h1>` +
-        `<p class="text-navy/60 text-sm mt-2">${esc(d.updatedLabel)}: ${UPDATED}</p></div>` +
+        `<p class="text-navy/60 text-sm mt-2">${esc(d.updatedLabel)}: ${updatedVal}</p></div>` +
         `<p>${d.intro}</p>` + secHtml +
-        `<div class="mt-8 flex flex-wrap justify-center gap-3"><a href="apps.html#reel-make" class="btn-chunky btn-chunky-coral">${esc(ui.appInfo)}</a><a href="reelmake-support.html" class="btn-chunky btn-chunky-ocean">${esc(ui.support)}</a></div>`;
+        `<div class="mt-8 flex flex-wrap justify-center gap-3">${links}</div>`;
     }
     document.getElementById("rm-content").innerHTML = inner;
     // header / footer / switcher
