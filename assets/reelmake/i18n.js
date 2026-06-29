@@ -9,7 +9,7 @@
     ["th", "ไทย"], ["hi", "हिन्दी"], ["ar", "العربية"],
   ];
   const EMAIL = "trailfusionai@gmail.com";
-  const UPDATED = "2026-06-21";
+  const UPDATED = "2026-06-30";
 
   const UI = {
     en: { apps: "Apps", appInfo: "App Info", privacy: "Privacy Policy", support: "Support", terms: "Terms of Service", footer: "© 2025-2026 TrailFusion AI." },
@@ -256,9 +256,30 @@
 
   // sub-processor list (section 4) — localize labels, keep provider names
   const SUB = {
-    en: ["<b>Google (Gemini)</b> — image understanding & script generation", "<b>xAI (Grok)</b> — text-to-speech narration", "<b>Cloudflare R2</b> — temporary storage of uploads & rendered videos", "<b>Supabase</b> — secure server-side key management", "<b>RevenueCat, Apple, Google</b> — subscription purchases & entitlement status"],
-    ja: ["<b>Google（Gemini）</b> … 画像認識・台本生成", "<b>xAI（Grok）</b> … ナレーション音声合成", "<b>Cloudflare R2</b> … アップロード/生成動画の一時保管", "<b>Supabase</b> … サーバー側の鍵管理", "<b>RevenueCat・Apple・Google</b> … サブスク購入と権利状態"],
+    en: ["<b>Google (Gemini)</b> — AI service that receives your selected photos/video frames & text to recognize them and generate the script", "<b>Microsoft (Azure)</b> — AI service that receives the narration text to synthesize the voice", "<b>Cloudflare R2</b> — temporary storage of uploads & rendered videos", "<b>Supabase</b> — secure server-side key management", "<b>RevenueCat, Apple, Google</b> — subscription purchases & entitlement status"],
+    ja: ["<b>Google（Gemini）</b> … 選択した写真・動画フレームと入力テキストを受け取り、画像認識と台本生成を行うAIサービス", "<b>Microsoft（Azure）</b> … ナレーション原稿を受け取り音声を合成するAIサービス", "<b>Cloudflare R2</b> … アップロード/生成動画の一時保管", "<b>Supabase</b> … サーバー側の鍵管理", "<b>RevenueCat・Apple・Google</b> … サブスク購入と権利状態"],
   };
+  // Consent + equal-protection note shown after the section-4 provider list.
+  // Required by App Store Guideline 5.1.1(i)/5.1.2(i).
+  const SUBNOTE = {
+    en: "<p>These providers process data only to deliver the App's features, under their own privacy terms. <b>The App asks for your explicit in-app consent before any photo, video, or text is sent to the third-party AI services above (Google Gemini, Microsoft Azure)</b>, and you can withdraw that consent anytime in Settings. We only share data with third parties that provide the same or equivalent data protection, and your content is never used to train AI models.</p>",
+    ja: "<p>これらの提供者は、各社のプライバシー規約のもと、本アプリの機能提供のためにのみデータを処理します。<b>本アプリは、写真・動画・テキストを上記の第三者AIサービス（Google Gemini、Microsoft Azure）へ送信する前に、アプリ内で明示的な同意を取得します。</b>同意は設定画面からいつでも取り消せます。データを共有する第三者は同等以上のデータ保護を提供する事業者に限り、あなたのコンテンツがAIの学習に使われることはありません。</p>",
+    "zh-Hans": "<p>这些提供商仅在各自隐私条款下为实现应用功能而处理数据。<b>在将任何照片、视频或文本发送给上述第三方 AI 服务（Google Gemini、Microsoft Azure）之前，应用会在应用内征得您的明确同意</b>，您可随时在设置中撤销。我们仅与提供同等或更强数据保护的第三方共享数据，且您的内容绝不用于训练 AI 模型。</p>",
+    ko: "<p>이 제공업체들은 각자의 개인정보 약관에 따라 앱 기능 제공을 위해서만 데이터를 처리합니다. <b>사진·영상·텍스트를 위 제3자 AI 서비스(Google Gemini, Microsoft Azure)로 전송하기 전에 앱 내에서 명시적 동의를 받습니다.</b> 동의는 설정에서 언제든지 철회할 수 있습니다. 동등하거나 더 강한 데이터 보호를 제공하는 제3자와만 공유하며, 콘텐츠는 AI 모델 학습에 사용되지 않습니다.</p>",
+    es: "<p>Estos proveedores procesan datos solo para ofrecer las funciones de la App, según sus propios términos de privacidad. <b>La App pide tu consentimiento explícito en la app antes de enviar cualquier foto, vídeo o texto a los servicios de IA de terceros anteriores (Google Gemini, Microsoft Azure)</b>, y puedes retirarlo en cualquier momento en Ajustes. Solo compartimos datos con terceros que ofrecen una protección igual o equivalente, y tu contenido nunca se usa para entrenar modelos de IA.</p>",
+    "pt-BR": "<p>Esses provedores processam dados apenas para oferecer os recursos do App, sob seus próprios termos de privacidade. <b>O App solicita seu consentimento explícito no app antes de enviar qualquer foto, vídeo ou texto aos serviços de IA de terceiros acima (Google Gemini, Microsoft Azure)</b>, e você pode retirá-lo a qualquer momento nas Configurações. Só compartilhamos dados com terceiros que oferecem proteção igual ou equivalente, e seu conteúdo nunca é usado para treinar modelos de IA.</p>",
+    fr: "<p>Ces prestataires traitent les données uniquement pour fournir les fonctionnalités de l'App, selon leurs propres conditions de confidentialité. <b>L'App demande votre consentement explicite dans l'app avant d'envoyer toute photo, vidéo ou texte aux services d'IA tiers ci-dessus (Google Gemini, Microsoft Azure)</b>, et vous pouvez le retirer à tout moment dans les Réglages. Nous ne partageons des données qu'avec des tiers offrant une protection égale ou équivalente, et votre contenu ne sert jamais à entraîner des modèles d'IA.</p>",
+    de: "<p>Diese Anbieter verarbeiten Daten nur zur Bereitstellung der App-Funktionen, gemäß ihren eigenen Datenschutzbedingungen. <b>Die App holt deine ausdrückliche In-App-Zustimmung ein, bevor Fotos, Videos oder Texte an die oben genannten Drittanbieter-KI-Dienste (Google Gemini, Microsoft Azure) gesendet werden</b>, und du kannst sie jederzeit in den Einstellungen widerrufen. Wir teilen Daten nur mit Dritten, die ein gleichwertiges Schutzniveau bieten, und deine Inhalte werden nie zum Training von KI-Modellen verwendet.</p>",
+    it: "<p>Questi fornitori trattano i dati solo per offrire le funzioni dell'App, secondo le proprie condizioni sulla privacy. <b>L'App richiede il tuo consenso esplicito nell'app prima di inviare foto, video o testo ai servizi di IA di terze parti sopra indicati (Google Gemini, Microsoft Azure)</b>, e puoi revocarlo in qualsiasi momento nelle Impostazioni. Condividiamo i dati solo con terzi che offrono una protezione uguale o equivalente, e i tuoi contenuti non vengono mai usati per addestrare modelli di IA.</p>",
+    ru: "<p>Эти поставщики обрабатывают данные только для предоставления функций приложения, согласно своим условиям конфиденциальности. <b>Приложение запрашивает ваше явное согласие в приложении, прежде чем отправить любые фото, видео или текст указанным сторонним ИИ-сервисам (Google Gemini, Microsoft Azure)</b>, и вы можете отозвать его в любой момент в настройках. Мы передаём данные только третьим лицам с равной или более сильной защитой, и ваш контент никогда не используется для обучения ИИ.</p>",
+    tr: "<p>Bu sağlayıcılar verileri yalnızca Uygulamanın özelliklerini sunmak için kendi gizlilik koşulları kapsamında işler. <b>Uygulama, herhangi bir foto, video veya metni yukarıdaki üçüncü taraf yapay zekâ hizmetlerine (Google Gemini, Microsoft Azure) göndermeden önce uygulama içinde açık onayınızı ister</b> ve bunu istediğiniz zaman Ayarlar'dan geri çekebilirsiniz. Verileri yalnızca eşit veya daha güçlü koruma sağlayan üçüncü taraflarla paylaşırız ve içeriğiniz asla yapay zekâ modeli eğitiminde kullanılmaz.</p>",
+    vi: "<p>Các nhà cung cấp này chỉ xử lý dữ liệu để cung cấp tính năng của Ứng dụng, theo điều khoản riêng tư của họ. <b>Ứng dụng yêu cầu sự đồng ý rõ ràng trong ứng dụng trước khi gửi bất kỳ ảnh, video hoặc văn bản nào tới các dịch vụ AI bên thứ ba ở trên (Google Gemini, Microsoft Azure)</b>, và bạn có thể thu hồi bất cứ lúc nào trong Cài đặt. Chúng tôi chỉ chia sẻ dữ liệu với bên thứ ba có mức bảo vệ tương đương hoặc cao hơn, và nội dung của bạn không bao giờ dùng để huấn luyện mô hình AI.</p>",
+    th: "<p>ผู้ให้บริการเหล่านี้ประมวลผลข้อมูลเพื่อให้บริการฟีเจอร์ของแอปเท่านั้น ภายใต้ข้อกำหนดความเป็นส่วนตัวของแต่ละราย <b>แอปจะขอความยินยอมอย่างชัดเจนในแอปก่อนส่งรูปภาพ วิดีโอ หรือข้อความใด ๆ ไปยังบริการ AI ของบุคคลที่สามข้างต้น (Google Gemini, Microsoft Azure)</b> และคุณเพิกถอนได้ทุกเมื่อในการตั้งค่า เราแชร์ข้อมูลกับบุคคลที่สามที่ให้การคุ้มครองเทียบเท่าหรือสูงกว่าเท่านั้น และเนื้อหาของคุณจะไม่ถูกใช้ฝึกโมเดล AI</p>",
+    hi: "<p>ये प्रदाता केवल ऐप की सुविधाएँ देने के लिए, अपनी गोपनीयता शर्तों के तहत डेटा प्रोसेस करते हैं। <b>किसी भी फ़ोटो, वीडियो या टेक्स्ट को ऊपर दिए तृतीय-पक्ष AI सेवाओं (Google Gemini, Microsoft Azure) को भेजने से पहले ऐप आपकी स्पष्ट इन-ऐप सहमति लेता है</b>, और आप इसे सेटिंग्स में कभी भी वापस ले सकते हैं। हम केवल समान या अधिक सुरक्षा देने वाले तृतीय पक्षों के साथ डेटा साझा करते हैं, और आपकी सामग्री कभी AI मॉडल प्रशिक्षण में उपयोग नहीं होती।</p>",
+    ar: "<p dir=\"rtl\">يعالج هؤلاء المزوّدون البيانات فقط لتقديم ميزات التطبيق، وفق شروط الخصوصية الخاصة بهم. <b>يطلب التطبيق موافقتك الصريحة داخله قبل إرسال أي صورة أو فيديو أو نص إلى خدمات الذكاء الاصطناعي التابعة لجهات خارجية أعلاه (Google Gemini وMicrosoft Azure)</b>، ويمكنك سحبها في أي وقت من الإعدادات. لا نشارك البيانات إلا مع جهات توفّر حماية مماثلة أو أقوى، ولا يُستخدم محتواك أبدًا لتدريب نماذج الذكاء الاصطناعي.</p>",
+  };
+  function noteFor(lang) { return SUBNOTE[lang] || SUBNOTE.en; }
+
   function subFor(lang) {
     if (SUB[lang]) return SUB[lang];
     const dash = lang === "ar" ? " — " : " — ";
@@ -272,7 +293,7 @@
     const g = (k) => t[k][lang] || t[k].en || "";
     return [
       "<b>Google (Gemini)</b>" + dash + g("img"),
-      "<b>xAI (Grok)</b>" + dash + g("tts"),
+      "<b>Microsoft (Azure)</b>" + dash + g("tts"),
       "<b>Cloudflare R2</b>" + dash + g("r2"),
       "<b>Supabase</b>" + dash + g("sb"),
       "<b>RevenueCat, Apple, Google</b>" + dash + g("rc"),
@@ -321,7 +342,7 @@
       const updatedVal = isTerms ? (TERMS_UPDATED[lang] || TERMS_UPDATED.en) : UPDATED;
       const secHtml = d.sections.map(([h, body]) => {
         let b = body;
-        if (b === null) b = "<ul>" + subFor(lang).map((li) => `<li>${li}</li>`).join("") + "</ul>";
+        if (b === null) b = "<ul>" + subFor(lang).map((li) => `<li>${li}</li>`).join("") + "</ul>" + noteFor(lang);
         else b = b.replace('<a class="rm-mail">EMAIL</a>', mail);
         return `<h2>${esc(h)}</h2>${b}`;
       }).join("");
