@@ -230,6 +230,20 @@ header.sticky{
 .btn-chunky-sun:hover{border-color:var(--yellow);box-shadow:0 0 26px -6px rgba(255,225,77,.45)}
 .btn-chunky-white{background:var(--glass-2);color:var(--txt);border:1px solid var(--hairline)}
 .btn-chunky-white:hover{border-color:var(--hairline-strong);box-shadow:0 0 26px -8px rgba(181,55,242,.5)}
+/* Google Play — glass secondary, paired with the gradient App Store button */
+.btn-android{background:var(--glass-2);color:var(--txt);border:1px solid var(--hairline);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.btn-android:hover{transform:translateY(-2px);border-color:var(--hairline-strong);box-shadow:0 0 28px -8px rgba(58,209,255,.5)}
+
+/* Reel Make app logo + brand lockup */
+.rm-logo{width:54px;height:54px;border-radius:14px;flex:0 0 auto;box-shadow:0 8px 26px -8px rgba(181,55,242,.55),0 0 0 1px rgba(255,255,255,.08) inset}
+.rm-brand{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:.9rem}
+.rm-brand b{font-weight:700;font-size:1.08rem;color:var(--txt);letter-spacing:-.01em}
+.rm-cta-logo{width:74px;height:74px;border-radius:18px;margin:0 auto 1.2rem;display:block;box-shadow:0 14px 38px -10px rgba(181,55,242,.7),0 0 0 1px rgba(255,255,255,.1) inset}
+.rm-cta-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+/* quiet inline links (declutter the CTA card; the real footer carries them too) */
+.rm-mini-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem;margin-top:1.7rem}
+.rm-mini-links a{color:var(--txt-dim);font-size:.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.rm-mini-links a:hover{color:var(--txt);border-color:var(--hairline-strong)}
 
 /* eyebrows — gradient text label with a leading gradient bar */
 .rm-eyebrow{
@@ -366,21 +380,27 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
 <main>
   <!-- HERO -->
   <section class="k-soft relative overflow-hidden" aria-labelledby="rm-hero-h1">
-    <span class="rm-blob" style="width:280px;height:280px;background:#A5E3F5;top:-60px;left:-50px"></span>
-    <span class="rm-blob" style="width:220px;height:220px;background:#FFB3BA;bottom:-40px;right:-30px"></span>
     <div class="container mx-auto px-4 py-14 md:py-20 relative">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
+          <div class="rm-brand">
+            <img class="rm-logo" src="assets/reelmake/logo.png" width="54" height="54" alt="Reel Make app icon" decoding="async">
+            <b>Reel Make</b>
+          </div>
           <span class="rm-eyebrow mb-5" data-lp="heroBadge">AI REEL MAKER</span>
           <h1 id="rm-hero-h1" class="display-xl text-4xl md:text-6xl text-navy mt-5 mb-5" data-lp-html="heroTitle">Turn your photos into a finished reel in just 2 taps</h1>
           <p class="text-lg text-navy/75 leading-relaxed mb-7 max-w-xl" data-lp="heroSub">Pick your photos and videos, tap Create, and AI builds the whole reel for you.</p>
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-wrap items-center gap-3">
             <a href="https://apps.apple.com/app/id6779420680" class="btn-chunky btn-chunky-coral text-base" rel="noopener" aria-describedby="rm-hero-ctasub">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7c1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1 0-2.3-.9-2.3-3.4zM14.2 6.3c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg>
               <span data-lp="heroCta">Download on the App Store</span>
             </a>
-            <span id="rm-hero-ctasub" class="font-bold text-navy/70 text-sm" data-lp="heroCtaSub">Free to start · iPhone</span>
+            <a href="https://play.google.com/store/apps/details?id=com.reelapp.maker" class="btn-chunky btn-android text-base" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l.1.1 9.5-9.5v-.2L3.7 2.2l-.1.1zm12.9 12.7l-3.2-3.2 3.2-3.2 3.8 2.2c1.1.6 1.1 1.7 0 2.3l-3.8 2zm-.6.6l-3.1-3.1L3.6 22c.4.4 1 .4 1.6.1l11.7-6.5zm0-7.2L5.2 1.9C4.6 1.6 4 1.6 3.6 2l9.2 9.1 3.1-3.1z"/></svg>
+              <span id="rm-android-hero">Get it on Google Play</span>
+            </a>
           </div>
+          <p id="rm-hero-ctasub" class="font-bold text-navy/60 text-sm mt-4" data-lp="heroCtaSub">Free to start · iOS &amp; Android</p>
           <p class="mt-6 inline-flex"><span class="sticker sticker-ocean" data-lp="statBadge">32 AI voices · 15 languages · 9:16</span></p>
         </div>
         <div class="flex justify-center md:justify-end">
@@ -486,20 +506,26 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
 
   <!-- FINAL CTA -->
   <section class="py-16 md:py-24 k-soft relative overflow-hidden" aria-labelledby="rm-final-h2">
-    <span class="rm-blob" style="width:260px;height:260px;background:#FFD84D;top:-50px;right:10%"></span>
     <div class="container mx-auto px-4 relative">
       <div class="k-card p-9 md:p-14 max-w-3xl mx-auto text-center">
+        <img class="rm-cta-logo" src="assets/reelmake/logo.png" width="74" height="74" alt="Reel Make app icon" decoding="async">
         <h2 id="rm-final-h2" class="display-xl text-3xl md:text-5xl text-navy mb-4" data-lp="finalTitle">Your next reel is two taps away</h2>
         <p class="text-navy/70 leading-relaxed mb-8 max-w-xl mx-auto" data-lp="finalSub">Download Reel Make free and turn today's photos into a share-ready video in minutes.</p>
-        <a href="https://apps.apple.com/app/id6779420680" class="btn-chunky btn-chunky-coral text-base" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7c1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1 0-2.3-.9-2.3-3.4zM14.2 6.3c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg>
-          <span data-lp="finalCta">Download on the App Store</span>
-        </a>
+        <div class="rm-cta-row">
+          <a href="https://apps.apple.com/app/id6779420680" class="btn-chunky btn-chunky-coral text-base" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7c1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1 0-2.3-.9-2.3-3.4zM14.2 6.3c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg>
+            <span data-lp="finalCta">Download on the App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.reelapp.maker" class="btn-chunky btn-android text-base" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l.1.1 9.5-9.5v-.2L3.7 2.2l-.1.1zm12.9 12.7l-3.2-3.2 3.2-3.2 3.8 2.2c1.1.6 1.1 1.7 0 2.3l-3.8 2zm-.6.6l-3.1-3.1L3.6 22c.4.4 1 .4 1.6.1l11.7-6.5zm0-7.2L5.2 1.9C4.6 1.6 4 1.6 3.6 2l9.2 9.1 3.1-3.1z"/></svg>
+            <span id="rm-android-final">Get it on Google Play</span>
+          </a>
+        </div>
         <p class="mt-5 text-sm text-navy/60" data-lp="finalNote">Free to start. Pro and MAX plans unlock more.</p>
-        <div class="mt-7 flex flex-wrap justify-center gap-3">
-          <a href="reelmake-privacy.html" class="btn-chunky btn-chunky-ocean text-sm" data-lp="navPrivacy">Privacy Policy</a>
-          <a href="reelmake-terms.html" class="btn-chunky btn-chunky-sun text-sm" data-lp="navTerms">Terms of Service</a>
-          <a href="reelmake-support.html" class="btn-chunky btn-chunky-white text-sm" data-lp="navSupport">Support</a>
+        <div class="rm-mini-links">
+          <a href="reelmake-privacy.html" data-lp="navPrivacy">Privacy Policy</a>
+          <a href="reelmake-terms.html" data-lp="navTerms">Terms of Service</a>
+          <a href="reelmake-support.html" data-lp="navSupport">Support</a>
         </div>
       </div>
     </div>
@@ -530,6 +556,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
   ];
   var SHOTS = { en:6, ja:6, zh:6, ko:5, es:4, "pt-BR":5, fr:5, de:6, it:5, ru:5, tr:4, vi:4, th:5, hi:6, ar:6 };
   var PREFIX = { en:"en", ja:"ja", "zh-Hans":"zh", ko:"ko", es:"es", "pt-BR":"pt-BR", fr:"fr", de:"de", it:"it", ru:"ru", tr:"tr", vi:"vi", th:"th", hi:"hi", ar:"ar" };
+  var ANDROID = { en:"Get it on Google Play", ja:"Google Playで入手", "zh-Hans":"在 Google Play 下载", ko:"Google Play에서 받기", es:"Disponible en Google Play", "pt-BR":"Disponível no Google Play", fr:"Disponible sur Google Play", de:"Bei Google Play", it:"Disponibile su Google Play", ru:"Доступно в Google Play", tr:"Google Play'den indir", vi:"Tải trên Google Play", th:"ดาวน์โหลดบน Google Play", hi:"Google Play पर पाएं", ar:"احصل عليه من Google Play" };
   var ICONS = ["🎬","🎙️","💬","🎵","🎨","🔄","👁️","📲"];
   var ICOBG = [
     "linear-gradient(135deg,#ff2d68,#ff5e3a)",
@@ -602,6 +629,8 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
 
     var foot = document.getElementById("rm-foot"); if (foot) foot.textContent = d.footer;
     var navCta = document.getElementById("rm-nav-cta"); if (navCta) navCta.textContent = d.navCta;
+    var aH=document.getElementById("rm-android-hero"); if(aH) aH.textContent=ANDROID[lang]||ANDROID.en;
+    var aF=document.getElementById("rm-android-final"); if(aF) aF.textContent=ANDROID[lang]||ANDROID.en;
 
     var sel = document.getElementById("rm-lang");
     if (sel && !sel.dataset.ready){
@@ -618,7 +647,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AI REEL MAKER",
     heroTitle: "Turn photos &amp; videos into a finished reel in just 2 taps",
     heroSub: "Pick your photos and videos, tap Create, and AI builds the whole reel for you — structure, narration, karaoke captions, music, and editing. Simple by default, deeply customizable when you want it.",
-    heroCta: "Download on the App Store", heroCtaSub: "Free to start · iPhone",
+    heroCta: "Download on the App Store", heroCtaSub: "Free to start · iOS & Android",
     heroShotAlt: "Reel Make app — pick photos and videos to create an AI reel",
     statBadge: "32 AI voices · 15 languages · 9:16",
     stepsBadge: "JUST 2 TAPS",
@@ -672,7 +701,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AIリールメーカー",
     heroTitle: "写真と動画が、たった2タップで完成リールに",
     heroSub: "写真や動画を選んで「作成」をタップするだけ。構成・ナレーション・カラオケ字幕・BGM・編集まで、AIがリールをまるごと組み立てます。標準はとことんシンプル、こだわりたいときは細部まで自由自在。",
-    heroCta: "App Storeでダウンロード", heroCtaSub: "無料ではじめる · iPhone",
+    heroCta: "App Storeでダウンロード", heroCtaSub: "無料ではじめる · iOS & Android",
     heroShotAlt: "Reel Make アプリ — 写真と動画を選んでAIリールを作成",
     statBadge: "32の音声 · 15言語 · 9:16縦型",
     stepsBadge: "たった2タップ",
@@ -726,7 +755,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AI 短视频生成器",
     heroTitle: "照片和视频，两步即成一支完整短视频",
     heroSub: "选好照片和视频，点一下「制作」，AI 就为你搭好整支短视频——结构、配音、卡拉OK字幕、背景音乐和剪辑全包。默认极简，想深入时又能精细掌控。",
-    heroCta: "在 App Store 下载", heroCtaSub: "免费开始 · iPhone",
+    heroCta: "在 App Store 下载", heroCtaSub: "免费开始 · iOS & Android",
     heroShotAlt: "Reel Make 应用 — 选择照片和视频生成 AI 短视频",
     statBadge: "32 种配音 · 15 种语言 · 9:16 竖屏",
     stepsBadge: "只需两步",
@@ -780,7 +809,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AI 릴 메이커",
     heroTitle: "사진과 영상을 단 2번의 탭으로 완성된 릴로",
     heroSub: "사진과 영상을 고르고 '만들기'를 누르세요. 구성·내레이션·노래방 자막·배경음악·편집까지 AI가 릴을 통째로 만들어 줍니다. 기본은 아주 간단하게, 원할 때는 세밀하게 제어할 수 있습니다.",
-    heroCta: "App Store에서 다운로드", heroCtaSub: "무료로 시작 · iPhone",
+    heroCta: "App Store에서 다운로드", heroCtaSub: "무료로 시작 · iOS & Android",
     heroShotAlt: "Reel Make 앱 — 사진과 영상을 골라 AI 릴 만들기",
     statBadge: "32가지 음성 · 15개 언어 · 9:16 세로",
     stepsBadge: "단 2번의 탭",
@@ -834,7 +863,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "CREADOR DE REELS CON IA",
     heroTitle: "Convierte fotos y vídeos en un reel terminado con solo 2 toques",
     heroSub: "Elige tus fotos y vídeos, toca Crear y la IA arma todo el reel por ti: estructura, narración, subtítulos karaoke, música y edición. Sencillo por defecto y totalmente personalizable cuando quieras.",
-    heroCta: "Descargar en el App Store", heroCtaSub: "Gratis para empezar · iPhone",
+    heroCta: "Descargar en el App Store", heroCtaSub: "Gratis para empezar · iOS & Android",
     heroShotAlt: "App Reel Make — elige fotos y vídeos para crear un reel con IA",
     statBadge: "32 voces IA · 15 idiomas · 9:16",
     stepsBadge: "SOLO 2 TOQUES",
@@ -888,7 +917,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "CRIADOR DE REELS COM IA",
     heroTitle: "Transforme fotos e vídeos em um reel pronto com apenas 2 toques",
     heroSub: "Escolha suas fotos e vídeos, toque em Criar e a IA monta o reel inteiro para você: estrutura, narração, legendas karaokê, música e edição. Simples por padrão e totalmente personalizável quando você quiser.",
-    heroCta: "Baixar na App Store", heroCtaSub: "Grátis para começar · iPhone",
+    heroCta: "Baixar na App Store", heroCtaSub: "Grátis para começar · iOS & Android",
     heroShotAlt: "App Reel Make — escolha fotos e vídeos para criar um reel com IA",
     statBadge: "32 vozes IA · 15 idiomas · 9:16",
     stepsBadge: "APENAS 2 TOQUES",
@@ -942,7 +971,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "CRÉATEUR DE REELS IA",
     heroTitle: "Transformez photos et vidéos en un reel fini en 2 touchers",
     heroSub: "Choisissez vos photos et vidéos, touchez Créer, et l'IA monte tout le reel pour vous : structure, narration, sous-titres karaoké, musique et montage. Simple par défaut, entièrement personnalisable quand vous le voulez.",
-    heroCta: "Télécharger sur l'App Store", heroCtaSub: "Gratuit pour commencer · iPhone",
+    heroCta: "Télécharger sur l'App Store", heroCtaSub: "Gratuit pour commencer · iOS & Android",
     heroShotAlt: "App Reel Make — choisissez photos et vidéos pour créer un reel IA",
     statBadge: "32 voix IA · 15 langues · 9:16",
     stepsBadge: "JUSTE 2 TOUCHERS",
@@ -996,7 +1025,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "KI-REEL-MAKER",
     heroTitle: "Aus Fotos &amp; Videos ein fertiges Reel — mit nur 2 Taps",
     heroSub: "Fotos und Videos auswählen, auf Erstellen tippen, und die KI baut das ganze Reel für dich: Struktur, Sprecher, Karaoke-Untertitel, Musik und Schnitt. Standardmäßig einfach, bei Bedarf bis ins Detail anpassbar.",
-    heroCta: "Im App Store laden", heroCtaSub: "Kostenlos starten · iPhone",
+    heroCta: "Im App Store laden", heroCtaSub: "Kostenlos starten · iOS & Android",
     heroShotAlt: "Reel Make App — Fotos und Videos auswählen und ein KI-Reel erstellen",
     statBadge: "32 KI-Stimmen · 15 Sprachen · 9:16",
     stepsBadge: "NUR 2 TAPS",
@@ -1050,7 +1079,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "CREATORE DI REEL CON IA",
     heroTitle: "Trasforma foto e video in un reel finito con soli 2 tocchi",
     heroSub: "Scegli foto e video, tocca Crea e l'IA monta tutto il reel per te: struttura, narrazione, sottotitoli karaoke, musica e montaggio. Semplice di default, totalmente personalizzabile quando vuoi.",
-    heroCta: "Scarica su App Store", heroCtaSub: "Gratis per iniziare · iPhone",
+    heroCta: "Scarica su App Store", heroCtaSub: "Gratis per iniziare · iOS & Android",
     heroShotAlt: "App Reel Make — scegli foto e video per creare un reel con IA",
     statBadge: "32 voci IA · 15 lingue · 9:16",
     stepsBadge: "BASTANO 2 TOCCHI",
@@ -1104,7 +1133,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AI-СОЗДАТЕЛЬ РИЛСОВ",
     heroTitle: "Превратите фото и видео в готовый ролик всего за 2 касания",
     heroSub: "Выберите фото и видео, нажмите «Создать» — и ИИ соберёт весь ролик за вас: структуру, озвучку, караоке-субтитры, музыку и монтаж. Просто по умолчанию и гибко настраивается, когда нужно.",
-    heroCta: "Скачать в App Store", heroCtaSub: "Бесплатный старт · iPhone",
+    heroCta: "Скачать в App Store", heroCtaSub: "Бесплатный старт · iOS & Android",
     heroShotAlt: "Приложение Reel Make — выберите фото и видео для AI-ролика",
     statBadge: "32 голоса · 15 языков · 9:16",
     stepsBadge: "ВСЕГО 2 КАСАНИЯ",
@@ -1158,7 +1187,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "YAPAY ZEKÂ REEL YAPICI",
     heroTitle: "Fotoğraf ve videoları yalnızca 2 dokunuşta bitmiş bir reel'e dönüştürün",
     heroSub: "Fotoğraf ve videolarınızı seçin, Oluştur'a dokunun; yapay zekâ tüm reel'i sizin için kursun: kurgu, seslendirme, karaoke altyazılar, müzik ve montaj. Varsayılan olarak basit, istediğinizde ise inceden inceye özelleştirilebilir.",
-    heroCta: "App Store'dan indir", heroCtaSub: "Ücretsiz başlayın · iPhone",
+    heroCta: "App Store'dan indir", heroCtaSub: "Ücretsiz başlayın · iOS & Android",
     heroShotAlt: "Reel Make uygulaması — yapay zekâ reel'i için fotoğraf ve video seçin",
     statBadge: "32 ses · 15 dil · 9:16 dikey",
     stepsBadge: "SADECE 2 DOKUNUŞ",
@@ -1212,7 +1241,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "TRÌNH TẠO REEL AI",
     heroTitle: "Biến ảnh và video thành reel hoàn chỉnh chỉ với 2 lần chạm",
     heroSub: "Chọn ảnh và video, chạm Tạo, và AI dựng toàn bộ reel cho bạn: bố cục, lời đọc, phụ đề karaoke, nhạc và biên tập. Mặc định đơn giản, tùy biến sâu khi bạn muốn.",
-    heroCta: "Tải trên App Store", heroCtaSub: "Miễn phí để bắt đầu · iPhone",
+    heroCta: "Tải trên App Store", heroCtaSub: "Miễn phí để bắt đầu · iOS & Android",
     heroShotAlt: "Ứng dụng Reel Make — chọn ảnh và video để tạo reel AI",
     statBadge: "32 giọng AI · 15 ngôn ngữ · 9:16",
     stepsBadge: "CHỈ 2 LẦN CHẠM",
@@ -1266,7 +1295,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "ตัวสร้างรีลด้วย AI",
     heroTitle: "เปลี่ยนรูปและวิดีโอเป็นรีลที่เสร็จสมบูรณ์ในแค่ 2 แตะ",
     heroSub: "เลือกรูปและวิดีโอ แตะ สร้าง แล้ว AI จะประกอบรีลทั้งหมดให้คุณ ทั้งโครงเรื่อง เสียงบรรยาย คำบรรยายคาราโอเกะ เพลง และการตัดต่อ ง่ายโดยปริยาย ปรับแต่งได้ลึกเมื่อคุณต้องการ",
-    heroCta: "ดาวน์โหลดบน App Store", heroCtaSub: "เริ่มฟรี · iPhone",
+    heroCta: "ดาวน์โหลดบน App Store", heroCtaSub: "เริ่มฟรี · iOS & Android",
     heroShotAlt: "แอป Reel Make — เลือกรูปและวิดีโอเพื่อสร้างรีล AI",
     statBadge: "32 เสียง · 15 ภาษา · 9:16 แนวตั้ง",
     stepsBadge: "แค่ 2 แตะ",
@@ -1320,7 +1349,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "AI रील मेकर",
     heroTitle: "फ़ोटो और वीडियो को सिर्फ़ 2 टैप में पूरी रील बनाएं",
     heroSub: "अपनी फ़ोटो और वीडियो चुनें, बनाएं दबाएं, और AI आपके लिए पूरी रील बना देगा — संरचना, नैरेशन, कराओके कैप्शन, संगीत और एडिटिंग। डिफ़ॉल्ट रूप से आसान, ज़रूरत पर गहराई से अनुकूलन योग्य।",
-    heroCta: "App Store पर डाउनलोड करें", heroCtaSub: "मुफ़्त शुरुआत · iPhone",
+    heroCta: "App Store पर डाउनलोड करें", heroCtaSub: "मुफ़्त शुरुआत · iOS & Android",
     heroShotAlt: "Reel Make ऐप — AI रील बनाने के लिए फ़ोटो और वीडियो चुनें",
     statBadge: "32 आवाज़ें · 15 भाषाएं · 9:16 वर्टिकल",
     stepsBadge: "सिर्फ़ 2 टैप",
@@ -1374,7 +1403,7 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
     heroBadge: "صانع ريلز بالذكاء الاصطناعي",
     heroTitle: "حوّل صورك ومقاطعك إلى ريلز مكتمل بنقرتين فقط",
     heroSub: "اختر صورك ومقاطعك، اضغط إنشاء، ويبني الذكاء الاصطناعي الريلز كاملاً من أجلك: البنية والتعليق الصوتي وترجمات الكاراوكي والموسيقى والمونتاج. بسيط افتراضيًا، وقابل للتخصيص بعمق عندما تريد.",
-    heroCta: "نزّل من App Store", heroCtaSub: "ابدأ مجانًا · iPhone",
+    heroCta: "نزّل من App Store", heroCtaSub: "ابدأ مجانًا · iOS & Android",
     heroShotAlt: "تطبيق Reel Make — اختر صورًا ومقاطع لإنشاء ريلز بالذكاء الاصطناعي",
     statBadge: "32 صوتًا · 15 لغة · 9:16 عمودي",
     stepsBadge: "نقرتان فقط",
