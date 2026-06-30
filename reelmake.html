@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://trailfusionai.com/assets/reelmake/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
 <script type="application/ld+json">
@@ -112,36 +112,244 @@
 }
 </script>
 <style>
-body{font-family:'M PLUS Rounded 1c',sans-serif;background:#FFFBF2;color:#1F2E4D}
-.k-card{background:#fff;border:3px solid #1F2E4D;border-radius:28px;box-shadow:8px 8px 0 #1F2E4D}
-.k-soft{background:linear-gradient(180deg,#F6ECFF 0%,#FFFBF2 100%)}
-#rm-lang{border:2px solid #1F2E4D;border-radius:10px;padding:4px 8px;background:#fff;color:#1F2E4D;font-weight:700;font-size:13px}
-[dir="rtl"] .k-card{box-shadow:-8px 8px 0 #1F2E4D}
-[dir="rtl"] .card-chunky,[dir="rtl"] .card-chunky-flat,[dir="rtl"] .acc-chunky,[dir="rtl"] .ai-frame{box-shadow:-8px 8px 0 #1F2E4D}
-[dir="rtl"] .btn-chunky{box-shadow:-5px 5px 0 #FFD84D}
-[dir="rtl"] .btn-chunky-coral,[dir="rtl"] .btn-chunky-ocean,[dir="rtl"] .btn-chunky-sun,[dir="rtl"] .btn-chunky-white{box-shadow:-5px 5px 0 #1F2E4D}
-[dir="rtl"] .sticker{box-shadow:-4px 4px 0 #1F2E4D}
-[dir="rtl"] .rm-phone{box-shadow:-12px 12px 0 #1F2E4D}
-/* phone mockup */
-.rm-phone{position:relative;width:clamp(220px,72vw,288px);aspect-ratio:462/1000;background:#1F2E4D;border:5px solid #1F2E4D;border-radius:46px;padding:9px;box-shadow:12px 12px 0 #1F2E4D}
-.rm-phone img{width:100%;height:100%;object-fit:cover;border-radius:36px;display:block;background:#F6ECFF}
-.rm-phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:34%;height:18px;background:#1F2E4D;border-radius:0 0 14px 14px;z-index:2}
-.rm-blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.7;mix-blend-mode:multiply;pointer-events:none;z-index:0}
+/* ============================================================
+   Reel Make — dark-luxury neon glass design system.
+   Mirrors the iOS app theme and overrides the cream/"chunky"
+   brand classes from tailwind-compiled.css / trailfusion.css.
+   ============================================================ */
+:root{
+  --bg-base:#07091a;
+  --bg-deep:#0a0e22;
+  --glass:rgba(18,23,54,.6);
+  --glass-2:rgba(24,31,68,.55);
+  --hairline:rgba(255,255,255,.08);
+  --hairline-strong:#2a3470;
+  --txt:#f5f7ff;
+  --txt-dim:#9aa4cf;
+  --txt-muted:#67719e;
+  --pink:#ff2d68;
+  --orange:#ff5e3a;
+  --purple:#b537f2;
+  --cyan:#3ad1ff;
+  --green:#3ce0a0;
+  --yellow:#ffe14d;
+  --grad-primary:linear-gradient(135deg,#ff2d68,#ff5e3a);
+  --grad-premium:linear-gradient(135deg,#b537f2,#ff2d68,#ff5e3a);
+  --r-sm:18px; --r-md:26px; --r-lg:34px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{-webkit-tap-highlight-color:transparent}
+body{
+  font-family:'Space Grotesk','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans','Noto Sans JP','Noto Sans Arabic','Noto Sans Thai','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--bg-base);
+  color:var(--txt);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+/* large soft neon glows bleeding from the edges */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60% 45% at 10% -6%, rgba(181,55,242,.30), transparent 60%),
+    radial-gradient(55% 42% at 102% 6%, rgba(255,94,58,.22), transparent 60%),
+    radial-gradient(72% 52% at 88% 102%, rgba(255,45,104,.24), transparent 60%),
+    radial-gradient(50% 42% at -4% 92%, rgba(58,209,255,.16), transparent 60%);
+}
+::selection{background:rgba(255,45,104,.35);color:#fff}
+
+/* ---- text & surface token overrides (beat the cream brand) ---- */
+.text-navy,.text-navy\/85,.text-navy\/80{color:var(--txt)}
+.text-navy\/75,.text-navy\/70{color:var(--txt-dim)}
+.text-navy\/60,.text-navy\/50{color:var(--txt-muted)}
+.border-navy,.border-navy\/20,.border-navy\/10{border-color:var(--hairline)}
+.bg-cream{background-color:var(--bg-base)}
+.bg-cream\/95{background-color:rgba(7,9,26,.7)}
+.bg-navy{background-color:var(--bg-deep)}
+.bg-navy\/40{background-color:rgba(7,9,26,.45)}
+.text-sun{color:var(--pink)}
+.hover\:text-sun:hover{color:var(--orange)}
+.font-display{font-family:'Space Grotesk',sans-serif}
+.display-xl{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1.02}
+
+/* header */
+header.sticky{
+  background:rgba(7,9,26,.72)!important;
+  border-bottom:1px solid var(--hairline)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  backdrop-filter:blur(16px) saturate(140%);
+}
+
+/* hero H1 — neon gradient keyword */
+#rm-hero-h1{
+  background:linear-gradient(118deg,#ff5e3a 0%,#ff2d68 44%,#b537f2 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 8px 30px rgba(255,45,104,.28));
+}
+
+/* glass cards */
+.k-card,.card-chunky,.card-chunky-flat{
+  background:var(--glass);
+  border:1px solid var(--hairline);
+  border-radius:var(--r-lg);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 24px 60px -30px rgba(0,0,0,.85);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  backdrop-filter:blur(14px) saturate(140%);
+  position:relative;overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.k-card:hover,.card-chunky:hover{
+  transform:translateY(-4px);
+  border-color:var(--hairline-strong);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 34px 72px -28px rgba(0,0,0,.9),0 0 0 1px rgba(255,45,104,.12);
+}
+
+/* buttons */
+.btn-chunky{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 1.5rem;border-radius:999px;font-weight:600;
+  background:var(--glass-2);color:var(--txt);
+  border:1px solid var(--hairline);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:none;cursor:pointer;text-decoration:none;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),filter .2s var(--ease),border-color .2s var(--ease);
+}
+.btn-chunky:hover{transform:translateY(-2px);border-color:var(--hairline-strong)}
+.btn-chunky:active{transform:translateY(0)}
+/* primary gradient CTA */
+.btn-chunky-coral{
+  background:var(--grad-primary);color:#fff;border:0;
+  box-shadow:0 14px 34px -12px rgba(255,45,104,.6),0 0 0 1px rgba(255,255,255,.08) inset;
+}
+.btn-chunky-coral:hover{transform:translateY(-2px);filter:brightness(1.08) saturate(1.05);box-shadow:0 20px 48px -12px rgba(255,45,104,.78),0 0 0 1px rgba(255,255,255,.14) inset}
+.btn-chunky-coral:active{transform:translateY(0);filter:brightness(.98)}
+/* secondary glass tints */
+.btn-chunky-ocean{background:var(--glass-2);color:var(--txt);border:1px solid rgba(58,209,255,.35)}
+.btn-chunky-ocean:hover{border-color:var(--cyan);box-shadow:0 0 26px -6px rgba(58,209,255,.5)}
+.btn-chunky-sun{background:var(--glass-2);color:var(--txt);border:1px solid rgba(255,225,77,.32)}
+.btn-chunky-sun:hover{border-color:var(--yellow);box-shadow:0 0 26px -6px rgba(255,225,77,.45)}
+.btn-chunky-white{background:var(--glass-2);color:var(--txt);border:1px solid var(--hairline)}
+.btn-chunky-white:hover{border-color:var(--hairline-strong);box-shadow:0 0 26px -8px rgba(181,55,242,.5)}
+
+/* eyebrows — gradient text label with a leading gradient bar */
+.rm-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:0;background:none;border:0;box-shadow:none;
+  font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  background-image:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.rm-eyebrow::before{
+  content:"";width:24px;height:3px;border-radius:3px;flex:0 0 auto;
+  background:var(--grad-primary);-webkit-text-fill-color:initial;
+}
+
+/* neon chips (stickers) */
+.sticker{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.32rem .8rem;border-radius:999px;
+  font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
+  border:1px solid var(--hairline);background:rgba(255,255,255,.04);
+  color:var(--txt-dim);box-shadow:none;transform:none;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.sticker-grass{color:#ff5b86;border-color:rgba(255,45,104,.42);background:rgba(255,45,104,.10)}  /* Required → pink */
+.sticker-sky{color:#7fe0ff;border-color:rgba(58,209,255,.42);background:rgba(58,209,255,.10)}    /* Optional → cyan */
+.sticker-coral{color:#5fe9bb;border-color:rgba(60,224,160,.44);background:rgba(60,224,160,.10)}   /* Done → green */
+.sticker-ocean{color:#7fe0ff;border-color:rgba(58,209,255,.42);background:rgba(58,209,255,.10)}
+.sticker-berry{color:#d98bff;border-color:rgba(181,55,242,.46);background:rgba(181,55,242,.12)}   /* purple */
+.sticker-peach{color:#ffb3c4;border-color:rgba(255,45,104,.32);background:rgba(255,45,104,.08)}
+.sticker-navy{color:var(--yellow);border-color:rgba(255,225,77,.4);background:rgba(255,225,77,.10)}
+
+/* step numbers — gradient pill */
+.rm-step-num{
+  width:48px;height:48px;flex-shrink:0;display:grid;place-items:center;border-radius:999px;
+  border:0;background:var(--grad-premium);color:#fff;font-weight:700;font-size:1.15rem;
+  box-shadow:0 10px 26px -10px rgba(255,45,104,.6),0 0 0 1px rgba(255,255,255,.14) inset;
+}
+
+/* feature icon chips (gradient set inline from JS) */
+.rm-feat-ico{
+  width:54px;height:54px;display:grid;place-items:center;border-radius:16px;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 26px -12px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06) inset;
+  margin-bottom:1rem;position:relative;
+}
+
+/* phone mockups — dark frame with neon edge glow */
+.rm-phone{
+  position:relative;width:clamp(220px,72vw,288px);aspect-ratio:462/1000;
+  background:#05060f;border:1px solid rgba(255,255,255,.10);border-radius:46px;padding:9px;
+  box-shadow:0 30px 70px -24px rgba(0,0,0,.9),0 0 0 1px rgba(181,55,242,.18),0 0 64px -10px rgba(255,45,104,.35);
+}
+.rm-phone img{width:100%;height:100%;object-fit:cover;border-radius:38px;display:block;background:#0a0e22}
+.rm-phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:32%;height:18px;background:#05060f;border-radius:0 0 14px 14px;z-index:2}
+
+/* atmospheric blobs → soft neon glows */
+.rm-blob{position:absolute;border-radius:50%;filter:blur(72px);opacity:.55;mix-blend-mode:screen;pointer-events:none;z-index:0}
+
+/* deeper sections with localized glow */
+.k-soft{background:linear-gradient(180deg,#0a0e22 0%,#070a1c 100%);position:relative;overflow:hidden}
+.k-soft::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(70% 60% at 82% 0%, rgba(181,55,242,.16), transparent 60%),
+    radial-gradient(60% 50% at 2% 100%, rgba(255,45,104,.12), transparent 60%);
+}
+.k-soft>*{position:relative;z-index:1}
+
 /* horizontal gallery */
 .rm-gallery{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .25rem 1.5rem;-webkit-overflow-scrolling:touch}
 .rm-shot{flex:0 0 auto;scroll-snap-align:center;margin:0}
-.rm-shot img{width:clamp(170px,46vw,224px);aspect-ratio:462/1000;object-fit:cover;border:3px solid #1F2E4D;border-radius:26px;box-shadow:6px 6px 0 #1F2E4D;background:#F6ECFF;display:block}
-[dir="rtl"] .rm-shot img{box-shadow:-6px 6px 0 #1F2E4D}
-.rm-gallery::-webkit-scrollbar{height:10px}
-.rm-gallery::-webkit-scrollbar-thumb{background:#1F2E4D;border-radius:999px}
-.rm-step-num{width:46px;height:46px;flex-shrink:0;display:grid;place-items:center;border-radius:999px;border:3px solid #1F2E4D;background:#FFD84D;font-weight:900;font-size:1.2rem;box-shadow:3px 3px 0 #1F2E4D}
-[dir="rtl"] .rm-step-num{box-shadow:-3px 3px 0 #1F2E4D}
-.rm-feat-ico{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;border:3px solid #1F2E4D;box-shadow:3px 3px 0 #1F2E4D;margin-bottom:1rem}
-[dir="rtl"] .rm-feat-ico{box-shadow:-3px 3px 0 #1F2E4D}
-.acc-chunky{margin-bottom:1rem}
-a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #b537f2;outline-offset:3px;border-radius:8px}
-.rm-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:2.5px solid #1F2E4D;border-radius:999px;padding:.4rem 1rem;font-weight:800;font-size:.8rem;box-shadow:3px 3px 0 #1F2E4D}
-[dir="rtl"] .rm-eyebrow{box-shadow:-3px 3px 0 #1F2E4D}
+.rm-shot img{
+  width:clamp(170px,46vw,224px);aspect-ratio:462/1000;object-fit:cover;
+  border:1px solid rgba(255,255,255,.10);border-radius:26px;
+  box-shadow:0 20px 44px -20px rgba(0,0,0,.85),0 0 30px -12px rgba(181,55,242,.4);
+  background:#0a0e22;display:block;
+}
+.rm-gallery::-webkit-scrollbar{height:8px}
+.rm-gallery::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#ff2d68,#b537f2);border-radius:999px}
+.rm-gallery::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:999px}
+
+/* glass accordion (FAQ) */
+.acc-chunky{
+  background:var(--glass);border:1px solid var(--hairline);border-radius:var(--r-md);
+  box-shadow:0 18px 44px -28px rgba(0,0,0,.8);overflow:hidden;margin-bottom:1rem;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.acc-chunky>summary{
+  list-style:none;cursor:pointer;padding:1.1rem 1.35rem;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:transparent;color:var(--txt);transition:background .2s var(--ease);
+}
+.acc-chunky>summary::-webkit-details-marker{display:none}
+.acc-chunky>summary:hover{background:rgba(255,255,255,.03)}
+.acc-chunky>summary::after{
+  content:'\002B';font-size:1.1rem;font-weight:700;width:30px;height:30px;
+  border:1px solid var(--hairline-strong);border-radius:999px;background:rgba(255,255,255,.04);
+  color:var(--txt);display:grid;place-items:center;flex-shrink:0;transition:transform .2s var(--ease),background .2s var(--ease);
+}
+.acc-chunky[open]>summary::after{content:'\2212';background:var(--grad-primary);color:#fff;border-color:transparent}
+.acc-chunky>.acc-body{padding:1.1rem 1.35rem;border-top:1px solid var(--hairline)}
+
+/* language switcher */
+#rm-lang{
+  border:1px solid var(--hairline);border-radius:10px;padding:5px 9px;
+  background:rgba(255,255,255,.05);color:var(--txt);font-weight:600;font-size:13px;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+#rm-lang option{background:#0a0e22;color:var(--txt)}
+
+/* focus rings */
+a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
+  outline:2px solid var(--pink);outline-offset:3px;border-radius:10px;
+  box-shadow:0 0 0 4px rgba(255,45,104,.25);
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
 </style>
 </head>
 <body>
@@ -234,8 +442,8 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
       </div>
       <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
         <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
-          <div class="rm-phone" style="width:100%;box-shadow:8px 8px 0 #1F2E4D"><img id="rm-power-shot-a" loading="lazy" width="462" height="1000" src="assets/reelmake/shots/en-2.jpg" alt="Reel Make — choosing a theme and voice"></div>
-          <div class="rm-phone" style="width:100%;box-shadow:8px 8px 0 #1F2E4D;margin-top:2rem"><img id="rm-power-shot-b" loading="lazy" width="462" height="1000" src="assets/reelmake/shots/en-3.jpg" alt="Reel Make — per-scene caption and asset editing"></div>
+          <div class="rm-phone" style="width:100%"><img id="rm-power-shot-a" loading="lazy" width="462" height="1000" src="assets/reelmake/shots/en-2.jpg" alt="Reel Make — choosing a theme and voice"></div>
+          <div class="rm-phone" style="width:100%;margin-top:2rem"><img id="rm-power-shot-b" loading="lazy" width="462" height="1000" src="assets/reelmake/shots/en-3.jpg" alt="Reel Make — per-scene caption and asset editing"></div>
         </div>
         <div class="order-1 md:order-2 space-y-6">
           <div class="k-card p-6">
@@ -323,7 +531,16 @@ a:focus-visible,summary:focus-visible,select:focus-visible,button:focus-visible{
   var SHOTS = { en:6, ja:6, zh:6, ko:5, es:4, "pt-BR":5, fr:5, de:6, it:5, ru:5, tr:4, vi:4, th:5, hi:6, ar:6 };
   var PREFIX = { en:"en", ja:"ja", "zh-Hans":"zh", ko:"ko", es:"es", "pt-BR":"pt-BR", fr:"fr", de:"de", it:"it", ru:"ru", tr:"tr", vi:"vi", th:"th", hi:"hi", ar:"ar" };
   var ICONS = ["🎬","🎙️","💬","🎵","🎨","🔄","👁️","📲"];
-  var ICOBG = ["#FFD84D","#FF6B5B","#4ECDC4","#A5E3F5","#FFB3BA","#7DD87A","#E85A9A","#FFD84D"];
+  var ICOBG = [
+    "linear-gradient(135deg,#ff2d68,#ff5e3a)",
+    "linear-gradient(135deg,#b537f2,#ff2d68)",
+    "linear-gradient(135deg,#3ad1ff,#3ce0a0)",
+    "linear-gradient(135deg,#3ad1ff,#b537f2)",
+    "linear-gradient(135deg,#ff5e3a,#ffe14d)",
+    "linear-gradient(135deg,#b537f2,#3ad1ff)",
+    "linear-gradient(135deg,#ff2d68,#b537f2)",
+    "linear-gradient(135deg,#3ce0a0,#3ad1ff)"
+  ];
   var LP = {};
 
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
