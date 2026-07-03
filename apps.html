@@ -3,533 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="apps.meta.title">TrailFusion AI - Innovative AI Application Development & Showcase</title>
-<meta name="description" content="Developing and showcasing innovative applications powered by the latest AI technology. Try out our diverse AI apps including Debate Master, Wood Golem, VoiceLink, and WordBlaster. Experience practical AI solutions." data-i18n-content="apps.meta.description">
-<meta name="keywords" content="AI applications, artificial intelligence apps, AI tools, machine learning, TrailFusion AI, Debate Master, Wood Golem, VoiceLink, WordBlaster, AI development, innovative apps">
+<title data-i18n="apps.meta.title">TrailFusion AI - 開発したアプリ一覧</title>
+<meta name="description" content="TrailFusion AIが開発した8つのアプリを紹介。社会クエスト・理科クエスト・国語クエスト・Reel Make・BuddyTalk・Wood Golem・Word Blaster・Hacking Timer。" data-i18n-content="apps.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/apps.html">
-
-<!-- Open Graph tags -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="TrailFusion AI - Innovative AI Application Development & Showcase" data-i18n-property="apps.meta.title">
-<meta property="og:description" content="Developing and showcasing innovative applications powered by the latest AI technology. Try out our diverse AI apps including Debate Master, Wood Golem, VoiceLink, and WordBlaster." data-i18n-property="apps.meta.description">
+<meta property="og:title" content="TrailFusion AI - 開発したアプリ一覧">
+<meta property="og:description" content="学習・ゲーム・動画作成・生産性。TrailFusion AIが開発した8つのアプリを紹介します。">
 <meta property="og:url" content="https://trailfusionai.com/apps.html">
 <meta property="og:image" content="https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
 <meta property="og:site_name" content="TrailFusion AI">
 <meta property="og:locale" content="ja_JP">
-
-<!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TrailFusion AI - Innovative AI Application Development & Showcase" data-i18n-name="apps.meta.title">
-<meta name="twitter:description" content="Developing and showcasing innovative applications powered by the latest AI technology. Try out our diverse AI apps including Debate Master, Wood Golem, VoiceLink, and WordBlaster." data-i18n-name="apps.meta.description">
-<meta name="twitter:image" content="https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
-
-<!-- Additional SEO meta tags -->
-<meta name="theme-color" content="#ff6b5b">
-<meta name="msapplication-TileColor" content="#ff6b5b">
-<meta name="format-detection" content="telephone=no">
-
-<!-- Favicon and Apple Touch Icon -->
+<meta name="theme-color" content="#FFD84D">
 <link rel="icon" type="image/png" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
 <link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.png">
-<meta name="apple-mobile-web-app-title" content="TrailFusion AI">
-<meta name="application-name" content="TrailFusion AI">
-<!-- Google tag (gtag.js) -->
+<script>
+// 言語の事前判定 — 日本語以外のユーザーには翻訳完了まで描画を隠し、
+// 「英語→日本語」のようなちらつきを起こさない（1.8秒のフェイルセーフ付き）
+(function(){
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language-apps')||localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
+  window.__APPS_LANG=lang;
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
+})();
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-S57KSMSB8Y');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<!-- Tailwind CSS via CDN -->
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "TrailFusion AI - 開発したアプリ一覧",
+  "description": "TrailFusion AIが開発した8つのアプリを紹介。学習・ゲーム・動画作成・生産性の各分野で、iOS/Androidアプリを配信しています。",
+  "url": "https://trailfusionai.com/apps.html",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Organization",
+    "name": "TrailFusion AI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg"
+    }
+  },
+  "mainEntity": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "合格！社会クエスト",
+      "applicationCategory": "EducationalApplication",
+      "description": "中学受験社会 学習アプリ",
+      "operatingSystem": "iOS / Android",
+      "url": "https://trailfusionai.com/social-quest.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "合格！理科クエスト",
+      "applicationCategory": "EducationalApplication",
+      "description": "中学受験理科 学習アプリ",
+      "operatingSystem": "iOS / Android",
+      "url": "https://trailfusionai.com/rika-quest.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Reel Make",
+      "applicationCategory": "MultimediaApplication",
+      "description": "AIリール動画メーカー",
+      "operatingSystem": "iOS",
+      "url": "https://trailfusionai.com/reelmake.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "合格！国語クエスト",
+      "applicationCategory": "EducationalApplication",
+      "description": "中学受験国語 学習アプリ",
+      "operatingSystem": "iOS / Android",
+      "url": "https://trailfusionai.com/kokugo-quest.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "BuddyTalk",
+      "applicationCategory": "EducationalApplication",
+      "description": "AI英会話アプリ（旧GP Teachers）",
+      "operatingSystem": "iOS",
+      "url": "https://trailfusionai.com/buddytalk.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Wood Golem",
+      "applicationCategory": "GameApplication",
+      "description": "棒取りストラテジーパズル",
+      "operatingSystem": "iOS",
+      "url": "https://trailfusionai.com/wood-golem.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Word Blaster",
+      "applicationCategory": "GameApplication",
+      "description": "英単語シューティングゲーム",
+      "operatingSystem": "iOS",
+      "url": "https://trailfusionai.com/word-blaster.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Hacking Timer",
+      "applicationCategory": "ProductivityApplication",
+      "description": "集中インターバルタイマー",
+      "operatingSystem": "Apple Watch / iOS",
+      "url": "https://trailfusionai.com/hacking-timer.html"
+    }
+  ]
+}
+</script>
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
-scroll-behavior: smooth;
-background: #FFFBF2;
-color: #1F2E4D;
-}
-
-/* App section backgrounds — keep gradient personality but on cream base */
-.app-section-premium {
-  position: relative;
-  overflow: hidden;
-}
-.app-section-premium::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,251,242,0.6) 0%, rgba(255,251,242,0.95) 100%);
-  pointer-events: none;
-}
-.app-section { scroll-margin-top: 140px; }
-
-/* Override premium app cards to chunky look */
-.app-card {
-  background: #fff !important;
-  border: 3px solid #1F2E4D !important;
-  border-radius: 28px !important;
-  box-shadow: 8px 8px 0 #1F2E4D !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-}
-.app-card:hover {
-  transform: translate(-3px,-3px) !important;
-  box-shadow: 11px 11px 0 #1F2E4D !important;
-}
-
-.glass-button {
-  background: #fff !important;
-  border: 2.5px solid #1F2E4D !important;
-  color: #1F2E4D !important;
-  font-weight: 800 !important;
-  border-radius: 999px !important;
-  box-shadow: 5px 5px 0 #FFD84D !important;
-  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
-  backdrop-filter: none !important;
-}
-.glass-button:hover {
-  transform: translate(-2px,-2px) !important;
-  box-shadow: 7px 7px 0 #FFD84D !important;
-  background: #fff !important;
-}
-
-.screenshot-premium {
-  border: 3px solid #1F2E4D !important;
-  border-radius: 24px !important;
-  box-shadow: 10px 10px 0 #1F2E4D !important;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1) !important;
-}
-.screenshot-premium:hover {
-  transform: translate(-4px,-4px) rotate(-1deg) !important;
-  box-shadow: 14px 14px 0 #1F2E4D !important;
-}
-
-.tiktok-embed { border: 3px solid #1F2E4D; border-radius: 24px; box-shadow: 10px 10px 0 #1F2E4D; overflow: hidden; }
-
-/* Premium hero override — use sun gradient */
-.premium-hero {
-  background: radial-gradient(circle at 80% 20%, #FFE57A 0%, #FFD84D 40%, #FFC93D 70%, #FFBB2A 100%) !important;
-  position: relative;
-  overflow: hidden;
-}
-.premium-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(31,46,77,0.12) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-  z-index: 0;
-}
-.gradient-text {
-  background: linear-gradient(120deg, #FF6B5B 0%, #E85A9A 45%, #1F2E4D 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-}
-.glow-text { text-shadow: none !important; }
-@keyframes float-orbs {
-0%, 100% { transform: translate(0, 0) rotate(0deg); }
-25% { transform: translate(2%, 2%) rotate(5deg); }
-50% { transform: translate(-1%, 3%) rotate(-3deg); }
-75% { transform: translate(1%, -2%) rotate(2deg); }
-}
-@keyframes float-orbs {
-0%, 100% { transform: translate(0, 0) rotate(0deg); }
-25% { transform: translate(2%, 2%) rotate(5deg); }
-50% { transform: translate(-1%, 3%) rotate(-3deg); }
-75% { transform: translate(1%, -2%) rotate(2deg); }
-}
-
-/* Glass Morphism */
-.glass-card {
-background: rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.15);
-border-radius: 24px;
-}
-.glass-button {
-background: rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.2);
-transition: all 0.3s ease;
-}
-.glass-button:hover {
-background: rgba(255, 255, 255, 0.2);
-transform: translateY(-2px);
-box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
-}
-
-/* App Navigation */
-.app-nav-premium {
-background: rgba(255, 255, 255, 0.95);
-backdrop-filter: blur(20px);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-.app-nav-item {
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-position: relative;
-}
-.app-nav-item::after {
-content: '';
-position: absolute;
-bottom: -2px;
-left: 50%;
-width: 0;
-height: 3px;
-background: linear-gradient(90deg, #8b5cf6, #6366f1);
-border-radius: 2px;
-transition: all 0.3s ease;
-transform: translateX(-50%);
-}
-.app-nav-item:hover::after,
-.app-nav-item.active::after {
-width: 80%;
-}
-
-/* App Section Premium */
-.app-section-premium {
-position: relative;
-overflow: hidden;
-}
-.app-section-premium::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.02) 100%);
-pointer-events: none;
-}
-
-/* Screenshot Cards */
-.screenshot-premium {
-border-radius: 20px;
-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-transform: perspective(1000px) rotateY(0deg);
-}
-.screenshot-premium:hover {
-transform: perspective(1000px) rotateY(-5deg) translateY(-10px) scale(1.02);
-box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
-}
-
-/* Glow Effects */
-.glow-violet {
-box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
-}
-.glow-text {
-text-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
-}
-
-/* Gradient Text */
-.gradient-text {
-background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-/* Fade In Animation */
-.fade-in-up {
-opacity: 0;
-transform: translateY(40px);
-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fade-in-up.visible {
-opacity: 1;
-transform: translateY(0);
-}
-
-/* App Cards */
-.app-card {
-background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
-border-radius: 24px;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-border: 1px solid rgba(0, 0, 0, 0.05);
-}
-.app-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-}
-
-/* Feature List */
-.feature-item {
-transition: all 0.3s ease;
-}
-.feature-item:hover {
-transform: translateX(8px);
-}
-
-/* TikTok Embed */
-.tiktok-embed {
-width: 100%;
-max-width: 400px;
-margin: 0 auto;
-}
-
-/* Store Buttons */
-.store-button {
-transition: all 0.3s ease;
-}
-.store-button:hover {
-transform: translateY(-3px);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Scroll Margin */
-.app-section {
-scroll-margin-top: 140px;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-
-/* ============================== */
-/* v2: Premium App Section Layout */
-/* ============================== */
-.app-section-v2 {
-  position: relative;
-  overflow: hidden;
-  scroll-margin-top: 140px;
-}
-
-.app-progress-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  color: rgba(31,46,77,0.65);
-}
-.app-progress-chip .line {
-  display: inline-block;
-  height: 2px;
-  width: 40px;
-  background: rgba(31,46,77,0.35);
-  border-radius: 2px;
-}
-
-.app-icon-tile {
-  width: 82px;
-  height: 82px;
-  border-radius: 22px;
-  border: 3px solid #1F2E4D;
-  box-shadow: 6px 6px 0 #1F2E4D;
-  overflow: hidden;
-  flex-shrink: 0;
-  transform: rotate(-3deg);
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
-  background: #fff;
-}
-.app-icon-tile:hover { transform: rotate(0deg) scale(1.04); }
-.app-icon-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (min-width: 768px) {
-  .app-icon-tile { width: 112px; height: 112px; border-radius: 28px; }
-}
-
-.feat-num {
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  border: 2.5px solid #1F2E4D;
-  display: grid;
-  place-items: center;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 0.85rem;
-  color: #1F2E4D;
-  background: #fff;
-  flex-shrink: 0;
-  box-shadow: 3px 3px 0 #1F2E4D;
-}
-
-.shot-rot { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-.shot-rot:hover { transform: rotate(0deg) translateY(-6px) !important; }
-
-.app-hero-frame {
-  border: 3px solid #1F2E4D;
-  border-radius: 22px;
-  box-shadow: 8px 8px 0 #1F2E4D;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-}
-.app-hero-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(31,46,77,0.12) 100%);
-  pointer-events: none;
-}
-.app-hero-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-.store-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.7rem 1.25rem;
-  border: 2.5px solid #1F2E4D;
-  border-radius: 999px;
-  font-weight: 800;
-  background: #1F2E4D;
-  color: #fff;
-  box-shadow: 5px 5px 0 #FFD84D;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  text-decoration: none;
-}
-.store-pill:hover {
-  transform: translate(-2px,-2px);
-  box-shadow: 7px 7px 0 #FFD84D;
-}
-.store-pill-disabled {
-  background: #FFFBF2;
-  color: rgba(31,46,77,0.45);
-  cursor: not-allowed;
-  box-shadow: 3px 3px 0 rgba(31,46,77,0.2);
-}
-.store-pill-disabled:hover { transform: none; box-shadow: 3px 3px 0 rgba(31,46,77,0.2); }
-
-.tiktok-stage {
-  border: 3px solid #1F2E4D;
-  border-radius: 24px;
-  box-shadow: 10px 10px 0 #1F2E4D;
-  overflow: hidden;
-  background: #1F2E4D;
-}
-
-.app-bg-ocean { background: linear-gradient(180deg, #E6F6F8 0%, #FFFBF2 100%); }
-.app-bg-grass { background: linear-gradient(180deg, #ECF8E4 0%, #FFFBF2 100%); }
-.app-bg-violet{ background: linear-gradient(180deg, #F1EAFA 0%, #FFFBF2 100%); }
-.app-bg-sun   { background: linear-gradient(180deg, #FFF2C8 0%, #FFFBF2 100%); }
-.app-bg-coral { background: linear-gradient(180deg, #FDE6E1 0%, #FFFBF2 100%); }
-.app-bg-berry { background: linear-gradient(180deg, #EDEBF6 0%, #FFFBF2 100%); }
-
-/* Hero banner — wide with title overlay */
-.app-banner {
-  border: 3px solid #1F2E4D;
-  border-radius: 22px;
-  box-shadow: 8px 8px 0 #1F2E4D;
-  aspect-ratio: 20/5;
-  min-height: 180px;
-  max-height: 280px;
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
-}
-.app-banner:hover {
-  transform: translate(-3px,-3px);
-  box-shadow: 11px 11px 0 #1F2E4D;
-}
-@media (max-width: 767px) {
-  .app-banner { aspect-ratio: 4/3; min-height: 240px; max-height: none; }
-}
-.app-banner-overlay {
-  background: linear-gradient(90deg,
-    rgba(15,23,42,0.97) 0%,
-    rgba(15,23,42,0.95) 38%,
-    rgba(15,23,42,0.55) 55%,
-    rgba(15,23,42,0.12) 72%,
-    rgba(15,23,42,0) 90%);
-}
-.app-banner h2,
-.app-banner p {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6);
-}
-.app-banner > img {
-  object-position: 75% center;
-}
-@media (max-width: 767px) {
-  .app-banner > img { object-position: center 20%; }
-  .app-banner-overlay {
-    background: linear-gradient(180deg,
-      rgba(15,23,42,0.1) 0%,
-      rgba(15,23,42,0.35) 38%,
-      rgba(15,23,42,0.88) 72%,
-      rgba(15,23,42,0.96) 100%);
-  }
-}
-@media (max-width: 767px) {
-  .app-banner-overlay {
-    background: linear-gradient(180deg,
-      rgba(15,23,42,0.08) 0%,
-      rgba(15,23,42,0.55) 50%,
-      rgba(15,23,42,0.92) 100%);
-  }
-}
-.app-icon-tile-sm {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  border: 2.5px solid #1F2E4D;
-  box-shadow: 4px 4px 0 #1F2E4D;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #fff;
-}
-
-/* Download appeal chips */
-.dl-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 800;
-  border: 2px solid #1F2E4D;
-  border-radius: 999px;
-  background: #fff;
-  color: #1F2E4D;
-  box-shadow: 2px 2px 0 #1F2E4D;
-}
-.dl-chip i { font-size: 1rem; }
-
-.dl-cta-banner {
-  padding: 0.9rem 1.1rem;
-  margin-bottom: 1rem;
-  border: 2.5px solid #1F2E4D;
-  border-radius: 18px;
-  background: #FFF4D4;
-  box-shadow: 4px 4px 0 #1F2E4D;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-.dl-cta-banner .emoji { font-size: 2rem; line-height: 1; flex-shrink: 0; }
-.dl-cta-banner .headline { font-family: 'Caveat', cursive; font-size: 1.35rem; font-weight: 700; line-height: 1.1; color: #FF6B5B; }
-.dl-cta-banner .sub { font-size: 0.78rem; font-weight: 700; color: rgba(31,46,77,0.7); margin-top: 2px; }
-.app-icon-tile-sm img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (min-width: 768px) {
-  .app-icon-tile-sm { width: 64px; height: 64px; border-radius: 16px; }
-}
-
-@media (min-width: 1024px) {
-  .lg\:col-span-4 { grid-column: span 4 / span 4; }
-  .lg\:col-span-8 { grid-column: span 8 / span 8; }
-}
+body{background:#FFFBF2;color:#1F2E4D;}
+.hero-premium{background:#14122E;}
+.hero-bg{position:absolute;inset:0;background:url('assets/images/ai/apps-hero-bg.jpg') center/cover no-repeat;opacity:.6;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(112deg,rgba(13,12,32,.96) 0%,rgba(20,18,46,.85) 42%,rgba(31,46,77,.4) 100%);}
+.hero-chip{display:inline-flex;align-items:center;gap:.55rem;border:2px solid rgba(255,255,255,.3);border-radius:999px;padding:.55rem 1.15rem;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.14em;}
+.logo-strip{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;}
+@media(min-width:1024px){.logo-strip{justify-content:flex-start;}}
+.logo-strip a{width:54px;height:54px;border-radius:15px;overflow:hidden;border:2px solid rgba(255,255,255,.75);box-shadow:0 8px 20px rgba(0,0,0,.4);transition:transform .2s ease,box-shadow .2s ease;background:#fff;display:block;flex-shrink:0;}
+.logo-strip a:hover{transform:translateY(-4px) rotate(-4deg);box-shadow:0 14px 28px rgba(0,0,0,.5);}
+.logo-strip img{width:100%;height:100%;object-fit:cover;display:block;}
+.fan-stack{position:relative;height:440px;max-width:460px;margin:0 auto;}
+.fan-card{position:absolute;width:60%;aspect-ratio:1/1;border:4px solid #fff;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+.fan-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.fan-card.f1{right:0;top:0;transform:rotate(6deg);z-index:2;}
+.fan-card.f2{left:0;top:9%;transform:rotate(-7deg);z-index:1;}
+.fan-card.f3{left:20%;bottom:0;transform:rotate(-2deg);z-index:3;box-shadow:0 34px 70px rgba(0,0,0,.6),0 0 60px rgba(255,45,104,.35);}
+.fan-card.f3:hover{transform:rotate(0) scale(1.02);}
+.fan-new{position:absolute;top:12px;right:12px;background:#FF2D68;color:#fff;font-weight:900;font-size:.7rem;letter-spacing:.1em;padding:.3rem .7rem;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.35);}
+.app-quick-nav{background:rgba(255,251,242,.95);backdrop-filter:blur(14px);border-bottom:3px solid #1F2E4D;}
+.app-nav-chip{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .8rem .4rem .4rem;border:2px solid #1F2E4D;border-radius:999px;background:#fff;font-weight:800;font-size:.85rem;color:#1F2E4D;white-space:nowrap;box-shadow:2.5px 2.5px 0 #1F2E4D;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;}
+.app-nav-chip:hover{transform:translate(-2px,-2px);box-shadow:4.5px 4.5px 0 #1F2E4D;}
+.app-tile{position:relative;display:flex;flex-direction:column;background:#fff;border:3px solid #1F2E4D;border-radius:28px;box-shadow:8px 8px 0 #1F2E4D;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;text-decoration:none;}
+.app-tile:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 #1F2E4D;}
+.app-tile:hover .more-link{background:#1F2E4D;color:#fff;}
+.tile-img{position:relative;aspect-ratio:1/1;background:linear-gradient(135deg,var(--accent) 0%,#fff 160%);border-bottom:3px solid #1F2E4D;}
+.tile-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.tile-body{display:flex;flex-direction:column;flex-grow:1;padding:1.1rem 1.2rem 1.2rem;}
+.region-pill{position:absolute;left:.7rem;bottom:.7rem;display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .7rem;border:2px solid #1F2E4D;border-radius:999px;font-size:.72rem;font-weight:900;box-shadow:2px 2px 0 #1F2E4D;}
+.region-pill.global{background:#4ECDC4;color:#1F2E4D;}
+.region-pill.jp{background:#fff;color:#1F2E4D;}
+.corner-badge{position:absolute;top:.7rem;right:.7rem;z-index:2;font-size:.66rem;font-weight:900;letter-spacing:.08em;padding:.28rem .65rem;border-radius:999px;box-shadow:2px 2px 0 rgba(31,46,77,.35);}
+.plat-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:800;color:rgba(31,46,77,.6);}
+.more-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;font-weight:900;color:#1F2E4D;border:2px solid #1F2E4D;border-radius:999px;padding:.32rem .75rem;transition:background .2s ease,color .2s ease;}
+.legend-chip{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:2px solid #1F2E4D;border-radius:999px;background:#fff;font-size:.8rem;font-weight:800;box-shadow:3px 3px 0 #1F2E4D;}
 </style>
 <script src="assets/js/i18n.js"></script>
-<script type="module" src="assets/js/translations-index.js"></script>
 </head>
 <body class="bg-cream">
-<!-- ============================== -->
-<!-- HEADER -->
-<!-- ============================== -->
+
 <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
   <div class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between gap-3">
@@ -538,987 +182,299 @@ margin: 0;
           <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
           <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
         </div>
-        <div>
+        <div class="hidden sm:block">
           <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
           <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
         </div>
       </a>
-
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
         <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
         <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
         <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">AIアプリ</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
         <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
-
       <div class="flex items-center gap-2 sm:gap-3">
         <div id="language-selector" class="hidden lg:block"></div>
         <div id="mobile-language-selector" class="lg:hidden"></div>
-        <a href="#contact" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm" data-i18n="nav.contact">
-          <i class="ri-mail-send-line"></i>
-          Contact
-        </a>
-        <a href="camping.html" class="mobile-pill bg-sky lg:hidden">
-          <i class="ri-caravan-line"></i><span class="hidden sm:inline">Campervan</span>
-        </a>
-        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="Menu">
+        <a href="#contact" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm" data-i18n="nav.contact"><i class="ri-mail-send-line"></i>お問い合わせ</a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
         </button>
       </div>
     </div>
-
     <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
       <div class="grid grid-cols-2 gap-2">
-        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold" data-i18n="mobileNav.home">🏠 ホーム</a>
-        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold" data-i18n="mobileNav.camping">🚐 キャンパー</a>
-        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold" data-i18n="mobileNav.driveRoutes">🗺️ ドライブルート</a>
-        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold" data-i18n="mobileNav.apps">✨ AIアプリ</a>
-        <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold" data-i18n="mobileNav.maintenance">🔧 整備記録</a>
-        <a href="#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2" data-i18n="mobileNav.contact">✉️ お問い合わせ</a>
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ 開発したアプリ</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- Premium App Navigation -->
-<div class="app-nav-premium py-3 sm:py-4 sticky top-16 z-40 overflow-x-auto border-b border-gray-100">
-<div class="container mx-auto px-2 sm:px-4">
-<div class="flex sm:justify-center gap-2 sm:gap-4 min-w-max sm:min-w-0">
-<a href="#reel-make" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-coral hover:bg-peach/40 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="assets/reelmake/logo.png" class="w-full h-full object-cover" alt=""></span>
+<!-- アプリクイックナビ -->
+<div class="app-quick-nav py-3 sticky top-[65px] z-40 overflow-x-auto">
+<div class="container mx-auto px-3 sm:px-4">
+<div class="flex gap-2 sm:gap-3 min-w-max lg:justify-center">
+<a href="reelmake.html" class="app-nav-chip" data-region="global">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/reelmake/logo.png" class="w-full h-full object-cover" alt=""></span>
 <span>Reel Make</span>
 </a>
-<a href="#rika-quest" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-sun-600 hover:bg-sun-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="assets/images/rika-quest/rika-quest-logo.png" class="w-full h-full object-cover" alt=""></span>
-<span class="sm:hidden">理科クエ</span>
-<span class="hidden sm:inline">理科クエスト</span>
+<a href="buddytalk.html" class="app-nav-chip" data-region="global">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/buddytalk/logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>BuddyTalk</span>
 </a>
-<a href="#kokugo-quest" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-coral hover:bg-peach/40 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 rounded-lg overflow-hidden shadow-md flex-shrink-0"><img src="assets/images/kokugo-quest/kokugo-quest-logo.png" class="w-full h-full object-cover" alt=""></span>
-<span class="sm:hidden">国語クエ</span>
-<span class="hidden sm:inline">国語クエスト</span>
+<a href="wood-golem.html" class="app-nav-chip" data-region="global">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/wood-golem/logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>Wood Golem</span>
 </a>
-<a href="#gp-teachers" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md group-hover:shadow-blue-500/30 transition-shadow">
-<i class="ri-book-open-line text-sm"></i>
-</span>
-<span class="sm:hidden">GPTeachers</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.gpTeachers">GP Teachers</span>
+<a href="social-quest.html" class="app-nav-chip" data-region="jp">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/social-quest/logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>社会クエスト</span>
 </a>
-<a href="#wood-golem" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-green-600 hover:bg-green-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 text-white shadow-md group-hover:shadow-green-500/30 transition-shadow">
-<i class="ri-plant-line text-sm"></i>
-</span>
-<span class="sm:hidden">WoodGolem</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.woodGolem">Wood Golem</span>
+<a href="rika-quest.html" class="app-nav-chip" data-region="jp">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/rika-quest/rika-quest-logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>理科クエスト</span>
 </a>
-<a href="#voicelink" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-md group-hover:shadow-purple-500/30 transition-shadow">
-<i class="ri-mic-line text-sm"></i>
-</span>
-<span class="sm:hidden">VoiceLink</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.voicelink">VoiceLink AI Interpreter</span>
+<a href="kokugo-quest.html" class="app-nav-chip" data-region="jp">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/kokugo-quest/kokugo-quest-logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>国語クエスト</span>
 </a>
-<a href="#word-blaster" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-amber-600 hover:bg-amber-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-md group-hover:shadow-amber-500/30 transition-shadow">
-<i class="ri-rocket-line text-sm"></i>
-</span>
-<span class="sm:hidden">WordBlaster</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.wordBlaster">Word Blaster</span>
+<a href="word-blaster.html" class="app-nav-chip" data-region="global">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/word-blaster/logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>Word Blaster</span>
 </a>
-<a href="#debate-master" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-red-600 hover:bg-red-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-red-500 to-red-600 text-white shadow-md group-hover:shadow-red-500/30 transition-shadow">
-<i class="ri-chat-voice-line text-sm"></i>
-</span>
-<span class="sm:hidden">Debate</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.debateMaster">Debate Master</span>
-</a>
-<a href="#hacking-timer" class="app-nav-item flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-all text-sm sm:text-base font-medium whitespace-nowrap group">
-<span class="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md group-hover:shadow-indigo-500/30 transition-shadow">
-<i class="ri-timer-line text-sm"></i>
-</span>
-<span class="sm:hidden">HackingTimer</span>
-<span class="hidden sm:inline" data-i18n="apps.nav.hackingTimer">Hacking Timer</span>
+<a href="hacking-timer.html" class="app-nav-chip" data-region="global">
+<span class="w-8 h-8 rounded-lg overflow-hidden border-2 border-navy flex-shrink-0 bg-white"><img src="assets/images/hacking-timer/logo.png" class="w-full h-full object-cover" alt=""></span>
+<span>Hacking Timer</span>
 </a>
 </div>
 </div>
 </div>
-<!-- ============================== -->
-<!-- HERO -->
-<!-- ============================== -->
-<section class="premium-hero min-h-[500px] sm:min-h-[600px] md:min-h-[700px] relative flex items-center overflow-hidden">
-  <!-- AI: hand-drawn doodles tiled overlay -->
-  <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: url('assets/images/ai/deco-stars.jpg'); background-size: 520px; background-repeat: repeat; mix-blend-mode: multiply;"></div>
-  <!-- AI: starry CTA night gradient on right side -->
-  <img src="assets/images/ai/apps-hero-bg.jpg" alt="" aria-hidden="true" class="ai-blob -right-32 top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full" style="opacity: 0.18; filter: blur(6px);">
-  <!-- Floating sticker decorations -->
-  <div class="absolute top-[8%] left-[4%] hidden md:block float pointer-events-none" style="--r:-10deg;">
-    <div class="sticker sticker-coral">🤖 AI POWERED</div>
-  </div>
-  <div class="absolute top-[15%] right-[8%] hidden md:block float-slow pointer-events-none" style="--r:8deg;">
-    <div class="sticker sticker-ocean">🚀 6 APPS</div>
-  </div>
-  <div class="absolute bottom-[18%] left-[6%] hidden lg:block float pointer-events-none" style="--r:-6deg; animation-delay: -1.5s;">
-    <div class="sticker sticker-peach">🌐 10 LANG</div>
-  </div>
 
-  <div class="absolute top-12 right-8 sm:top-20 sm:right-16 z-10 spin-slow pointer-events-none hidden sm:block">
-    <div class="rotating-disc">
-      <div class="text-center leading-tight">
-        <div class="font-accent text-[10px] sm:text-xs text-navy">APPS</div>
-        <div class="font-accent text-2xl sm:text-3xl text-coral">2026</div>
-        <div class="font-accent text-[8px] sm:text-[10px] text-navy tracking-widest">TRAIL・FUSION</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mx-auto px-4 relative z-10 py-16">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
-        <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
-        <i class="ri-sparkle-fill text-coral"></i>
-        <span class="font-bold text-sm text-navy">AI-POWERED APPLICATIONS</span>
-      </div>
-
-      <h1 class="display-xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-navy mb-6 leading-tight pop-in" style="animation-delay: 0.2s;">
-        <span data-i18n="apps.hero.title">Expand your potential<br>with innovative apps</span>
-      </h1>
-
-      <p class="text-base sm:text-lg md:text-xl text-navy/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium pop-in" style="animation-delay: 0.55s;" data-i18n="apps.hero.description">
-        TrailFusion AI develops innovative applications powered by AI technology. We provide cutting-edge solutions across various fields including language learning, games, and productivity.
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-12 pop-in" style="animation-delay: 0.7s;">
-        <a href="#gp-teachers" class="btn-chunky btn-chunky-coral text-base">
-          <i class="ri-apps-2-fill"></i>
-          <span data-i18n="apps.hero.cta">See the Apps</span>
-          <i class="ri-arrow-down-line"></i>
-        </a>
-        <a href="https://apps.apple.com/developer/id1672219014" target="_blank" rel="noopener" class="btn-chunky btn-chunky-ocean text-base">
-          <i class="ri-apple-fill"></i>
-          <span>App Store</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto reveal-stagger">
-        <div class="card-chunky py-5 px-3">
-          <div class="font-accent text-3xl sm:text-4xl md:text-5xl text-coral mb-1">6</div>
-          <div class="text-xs sm:text-sm text-navy/70 font-bold">Apps</div>
+<!-- ヒーロー -->
+<section class="hero-premium relative overflow-hidden border-b-[3px] border-navy">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container mx-auto px-4 relative z-10 py-16 md:py-24 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="hero-chip mb-7">
+          <i class="ri-sparkle-fill text-sun"></i>
+          <span>TRAILFUSION APPS</span>
         </div>
-        <div class="card-chunky py-5 px-3">
-          <div class="font-accent text-3xl sm:text-4xl md:text-5xl text-ocean mb-1">10+</div>
-          <div class="text-xs sm:text-sm text-navy/70 font-bold">Languages</div>
+        <h1 class="display-xl text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <span data-i18n="apps2.heroTitle">革新的なアプリで<br>あなたの可能性を広げる</span>
+        </h1>
+        <p class="text-base md:text-lg text-white/75 mb-9 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium" data-i18n="apps2.heroLead">
+          学習・ゲーム・動画作成・生産性。TrailFusion AI が開発した8つのアプリを紹介します。気になるアプリをタップすると、それぞれの詳細ページをご覧いただけます。
+        </p>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+          <a href="#all-apps" class="btn-chunky btn-chunky-coral text-base">
+            <i class="ri-apps-2-fill"></i><span data-i18n="apps2.heroCta">アプリを見る</span><i class="ri-arrow-down-line"></i>
+          </a>
+          <a href="https://apps.apple.com/developer/id1672219014" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white text-base">
+            <i class="ri-apple-fill"></i><span>App Store</span>
+          </a>
         </div>
-        <div class="card-chunky py-5 px-3">
-          <div class="font-accent text-3xl sm:text-4xl md:text-5xl text-berry mb-1">AI</div>
-          <div class="text-xs sm:text-sm text-navy/70 font-bold">Powered</div>
+        <div class="logo-strip">
+          <a href="reelmake.html" data-region="global" title="Reel Make"><img src="assets/reelmake/logo.png" alt="Reel Make" loading="lazy"></a>
+          <a href="buddytalk.html" data-region="global" title="BuddyTalk"><img src="assets/images/buddytalk/logo.png" alt="BuddyTalk" loading="lazy"></a>
+          <a href="wood-golem.html" data-region="global" title="Wood Golem"><img src="assets/images/wood-golem/logo.png" alt="Wood Golem" loading="lazy"></a>
+          <a href="social-quest.html" data-region="jp" title="社会クエスト"><img src="assets/images/social-quest/logo.png" alt="社会クエスト" loading="lazy"></a>
+          <a href="rika-quest.html" data-region="jp" title="理科クエスト"><img src="assets/images/rika-quest/rika-quest-logo.png" alt="理科クエスト" loading="lazy"></a>
+          <a href="kokugo-quest.html" data-region="jp" title="国語クエスト"><img src="assets/images/kokugo-quest/kokugo-quest-logo.png" alt="国語クエスト" loading="lazy"></a>
+          <a href="word-blaster.html" data-region="global" title="Word Blaster"><img src="assets/images/word-blaster/logo.png" alt="Word Blaster" loading="lazy"></a>
+          <a href="hacking-timer.html" data-region="global" title="Hacking Timer"><img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer" loading="lazy"></a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 hidden md:block">
+        <div class="fan-stack">
+          <div class="fan-card f2"><img src="assets/images/social-quest/logo.png" alt="合格！社会クエスト"></div>
+          <div class="fan-card f1"><img src="assets/images/buddytalk/logo.png" alt="BuddyTalk"></div>
+          <div class="fan-card f3">
+            <img src="assets/reelmake/logo.png" alt="Reel Make">
+            <span class="fan-new">NEW</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none" style="z-index:5;">
     <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
   </svg>
 </section>
 
-<!-- App List Card Section -->
-<section class="py-20 md:py-28 bg-cream relative overflow-hidden">
-<div class="absolute inset-0 grid-pattern opacity-50"></div>
-<div class="absolute top-20 -left-20 w-80 h-80 bg-peach rounded-blob opacity-30 blur-2xl"></div>
-<div class="absolute bottom-10 -right-20 w-96 h-96 bg-sky rounded-blob opacity-30 blur-2xl"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="text-center mb-14 reveal">
-<span class="sticker sticker-coral mb-6">ALL APPS</span>
-<h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-4" data-i18n="apps.overview.title">All Apps</h2>
-<p class="text-navy/70 text-lg max-w-2xl mx-auto" data-i18n="apps.overview.description">Seven applications powered by innovative technology</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 reveal-stagger">
-<!-- Reel Make Card (NEW · featured) -->
-<a href="#reel-make" class="app-card p-4 sm:p-5 text-center group cursor-pointer relative">
-<span class="absolute top-2 right-2 z-10 text-[9px] font-black text-white px-2 py-0.5 rounded-full" style="background:#ff2d68;">NEW</span>
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden" style="background:linear-gradient(135deg,#b537f2 0%,#ff2d68 60%,#ff5e3a 100%);">
-<img src="assets/reelmake/logo.png" alt="Reel Make" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">Reel Make</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">AI Reel Maker</p>
-</a>
-<!-- GP Teachers Card -->
-<a href="#rika-quest" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-sun">
-<img src="assets/images/rika-quest/rika-quest-logo.png" alt="合格！理科クエスト ロゴ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">理科クエスト</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">Science Quiz Adventure</p>
-</a>
-<a href="#kokugo-quest" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-coral">
-<img src="assets/images/kokugo-quest/kokugo-quest-logo.png" alt="合格！国語クエスト ロゴ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">国語クエスト</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">Japanese Quiz Adventure</p>
-</a>
-<a href="#gp-teachers" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-sky">
-<img src="assets/images/ai/app-buddytalk.jpg" alt="GP Teachers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">GP Teachers</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">AI English Learning</p>
-</a>
-<a href="#wood-golem" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-grass">
-<img src="assets/images/ai/app-wood-golem.jpg" alt="Wood Golem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">Wood Golem</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">Strategy Puzzle</p>
-</a>
-<a href="#voicelink" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-ocean">
-<img src="assets/images/ai/app-voicelink.jpg" alt="VoiceLink" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">VoiceLink</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">AI Interpreter</p>
-</a>
-<a href="#word-blaster" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-sun">
-<img src="assets/images/ai/app-word-blaster.jpg" alt="Word Blaster" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">Word Blaster</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">Vocabulary Game</p>
-</a>
-<a href="#debate-master" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-coral">
-<img src="assets/images/ai/app-debate.jpg" alt="Debate Master" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">Debate Master</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">AI Debate</p>
-</a>
-<a href="#hacking-timer" class="app-card p-4 sm:p-5 text-center group cursor-pointer">
-<div class="w-full aspect-square mx-auto mb-4 rounded-2xl border-2 border-navy overflow-hidden bg-berry">
-<img src="assets/images/ai/app-doc2json.jpg" alt="Hacking Timer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-</div>
-<h3 class="font-display font-black text-navy mb-1 text-sm sm:text-base">Hacking Timer</h3>
-<p class="text-xs sm:text-sm text-navy/60 font-bold">Time Management</p>
-</a>
-</div>
-</div>
-</section>
-
-<style>
-.rm-gallery{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.35rem .15rem 1rem;-webkit-overflow-scrolling:touch}
-.rm-gallery::-webkit-scrollbar{height:8px}
-.rm-gallery::-webkit-scrollbar-track{background:transparent}
-.rm-gallery::-webkit-scrollbar-thumb{background:rgba(31,46,77,.28);border-radius:99px}
-.rm-shot{height:clamp(360px,54vh,520px);width:auto;flex:0 0 auto;scroll-snap-align:start;border:4px solid #1F2E4D;border-radius:1.75rem;box-shadow:6px 6px 0 #1F2E4D;background:#000}
-#reel-make[dir="rtl"] .rm-gallery{direction:rtl}
-</style>
-<!-- ===== Reel Make (NEW · featured, 15-language) ===== -->
-<section id="reel-make" class="app-section-v2 app-bg-violet py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
+<!-- アプリ一覧 -->
+<section id="all-apps" class="py-16 md:py-24 bg-cream relative overflow-hidden" style="scroll-margin-top:130px;">
+  <div class="absolute inset-0 dot-pattern opacity-30 pointer-events-none"></div>
   <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>NEW</span><span class="line"></span><span>★</span></span>
-        <span class="sticker sticker-sun"><i class="ri-movie-2-line mr-1"></i><span>Reel Make</span></span>
-      </div>
-      <label class="flex items-center gap-2 bg-white border-2 border-navy rounded-full px-3 py-1.5" style="box-shadow:3px 3px 0 #1F2E4D;">
-        <i class="ri-translate-2 text-navy"></i>
-        <select id="rm-lang" aria-label="Language" class="bg-transparent text-navy font-bold text-sm focus:outline-none cursor-pointer pr-1"></select>
-      </label>
+    <div class="text-center mb-6 reveal">
+      <span class="sticker sticker-coral">ALL APPS</span>
+      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-4" data-i18n="apps2.listTitle">開発したアプリ一覧</h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto" data-i18n="apps2.listLead">8つのアプリを紹介しています。カードをタップすると詳細ページへ。🌍は全世界配信、🇯🇵は日本向けのアプリです。</p>
     </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up" style="background:linear-gradient(135deg,#b537f2 0%,#ff2d68 55%,#ff5e3a 100%);">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/reelmake/logo.png" alt="Reel Make"></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/70 uppercase">NEW APP</span>
-            <span class="font-accent text-sm text-white">Reel Make</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-rm-title>Reel Make</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed" data-rm-subtitle></p>
-      </div>
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="region-legend">
+      <span class="legend-chip"><i class="ri-earth-fill" style="color:#2AA79E;"></i><span data-i18n="apps2.region.global">全世界配信</span> × 5</span>
+      <span class="legend-chip"><i class="ri-map-pin-2-fill" style="color:#FF6B5B;"></i><span data-i18n="apps2.region.jp">日本向け</span> × 3</span>
     </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 max-w-6xl mx-auto">
 
-    <!-- localized screenshot gallery — ALL screens, swaps per language -->
-    <div id="rm-gallery" data-rm-gallery class="rm-gallery mb-7 md:mb-9 fade-in-up"></div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-8 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-xl border-2 border-navy grid place-items-center" style="background:#b537f2;box-shadow:3px 3px 0 #1F2E4D;">
-              <i class="ri-magic-fill text-xl text-white"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-rm-subtitle></h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-rm-promo></p>
-          <div class="flex flex-wrap gap-3 mt-auto pt-2">
-            <a href="https://apps.apple.com/us/app/reel-make-ai-reels-videos/id6779420680" class="btn-chunky btn-chunky-coral text-sm" rel="noopener"><i class="ri-apple-fill"></i> App Store</a>
-            <a href="reelmake.html" class="btn-chunky btn-chunky-navy text-sm"><i class="ri-external-link-line"></i> View details</a>
-            <a href="reelmake-support.html" class="store-pill"><i class="ri-lifebuoy-line text-xl"></i><span>Support</span></a>
-            <a href="reelmake-privacy.html" class="store-pill"><i class="ri-shield-check-line text-xl"></i><span>Privacy</span></a>
+      <a href="reelmake.html" id="reel-make" class="app-tile" data-region="global" style="--accent:#FF2D68;">
+        <span class="corner-badge" style="background:#FF2D68;color:#fff;">NEW</span>
+        <div class="tile-img">
+          <img src="assets/reelmake/logo.png" alt="Reel Make ロゴ" loading="lazy">
+          <span class="region-pill global"><i class="ri-earth-fill"></i><span data-i18n="apps2.region.global">全世界配信</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">Reel Make</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.reel-make">写真を選ぶだけ。AIがリール動画を自動編集</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
           </div>
         </div>
-      </div>
-      <div class="lg:col-span-4 fade-in-up">
-        <div class="card-chunky p-6 h-full flex flex-col justify-center gap-3">
-          <span class="dl-chip"><i class="ri-translate-2 text-coral"></i>15 languages</span>
-          <span class="dl-chip"><i class="ri-mic-fill text-coral"></i>32 AI voices</span>
-          <span class="dl-chip"><i class="ri-music-2-fill text-coral"></i>BGM &amp; captions</span>
-          <span class="dl-chip"><i class="ri-movie-2-fill text-coral"></i>9:16 vertical export</span>
+      </a>
+      <a href="buddytalk.html" id="buddytalk" class="app-tile" data-region="global" style="--accent:#8FC7F0;">
+        <span class="corner-badge" style="background:#1F2E4D;color:#FFD84D;" data-i18n="apps2.badge.renamed">新名称</span>
+        <div class="tile-img">
+          <img src="assets/images/buddytalk/logo.png" alt="BuddyTalk ロゴ" loading="lazy">
+          <span class="region-pill global"><i class="ri-earth-fill"></i><span data-i18n="apps2.region.global">全世界配信</span></span>
         </div>
-      </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">BuddyTalk</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.buddytalk">AIパートナーと、毎日話したくなる英会話</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="wood-golem.html" id="wood-golem" class="app-tile" data-region="global" style="--accent:#7DD87A;">
+
+        <div class="tile-img">
+          <img src="assets/images/wood-golem/logo.png" alt="Wood Golem ロゴ" loading="lazy">
+          <span class="region-pill global"><i class="ri-earth-fill"></i><span data-i18n="apps2.region.global">全世界配信</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">Wood Golem</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.wood-golem">森の棒取りストラテジーパズルで論理力を鍛える</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="social-quest.html" id="social-quest" class="app-tile" data-region="jp" style="--accent:#8FD4FF;">
+
+        <div class="tile-img">
+          <img src="assets/images/social-quest/logo.png" alt="合格！社会クエスト ロゴ" loading="lazy">
+          <span class="region-pill jp"><i class="ri-map-pin-2-fill"></i><span data-i18n="apps2.region.jp">日本向け</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">社会クエスト</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.social-quest">中学受験社会を、地理・歴史・公民まで一気に対策</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS / Android</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="rika-quest.html" id="rika-quest" class="app-tile" data-region="jp" style="--accent:#FFD84D;">
+
+        <div class="tile-img">
+          <img src="assets/images/rika-quest/rika-quest-logo.png" alt="合格！理科クエスト ロゴ" loading="lazy">
+          <span class="region-pill jp"><i class="ri-map-pin-2-fill"></i><span data-i18n="apps2.region.jp">日本向け</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">理科クエスト</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.rika-quest">2000問以上で中学受験理科をまるごと対策</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS / Android</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="kokugo-quest.html" id="kokugo-quest" class="app-tile" data-region="jp" style="--accent:#FF8A7A;">
+
+        <div class="tile-img">
+          <img src="assets/images/kokugo-quest/kokugo-quest-logo.png" alt="合格！国語クエスト ロゴ" loading="lazy">
+          <span class="region-pill jp"><i class="ri-map-pin-2-fill"></i><span data-i18n="apps2.region.jp">日本向け</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">国語クエスト</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.kokugo-quest">漢字・語彙・ことわざ・文法を、目と耳で定着</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS / Android</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="word-blaster.html" id="word-blaster" class="app-tile" data-region="global" style="--accent:#FFC93D;">
+
+        <div class="tile-img">
+          <img src="assets/images/word-blaster/logo.png" alt="Word Blaster ロゴ" loading="lazy">
+          <span class="region-pill global"><i class="ri-earth-fill"></i><span data-i18n="apps2.region.global">全世界配信</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">Word Blaster</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.word-blaster">宇宙で英単語を撃ち落とすシューティング学習</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>iOS</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="hacking-timer.html" id="hacking-timer" class="app-tile" data-region="global" style="--accent:#7C8CF8;">
+        <span class="corner-badge" style="background:#FFFBF2;color:#1F2E4D;border:2px solid #1F2E4D;" data-i18n="apps2.badge.soon">開発中</span>
+        <div class="tile-img">
+          <img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer ロゴ" loading="lazy">
+          <span class="region-pill global"><i class="ri-earth-fill"></i><span data-i18n="apps2.region.global">全世界配信</span></span>
+        </div>
+        <div class="tile-body">
+          <h3 class="font-display font-black text-lg text-navy mb-1">Hacking Timer</h3>
+          <p class="text-navy/65 text-sm font-bold leading-relaxed mb-4" data-i18n="apps2.cards.hacking-timer">Apple Watchで集中力をハックするタイマー</p>
+          <div class="mt-auto flex items-center justify-between gap-2">
+            <span class="plat-chip"><i class="ri-smartphone-fill"></i>Apple Watch / iOS</span>
+            <span class="more-link"><span data-i18n="apps2.more">詳しく見る</span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- GP Teachers -->
-<section id="rika-quest" class="app-section-v2 app-bg-sun py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>07</span><span class="line"></span><span>07</span></span>
-        <span class="sticker sticker-sun"><i class="ri-rocket-line mr-1"></i><span>理科クエスト</span></span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Science Adventure with Rika-chan ✦</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/rika-quest/rika-quest-1.png" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/rika-quest/rika-quest-logo.png" alt="合格！理科クエスト ロゴ"></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">07 / 07</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3">理科クエスト</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">中学受験理科を楽しく攻略。2000問以上の問題と進化するマスコット！</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-7 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-sun rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-sparkling-2-fill text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy">中学受験理科を冒険しよう</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5">2000問以上の厳選された問題と、学習を進めるごとに成長するリカちゃんと一緒に、中学受験理科の全28単元をマスターしましょう。楽しく続けられる仕組みが満載です。</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">生命・地球・物質・エネルギーの全4分野、28単元を網羅</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">圧倒的な2000問以上の問題数で確かな実力を養成</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">学習の成果で「リカちゃん」が進化する育成要素</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">自分の弱点が見える化されるロードマップと進捗管理</p></li>
-          </ul>
-          <div class="flex flex-wrap gap-3 mb-4">
-            <a href="https://apps.apple.com/jp/app/id6772644144" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral text-sm">
-              <i class="ri-apple-fill"></i>
-              App Store で無料ダウンロード
-            </a>
-            <a href="rika-quest.html" class="store-pill">
-              <i class="ri-external-link-line text-xl"></i><span>詳しく見る</span>
-            </a>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-<span class="dl-chip"><i class="ri-download-2-fill text-coral"></i>無料ダウンロード</span><span class="dl-chip"><i class="ri-rocket-fill text-coral"></i>2000問以上</span><span class="dl-chip"><i class="ri-user-heart-fill text-coral"></i>マスコット進化</span><span class="dl-chip"><i class="ri-map-fill text-coral"></i>全28単元</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 fade-in-up">
-        <div class="grid grid-cols-2 gap-4">
-          <img src="assets/images/rika-quest/rika-quest-2.png" alt="" class="app-screenshot">
-          <img src="assets/images/rika-quest/rika-quest-3.png" alt="" class="app-screenshot">
-          <img src="assets/images/rika-quest/rika-quest-4.png" alt="" class="app-screenshot">
-          <img src="assets/images/rika-quest/rika-quest-5.png" alt="" class="app-screenshot">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="kokugo-quest" class="app-section-v2 app-bg-coral py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>08</span><span class="line"></span><span>08</span></span>
-        <span class="sticker sticker-coral"><i class="ri-rocket-line mr-1"></i><span>国語クエスト</span></span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Japanese Adventure with Rika-chan ✦</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/kokugo-quest/kokugo-quest-1.png" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/kokugo-quest/kokugo-quest-logo.png" alt="合格！国語クエスト ロゴ"></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">08 / 08</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3">国語クエスト</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">中学受験国語をまるごと攻略。漢字・語彙・ことわざ・文法・読解をイラストと読み上げで楽しく！</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-7 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-coral rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-sparkling-2-fill text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy">中学受験国語を冒険しよう</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5">漢字・熟語、語彙・ことば、ことわざ・慣用句、ことばのきまり、読解まで。イラストで見て、読み上げで聞いて、友達やランキングで競い合いながら、リカちゃんと一緒に国語の力を楽しく伸ばせます。</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">漢字・語彙・ことわざ・文法・読解の全5分野を体系的に網羅</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">ことわざ・慣用句も絵を見て意味がひと目でわかるイラスト付き</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">問題文の読み上げ機能で、目と耳から記憶に残る</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base">友達と対戦、世界ランキングや偏差値で楽しく競える</p></li>
-          </ul>
-          <div class="flex flex-wrap gap-3 mb-4">
-            <span class="btn-chunky btn-chunky-navy text-sm">
-              <i class="ri-apple-fill"></i>
-              App Store 準備中
-            </span>
-            <a href="kokugo-quest.html" class="store-pill">
-              <i class="ri-external-link-line text-xl"></i><span>詳しく見る</span>
-            </a>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-<span class="dl-chip"><i class="ri-palette-fill text-coral"></i>イラストで理解</span><span class="dl-chip"><i class="ri-volume-up-fill text-coral"></i>読み上げ機能</span><span class="dl-chip"><i class="ri-sword-fill text-coral"></i>友達と対戦</span><span class="dl-chip"><i class="ri-trophy-fill text-coral"></i>世界ランキング</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 fade-in-up">
-        <div class="grid grid-cols-2 gap-4">
-          <img src="assets/images/kokugo-quest/kokugo-quest-2.png" alt="" class="app-screenshot">
-          <img src="assets/images/kokugo-quest/kokugo-quest-3.png" alt="" class="app-screenshot">
-          <img src="assets/images/kokugo-quest/kokugo-quest-4.png" alt="" class="app-screenshot">
-          <img src="assets/images/kokugo-quest/kokugo-quest-5.png" alt="" class="app-screenshot">
-          <img src="assets/images/kokugo-quest/kokugo-quest-6.png" alt="" class="app-screenshot">
-          <img src="assets/images/kokugo-quest/kokugo-quest-7.png" alt="" class="app-screenshot">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="gp-teachers" class="app-section-v2 app-bg-ocean py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-ocean.jpg" alt="" aria-hidden="true" class="ai-blob -top-24 -right-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <!-- Editorial strip -->
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>01</span><span class="line"></span><span>06</span></span>
-        <span class="sticker sticker-ocean"><i class="ri-book-open-line mr-1"></i><span data-i18n="apps.gpTeachers.badge">AI English Learning</span></span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Speak English with AI ✦</span>
-    </div>
-
-    <!-- Hero banner -->
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-gp-teachers-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-buddytalk.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">01 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.gpTeachers.appName">GP Teachers</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">Natural English conversation with AI. Talk with teachers and level up.</p>
-      </div>
-    </div>
-
-    <!-- Content grid -->
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-7 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-ocean rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-sparkling-2-fill text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.gpTeachers.title">Learn English with AI</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.gpTeachers.description">An innovative English learning app that enables realistic practice with an AI English partner. Improve your conversational skills anytime, anywhere, through dialogues with unique teachers.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.gpTeachers.features.0">Natural conversations with AI English teachers who have unique personalities</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.gpTeachers.features.1">Pronunciation assessment and detailed feedback features</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.gpTeachers.features.2">Wide range of situations from daily conversation to business English</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.gpTeachers.features.3">Fun vocabulary games and learning tracking that keep you engaged</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-chat-3-fill text-coral"></i>Talk with AI Teachers</span><span class="dl-chip"><i class="ri-mic-fill text-coral"></i>Pronunciation Correction</span><span class="dl-chip"><i class="ri-global-line text-coral"></i>English Conversation</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🎧</div>
-            <div class="min-w-0">
-              <div class="headline">Start speaking for free ✦</div>
-              <div class="sub">Available on App Store / Free Download</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3 mb-4">
-            <a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" rel="noopener" class="store-pill">
-              <i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.apple">App Store</span>
-            </a>
-            <span class="store-pill store-pill-disabled">
-              <i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span>
-            </span>
-          </div>
-          <a href="gpteachers-legal.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-navy/60 hover:text-coral transition">
-            <i class="ri-shield-check-line"></i><span>Privacy &amp; Terms</span><i class="ri-arrow-right-line"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 fade-in-up">
-        <div class="flex items-center gap-2 mb-3 flex-wrap">
-          <span class="sticker sticker-peach">🎬 LIVE DEMO</span>
-          <span class="hand-font text-coral text-base">Watch on TikTok ✦</span>
-        </div>
-        <div class="tiktok-stage w-full" style="aspect-ratio: 9/13;">
-          <iframe src="https://www.tiktok.com/embed/v2/7508270118728781063?autoplay=1&loop=1" style="width:100%; height:100%; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="wood-golem" class="app-section-v2 app-bg-grass py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-grass.jpg" alt="" aria-hidden="true" class="ai-blob -top-24 -left-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>02</span><span class="line"></span><span>06</span></span>
-        <span class="sticker sticker-grass"><i class="ri-plant-line mr-1"></i><span data-i18n="apps.woodGolem.badge">Strategy Game</span></span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Begin the forest adventure 🌲</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-wood-golem-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-wood-golem.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">02 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.woodGolem.appName">Wood Golem</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">A stick-taking puzzle set in a beautiful forest, challenging your mind and strategy.</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-5 fade-in-up lg:order-2">
-        <div class="flex items-center gap-2 mb-3 flex-wrap">
-          <span class="sticker sticker-peach">🎬 LIVE DEMO</span>
-          <span class="hand-font text-coral text-base">Watch on TikTok ✦</span>
-        </div>
-        <div class="tiktok-stage w-full" style="aspect-ratio: 9/13;">
-          <iframe src="https://www.tiktok.com/embed/v2/7456950409228307719?autoplay=1&loop=1" style="width:100%; height:100%; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 fade-in-up lg:order-1">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-grass rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-puzzle-fill text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.woodGolem.title">Train logical thinking through forest adventures</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.woodGolem.description">Embark on a great forest adventure with the stick-taking strategy game "Wood Golem." Set in a beautiful forest, challenge stick-taking puzzles together with little Wood Golems. A strategy game that trains logical thinking while being fun to play.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#E1F2D7;">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.woodGolem.features.0">Stick-taking puzzles set in a beautiful forest world</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#E1F2D7;">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.woodGolem.features.1">100+ levels with increasing difficulty</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#E1F2D7;">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.woodGolem.features.2">Cute Wood Golem characters and story</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#E1F2D7;">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.woodGolem.features.3">Educational elements that foster logical and strategic thinking</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-plant-line text-grass"></i>Forest Adventure</span><span class="dl-chip"><i class="ri-puzzle-fill text-grass"></i>100+ LV</span><span class="dl-chip"><i class="ri-brain-fill text-grass"></i>Boost Logic</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🎮</div>
-            <div class="min-w-0">
-              <div class="headline">An adventure to train your brain ✦</div>
-              <div class="sub">Available on App Store / Free Download</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="store-pill">
-              <i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.apple">App Store</span>
-            </a>
-            <span class="store-pill store-pill-disabled">
-              <i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="voicelink" class="app-section-v2 app-bg-violet py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-peach.jpg" alt="" aria-hidden="true" class="ai-blob -bottom-24 -right-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>03</span><span class="line"></span><span>06</span></span>
-        <span class="sticker" style="background:#C9A9F0;color:#1F2E4D;"><i class="ri-mic-line mr-1"></i><span data-i18n="apps.voiceLink.badge">AI Interpreter</span></span>
-        <span class="sticker sticker-peach">🌐 10 LANG</span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Cross language barriers in an instant ✦</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-voicelink-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-voicelink.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">03 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.voiceLink.appName">VoiceLink AI Interpreter</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">Supports 10 languages. Break down language barriers in real time.</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-7 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-xl border-2 border-navy grid place-items-center" style="background:#C9A9F0; box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-translate-2 text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.voiceLink.title">AI Interpreter that removes language barriers</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.voiceLink.description">A real-time voice translation app powered by the latest AI. Supports 10 languages, delivering natural and accurate translations instantly. Features context-aware high-precision speech recognition and conversation summary.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EADCF9;">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.voiceLink.features.0">Real-time voice translation in 10 languages</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EADCF9;">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.voiceLink.features.1">Context-aware high-precision AI translation engine</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EADCF9;">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.voiceLink.features.2">Conversation summary and text saving</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EADCF9;">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.voiceLink.features.3">Offline mode and travel-friendly features</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-global-line" style="color:#8B5CF6;"></i>10 Languages</span><span class="dl-chip"><i class="ri-flashlight-fill" style="color:#8B5CF6;"></i>Real-time</span><span class="dl-chip"><i class="ri-file-list-3-line" style="color:#8B5CF6;"></i>Conversation Summary</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🚧</div>
-            <div class="min-w-0">
-              <div class="headline">Coming Soon ✦</div>
-              <div class="sub">Get release notification / Coming Soon</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3 mb-3">
-            <span class="store-pill store-pill-disabled"><i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.comingSoon">Coming Soon</span></span>
-            <span class="store-pill store-pill-disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span></span>
-          </div>
-          <p class="hand-font text-lg text-coral">Coming soon, stay tuned ✦</p>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 fade-in-up">
-        <div class="flex items-center gap-2 mb-3 flex-wrap">
-          <span class="sticker sticker-peach">🎬 LIVE DEMO</span>
-          <span class="hand-font text-coral text-base">Watch on TikTok ✦</span>
-        </div>
-        <div class="tiktok-stage w-full" style="aspect-ratio: 9/13;">
-          <iframe src="https://www.tiktok.com/embed/v2/7512851452679752968?autoplay=1&loop=1" style="width:100%; height:100%; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="word-blaster" class="app-section-v2 app-bg-sun py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-coral.jpg" alt="" aria-hidden="true" class="ai-blob -top-24 -left-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>04</span><span class="line"></span><span>06</span></span>
-        <span class="sticker" style="background:#FFD84D;"><i class="ri-rocket-line mr-1"></i><span data-i18n="apps.wordBlaster.badge">Vocabulary Game</span></span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Shoot and learn English vocabulary 🚀</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-word-blaster-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-word-blaster.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">04 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.wordBlaster.appName">Word Blaster</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">Race through space and shoot down English words. Refreshing shooter-style learning.</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-5 fade-in-up lg:order-2">
-        <div class="flex items-center gap-2 mb-3 flex-wrap">
-          <span class="sticker sticker-peach">🎬 LIVE DEMO</span>
-          <span class="hand-font text-coral text-base">Watch on TikTok ✦</span>
-        </div>
-        <div class="tiktok-stage w-full" style="aspect-ratio: 9/13;">
-          <iframe src="https://www.tiktok.com/embed/v2/7506530494054436103?autoplay=1&loop=1" style="width:100%; height:100%; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 fade-in-up lg:order-1">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-sun rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-rocket-2-fill text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.wordBlaster.title">Shoot down English words in space!</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.wordBlaster.description">A level-based vocabulary shooter set in space. Improve your English vocabulary skills in a fun, exciting way.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FFF2C8;">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.wordBlaster.features.0">An exciting shooter set in space</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FFF2C8;">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.wordBlaster.features.1">Level-based vocabulary learning from beginner to advanced</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FFF2C8;">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.wordBlaster.features.2">Compete with friends via ranking system</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FFF2C8;">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.wordBlaster.features.3">Enjoy the game while learning word pronunciation and meanings</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-rocket-fill" style="color:#FFBB2A;"></i>Space Shooter</span><span class="dl-chip"><i class="ri-bar-chart-fill" style="color:#FFBB2A;"></i>Level System</span><span class="dl-chip"><i class="ri-trophy-fill" style="color:#FFBB2A;"></i>Rankings</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🚀</div>
-            <div class="min-w-0">
-              <div class="headline">A new way to learn by shooting ✦</div>
-              <div class="sub">Available on App Store / Free Download</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="store-pill">
-              <i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.apple">App Store</span>
-            </a>
-            <span class="store-pill store-pill-disabled">
-              <i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="debate-master" class="app-section-v2 app-bg-coral py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-coral.jpg" alt="" aria-hidden="true" class="ai-blob -bottom-24 -right-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>05</span><span class="line"></span><span>06</span></span>
-        <span class="sticker sticker-coral"><i class="ri-chat-voice-line mr-1"></i><span data-i18n="apps.debateMaster.badge">AI Debate</span></span>
-        <span class="sticker" style="background:#1F2E4D;color:#FFD84D;">⚔️ 100+ TOPICS</span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Defeat the AI Debate King ⚔️</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-debate-master-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-debate.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">05 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.debateMaster.appName">Debate Master</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">Debate the AI Debate King and forge the strongest logical thinking.</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-8 fade-in-up">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 bg-coral rounded-xl border-2 border-navy grid place-items-center" style="box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-sword-fill text-xl text-white"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.debateMaster.title">Train logical thinking by debating AI</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.debateMaster.description">An app for challenging the AI Debate King to gain the strongest debate skills. Exchange arguments with AI across various topics and train your logical thinking and persuasion.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FDE6E1;">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.debateMaster.features.0">Advanced AI debate opponent</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FDE6E1;">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.debateMaster.features.1">Over 100 diverse debate topics</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FDE6E1;">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.debateMaster.features.2">Detailed analysis and feedback features</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#FDE6E1;">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.debateMaster.features.3">Practical training to build logical thinking and persuasion</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-sword-fill text-coral"></i>AI Debate King</span><span class="dl-chip"><i class="ri-chat-quote-fill text-coral"></i>100+ Topics</span><span class="dl-chip"><i class="ri-line-chart-line text-coral"></i>AI Analysis</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🚧</div>
-            <div class="min-w-0">
-              <div class="headline">Coming Soon ✦</div>
-              <div class="sub">Sharpen your debate skills / Coming Soon</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <span class="store-pill store-pill-disabled"><i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.comingSoon">Coming Soon</span></span>
-            <span class="store-pill store-pill-disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-4 fade-in-up">
-        <div class="card-chunky p-6 md:p-7 h-full flex flex-col justify-center text-center" style="background:#1F2E4D; color:#fff;">
-          <div class="text-5xl md:text-6xl mb-3">⚔️</div>
-          <h4 class="display-xl text-xl md:text-2xl text-white mb-2">Don't get defeated,<br><span class="text-sun">win the debate.</span></h4>
-          <p class="text-white/70 text-sm leading-relaxed mb-4">Face the AI Debate King seriously across 100+ topics. The ultimate training ground to sharpen persuasion.</p>
-          <span class="sticker sticker-coral self-center">🔥 COMING SOON</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="hacking-timer" class="app-section-v2 app-bg-berry py-14 md:py-20">
-  <div class="absolute inset-0 dot-pattern opacity-15 pointer-events-none"></div>
-  <img src="assets/images/ai/blob-ocean.jpg" alt="" aria-hidden="true" class="ai-blob -top-24 -left-24 w-[360px] h-[360px] rounded-blob" style="opacity:0.4;">
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between gap-3 flex-wrap mb-5 fade-in-up">
-      <div class="flex items-center gap-3 flex-wrap">
-        <span class="app-progress-chip"><span>06</span><span class="line"></span><span>06</span></span>
-        <span class="sticker" style="background:#A5B0DC;color:#1F2E4D;"><i class="ri-timer-line mr-1"></i><span data-i18n="apps.hackingTimer.badge">Productivity</span></span>
-        <span class="sticker sticker-ocean">⌚ Apple Watch</span>
-      </div>
-      <span class="hand-font text-coral text-lg md:text-xl hidden md:inline">Hack your focus ⚡</span>
-    </div>
-
-    <div class="app-banner relative overflow-hidden mb-6 md:mb-8 fade-in-up">
-      <img src="assets/images/ai/app-hacking-timer-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 app-banner-overlay"></div>
-      <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <div class="flex items-center gap-3 mb-3 md:mb-4">
-          <div class="app-icon-tile-sm"><img src="assets/images/ai/app-doc2json.jpg" alt=""></div>
-          <div class="flex flex-col">
-            <span class="font-accent text-[10px] tracking-widest text-white/60 uppercase">APP</span>
-            <span class="font-accent text-sm text-white">06 / 06</span>
-          </div>
-        </div>
-        <h2 class="display-xl text-3xl md:text-4xl lg:text-5xl text-white mb-2 md:mb-3" data-i18n="apps.hackingTimer.appName">Hacking Timer</h2>
-        <p class="text-white/90 text-sm md:text-base leading-relaxed">Hack your focus with Apple Watch. A timer to maximize productivity.</p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
-      <div class="lg:col-span-4 fade-in-up lg:order-2">
-        <div class="card-chunky p-6 md:p-7 h-full flex flex-col justify-center text-center" style="background:#EDEBF6;">
-          <div class="text-5xl md:text-6xl mb-3">⌚</div>
-          <h4 class="display-xl text-xl md:text-2xl text-navy mb-2">Hack<br><span style="color:#6A76B3;">your focus.</span></h4>
-          <p class="text-navy/70 text-sm leading-relaxed mb-4">Optimized for Apple Watch. Pomodoro-compatible to maximize deep work.</p>
-          <span class="sticker sticker-peach self-center">⏱ COMING SOON</span>
-        </div>
-      </div>
-
-      <div class="lg:col-span-8 fade-in-up lg:order-1">
-        <div class="card-chunky p-6 md:p-8 h-full flex flex-col">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-xl border-2 border-navy grid place-items-center" style="background:#A5B0DC; box-shadow: 3px 3px 0 #1F2E4D;">
-              <i class="ri-timer-flash-line text-xl text-navy"></i>
-            </div>
-            <h3 class="font-display font-black text-lg md:text-xl text-navy" data-i18n="apps.hackingTimer.title">An Apple Watch app that optimizes time management</h3>
-          </div>
-          <p class="text-navy/75 text-sm md:text-base leading-relaxed mb-5" data-i18n="apps.hackingTimer.description">A customizable interval timer for hacking focus on Apple Watch. Maximize productivity and achieve efficient time management.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EDEBF6;">01</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.hackingTimer.features.0">Customizable interval timer</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EDEBF6;">02</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.hackingTimer.features.1">Full Apple Watch support</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EDEBF6;">03</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.hackingTimer.features.2">Detailed productivity analysis and reports</p></li>
-            <li class="flex items-start gap-3"><span class="feat-num" style="background:#EDEBF6;">04</span><p class="text-navy/85 leading-relaxed pt-1.5 text-sm md:text-base" data-i18n="apps.hackingTimer.features.3">Supports various time management methods including Pomodoro</p></li>
-          </ul>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-auto pt-4">
-            <span class="dl-chip"><i class="ri-watch-line" style="color:#6A76B3;"></i>Apple Watch</span><span class="dl-chip"><i class="ri-timer-line" style="color:#6A76B3;"></i>Pomodoro</span><span class="dl-chip"><i class="ri-bar-chart-box-line" style="color:#6A76B3;"></i>Productivity Analysis</span>
-          </div>
-          <div class="dl-cta-banner">
-            <div class="emoji">🚧</div>
-            <div class="min-w-0">
-              <div class="headline">Coming Soon ✦</div>
-              <div class="sub">Full Apple Watch support / Coming Soon</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <span class="store-pill store-pill-disabled"><i class="ri-apple-fill text-xl"></i><span data-i18n="apps.store.comingSoon">Coming Soon</span></span>
-            <span class="store-pill store-pill-disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="apps.store.google">Coming Soon</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- お問い合わせ -->
 <section id="contact" class="py-20 md:py-28 bg-navy relative overflow-hidden">
-  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,216,77,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
+  <div class="absolute inset-0" style="background-image:radial-gradient(circle,rgba(255,216,77,.08) 1.5px,transparent 1.5px);background-size:30px 30px;"></div>
   <div class="container mx-auto px-4 text-center relative z-10">
-    <div class="max-w-3xl mx-auto reveal">
-      <span class="sticker sticker-coral mb-6">SUBSCRIBE</span>
-      <h2 class="display-xl text-3xl md:text-5xl text-white mt-6 mb-6" data-i18n="apps.cta.title">
-        Expand your potential<br><span class="text-sun">with innovative apps</span>
-      </h2>
-      <p class="text-lg text-white/80 mb-10 leading-relaxed" data-i18n="apps.cta.description">TrailFusion AI's applications leverage AI technology to provide innovative solutions across various fields including language learning, games, and productivity. Get the latest news on new apps first.</p>
-
-      <div class="max-w-lg mx-auto">
-        <form class="flex flex-col sm:flex-row gap-3">
-          <input type="email" placeholder="Enter your email" class="input-chunky flex-grow" data-i18n-placeholder="apps.cta.emailPlaceholder">
-          <button type="submit" class="btn-chunky btn-chunky-coral whitespace-nowrap" data-i18n="apps.cta.registerButton">
-            <i class="ri-mail-send-line"></i>
-            Subscribe
-          </button>
-        </form>
-        <p class="text-white/50 text-sm mt-4 hand-font text-lg">Unsubscribe anytime ✦</p>
+    <div class="max-w-3xl mx-auto">
+      <span class="sticker sticker-coral mb-6">FOLLOW US</span>
+      <h2 class="display-xl text-3xl md:text-5xl text-white mt-6 mb-6" data-i18n="apps2.ctaTitle">革新的なアプリで<br><span class="text-sun">可能性を広げよう</span></h2>
+      <p class="text-lg text-white/80 mb-10 leading-relaxed" data-i18n="apps2.ctaLead">新しいアプリやアップデートの情報は、SNSでいち早くお届けしています。</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:trailfusionai@gmail.com" class="btn-chunky btn-chunky-coral"><i class="ri-mail-send-line"></i><span data-i18n="apps2.ctaMail">お問い合わせ</span></a>
+        <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-tiktok-fill"></i>TikTok</a>
+        <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-twitter-x-fill"></i>X</a>
+        <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-youtube-fill"></i>YouTube</a>
       </div>
     </div>
   </div>
 </section>
-<!-- ============================== -->
-<!-- FOOTER -->
-<!-- ============================== -->
+
+<!-- フッター -->
 <footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20">
   <div class="absolute inset-0 opacity-5 dot-pattern"></div>
   <div class="border-b-2 border-white/10 py-3 overflow-hidden">
     <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
-      <span class="mx-6">Do what you want, now.</span><span class="mx-6 text-coral">✦</span>
-      <span class="mx-6">Turn passion into power.</span><span class="mx-6 text-peach">✦</span>
-      <span class="mx-6">Live without regrets.</span><span class="mx-6 text-ocean">✦</span>
-      <span class="mx-6">Do what you want, now.</span><span class="mx-6 text-coral">✦</span>
-      <span class="mx-6">Turn passion into power.</span><span class="mx-6 text-peach">✦</span>
-      <span class="mx-6">Live without regrets.</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
     </div>
   </div>
   <div class="container mx-auto px-4 py-14 relative z-10">
@@ -1531,9 +487,7 @@ margin: 0;
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">
-          Expand your potential with innovative AI applications and a DIY campervan build guide.
-        </p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -1555,32 +509,31 @@ margin: 0;
           <li><a href="drive-routes/" class="hover:text-peach transition">絶景ロード図鑑</a></li>
           <li><a href="drive-routes/" class="hover:text-peach transition">峠道カタログ</a></li>
           <li><a href="drive-routes/" class="hover:text-peach transition">地図で探す</a></li>
-          <li><a href="drive-routes/" class="hover:text-peach transition">すべて見る →</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 AI Apps</h4>
+        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 アプリ</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="apps.html#gp-teachers" class="hover:text-ocean transition">GP Teachers</a></li>
-          <li><a href="apps.html#wood-golem" class="hover:text-ocean transition">Wood Golem</a></li>
-          <li><a href="apps.html#voicelink" class="hover:text-ocean transition">VoiceLink AI Interpreter</a></li>
-          <li><a href="apps.html#word-blaster" class="hover:text-ocean transition">Word Blaster</a></li>
+          <li><a href="social-quest.html" class="hover:text-ocean transition">社会クエスト</a></li>
           <li><a href="rika-quest.html" class="hover:text-ocean transition">理科クエスト</a></li>
           <li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>
+          <li><a href="reelmake.html" class="hover:text-ocean transition">Reel Make</a></li>
+          <li><a href="buddytalk.html" class="hover:text-ocean transition">BuddyTalk</a></li>
+          <li><a href="wood-golem.html" class="hover:text-ocean transition">Wood Golem</a></li>
+          <li><a href="word-blaster.html" class="hover:text-ocean transition">Word Blaster</a></li>
+          <li><a href="hacking-timer.html" class="hover:text-ocean transition">Hacking Timer</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-black text-coral mb-3 flex items-center gap-2">🔧 Others</h4>
+        <h4 class="font-black text-coral mb-3 flex items-center gap-2">📄 サポート</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="maintenance.html" class="hover:text-coral transition">Maintenance</a></li>
-          <li><a href="car-concierge.html" class="hover:text-coral transition">Car Travel Concierge</a></li>
-          <li><a href="rika-quest-privacy.html" class="hover:text-coral transition">Rika Quest Privacy</a></li>
-          <li><a href="rika-quest-terms.html" class="hover:text-coral transition">Rika Quest Terms</a></li>
-          <li><a href="kokugo-quest-privacy.html" class="hover:text-coral transition">Kokugo Quest Privacy</a></li>
-          <li><a href="kokugo-quest-support.html" class="hover:text-coral transition">Kokugo Quest Support</a></li>
-          <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">Privacy</a></li>
-          <li><a href="buddytalk-terms.html" class="hover:text-coral transition">Terms</a></li>
-          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">Contact</a></li>
+          <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">BuddyTalk プライバシー</a></li>
+          <li><a href="buddytalk-terms.html" class="hover:text-coral transition">BuddyTalk 利用規約</a></li>
+          <li><a href="rika-quest-privacy.html" class="hover:text-coral transition">理科クエスト プライバシー</a></li>
+          <li><a href="kokugo-quest-privacy.html" class="hover:text-coral transition">国語クエスト プライバシー</a></li>
+          <li><a href="privacy-policy.html" class="hover:text-coral transition">プライバシーポリシー</a></li>
+          <li><a href="terms-of-service.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
         </ul>
       </div>
     </div>
@@ -1591,151 +544,113 @@ margin: 0;
   </div>
 </footer>
 
-<button id="scrollToTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
 <script src="assets/js/trailfusion-ui.js"></script>
 
-<script id="smooth-scroll">
-document.addEventListener('DOMContentLoaded', function() {
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 90,
-behavior: 'smooth'
-});
-}
-});
-});
+<script id="reveal-observer">
+document.addEventListener('DOMContentLoaded', function(){
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal,.reveal-stagger').forEach(function(el){obs.observe(el);});
 });
 </script>
 
-<!-- Intersection Observer for fade-in animations -->
-<script id="fade-in-animation">
-document.addEventListener('DOMContentLoaded', function() {
-const fadeElements = document.querySelectorAll('.fade-in-up');
-
-const observerOptions = {
-root: null,
-rootMargin: '0px 0px -100px 0px',
-threshold: 0.1
+<!-- このページ専用の翻訳（i18n.js が起動時にマージ） -->
+<script>
+window.pageTranslations = {
+ "ja": {
+  "apps2": {
+   "heroTitle": "革新的なアプリで<br>あなたの可能性を広げる",
+   "heroLead": "学習・ゲーム・動画作成・生産性。TrailFusion AI が開発した8つのアプリを紹介します。気になるアプリをタップすると、それぞれの詳細ページをご覧いただけます。",
+   "heroCta": "アプリを見る",
+   "statApps": "アプリ",
+   "statWorld": "全世界配信",
+   "statJp": "日本向け",
+   "listTitle": "開発したアプリ一覧",
+   "listLead": "8つのアプリを紹介しています。カードをタップすると詳細ページへ。🌍は全世界配信、🇯🇵は日本向けのアプリです。",
+   "region": {"global": "全世界配信", "jp": "日本向け"},
+   "badge": {"renamed": "新名称", "soon": "開発中"},
+   "more": "詳しく見る",
+   "cards": {
+    "social-quest": "中学受験社会を、地理・歴史・公民まで一気に対策",
+    "rika-quest": "2000問以上で中学受験理科をまるごと対策",
+    "reel-make": "写真を選ぶだけ。AIがリール動画を自動編集",
+    "kokugo-quest": "漢字・語彙・ことわざ・文法を、目と耳で定着",
+    "buddytalk": "AIパートナーと、毎日話したくなる英会話",
+    "wood-golem": "森の棒取りストラテジーパズルで論理力を鍛える",
+    "word-blaster": "宇宙で英単語を撃ち落とすシューティング学習",
+    "hacking-timer": "Apple Watchで集中力をハックするタイマー"
+   },
+   "ctaTitle": "革新的なアプリで<br><span class=\"text-sun\">可能性を広げよう</span>",
+   "ctaLead": "新しいアプリやアップデートの情報は、SNSでいち早くお届けしています。",
+   "ctaMail": "お問い合わせ"
+  }
+ },
+ "en": {
+  "apps2": {
+   "heroTitle": "Expand your potential<br>with innovative apps",
+   "heroLead": "TrailFusion AI builds apps for creativity, learning, games, and productivity. Tap any app to see its detail page.",
+   "heroCta": "See the apps",
+   "statApps": "Apps",
+   "statWorld": "Worldwide",
+   "statJp": "Japan-first",
+   "listTitle": "All Apps",
+   "listLead": "These apps are distributed worldwide. Tap a card to open its detail page.",
+   "region": {
+    "global": "Worldwide",
+    "jp": "Japan"
+   },
+   "badge": {
+    "renamed": "RENAMED",
+    "soon": "IN DEV"
+   },
+   "more": "Details",
+   "cards": {
+    "social-quest": "Master geography, history & civics for junior-high entrance exams",
+    "rika-quest": "2,000+ questions covering all of junior-high entrance science",
+    "reel-make": "Pick your photos — AI edits a finished reel automatically",
+    "kokugo-quest": "Kanji, vocabulary, proverbs & grammar — learn by eye and ear",
+    "buddytalk": "English conversation practice with AI partners",
+    "wood-golem": "A forest stick-taking strategy puzzle that trains your logic",
+    "word-blaster": "Shoot down English words in space to build vocabulary",
+    "hacking-timer": "An Apple Watch interval timer that hacks your focus"
+   },
+   "ctaTitle": "Expand your potential<br><span class=\"text-sun\">with innovative apps</span>",
+   "ctaLead": "Get news about new apps and updates first on our social channels.",
+   "ctaMail": "Contact us"
+  }
+ }
 };
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-}, observerOptions);
-
-fadeElements.forEach(element => {
-observer.observe(element);
-});
-});
 </script>
-
-<!-- Legacy mobile-menu script removed; trailfusion-ui.js handles toggle via #mobile-toggle -->
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "TrailFusion AI - Innovative AI Application Development & Showcase",
-  "description": "Developing and showcasing innovative applications powered by the latest AI technology. Try out our diverse AI apps including Debate Master, Wood Golem, VoiceLink, and WordBlaster.",
-  "url": "https://trailfusionai.com/apps.html",
-  "inLanguage": "ja",
-  "publisher": {
-    "@type": "Organization",
-    "name": "TrailFusion AI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg"
-    }
-  },
-  "mainEntity": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "GP Teachers",
-      "applicationCategory": "EducationalApplication",
-      "description": "AI English learning application",
-      "operatingSystem": "Web"
-    },
-    {
-      "@type": "SoftwareApplication", 
-      "name": "Wood Golem",
-      "applicationCategory": "ProductivityApplication",
-      "description": "Work management AI application",
-      "operatingSystem": "Web"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "VoiceLink",
-      "applicationCategory": "CommunicationApplication", 
-      "description": "AI voice interpreter application",
-      "operatingSystem": "Web"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Word Blaster",
-      "applicationCategory": "GameApplication",
-      "description": "English vocabulary learning game application",
-      "operatingSystem": "Web"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Debate Master",
-      "applicationCategory": "EducationalApplication",
-      "description": "AI debate practice application", 
-      "operatingSystem": "Web"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Hacking Timer",
-      "applicationCategory": "ProductivityApplication",
-      "description": "Work time management application",
-      "operatingSystem": "Web"
-    }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://trailfusionai.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "AI Applications",
-      "item": "https://trailfusionai.com/apps.html"
-    }
-  ]
-}
-</script>
-
-<!-- Multi-language Support — i18n.js already loaded in <head>; just provide translations and bootstrap -->
 <script src="assets/js/translations-complete.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof I18N !== 'undefined') {
-    try { new I18N(); } catch (e) { /* already initialized */ }
-  }
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
 });
 </script>
-<script src="assets/js/reelmake.js" defer></script>
-<script src="assets/js/social-quest.js" defer></script>
+<script id="region-filter">
+// 表示地域の切替: 日本語のときは全8アプリ、それ以外は全世界配信アプリのみ表示
+document.addEventListener('DOMContentLoaded', function(){
+  function apply(lang){
+    var showJp = lang === 'ja';
+    document.querySelectorAll('[data-region="jp"]').forEach(function(el){
+      el.style.display = showJp ? '' : 'none';
+    });
+    var legend = document.getElementById('region-legend');
+    if (legend) legend.style.display = showJp ? '' : 'none';
+  }
+  var tries = 0;
+  (function hook(){
+    if (window.i18n && window.i18n.setLanguage && !window.i18n.__regionHooked) {
+      window.i18n.__regionHooked = true;
+      var orig = window.i18n.setLanguage.bind(window.i18n);
+      window.i18n.setLanguage = function(l){ orig(l); apply(l); };
+      apply(window.i18n.currentLang || window.__APPS_LANG || 'ja');
+    } else if (tries++ < 20) {
+      apply(window.__APPS_LANG || 'ja');
+      setTimeout(hook, 250);
+    }
+  })();
+});
+</script>
 </body>
 </html>

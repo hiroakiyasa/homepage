@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacking Timer - Apple Watchで集中力をハックするインターバルタイマー | TrailFusion AI</title>
+<meta name="description" content="Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。">
+<meta name="robots" content="index, follow">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/hacking-timer.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrailFusion AI">
+<meta property="og:title" content="Hacking Timer - Apple Watchで集中力をハックするインターバルタイマー | TrailFusion AI">
+<meta property="og:description" content="Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。">
+<meta property="og:url" content="https://trailfusionai.com/hacking-timer.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/hacking-timer/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0E1A">
+<link rel="icon" type="image/png" href="assets/images/hacking-timer/logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="assets/css/tailwind-compiled.css">
+<link rel="stylesheet" href="assets/css/trailfusion.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hacking Timer",
+  "operatingSystem": "iOS",
+  "applicationCategory": "ProductivityApplication",
+  "description": "Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。",
+  "url": "https://trailfusionai.com/hacking-timer.html",
+  "author": {
+    "@type": "Organization",
+    "name": "TrailFusion AI",
+    "url": "https://trailfusionai.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "inLanguage": [
+    "ja"
+  ]
+}
+</script>
+<style>
+/* Hacking Timer — 集中×ダークテックの世界観 */
+body{background:#0B0E1A;color:#F3F6FF;}
+.k-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,#232B54 0%,#12162E 50%,#0B0E1A 100%);}
+
+.k-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(124,140,248,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(124,140,248,.06) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;}
+.k-dim{color:rgba(243,246,255,.62);}
+.k-card{background:rgba(24,29,56,.65);border:2px solid #2A3260;border-radius:24px;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 18px 40px rgba(0,0,0,.45);}
+.k-frame{border:2.5px solid #2A3260;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 44px #7C8CF833,0 24px 50px rgba(0,0,0,.5);}
+.k-logo{width:96px;height:96px;border:2.5px solid #2A3260;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 30px #7C8CF844;flex-shrink:0;}
+.k-logo img{width:100%;height:100%;object-fit:cover;}
+.k-badge{display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid #2A3260;border-radius:999px;padding:.45rem .9rem;background:rgba(24,29,56,.65);color:#F3F6FF;font-size:.75rem;font-weight:800;letter-spacing:.08em;}
+.k-badge.accent{background:#7C8CF81F;border-color:#7C8CF877;color:#7C8CF8;}
+.k-num{width:44px;height:44px;border-radius:13px;border:1.5px solid #7C8CF866;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.95rem;color:#7C8CF8;background:#7C8CF814;flex-shrink:0;}
+.k-feature{background:rgba(24,29,56,.65);border:1.5px solid #2A3260;border-radius:22px;padding:1.6rem;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+.k-feature:hover{transform:translateY(-4px);border-color:#7C8CF888;box-shadow:0 0 34px #7C8CF826;}
+.k-shot{border:2px solid #2A3260;border-radius:24px;overflow:hidden;background:#000;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;}
+.k-shot:hover{transform:translateY(-6px);box-shadow:0 0 34px #7C8CF844;}
+.k-shot img{width:100%;height:auto;display:block;}
+.k-store{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:800;background:#7C8CF8;color:#0B0E1A;box-shadow:0 0 26px #7C8CF866;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;border:none;}
+.k-store:hover{transform:translateY(-2px);box-shadow:0 0 40px #7C8CF899;}
+.k-store.disabled{background:rgba(24,29,56,.65);color:rgba(243,246,255,.4);box-shadow:none;border:1.5px solid #2A3260;cursor:not-allowed;}
+.k-store.disabled:hover{transform:none;}
+.k-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .9rem;font-size:.8rem;font-weight:800;border:1.5px solid #2A3260;border-radius:999px;background:rgba(24,29,56,.65);color:rgba(243,246,255,.85);}
+.k-stage{border:2px solid #2A3260;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 0 34px #7C8CF833;}
+.faq-item{background:rgba(24,29,56,.65);border:1.5px solid #2A3260;border-radius:20px;overflow:hidden;}
+.faq-item summary{cursor:pointer;padding:1.15rem 1.4rem;font-weight:900;display:flex;align-items:center;gap:.75rem;list-style:none;color:#F3F6FF;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .qm{width:32px;height:32px;border-radius:10px;border:1.5px solid #7C8CF866;background:#7C8CF81A;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.85rem;flex-shrink:0;color:#7C8CF8;}
+.faq-item summary i{margin-left:auto;transition:transform .25s ease;color:#7C8CF8;}
+.faq-item[open] summary i{transform:rotate(180deg);}
+.faq-item .a{padding:0 1.4rem 1.3rem 3.4rem;color:rgba(243,246,255,.66);line-height:1.9;font-weight:500;font-size:.95rem;}
+.k-title{font-family:'Archivo Black','M PLUS Rounded 1c',sans-serif;letter-spacing:-.02em;}
+.k-grad{background:linear-gradient(120deg,#C3CCFF 0%,#7C8CF8 55%,#4ADEDE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+/* 上部ヘッダー(クリーム)との境界 */
+.k-hero{border-bottom:1px solid #2A3260;}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ 開発したアプリ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="k-hero">
+  <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
+    <nav class="mb-8 text-sm font-bold k-dim" aria-label="パンくず">
+      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+      <span class="mx-2">/</span><span>Hacking Timer</span>
+    </nav>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="k-logo"><img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer ロゴ"></div>
+          <div class="flex flex-col gap-2 items-start">
+            <span class="k-badge accent"><i class="ri-timer-flash-fill mr-1"></i>生産性 × Apple Watch</span>
+            <span class="k-badge"><i class="ri-earth-fill"></i>全世界向け・開発中</span>
+          </div>
+        </div>
+        <h1 class="k-title text-4xl md:text-5xl lg:text-6xl mb-5 leading-none k-grad">Hacking Timer</h1>
+        <p class="font-black text-lg md:text-2xl mb-4">手首の上で、集中力をハックする</p>
+        <p class="k-dim leading-loose font-medium mb-7">Apple Watchで集中力をハックするための、カスタマイズ可能なインターバルタイマーです。ポモドーロ・テクニックをはじめ様々な時間管理手法に対応し、生産性を最大化します。</p>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <span class="k-store disabled"><i class="ri-apple-fill text-xl"></i><span>App Store 準備中</span></span>
+          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span>Google Play 準備中</span></span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="k-chip"><i class="ri-watch-fill" style="color:#7C8CF8;"></i>Apple Watch 完全対応</span>
+          <span class="k-chip"><i class="ri-timer-fill" style="color:#7C8CF8;"></i>ポモドーロ対応</span>
+          <span class="k-chip"><i class="ri-bar-chart-box-fill" style="color:#7C8CF8;"></i>生産性レポート</span>
+          <span class="k-chip"><i class="ri-settings-4-fill" style="color:#7C8CF8;"></i>カスタムインターバル</span>
+        </div>
+      </div>
+      <div class="k-frame">
+        <img src="assets/images/ai/app-hacking-timer-hero.jpg" alt="Hacking Timer" class="w-full h-auto block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="k-badge accent">FEATURES</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3">深い集中を、仕組みで作る</h2>
+      <p class="k-dim font-medium max-w-2xl mx-auto">意志力に頼らない。タイマーが集中と休憩のリズムを自動で刻みます。</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">01</span>
+        <div>
+          <h3 class="font-black mb-1.5">自由自在のインターバル設計</h3>
+          <p class="k-dim text-sm leading-relaxed">作業25分+休憩5分だけじゃない。自分の集中リズムに合わせて、作業・休憩の長さを細かくカスタマイズ。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">02</span>
+        <div>
+          <h3 class="font-black mb-1.5">Apple Watch 完全対応</h3>
+          <p class="k-dim text-sm leading-relaxed">手首の振動で切り替えを通知。スマホを見ずに集中を守れる、Apple Watchファーストの設計です。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">03</span>
+        <div>
+          <h3 class="font-black mb-1.5">生産性の見える化</h3>
+          <p class="k-dim text-sm leading-relaxed">日・週・月の集中時間を自動記録。詳細な分析レポートで、自分の生産性パターンがわかります。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">04</span>
+        <div>
+          <h3 class="font-black mb-1.5">様々な時間管理手法に対応</h3>
+          <p class="k-dim text-sm leading-relaxed">ポモドーロ、52/17法、タイムボクシングなど、好みの手法をそのまま再現できます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24" style="background:linear-gradient(180deg,#0B0E1A 0%,#12162E 50%,#0B0E1A 100%);">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="k-badge accent">SCREENSHOTS</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5">アプリの画面</h2>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
+      <div class="lg:col-span-7 grid grid-cols-2 gap-5">
+        <figure class="k-shot"><img src="assets/images/hacking-timer-screenshot1.jpg" alt="Hacking Timer スクリーンショット 1" loading="lazy"></figure>
+        <figure class="k-shot"><img src="assets/images/hacking-timer-screenshot2.jpg" alt="Hacking Timer スクリーンショット 2" loading="lazy"></figure>
+        <figure class="k-shot col-span-2"><img src="assets/images/hacking-timer-screenshot3.png" alt="Hacking Timer スクリーンショット 3" loading="lazy"></figure>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="k-card p-8 h-full flex flex-col justify-center text-center">
+          <div class="text-6xl mb-4">⌚</div>
+          <h3 class="font-black text-2xl mb-3" style="color:#7C8CF8;">COMING SOON</h3>
+          <p class="k-dim text-sm leading-relaxed">Apple Watch に最適化したインターバルタイマーを開発中です。リリース情報はSNSでお知らせします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="text-center mb-10">
+      <span class="k-badge accent">FAQ</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+    </div>
+    <div class="space-y-4">
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>いつリリースされますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">現在開発中です。リリース情報はX（@trailfusionai）やTikTokでお知らせします。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>Apple Watchがなくても使えますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">iPhone単体でもお使いいただけるよう設計していますが、手首での通知などApple Watchとの組み合わせが最も効果的です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>どんな時間管理手法に対応しますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">ポモドーロ・テクニックをはじめ、作業・休憩の長さを自由に設定できるため、様々な手法を再現できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#7C8CF8;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+      </details>
+    </div>
+    <p class="text-center mt-8 text-sm font-bold">
+      <a href="privacy-policy.html" class="underline underline-offset-4" style="color:#7C8CF8;">プライバシーポリシー</a>
+      <span class="mx-2 k-dim">·</span>
+      <a href="terms-of-service.html" class="underline underline-offset-4" style="color:#7C8CF8;">利用規約</a>
+    </p>
+  </div>
+</section>
+
+<section class="py-16 md:py-24" style="background:radial-gradient(circle at 50% 100%,#232B54 0%,#0B0E1A 70%);">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="k-logo mx-auto mb-6"><img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer ロゴ"></div>
+    <h2 class="k-title text-3xl md:text-4xl mb-4">その集中は、設計できる。</h2>
+    <p class="k-dim font-medium mb-8 max-w-xl mx-auto">Hacking Timer は現在開発中。リリースをどうぞお楽しみに。</p>
+    <span class="k-badge accent" style="font-size:.95rem;padding:.7rem 1.4rem;">🚧 COMING SOON — リリースをお楽しみに</span>
+  </div>
+</section>
+
+
+<footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20 mt-0">
+  <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+  <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+    <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+          <div>
+            <div class="font-display font-black text-xl">TrailFusion AI</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <div class="flex gap-2">
+          <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-black text-sun mb-3">🚐 キャンパー</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html" class="hover:text-sun transition">DIYガイド</a></li>
+          <li><a href="drive-routes/" class="hover:text-sun transition">ドライブルート</a></li>
+          <li><a href="maintenance.html" class="hover:text-sun transition">整備記録</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-ocean mb-3">🤖 アプリ</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html" class="hover:text-ocean transition">アプリ一覧</a></li>
+          <li><a href="social-quest.html" class="hover:text-ocean transition">社会クエスト</a></li>
+          <li><a href="rika-quest.html" class="hover:text-ocean transition">理科クエスト</a></li>
+          <li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>
+          <li><a href="reelmake.html" class="hover:text-ocean transition">Reel Make</a></li>
+          <li><a href="buddytalk.html" class="hover:text-ocean transition">BuddyTalk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-coral mb-3">📄 サポート</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="privacy-policy.html" class="hover:text-coral transition">プライバシーポリシー</a></li>
+          <li><a href="terms-of-service.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-white/50">© 2025-2026 TrailFusion AI. All rights reserved.</p>
+      <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+    </div>
+  </div>
+</footer>
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+<script src="assets/js/trailfusion-ui.js"></script>
+</body>
+</html>

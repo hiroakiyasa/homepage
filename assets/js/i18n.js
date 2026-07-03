@@ -26,6 +26,7 @@ class I18N {
 
   async init() {
     await this.loadTranslations();
+    this.mergePageTranslations();
     this.detectBrowserLanguage();
     this.createLanguageSelector();
     this.createMobileLanguageSelector();
@@ -33,11 +34,15 @@ class I18N {
   }
 
   detectBrowserLanguage() {
+    // ユーザーの選択があればそれを最優先。無ければブラウザ（国・地域）の言語を
+    // 初回描画から適用し、「英語→日本語」のような切替のちらつきを防ぐ。
     if (this.isAppsPage()) {
       const appsLang = localStorage.getItem('preferred-language-apps');
-      this.currentLang = appsLang && this.supportedLanguages[appsLang] ? appsLang : 'ja';
-      try { localStorage.setItem('preferred-language', this.currentLang); } catch (_) {}
-      return;
+      if (appsLang && this.supportedLanguages[appsLang]) {
+        this.currentLang = appsLang;
+        try { localStorage.setItem('preferred-language', this.currentLang); } catch (_) {}
+        return;
+      }
     }
     const savedLang = localStorage.getItem('preferred-language');
     if (savedLang && this.supportedLanguages[savedLang]) {
@@ -150,10 +155,8 @@ class I18N {
     if (ogDesc && description) ogDesc.content = description;
     this.updateMetaTags();
     this.normalizeAppLabels();
-    this.removeRetiredApps();
-    this.injectKokugoQuest();
-    this.removeRetiredApps();
-    this.updateAppsCount();
+    // 翻訳適用完了 — 事前判定スクリプトが隠していた描画を解除
+    document.documentElement.style.visibility = '';
   }
 
   normalizeAppLabels() {
@@ -286,6 +289,26 @@ class I18N {
       return typeof value === 'string' ? value : null;
     };
     return tryLang(this.currentLang) || tryLang(this.fallbackLang);
+  }
+
+  // ページ側の window.pageTranslations（そのページ専用の翻訳）を共通翻訳にマージする
+  mergePageTranslations() {
+    const extra = window.pageTranslations;
+    if (!extra) return;
+    const deepMerge = (base, add) => {
+      Object.keys(add).forEach((k) => {
+        if (add[k] && typeof add[k] === 'object' && !Array.isArray(add[k])) {
+          if (!base[k] || typeof base[k] !== 'object') base[k] = {};
+          deepMerge(base[k], add[k]);
+        } else {
+          base[k] = add[k];
+        }
+      });
+    };
+    Object.keys(extra).forEach((lang) => {
+      if (!this.translations[lang]) this.translations[lang] = {};
+      deepMerge(this.translations[lang], extra[lang]);
+    });
   }
 
   async loadTranslations() {

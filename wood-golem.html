@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wood Golem - 森の棒取りストラテジーパズル | TrailFusion AI</title>
+<meta name="description" content="棒取りストラテジーゲーム「Wood Golem」。美しい森を舞台に、かわいいウッドゴーレムと100以上のレベルに挑戦。論理的思考力を鍛えながら楽しく遊べるパズルゲーム。App Storeで無料ダウンロード。">
+<meta name="robots" content="index, follow">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/wood-golem.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrailFusion AI">
+<meta property="og:title" content="Wood Golem - 森の棒取りストラテジーパズル | TrailFusion AI">
+<meta property="og:description" content="棒取りストラテジーゲーム「Wood Golem」。美しい森を舞台に、かわいいウッドゴーレムと100以上のレベルに挑戦。論理的思考力を鍛えながら楽しく遊べるパズルゲーム。App Storeで無料ダウンロード。">
+<meta property="og:url" content="https://trailfusionai.com/wood-golem.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/wood-golem/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#7DD87A">
+<link rel="icon" type="image/png" href="assets/images/wood-golem/logo.png">
+<script>
+// 言語の事前判定 — 英語圏ユーザーには日本語を一瞬も見せない
+(function(){
+  var saved=null; try{saved=localStorage.getItem('wood-golem-lang');}catch(e){}
+  var lang=saved||(((navigator.languages&&navigator.languages[0])||navigator.language||'ja').toLowerCase().indexOf('ja')===0?'ja':'en');
+  window.__PAGE_LANG=lang;
+  if(lang!=='ja'){document.documentElement.style.visibility='hidden';setTimeout(function(){document.documentElement.style.visibility='';},1500);}
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="assets/css/tailwind-compiled.css">
+<link rel="stylesheet" href="assets/css/trailfusion.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Wood Golem",
+  "operatingSystem": "iOS",
+  "applicationCategory": "GameApplication",
+  "description": "Wood Golem is a stick-taking strategy puzzle set in a beautiful forest. 100+ levels with cute golem characters — train your logic while having fun. Free on the App Store.",
+  "url": "https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549",
+  "author": {
+    "@type": "Organization",
+    "name": "TrailFusion AI",
+    "url": "https://trailfusionai.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "inLanguage": [
+    "ja",
+    "en"
+  ]
+}
+</script>
+<style>
+body{background:#FFFBF2;color:#1F2E4D;}
+.d-hero{background:linear-gradient(180deg,#DFF3D5 0%,#FFFBF2 100%);position:relative;overflow:hidden;}
+
+.d-frame{border:3px solid #1F2E4D;border-radius:26px;box-shadow:10px 10px 0 #1F2E4D;overflow:hidden;background:#fff;}
+.d-logo{width:96px;height:96px;border:3px solid #1F2E4D;border-radius:26px;box-shadow:6px 6px 0 #1F2E4D;overflow:hidden;background:#fff;transform:rotate(-3deg);transition:transform .3s ease;}
+.d-logo:hover{transform:rotate(0) scale(1.04);}
+.d-logo img{width:100%;height:100%;object-fit:cover;}
+.d-badge{display:inline-flex;align-items:center;gap:.45rem;border:2px solid #1F2E4D;border-radius:999px;padding:.42rem .85rem;background:#fff;color:#1F2E4D;font-size:.75rem;font-weight:900;letter-spacing:.06em;box-shadow:3px 3px 0 #1F2E4D;}
+.d-badge.accent{background:#7DD87A;color:#1F2E4D;}
+.d-num{width:44px;height:44px;border-radius:13px;border:2.5px solid #1F2E4D;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.95rem;color:#1F2E4D;background:#7DD87A;flex-shrink:0;box-shadow:3px 3px 0 #1F2E4D;}
+.d-feature{background:#fff;border:3px solid #1F2E4D;border-radius:22px;box-shadow:7px 7px 0 #1F2E4D;padding:1.5rem;transition:transform .25s ease,box-shadow .25s ease;}
+.d-feature:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 #1F2E4D;}
+.d-shot{border:3px solid #1F2E4D;border-radius:24px;box-shadow:8px 8px 0 #1F2E4D;overflow:hidden;background:#fff;transition:transform .35s cubic-bezier(.16,1,.3,1);}
+.d-shot:hover{transform:translateY(-6px) rotate(-1deg);}
+.d-shot img{width:100%;height:auto;display:block;}
+.d-store{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.5rem;border:2.5px solid #1F2E4D;border-radius:999px;font-weight:800;background:#1F2E4D;color:#fff;box-shadow:5px 5px 0 #7DD87A;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;}
+.d-store:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #7DD87A;}
+.d-store.disabled{background:#FFFBF2;color:rgba(31,46,77,.45);cursor:not-allowed;box-shadow:3px 3px 0 rgba(31,46,77,.2);}
+.d-store.disabled:hover{transform:none;box-shadow:3px 3px 0 rgba(31,46,77,.2);}
+.d-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .9rem;font-size:.8rem;font-weight:800;border:2px solid #1F2E4D;border-radius:999px;background:#fff;color:#1F2E4D;box-shadow:2px 2px 0 #1F2E4D;}
+.tiktok-stage{border:3px solid #1F2E4D;border-radius:24px;box-shadow:10px 10px 0 #1F2E4D;overflow:hidden;background:#1F2E4D;}
+.faq-item{background:#fff;border:3px solid #1F2E4D;border-radius:20px;box-shadow:6px 6px 0 #1F2E4D;overflow:hidden;}
+.faq-item summary{cursor:pointer;padding:1.15rem 1.4rem;font-weight:900;display:flex;align-items:center;gap:.75rem;list-style:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .qm{width:32px;height:32px;border-radius:10px;border:2px solid #1F2E4D;background:#7DD87A;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.85rem;flex-shrink:0;color:#1F2E4D;}
+.faq-item summary i{margin-left:auto;transition:transform .25s ease;}
+.faq-item[open] summary i{transform:rotate(180deg);}
+.faq-item .a{padding:0 1.4rem 1.3rem 3.4rem;color:rgba(31,46,77,.78);line-height:1.9;font-weight:600;font-size:.95rem;}
+.d-cta{background:#1F2E4D;position:relative;overflow:hidden;}
+.d-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#7DD87A22 1.5px,transparent 1.5px);background-size:28px 28px;}
+.lang-pill{display:inline-flex;border:2.5px solid #1F2E4D;border-radius:999px;overflow:hidden;background:#fff;box-shadow:3px 3px 0 #1F2E4D;}
+.lang-pill button{padding:.4rem 1rem;font-weight:900;font-size:.8rem;background:transparent;color:#1F2E4D;cursor:pointer;border:none;}
+.lang-pill button.on{background:#1F2E4D;color:#fff;}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ 開発したアプリ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="d-hero border-b-[3px] border-navy">
+  <div class="absolute inset-0 dot-pattern opacity-20 pointer-events-none"></div>
+  <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
+    <div class="flex items-center justify-between gap-3 flex-wrap mb-8">
+      <nav class="text-sm font-bold text-navy/70" aria-label="Breadcrumb">
+        <a href="apps.html" class="hover:text-coral transition" data-t="bc"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+        <span class="mx-2">/</span><span>Wood Golem</span>
+      </nav>
+      <span class="lang-pill" role="group" aria-label="Language">
+        <button type="button" data-setlang="ja">日本語</button>
+        <button type="button" data-setlang="en">EN</button>
+      </span>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="d-logo"><img src="assets/images/wood-golem/logo.png" alt="Wood Golem ロゴ"></div>
+          <div class="flex flex-col gap-2 items-start">
+            <span class="d-badge accent"><i class="ri-plant-fill"></i><span data-t="badge">ストラテジーパズル</span></span>
+            <span class="d-badge"><i class="ri-earth-fill"></i><span data-t="global">全世界で配信中</span></span>
+          </div>
+        </div>
+        <h1 class="display-xl text-4xl md:text-5xl lg:text-6xl mb-4 leading-none text-navy" style="letter-spacing:-.03em;">Wood Golem</h1>
+        <p class="font-black text-lg md:text-2xl mb-4 text-navy" data-t="sub">森のなかまと、あたまの冒険へ</p>
+        <p class="text-navy/70 leading-loose font-medium mb-7" data-t="intro">棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムたちと棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。</p>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="d-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
+          <span class="d-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-t="gplay">Google Play 準備中</span></span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="d-chip"><i class="ri-puzzle-fill" style="color:#3EA23B;"></i><span data-t="chip0">100+ レベル</span></span>
+          <span class="d-chip"><i class="ri-emotion-happy-fill" style="color:#3EA23B;"></i><span data-t="chip1">かわいいキャラとストーリー</span></span>
+          <span class="d-chip"><i class="ri-brain-fill" style="color:#3EA23B;"></i><span data-t="chip2">論理的思考トレーニング</span></span>
+          <span class="d-chip"><i class="ri-price-tag-3-fill" style="color:#3EA23B;"></i><span data-t="chip3">無料ダウンロード</span></span>
+        </div>
+      </div>
+      <div class="d-frame">
+        <img src="assets/images/ai/app-wood-golem-hero.jpg" alt="Wood Golem" class="w-full h-auto block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">FEATURES</span>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-t="featTitle">森の冒険で、論理力を鍛える</h2>
+      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-t="featLead">シンプルなルール、奥深い戦略。子どもから大人まで夢中になれます。</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="d-feature flex items-start gap-4">
+        <span class="d-num">01</span>
+        <div>
+          <h3 class="font-black mb-1.5" data-t="f0t">美しい森の世界</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f0d">絵本のような森を舞台にした棒取りパズル。ステージが進むごとに新しい景色が広がります。</p>
+        </div>
+      </div>
+      <div class="d-feature flex items-start gap-4">
+        <span class="d-num">02</span>
+        <div>
+          <h3 class="font-black mb-1.5" data-t="f1t">100以上のレベル</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f1d">やさしい入門ステージから頭をひねる高難度まで。少しずつ難しくなるから挫折しません。</p>
+        </div>
+      </div>
+      <div class="d-feature flex items-start gap-4">
+        <span class="d-num">03</span>
+        <div>
+          <h3 class="font-black mb-1.5" data-t="f2t">かわいいウッドゴーレム</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f2d">小さなウッドゴーレムたちと一緒に冒険。ストーリーを追いながら進められます。</p>
+        </div>
+      </div>
+      <div class="d-feature flex items-start gap-4">
+        <span class="d-num">04</span>
+        <div>
+          <h3 class="font-black mb-1.5" data-t="f3t">論理と戦略が身につく</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f3d">「どの棒を取るか」の読み合いで、論理的思考力と戦略的思考が自然に鍛えられます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24" style="background:linear-gradient(180deg,#FFFBF2 0%,#ECF8E4 50%,#FFFBF2 100%);">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">SCREENSHOTS &amp; DEMO</span>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="shotsTitle">アプリの画面</h2>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
+      <div class="lg:col-span-7 grid grid-cols-2 gap-5">
+        <figure class="d-shot"><img src="assets/images/wood-golem-screenshot1.jpg" alt="Wood Golem screenshot 1" loading="lazy"></figure>
+        <figure class="d-shot"><img src="assets/images/wood-golem-screenshot2.jpg" alt="Wood Golem screenshot 2" loading="lazy"></figure>
+        <figure class="d-shot col-span-2"><img src="assets/images/wood-golem-screenshot3.png" alt="Wood Golem screenshot 3" loading="lazy"></figure>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-2 mb-3 flex-wrap">
+          <span class="sticker sticker-peach">🎬 LIVE DEMO</span>
+          <span class="hand-font text-coral text-lg">Watch on TikTok ✦</span>
+        </div>
+        <div class="tiktok-stage w-full" style="aspect-ratio:9/13;">
+          <iframe src="https://www.tiktok.com/embed/v2/7456950409228307719?autoplay=1&loop=1" style="width:100%;height:100%;border:none;" title="Wood Golem demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="text-center mb-10">
+      <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">FAQ</span>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="faqTitle">よくあるご質問</h2>
+    </div>
+    <div class="space-y-4">
+      <details class="faq-item">
+        <summary><span class="qm">Q</span><span data-t="q0">無料で遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-t="a0">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span><span data-t="q1">どんなゲームですか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-t="a1">交互に棒を取り合い、最後の一手を読み合う「棒取り」パズルです。ルールはシンプルですが、勝つには戦略が必要です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span><span data-t="q2">子どもでも遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-t="a2">はい。やさしいレベルから始まるので、お子さまの論理的思考のトレーニングにもぴったりです。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span><span data-t="q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-t="a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span><span data-t="q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-t="a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+      </details>
+    </div>
+    <p class="text-center mt-8 text-sm font-bold">
+      <a href="privacy-policy.html" class="text-coral underline underline-offset-4" data-t="privacyLink">プライバシーポリシー</a>
+      <span class="mx-2 text-navy/40">·</span>
+      <a href="terms-of-service.html" class="text-coral underline underline-offset-4" data-t="termsLink">利用規約</a>
+    </p>
+  </div>
+</section>
+
+<section class="d-cta py-16 md:py-24 border-t-[3px] border-navy">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="d-logo mx-auto mb-6" style="transform:rotate(3deg);"><img src="assets/images/wood-golem/logo.png" alt="Wood Golem ロゴ"></div>
+    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-t="ctaTitle">森が、あなたを待っている。</h2>
+    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-t="ctaLead">ウッドゴーレムたちと一緒に、今日から棒取りの冒険を始めよう。</p>
+    <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-t="ctaBtn">App Store で無料ダウンロード</span></a>
+  </div>
+</section>
+
+
+<footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20 mt-0">
+  <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+  <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+    <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+          <div>
+            <div class="font-display font-black text-xl">TrailFusion AI</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <div class="flex gap-2">
+          <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-black text-sun mb-3">🚐 キャンパー</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html" class="hover:text-sun transition">DIYガイド</a></li>
+          <li><a href="drive-routes/" class="hover:text-sun transition">ドライブルート</a></li>
+          <li><a href="maintenance.html" class="hover:text-sun transition">整備記録</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-ocean mb-3">🤖 アプリ</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html" class="hover:text-ocean transition">アプリ一覧</a></li>
+          <li><a href="social-quest.html" class="hover:text-ocean transition">社会クエスト</a></li>
+          <li><a href="rika-quest.html" class="hover:text-ocean transition">理科クエスト</a></li>
+          <li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>
+          <li><a href="reelmake.html" class="hover:text-ocean transition">Reel Make</a></li>
+          <li><a href="buddytalk.html" class="hover:text-ocean transition">BuddyTalk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-coral mb-3">📄 サポート</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="privacy-policy.html" class="hover:text-coral transition">プライバシーポリシー</a></li>
+          <li><a href="terms-of-service.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-white/50">© 2025-2026 TrailFusion AI. All rights reserved.</p>
+      <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+    </div>
+  </div>
+</footer>
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+<script src="assets/js/trailfusion-ui.js"></script>
+
+<script>
+(function(){
+  var EN={"bc":"<i class=\"ri-arrow-left-line\"></i> All Apps","badge":"Strategy Puzzle","global":"Available worldwide","sub":"A brain adventure with forest friends","intro":"Embark on a forest adventure with Wood Golem, a stick-taking strategy puzzle. Set in a beautiful forest, challenge puzzles together with little wood golems — a strategy game that trains logical thinking while staying fun.","gplay":"Google Play — Coming Soon","chip0":"100+ levels","chip1":"Cute characters & story","chip2":"Logic training","chip3":"Free download","featTitle":"Train your logic in the forest","featLead":"Simple rules, deep strategy. Addictive for kids and adults alike.","f0t":"A beautiful forest world","f0d":"Stick-taking puzzles set in a storybook forest. New scenery unfolds as you progress.","f1t":"100+ levels","f1d":"From gentle intro stages to brain-bending challenges — difficulty ramps up gradually so you never get stuck.","f2t":"Cute wood golems","f2d":"Adventure together with little wood golem characters and follow the story as you play.","f3t":"Logic & strategy skills","f3d":"Reading which stick to take builds logical and strategic thinking naturally.","shotsTitle":"Screenshots","faqTitle":"FAQ","q0":"Is it free to play?","a0":"Yes — free to download and play. Some features are available via in-app purchase.","q1":"What kind of game is it?","a1":"A stick-taking puzzle where you alternate picking sticks and outread your opponent for the last move. Simple rules, real strategy.","q2":"Is it suitable for kids?","a2":"Yes. It starts with easy levels, making it great logic training for children too.","q3":"Which devices are supported?","a3":"iPhone and iPad (iOS). An Android version is in the works.","q4":"How can I contact support?","a4":"Email us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.","privacyLink":"Privacy Policy","termsLink":"Terms of Service","ctaTitle":"The forest is waiting.","ctaLead":"Start your stick-taking adventure with the wood golems today.","ctaBtn":"Download free on the App Store"};
+  var KEY='wood-golem-lang';
+  function apply(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-t]').forEach(function(el){
+      var k=el.getAttribute('data-t');
+      if(lang==='en'){
+        if(!el.hasAttribute('data-ja')) el.setAttribute('data-ja', el.innerHTML);
+        if(EN[k]!==undefined) el.innerHTML=EN[k];
+      }else if(el.hasAttribute('data-ja')){
+        el.innerHTML=el.getAttribute('data-ja');
+      }
+    });
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-setlang')===lang);
+    });
+    document.documentElement.style.visibility='';
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    apply(window.__PAGE_LANG||'ja');
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var l=b.getAttribute('data-setlang');
+        try{localStorage.setItem(KEY,l);}catch(e){}
+        apply(l);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

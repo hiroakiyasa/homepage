@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Blaster - 宇宙で英単語を撃ち落とすシューティング学習ゲーム | TrailFusion AI</title>
+<meta name="description" content="英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。">
+<meta name="robots" content="index, follow">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/word-blaster.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrailFusion AI">
+<meta property="og:title" content="Word Blaster - 宇宙で英単語を撃ち落とすシューティング学習ゲーム | TrailFusion AI">
+<meta property="og:description" content="英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。">
+<meta property="og:url" content="https://trailfusionai.com/word-blaster.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/word-blaster/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070B1E">
+<link rel="icon" type="image/png" href="assets/images/word-blaster/logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="assets/css/tailwind-compiled.css">
+<link rel="stylesheet" href="assets/css/trailfusion.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Word Blaster",
+  "operatingSystem": "iOS",
+  "applicationCategory": "GameApplication",
+  "description": "英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。",
+  "url": "https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796",
+  "author": {
+    "@type": "Organization",
+    "name": "TrailFusion AI",
+    "url": "https://trailfusionai.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "inLanguage": [
+    "ja"
+  ]
+}
+</script>
+<style>
+/* Word Blaster — 宇宙×ネオンのシューティング世界観 */
+body{background:#070B1E;color:#F3F6FF;}
+.k-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 75% 15%,#1B2C6B 0%,#0C1440 45%,#070B1E 100%);}
+.k-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 18% 32%,rgba(255,255,255,.9) 50%,transparent 51%),radial-gradient(1px 1px at 64% 12%,rgba(255,255,255,.7) 50%,transparent 51%),radial-gradient(2px 2px at 84% 58%,#FFC93DCC 50%,transparent 51%),radial-gradient(1px 1px at 38% 74%,rgba(255,255,255,.6) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 8% 82%,rgba(255,255,255,.75) 50%,transparent 51%),radial-gradient(1px 1px at 92% 24%,rgba(255,255,255,.8) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 48% 44%,rgba(255,255,255,.5) 50%,transparent 51%);pointer-events:none;}
+
+.k-dim{color:rgba(243,246,255,.62);}
+.k-card{background:rgba(20,28,66,.6);border:2px solid #26346E;border-radius:24px;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 18px 40px rgba(0,0,0,.45);}
+.k-frame{border:2.5px solid #26346E;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 44px #FFC93D33,0 24px 50px rgba(0,0,0,.5);}
+.k-logo{width:96px;height:96px;border:2.5px solid #26346E;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 30px #FFC93D44;flex-shrink:0;}
+.k-logo img{width:100%;height:100%;object-fit:cover;}
+.k-badge{display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid #26346E;border-radius:999px;padding:.45rem .9rem;background:rgba(20,28,66,.6);color:#F3F6FF;font-size:.75rem;font-weight:800;letter-spacing:.08em;}
+.k-badge.accent{background:#FFC93D1F;border-color:#FFC93D77;color:#FFC93D;}
+.k-num{width:44px;height:44px;border-radius:13px;border:1.5px solid #FFC93D66;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.95rem;color:#FFC93D;background:#FFC93D14;flex-shrink:0;}
+.k-feature{background:rgba(20,28,66,.6);border:1.5px solid #26346E;border-radius:22px;padding:1.6rem;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+.k-feature:hover{transform:translateY(-4px);border-color:#FFC93D88;box-shadow:0 0 34px #FFC93D26;}
+.k-shot{border:2px solid #26346E;border-radius:24px;overflow:hidden;background:#000;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;}
+.k-shot:hover{transform:translateY(-6px);box-shadow:0 0 34px #FFC93D44;}
+.k-shot img{width:100%;height:auto;display:block;}
+.k-store{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:800;background:#FFC93D;color:#0B0F26;box-shadow:0 0 26px #FFC93D66;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;border:none;}
+.k-store:hover{transform:translateY(-2px);box-shadow:0 0 40px #FFC93D99;}
+.k-store.disabled{background:rgba(20,28,66,.6);color:rgba(243,246,255,.4);box-shadow:none;border:1.5px solid #26346E;cursor:not-allowed;}
+.k-store.disabled:hover{transform:none;}
+.k-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .9rem;font-size:.8rem;font-weight:800;border:1.5px solid #26346E;border-radius:999px;background:rgba(20,28,66,.6);color:rgba(243,246,255,.85);}
+.k-stage{border:2px solid #26346E;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 0 34px #FFC93D33;}
+.faq-item{background:rgba(20,28,66,.6);border:1.5px solid #26346E;border-radius:20px;overflow:hidden;}
+.faq-item summary{cursor:pointer;padding:1.15rem 1.4rem;font-weight:900;display:flex;align-items:center;gap:.75rem;list-style:none;color:#F3F6FF;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .qm{width:32px;height:32px;border-radius:10px;border:1.5px solid #FFC93D66;background:#FFC93D1A;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.85rem;flex-shrink:0;color:#FFC93D;}
+.faq-item summary i{margin-left:auto;transition:transform .25s ease;color:#FFC93D;}
+.faq-item[open] summary i{transform:rotate(180deg);}
+.faq-item .a{padding:0 1.4rem 1.3rem 3.4rem;color:rgba(243,246,255,.66);line-height:1.9;font-weight:500;font-size:.95rem;}
+.k-title{font-family:'Archivo Black','M PLUS Rounded 1c',sans-serif;letter-spacing:-.02em;}
+.k-grad{background:linear-gradient(120deg,#FFE57A 0%,#FFC93D 45%,#FF8A5B 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+/* 上部ヘッダー(クリーム)との境界 */
+.k-hero{border-bottom:1px solid #26346E;}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ 開発したアプリ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="k-hero">
+  <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
+    <nav class="mb-8 text-sm font-bold k-dim" aria-label="パンくず">
+      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+      <span class="mx-2">/</span><span>Word Blaster</span>
+    </nav>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="k-logo"><img src="assets/images/word-blaster/logo.png" alt="Word Blaster ロゴ"></div>
+          <div class="flex flex-col gap-2 items-start">
+            <span class="k-badge accent"><i class="ri-rocket-2-fill mr-1"></i>英単語シューティング</span>
+            <span class="k-badge"><i class="ri-earth-fill"></i>全世界で配信中</span>
+          </div>
+        </div>
+        <h1 class="k-title text-4xl md:text-5xl lg:text-6xl mb-5 leading-none k-grad">Word Blaster</h1>
+        <p class="font-black text-lg md:text-2xl mb-4">撃って、覚える。宇宙の英単語バトル</p>
+        <p class="k-dim leading-loose font-medium mb-7">宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。正しい意味の単語を狙い撃ち。エキサイティングに遊びながら、英単語力がぐんぐん伸びます。</p>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="k-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
+          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span>Google Play 準備中</span></span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="k-chip"><i class="ri-rocket-fill" style="color:#FFC93D;"></i>宇宙シューティング</span>
+          <span class="k-chip"><i class="ri-bar-chart-fill" style="color:#FFC93D;"></i>レベル別学習</span>
+          <span class="k-chip"><i class="ri-trophy-fill" style="color:#FFC93D;"></i>ランキング対戦</span>
+          <span class="k-chip"><i class="ri-price-tag-3-fill" style="color:#FFC93D;"></i>無料ダウンロード</span>
+        </div>
+      </div>
+      <div class="k-frame">
+        <img src="assets/images/ai/app-word-blaster-hero.jpg" alt="Word Blaster" class="w-full h-auto block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="k-badge accent">FEATURES</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3">遊ぶほど、語彙が増える</h2>
+      <p class="k-dim font-medium max-w-2xl mx-auto">「暗記がつらい」を「撃つのが楽しい」に変える、新しい英単語学習です。</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">01</span>
+        <div>
+          <h3 class="font-black mb-1.5">爽快な宇宙シューティング</h3>
+          <p class="k-dim text-sm leading-relaxed">迫りくる単語を狙って撃ち落とす、エキサイティングなシューティングゲーム。勉強している感覚を忘れます。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">02</span>
+        <div>
+          <h3 class="font-black mb-1.5">初級から上級までレベル別</h3>
+          <p class="k-dim text-sm leading-relaxed">自分のレベルに合わせて単語セットを選択。基礎単語から難関語彙まで段階的にステップアップ。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">03</span>
+        <div>
+          <h3 class="font-black mb-1.5">ランキングで友達と競争</h3>
+          <p class="k-dim text-sm leading-relaxed">スコアランキングで友達やライバルと競争。負けたくない気持ちが継続の原動力になります。</p>
+        </div>
+      </div>
+      <div class="k-feature flex items-start gap-4">
+        <span class="k-num">04</span>
+        <div>
+          <h3 class="font-black mb-1.5">発音と意味もセットで</h3>
+          <p class="k-dim text-sm leading-relaxed">単語の発音と意味を確認しながらプレイ。目・耳・指をフル動員して記憶に焼きつけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24" style="background:linear-gradient(180deg,#070B1E 0%,#0C1440 50%,#070B1E 100%);">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="k-badge accent">SCREENSHOTS &amp; DEMO</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5">アプリの画面</h2>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
+      <div class="lg:col-span-7 grid grid-cols-2 gap-5">
+        <figure class="k-shot"><img src="assets/images/word-blaster-screenshot1.jpg" alt="Word Blaster スクリーンショット 1" loading="lazy"></figure>
+        <figure class="k-shot"><img src="assets/images/word-blaster-screenshot2.png" alt="Word Blaster スクリーンショット 2" loading="lazy"></figure>
+        <figure class="k-shot col-span-2"><img src="assets/images/word-blaster-screenshot3.png" alt="Word Blaster スクリーンショット 3" loading="lazy"></figure>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-2 mb-3 flex-wrap">
+          <span class="sticker" style="background:#FFC93D;color:#0B0F26;">🎬 LIVE DEMO</span>
+          <span class="hand-font text-lg" style="color:#FFC93D;">Watch on TikTok ✦</span>
+        </div>
+        <div class="k-stage w-full" style="aspect-ratio:9/13;">
+          <iframe src="https://www.tiktok.com/embed/v2/7506530494054436103?autoplay=1&loop=1" style="width:100%;height:100%;border:none;" title="Word Blaster demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="text-center mb-10">
+      <span class="k-badge accent">FAQ</span>
+      <h2 class="k-title text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+    </div>
+    <div class="space-y-4">
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>無料で遊べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>どのレベルの単語が学べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">初級から上級までレベル別に収録しています。基礎を固めたい方から語彙を増やしたい上級者まで対応します。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>子どもでも遊べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">はい。ゲーム感覚で英単語に触れられるので、英語学習の入り口としてもおすすめです。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>対応している端末は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#FFC93D;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+      </details>
+    </div>
+    <p class="text-center mt-8 text-sm font-bold">
+      <a href="privacy-policy.html" class="underline underline-offset-4" style="color:#FFC93D;">プライバシーポリシー</a>
+      <span class="mx-2 k-dim">·</span>
+      <a href="terms-of-service.html" class="underline underline-offset-4" style="color:#FFC93D;">利用規約</a>
+    </p>
+  </div>
+</section>
+
+<section class="py-16 md:py-24" style="background:radial-gradient(circle at 50% 100%,#1B2C6B 0%,#070B1E 70%);">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="k-logo mx-auto mb-6"><img src="assets/images/word-blaster/logo.png" alt="Word Blaster ロゴ"></div>
+    <h2 class="k-title text-3xl md:text-4xl mb-4">出撃準備は、いいか。</h2>
+    <p class="k-dim font-medium mb-8 max-w-xl mx-auto">宇宙で待つ英単語たちを撃ち落とせ。今日からWord Blasterで語彙力バトル。</p>
+    <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="k-store"><i class="ri-apple-fill text-xl"></i><span>App Store で無料ダウンロード</span></a>
+  </div>
+</section>
+
+
+<footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20 mt-0">
+  <div class="absolute inset-0 opacity-5 dot-pattern"></div>
+  <div class="border-b-2 border-white/10 py-3 overflow-hidden">
+    <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
+          <div>
+            <div class="font-display font-black text-xl">TrailFusion AI</div>
+            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <div class="flex gap-2">
+          <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-black text-sun mb-3">🚐 キャンパー</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="camping.html" class="hover:text-sun transition">DIYガイド</a></li>
+          <li><a href="drive-routes/" class="hover:text-sun transition">ドライブルート</a></li>
+          <li><a href="maintenance.html" class="hover:text-sun transition">整備記録</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-ocean mb-3">🤖 アプリ</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html" class="hover:text-ocean transition">アプリ一覧</a></li>
+          <li><a href="social-quest.html" class="hover:text-ocean transition">社会クエスト</a></li>
+          <li><a href="rika-quest.html" class="hover:text-ocean transition">理科クエスト</a></li>
+          <li><a href="kokugo-quest.html" class="hover:text-ocean transition">国語クエスト</a></li>
+          <li><a href="reelmake.html" class="hover:text-ocean transition">Reel Make</a></li>
+          <li><a href="buddytalk.html" class="hover:text-ocean transition">BuddyTalk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-coral mb-3">📄 サポート</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="privacy-policy.html" class="hover:text-coral transition">プライバシーポリシー</a></li>
+          <li><a href="terms-of-service.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-white/50">© 2025-2026 TrailFusion AI. All rights reserved.</p>
+      <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
+    </div>
+  </div>
+</footer>
+<button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
+<script src="assets/js/trailfusion-ui.js"></script>
+</body>
+</html>
