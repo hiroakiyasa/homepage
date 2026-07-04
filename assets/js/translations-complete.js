@@ -1,6 +1,7 @@
 // Complete translations for index.html - All 10 languages
 const completeTranslations = {
     ja: {
+        home: { aiBlurb: "実際の開発環境で磨いているBuddyTalk、Reel Make、Wood Golem、Word BlasterなどのAIアプリ。日常をちょっと便利に、もっと楽しく。" },
         // Meta tags
         meta: {
             title: "TrailFusion AI - キャンピングカーDIYとAIアプリケーション開発",
@@ -12,6 +13,8 @@ const completeTranslations = {
             home: "ホーム",
             apps: "アプリ紹介",
             camping: "キャンピングカー製作",
+            driveRoutes: "ドライブルート",
+            maintenance: "整備記録",
             contact: "お問い合わせ"
         },
         
@@ -111,8 +114,8 @@ const completeTranslations = {
         apps: {
             // Meta tags
             meta: {
-                title: "TrailFusion AI - 革新的なAIアプリケーション開発・紹介サイト",
-                description: "最新のAI技術を活用した革新的なアプリケーションを開発・紹介。ディベートマスター、ウッドゴーレム、VoiceLink、WordBlasterなど多彩なAIアプリを実際にお試しできます。"
+                title: "TrailFusion AI - 開発したアプリ一覧",
+                description: "TrailFusion AIが開発した8つのアプリを紹介。社会クエスト・理科クエスト・国語クエスト・Reel Make・BuddyTalk・Wood Golem・Word Blaster・Hacking Timer。"
             },
             
             // Hero section
@@ -232,6 +235,7 @@ const completeTranslations = {
     },
     
     en: {
+        home: { aiBlurb: "AI apps polished in our real development environment — BuddyTalk, Reel Make, Wood Golem, Word Blaster and more. Making everyday life a little more convenient, and a lot more fun." },
         // Meta tags
         meta: {
             title: "TrailFusion AI - Camper DIY & AI Application Development",
@@ -243,6 +247,8 @@ const completeTranslations = {
             home: "Home",
             apps: "Apps",
             camping: "Camper Manufacturing",
+            driveRoutes: "Drive Routes",
+            maintenance: "Maintenance",
             contact: "Contact"
         },
         
@@ -372,8 +378,8 @@ const completeTranslations = {
         apps: {
             // Meta tags
             meta: {
-                title: "TrailFusion AI - Innovative AI Application Development & Showcase",
-                description: "Develop and showcase innovative applications using the latest AI technology. Try various AI apps including Debate Master, Wood Golem, VoiceLink, Word Blaster, and more."
+                title: "TrailFusion AI - All Apps",
+                description: "TrailFusion AI builds apps for learning, games, video creation, and productivity: Social Quest, Rika Quest, Kokugo Quest, Reel Make, BuddyTalk, Wood Golem, Word Blaster, and Hacking Timer."
             },
             
             // Hero section
@@ -501,8 +507,9 @@ const completeTranslations = {
     
     // Russian translations (Complete version)
     ru: {
+        home: { aiBlurb: "AI-приложения, отточенные в нашей реальной среде разработки — BuddyTalk, Reel Make, Wood Golem, Word Blaster и другие. Делаем повседневную жизнь немного удобнее и намного веселее." },
         meta: { title: "TrailFusion AI - DIY Дом на колёсах и Разработка AI Приложений", description: "От создания DIY дома на колёсах до разработки AI приложений. Практическое руководство по переоборудованию HiAce в самодельный дом на колёсах и представление инновационных AI приложений." },
-        nav: { home: "Главная", apps: "AI Приложения", camping: "Изготовление Дома на колёсах", contact: "Контакты" },
+        nav: { home: "Главная", apps: "AI Приложения", camping: "Изготовление Дома на колёсах", driveRoutes: "Маршруты", maintenance: "Техобслуживание", contact: "Контакты" }, apps: { meta: { title: "TrailFusion AI - Список приложений", description: "TrailFusion AI разрабатывает приложения для обучения, игр, создания видео и продуктивности: Reel Make, BuddyTalk, Wood Golem, Word Blaster и Hacking Timer." } },
         hero: { line1: "Свободные путешествия и", line2: "Инновационный AI опыт", line3: "Создание", description: "Воплотите свои мечты в реальность с DIY домом на колёсах и AI приложениями", campingButton: "Изготовление Дома на колёсах", appsButton: "AI Приложения", scrollText: "Подробнее" },
         services: { title: "Услуги TrailFusion AI", subtitle: "Сочетая экспертизу DIY с передовыми AI технологиями для поддержки пользователей в реализации их мечт", camping: { title: "Руководство по DIY кемпингу HiAce", description: "Мы предоставляем комплексные руководства, чтобы даже новички могли построить дома на колёсах профессионального уровня. Мы особенно фокусируемся на модификациях HiAce и обеспечиваем полную поддержку вплоть до регистрации номера 8.", features: { f1: "Подробное руководство по строительству", f2: "Список необходимых материалов и инструментов", f3: "Контрольный список структурных требований", f4: "Галерея завершенных примеров" }, cta: "Посмотреть руководство по кемпингу" }, ai: { title: "Инновационные AI приложения", description: "Мы разрабатываем и предоставляем 6 приложений на базе AI для обогащения повседневной жизни и обучения. Используя новейшие AI технологии, мы делаем жизнь пользователей более удобной и богатой.", features: { f1: "BuddyTalk: AI приложение для изучения английского", f2: "VoiceLink AI переводчик: Приложение для перевода в реальном времени", f3: "Word Blaster: Игра для изучения английской лексики", f4: "Другие включают практику дебатов и рабочие таймеры" }, cta: "Посмотреть приложения" } },
         about: { title: "Представление представителя", motto: "Жизнь всегда можно изменить", subtitle: "Решимость делать то, что хочешь сейчас, а не в старости", story: { p1: "Я любил Японию. Атмосферные городские пейзажи, горячие источники, исцеляющие разум и тело, местная кухня и теплые люди. Когда-нибудь путешествовать по этой любимой Японии было моей мечтой.", p2: "Однако реальность была такова - занятый офисный работник. Продолжительные отпуска были несбыточной мечтой, и я говорил себе, что 'путешествие по Японии будет удовольствием для пенсии' и почти сдавался.", p3: "Затем пришла поворотная точка, которая изменила мою жизнь на 180 градусов. Это была моя инфекция новым коронавирусом.", p4: "Один, изолированный в комнате на неделю. В ситуации, столкнувшись со страхом смерти, только одна мысль пронеслась в моей голове: 'Если я хочу что-то сделать, я должен сделать это сейчас, иначе пожалею. Жизнь слишком коротка.'", p5: "В день, когда я смог покинуть свою комнату, началась моя вторая жизнь. Всего за одну неделю изоляции я закончил планировать всё необходимое для строительства своего собственного дома на колёсах.", p6: "Выбор базового автомобиля, проектирование раздвижной кровати для семьи из четырех человек, размещение стола для работы, определение требований для регистрации номера 8 для соблюдения правил, построение системы дополнительной батареи и даже поставка древесины для интерьера. План в моей голове был полностью готов.", p7: "Я немедленно купил HiAce Super Long 2008 года (того же размера, что и скорая помощь!) за 1,7 миллиона йен. С того момента, в течение двух месяцев, я посвятил всё доступное время DIY - после работы в будние дни, выходные и перерывы во время удаленной работы.", p8: "И затем наступили летние каникулы, к которым я стремился. Перед первым походом с семьей уникальный в мире оригинальный дом на колёсах наконец был завершен.", p9: "Это путешествие было невероятно трогательным. Проезжая мимо переполненных отелей, переживая волнение фестиваля Аомори Небута и фестиваля фейерверков Нагаока на переднем крае. Летом в Хоккайдо мы наслаждались природой в течение 10 дней, не беспокоясь о растущих расходах на проживание, окруженные сияющими улыбками наших детей.", p10: "Через этот опыт я убедился: 'Может ли одно транспортное средство обогатить жизнь до такой степени?'" }, additionalStory: { p11: "И это свободное путешествие дало мне следующую мечту, и ту, на которую я поставлю свою жизнь. Это сделать этот дом на колёсах 'базой разработки для путешествий по миру', создавая новые ценности, взаимодействуя с культурами и людьми по всему миру, не будучи привязанным к местоположению.", p12: "Конкретно, разрабатывать инновационные приложения, используя AI технологии, и доставлять их пользователям по всему миру через платформу Apple. Вливая вдохновение, полученное от путешествий, в разработку в реальном времени, делая жизнь людей более удобной и богатой. Я нашел эту форму вклада.", p13: "Флаг для реализации этого грандиозного видения - 'Trail❌fusion❌AI'.", p14: "Trail (Тропа): Физическая 'тропа' путешествия по миру с домом на колёсах, и жизненная 'тропа', ведущая к образу жизни, по которому никто никогда не ходил.", p15: "Fusion (Слияние): 'Слияние' реального опыта путешествий с цифровым творчеством разработки AI приложений. И 'слияние' мыслей пользователей по всему миру с нашими.", p16: "AI: Ядро нашего бизнеса, которое открывает наше будущее и создает бесконечные возможности.", p17: "Мечты, которые я почти оставил как офисный работник. Но в этой единственной жизни я больше не хочу сожалений. Путешествовать по миру, создавать ценность и полностью наслаждаться встречами. И когда-нибудь, когда я столкнусь с концом своей жизни, я хочу улыбнуться от всего сердца, говоря 'Это была лучшая жизнь'. 'TrailfusionAI' - это имя этой клятвы.", finalCta: "Теперь, не присоединитесь ли вы к нам в приключении под названием жизнь без сожалений?" }, callToAction: "Теперь, не присоединитесь ли вы к нам в приключении под названием жизнь без сожалений?", followMe: "Подписывайтесь", interests: "Хобби и интересы", tags: ["Кендо", "Дом на колёсах", "DIY производство", "Тур по Японии", "Гурман", "Горячие источники", "Разработка приложений", "Марафон", "Альпинизм"] },
@@ -514,6 +521,7 @@ const completeTranslations = {
     
     // Chinese (Simplified) translations
     zh: {
+        home: { aiBlurb: "在真实开发环境中打磨的AI应用——BuddyTalk、Reel Make、Wood Golem、Word Blaster等。让日常生活更便捷，也更有趣。" },
         // Meta tags
         meta: {
             title: "TrailFusion AI - 房车DIY与AI应用开发",
@@ -525,6 +533,8 @@ const completeTranslations = {
             home: "首页",
             apps: "AI应用",
             camping: "房车制作",
+            driveRoutes: "自驾路线",
+            maintenance: "维修记录",
             contact: "联系我们"
         },
         
@@ -566,7 +576,14 @@ const completeTranslations = {
                 cta: "查看应用"
             }
         },
-        
+
+        apps: {
+            meta: {
+                title: "TrailFusion AI - 应用列表",
+                description: "TrailFusion AI开发的学习、游戏、视频制作和效率类应用:Reel Make、BuddyTalk、Wood Golem、Word Blaster、Hacking Timer。"
+            }
+        },
+
         // About section
         about: {
             title: "代表介绍",
@@ -671,6 +688,7 @@ const completeTranslations = {
     
     // Korean translations
     ko: {
+        home: { aiBlurb: "실제 개발 환경에서 다듬은 AI 앱들 — BuddyTalk, Reel Make, Wood Golem, Word Blaster 등. 일상을 조금 더 편리하고, 훨씬 더 즐겁게." },
         // Meta tags
         meta: {
             title: "TrailFusion AI - 캠핑카 DIY 및 AI 애플리케이션 개발",
@@ -682,6 +700,8 @@ const completeTranslations = {
             home: "홈",
             apps: "AI 앱",
             camping: "캠핑카 제작",
+            driveRoutes: "드라이브 루트",
+            maintenance: "정비 기록",
             contact: "문의하기"
         },
         
@@ -723,7 +743,14 @@ const completeTranslations = {
                 cta: "앱 보기"
             }
         },
-        
+
+        apps: {
+            meta: {
+                title: "TrailFusion AI - 앱 목록",
+                description: "TrailFusion AI가 개발한 학습, 게임, 영상 제작, 생산성 앱: Reel Make, BuddyTalk, Wood Golem, Word Blaster, Hacking Timer."
+            }
+        },
+
         // About section
         about: {
             title: "대표 소개",
@@ -828,6 +855,7 @@ const completeTranslations = {
     
     // French translations
     fr: {
+        home: { aiBlurb: "Des applications IA peaufinées dans notre véritable environnement de développement — BuddyTalk, Reel Make, Wood Golem, Word Blaster et plus encore. Rendre le quotidien un peu plus pratique, et bien plus amusant." },
         // Meta tags
         meta: {
             title: "TrailFusion AI - DIY Camping-car et Développement d'Applications IA",
@@ -839,6 +867,8 @@ const completeTranslations = {
             home: "Accueil",
             apps: "Applications IA",
             camping: "Fabrication de Camping-car",
+            driveRoutes: "Itinéraires",
+            maintenance: "Entretien",
             contact: "Contact"
         },
         
@@ -880,7 +910,14 @@ const completeTranslations = {
                 cta: "Voir les applications"
             }
         },
-        
+
+        apps: {
+            meta: {
+                title: "TrailFusion AI - Liste des applications",
+                description: "TrailFusion AI développe des applications pour l'apprentissage, les jeux, la création vidéo et la productivité : Reel Make, BuddyTalk, Wood Golem, Word Blaster et Hacking Timer."
+            }
+        },
+
         // About section
         about: {
             title: "Présentation du représentant",
@@ -985,8 +1022,9 @@ const completeTranslations = {
     
     // Portuguese translations
     pt: {
+        home: { aiBlurb: "Aplicativos de IA aperfeiçoados em nosso ambiente real de desenvolvimento — BuddyTalk, Reel Make, Wood Golem, Word Blaster e outros. Tornando o dia a dia um pouco mais prático e muito mais divertido." },
         meta: { title: "TrailFusion AI - DIY de Motorhome e Desenvolvimento de Aplicações IA", description: "Da criação DIY de motorhome ao desenvolvimento de aplicações IA. Guia prático para converter um HiAce em motorhome caseiro e apresentação de aplicações IA inovadoras." },
-        nav: { home: "Início", apps: "Apps IA", camping: "Fabricação de Motorhome", contact: "Contato" },
+        nav: { home: "Início", apps: "Apps IA", camping: "Fabricação de Motorhome", driveRoutes: "Rotas de Viagem", maintenance: "Manutenção", contact: "Contato" }, apps: { meta: { title: "TrailFusion AI - Lista de Aplicativos", description: "A TrailFusion AI desenvolve aplicativos de aprendizado, jogos, criação de vídeo e produtividade: Reel Make, BuddyTalk, Wood Golem, Word Blaster e Hacking Timer." } },
         hero: { line1: "Viagem livre e", line2: "Experiência IA inovadora", line3: "Criação", description: "Realize seus sonhos com DIY de motorhome e aplicações IA", campingButton: "Fabricação de Motorhome", appsButton: "Apps IA", scrollText: "Ver detalhes" },
         services: { title: "Serviços TrailFusion AI", subtitle: "Combinando expertise DIY com tecnologia IA de ponta para apoiar a realização dos sonhos dos usuários", camping: { title: "Guia DIY Camping HiAce", description: "Fornecemos guias abrangentes para que até iniciantes possam construir motorhomes de nível profissional. Focamos particularmente em modificações HiAce e fornecemos suporte completo até o registro de número 8.", features: { f1: "Manual de construção detalhado", f2: "Lista de materiais e ferramentas necessárias", f3: "Lista de verificação de requisitos estruturais", f4: "Galeria de exemplos concluídos" }, cta: "Ver guia de camping" }, ai: { title: "Aplicações IA inovadoras", description: "Desenvolvemos e fornecemos 6 aplicações baseadas em IA para enriquecer a vida cotidiana e o aprendizado. Usando a mais recente tecnologia IA, tornamos a vida dos usuários mais conveniente e rica.", features: { f1: "BuddyTalk: App de aprendizado de inglês IA", f2: "VoiceLink AI Intérprete: App de tradução em tempo real", f3: "Word Blaster: Jogo de aprendizado de vocabulário inglês", f4: "Outros incluem prática de debate e cronômetros de trabalho" }, cta: "Ver aplicações" } },
         about: { title: "Apresentação do representante", motto: "A vida sempre pode ser mudada", subtitle: "A determinação de fazer o que você quer agora, não na velhice", story: { p1: "Eu amava o Japão. As paisagens urbanas atmosféricas, fontes termais que curam mente e corpo, culinária local e pessoas calorosas. Algum dia, viajar por este Japão amado era meu sonho.", p2: "No entanto, a realidade era de um assalariado ocupado. Férias prolongadas eram um sonho impossível, e eu me dizia que 'viajar pelo Japão seria um prazer para a aposentadoria' e quase desistia.", p3: "Então veio um ponto de virada que mudaria minha vida 180 graus. Foi minha infecção pelo novo coronavírus.", p4: "Sozinho, isolado em um quarto por uma semana. Em uma situação enfrentando o medo da morte, apenas um pensamento passou pela minha mente: 'Se eu quero fazer algo, devo fazer agora ou me arrependerei. A vida é muito curta.'", p5: "No dia em que pude sair do meu quarto, minha segunda vida começou. Em apenas uma semana de isolamento, eu havia terminado de planejar tudo o que era necessário para construir meu próprio motorhome.", p6: "Seleção do veículo base, projeto de cama deslizante para família de quatro pessoas, arranjo de mesa para trabalho, identificação de requisitos de registro número 8 para atender regulamentações, construção de sistema de bateria auxiliar, e até fornecimento de madeira para o interior. O projeto na minha cabeça estava completamente terminado.", p7: "Imediatamente comprei um HiAce Super Long 2008 (mesmo tamanho de uma ambulância!) por 1,7 milhão de ienes. A partir daí, por dois meses, dediquei todo o tempo disponível ao DIY - após o trabalho nos dias de semana, fins de semana e pausas durante o trabalho remoto.", p8: "E então chegaram as férias de verão que eu almejava. Antes da primeira viagem de acampamento com minha família, o motorhome original único no mundo finalmente foi concluído.", p9: "Essa viagem foi incrivelmente emocionante. Passando por hotéis lotados, vivenciando a emoção do Festival Nebuta de Aomori e do Festival de Fogos de Artifício de Nagaoka na linha de frente. No Hokkaido de verão, aproveitamos a natureza por 10 dias sem nos preocupar com os custos de acomodação em alta, cercados pelos sorrisos radiantes de nossos filhos.", p10: "Através dessa experiência, fiquei convencido: 'Um veículo pode enriquecer a vida a este ponto?'" }, additionalStory: { p11: "E essa viagem livre me deu o próximo sonho, e aquele no qual apostaria minha vida. É fazer deste motorhome uma 'base de desenvolvimento para viajar pelo mundo', criando novos valores enquanto interage com culturas e pessoas ao redor do mundo, sem ser limitado pela localização.", p12: "Especificamente, desenvolver aplicações inovadoras usando tecnologia IA e entregá-las aos usuários em todo o mundo via plataforma Apple. Derramando inspiração obtida de viagens no desenvolvimento em tempo real, tornando a vida das pessoas mais conveniente e rica. Encontrei essa forma de contribuição.", p13: "A bandeira para realizar essa visão grandiosa é 'Trail❌fusion❌AI'.", p14: "Trail (Trilha): A 'trilha' física de viajar pelo mundo com um motorhome, e a 'trilha' de vida levando a um modo de vida que ninguém jamais percorreu.", p15: "Fusion (Fusão): A 'fusão' da experiência real que é a viagem com a criação digital que é o desenvolvimento de aplicações IA. E 'fundir' os pensamentos dos usuários ao redor do mundo com os nossos.", p16: "AI: O núcleo do nosso negócio que abre nosso futuro e cria possibilidades infinitas.", p17: "Sonhos que quase abandonei como assalariado. Mas nesta vida única, não quero mais ter arrependimentos. Viajar pelo mundo, criar valor e desfrutar plenamente dos encontros. E algum dia, quando enfrentar o fim da minha vida, quero sorrir do fundo do coração dizendo 'Foi a melhor vida'. 'TrailfusionAI' é o nome desse juramento.", finalCta: "Agora, você não se juntará a nós em uma aventura chamada vida sem arrependimentos?" }, callToAction: "Agora, você não se juntará a nós em uma aventura chamada vida sem arrependimentos?", followMe: "Siga-me", interests: "Hobbies e Interesses", tags: ["Kendo", "Motorhome", "Fabricação DIY", "Tour pelo Japão", "Gastronomia", "Fontes Termais", "Desenvolvimento de Apps", "Maratona", "Montanhismo"] },
@@ -998,8 +1036,9 @@ const completeTranslations = {
     
     // Hindi translations  
     hi: {
+        home: { aiBlurb: "हमारे वास्तविक डेवलपमेंट माहौल में तराशे गए AI ऐप्स — BuddyTalk, Reel Make, Wood Golem, Word Blaster और अन्य। रोज़मर्रा की ज़िंदगी को थोड़ा और सुविधाजनक, और बहुत ज़्यादा मज़ेदार बनाते हुए।" },
         meta: { title: "TrailFusion AI - कैम्पर DIY और AI एप्लिकेशन डेवलपमेंट", description: "कैम्पर DIY निर्माण से AI एप्लिकेशन डेवलपमेंट तक। HiAce को घर में बने कैम्पर में बदलने की व्यावहारिक गाइड और नवाचार AI ऐप्स का परिचय।" },
-        nav: { home: "होम", apps: "AI ऐप्स", camping: "कैम्पर निर्माण", contact: "संपर्क करें" },
+        nav: { home: "होम", apps: "AI ऐप्स", camping: "कैम्पर निर्माण", driveRoutes: "ड्राइव रूट्स", maintenance: "रखरखाव रिकॉर्ड", contact: "संपर्क करें" }, apps: { meta: { title: "TrailFusion AI - सभी ऐप्स", description: "TrailFusion AI सीखने, गेम्स, वीडियो निर्माण और उत्पादकता के लिए ऐप्स बनाता है: Reel Make, BuddyTalk, Wood Golem, Word Blaster और Hacking Timer।" } },
         hero: { line1: "स्वतंत्र यात्रा और", line2: "नवाचार AI अनुभव", line3: "का निर्माण", description: "कैम्पर DIY और AI एप्लिकेशन के साथ अपने सपनों को साकार करें", campingButton: "कैम्पर निर्माण", appsButton: "AI ऐप्स", scrollText: "विवरण देखें" },
         services: { title: "TrailFusion AI सेवाएं", subtitle: "उपयोगकर्ताओं के सपनों की प्राप्ति का समर्थन करने के लिए DIY विशेषज्ञता को अत्याधुनिक AI तकनीक के साथ मिलाना", camping: { title: "HiAce DIY कैम्पिंग गाइड", description: "हम व्यापक गाइड प्रदान करते हैं ताकि शुरुआती भी पेशेवर स्तर के कैम्पर बना सकें। हम विशेष रूप से HiAce संशोधनों पर ध्यान देते हैं और 8-नंबर पंजीकरण तक पूर्ण सहायता प्रदान करते हैं।", features: { f1: "विस्तृत निर्माण मैनुअल", f2: "आवश्यक सामग्री और उपकरणों की सूची", f3: "संरचनात्मक आवश्यकताओं की जांच सूची", f4: "पूर्ण उदाहरण गैलरी" }, cta: "कैम्पिंग गाइड देखें" }, ai: { title: "नवाचार AI एप्लिकेशन", description: "हम दैनिक जीवन और सीखने को समृद्ध बनाने के लिए AI-संचालित 6 एप्लिकेशन विकसित और प्रदान करते हैं। नवीनतम AI तकनीक का उपयोग करके, हम उपयोगकर्ताओं के जीवन को अधिक सुविधाजनक और समृद्ध बनाते हैं।", features: { f1: "BuddyTalk: AI अंग्रेजी सीखने का ऐप", f2: "VoiceLink AI दुभाषिया: रियल-टाइम अनुवाद ऐप", f3: "Word Blaster: अंग्रेजी शब्दावली सीखने का गेम", f4: "अन्य में बहस अभ्यास और कार्य टाइमर शामिल हैं" }, cta: "ऐप्स देखें" } },
         about: { title: "प्रतिनिधि परिचय", motto: "जीवन हमेशा बदला जा सकता है", subtitle: "जो करना चाहते हैं वह बुढ़ापे में नहीं बल्कि अभी करने का संकल्प", story: { p1: "मैं जापान से प्यार करता था। वायुमंडलीय शहरी दृश्य, मन और शरीर को ठीक करने वाले गर्म झरने, स्थानीय व्यंजन, और गर्मजोशी भरे लोग। कभी इस प्रिय जापान की यात्रा करना मेरा सपना था।", p2: "हालांकि, वास्तविकता एक व्यस्त वेतनभोगी की थी। विस्तृत छुट्टियां एक असंभव सपना थीं, और मैं खुद से कहता था कि 'जापान का दौरा सेवानिवृत्ति के लिए एक खुशी होगी' और लगभग हार मान रहा था।", p3: "फिर एक मोड़ आया जो मेरे जीवन को 180 डिग्री बदल देगा। यह नए कोरोनावायरस से मेरा संक्रमण था।", p4: "अकेले, एक कमरे में एक सप्ताह के लिए अलग। मृत्यु के डर से सामना करने की स्थिति में, केवल एक विचार मेरे मन में आया: 'अगर मैं कुछ करना चाहता हूं, तो मुझे इसे अभी करना चाहिए या मुझे पछतावा होगा। जीवन बहुत छोटा है।'", p5: "जिस दिन मैं अपने कमरे से निकल सका, मेरा दूसरा जीवन शुरू हुआ। केवल एक सप्ताह के अलगाव में, मैंने अपना खुद का कैम्पर बनाने के लिए आवश्यक सब कुछ योजना बना ली थी।", p6: "आधार वाहन का चयन, चार लोगों के परिवार के लिए स्लाइड बेड का डिजाइन, काम के लिए डेस्क की व्यवस्था, नियमों को पूरा करने के लिए 8-नंबर पंजीकरण आवश्यकताओं की पहचान, सब-बैटरी सिस्टम का निर्माण, और यहां तक कि इंटीरियर के लिए लकड़ी की आपूर्ति। मेरे सिर में ब्लूप्रिंट पूरी तरह से तैयार था।", p7: "मैंने तुरंत 2008 HiAce Super Long (एंबुलेंस के समान आकार!) को 1.7 मिलियन येन में खरीदा। वहां से, दो महीने तक, मैंने उपलब्ध सभी समय DIY को समर्पित किया - सप्ताह के दिनों में काम के बाद, सप्ताहांत, और रिमोट वर्क के दौरान ब्रेक।", p8: "और फिर गर्मी की छुट्टियां आईं जिसका मैं लक्ष्य बना रहा था। अपने परिवार के साथ पहली कार कैम्पिंग यात्रा से पहले, दुनिया में अनूठा मूल कैम्पर अंततः पूरा हो गया।", p9: "वह यात्रा अविश्वसनीय रूप से भावनात्मक थी। भरे हुए होटलों को पार करते हुए, अओमोरी नेबुता फेस्टिवल और नागाओका आतिशबाजी महोत्सव के उत्साह को अग्रिम पंक्ति में अनुभव करना। गर्मियों के होक्काइडो में, हमने बढ़ती आवास लागतों की चिंता किए बिना 10 दिनों तक प्रकृति का आनंद लिया, अपने बच्चों की चमकती मुस्कान से घिरे हुए।", p10: "इस अनुभव के माध्यम से, मैं आश्वस्त हो गया: 'क्या एक वाहन जीवन को इस हद तक समृद्ध बना सकता है?'" }, additionalStory: { p11: "और इस स्वतंत्र यात्रा ने मुझे अगला सपना दिया, और वह जिस पर मैं अपना जीवन दांव पर लगाऊंगा। यह इस कैम्पर को 'दुनिया की यात्रा के लिए विकास आधार' बनाना है, स्थान से बंधे बिना दुनिया भर की संस्कृतियों और लोगों के साथ बातचीत करते हुए नए मूल्य बनाना।", p12: "विशेष रूप से, AI तकनीक का उपयोग करके नवाचार एप्लिकेशन विकसित करना और Apple प्लेटफॉर्म के माध्यम से दुनिया भर के उपयोगकर्ताओं को वितरित करना। यात्राओं से प्राप्त प्रेरणा को वास्तविक समय में विकास में डालना, लोगों के जीवन को अधिक सुविधाजनक और समृद्ध बनाना। मैंने योगदान के इस रूप को पाया।", p13: "इस भव्य दृष्टि को साकार करने का झंडा 'Trail❌fusion❌AI' है।", p14: "Trail (पथ): कैम्पर के साथ दुनिया की यात्रा का भौतिक 'पथ', और जीवन का 'पथ' जो ऐसी जीवनशैली की ओर ले जाता है जिसे किसी ने कभी नहीं चला।", p15: "Fusion (संलयन): यात्रा के वास्तविक अनुभव का AI ऐप विकास के डिजिटल निर्माण के साथ 'संलयन'। और दुनिया भर के उपयोगकर्ताओं के विचारों को हमारे साथ 'मिलाना'।", p16: "AI: हमारे व्यवसाय का मूल जो हमारे भविष्य को खोलता है और अनंत संभावनाएं बनाता है।", p17: "सपने जिन्हें मैंने वेतनभोगी के रूप में लगभग छोड़ दिया था। लेकिन इस एकमात्र जीवन में, मैं और पछतावा नहीं चाहता। दुनिया की यात्रा करना, मूल्य बनाना, और मुलाकातों का पूरा आनंद लेना। और कभी जब मैं अपने जीवन के अंत का सामना करूंगा, मैं दिल से मुस्कराना चाहता हूं कहते हुए 'यह सबसे अच्छा जीवन था'। 'TrailfusionAI' उस शपथ का नाम है।", finalCta: "अब, क्या आप हमारे साथ बिना पछतावे के जीवन नामक एक साहसिक कार्य में शामिल नहीं होंगे?" }, callToAction: "अब, क्या आप हमारे साथ बिना पछतावे के जीवन नामक एक साहसिक कार्य में शामिल नहीं होंगे?", followMe: "मुझे फॉलो करें", interests: "शौक और रुचियां", tags: ["केंडो", "कैम्पर", "DIY निर्माण", "जापान दौरा", "भोजन", "गर्म झरने", "ऐप विकास", "मैराथन", "पर्वतारोहण"] },
@@ -1011,8 +1050,9 @@ const completeTranslations = {
     
     // German translations
     de: {
+        home: { aiBlurb: "KI-Apps, verfeinert in unserer echten Entwicklungsumgebung — BuddyTalk, Reel Make, Wood Golem, Word Blaster und mehr. Der Alltag wird ein bisschen praktischer und viel unterhaltsamer." },
         meta: { title: "TrailFusion AI - Wohnmobil DIY & KI-Anwendungsentwicklung", description: "Von Wohnmobil-DIY-Erstellung bis zur KI-Anwendungsentwicklung. Praktischer Leitfaden zur Umwandlung eines HiAce in ein selbstgebautes Wohnmobil und Vorstellung innovativer KI-Apps." },
-        nav: { home: "Startseite", apps: "KI-Apps", camping: "Wohnmobil-Herstellung", contact: "Kontakt" },
+        nav: { home: "Startseite", apps: "KI-Apps", camping: "Wohnmobil-Herstellung", driveRoutes: "Fahrrouten", maintenance: "Wartung", contact: "Kontakt" }, apps: { meta: { title: "TrailFusion AI - Alle Apps", description: "TrailFusion AI entwickelt Apps für Lernen, Spiele, Videoerstellung und Produktivität: Reel Make, BuddyTalk, Wood Golem, Word Blaster und Hacking Timer." } },
         hero: { line1: "Freies Reisen und", line2: "Innovative KI-Erfahrung", line3: "Erschaffung", description: "Verwirklichen Sie Ihre Träume mit Wohnmobil-DIY und KI-Anwendungen", campingButton: "Wohnmobil-Herstellung", appsButton: "KI-Apps", scrollText: "Details anzeigen" },
         services: { title: "TrailFusion AI Dienstleistungen", subtitle: "Kombination von DIY-Expertise mit modernster KI-Technologie zur Unterstützung der Traumverwirklichung der Nutzer", camping: { title: "HiAce DIY Camping Leitfaden", description: "Wir bieten umfassende Leitfäden, damit auch Anfänger professionelle Wohnmobile bauen können. Wir konzentrieren uns besonders auf HiAce-Modifikationen und bieten vollständige Unterstützung bis zur 8-Nummer-Registrierung.", features: { f1: "Detailliertes Konstruktionshandbuch", f2: "Liste der benötigten Materialien und Werkzeuge", f3: "Checkliste für strukturelle Anforderungen", f4: "Galerie abgeschlossener Beispiele" }, cta: "Camping-Leitfaden anzeigen" }, ai: { title: "Innovative KI-Anwendungen", description: "Wir entwickeln und bieten 6 KI-gestützte Anwendungen zur Bereicherung des täglichen Lebens und Lernens. Mit modernster KI-Technologie machen wir das Leben der Nutzer bequemer und reicher.", features: { f1: "BuddyTalk: KI-Englisch-Lern-App", f2: "VoiceLink KI-Dolmetscher: Echtzeit-Übersetzungs-App", f3: "Word Blaster: Englisch-Vokabel-Lernspiel", f4: "Andere umfassen Debattierübung und Arbeits-Timer" }, cta: "Apps anzeigen" } },
         about: { title: "Vertreter-Vorstellung", motto: "Das Leben kann immer verändert werden", subtitle: "Die Entschlossenheit, das zu tun, was man will, jetzt und nicht im Alter", story: { p1: "Ich liebte Japan. Die atmosphärischen Stadtlandschaften, heiße Quellen, die Geist und Körper heilen, lokale Küche und herzliche Menschen. Eines Tages durch dieses geliebte Japan zu reisen war mein Traum.", p2: "Die Realität war jedoch die eines beschäftigten Angestellten. Längere Ferien waren ein unmöglicher Traum, und ich sagte mir, dass 'eine Japan-Rundreise ein Vergnügen für den Ruhestand wäre' und gab fast auf.", p3: "Dann kam ein Wendepunkt, der mein Leben um 180 Grad verändern würde. Es war meine Infektion mit dem neuen Coronavirus.", p4: "Allein, eine Woche lang in einem Zimmer isoliert. In einer Situation, die der Todesangst gegenüberstand, ging mir nur ein Gedanke durch den Kopf: 'Wenn ich etwas tun will, muss ich es jetzt tun oder ich werde es bereuen. Das Leben ist zu kurz.'", p5: "Am Tag, als ich mein Zimmer verlassen konnte, begann mein zweites Leben. In nur einer Woche Isolation hatte ich alles geplant, was nötig war, um mein eigenes Wohnmobil zu bauen.", p6: "Auswahl des Basisfahrzeugs, Entwurf eines Schiebebetts für eine vierköpfige Familie, Anordnung eines Schreibtischs für die Arbeit, Identifizierung der 8-Nummer-Registrierungsanforderungen zur Einhaltung der Vorschriften, Aufbau eines Hilfsbatteriesystems und sogar Beschaffung von Holz für das Interieur. Der Plan in meinem Kopf war vollständig fertig.", p7: "Ich kaufte sofort einen 2008 HiAce Super Long (gleiche Größe wie ein Krankenwagen!) für 1,7 Millionen Yen. Von da an widmete ich zwei Monate lang alle verfügbare Zeit dem DIY - nach der Arbeit an Wochentagen, Wochenenden und Pausen während der Heimarbeit.", p8: "Und dann kamen die Sommerferien, die ich angestrebt hatte. Vor der ersten Campingreise mit meiner Familie war das einzigartige Original-Wohnmobil der Welt endlich fertiggestellt.", p9: "Diese Reise war unglaublich bewegend. An ausgebuchten Hotels vorbei, die Aufregung des Aomori Nebuta Festivals und des Nagaoka Feuerwerk Festivals an vorderster Front erleben. Im sommerlichen Hokkaido genossen wir 10 Tage lang die Natur, ohne uns um steigende Unterkunftskosten zu sorgen, umgeben von den strahlenden Lächeln unserer Kinder.", p10: "Durch diese Erfahrung wurde ich überzeugt: 'Kann ein Fahrzeug das Leben so sehr bereichern?'" }, additionalStory: { p11: "Und diese freie Reise gab mir den nächsten Traum, und den, für den ich mein Leben einsetzen würde. Es ist, dieses Wohnmobil zu einer 'Entwicklungsbasis für Weltreisen' zu machen, neue Werte zu schaffen, während man mit Kulturen und Menschen auf der ganzen Welt interagiert, ohne an einen Ort gebunden zu sein.", p12: "Konkret innovative Anwendungen mit KI-Technologie zu entwickeln und sie über die Apple-Plattform an Nutzer weltweit zu liefern. Inspiration aus Reisen in Echtzeit in die Entwicklung zu gießen, das Leben der Menschen bequemer und reicher zu machen. Ich fand diese Form des Beitrags.", p13: "Die Flagge zur Verwirklichung dieser großartigen Vision ist 'Trail❌fusion❌AI'.", p14: "Trail (Pfad): Der physische 'Pfad' des Weltreisens mit einem Wohnmobil und der Lebens-'Pfad', der zu einer Lebensweise führt, die niemand je gegangen ist.", p15: "Fusion: Die 'Fusion' der realen Erfahrung des Reisens mit der digitalen Schöpfung der KI-App-Entwicklung. Und die Gedanken der Nutzer weltweit mit unseren zu 'verschmelzen'.", p16: "AI: Der Kern unseres Geschäfts, der unsere Zukunft öffnet und unendliche Möglichkeiten schafft.", p17: "Träume, die ich als Angestellter fast aufgegeben hatte. Aber in diesem einen Leben will ich keine Reue mehr haben. Die Welt bereisen, Werte schaffen und Begegnungen voll auskosten. Und eines Tages, wenn ich dem Ende meines Lebens gegenüberstehe, möchte ich von Herzen lächeln und sagen 'Es war das beste Leben'. 'TrailfusionAI' ist der Name dieses Schwurs.", finalCta: "Werden Sie sich uns nun nicht auf einem Abenteuer namens Leben ohne Reue anschließen?" }, callToAction: "Werden Sie sich uns nun nicht auf einem Abenteuer namens Leben ohne Reue anschließen?", followMe: "Folgen Sie mir", interests: "Hobbys & Interessen", tags: ["Kendo", "Wohnmobil", "DIY-Herstellung", "Japan-Tour", "Gourmet", "Heiße Quellen", "App-Entwicklung", "Marathon", "Bergsteigen"] },
@@ -1024,8 +1064,9 @@ const completeTranslations = {
     
     // Spanish translations
     es: {
+        home: { aiBlurb: "Aplicaciones de IA perfeccionadas en nuestro entorno real de desarrollo — BuddyTalk, Reel Make, Wood Golem, Word Blaster y más. Haciendo el día a día un poco más práctico y mucho más divertido." },
         meta: { title: "TrailFusion AI - DIY de Autocaravana y Desarrollo de Aplicaciones IA", description: "Desde la creación DIY de autocaravanas hasta el desarrollo de aplicaciones IA. Guía práctica para convertir un HiAce en autocaravana casera y presentación de aplicaciones IA innovadoras." },
-        nav: { home: "Inicio", apps: "Apps IA", camping: "Fabricación de Autocaravana", contact: "Contacto" },
+        nav: { home: "Inicio", apps: "Apps IA", camping: "Fabricación de Autocaravana", driveRoutes: "Rutas en Coche", maintenance: "Mantenimiento", contact: "Contacto" }, apps: { meta: { title: "TrailFusion AI - Todas las Apps", description: "TrailFusion AI desarrolla aplicaciones de aprendizaje, juegos, creación de video y productividad: Reel Make, BuddyTalk, Wood Golem, Word Blaster y Hacking Timer." } },
         hero: { line1: "Viaje libre y", line2: "Experiencia IA innovadora", line3: "Creación", description: "Haz realidad tus sueños con DIY de autocaravana y aplicaciones IA", campingButton: "Fabricación de Autocaravana", appsButton: "Apps IA", scrollText: "Ver detalles" },
         services: { title: "Servicios TrailFusion AI", subtitle: "Combinando experiencia DIY con tecnología IA de vanguardia para apoyar la realización de los sueños de los usuarios", camping: { title: "Guía DIY Camping HiAce", description: "Proporcionamos guías completas para que incluso los principiantes puedan construir autocaravanas de nivel profesional. Nos enfocamos particularmente en modificaciones HiAce y proporcionamos soporte completo hasta el registro de número 8.", features: { f1: "Manual de construcción detallado", f2: "Lista de materiales y herramientas necesarias", f3: "Lista de verificación de requisitos estructurales", f4: "Galería de ejemplos completados" }, cta: "Ver guía de camping" }, ai: { title: "Aplicaciones IA innovadoras", description: "Desarrollamos y proporcionamos 6 aplicaciones impulsadas por IA para enriquecer la vida diaria y el aprendizaje. Usando la última tecnología IA, hacemos la vida de los usuarios más conveniente y rica.", features: { f1: "BuddyTalk: App de aprendizaje de inglés IA", f2: "VoiceLink AI Intérprete: App de traducción en tiempo real", f3: "Word Blaster: Juego de aprendizaje de vocabulario inglés", f4: "Otros incluyen práctica de debate y temporizadores de trabajo" }, cta: "Ver aplicaciones" } },
         about: { title: "Presentación del representante", motto: "La vida siempre se puede cambiar", subtitle: "La determinación de hacer lo que quieres ahora, no en la vejez", story: { p1: "Amaba Japón. Los paisajes urbanos atmosféricos, aguas termales que sanan mente y cuerpo, cocina local y gente cálida. Algún día, viajar por este querido Japón era mi sueño.", p2: "Sin embargo, la realidad era la de un asalariado ocupado. Las vacaciones prolongadas eran un sueño imposible, y me decía a mí mismo que 'recorrer Japón sería un placer para la jubilación' y casi me rendía.", p3: "Entonces llegó un punto de inflexión que cambiaría mi vida 180 grados. Fue mi infección con el nuevo coronavirus.", p4: "Solo, aislado en una habitación durante una semana. En una situación enfrentando el miedo a la muerte, solo un pensamiento cruzó mi mente: 'Si quiero hacer algo, debo hacerlo ahora o me arrepentiré. La vida es demasiado corta.'", p5: "El día que pude salir de mi habitación, mi segunda vida comenzó. En solo una semana de aislamiento, había terminado de planificar todo lo necesario para construir mi propia autocaravana.", p6: "Selección del vehículo base, diseño de cama deslizante para familia de cuatro, disposición de escritorio para trabajo, identificación de requisitos de registro número 8 para cumplir regulaciones, construcción de sistema de batería auxiliar, e incluso suministro de madera para el interior. El plano en mi cabeza estaba completamente terminado.", p7: "Inmediatamente compré un HiAce Super Long 2008 (¡mismo tamaño que una ambulancia!) por 1.7 millones de yenes. Desde allí, durante dos meses, dediqué todo el tiempo disponible al DIY - después del trabajo en días de semana, fines de semana y descansos durante trabajo remoto.", p8: "Y luego llegaron las vacaciones de verano que había estado apuntando. Antes del primer viaje de camping con mi familia, la autocaravana original única en el mundo finalmente se completó.", p9: "Ese viaje fue increíblemente conmovedor. Pasando hoteles llenos, experimentando la emoción del Festival Nebuta de Aomori y el Festival de Fuegos Artificiales de Nagaoka en primera línea. En el Hokkaido de verano, disfrutamos la naturaleza durante 10 días sin preocuparnos por los costos de alojamiento que se disparaban, rodeados por las sonrisas radiantes de nuestros hijos.", p10: "A través de esta experiencia, me convencí: '¿Puede un vehículo enriquecer la vida hasta este punto?'" }, additionalStory: { p11: "Y este viaje libre me dio el siguiente sueño, y aquel en el que apostaría mi vida. Es hacer de esta autocaravana una 'base de desarrollo para viajar por el mundo', creando nuevos valores mientras interactúo con culturas y personas de todo el mundo, sin estar atado por la ubicación.", p12: "Específicamente, desarrollar aplicaciones innovadoras usando tecnología IA y entregarlas a usuarios de todo el mundo a través de la plataforma Apple. Vertiendo inspiración obtenida de viajes en desarrollo en tiempo real, haciendo la vida de las personas más conveniente y rica. Encontré esta forma de contribución.", p13: "La bandera para realizar esta visión grandiosa es 'Trail❌fusion❌AI'.", p14: "Trail (Sendero): El 'sendero' físico de viajar por el mundo con una autocaravana, y el 'sendero' de vida que lleva a un estilo de vida que nadie ha recorrido jamás.", p15: "Fusion: La 'fusión' de la experiencia real que es el viaje con la creación digital que es el desarrollo de aplicaciones IA. Y 'fusionar' los pensamientos de usuarios de todo el mundo con los nuestros.", p16: "AI: El núcleo de nuestro negocio que abre nuestro futuro y crea posibilidades infinitas.", p17: "Sueños que casi había abandonado como asalariado. Pero en esta vida única, no quiero tener más arrepentimientos. Viajar por el mundo, crear valor y disfrutar plenamente los encuentros. Y algún día, cuando enfrente el final de mi vida, quiero sonreír desde el corazón diciendo 'Fue la mejor vida'. 'TrailfusionAI' es el nombre de ese juramento.", finalCta: "Ahora, ¿no se unirán a nosotros en una aventura llamada vida sin arrepentimientos?" }, callToAction: "Ahora, ¿no se unirán a nosotros en una aventura llamada vida sin arrepentimientos?", followMe: "Sígueme", interests: "Pasatiempos e Intereses", tags: ["Kendo", "Autocaravana", "Fabricación DIY", "Tour por Japón", "Gastronomía", "Aguas Termales", "Desarrollo de Apps", "Maratón", "Montañismo"] },

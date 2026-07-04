@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wood Golem - 森の棒取りストラテジーパズル | TrailFusion AI</title>
-<meta name="description" content="棒取りストラテジーゲーム「Wood Golem」。美しい森を舞台に、かわいいウッドゴーレムと100以上のレベルに挑戦。論理的思考力を鍛えながら楽しく遊べるパズルゲーム。App Storeで無料ダウンロード。">
+<title data-i18n="woodgolem2.meta.title">Wood Golem - 森の棒取りストラテジーパズル | TrailFusion AI</title>
+<meta name="description" content="棒取りストラテジーゲーム「Wood Golem」。美しい森を舞台に、かわいいウッドゴーレムと100以上のレベルに挑戦。論理的思考力を鍛えながら楽しく遊べるパズルゲーム。App Storeで無料ダウンロード。" data-i18n-content="woodgolem2.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/wood-golem.html">
@@ -18,12 +18,19 @@
 <meta name="theme-color" content="#7DD87A">
 <link rel="icon" type="image/png" href="assets/images/wood-golem/logo.png">
 <script>
-// 言語の事前判定 — 英語圏ユーザーには日本語を一瞬も見せない
 (function(){
-  var saved=null; try{saved=localStorage.getItem('wood-golem-lang');}catch(e){}
-  var lang=saved||(((navigator.languages&&navigator.languages[0])||navigator.language||'ja').toLowerCase().indexOf('ja')===0?'ja':'en');
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
   window.__PAGE_LANG=lang;
-  if(lang!=='ja'){document.documentElement.style.visibility='hidden';setTimeout(function(){document.documentElement.style.visibility='';},1500);}
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
 })();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
@@ -39,6 +46,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,9 +103,6 @@ body{background:#FFFBF2;color:#1F2E4D;}
 .faq-item .a{padding:0 1.4rem 1.3rem 3.4rem;color:rgba(31,46,77,.78);line-height:1.9;font-weight:600;font-size:.95rem;}
 .d-cta{background:#1F2E4D;position:relative;overflow:hidden;}
 .d-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#7DD87A22 1.5px,transparent 1.5px);background-size:28px 28px;}
-.lang-pill{display:inline-flex;border:2.5px solid #1F2E4D;border-radius:999px;overflow:hidden;background:#fff;box-shadow:3px 3px 0 #1F2E4D;}
-.lang-pill button{padding:.4rem 1rem;font-weight:900;font-size:.8rem;background:transparent;color:#1F2E4D;cursor:pointer;border:none;}
-.lang-pill button.on{background:#1F2E4D;color:#fff;}
 </style>
 </head>
 <body>
@@ -116,13 +121,15 @@ body{background:#FFFBF2;color:#1F2E4D;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -145,35 +152,31 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <div class="flex items-center justify-between gap-3 flex-wrap mb-8">
       <nav class="text-sm font-bold text-navy/70" aria-label="Breadcrumb">
-        <a href="apps.html" class="hover:text-coral transition" data-t="bc"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+        <a href="apps.html" class="hover:text-coral transition" data-i18n="woodgolem2.bc"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
         <span class="mx-2">/</span><span>Wood Golem</span>
       </nav>
-      <span class="lang-pill" role="group" aria-label="Language">
-        <button type="button" data-setlang="ja">日本語</button>
-        <button type="button" data-setlang="en">EN</button>
-      </span>
     </div>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
       <div>
         <div class="flex items-center gap-4 mb-6">
           <div class="d-logo"><img src="assets/images/wood-golem/logo.png" alt="Wood Golem ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
-            <span class="d-badge accent"><i class="ri-plant-fill"></i><span data-t="badge">ストラテジーパズル</span></span>
-            <span class="d-badge"><i class="ri-earth-fill"></i><span data-t="global">全世界で配信中</span></span>
+            <span class="d-badge accent"><i class="ri-plant-fill"></i><span data-i18n="woodgolem2.badge">ストラテジーパズル</span></span>
+            <span class="d-badge"><i class="ri-earth-fill"></i><span data-i18n="woodgolem2.global">全世界で配信中</span></span>
           </div>
         </div>
         <h1 class="display-xl text-4xl md:text-5xl lg:text-6xl mb-4 leading-none text-navy" style="letter-spacing:-.03em;">Wood Golem</h1>
-        <p class="font-black text-lg md:text-2xl mb-4 text-navy" data-t="sub">森のなかまと、あたまの冒険へ</p>
-        <p class="text-navy/70 leading-loose font-medium mb-7" data-t="intro">棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムたちと棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。</p>
+        <p class="font-black text-lg md:text-2xl mb-4 text-navy" data-i18n="woodgolem2.sub">森のなかまと、あたまの冒険へ</p>
+        <p class="text-navy/70 leading-loose font-medium mb-7" data-i18n="woodgolem2.intro">棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムたちと棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。</p>
         <div class="flex flex-wrap gap-3 mb-6">
           <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="d-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
-          <span class="d-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-t="gplay">Google Play 準備中</span></span>
+          <span class="d-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="woodgolem2.gplay">Google Play 準備中</span></span>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="d-chip"><i class="ri-puzzle-fill" style="color:#3EA23B;"></i><span data-t="chip0">100+ レベル</span></span>
-          <span class="d-chip"><i class="ri-emotion-happy-fill" style="color:#3EA23B;"></i><span data-t="chip1">かわいいキャラとストーリー</span></span>
-          <span class="d-chip"><i class="ri-brain-fill" style="color:#3EA23B;"></i><span data-t="chip2">論理的思考トレーニング</span></span>
-          <span class="d-chip"><i class="ri-price-tag-3-fill" style="color:#3EA23B;"></i><span data-t="chip3">無料ダウンロード</span></span>
+          <span class="d-chip"><i class="ri-puzzle-fill" style="color:#3EA23B;"></i><span data-i18n="woodgolem2.chip0">100+ レベル</span></span>
+          <span class="d-chip"><i class="ri-emotion-happy-fill" style="color:#3EA23B;"></i><span data-i18n="woodgolem2.chip1">かわいいキャラとストーリー</span></span>
+          <span class="d-chip"><i class="ri-brain-fill" style="color:#3EA23B;"></i><span data-i18n="woodgolem2.chip2">論理的思考トレーニング</span></span>
+          <span class="d-chip"><i class="ri-price-tag-3-fill" style="color:#3EA23B;"></i><span data-i18n="woodgolem2.chip3">無料ダウンロード</span></span>
         </div>
       </div>
       <div class="d-frame">
@@ -187,36 +190,36 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">FEATURES</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-t="featTitle">森の冒険で、論理力を鍛える</h2>
-      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-t="featLead">シンプルなルール、奥深い戦略。子どもから大人まで夢中になれます。</p>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-i18n="woodgolem2.featTitle">森の冒険で、論理力を鍛える</h2>
+      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-i18n="woodgolem2.featLead">シンプルなルール、奥深い戦略。子どもから大人まで夢中になれます。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f0t">美しい森の世界</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f0d">絵本のような森を舞台にした棒取りパズル。ステージが進むごとに新しい景色が広がります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="woodgolem2.f0t">美しい森の世界</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="woodgolem2.f0d">絵本のような森を舞台にした棒取りパズル。ステージが進むごとに新しい景色が広がります。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f1t">100以上のレベル</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f1d">やさしい入門ステージから頭をひねる高難度まで。少しずつ難しくなるから挫折しません。</p>
+          <h3 class="font-black mb-1.5" data-i18n="woodgolem2.f1t">100以上のレベル</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="woodgolem2.f1d">やさしい入門ステージから頭をひねる高難度まで。少しずつ難しくなるから挫折しません。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f2t">かわいいウッドゴーレム</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f2d">小さなウッドゴーレムたちと一緒に冒険。ストーリーを追いながら進められます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="woodgolem2.f2t">かわいいウッドゴーレム</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="woodgolem2.f2d">小さなウッドゴーレムたちと一緒に冒険。ストーリーを追いながら進められます。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f3t">論理と戦略が身につく</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f3d">「どの棒を取るか」の読み合いで、論理的思考力と戦略的思考が自然に鍛えられます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="woodgolem2.f3t">論理と戦略が身につく</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="woodgolem2.f3d">「どの棒を取るか」の読み合いで、論理的思考力と戦略的思考が自然に鍛えられます。</p>
         </div>
       </div>
     </div>
@@ -227,7 +230,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">SCREENSHOTS &amp; DEMO</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="shotsTitle">アプリの画面</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="woodgolem2.shotsTitle">アプリの画面</h2>
     </div>
     <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
       <div class="lg:col-span-7 grid grid-cols-2 gap-5">
@@ -252,34 +255,34 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="sticker" style="background:#7DD87A;color:#1F2E4D;">FAQ</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="faqTitle">よくあるご質問</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="woodgolem2.faqTitle">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q0">無料で遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a0">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="woodgolem2.q0">無料で遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="woodgolem2.a0">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q1">どんなゲームですか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a1">交互に棒を取り合い、最後の一手を読み合う「棒取り」パズルです。ルールはシンプルですが、勝つには戦略が必要です。</p>
+        <summary><span class="qm">Q</span><span data-i18n="woodgolem2.q1">どんなゲームですか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="woodgolem2.a1">交互に棒を取り合い、最後の一手を読み合う「棒取り」パズルです。ルールはシンプルですが、勝つには戦略が必要です。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q2">子どもでも遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a2">はい。やさしいレベルから始まるので、お子さまの論理的思考のトレーニングにもぴったりです。</p>
+        <summary><span class="qm">Q</span><span data-i18n="woodgolem2.q2">子どもでも遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="woodgolem2.a2">はい。やさしいレベルから始まるので、お子さまの論理的思考のトレーニングにもぴったりです。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
+        <summary><span class="qm">Q</span><span data-i18n="woodgolem2.q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="woodgolem2.a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="woodgolem2.q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="woodgolem2.a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
       </details>
     </div>
     <p class="text-center mt-8 text-sm font-bold">
-      <a href="privacy-policy.html" class="text-coral underline underline-offset-4" data-t="privacyLink">プライバシーポリシー</a>
+      <a href="privacy-policy.html" class="text-coral underline underline-offset-4" data-i18n="woodgolem2.privacyLink">プライバシーポリシー</a>
       <span class="mx-2 text-navy/40">·</span>
-      <a href="terms-of-service.html" class="text-coral underline underline-offset-4" data-t="termsLink">利用規約</a>
+      <a href="terms-of-service.html" class="text-coral underline underline-offset-4" data-i18n="woodgolem2.termsLink">利用規約</a>
     </p>
   </div>
 </section>
@@ -287,9 +290,9 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <section class="d-cta py-16 md:py-24 border-t-[3px] border-navy">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="d-logo mx-auto mb-6" style="transform:rotate(3deg);"><img src="assets/images/wood-golem/logo.png" alt="Wood Golem ロゴ"></div>
-    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-t="ctaTitle">森が、あなたを待っている。</h2>
-    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-t="ctaLead">ウッドゴーレムたちと一緒に、今日から棒取りの冒険を始めよう。</p>
-    <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-t="ctaBtn">App Store で無料ダウンロード</span></a>
+    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-i18n="woodgolem2.ctaTitle">森が、あなたを待っている。</h2>
+    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-i18n="woodgolem2.ctaLead">ウッドゴーレムたちと一緒に、今日から棒取りの冒険を始めよう。</p>
+    <a href="https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-i18n="woodgolem2.ctaBtn">App Store で無料ダウンロード</span></a>
   </div>
 </section>
 
@@ -316,7 +319,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -361,36 +364,234 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <script src="assets/js/trailfusion-ui.js"></script>
 
 <script>
-(function(){
-  var EN={"bc":"<i class=\"ri-arrow-left-line\"></i> All Apps","badge":"Strategy Puzzle","global":"Available worldwide","sub":"A brain adventure with forest friends","intro":"Embark on a forest adventure with Wood Golem, a stick-taking strategy puzzle. Set in a beautiful forest, challenge puzzles together with little wood golems — a strategy game that trains logical thinking while staying fun.","gplay":"Google Play — Coming Soon","chip0":"100+ levels","chip1":"Cute characters & story","chip2":"Logic training","chip3":"Free download","featTitle":"Train your logic in the forest","featLead":"Simple rules, deep strategy. Addictive for kids and adults alike.","f0t":"A beautiful forest world","f0d":"Stick-taking puzzles set in a storybook forest. New scenery unfolds as you progress.","f1t":"100+ levels","f1d":"From gentle intro stages to brain-bending challenges — difficulty ramps up gradually so you never get stuck.","f2t":"Cute wood golems","f2d":"Adventure together with little wood golem characters and follow the story as you play.","f3t":"Logic & strategy skills","f3d":"Reading which stick to take builds logical and strategic thinking naturally.","shotsTitle":"Screenshots","faqTitle":"FAQ","q0":"Is it free to play?","a0":"Yes — free to download and play. Some features are available via in-app purchase.","q1":"What kind of game is it?","a1":"A stick-taking puzzle where you alternate picking sticks and outread your opponent for the last move. Simple rules, real strategy.","q2":"Is it suitable for kids?","a2":"Yes. It starts with easy levels, making it great logic training for children too.","q3":"Which devices are supported?","a3":"iPhone and iPad (iOS). An Android version is in the works.","q4":"How can I contact support?","a4":"Email us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.","privacyLink":"Privacy Policy","termsLink":"Terms of Service","ctaTitle":"The forest is waiting.","ctaLead":"Start your stick-taking adventure with the wood golems today.","ctaBtn":"Download free on the App Store"};
-  var KEY='wood-golem-lang';
-  function apply(lang){
-    document.documentElement.lang=lang;
-    document.querySelectorAll('[data-t]').forEach(function(el){
-      var k=el.getAttribute('data-t');
-      if(lang==='en'){
-        if(!el.hasAttribute('data-ja')) el.setAttribute('data-ja', el.innerHTML);
-        if(EN[k]!==undefined) el.innerHTML=EN[k];
-      }else if(el.hasAttribute('data-ja')){
-        el.innerHTML=el.getAttribute('data-ja');
-      }
-    });
-    document.querySelectorAll('[data-setlang]').forEach(function(b){
-      b.classList.toggle('on', b.getAttribute('data-setlang')===lang);
-    });
-    document.documentElement.style.visibility='';
-  }
-  document.addEventListener('DOMContentLoaded', function(){
-    apply(window.__PAGE_LANG||'ja');
-    document.querySelectorAll('[data-setlang]').forEach(function(b){
-      b.addEventListener('click', function(){
-        var l=b.getAttribute('data-setlang');
-        try{localStorage.setItem(KEY,l);}catch(e){}
-        apply(l);
-      });
-    });
-  });
-})();
+window.pageTranslations = {
+ "ja": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> 開発したアプリ一覧",
+  "badge": "ストラテジーパズル", "global": "全世界で配信中",
+  "sub": "森のなかまと、あたまの冒険へ",
+  "intro": "棒取りストラテジーゲーム「Wood Golem」で森の大冒険へ。美しい森を舞台に、小さなウッドゴーレムたちと棒取りパズルに挑戦します。論理的思考力を鍛えながら、楽しく遊べる戦略ゲームです。",
+  "gplay": "Google Play 準備中",
+  "chip0": "100+ レベル", "chip1": "かわいいキャラとストーリー", "chip2": "論理的思考トレーニング", "chip3": "無料ダウンロード",
+  "featTitle": "森の冒険で、論理力を鍛える", "featLead": "シンプルなルール、奥深い戦略。子どもから大人まで夢中になれます。",
+  "f0t": "美しい森の世界", "f0d": "絵本のような森を舞台にした棒取りパズル。ステージが進むごとに新しい景色が広がります。",
+  "f1t": "100以上のレベル", "f1d": "やさしい入門ステージから頭をひねる高難度まで。少しずつ難しくなるから挫折しません。",
+  "f2t": "かわいいウッドゴーレム", "f2d": "小さなウッドゴーレムたちと一緒に冒険。ストーリーを追いながら進められます。",
+  "f3t": "論理と戦略が身につく", "f3d": "「どの棒を取るか」の読み合いで、論理的思考力と戦略的思考が自然に鍛えられます。",
+  "shotsTitle": "アプリの画面", "faqTitle": "よくあるご質問",
+  "q0": "無料で遊べますか？", "a0": "無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。",
+  "q1": "どんなゲームですか？", "a1": "交互に棒を取り合い、最後の一手を読み合う「棒取り」パズルです。ルールはシンプルですが、勝つには戦略が必要です。",
+  "q2": "子どもでも遊べますか？", "a2": "はい。やさしいレベルから始まるので、お子さまの論理的思考のトレーニングにもぴったりです。",
+  "q3": "対応している端末は？", "a3": "iPhone・iPad（iOS）に対応しています。Android版は準備中です。",
+  "q4": "お問い合わせ先は？", "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> までお気軽にご連絡ください。",
+  "privacyLink": "プライバシーポリシー", "termsLink": "利用規約",
+  "ctaTitle": "森が、あなたを待っている。", "ctaLead": "ウッドゴーレムたちと一緒に、今日から棒取りの冒険を始めよう。", "ctaBtn": "App Store で無料ダウンロード",
+  "meta": { "title": "Wood Golem - 森の棒取りストラテジーパズル | TrailFusion AI", "description": "棒取りストラテジーゲーム「Wood Golem」。美しい森を舞台に、かわいいウッドゴーレムと100以上のレベルに挑戦。論理的思考力を鍛えながら楽しく遊べるパズルゲーム。App Storeで無料ダウンロード。" }
+ } },
+ "en": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> All Apps",
+  "badge": "Strategy Puzzle", "global": "Available worldwide",
+  "sub": "A brain adventure with forest friends",
+  "intro": "Embark on a forest adventure with Wood Golem, a stick-taking strategy puzzle. Set in a beautiful forest, challenge puzzles together with little wood golems — a strategy game that trains logical thinking while staying fun.",
+  "gplay": "Google Play — Coming Soon",
+  "chip0": "100+ levels", "chip1": "Cute characters & story", "chip2": "Logic training", "chip3": "Free download",
+  "featTitle": "Train your logic in the forest", "featLead": "Simple rules, deep strategy. Addictive for kids and adults alike.",
+  "f0t": "A beautiful forest world", "f0d": "Stick-taking puzzles set in a storybook forest. New scenery unfolds as you progress.",
+  "f1t": "100+ levels", "f1d": "From gentle intro stages to brain-bending challenges — difficulty ramps up gradually so you never get stuck.",
+  "f2t": "Cute wood golems", "f2d": "Adventure together with little wood golem characters and follow the story as you play.",
+  "f3t": "Logic & strategy skills", "f3d": "Reading which stick to take builds logical and strategic thinking naturally.",
+  "shotsTitle": "Screenshots", "faqTitle": "FAQ",
+  "q0": "Is it free to play?", "a0": "Yes — free to download and play. Some features are available via in-app purchase.",
+  "q1": "What kind of game is it?", "a1": "A stick-taking puzzle where you alternate picking sticks and outread your opponent for the last move. Simple rules, real strategy.",
+  "q2": "Is it suitable for kids?", "a2": "Yes. It starts with easy levels, making it great logic training for children too.",
+  "q3": "Which devices are supported?", "a3": "iPhone and iPad (iOS). An Android version is in the works.",
+  "q4": "How can I contact support?", "a4": "Email us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Privacy Policy", "termsLink": "Terms of Service",
+  "ctaTitle": "The forest is waiting.", "ctaLead": "Start your stick-taking adventure with the wood golems today.", "ctaBtn": "Download free on the App Store",
+  "meta": { "title": "Wood Golem - A Forest Stick-Taking Strategy Puzzle | TrailFusion AI", "description": "Wood Golem is a stick-taking strategy puzzle set in a beautiful forest with 100+ levels and cute wood golem characters. Free on the App Store." }
+ } },
+ "zh": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> 全部应用",
+  "badge": "策略解谜", "global": "全球发行中",
+  "sub": "与森林伙伴们一起，展开一场脑力大冒险",
+  "intro": "在取棒策略游戏「Wood Golem」中展开森林大冒险。以美丽的森林为舞台，与可爱的小树精一起挑战取棒解谜。这是一款能锻炼逻辑思维、轻松愉快的策略游戏。",
+  "gplay": "Google Play 即将上线",
+  "chip0": "100+ 关卡", "chip1": "可爱角色与故事", "chip2": "逻辑思维训练", "chip3": "免费下载",
+  "featTitle": "在森林冒险中锻炼逻辑力", "featLead": "规则简单，策略深邃。老少皆宜，让人欲罢不能。",
+  "f0t": "美丽的森林世界", "f0d": "以绘本般的森林为舞台的取棒解谜。随着关卡推进，展现全新风景。",
+  "f1t": "100多个关卡", "f1d": "从轻松的入门关卡到烧脑的高难度挑战，难度循序渐进，不会让你半途而废。",
+  "f2t": "可爱的树精伙伴", "f2d": "与小小的树精们一起冒险，跟随故事逐步前进。",
+  "f3t": "培养逻辑与策略思维", "f3d": "在「该拿哪根棒子」的博弈中，自然而然地锻炼逻辑思维和战略思考。",
+  "shotsTitle": "应用截图", "faqTitle": "常见问题",
+  "q0": "可以免费玩吗？", "a0": "可以免费下载游玩。部分功能可通过应用内购买解锁。",
+  "q1": "这是什么类型的游戏？", "a1": "这是一款轮流取棒、互相揣摩对方心思争夺最后一手的「取棒」解谜游戏。规则简单，但获胜需要策略。",
+  "q2": "孩子也能玩吗？", "a2": "可以。游戏从简单关卡开始，非常适合作为孩子的逻辑思维训练。",
+  "q3": "支持哪些设备？", "a3": "支持iPhone、iPad（iOS）。Android版本正在准备中。",
+  "q4": "如何联系我们？", "a4": "请通过 <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> 随时联系我们。",
+  "privacyLink": "隐私政策", "termsLink": "服务条款",
+  "ctaTitle": "森林，正在等待着你。", "ctaLead": "与树精伙伴们一起，从今天开始你的取棒大冒险吧。", "ctaBtn": "在App Store免费下载",
+  "meta": { "title": "Wood Golem - 森林取棒策略解谜游戏 | TrailFusion AI", "description": "取棒策略游戏「Wood Golem」。以美丽森林为舞台，与可爱树精挑战100多个关卡，轻松锻炼逻辑思维。" }
+ } },
+ "ko": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> 전체 앱",
+  "badge": "전략 퍼즐", "global": "전 세계 서비스 중",
+  "sub": "숲속 친구들과 함께하는 두뇌 모험",
+  "intro": "막대 뽑기 전략 게임 'Wood Golem'으로 숲속 대모험을 떠나보세요. 아름다운 숲을 배경으로 작은 우드골렘들과 막대 뽑기 퍼즐에 도전합니다. 논리적 사고력을 기르면서 즐겁게 즐길 수 있는 전략 게임입니다.",
+  "gplay": "Google Play 준비 중",
+  "chip0": "100개 이상 레벨", "chip1": "귀여운 캐릭터와 스토리", "chip2": "논리적 사고 트레이닝", "chip3": "무료 다운로드",
+  "featTitle": "숲속 모험으로 논리력을 기르다", "featLead": "단순한 규칙, 깊이 있는 전략. 아이부터 어른까지 푹 빠지게 됩니다.",
+  "f0t": "아름다운 숲의 세계", "f0d": "그림책 같은 숲을 배경으로 한 막대 뽑기 퍼즐. 스테이지가 진행될수록 새로운 풍경이 펼쳐집니다.",
+  "f1t": "100개 이상의 레벨", "f1d": "쉬운 입문 스테이지부터 머리를 쥐어짜는 고난도까지. 조금씩 어려워지므로 좌절하지 않습니다.",
+  "f2t": "귀여운 우드골렘", "f2d": "작은 우드골렘들과 함께 모험. 스토리를 따라가며 진행할 수 있습니다.",
+  "f3t": "논리와 전략이 자연스럽게", "f3d": "'어느 막대를 뽑을지' 서로 수를 읽는 과정에서 논리적 사고력과 전략적 사고가 자연스럽게 길러집니다.",
+  "shotsTitle": "앱 화면", "faqTitle": "자주 묻는 질문",
+  "q0": "무료로 플레이할 수 있나요？", "a0": "무료로 다운로드해 플레이할 수 있습니다. 일부 기능은 인앱 결제로 이용하실 수 있습니다.",
+  "q1": "어떤 게임인가요？", "a1": "번갈아 막대를 뽑으며 마지막 수를 서로 읽는 '막대 뽑기' 퍼즐입니다. 규칙은 단순하지만 이기려면 전략이 필요합니다.",
+  "q2": "아이도 즐길 수 있나요？", "a2": "네. 쉬운 레벨부터 시작하므로 아이의 논리적 사고 훈련에도 안성맞춤입니다.",
+  "q3": "지원 기기는 무엇인가요？", "a3": "iPhone・iPad(iOS)를 지원합니다. Android 버전은 준비 중입니다.",
+  "q4": "문의처는 어디인가요？", "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>으로 편하게 연락해 주세요.",
+  "privacyLink": "개인정보처리방침", "termsLink": "이용약관",
+  "ctaTitle": "숲이, 당신을 기다리고 있습니다.", "ctaLead": "우드골렘들과 함께 오늘부터 막대 뽑기 모험을 시작하세요.", "ctaBtn": "App Store에서 무료 다운로드",
+  "meta": { "title": "Wood Golem - 숲속 막대 뽑기 전략 퍼즐 | TrailFusion AI", "description": "막대 뽑기 전략 게임 'Wood Golem'. 아름다운 숲을 배경으로 귀여운 우드골렘과 100개 이상의 레벨에 도전하며 논리력을 기르는 퍼즐 게임." }
+ } },
+ "es": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> Todas las apps",
+  "badge": "Puzzle de estrategia", "global": "Disponible en todo el mundo",
+  "sub": "Una aventura mental con amigos del bosque",
+  "intro": "Embárcate en una gran aventura forestal con \"Wood Golem\", un puzzle de estrategia de recoger palos. Ambientado en un hermoso bosque, desafía puzzles de recoger palos junto a pequeños golems de madera. Es un juego de estrategia divertido que entrena el pensamiento lógico.",
+  "gplay": "Google Play — Próximamente",
+  "chip0": "Más de 100 niveles", "chip1": "Personajes e historia adorables", "chip2": "Entrenamiento de lógica", "chip3": "Descarga gratuita",
+  "featTitle": "Entrena tu lógica en una aventura forestal", "featLead": "Reglas simples, estrategia profunda. Engancha a niños y adultos por igual.",
+  "f0t": "Un hermoso mundo forestal", "f0d": "Puzzles de recoger palos ambientados en un bosque de cuento. Nuevos paisajes se despliegan a medida que avanzas.",
+  "f1t": "Más de 100 niveles", "f1d": "Desde niveles introductorios suaves hasta desafíos que exprimen el cerebro. La dificultad aumenta gradualmente para que nunca te quedes atascado.",
+  "f2t": "Adorables wood golems", "f2d": "Aventúrate junto a pequeños personajes wood golem y sigue la historia mientras juegas.",
+  "f3t": "Desarrolla lógica y estrategia", "f3d": "Adivinar qué palo tomar entrena de forma natural el pensamiento lógico y estratégico.",
+  "shotsTitle": "Capturas de pantalla", "faqTitle": "Preguntas frecuentes",
+  "q0": "¿Es gratis jugar?", "a0": "Sí, es gratis de descargar y jugar. Algunas funciones están disponibles mediante compras dentro de la app.",
+  "q1": "¿Qué tipo de juego es?", "a1": "Un puzzle de recoger palos donde te turnas para tomarlos e intentas adivinar el último movimiento del rival. Reglas simples, estrategia real.",
+  "q2": "¿Es adecuado para niños?", "a2": "Sí. Comienza con niveles fáciles, lo que lo hace un gran entrenamiento de lógica también para niños.",
+  "q3": "¿Qué dispositivos son compatibles?", "a3": "iPhone y iPad (iOS). Una versión para Android está en desarrollo.",
+  "q4": "¿Cómo puedo contactar con soporte?", "a4": "Escríbenos en cualquier momento a <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Política de privacidad", "termsLink": "Términos de servicio",
+  "ctaTitle": "El bosque te está esperando.", "ctaLead": "Comienza hoy tu aventura de recoger palos junto a los wood golems.", "ctaBtn": "Descarga gratis en la App Store",
+  "meta": { "title": "Wood Golem - Un puzzle de estrategia forestal | TrailFusion AI", "description": "Wood Golem es un puzzle de estrategia de recoger palos ambientado en un hermoso bosque, con más de 100 niveles y adorables golems de madera. Gratis en la App Store." }
+ } },
+ "fr": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> Toutes les applications",
+  "badge": "Puzzle de stratégie", "global": "Disponible dans le monde entier",
+  "sub": "Une aventure cérébrale avec des amis de la forêt",
+  "intro": "Partez pour une grande aventure forestière avec « Wood Golem », un puzzle de stratégie de ramassage de bâtons. Dans une magnifique forêt, relevez des défis de ramassage de bâtons aux côtés de petits golems de bois. Un jeu de stratégie amusant qui entraîne la pensée logique.",
+  "gplay": "Google Play — Bientôt disponible",
+  "chip0": "Plus de 100 niveaux", "chip1": "Personnages et histoire adorables", "chip2": "Entraînement de la logique", "chip3": "Téléchargement gratuit",
+  "featTitle": "Entraînez votre logique dans une aventure forestière", "featLead": "Règles simples, stratégie profonde. Addictif pour les enfants comme pour les adultes.",
+  "f0t": "Un magnifique monde forestier", "f0d": "Des puzzles de ramassage de bâtons dans une forêt digne d'un livre d'images. De nouveaux paysages se dévoilent à mesure que vous progressez.",
+  "f1t": "Plus de 100 niveaux", "f1d": "Des niveaux d'initiation en douceur aux défis qui font chauffer les méninges. La difficulté augmente progressivement pour que vous ne restiez jamais bloqué.",
+  "f2t": "D'adorables wood golems", "f2d": "Vivez l'aventure aux côtés de petits personnages wood golem et suivez l'histoire au fil du jeu.",
+  "f3t": "Développez logique et stratégie", "f3d": "Deviner quel bâton prendre entraîne naturellement la pensée logique et stratégique.",
+  "shotsTitle": "Captures d'écran", "faqTitle": "Foire aux questions",
+  "q0": "Est-ce gratuit de jouer ?", "a0": "Oui, gratuit à télécharger et à jouer. Certaines fonctionnalités sont disponibles via des achats intégrés.",
+  "q1": "Quel type de jeu est-ce ?", "a1": "Un puzzle de ramassage de bâtons où vous alternez pour prendre des bâtons en essayant de deviner le dernier coup de l'adversaire. Règles simples, stratégie bien réelle.",
+  "q2": "Convient-il aux enfants ?", "a2": "Oui. Il commence par des niveaux faciles, ce qui en fait aussi un excellent entraînement logique pour les enfants.",
+  "q3": "Quels appareils sont pris en charge ?", "a3": "iPhone et iPad (iOS). Une version Android est en cours de développement.",
+  "q4": "Comment contacter le support ?", "a4": "Écrivez-nous à tout moment à <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Politique de confidentialité", "termsLink": "Conditions d'utilisation",
+  "ctaTitle": "La forêt vous attend.", "ctaLead": "Commencez dès aujourd'hui votre aventure de ramassage de bâtons avec les wood golems.", "ctaBtn": "Téléchargez gratuitement sur l'App Store",
+  "meta": { "title": "Wood Golem - Un puzzle de stratégie forestier | TrailFusion AI", "description": "Wood Golem est un puzzle de stratégie de ramassage de bâtons dans une magnifique forêt, avec plus de 100 niveaux et d'adorables golems de bois. Gratuit sur l'App Store." }
+ } },
+ "de": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> Alle Apps",
+  "badge": "Strategie-Puzzle", "global": "Weltweit verfügbar",
+  "sub": "Ein Kopfabenteuer mit Waldfreunden",
+  "intro": "Begeben Sie sich mit „Wood Golem\", einem Stäbchen-Strategie-Puzzle, auf ein großes Waldabenteuer. In einem wunderschönen Wald meistern Sie gemeinsam mit kleinen Holzgolems Stäbchen-Puzzles. Ein unterhaltsames Strategiespiel, das logisches Denken trainiert.",
+  "gplay": "Google Play — Demnächst verfügbar",
+  "chip0": "Über 100 Level", "chip1": "Niedliche Charaktere und Geschichte", "chip2": "Logiktraining", "chip3": "Kostenloser Download",
+  "featTitle": "Trainieren Sie Ihre Logik im Waldabenteuer", "featLead": "Einfache Regeln, tiefgründige Strategie. Fesselnd für Kinder und Erwachsene gleichermaßen.",
+  "f0t": "Eine wunderschöne Waldwelt", "f0d": "Stäbchen-Puzzles in einem bilderbuchartigen Wald. Mit jedem Level entfalten sich neue Landschaften.",
+  "f1t": "Über 100 Level", "f1d": "Von sanften Einstiegslevels bis zu kniffligen Herausforderungen. Der Schwierigkeitsgrad steigt allmählich, sodass Sie nie stecken bleiben.",
+  "f2t": "Niedliche Wood Golems", "f2d": "Erleben Sie Abenteuer zusammen mit kleinen Wood-Golem-Charakteren und folgen Sie der Geschichte beim Spielen.",
+  "f3t": "Logik und Strategie entwickeln", "f3d": "Zu erraten, welches Stäbchen zu nehmen ist, trainiert auf natürliche Weise logisches und strategisches Denken.",
+  "shotsTitle": "Screenshots", "faqTitle": "Häufig gestellte Fragen",
+  "q0": "Ist das Spielen kostenlos?", "a0": "Ja, kostenloser Download und Spielspaß. Einige Funktionen sind über In-App-Käufe verfügbar.",
+  "q1": "Was für ein Spiel ist das?", "a1": "Ein Stäbchen-Puzzle, bei dem Sie abwechselnd Stäbchen nehmen und versuchen, den letzten Zug des Gegners vorherzusehen. Einfache Regeln, echte Strategie.",
+  "q2": "Ist es für Kinder geeignet?", "a2": "Ja. Es beginnt mit einfachen Levels und eignet sich daher auch hervorragend als Logiktraining für Kinder.",
+  "q3": "Welche Geräte werden unterstützt?", "a3": "iPhone und iPad (iOS). Eine Android-Version ist in Arbeit.",
+  "q4": "Wie kann ich den Support kontaktieren?", "a4": "Schreiben Sie uns jederzeit an <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Datenschutzerklärung", "termsLink": "Nutzungsbedingungen",
+  "ctaTitle": "Der Wald wartet auf Sie.", "ctaLead": "Beginnen Sie noch heute Ihr Stäbchen-Abenteuer mit den Wood Golems.", "ctaBtn": "Kostenlos im App Store herunterladen",
+  "meta": { "title": "Wood Golem - Ein Wald-Strategie-Puzzle | TrailFusion AI", "description": "Wood Golem ist ein Stäbchen-Strategie-Puzzle in einem wunderschönen Wald mit über 100 Levels und niedlichen Holzgolems. Kostenlos im App Store." }
+ } },
+ "pt": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> Todos os apps",
+  "badge": "Quebra-cabeça de estratégia", "global": "Disponível no mundo todo",
+  "sub": "Uma aventura mental com amigos da floresta",
+  "intro": "Embarque em uma grande aventura florestal com \"Wood Golem\", um quebra-cabeça de estratégia de retirar gravetos. Em uma floresta linda, desafie quebra-cabeças de retirar gravetos ao lado de pequenos golems de madeira. Um jogo de estratégia divertido que treina o pensamento lógico.",
+  "gplay": "Google Play — Em breve",
+  "chip0": "Mais de 100 níveis", "chip1": "Personagens e história fofos", "chip2": "Treinamento de lógica", "chip3": "Download gratuito",
+  "featTitle": "Treine sua lógica em uma aventura florestal", "featLead": "Regras simples, estratégia profunda. Vicia crianças e adultos por igual.",
+  "f0t": "Um lindo mundo florestal", "f0d": "Quebra-cabeças de retirar gravetos em uma floresta digna de um livro de histórias. Novas paisagens se revelam conforme você avança.",
+  "f1t": "Mais de 100 níveis", "f1d": "De níveis introdutórios suaves a desafios de quebrar a cabeça. A dificuldade aumenta gradualmente para você nunca ficar travado.",
+  "f2t": "Wood golems fofos", "f2d": "Aventure-se junto com pequenos personagens wood golem e acompanhe a história enquanto joga.",
+  "f3t": "Desenvolva lógica e estratégia", "f3d": "Adivinhar qual graveto tirar treina naturalmente o pensamento lógico e estratégico.",
+  "shotsTitle": "Capturas de tela", "faqTitle": "Perguntas frequentes",
+  "q0": "É gratuito para jogar?", "a0": "Sim, gratuito para baixar e jogar. Alguns recursos estão disponíveis via compras no aplicativo.",
+  "q1": "Que tipo de jogo é esse?", "a1": "Um quebra-cabeça de retirar gravetos em que você alterna a retirada e tenta prever o último movimento do adversário. Regras simples, estratégia de verdade.",
+  "q2": "É adequado para crianças?", "a2": "Sim. Começa com níveis fáceis, o que também o torna ótimo treinamento de lógica para crianças.",
+  "q3": "Quais dispositivos são compatíveis?", "a3": "iPhone e iPad (iOS). Uma versão para Android está em desenvolvimento.",
+  "q4": "Como entro em contato com o suporte?", "a4": "Envie um e-mail a qualquer momento para <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Política de Privacidade", "termsLink": "Termos de Serviço",
+  "ctaTitle": "A floresta está esperando por você.", "ctaLead": "Comece hoje sua aventura de retirar gravetos com os wood golems.", "ctaBtn": "Baixe grátis na App Store",
+  "meta": { "title": "Wood Golem - Um quebra-cabeça de estratégia florestal | TrailFusion AI", "description": "Wood Golem é um quebra-cabeça de estratégia de retirar gravetos em uma linda floresta, com mais de 100 níveis e golems de madeira fofos. Grátis na App Store." }
+ } },
+ "ru": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> Все приложения",
+  "badge": "Стратегическая головоломка", "global": "Доступно по всему миру",
+  "sub": "Приключение для ума с лесными друзьями",
+  "intro": "Отправьтесь в большое лесное приключение с «Wood Golem» — стратегической головоломкой на взятие палочек. В прекрасном лесу решайте головоломки вместе с маленькими деревянными големами. Увлекательная стратегическая игра, тренирующая логическое мышление.",
+  "gplay": "Google Play — скоро",
+  "chip0": "Более 100 уровней", "chip1": "Милые персонажи и сюжет", "chip2": "Тренировка логики", "chip3": "Бесплатная загрузка",
+  "featTitle": "Тренируйте логику в лесном приключении", "featLead": "Простые правила, глубокая стратегия. Затягивает и детей, и взрослых.",
+  "f0t": "Прекрасный лесной мир", "f0d": "Головоломки на взятие палочек в сказочном лесу. С каждым уровнем открываются новые пейзажи.",
+  "f1t": "Более 100 уровней", "f1d": "От лёгких вводных уровней до головоломных испытаний. Сложность растёт постепенно, поэтому вы никогда не застрянете.",
+  "f2t": "Милые деревянные големы", "f2d": "Отправляйтесь в приключение вместе с маленькими деревянными големами и следите за сюжетом по ходу игры.",
+  "f3t": "Развивайте логику и стратегию", "f3d": "Угадывание, какую палочку взять, естественным образом тренирует логическое и стратегическое мышление.",
+  "shotsTitle": "Скриншоты", "faqTitle": "Часто задаваемые вопросы",
+  "q0": "Игра бесплатна?", "a0": "Да, бесплатна для загрузки и игры. Некоторые функции доступны через покупки в приложении.",
+  "q1": "Что это за игра?", "a1": "Головоломка на взятие палочек, где вы по очереди берёте палочки, пытаясь предугадать последний ход соперника. Простые правила, настоящая стратегия.",
+  "q2": "Подходит ли она для детей?", "a2": "Да. Игра начинается с лёгких уровней, что делает её отличной тренировкой логики и для детей.",
+  "q3": "Какие устройства поддерживаются?", "a3": "iPhone и iPad (iOS). Версия для Android находится в разработке.",
+  "q4": "Как связаться со службой поддержки?", "a4": "Напишите нам в любое время на <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "privacyLink": "Политика конфиденциальности", "termsLink": "Условия использования",
+  "ctaTitle": "Лес ждёт вас.", "ctaLead": "Начните своё приключение по взятию палочек с деревянными големами уже сегодня.", "ctaBtn": "Скачать бесплатно в App Store",
+  "meta": { "title": "Wood Golem - Лесная стратегическая головоломка | TrailFusion AI", "description": "Wood Golem — стратегическая головоломка на взятие палочек в прекрасном лесу с более чем 100 уровнями и милыми деревянными големами. Бесплатно в App Store." }
+ } },
+ "hi": { "woodgolem2": {
+  "bc": "<i class=\"ri-arrow-left-line\"></i> सभी ऐप्स",
+  "badge": "रणनीति पहेली", "global": "दुनिया भर में उपलब्ध",
+  "sub": "जंगल के दोस्तों के साथ एक दिमागी रोमांच",
+  "intro": "\"Wood Golem\" के साथ जंगल के एक बड़े रोमांच पर निकलें, जो एक स्टिक उठाने वाली रणनीति पहेली है। एक खूबसूरत जंगल में, छोटे वुड गोलेम के साथ मिलकर स्टिक उठाने की पहेलियों को हल करें। यह एक मज़ेदार रणनीति खेल है जो तार्किक सोच को प्रशिक्षित करता है।",
+  "gplay": "Google Play — जल्द आ रहा है",
+  "chip0": "100+ लेवल", "chip1": "प्यारे किरदार और कहानी", "chip2": "तार्किक सोच प्रशिक्षण", "chip3": "मुफ्त डाउनलोड",
+  "featTitle": "जंगल के रोमांच में अपनी तार्किक क्षमता को निखारें", "featLead": "सरल नियम, गहरी रणनीति। बच्चों से लेकर बड़ों तक सभी को पसंद आएगा।",
+  "f0t": "एक खूबसूरत जंगल की दुनिया", "f0d": "एक चित्र-पुस्तक जैसे जंगल में स्टिक उठाने की पहेलियाँ। जैसे-जैसे आप आगे बढ़ते हैं, नए दृश्य सामने आते हैं।",
+  "f1t": "100 से अधिक लेवल", "f1d": "आसान शुरुआती चरणों से लेकर दिमाग हिला देने वाली चुनौतियों तक। कठिनाई धीरे-धीरे बढ़ती है ताकि आप कभी अटकें नहीं।",
+  "f2t": "प्यारे वुड गोलेम", "f2d": "छोटे वुड गोलेम किरदारों के साथ रोमांच का आनंद लें और खेलते हुए कहानी का अनुसरण करें।",
+  "f3t": "तार्किक और रणनीतिक सोच विकसित करें", "f3d": "कौन सी स्टिक उठानी है यह अनुमान लगाना स्वाभाविक रूप से तार्किक और रणनीतिक सोच को प्रशिक्षित करता है।",
+  "shotsTitle": "ऐप स्क्रीनशॉट", "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+  "q0": "क्या खेलना मुफ्त है？", "a0": "हां, मुफ्त में डाउनलोड करके खेला जा सकता है। कुछ सुविधाएं इन-ऐप खरीदारी के माध्यम से उपलब्ध हैं।",
+  "q1": "यह किस तरह का खेल है？", "a1": "यह एक \"स्टिक उठाने\" वाली पहेली है जिसमें आप बारी-बारी से स्टिक उठाते हैं और प्रतिद्वंद्वी की आखिरी चाल का अनुमान लगाते हैं। नियम सरल हैं, लेकिन जीतने के लिए रणनीति चाहिए।",
+  "q2": "क्या यह बच्चों के लिए उपयुक्त है？", "a2": "हां। यह आसान लेवल से शुरू होता है, जिससे यह बच्चों के लिए भी बेहतरीन तार्किक सोच प्रशिक्षण बन जाता है।",
+  "q3": "कौन से डिवाइस समर्थित हैं？", "a3": "iPhone और iPad (iOS) समर्थित हैं। Android संस्करण तैयार किया जा रहा है।",
+  "q4": "सहायता के लिए संपर्क कैसे करें？", "a4": "कभी भी <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> पर हमें ईमेल करें।",
+  "privacyLink": "गोपनीयता नीति", "termsLink": "सेवा की शर्तें",
+  "ctaTitle": "जंगल, आपका इंतज़ार कर रहा है।", "ctaLead": "आज ही वुड गोलेम के साथ अपना स्टिक उठाने का रोमांच शुरू करें।", "ctaBtn": "App Store पर मुफ्त डाउनलोड करें",
+  "meta": { "title": "Wood Golem - जंगल की रणनीति पहेली | TrailFusion AI", "description": "Wood Golem एक स्टिक उठाने वाली रणनीति पहेली है, जो एक खूबसूरत जंगल में सेट है, जिसमें 100 से अधिक लेवल और प्यारे वुड गोलेम हैं। App Store पर मुफ्त।" }
+ } }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
 </script>
 </body>
 </html>

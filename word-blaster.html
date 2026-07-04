@@ -3,9 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Word Blaster - 宇宙で英単語を撃ち落とすシューティング学習ゲーム | TrailFusion AI</title>
-<meta name="description" content="英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。">
+<title data-i18n="wordblaster2.meta.title">Word Blaster - 宇宙で英単語を撃ち落とすシューティング学習ゲーム | TrailFusion AI</title>
+<meta name="description" content="英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。" data-i18n-content="wordblaster2.meta.description">
 <meta name="robots" content="index, follow">
+<script>
+(function(){
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
+  window.__PAGE_LANG=lang;
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
+})();
+</script>
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/word-blaster.html">
 <meta property="og:type" content="website">
@@ -30,6 +46,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,13 +125,15 @@ body{background:#070B1E;color:#F3F6FF;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -135,7 +154,7 @@ body{background:#070B1E;color:#F3F6FF;}
 <section class="k-hero">
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <nav class="mb-8 text-sm font-bold k-dim" aria-label="パンくず">
-      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> <span data-i18n="wordblaster2.breadcrumb">開発したアプリ一覧</span></a>
       <span class="mx-2">/</span><span>Word Blaster</span>
     </nav>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
@@ -143,22 +162,22 @@ body{background:#070B1E;color:#F3F6FF;}
         <div class="flex items-center gap-4 mb-6">
           <div class="k-logo"><img src="assets/images/word-blaster/logo.png" alt="Word Blaster ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
-            <span class="k-badge accent"><i class="ri-rocket-2-fill mr-1"></i>英単語シューティング</span>
-            <span class="k-badge"><i class="ri-earth-fill"></i>全世界で配信中</span>
+            <span class="k-badge accent"><i class="ri-rocket-2-fill mr-1"></i><span data-i18n="wordblaster2.badge">英単語シューティング</span></span>
+            <span class="k-badge"><i class="ri-earth-fill"></i><span data-i18n="wordblaster2.global">全世界で配信中</span></span>
           </div>
         </div>
         <h1 class="k-title text-4xl md:text-5xl lg:text-6xl mb-5 leading-none k-grad">Word Blaster</h1>
-        <p class="font-black text-lg md:text-2xl mb-4">撃って、覚える。宇宙の英単語バトル</p>
-        <p class="k-dim leading-loose font-medium mb-7">宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。正しい意味の単語を狙い撃ち。エキサイティングに遊びながら、英単語力がぐんぐん伸びます。</p>
+        <p class="font-black text-lg md:text-2xl mb-4" data-i18n="wordblaster2.sub">撃って、覚える。宇宙の英単語バトル</p>
+        <p class="k-dim leading-loose font-medium mb-7" data-i18n="wordblaster2.intro">宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。正しい意味の単語を狙い撃ち。エキサイティングに遊びながら、英単語力がぐんぐん伸びます。</p>
         <div class="flex flex-wrap gap-3 mb-6">
           <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="k-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
-          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span>Google Play 準備中</span></span>
+          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="wordblaster2.gplay">Google Play 準備中</span></span>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="k-chip"><i class="ri-rocket-fill" style="color:#FFC93D;"></i>宇宙シューティング</span>
-          <span class="k-chip"><i class="ri-bar-chart-fill" style="color:#FFC93D;"></i>レベル別学習</span>
-          <span class="k-chip"><i class="ri-trophy-fill" style="color:#FFC93D;"></i>ランキング対戦</span>
-          <span class="k-chip"><i class="ri-price-tag-3-fill" style="color:#FFC93D;"></i>無料ダウンロード</span>
+          <span class="k-chip"><i class="ri-rocket-fill" style="color:#FFC93D;"></i><span data-i18n="wordblaster2.chip0">宇宙シューティング</span></span>
+          <span class="k-chip"><i class="ri-bar-chart-fill" style="color:#FFC93D;"></i><span data-i18n="wordblaster2.chip1">レベル別学習</span></span>
+          <span class="k-chip"><i class="ri-trophy-fill" style="color:#FFC93D;"></i><span data-i18n="wordblaster2.chip2">ランキング対戦</span></span>
+          <span class="k-chip"><i class="ri-price-tag-3-fill" style="color:#FFC93D;"></i><span data-i18n="wordblaster2.chip3">無料ダウンロード</span></span>
         </div>
       </div>
       <div class="k-frame">
@@ -172,36 +191,36 @@ body{background:#070B1E;color:#F3F6FF;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="k-badge accent">FEATURES</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3">遊ぶほど、語彙が増える</h2>
-      <p class="k-dim font-medium max-w-2xl mx-auto">「暗記がつらい」を「撃つのが楽しい」に変える、新しい英単語学習です。</p>
+      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3" data-i18n="wordblaster2.featTitle">遊ぶほど、語彙が増える</h2>
+      <p class="k-dim font-medium max-w-2xl mx-auto" data-i18n="wordblaster2.featLead">「暗記がつらい」を「撃つのが楽しい」に変える、新しい英単語学習です。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5">爽快な宇宙シューティング</h3>
-          <p class="k-dim text-sm leading-relaxed">迫りくる単語を狙って撃ち落とす、エキサイティングなシューティングゲーム。勉強している感覚を忘れます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="wordblaster2.f0t">爽快な宇宙シューティング</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="wordblaster2.f0d">迫りくる単語を狙って撃ち落とす、エキサイティングなシューティングゲーム。勉強している感覚を忘れます。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5">初級から上級までレベル別</h3>
-          <p class="k-dim text-sm leading-relaxed">自分のレベルに合わせて単語セットを選択。基礎単語から難関語彙まで段階的にステップアップ。</p>
+          <h3 class="font-black mb-1.5" data-i18n="wordblaster2.f1t">初級から上級までレベル別</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="wordblaster2.f1d">自分のレベルに合わせて単語セットを選択。基礎単語から難関語彙まで段階的にステップアップ。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5">ランキングで友達と競争</h3>
-          <p class="k-dim text-sm leading-relaxed">スコアランキングで友達やライバルと競争。負けたくない気持ちが継続の原動力になります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="wordblaster2.f2t">ランキングで友達と競争</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="wordblaster2.f2d">スコアランキングで友達やライバルと競争。負けたくない気持ちが継続の原動力になります。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5">発音と意味もセットで</h3>
-          <p class="k-dim text-sm leading-relaxed">単語の発音と意味を確認しながらプレイ。目・耳・指をフル動員して記憶に焼きつけます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="wordblaster2.f3t">発音と意味もセットで</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="wordblaster2.f3d">単語の発音と意味を確認しながらプレイ。目・耳・指をフル動員して記憶に焼きつけます。</p>
         </div>
       </div>
     </div>
@@ -212,7 +231,7 @@ body{background:#070B1E;color:#F3F6FF;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="k-badge accent">SCREENSHOTS &amp; DEMO</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5">アプリの画面</h2>
+      <h2 class="k-title text-3xl md:text-4xl mt-5" data-i18n="wordblaster2.shotsTitle">アプリの画面</h2>
     </div>
     <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
       <div class="lg:col-span-7 grid grid-cols-2 gap-5">
@@ -237,34 +256,34 @@ body{background:#070B1E;color:#F3F6FF;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="k-badge accent">FAQ</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+      <h2 class="k-title text-3xl md:text-4xl mt-5" data-i18n="wordblaster2.faqTitle">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span>無料で遊べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="wordblaster2.q0">無料で遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="wordblaster2.a0">無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>どのレベルの単語が学べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">初級から上級までレベル別に収録しています。基礎を固めたい方から語彙を増やしたい上級者まで対応します。</p>
+        <summary><span class="qm">Q</span><span data-i18n="wordblaster2.q1">どのレベルの単語が学べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="wordblaster2.a1">初級から上級までレベル別に収録しています。基礎を固めたい方から語彙を増やしたい上級者まで対応します。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>子どもでも遊べますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">はい。ゲーム感覚で英単語に触れられるので、英語学習の入り口としてもおすすめです。</p>
+        <summary><span class="qm">Q</span><span data-i18n="wordblaster2.q2">子どもでも遊べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="wordblaster2.a2">はい。ゲーム感覚で英単語に触れられるので、英語学習の入り口としてもおすすめです。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>対応している端末は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
+        <summary><span class="qm">Q</span><span data-i18n="wordblaster2.q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="wordblaster2.a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#FFC93D;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="wordblaster2.q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="wordblaster2.a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FFC93D;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
       </details>
     </div>
     <p class="text-center mt-8 text-sm font-bold">
-      <a href="privacy-policy.html" class="underline underline-offset-4" style="color:#FFC93D;">プライバシーポリシー</a>
+      <a href="privacy-policy.html" class="underline underline-offset-4" style="color:#FFC93D;" data-i18n="wordblaster2.privacyLink">プライバシーポリシー</a>
       <span class="mx-2 k-dim">·</span>
-      <a href="terms-of-service.html" class="underline underline-offset-4" style="color:#FFC93D;">利用規約</a>
+      <a href="terms-of-service.html" class="underline underline-offset-4" style="color:#FFC93D;" data-i18n="wordblaster2.termsLink">利用規約</a>
     </p>
   </div>
 </section>
@@ -272,9 +291,9 @@ body{background:#070B1E;color:#F3F6FF;}
 <section class="py-16 md:py-24" style="background:radial-gradient(circle at 50% 100%,#1B2C6B 0%,#070B1E 70%);">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="k-logo mx-auto mb-6"><img src="assets/images/word-blaster/logo.png" alt="Word Blaster ロゴ"></div>
-    <h2 class="k-title text-3xl md:text-4xl mb-4">出撃準備は、いいか。</h2>
-    <p class="k-dim font-medium mb-8 max-w-xl mx-auto">宇宙で待つ英単語たちを撃ち落とせ。今日からWord Blasterで語彙力バトル。</p>
-    <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="k-store"><i class="ri-apple-fill text-xl"></i><span>App Store で無料ダウンロード</span></a>
+    <h2 class="k-title text-3xl md:text-4xl mb-4" data-i18n="wordblaster2.ctaTitle">出撃準備は、いいか。</h2>
+    <p class="k-dim font-medium mb-8 max-w-xl mx-auto" data-i18n="wordblaster2.ctaLead">宇宙で待つ英単語たちを撃ち落とせ。今日からWord Blasterで語彙力バトル。</p>
+    <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796" target="_blank" rel="noopener" class="k-store"><i class="ri-apple-fill text-xl"></i><span data-i18n="wordblaster2.ctaBtn">App Store で無料ダウンロード</span></a>
   </div>
 </section>
 
@@ -301,7 +320,7 @@ body{background:#070B1E;color:#F3F6FF;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -344,5 +363,466 @@ body{background:#070B1E;color:#F3F6FF;}
 </footer>
 <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
 <script src="assets/js/trailfusion-ui.js"></script>
+
+<script>
+window.pageTranslations = {
+ "ja": {
+  "wordblaster2": {
+   "breadcrumb": "開発したアプリ一覧",
+   "badge": "英単語シューティング",
+   "global": "全世界で配信中",
+   "sub": "撃って、覚える。宇宙の英単語バトル",
+   "intro": "宇宙を舞台に英単語を撃ち落とす、レベル別の単語学習シューティングゲームです。正しい意味の単語を狙い撃ち。エキサイティングに遊びながら、英単語力がぐんぐん伸びます。",
+   "gplay": "Google Play 準備中",
+   "chip0": "宇宙シューティング",
+   "chip1": "レベル別学習",
+   "chip2": "ランキング対戦",
+   "chip3": "無料ダウンロード",
+   "featTitle": "遊ぶほど、語彙が増える",
+   "featLead": "「暗記がつらい」を「撃つのが楽しい」に変える、新しい英単語学習です。",
+   "f0t": "爽快な宇宙シューティング",
+   "f0d": "迫りくる単語を狙って撃ち落とす、エキサイティングなシューティングゲーム。勉強している感覚を忘れます。",
+   "f1t": "初級から上級までレベル別",
+   "f1d": "自分のレベルに合わせて単語セットを選択。基礎単語から難関語彙まで段階的にステップアップ。",
+   "f2t": "ランキングで友達と競争",
+   "f2d": "スコアランキングで友達やライバルと競争。負けたくない気持ちが継続の原動力になります。",
+   "f3t": "発音と意味もセットで",
+   "f3d": "単語の発音と意味を確認しながらプレイ。目・耳・指をフル動員して記憶に焼きつけます。",
+   "shotsTitle": "アプリの画面",
+   "faqTitle": "よくあるご質問",
+   "q0": "無料で遊べますか？",
+   "a0": "無料でダウンロードして遊べます。一部機能はアプリ内課金でご利用いただけます。",
+   "q1": "どのレベルの単語が学べますか？",
+   "a1": "初級から上級までレベル別に収録しています。基礎を固めたい方から語彙を増やしたい上級者まで対応します。",
+   "q2": "子どもでも遊べますか？",
+   "a2": "はい。ゲーム感覚で英単語に触れられるので、英語学習の入り口としてもおすすめです。",
+   "q3": "対応している端末は？",
+   "a3": "iPhone・iPad（iOS）に対応しています。Android版は準備中です。",
+   "q4": "お問い合わせ先は？",
+   "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a> までお気軽にご連絡ください。",
+   "privacyLink": "プライバシーポリシー",
+   "termsLink": "利用規約",
+   "ctaTitle": "出撃準備は、いいか。",
+   "ctaLead": "宇宙で待つ英単語たちを撃ち落とせ。今日からWord Blasterで語彙力バトル。",
+   "ctaBtn": "App Store で無料ダウンロード",
+   "meta": {
+    "title": "Word Blaster - 宇宙で英単語を撃ち落とすシューティング学習ゲーム | TrailFusion AI",
+    "description": "英単語シューティングゲーム「Word Blaster」。宇宙を舞台に英単語を撃ち落とし、レベル別に語彙力アップ。ランキングで友達と競争、発音と意味も学べる。App Storeで無料ダウンロード。"
+   }
+  }
+ },
+ "en": {
+  "wordblaster2": {
+   "breadcrumb": "All Apps",
+   "badge": "Vocabulary Shooter",
+   "global": "Available worldwide",
+   "sub": "Shoot to remember. A vocabulary battle in space",
+   "intro": "A level-based vocabulary shooting game set in space, where you shoot down English words. Snipe the word with the right meaning — an exciting way to build your vocabulary while having fun.",
+   "gplay": "Google Play — Coming Soon",
+   "chip0": "Space shooting",
+   "chip1": "Level-based learning",
+   "chip2": "Ranking battles",
+   "chip3": "Free download",
+   "featTitle": "The more you play, the more words you know",
+   "featLead": "Turning \"painful memorization\" into \"fun to shoot\" — a new way to learn vocabulary.",
+   "f0t": "Thrilling space shooter action",
+   "f0d": "An exciting shooting game where you aim and shoot down incoming words. You'll forget you're even studying.",
+   "f1t": "Leveled from beginner to advanced",
+   "f1d": "Choose word sets that match your level. Progress step by step from basic words to advanced vocabulary.",
+   "f2t": "Compete with friends on the leaderboard",
+   "f2d": "Compete with friends and rivals on the score ranking. Not wanting to lose keeps you coming back.",
+   "f3t": "Pronunciation and meaning together",
+   "f3d": "Play while checking each word's pronunciation and meaning — engaging eyes, ears, and fingers to make it stick.",
+   "shotsTitle": "Screenshots",
+   "faqTitle": "FAQ",
+   "q0": "Is it free to play?",
+   "a0": "Yes — free to download and play. Some features are available via in-app purchase.",
+   "q1": "What word levels can I learn?",
+   "a1": "Content ranges from beginner to advanced, so it works whether you want to build a foundation or grow an advanced vocabulary.",
+   "q2": "Can kids play it too?",
+   "a2": "Yes. It's a fun way to encounter English words through play, making it a great entry point into English learning.",
+   "q3": "Which devices are supported?",
+   "a3": "iPhone and iPad (iOS). An Android version is in the works.",
+   "q4": "How can I contact support?",
+   "a4": "Feel free to reach us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Privacy Policy",
+   "termsLink": "Terms of Service",
+   "ctaTitle": "Ready to launch?",
+   "ctaLead": "Shoot down the words waiting for you in space. Start your vocabulary battle in Word Blaster today.",
+   "ctaBtn": "Download free on the App Store",
+   "meta": {
+    "title": "Word Blaster - A Space Shooter That Teaches English Vocabulary | TrailFusion AI",
+    "description": "Word Blaster is a vocabulary shooting game set in space. Shoot down English words by level, race friends on the leaderboard, and learn pronunciation and meaning as you play. Free on the App Store."
+   }
+  }
+ },
+ "zh": {
+  "wordblaster2": {
+   "breadcrumb": "已开发应用列表",
+   "badge": "英语单词射击",
+   "global": "全球发行中",
+   "sub": "边射击边记忆，太空中的单词大战",
+   "intro": "一款以太空为舞台、按难度分级的单词学习射击游戏。瞄准并射落含义正确的单词，在刺激好玩的过程中让词汇量稳步提升。",
+   "gplay": "Google Play 即将上线",
+   "chip0": "太空射击",
+   "chip1": "分级学习",
+   "chip2": "排行榜对战",
+   "chip3": "免费下载",
+   "featTitle": "越玩，词汇量越大",
+   "featLead": "把「痛苦的背单词」变成「爽快的射击」，全新的英语单词学习方式。",
+   "f0t": "畅快的太空射击体验",
+   "f0d": "瞄准袭来的单词并将其击落，令人兴奋的射击游戏，让你忘记自己正在学习。",
+   "f1t": "从初级到高级分级学习",
+   "f1d": "根据自己的水平选择单词集，从基础词汇到高难度词汇循序渐进。",
+   "f2t": "在排行榜上和朋友一较高下",
+   "f2d": "在分数排行榜上和朋友、对手一决胜负，不想输的心情会成为坚持下去的动力。",
+   "f3t": "发音与含义一起学习",
+   "f3d": "边确认单词的发音和含义边游玩，充分调动眼、耳、手指，让记忆更牢固。",
+   "shotsTitle": "应用截图",
+   "faqTitle": "常见问题",
+   "q0": "可以免费玩吗？",
+   "a0": "可以免费下载游玩，部分功能可通过应用内购买获得。",
+   "q1": "可以学习哪些难度的单词？",
+   "a1": "内容涵盖初级到高级，无论是想打基础还是想增加词汇量的高阶玩家都适合。",
+   "q2": "小朋友也可以玩吗？",
+   "a2": "可以。可以像玩游戏一样接触英语单词，非常适合作为英语学习的入门。",
+   "q3": "支持哪些设备？",
+   "a3": "支持iPhone、iPad（iOS）。Android版本正在准备中。",
+   "q4": "如何联系我们？",
+   "a4": "欢迎随时通过 <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a> 联系我们。",
+   "privacyLink": "隐私政策",
+   "termsLink": "使用条款",
+   "ctaTitle": "准备好出击了吗？",
+   "ctaLead": "把太空中等着你的单词统统射落吧。从今天开始，用Word Blaster展开一场词汇大战。",
+   "ctaBtn": "在App Store免费下载",
+   "meta": {
+    "title": "Word Blaster - 在太空中射落单词的英语学习射击游戏 | TrailFusion AI",
+    "description": "Word Blaster是一款以太空为舞台的英语单词射击游戏。按难度分级射落单词，在排行榜上与朋友竞争，边玩边学习发音和含义。App Store免费下载。"
+   }
+  }
+ },
+ "ko": {
+  "wordblaster2": {
+   "breadcrumb": "개발한 앱 목록",
+   "badge": "영단어 슈팅",
+   "global": "전 세계 서비스 중",
+   "sub": "쏘면서 외운다. 우주의 영단어 배틀",
+   "intro": "우주를 무대로 영단어를 격추하는 레벨별 단어 학습 슈팅 게임입니다. 올바른 뜻의 단어를 정확히 저격하세요. 신나게 플레이하는 사이 영단어 실력이 쑥쑥 늘어납니다.",
+   "gplay": "Google Play 출시 예정",
+   "chip0": "우주 슈팅",
+   "chip1": "레벨별 학습",
+   "chip2": "랭킹 대결",
+   "chip3": "무료 다운로드",
+   "featTitle": "플레이할수록 어휘가 늘어난다",
+   "featLead": "\"암기의 고통\"을 \"쏘는 재미\"로 바꾸는 새로운 영단어 학습법입니다.",
+   "f0t": "짜릿한 우주 슈팅 액션",
+   "f0d": "다가오는 단어를 조준해 격추하는 짜릿한 슈팅 게임. 공부하고 있다는 느낌을 잊게 됩니다.",
+   "f1t": "초급부터 고급까지 레벨별 구성",
+   "f1d": "자신의 수준에 맞는 단어 세트를 선택하세요. 기초 단어부터 고난도 어휘까지 단계적으로 성장합니다.",
+   "f2t": "랭킹으로 친구와 경쟁",
+   "f2d": "점수 랭킹으로 친구, 라이벌과 경쟁합니다. 지고 싶지 않은 마음이 꾸준함의 원동력이 됩니다.",
+   "f3t": "발음과 뜻을 함께 학습",
+   "f3d": "단어의 발음과 뜻을 확인하며 플레이합니다. 눈·귀·손가락을 총동원해 기억에 새깁니다.",
+   "shotsTitle": "앱 화면",
+   "faqTitle": "자주 묻는 질문",
+   "q0": "무료로 플레이할 수 있나요?",
+   "a0": "네, 무료로 다운로드하여 플레이할 수 있습니다. 일부 기능은 인앱 결제로 이용할 수 있습니다.",
+   "q1": "어떤 레벨의 단어를 배울 수 있나요?",
+   "a1": "초급부터 고급까지 레벨별로 수록되어 있어, 기초를 다지고 싶은 분부터 어휘를 늘리고 싶은 상급자까지 모두 이용할 수 있습니다.",
+   "q2": "아이들도 플레이할 수 있나요?",
+   "a2": "네. 게임을 하듯 영단어를 접할 수 있어 영어 학습의 입문용으로도 추천합니다.",
+   "q3": "지원하는 기기는 무엇인가요?",
+   "a3": "iPhone·iPad(iOS)를 지원합니다. Android 버전은 준비 중입니다.",
+   "q4": "문의처는 어디인가요?",
+   "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a> 으로 편하게 연락해 주세요.",
+   "privacyLink": "개인정보 처리방침",
+   "termsLink": "이용약관",
+   "ctaTitle": "출격 준비, 되셨나요?",
+   "ctaLead": "우주에서 기다리는 영단어들을 격추하세요. 오늘부터 Word Blaster로 어휘력 배틀을 시작해 보세요.",
+   "ctaBtn": "App Store에서 무료 다운로드",
+   "meta": {
+    "title": "Word Blaster - 우주에서 영단어를 격추하는 슈팅 학습 게임 | TrailFusion AI",
+    "description": "Word Blaster는 우주를 무대로 한 영단어 슈팅 게임입니다. 레벨별로 단어를 격추하고, 랭킹으로 친구와 경쟁하며 발음과 뜻을 함께 배웁니다. App Store에서 무료 다운로드."
+   }
+  }
+ },
+ "es": {
+  "wordblaster2": {
+   "breadcrumb": "Todas las apps",
+   "badge": "Tirador de vocabulario",
+   "global": "Disponible en todo el mundo",
+   "sub": "Dispara para recordar. Una batalla de vocabulario en el espacio",
+   "intro": "Un juego de disparos de vocabulario por niveles ambientado en el espacio, donde derribas palabras en inglés. Dispara a la palabra con el significado correcto — una forma emocionante de ampliar tu vocabulario mientras te diviertes.",
+   "gplay": "Google Play — Próximamente",
+   "chip0": "Disparos espaciales",
+   "chip1": "Aprendizaje por niveles",
+   "chip2": "Batallas de ranking",
+   "chip3": "Descarga gratuita",
+   "featTitle": "Cuanto más juegas, más vocabulario dominas",
+   "featLead": "Convertimos la \"memorización dolorosa\" en \"disparar es divertido\" — una nueva forma de aprender vocabulario.",
+   "f0t": "Acción de disparos espaciales emocionante",
+   "f0d": "Un emocionante juego de disparos donde apuntas y derribas las palabras que se acercan. Olvidarás que estás estudiando.",
+   "f1t": "Niveles de principiante a avanzado",
+   "f1d": "Elige conjuntos de palabras según tu nivel. Progresa paso a paso desde palabras básicas hasta vocabulario avanzado.",
+   "f2t": "Compite con amigos en el ranking",
+   "f2d": "Compite con amigos y rivales en el ranking de puntuación. No querer perder te mantiene motivado.",
+   "f3t": "Pronunciación y significado juntos",
+   "f3d": "Juega mientras compruebas la pronunciación y el significado de cada palabra, involucrando ojos, oídos y dedos para que se quede grabado.",
+   "shotsTitle": "Capturas de pantalla",
+   "faqTitle": "Preguntas frecuentes",
+   "q0": "¿Se puede jugar gratis?",
+   "a0": "Sí, es gratis para descargar y jugar. Algunas funciones están disponibles mediante compras dentro de la app.",
+   "q1": "¿Qué niveles de vocabulario puedo aprender?",
+   "a1": "El contenido va de principiante a avanzado, así que sirve tanto para reforzar la base como para ampliar vocabulario avanzado.",
+   "q2": "¿Pueden jugar los niños también?",
+   "a2": "Sí. Es una forma divertida de familiarizarse con palabras en inglés jugando, ideal como punto de entrada al aprendizaje del inglés.",
+   "q3": "¿Qué dispositivos son compatibles?",
+   "a3": "Compatible con iPhone y iPad (iOS). La versión para Android está en desarrollo.",
+   "q4": "¿Cómo puedo contactar con soporte?",
+   "a4": "No dudes en escribirnos a <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Política de privacidad",
+   "termsLink": "Términos de servicio",
+   "ctaTitle": "¿Listo para el despegue?",
+   "ctaLead": "Derriba las palabras que te esperan en el espacio. Empieza hoy tu batalla de vocabulario en Word Blaster.",
+   "ctaBtn": "Descargar gratis en el App Store",
+   "meta": {
+    "title": "Word Blaster - Un juego de disparos espacial para aprender vocabulario en inglés | TrailFusion AI",
+    "description": "Word Blaster es un juego de disparos de vocabulario ambientado en el espacio. Derriba palabras en inglés por nivel, compite con amigos en el ranking y aprende pronunciación y significado mientras juegas. Gratis en el App Store."
+   }
+  }
+ },
+ "fr": {
+  "wordblaster2": {
+   "breadcrumb": "Toutes les applications",
+   "badge": "Tir de vocabulaire",
+   "global": "Disponible dans le monde entier",
+   "sub": "Tirez pour mémoriser. Une bataille de vocabulaire dans l'espace",
+   "intro": "Un jeu de tir de vocabulaire par niveaux se déroulant dans l'espace, où vous abattez des mots anglais. Visez le mot au bon sens — une façon exaltante d'enrichir votre vocabulaire tout en vous amusant.",
+   "gplay": "Google Play — Bientôt disponible",
+   "chip0": "Tir spatial",
+   "chip1": "Apprentissage par niveaux",
+   "chip2": "Batailles de classement",
+   "chip3": "Téléchargement gratuit",
+   "featTitle": "Plus vous jouez, plus votre vocabulaire s'enrichit",
+   "featLead": "Nous transformons la \"mémorisation pénible\" en \"tirer, c'est amusant\" — une nouvelle façon d'apprendre le vocabulaire.",
+   "f0t": "Une action de tir spatial exaltante",
+   "f0d": "Un jeu de tir exaltant où vous visez et abattez les mots qui arrivent. Vous oublierez que vous êtes en train d'étudier.",
+   "f1t": "Des niveaux du débutant à l'avancé",
+   "f1d": "Choisissez des ensembles de mots adaptés à votre niveau. Progressez étape par étape, des mots de base au vocabulaire avancé.",
+   "f2t": "Affrontez vos amis au classement",
+   "f2d": "Affrontez amis et rivaux au classement des scores. Ne pas vouloir perdre devient votre moteur pour continuer.",
+   "f3t": "Prononciation et signification ensemble",
+   "f3d": "Jouez tout en vérifiant la prononciation et le sens de chaque mot, en mobilisant les yeux, les oreilles et les doigts pour bien mémoriser.",
+   "shotsTitle": "Captures d'écran",
+   "faqTitle": "Questions fréquentes",
+   "q0": "Peut-on y jouer gratuitement ?",
+   "a0": "Oui, le téléchargement et le jeu sont gratuits. Certaines fonctionnalités sont disponibles via des achats intégrés.",
+   "q1": "Quels niveaux de vocabulaire puis-je apprendre ?",
+   "a1": "Le contenu va du débutant à l'avancé, que vous souhaitiez consolider les bases ou enrichir un vocabulaire avancé.",
+   "q2": "Les enfants peuvent-ils y jouer aussi ?",
+   "a2": "Oui. C'est une façon ludique de découvrir des mots anglais, idéale comme porte d'entrée vers l'apprentissage de l'anglais.",
+   "q3": "Quels appareils sont pris en charge ?",
+   "a3": "Compatible avec iPhone et iPad (iOS). Une version Android est en préparation.",
+   "q4": "Comment contacter le support ?",
+   "a4": "N'hésitez pas à nous écrire à <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Politique de confidentialité",
+   "termsLink": "Conditions d'utilisation",
+   "ctaTitle": "Prêt au décollage ?",
+   "ctaLead": "Abattez les mots qui vous attendent dans l'espace. Commencez dès aujourd'hui votre bataille de vocabulaire avec Word Blaster.",
+   "ctaBtn": "Télécharger gratuitement sur l'App Store",
+   "meta": {
+    "title": "Word Blaster - Un jeu de tir spatial pour apprendre le vocabulaire anglais | TrailFusion AI",
+    "description": "Word Blaster est un jeu de tir de vocabulaire situé dans l'espace. Abattez des mots anglais par niveau, affrontez vos amis au classement et apprenez la prononciation et le sens en jouant. Gratuit sur l'App Store."
+   }
+  }
+ },
+ "de": {
+  "wordblaster2": {
+   "breadcrumb": "Alle Apps",
+   "badge": "Vokabel-Shooter",
+   "global": "Weltweit verfügbar",
+   "sub": "Schießen und merken. Eine Vokabel-Schlacht im Weltraum",
+   "intro": "Ein nach Schwierigkeitsgrad gestuftes Vokabel-Shooter-Spiel im Weltraum, bei dem Sie englische Wörter abschießen. Zielen Sie auf das Wort mit der richtigen Bedeutung — eine spannende Art, Ihren Wortschatz zu erweitern und dabei Spaß zu haben.",
+   "gplay": "Google Play — Demnächst verfügbar",
+   "chip0": "Weltraum-Shooter",
+   "chip1": "Lernen nach Level",
+   "chip2": "Ranglisten-Duelle",
+   "chip3": "Kostenloser Download",
+   "featTitle": "Je mehr Sie spielen, desto größer wird Ihr Wortschatz",
+   "featLead": "Wir machen aus \"mühsamem Auswendiglernen\" \"Spaß am Schießen\" — eine neue Art, Vokabeln zu lernen.",
+   "f0t": "Packende Weltraum-Shooter-Action",
+   "f0d": "Ein spannendes Shooter-Spiel, bei dem Sie anfliegende Wörter anvisieren und abschießen. Sie vergessen dabei, dass Sie lernen.",
+   "f1t": "Gestuft vom Anfänger bis zum Profi",
+   "f1d": "Wählen Sie Wortsets passend zu Ihrem Niveau. Steigern Sie sich Schritt für Schritt von Grundwortschatz zu fortgeschrittenem Vokabular.",
+   "f2t": "Mit Freunden auf der Rangliste konkurrieren",
+   "f2d": "Treten Sie mit Freunden und Rivalen in der Punkte-Rangliste an. Nicht verlieren zu wollen treibt Sie an, dranzubleiben.",
+   "f3t": "Aussprache und Bedeutung zusammen",
+   "f3d": "Spielen Sie und prüfen Sie dabei Aussprache und Bedeutung jedes Wortes — Augen, Ohren und Finger arbeiten zusammen, damit es hängen bleibt.",
+   "shotsTitle": "Screenshots",
+   "faqTitle": "Häufige Fragen",
+   "q0": "Kann ich kostenlos spielen?",
+   "a0": "Ja, der Download und das Spielen sind kostenlos. Einige Funktionen sind über In-App-Käufe verfügbar.",
+   "q1": "Welche Wortschatz-Level kann ich lernen?",
+   "a1": "Die Inhalte reichen vom Anfänger- bis zum Fortgeschrittenenniveau — egal ob Sie Grundlagen festigen oder fortgeschrittenes Vokabular aufbauen möchten.",
+   "q2": "Können auch Kinder spielen?",
+   "a2": "Ja. Es ist eine unterhaltsame Art, englische Wörter spielerisch kennenzulernen, und eignet sich hervorragend als Einstieg ins Englischlernen.",
+   "q3": "Welche Geräte werden unterstützt?",
+   "a3": "Unterstützt iPhone und iPad (iOS). Eine Android-Version ist in Arbeit.",
+   "q4": "Wie erreiche ich den Support?",
+   "a4": "Schreiben Sie uns jederzeit gerne an <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Datenschutzerklärung",
+   "termsLink": "Nutzungsbedingungen",
+   "ctaTitle": "Bereit zum Start?",
+   "ctaLead": "Schießen Sie die Wörter ab, die im Weltraum auf Sie warten. Starten Sie noch heute Ihre Vokabel-Schlacht in Word Blaster.",
+   "ctaBtn": "Kostenlos im App Store herunterladen",
+   "meta": {
+    "title": "Word Blaster - Ein Weltraum-Shooter, der englische Vokabeln lehrt | TrailFusion AI",
+    "description": "Word Blaster ist ein Vokabel-Shooter-Spiel im Weltraum. Schießen Sie englische Wörter nach Level ab, treten Sie mit Freunden auf der Rangliste an und lernen Sie Aussprache und Bedeutung beim Spielen. Kostenlos im App Store."
+   }
+  }
+ },
+ "pt": {
+  "wordblaster2": {
+   "breadcrumb": "Todos os apps",
+   "badge": "Atirador de vocabulário",
+   "global": "Disponível no mundo todo",
+   "sub": "Atire para memorizar. Uma batalha de vocabulário no espaço",
+   "intro": "Um jogo de tiro de vocabulário por níveis ambientado no espaço, onde você derruba palavras em inglês. Mire na palavra com o significado correto — uma forma empolgante de ampliar seu vocabulário enquanto se diverte.",
+   "gplay": "Google Play — Em breve",
+   "chip0": "Tiro espacial",
+   "chip1": "Aprendizado por nível",
+   "chip2": "Batalhas no ranking",
+   "chip3": "Download gratuito",
+   "featTitle": "Quanto mais você joga, mais vocabulário aprende",
+   "featLead": "Transformamos a \"memorização dolorosa\" em \"atirar é divertido\" — uma nova forma de aprender vocabulário.",
+   "f0t": "Ação empolgante de tiro espacial",
+   "f0d": "Um jogo de tiro empolgante em que você mira e derruba as palavras que se aproximam. Você vai esquecer que está estudando.",
+   "f1t": "Níveis do iniciante ao avançado",
+   "f1d": "Escolha conjuntos de palavras de acordo com seu nível. Avance passo a passo, de palavras básicas a vocabulário avançado.",
+   "f2t": "Compita com amigos no ranking",
+   "f2d": "Compita com amigos e rivais no ranking de pontuação. Não querer perder é o que mantém você motivado.",
+   "f3t": "Pronúncia e significado juntos",
+   "f3d": "Jogue enquanto confere a pronúncia e o significado de cada palavra, envolvendo olhos, ouvidos e dedos para fixar na memória.",
+   "shotsTitle": "Capturas de tela",
+   "faqTitle": "Perguntas frequentes",
+   "q0": "Dá para jogar de graça?",
+   "a0": "Sim, o download e o jogo são gratuitos. Alguns recursos estão disponíveis por meio de compras no aplicativo.",
+   "q1": "Quais níveis de vocabulário posso aprender?",
+   "a1": "O conteúdo vai do iniciante ao avançado, servindo tanto para quem quer reforçar a base quanto para quem quer ampliar um vocabulário avançado.",
+   "q2": "Crianças também podem jogar?",
+   "a2": "Sim. É uma forma divertida de ter contato com palavras em inglês brincando, ótima como porta de entrada para o aprendizado de inglês.",
+   "q3": "Quais dispositivos são compatíveis?",
+   "a3": "Compatível com iPhone e iPad (iOS). Uma versão para Android está em desenvolvimento.",
+   "q4": "Como entro em contato com o suporte?",
+   "a4": "Fique à vontade para nos escrever em <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Política de privacidade",
+   "termsLink": "Termos de serviço",
+   "ctaTitle": "Pronto para o lançamento?",
+   "ctaLead": "Derrube as palavras que esperam por você no espaço. Comece hoje sua batalha de vocabulário no Word Blaster.",
+   "ctaBtn": "Baixar grátis na App Store",
+   "meta": {
+    "title": "Word Blaster - Um jogo de tiro espacial que ensina vocabulário em inglês | TrailFusion AI",
+    "description": "Word Blaster é um jogo de tiro de vocabulário ambientado no espaço. Derrube palavras em inglês por nível, compita com amigos no ranking e aprenda pronúncia e significado enquanto joga. Grátis na App Store."
+   }
+  }
+ },
+ "ru": {
+  "wordblaster2": {
+   "breadcrumb": "Все приложения",
+   "badge": "Стрельба по словам",
+   "global": "Доступно по всему миру",
+   "sub": "Стреляй, чтобы запомнить. Битва за слова в космосе",
+   "intro": "Шутер для изучения слов по уровням сложности, действие которого происходит в космосе: вы сбиваете английские слова. Целься в слово с правильным значением — увлекательный способ расширить словарный запас, получая удовольствие от игры.",
+   "gplay": "Google Play — скоро",
+   "chip0": "Космический шутер",
+   "chip1": "Обучение по уровням",
+   "chip2": "Битвы в рейтинге",
+   "chip3": "Бесплатная загрузка",
+   "featTitle": "Чем больше играешь, тем больше слов знаешь",
+   "featLead": "Мы превращаем \"мучительное заучивание\" в \"весёлую стрельбу\" — новый способ изучения слов.",
+   "f0t": "Захватывающий космический экшен",
+   "f0d": "Увлекательная стрелялка, где вы прицеливаетесь и сбиваете приближающиеся слова. Вы забудете, что учитесь.",
+   "f1t": "Уровни от новичка до продвинутого",
+   "f1d": "Выбирайте наборы слов в соответствии со своим уровнем. Продвигайтесь шаг за шагом от базовых слов к продвинутой лексике.",
+   "f2t": "Соревнуйтесь с друзьями в рейтинге",
+   "f2d": "Соревнуйтесь с друзьями и соперниками в рейтинге по очкам. Нежелание проигрывать становится вашим двигателем.",
+   "f3t": "Произношение и значение вместе",
+   "f3d": "Играйте, одновременно проверяя произношение и значение каждого слова — задействуя глаза, уши и пальцы, чтобы лучше запомнить.",
+   "shotsTitle": "Скриншоты",
+   "faqTitle": "Частые вопросы",
+   "q0": "Можно играть бесплатно?",
+   "a0": "Да, загрузка и игра бесплатны. Некоторые функции доступны через покупки внутри приложения.",
+   "q1": "Слова какого уровня можно изучать?",
+   "a1": "Контент охватывает уровни от начального до продвинутого — подойдёт и тем, кто хочет закрепить базу, и тем, кто хочет расширить продвинутый словарный запас.",
+   "q2": "Могут ли играть дети?",
+   "a2": "Да. Это весёлый способ познакомиться с английскими словами через игру, отличная точка входа в изучение английского.",
+   "q3": "Какие устройства поддерживаются?",
+   "a3": "Поддерживаются iPhone и iPad (iOS). Версия для Android находится в разработке.",
+   "q4": "Как связаться с поддержкой?",
+   "a4": "Пишите нам в любое время на <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Политика конфиденциальности",
+   "termsLink": "Условия использования",
+   "ctaTitle": "Готовы к запуску?",
+   "ctaLead": "Сбейте слова, которые ждут вас в космосе. Начните свою битву за словарный запас в Word Blaster уже сегодня.",
+   "ctaBtn": "Скачать бесплатно в App Store",
+   "meta": {
+    "title": "Word Blaster - Космический шутер, который учит английским словам | TrailFusion AI",
+    "description": "Word Blaster — это шутер для изучения слов, действие которого происходит в космосе. Сбивайте английские слова по уровням, соревнуйтесь с друзьями в рейтинге и изучайте произношение и значение прямо во время игры. Бесплатно в App Store."
+   }
+  }
+ },
+ "hi": {
+  "wordblaster2": {
+   "breadcrumb": "सभी ऐप्स",
+   "badge": "शब्दावली शूटर",
+   "global": "विश्वव्यापी उपलब्ध",
+   "sub": "मार गिराओ, याद रखो। अंतरिक्ष में एक शब्दावली जंग",
+   "intro": "अंतरिक्ष में सेट एक लेवल-आधारित शब्दावली शूटिंग गेम, जिसमें आप अंग्रेजी शब्दों को मार गिराते हैं। सही अर्थ वाले शब्द को निशाना बनाएं — मज़े करते हुए अपनी शब्दावली बढ़ाने का एक रोमांचक तरीका।",
+   "gplay": "Google Play — जल्द आ रहा है",
+   "chip0": "अंतरिक्ष शूटिंग",
+   "chip1": "लेवल-आधारित सीख",
+   "chip2": "रैंकिंग मुकाबले",
+   "chip3": "मुफ्त डाउनलोड",
+   "featTitle": "जितना खेलेंगे, उतनी शब्दावली बढ़ेगी",
+   "featLead": "\"रटने के दर्द\" को \"मार गिराने के मज़े\" में बदल देता है — शब्दावली सीखने का एक नया तरीका।",
+   "f0t": "रोमांचक अंतरिक्ष शूटिंग एक्शन",
+   "f0d": "एक रोमांचक शूटिंग गेम जहां आप आते हुए शब्दों को निशाना बनाकर मार गिराते हैं। आप भूल जाएंगे कि आप पढ़ाई कर रहे हैं।",
+   "f1t": "शुरुआती से एडवांस्ड तक लेवल",
+   "f1d": "अपने स्तर के अनुसार शब्द सेट चुनें। बुनियादी शब्दों से लेकर कठिन शब्दावली तक धीरे-धीरे आगे बढ़ें।",
+   "f2t": "रैंकिंग में दोस्तों से मुकाबला करें",
+   "f2d": "स्कोर रैंकिंग में दोस्तों और प्रतिद्वंद्वियों से मुकाबला करें। हारना न चाहने की भावना ही आपको लगातार खेलते रहने की प्रेरणा देती है।",
+   "f3t": "उच्चारण और अर्थ एक साथ",
+   "f3d": "हर शब्द का उच्चारण और अर्थ जांचते हुए खेलें — आंख, कान और उंगलियों का पूरा इस्तेमाल कर इसे याद्दाश्त में पक्का करें।",
+   "shotsTitle": "ऐप के स्क्रीनशॉट",
+   "faqTitle": "अक्सर पूछे जाने वाले सवाल",
+   "q0": "क्या इसे मुफ्त में खेला जा सकता है?",
+   "a0": "हां, इसे मुफ्त में डाउनलोड करके खेला जा सकता है। कुछ सुविधाएं इन-ऐप खरीद के माध्यम से उपलब्ध हैं।",
+   "q1": "किस स्तर के शब्द सीखे जा सकते हैं?",
+   "a1": "सामग्री शुरुआती से एडवांस्ड स्तर तक है, चाहे आप बुनियादी बातें मजबूत करना चाहें या उन्नत शब्दावली बढ़ाना चाहें।",
+   "q2": "क्या बच्चे भी खेल सकते हैं?",
+   "a2": "हां। खेल-खेल में अंग्रेजी शब्दों से परिचित होने का यह एक मजेदार तरीका है, जो अंग्रेजी सीखने की शुरुआत के लिए भी बेहतरीन है।",
+   "q3": "कौन से डिवाइस सपोर्ट किए जाते हैं?",
+   "a3": "iPhone और iPad (iOS) सपोर्टेड हैं। Android वर्शन पर काम चल रहा है।",
+   "q4": "सहायता से कैसे संपर्क करें?",
+   "a4": "बेझिझक <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FFC93D;text-decoration:underline;\">trailfusionai@gmail.com</a> पर हमसे संपर्क करें।",
+   "privacyLink": "गोपनीयता नीति",
+   "termsLink": "सेवा की शर्तें",
+   "ctaTitle": "लॉन्च के लिए तैयार हैं?",
+   "ctaLead": "अंतरिक्ष में आपका इंतजार कर रहे शब्दों को मार गिराएं। आज ही Word Blaster में अपनी शब्दावली जंग शुरू करें।",
+   "ctaBtn": "App Store से मुफ्त डाउनलोड करें",
+   "meta": {
+    "title": "Word Blaster - अंतरिक्ष में अंग्रेजी शब्दावली सिखाने वाला शूटिंग गेम | TrailFusion AI",
+    "description": "Word Blaster अंतरिक्ष में सेट एक शब्दावली शूटिंग गेम है। स्तर के अनुसार अंग्रेजी शब्दों को मार गिराएं, रैंकिंग में दोस्तों से मुकाबला करें और खेलते हुए उच्चारण व अर्थ सीखें। App Store पर मुफ्त।"
+   }
+  }
+ }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
+</script>
 </body>
 </html>

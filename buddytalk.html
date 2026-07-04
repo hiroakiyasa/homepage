@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BuddyTalk - AI英会話・英単語ゲームで楽しく英語学習 | TrailFusion AI</title>
-<meta name="description" content="AI英会話アプリ「BuddyTalk」(旧GP Teachers)。個性豊かなAI英語パートナーとリアルな会話練習。発音評価、日常会話からビジネス英語まで、英単語ゲームも搭載。App Storeで無料ダウンロード。">
+<title data-i18n="buddytalk2.meta.title">BuddyTalk - AI英会話・英単語ゲームで楽しく英語学習 | TrailFusion AI</title>
+<meta name="description" content="AI英会話アプリ「BuddyTalk」(旧GP Teachers)。個性豊かなAI英語パートナーとリアルな会話練習。発音評価、日常会話からビジネス英語まで、英単語ゲームも搭載。App Storeで無料ダウンロード。" data-i18n-content="buddytalk2.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/buddytalk.html">
@@ -18,12 +18,19 @@
 <meta name="theme-color" content="#8FC7F0">
 <link rel="icon" type="image/png" href="assets/images/buddytalk/logo.png">
 <script>
-// 言語の事前判定 — 英語圏ユーザーには日本語を一瞬も見せない
 (function(){
-  var saved=null; try{saved=localStorage.getItem('buddytalk-lang');}catch(e){}
-  var lang=saved||(((navigator.languages&&navigator.languages[0])||navigator.language||'ja').toLowerCase().indexOf('ja')===0?'ja':'en');
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
   window.__PAGE_LANG=lang;
-  if(lang!=='ja'){document.documentElement.style.visibility='hidden';setTimeout(function(){document.documentElement.style.visibility='';},1500);}
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
 })();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
@@ -39,6 +46,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,9 +103,6 @@ body{background:#FFFBF2;color:#1F2E4D;}
 .faq-item .a{padding:0 1.4rem 1.3rem 3.4rem;color:rgba(31,46,77,.78);line-height:1.9;font-weight:600;font-size:.95rem;}
 .d-cta{background:#1F2E4D;position:relative;overflow:hidden;}
 .d-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#8FC7F022 1.5px,transparent 1.5px);background-size:28px 28px;}
-.lang-pill{display:inline-flex;border:2.5px solid #1F2E4D;border-radius:999px;overflow:hidden;background:#fff;box-shadow:3px 3px 0 #1F2E4D;}
-.lang-pill button{padding:.4rem 1rem;font-weight:900;font-size:.8rem;background:transparent;color:#1F2E4D;cursor:pointer;border:none;}
-.lang-pill button.on{background:#1F2E4D;color:#fff;}
 </style>
 </head>
 <body>
@@ -116,13 +121,15 @@ body{background:#FFFBF2;color:#1F2E4D;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -145,35 +152,31 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <div class="flex items-center justify-between gap-3 flex-wrap mb-8">
       <nav class="text-sm font-bold text-navy/70" aria-label="Breadcrumb">
-        <a href="apps.html" class="hover:text-coral transition" data-t="bc"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+        <a href="apps.html" class="hover:text-coral transition" data-i18n="buddytalk2.bc"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
         <span class="mx-2">/</span><span>BuddyTalk</span>
       </nav>
-      <span class="lang-pill" role="group" aria-label="Language">
-        <button type="button" data-setlang="ja">日本語</button>
-        <button type="button" data-setlang="en">EN</button>
-      </span>
     </div>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
       <div>
         <div class="flex items-center gap-4 mb-6">
           <div class="d-logo"><img src="assets/images/buddytalk/logo.png" alt="BuddyTalk ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
-            <span class="d-badge accent"><i class="ri-chat-smile-2-fill"></i><span data-t="badge">AI英会話</span></span>
-            <span class="d-badge"><i class="ri-earth-fill"></i><span data-t="global">全世界で配信中</span></span>
+            <span class="d-badge accent"><i class="ri-chat-smile-2-fill"></i><span data-i18n="buddytalk2.badge">AI英会話</span></span>
+            <span class="d-badge"><i class="ri-earth-fill"></i><span data-i18n="buddytalk2.global">全世界で配信中</span></span>
           </div>
         </div>
         <h1 class="display-xl text-4xl md:text-5xl lg:text-6xl mb-4 leading-none text-navy" style="letter-spacing:-.03em;">BuddyTalk</h1>
-        <p class="font-black text-lg md:text-2xl mb-4 text-navy" data-t="sub">AIパートナーと、毎日話したくなる英会話</p>
-        <p class="text-navy/70 leading-loose font-medium mb-7" data-t="intro">個性豊かなAI英語パートナーとリアルな会話練習ができる英語学習アプリです。いつでもどこでも、対話しながら実践的な英会話力を高めましょう。発音評価や英単語ゲームで、楽しく続けられます。</p>
+        <p class="font-black text-lg md:text-2xl mb-4 text-navy" data-i18n="buddytalk2.sub">AIパートナーと、毎日話したくなる英会話</p>
+        <p class="text-navy/70 leading-loose font-medium mb-7" data-i18n="buddytalk2.intro">個性豊かなAI英語パートナーとリアルな会話練習ができる英語学習アプリです。いつでもどこでも、対話しながら実践的な英会話力を高めましょう。発音評価や英単語ゲームで、楽しく続けられます。</p>
         <div class="flex flex-wrap gap-3 mb-6">
           <a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" rel="noopener" class="d-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
-          <span class="d-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-t="gplay">Google Play 準備中</span></span>
+          <span class="d-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="buddytalk2.gplay">Google Play 準備中</span></span>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="d-chip"><i class="ri-mic-fill" style="color:#4A90D9;"></i><span data-t="chip0">発音評価</span></span>
-          <span class="d-chip"><i class="ri-briefcase-fill" style="color:#4A90D9;"></i><span data-t="chip1">日常〜ビジネス英語</span></span>
-          <span class="d-chip"><i class="ri-gamepad-fill" style="color:#4A90D9;"></i><span data-t="chip2">英単語ゲーム</span></span>
-          <span class="d-chip"><i class="ri-price-tag-3-fill" style="color:#4A90D9;"></i><span data-t="chip3">無料ダウンロード</span></span>
+          <span class="d-chip"><i class="ri-mic-fill" style="color:#4A90D9;"></i><span data-i18n="buddytalk2.chip0">発音評価</span></span>
+          <span class="d-chip"><i class="ri-briefcase-fill" style="color:#4A90D9;"></i><span data-i18n="buddytalk2.chip1">日常〜ビジネス英語</span></span>
+          <span class="d-chip"><i class="ri-gamepad-fill" style="color:#4A90D9;"></i><span data-i18n="buddytalk2.chip2">英単語ゲーム</span></span>
+          <span class="d-chip"><i class="ri-price-tag-3-fill" style="color:#4A90D9;"></i><span data-i18n="buddytalk2.chip3">無料ダウンロード</span></span>
         </div>
       </div>
       <div class="d-frame">
@@ -187,36 +190,36 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#8FC7F0;color:#1F2E4D;">FEATURES</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-t="featTitle">話せるようになる、4つの理由</h2>
-      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-t="featLead">「勉強」ではなく「会話」から始める。だから、続くし、身につきます。</p>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-i18n="buddytalk2.featTitle">話せるようになる、4つの理由</h2>
+      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-i18n="buddytalk2.featLead">「勉強」ではなく「会話」から始める。だから、続くし、身につきます。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f0t">個性豊かなAIパートナー</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f0d">ユニークな性格を持つAI英語パートナーたちと自然な会話。相手を変えれば話題も変わります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="buddytalk2.f0t">個性豊かなAIパートナー</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="buddytalk2.f0d">ユニークな性格を持つAI英語パートナーたちと自然な会話。相手を変えれば話題も変わります。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f1t">発音評価とフィードバック</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f1d">あなたの発音をAIが評価し、詳細なフィードバックを返します。弱点がその場でわかります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="buddytalk2.f1t">発音評価とフィードバック</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="buddytalk2.f1d">あなたの発音をAIが評価し、詳細なフィードバックを返します。弱点がその場でわかります。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f2t">日常会話からビジネスまで</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f2d">旅行、雑談、会議、面接。幅広いシチュエーションで実践的な英語を練習できます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="buddytalk2.f2t">日常会話からビジネスまで</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="buddytalk2.f2d">旅行、雑談、会議、面接。幅広いシチュエーションで実践的な英語を練習できます。</p>
         </div>
       </div>
       <div class="d-feature flex items-start gap-4">
         <span class="d-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5" data-t="f3t">英単語ゲームと学習記録</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-t="f3d">楽しく続けられる英単語ゲームと学習トラッキングで、毎日の積み上げが見えます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="buddytalk2.f3t">英単語ゲームと学習記録</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="buddytalk2.f3d">楽しく続けられる英単語ゲームと学習トラッキングで、毎日の積み上げが見えます。</p>
         </div>
       </div>
     </div>
@@ -227,7 +230,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#8FC7F0;color:#1F2E4D;">SCREENSHOTS &amp; DEMO</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="shotsTitle">アプリの画面</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="buddytalk2.shotsTitle">アプリの画面</h2>
     </div>
     <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
       <div class="lg:col-span-7 grid grid-cols-2 gap-5">
@@ -252,34 +255,34 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="sticker" style="background:#8FC7F0;color:#1F2E4D;">FAQ</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-t="faqTitle">よくあるご質問</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="buddytalk2.faqTitle">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q0">無料で使えますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a0">無料でダウンロードしてお使いいただけます。より多くの会話や機能はサブスクリプションでご利用いただけます。詳しくはApp Storeをご確認ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="buddytalk2.q0">無料で使えますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="buddytalk2.a0">無料でダウンロードしてお使いいただけます。より多くの会話や機能はサブスクリプションでご利用いただけます。詳しくはApp Storeをご確認ください。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q1">GP Teachers とは別のアプリですか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a1">同じアプリです。「GP Teachers」から「BuddyTalk」に名前が変わりました。</p>
+        <summary><span class="qm">Q</span><span data-i18n="buddytalk2.q1">GP Teachers とは別のアプリですか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="buddytalk2.a1">同じアプリです。「GP Teachers」から「BuddyTalk」に名前が変わりました。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q2">英語のレベルは選べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a2">初級から上級まで対応しています。日常会話から始めて、ビジネス英語まで段階的にステップアップできます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="buddytalk2.q2">英語のレベルは選べますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="buddytalk2.a2">初級から上級まで対応しています。日常会話から始めて、ビジネス英語まで段階的にステップアップできます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
+        <summary><span class="qm">Q</span><span data-i18n="buddytalk2.q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="buddytalk2.a3">iPhone・iPad（iOS）に対応しています。Android版は準備中です。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span><span data-t="q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a" data-t="a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="buddytalk2.q4">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="buddytalk2.a4"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
       </details>
     </div>
     <p class="text-center mt-8 text-sm font-bold">
-      <a href="buddytalk-privacy.html" class="text-coral underline underline-offset-4" data-t="privacyLink">プライバシーポリシー</a>
+      <a href="buddytalk-privacy.html" class="text-coral underline underline-offset-4" data-i18n="buddytalk2.privacyLink">プライバシーポリシー</a>
       <span class="mx-2 text-navy/40">·</span>
-      <a href="buddytalk-terms.html" class="text-coral underline underline-offset-4" data-t="termsLink">利用規約</a>
+      <a href="buddytalk-terms.html" class="text-coral underline underline-offset-4" data-i18n="buddytalk2.termsLink">利用規約</a>
     </p>
   </div>
 </section>
@@ -287,9 +290,9 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <section class="d-cta py-16 md:py-24 border-t-[3px] border-navy">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="d-logo mx-auto mb-6" style="transform:rotate(3deg);"><img src="assets/images/buddytalk/logo.png" alt="BuddyTalk ロゴ"></div>
-    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-t="ctaTitle">今日から、英語で話そう。</h2>
-    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-t="ctaLead">AIパートナーがあなたを待っています。まずは1回、話しかけてみてください。</p>
-    <a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-t="ctaBtn">App Store で無料ダウンロード</span></a>
+    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-i18n="buddytalk2.ctaTitle">今日から、英語で話そう。</h2>
+    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-i18n="buddytalk2.ctaLead">AIパートナーがあなたを待っています。まずは1回、話しかけてみてください。</p>
+    <a href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-i18n="buddytalk2.ctaBtn">App Store で無料ダウンロード</span></a>
   </div>
 </section>
 
@@ -316,7 +319,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -361,36 +364,464 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <script src="assets/js/trailfusion-ui.js"></script>
 
 <script>
-(function(){
-  var EN={"bc":"<i class=\"ri-arrow-left-line\"></i> All Apps","badge":"AI English Conversation","global":"Available worldwide","sub":"English conversation you actually look forward to","intro":"BuddyTalk is an English learning app for realistic conversation practice with unique AI partners. Improve your practical speaking skills anytime, anywhere — with pronunciation feedback and vocabulary games that keep it fun.","gplay":"Google Play — Coming Soon","chip0":"Pronunciation feedback","chip1":"Daily to business English","chip2":"Vocabulary games","chip3":"Free download","featTitle":"Four reasons you'll actually speak","featLead":"Start from conversation, not textbooks. That's why it sticks.","f0t":"Unique AI partners","f0d":"Natural conversations with AI partners who each have their own personality. Change partners, change topics.","f1t":"Pronunciation evaluation","f1d":"AI scores your pronunciation and gives detailed feedback, so you see your weak points instantly.","f2t":"Everyday to business","f2d":"Travel, small talk, meetings, interviews — practice practical English across a wide range of situations.","f3t":"Games & progress tracking","f3d":"Fun vocabulary games and learning stats make your daily progress visible.","shotsTitle":"Screenshots","faqTitle":"FAQ","q0":"Is it free?","a0":"Yes — free to download and start. More conversations and features are available via subscription. See the App Store for details.","q1":"Is this different from GP Teachers?","a1":"Same app. GP Teachers has been renamed to BuddyTalk.","q2":"Can I choose my English level?","a2":"Yes, from beginner to advanced. Start with daily conversation and step up to business English.","q3":"Which devices are supported?","a3":"iPhone and iPad (iOS). An Android version is in the works.","q4":"How can I contact support?","a4":"Email us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.","privacyLink":"Privacy Policy","termsLink":"Terms of Service","ctaTitle":"Start speaking English today.","ctaLead":"Your AI partner is waiting. Just say hello.","ctaBtn":"Download free on the App Store"};
-  var KEY='buddytalk-lang';
-  function apply(lang){
-    document.documentElement.lang=lang;
-    document.querySelectorAll('[data-t]').forEach(function(el){
-      var k=el.getAttribute('data-t');
-      if(lang==='en'){
-        if(!el.hasAttribute('data-ja')) el.setAttribute('data-ja', el.innerHTML);
-        if(EN[k]!==undefined) el.innerHTML=EN[k];
-      }else if(el.hasAttribute('data-ja')){
-        el.innerHTML=el.getAttribute('data-ja');
-      }
-    });
-    document.querySelectorAll('[data-setlang]').forEach(function(b){
-      b.classList.toggle('on', b.getAttribute('data-setlang')===lang);
-    });
-    document.documentElement.style.visibility='';
+window.pageTranslations = {
+ "ja": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - AI英会話・英単語ゲームで楽しく英語学習 | TrailFusion AI",
+    "description": "AI英会話アプリ「BuddyTalk」(旧GP Teachers)。個性豊かなAI英語パートナーとリアルな会話練習。発音評価、日常会話からビジネス英語まで、英単語ゲームも搭載。App Storeで無料ダウンロード。"
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> 開発したアプリ一覧",
+   "badge": "AI英会話",
+   "global": "全世界で配信中",
+   "sub": "AIパートナーと、毎日話したくなる英会話",
+   "intro": "個性豊かなAI英語パートナーとリアルな会話練習ができる英語学習アプリです。いつでもどこでも、対話しながら実践的な英会話力を高めましょう。発音評価や英単語ゲームで、楽しく続けられます。",
+   "gplay": "Google Play 準備中",
+   "chip0": "発音評価",
+   "chip1": "日常〜ビジネス英語",
+   "chip2": "英単語ゲーム",
+   "chip3": "無料ダウンロード",
+   "featTitle": "話せるようになる、4つの理由",
+   "featLead": "「勉強」ではなく「会話」から始める。だから、続くし、身につきます。",
+   "f0t": "個性豊かなAIパートナー",
+   "f0d": "ユニークな性格を持つAI英語パートナーたちと自然な会話。相手を変えれば話題も変わります。",
+   "f1t": "発音評価とフィードバック",
+   "f1d": "あなたの発音をAIが評価し、詳細なフィードバックを返します。弱点がその場でわかります。",
+   "f2t": "日常会話からビジネスまで",
+   "f2d": "旅行、雑談、会議、面接。幅広いシチュエーションで実践的な英語を練習できます。",
+   "f3t": "英単語ゲームと学習記録",
+   "f3d": "楽しく続けられる英単語ゲームと学習トラッキングで、毎日の積み上げが見えます。",
+   "shotsTitle": "アプリの画面",
+   "faqTitle": "よくあるご質問",
+   "q0": "無料で使えますか？",
+   "a0": "無料でダウンロードしてお使いいただけます。より多くの会話や機能はサブスクリプションでご利用いただけます。詳しくはApp Storeをご確認ください。",
+   "q1": "GP Teachers とは別のアプリですか？",
+   "a1": "同じアプリです。「GP Teachers」から「BuddyTalk」に名前が変わりました。",
+   "q2": "英語のレベルは選べますか？",
+   "a2": "初級から上級まで対応しています。日常会話から始めて、ビジネス英語まで段階的にステップアップできます。",
+   "q3": "対応している端末は？",
+   "a3": "iPhone・iPad（iOS）に対応しています。Android版は準備中です。",
+   "q4": "お問い合わせ先は？",
+   "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> までお気軽にご連絡ください。",
+   "privacyLink": "プライバシーポリシー",
+   "termsLink": "利用規約",
+   "ctaTitle": "今日から、英語で話そう。",
+   "ctaLead": "AIパートナーがあなたを待っています。まずは1回、話しかけてみてください。",
+   "ctaBtn": "App Store で無料ダウンロード"
   }
-  document.addEventListener('DOMContentLoaded', function(){
-    apply(window.__PAGE_LANG||'ja');
-    document.querySelectorAll('[data-setlang]').forEach(function(b){
-      b.addEventListener('click', function(){
-        var l=b.getAttribute('data-setlang');
-        try{localStorage.setItem(KEY,l);}catch(e){}
-        apply(l);
-      });
-    });
-  });
-})();
+ },
+ "en": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Fun AI English Conversation & Vocabulary Games | TrailFusion AI",
+    "description": "BuddyTalk (formerly GP Teachers) is an AI English conversation app. Practice real conversations with unique AI partners, get pronunciation feedback, and enjoy vocabulary games. Free on the App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> All Apps",
+   "badge": "AI English Conversation",
+   "global": "Available worldwide",
+   "sub": "English conversation you actually look forward to",
+   "intro": "BuddyTalk is an English learning app for realistic conversation practice with unique AI partners. Improve your practical speaking skills anytime, anywhere — with pronunciation feedback and vocabulary games that keep it fun.",
+   "gplay": "Google Play — Coming Soon",
+   "chip0": "Pronunciation feedback",
+   "chip1": "Daily to business English",
+   "chip2": "Vocabulary games",
+   "chip3": "Free download",
+   "featTitle": "Four reasons you'll actually speak",
+   "featLead": "Start from conversation, not textbooks. That's why it sticks.",
+   "f0t": "Unique AI partners",
+   "f0d": "Natural conversations with AI partners who each have their own personality. Change partners, change topics.",
+   "f1t": "Pronunciation evaluation",
+   "f1d": "AI scores your pronunciation and gives detailed feedback, so you see your weak points instantly.",
+   "f2t": "Everyday to business",
+   "f2d": "Travel, small talk, meetings, interviews — practice practical English across a wide range of situations.",
+   "f3t": "Games & progress tracking",
+   "f3d": "Fun vocabulary games and learning stats make your daily progress visible.",
+   "shotsTitle": "Screenshots",
+   "faqTitle": "FAQ",
+   "q0": "Is it free?",
+   "a0": "Yes — free to download and start. More conversations and features are available via subscription. See the App Store for details.",
+   "q1": "Is this different from GP Teachers?",
+   "a1": "Same app. GP Teachers has been renamed to BuddyTalk.",
+   "q2": "Can I choose my English level?",
+   "a2": "Yes, from beginner to advanced. Start with daily conversation and step up to business English.",
+   "q3": "Which devices are supported?",
+   "a3": "iPhone and iPad (iOS). An Android version is in the works.",
+   "q4": "How can I contact support?",
+   "a4": "Email us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Privacy Policy",
+   "termsLink": "Terms of Service",
+   "ctaTitle": "Start speaking English today.",
+   "ctaLead": "Your AI partner is waiting. Just say hello.",
+   "ctaBtn": "Download free on the App Store"
+  }
+ },
+ "zh": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - 有趣的AI英语对话与单词游戏 | TrailFusion AI",
+    "description": "AI英语对话应用「BuddyTalk」(原GP Teachers)。与个性丰富的AI英语伙伴进行真实对话练习，发音评分，从日常到商务英语，还有单词游戏。App Store免费下载。"
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> 所有应用",
+   "badge": "AI英语对话",
+   "global": "全球发行中",
+   "sub": "和AI伙伴聊天，聊到停不下来",
+   "intro": "BuddyTalk是一款可以和个性丰富的AI英语伙伴进行真实对话练习的英语学习应用。随时随地边聊边练，提升实用口语能力。发音评分和单词游戏让学习更有趣，坚持更容易。",
+   "gplay": "Google Play 即将上线",
+   "chip0": "发音评分",
+   "chip1": "日常到商务英语",
+   "chip2": "单词游戏",
+   "chip3": "免费下载",
+   "featTitle": "让你真正开口说话的4个理由",
+   "featLead": "从对话开始，而不是课本。这就是它能坚持下去的原因。",
+   "f0t": "个性丰富的AI伙伴",
+   "f0d": "和拥有独特个性的AI英语伙伴自然对话。换个伙伴，话题也会不同。",
+   "f1t": "发音评估与反馈",
+   "f1d": "AI会为你的发音打分并给出详细反馈，让你立刻发现自己的弱点。",
+   "f2t": "从日常到商务场景",
+   "f2d": "旅行、闲聊、会议、面试——在各种场景中练习实用英语。",
+   "f3t": "单词游戏与学习记录",
+   "f3d": "有趣的单词游戏和学习追踪，让你每天的进步一目了然。",
+   "shotsTitle": "应用截图",
+   "faqTitle": "常见问题",
+   "q0": "可以免费使用吗？",
+   "a0": "可以免费下载并开始使用。更多对话和功能可通过订阅解锁，详情请查看App Store。",
+   "q1": "这和GP Teachers是不同的应用吗？",
+   "a1": "是同一款应用。「GP Teachers」已更名为「BuddyTalk」。",
+   "q2": "可以选择英语水平吗？",
+   "a2": "支持从初级到高级。可以从日常对话开始，循序渐进地提升到商务英语。",
+   "q3": "支持哪些设备？",
+   "a3": "支持iPhone和iPad（iOS）。Android版本正在准备中。",
+   "q4": "如何联系支持团队？",
+   "a4": "欢迎随时发邮件至 <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>。",
+   "privacyLink": "隐私政策",
+   "termsLink": "使用条款",
+   "ctaTitle": "从今天开始说英语吧。",
+   "ctaLead": "你的AI伙伴正在等你，先打个招呼试试吧。",
+   "ctaBtn": "在App Store免费下载"
+  }
+ },
+ "ko": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - 재미있는 AI 영어회화 & 단어 게임 | TrailFusion AI",
+    "description": "AI 영어회화 앱 'BuddyTalk'(구 GP Teachers). 개성 넘치는 AI 영어 파트너와 실전 회화 연습. 발음 평가, 일상부터 비즈니스 영어까지, 영단어 게임도 탑재. App Store에서 무료 다운로드."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> 전체 앱",
+   "badge": "AI 영어회화",
+   "global": "전 세계 서비스 중",
+   "sub": "AI 파트너와 매일 이야기하고 싶어지는 영어회화",
+   "intro": "개성 넘치는 AI 영어 파트너와 실전 회화 연습을 할 수 있는 영어 학습 앱입니다. 언제 어디서나 대화하며 실용적인 영어회화 실력을 키워보세요. 발음 평가와 단어 게임으로 재미있게 계속할 수 있습니다.",
+   "gplay": "Google Play 준비 중",
+   "chip0": "발음 평가",
+   "chip1": "일상~비즈니스 영어",
+   "chip2": "단어 게임",
+   "chip3": "무료 다운로드",
+   "featTitle": "실제로 말하게 되는 4가지 이유",
+   "featLead": "교재가 아닌 '대화'부터 시작합니다. 그래서 꾸준히 이어지고 몸에 익습니다.",
+   "f0t": "개성 넘치는 AI 파트너",
+   "f0d": "저마다 뚜렷한 개성을 가진 AI 영어 파트너와의 자연스러운 대화. 파트너를 바꾸면 주제도 달라집니다.",
+   "f1t": "발음 평가와 피드백",
+   "f1d": "AI가 당신의 발음을 평가하고 상세한 피드백을 제공해, 약점을 그 자리에서 파악할 수 있습니다.",
+   "f2t": "일상 회화부터 비즈니스까지",
+   "f2d": "여행, 잡담, 회의, 면접까지 다양한 상황에서 실용 영어를 연습할 수 있습니다.",
+   "f3t": "단어 게임과 학습 기록",
+   "f3d": "즐겁게 계속할 수 있는 단어 게임과 학습 트래킹으로, 매일의 성장을 눈으로 확인할 수 있습니다.",
+   "shotsTitle": "앱 화면",
+   "faqTitle": "자주 묻는 질문",
+   "q0": "무료로 사용할 수 있나요?",
+   "a0": "무료로 다운로드해 사용할 수 있습니다. 더 많은 대화와 기능은 구독을 통해 이용할 수 있습니다. 자세한 내용은 App Store를 확인해 주세요.",
+   "q1": "GP Teachers와는 다른 앱인가요?",
+   "a1": "같은 앱입니다. 'GP Teachers'에서 'BuddyTalk'로 이름이 바뀌었습니다.",
+   "q2": "영어 레벨을 선택할 수 있나요?",
+   "a2": "초급부터 고급까지 지원합니다. 일상 회화부터 시작해 비즈니스 영어까지 단계적으로 올라갈 수 있습니다.",
+   "q3": "지원 기기는 무엇인가요?",
+   "a3": "iPhone·iPad(iOS)를 지원합니다. Android 버전은 준비 중입니다.",
+   "q4": "문의는 어디로 하나요?",
+   "a4": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> 으로 편하게 연락해 주세요.",
+   "privacyLink": "개인정보처리방침",
+   "termsLink": "이용약관",
+   "ctaTitle": "오늘부터 영어로 이야기해 보세요.",
+   "ctaLead": "AI 파트너가 당신을 기다리고 있어요. 먼저 한 번 말을 걸어보세요.",
+   "ctaBtn": "App Store에서 무료 다운로드"
+  }
+ },
+ "es": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Conversación en inglés con IA y juegos de vocabulario | TrailFusion AI",
+    "description": "BuddyTalk (antes GP Teachers) es una app de conversación en inglés con IA. Practica conversaciones reales con compañeros de IA únicos, recibe evaluación de pronunciación y disfruta de juegos de vocabulario. Descarga gratis en la App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> Todas las apps",
+   "badge": "Conversación en inglés con IA",
+   "global": "Disponible en todo el mundo",
+   "sub": "Conversaciones en inglés que de verdad esperas con ganas",
+   "intro": "BuddyTalk es una app de aprendizaje de inglés para practicar conversaciones realistas con compañeros de IA únicos. Mejora tu nivel de conversación práctica en cualquier momento y lugar, con evaluación de pronunciación y juegos de vocabulario que lo hacen divertido.",
+   "gplay": "Google Play — Próximamente",
+   "chip0": "Evaluación de pronunciación",
+   "chip1": "Del día a día a los negocios",
+   "chip2": "Juegos de vocabulario",
+   "chip3": "Descarga gratuita",
+   "featTitle": "Cuatro razones por las que de verdad hablarás",
+   "featLead": "Empieza por la conversación, no por los libros de texto. Por eso funciona.",
+   "f0t": "Compañeros de IA únicos",
+   "f0d": "Conversaciones naturales con compañeros de IA que tienen su propia personalidad. Cambia de compañero, cambia de tema.",
+   "f1t": "Evaluación de pronunciación",
+   "f1d": "La IA puntúa tu pronunciación y te da retroalimentación detallada, para que veas tus puntos débiles al instante.",
+   "f2t": "Del día a día a los negocios",
+   "f2d": "Viajes, charlas informales, reuniones, entrevistas: practica inglés práctico en muchas situaciones distintas.",
+   "f3t": "Juegos y seguimiento del progreso",
+   "f3d": "Juegos de vocabulario divertidos y estadísticas de aprendizaje que muestran tu progreso diario.",
+   "shotsTitle": "Capturas de pantalla",
+   "faqTitle": "Preguntas frecuentes",
+   "q0": "¿Es gratis?",
+   "a0": "Sí, es gratis descargarla y empezar. Hay más conversaciones y funciones disponibles mediante suscripción. Consulta la App Store para más detalles.",
+   "q1": "¿Es diferente de GP Teachers?",
+   "a1": "Es la misma app. GP Teachers ha pasado a llamarse BuddyTalk.",
+   "q2": "¿Puedo elegir mi nivel de inglés?",
+   "a2": "Sí, desde principiante hasta avanzado. Empieza con conversación diaria y avanza hasta el inglés de negocios.",
+   "q3": "¿Qué dispositivos son compatibles?",
+   "a3": "iPhone y iPad (iOS). Una versión para Android está en camino.",
+   "q4": "¿Cómo puedo contactar con soporte?",
+   "a4": "Escríbenos cuando quieras a <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Política de privacidad",
+   "termsLink": "Términos de servicio",
+   "ctaTitle": "Empieza a hablar inglés hoy mismo.",
+   "ctaLead": "Tu compañero de IA te está esperando. Solo tienes que saludar.",
+   "ctaBtn": "Descarga gratis en la App Store"
+  }
+ },
+ "fr": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Conversation anglaise avec IA et jeux de vocabulaire | TrailFusion AI",
+    "description": "BuddyTalk (anciennement GP Teachers) est une appli de conversation anglaise avec IA. Pratiquez de vraies conversations avec des partenaires IA uniques, obtenez une évaluation de la prononciation et profitez de jeux de vocabulaire. Téléchargement gratuit sur l'App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> Toutes les applications",
+   "badge": "Conversation anglaise avec IA",
+   "global": "Disponible dans le monde entier",
+   "sub": "Une conversation en anglais que vous attendrez avec impatience",
+   "intro": "BuddyTalk est une appli d'apprentissage de l'anglais pour pratiquer des conversations réalistes avec des partenaires IA uniques. Améliorez vos compétences pratiques à l'oral n'importe où, n'importe quand, avec une évaluation de la prononciation et des jeux de vocabulaire qui rendent l'apprentissage amusant.",
+   "gplay": "Google Play — Bientôt disponible",
+   "chip0": "Évaluation de la prononciation",
+   "chip1": "Du quotidien aux affaires",
+   "chip2": "Jeux de vocabulaire",
+   "chip3": "Téléchargement gratuit",
+   "featTitle": "Quatre raisons pour lesquelles vous parlerez vraiment",
+   "featLead": "On commence par la conversation, pas par les manuels. C'est pour ça que ça reste.",
+   "f0t": "Des partenaires IA uniques",
+   "f0d": "Des conversations naturelles avec des partenaires IA ayant chacun leur propre personnalité. Changez de partenaire, changez de sujet.",
+   "f1t": "Évaluation de la prononciation",
+   "f1d": "L'IA note votre prononciation et vous donne un retour détaillé, pour repérer vos points faibles instantanément.",
+   "f2t": "Du quotidien aux affaires",
+   "f2d": "Voyages, discussions informelles, réunions, entretiens — pratiquez un anglais concret dans de nombreuses situations.",
+   "f3t": "Jeux et suivi de progression",
+   "f3d": "Des jeux de vocabulaire amusants et un suivi d'apprentissage qui rendent vos progrès quotidiens visibles.",
+   "shotsTitle": "Captures d'écran",
+   "faqTitle": "Questions fréquentes",
+   "q0": "Est-ce gratuit ?",
+   "a0": "Oui, le téléchargement et le démarrage sont gratuits. Davantage de conversations et de fonctionnalités sont disponibles par abonnement. Voir l'App Store pour plus de détails.",
+   "q1": "Est-ce différent de GP Teachers ?",
+   "a1": "C'est la même application. GP Teachers a été renommée BuddyTalk.",
+   "q2": "Puis-je choisir mon niveau d'anglais ?",
+   "a2": "Oui, du débutant à l'avancé. Commencez par la conversation quotidienne et progressez jusqu'à l'anglais des affaires.",
+   "q3": "Quels appareils sont pris en charge ?",
+   "a3": "iPhone et iPad (iOS). Une version Android est en préparation.",
+   "q4": "Comment contacter le support ?",
+   "a4": "Écrivez-nous à tout moment à <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Politique de confidentialité",
+   "termsLink": "Conditions d'utilisation",
+   "ctaTitle": "Commencez à parler anglais dès aujourd'hui.",
+   "ctaLead": "Votre partenaire IA vous attend. Dites simplement bonjour.",
+   "ctaBtn": "Téléchargement gratuit sur l'App Store"
+  }
+ },
+ "de": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Unterhaltsame KI-Englischgespräche & Vokabelspiele | TrailFusion AI",
+    "description": "BuddyTalk (früher GP Teachers) ist eine KI-App für englische Konversation. Übe echte Gespräche mit einzigartigen KI-Partnern, erhalte Ausspracheauswertung und genieße Vokabelspiele. Kostenlos im App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> Alle Apps",
+   "badge": "KI-Englischgespräche",
+   "global": "Weltweit verfügbar",
+   "sub": "Englisch-Gespräche, auf die du dich wirklich freust",
+   "intro": "BuddyTalk ist eine Englisch-Lern-App für realistische Gesprächsübungen mit einzigartigen KI-Partnern. Verbessere deine praktischen Sprechfähigkeiten jederzeit und überall – mit Ausspracheauswertung und Vokabelspielen, die Spaß machen.",
+   "gplay": "Google Play — Demnächst",
+   "chip0": "Ausspracheauswertung",
+   "chip1": "Vom Alltag bis zum Business-Englisch",
+   "chip2": "Vokabelspiele",
+   "chip3": "Kostenloser Download",
+   "featTitle": "Vier Gründe, warum du wirklich sprechen wirst",
+   "featLead": "Beginne mit dem Gespräch, nicht mit dem Lehrbuch. Deshalb bleibt es hängen.",
+   "f0t": "Einzigartige KI-Partner",
+   "f0d": "Natürliche Gespräche mit KI-Partnern, die jeweils eine eigene Persönlichkeit haben. Anderer Partner, anderes Thema.",
+   "f1t": "Ausspracheauswertung",
+   "f1d": "Die KI bewertet deine Aussprache und gibt dir detailliertes Feedback, sodass du deine Schwächen sofort erkennst.",
+   "f2t": "Vom Alltag bis zum Beruf",
+   "f2d": "Reisen, Small Talk, Meetings, Vorstellungsgespräche — übe praktisches Englisch in vielen unterschiedlichen Situationen.",
+   "f3t": "Spiele & Fortschrittsverfolgung",
+   "f3d": "Unterhaltsame Vokabelspiele und Lernstatistiken machen deinen täglichen Fortschritt sichtbar.",
+   "shotsTitle": "Screenshots",
+   "faqTitle": "Häufig gestellte Fragen",
+   "q0": "Ist es kostenlos?",
+   "a0": "Ja, der Download und Einstieg sind kostenlos. Mehr Gespräche und Funktionen sind über ein Abonnement verfügbar. Details siehe App Store.",
+   "q1": "Ist das eine andere App als GP Teachers?",
+   "a1": "Es ist dieselbe App. GP Teachers wurde in BuddyTalk umbenannt.",
+   "q2": "Kann ich mein Englischniveau auswählen?",
+   "a2": "Ja, von Anfänger bis Fortgeschritten. Starte mit alltäglichen Gesprächen und steigere dich bis zum Business-Englisch.",
+   "q3": "Welche Geräte werden unterstützt?",
+   "a3": "iPhone und iPad (iOS). Eine Android-Version ist in Arbeit.",
+   "q4": "Wie kann ich den Support kontaktieren?",
+   "a4": "Schreib uns jederzeit an <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Datenschutzerklärung",
+   "termsLink": "Nutzungsbedingungen",
+   "ctaTitle": "Fang noch heute an, Englisch zu sprechen.",
+   "ctaLead": "Dein KI-Partner wartet auf dich. Sag einfach Hallo.",
+   "ctaBtn": "Kostenlos im App Store herunterladen"
+  }
+ },
+ "pt": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Conversação em inglês com IA e jogos de vocabulário | TrailFusion AI",
+    "description": "BuddyTalk (antigo GP Teachers) é um app de conversação em inglês com IA. Pratique conversas reais com parceiros de IA únicos, receba avaliação de pronúncia e aproveite jogos de vocabulário. Download gratuito na App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> Todos os apps",
+   "badge": "Conversação em inglês com IA",
+   "global": "Disponível no mundo todo",
+   "sub": "Conversas em inglês que você vai realmente querer ter todo dia",
+   "intro": "O BuddyTalk é um app de aprendizado de inglês para praticar conversas realistas com parceiros de IA únicos. Melhore suas habilidades práticas de fala a qualquer hora e lugar, com avaliação de pronúncia e jogos de vocabulário que tornam tudo mais divertido.",
+   "gplay": "Google Play — Em breve",
+   "chip0": "Avaliação de pronúncia",
+   "chip1": "Do dia a dia aos negócios",
+   "chip2": "Jogos de vocabulário",
+   "chip3": "Download gratuito",
+   "featTitle": "Quatro motivos para você realmente falar",
+   "featLead": "Comece pela conversa, não pelo livro didático. É por isso que funciona.",
+   "f0t": "Parceiros de IA únicos",
+   "f0d": "Conversas naturais com parceiros de IA que têm personalidades próprias. Troque de parceiro, troque de assunto.",
+   "f1t": "Avaliação de pronúncia",
+   "f1d": "A IA avalia sua pronúncia e dá feedback detalhado, para você identificar seus pontos fracos na hora.",
+   "f2t": "Do dia a dia aos negócios",
+   "f2d": "Viagens, papo informal, reuniões, entrevistas — pratique inglês prático em diversas situações.",
+   "f3t": "Jogos e acompanhamento de progresso",
+   "f3d": "Jogos de vocabulário divertidos e estatísticas de aprendizado deixam seu progresso diário visível.",
+   "shotsTitle": "Capturas de tela",
+   "faqTitle": "Perguntas frequentes",
+   "q0": "É gratuito?",
+   "a0": "Sim, o download e o início são gratuitos. Mais conversas e recursos estão disponíveis por assinatura. Veja detalhes na App Store.",
+   "q1": "É diferente do GP Teachers?",
+   "a1": "É o mesmo app. O GP Teachers foi renomeado para BuddyTalk.",
+   "q2": "Posso escolher meu nível de inglês?",
+   "a2": "Sim, do iniciante ao avançado. Comece com conversas do dia a dia e avance até o inglês para negócios.",
+   "q3": "Quais dispositivos são compatíveis?",
+   "a3": "iPhone e iPad (iOS). Uma versão para Android está em desenvolvimento.",
+   "q4": "Como entro em contato com o suporte?",
+   "a4": "Escreva a qualquer momento para <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Política de privacidade",
+   "termsLink": "Termos de uso",
+   "ctaTitle": "Comece a falar inglês hoje mesmo.",
+   "ctaLead": "Seu parceiro de IA está esperando. É só dizer oi.",
+   "ctaBtn": "Baixe grátis na App Store"
+  }
+ },
+ "ru": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - Увлекательный английский с ИИ и словарные игры | TrailFusion AI",
+    "description": "BuddyTalk (ранее GP Teachers) — приложение для общения на английском с ИИ. Практикуйте реальные диалоги с уникальными ИИ-партнёрами, получайте оценку произношения и играйте в словарные игры. Бесплатно в App Store."
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> Все приложения",
+   "badge": "Английский с ИИ",
+   "global": "Доступно по всему миру",
+   "sub": "Разговоры на английском, которых вы будете ждать с нетерпением",
+   "intro": "BuddyTalk — приложение для изучения английского с реалистичной практикой диалогов с уникальными ИИ-партнёрами. Улучшайте разговорные навыки где угодно и когда угодно — с оценкой произношения и словарными играми, которые делают процесс увлекательным.",
+   "gplay": "Google Play — скоро",
+   "chip0": "Оценка произношения",
+   "chip1": "От бытового до делового английского",
+   "chip2": "Словарные игры",
+   "chip3": "Бесплатная загрузка",
+   "featTitle": "Четыре причины, почему вы действительно заговорите",
+   "featLead": "Начните с разговора, а не с учебника. Именно поэтому это работает.",
+   "f0t": "Уникальные ИИ-партнёры",
+   "f0d": "Естественные разговоры с ИИ-партнёрами, у каждого из которых своя личность. Смените партнёра — сменится и тема.",
+   "f1t": "Оценка произношения",
+   "f1d": "ИИ оценивает ваше произношение и даёт подробную обратную связь, чтобы вы сразу видели свои слабые места.",
+   "f2t": "От повседневного до делового",
+   "f2d": "Путешествия, светская беседа, встречи, собеседования — практикуйте практичный английский в самых разных ситуациях.",
+   "f3t": "Игры и отслеживание прогресса",
+   "f3d": "Увлекательные словарные игры и статистика обучения делают ваш ежедневный прогресс наглядным.",
+   "shotsTitle": "Скриншоты",
+   "faqTitle": "Часто задаваемые вопросы",
+   "q0": "Это бесплатно?",
+   "a0": "Да, загрузка и начало работы бесплатны. Больше диалогов и функций доступно по подписке. Подробности в App Store.",
+   "q1": "Это отличается от GP Teachers?",
+   "a1": "Это то же самое приложение. GP Teachers переименовано в BuddyTalk.",
+   "q2": "Можно выбрать уровень английского?",
+   "a2": "Да, от начального до продвинутого. Начните с повседневных диалогов и переходите к деловому английскому.",
+   "q3": "Какие устройства поддерживаются?",
+   "a3": "iPhone и iPad (iOS). Версия для Android находится в разработке.",
+   "q4": "Как связаться с поддержкой?",
+   "a4": "Пишите в любое время на <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+   "privacyLink": "Политика конфиденциальности",
+   "termsLink": "Условия использования",
+   "ctaTitle": "Начните говорить по-английски уже сегодня.",
+   "ctaLead": "Ваш ИИ-партнёр уже ждёт. Просто поздоровайтесь.",
+   "ctaBtn": "Скачать бесплатно в App Store"
+  }
+ },
+ "hi": {
+  "buddytalk2": {
+   "meta": {
+    "title": "BuddyTalk - मज़ेदार AI अंग्रेज़ी बातचीत और शब्दावली गेम्स | TrailFusion AI",
+    "description": "AI अंग्रेज़ी बातचीत ऐप 'BuddyTalk' (पहले GP Teachers)। अनोखे AI पार्टनर्स के साथ असली बातचीत का अभ्यास करें। उच्चारण मूल्यांकन, रोज़मर्रा से लेकर बिज़नेस अंग्रेज़ी तक, और शब्दावली गेम्स भी। App Store से मुफ़्त डाउनलोड करें।"
+   },
+   "bc": "<i class=\"ri-arrow-left-line\"></i> सभी ऐप्स",
+   "badge": "AI अंग्रेज़ी बातचीत",
+   "global": "दुनियाभर में उपलब्ध",
+   "sub": "AI पार्टनर के साथ रोज़ बात करने का मन करे ऐसी अंग्रेज़ी बातचीत",
+   "intro": "BuddyTalk एक अंग्रेज़ी सीखने वाला ऐप है जो अनोखे AI पार्टनर्स के साथ असली बातचीत का अभ्यास कराता है। कभी भी, कहीं भी बातचीत करते हुए व्यावहारिक अंग्रेज़ी बोलने का कौशल बढ़ाएं। उच्चारण मूल्यांकन और शब्दावली गेम्स के साथ यह मज़ेदार बना रहता है।",
+   "gplay": "Google Play जल्द आ रहा है",
+   "chip0": "उच्चारण मूल्यांकन",
+   "chip1": "रोज़मर्रा से बिज़नेस अंग्रेज़ी तक",
+   "chip2": "शब्दावली गेम्स",
+   "chip3": "मुफ़्त डाउनलोड",
+   "featTitle": "बोलना शुरू करने की 4 वजहें",
+   "featLead": "किताब से नहीं, बातचीत से शुरुआत करें। इसीलिए यह टिकता है।",
+   "f0t": "अनोखे AI पार्टनर्स",
+   "f0d": "अपनी अलग पहचान रखने वाले AI अंग्रेज़ी पार्टनर्स के साथ स्वाभाविक बातचीत। पार्टनर बदलें, विषय भी बदल जाएगा।",
+   "f1t": "उच्चारण मूल्यांकन और फीडबैक",
+   "f1d": "AI आपके उच्चारण का मूल्यांकन करता है और विस्तृत फीडबैक देता है, ताकि आप तुरंत अपनी कमज़ोरियां जान सकें।",
+   "f2t": "रोज़मर्रा से बिज़नेस तक",
+   "f2d": "यात्रा, हल्की-फुल्की बातचीत, मीटिंग, इंटरव्यू — कई तरह की स्थितियों में व्यावहारिक अंग्रेज़ी का अभ्यास करें।",
+   "f3t": "गेम्स और प्रगति ट्रैकिंग",
+   "f3d": "मज़ेदार शब्दावली गेम्स और लर्निंग ट्रैकिंग आपकी रोज़ की प्रगति को स्पष्ट रूप से दिखाते हैं।",
+   "shotsTitle": "ऐप स्क्रीनशॉट",
+   "faqTitle": "अक्सर पूछे जाने वाले सवाल",
+   "q0": "क्या यह मुफ़्त है?",
+   "a0": "हां, डाउनलोड करना और शुरू करना मुफ़्त है। अधिक बातचीत और फीचर्स सब्सक्रिप्शन के ज़रिए उपलब्ध हैं। विवरण के लिए App Store देखें।",
+   "q1": "क्या यह GP Teachers से अलग ऐप है?",
+   "a1": "यह वही ऐप है। 'GP Teachers' का नाम बदलकर 'BuddyTalk' कर दिया गया है।",
+   "q2": "क्या मैं अपना अंग्रेज़ी स्तर चुन सकता/सकती हूं?",
+   "a2": "हां, शुरुआती से लेकर एडवांस तक। रोज़मर्रा की बातचीत से शुरू करें और धीरे-धीरे बिज़नेस अंग्रेज़ी तक पहुंचें।",
+   "q3": "कौन-से डिवाइस सपोर्टेड हैं?",
+   "a3": "iPhone और iPad (iOS) सपोर्टेड हैं। Android वर्ज़न तैयार किया जा रहा है।",
+   "q4": "सपोर्ट से कैसे संपर्क करें?",
+   "a4": "कभी भी <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> पर ईमेल करें।",
+   "privacyLink": "गोपनीयता नीति",
+   "termsLink": "सेवा की शर्तें",
+   "ctaTitle": "आज ही से अंग्रेज़ी बोलना शुरू करें।",
+   "ctaLead": "आपका AI पार्टनर आपका इंतज़ार कर रहा है। बस एक बार हैलो कहें।",
+   "ctaBtn": "App Store से मुफ़्त डाउनलोड करें"
+  }
+ }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
 </script>
 </body>
 </html>

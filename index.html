@@ -29,6 +29,50 @@
   const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
   const removeHeroTripBadgeScript='<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".sticker").forEach(function(el){if((el.textContent||"").includes("実写の旅")){var p=el.closest(".float")||el.parentElement;if(p)p.remove();else el.remove();}});});</'+'script>';
   const renameAiAppLabelsScript='<script>document.addEventListener("DOMContentLoaded",function(){function walk(n){if(n.nodeType===3){n.nodeValue=n.nodeValue.replace(/AIアプリを見る/g,"開発したアプリを見る").replace(/AIアプリ/g,"開発したアプリ");return;}if(n.nodeType!==1||["SCRIPT","STYLE","NOSCRIPT","TEXTAREA"].includes(n.tagName))return;Array.from(n.childNodes).forEach(walk);}walk(document.body);});</'+'script>';
+  const i18nScript='<script src="assets/js/i18n.js"></'+'script>';
+  const oldNav=`      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy" aria-current="page">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>`;
+  const newNav=`      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" data-i18n="nav.apps">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
+      </nav>`;
+  const oldActions=`      <!-- Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Desktop CTA -->`;
+  const newActions=`      <!-- Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
+        <!-- Desktop CTA -->`;
+  const oldTitle='<title>TrailFusion AI - 好きを力に、世界を旅する開発拠点</title>';
+  const newTitle='<title data-i18n="meta.title">TrailFusion AI - 好きを力に、世界を旅する開発拠点</title>';
+  const oldDesc='<meta name="description" content="キャンピングカーDIYとAIアプリケーション開発で「やりたいことを今やる」を叶えるTrailFusion AI。ハイエース改造から革新的AIアプリまで、挑戦する全ての人へ。">';
+  const newDesc='<meta name="description" content="キャンピングカーDIYとAIアプリケーション開発で「やりたいことを今やる」を叶えるTrailFusion AI。ハイエース改造から革新的AIアプリまで、挑戦する全ての人へ。" data-i18n-content="meta.description">';
+  const oldAiBlurb='実際の開発環境で磨いているBuddyTalk、VoiceLink、Word BlasterなどのAIアプリ。日常をちょっと便利に、もっと楽しく。';
+  const newAiBlurb='<span data-i18n="home.aiBlurb">実際の開発環境で磨いているBuddyTalk、Reel Make、Wood Golem、Word BlasterなどのAIアプリ。日常をちょっと便利に、もっと楽しく。</span>';
+  const oldFooterApps=`        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="apps.html#buddytalk" class="hover:text-ocean transition">BuddyTalk</a></li>
+          <li><a href="apps.html#wood-golem" class="hover:text-ocean transition">Wood Golem</a></li>
+          <li><a href="apps.html#voicelink" class="hover:text-ocean transition">VoiceLink AI通訳</a></li>
+          <li><a href="apps.html#word-blaster" class="hover:text-ocean transition">Word Blaster</a></li>
+          <li><a href="apps.html#doc2json" class="hover:text-ocean transition">Doc2JSON AI</a></li>
+        </ul>`;
+  const newFooterApps=`        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="reelmake.html" class="hover:text-ocean transition">Reel Make</a></li>
+          <li><a href="buddytalk.html" class="hover:text-ocean transition">BuddyTalk</a></li>
+          <li><a href="wood-golem.html" class="hover:text-ocean transition">Wood Golem</a></li>
+          <li><a href="word-blaster.html" class="hover:text-ocean transition">Word Blaster</a></li>
+          <li><a href="hacking-timer.html" class="hover:text-ocean transition">Hacking Timer</a></li>
+          <li><a href="apps.html" class="hover:text-ocean transition">開発したアプリ一覧 →</a></li>
+        </ul>`;
   try{
     let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
     html=html.replace(target,maintenanceButton);
@@ -41,6 +85,15 @@
       html=html.replace('</body>', removeHeroTripBadgeScript+'</body>');
     }
     html=html.replace('</body>', renameAiAppLabelsScript+'</body>');
+    if(!html.includes('assets/js/i18n.js')){
+      html=html.replace(oldTitle,newTitle);
+      html=html.replace(oldDesc,newDesc);
+      html=html.replace(oldNav,newNav);
+      html=html.replace(oldActions,newActions);
+      html=html.replace(oldAiBlurb,newAiBlurb);
+      html=html.replace(oldFooterApps,newFooterApps);
+      html=html.replace('</body>', i18nScript+'</body>');
+    }
     document.open();
     document.write(html);
     document.close();

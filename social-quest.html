@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合格！社会クエスト - 中学受験社会を、地理・歴史・公民まで一気に対策 | TrailFusion AI</title>
-<meta name="description" content="中学受験社会の学習アプリ「合格！社会クエスト」。地理・歴史・公民の53単元を4択クイズとイラスト解説で効率よく学習。苦手分析・偏差値・全国ランキングで楽しく実力アップ。iOS/Android対応・無料。">
+<title data-i18n="socialquest2.meta.title">合格！社会クエスト - 中学受験社会を、地理・歴史・公民まで一気に対策 | TrailFusion AI</title>
+<meta name="description" content="中学受験社会の学習アプリ「合格！社会クエスト」。地理・歴史・公民の53単元を4択クイズとイラスト解説で効率よく学習。苦手分析・偏差値・全国ランキングで楽しく実力アップ。iOS/Android対応・無料。" data-i18n-content="socialquest2.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/social-quest.html">
@@ -30,6 +30,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
+<script>
+(function(){
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
+  window.__PAGE_LANG=lang;
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,13 +120,15 @@ body{background:#FFFBF2;color:#1F2E4D;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -131,7 +150,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="absolute inset-0 dot-pattern opacity-20 pointer-events-none"></div>
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <nav class="mb-8 text-sm font-bold text-navy/60" aria-label="パンくず">
-      <a href="apps.html" class="hover:text-coral transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+      <a href="apps.html" class="hover:text-coral transition"><i class="ri-arrow-left-line"></i> <span data-i18n="socialquest2.breadcrumb">開発したアプリ一覧</span></a>
       <span class="mx-2">/</span><span>社会クエスト</span>
     </nav>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
@@ -140,19 +159,19 @@ body{background:#FFFBF2;color:#1F2E4D;}
           <div class="q-logo"><img src="assets/images/social-quest/logo.png" alt="合格！社会クエスト ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
             <span class="q-badge accent"><i class="ri-graduation-cap-fill"></i>SOCIAL STUDIES QUEST</span>
-            <span class="q-badge"><i class="ri-smartphone-fill"></i>iOS / Android 対応</span>
+            <span class="q-badge"><i class="ri-smartphone-fill"></i><span data-i18n="socialquest2.hero.platform">iOS / Android 対応</span></span>
           </div>
         </div>
         <h1 class="display-xl text-4xl md:text-5xl lg:text-6xl mb-4 leading-none" style="letter-spacing:-.03em;">合格！社会クエスト</h1>
-        <p class="font-black text-lg md:text-2xl mb-4">中学受験社会を、地理・歴史・公民まで一気に対策</p>
-        <p class="text-navy/75 leading-loose font-medium mb-7">地理・歴史・公民の重要単元を、4択クイズとイラスト解説で効率よく学習。苦手分析、偏差値、全国ランキングで、入試に必要な知識を楽しく積み上げます。</p>
+        <p class="font-black text-lg md:text-2xl mb-4" data-i18n="socialquest2.hero.subtitle">中学受験社会を、地理・歴史・公民まで一気に対策</p>
+        <p class="text-navy/75 leading-loose font-medium mb-7" data-i18n="socialquest2.hero.intro">地理・歴史・公民の重要単元を、4択クイズとイラスト解説で効率よく学習。苦手分析、偏差値、全国ランキングで、入試に必要な知識を楽しく積み上げます。</p>
         <div class="flex flex-wrap gap-3 mb-6">
           <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC-%E7%A4%BE%E4%BC%9A%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88-%E4%B8%AD%E5%AD%A6%E5%8F%97%E9%A8%93%E3%81%AE%E5%9C%B0%E7%90%86%E6%AD%B4%E5%8F%B2%E5%85%AC%E6%B0%91/id6775411516" target="_blank" rel="noopener" class="q-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
           <a href="https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app" target="_blank" rel="noopener" class="q-store"><i class="ri-google-play-fill text-xl"></i><span>Google Play</span></a>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i>53単元</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i>地理・歴史・公民</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i>4択クイズ</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i>全国ランキング</span>
-          <span class="q-chip"><i class="ri-price-tag-3-fill" style="color:#2E9BD6;"></i>無料ダウンロード</span>
+          <span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i><span data-i18n="socialquest2.hero.chip1">53単元</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i><span data-i18n="socialquest2.hero.chip2">地理・歴史・公民</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i><span data-i18n="socialquest2.hero.chip3">4択クイズ</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#2E9BD6;"></i><span data-i18n="socialquest2.hero.chip4">全国ランキング</span></span>
+          <span class="q-chip"><i class="ri-price-tag-3-fill" style="color:#2E9BD6;"></i><span data-i18n="socialquest2.hero.chip5">無料ダウンロード</span></span>
         </div>
       </div>
       <div class="q-frame">
@@ -166,36 +185,36 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#8FD4FF;color:#1F2E4D;">FEATURES</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3">社会が得意になる、4つのしかけ</h2>
-      <p class="text-navy/70 font-medium max-w-2xl mx-auto">「覚えるだけ」で終わらせない。理解して、確認して、成長を実感できる仕組みです。</p>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-i18n="socialquest2.features.title">社会が得意になる、4つのしかけ</h2>
+      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-i18n="socialquest2.features.lead">「覚えるだけ」で終わらせない。理解して、確認して、成長を実感できる仕組みです。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5">53単元を体系的にカバー</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">地理・歴史・公民の3分野を、この1本でまるごと対策。入試頻出の重要単元を網羅しています。</p>
+          <h3 class="font-black mb-1.5" data-i18n="socialquest2.features.f1.title">53単元を体系的にカバー</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.features.f1.desc">地理・歴史・公民の3分野を、この1本でまるごと対策。入試頻出の重要単元を網羅しています。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5">4択クイズでスキマ時間に</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">テンポよく答えて知識を確認。通学中や寝る前の5分でも、着実に積み上がります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="socialquest2.features.f2.title">4択クイズでスキマ時間に</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.features.f2.desc">テンポよく答えて知識を確認。通学中や寝る前の5分でも、着実に積み上がります。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5">イラストで流れを理解</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">歴史の流れや地理のポイントをイラストで解説。丸暗記ではなくイメージで定着します。</p>
+          <h3 class="font-black mb-1.5" data-i18n="socialquest2.features.f3.title">イラストで流れを理解</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.features.f3.desc">歴史の流れや地理のポイントをイラストで解説。丸暗記ではなくイメージで定着します。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5">偏差値・苦手分析・ランキング</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">実力テストで偏差値がわかり、苦手単元は自動で見える化。全国ランキングで成長を実感。</p>
+          <h3 class="font-black mb-1.5" data-i18n="socialquest2.features.f4.title">偏差値・苦手分析・ランキング</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.features.f4.desc">実力テストで偏差値がわかり、苦手単元は自動で見える化。全国ランキングで成長を実感。</p>
         </div>
       </div>
     </div>
@@ -206,7 +225,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#8FD4FF;color:#1F2E4D;">SCREENSHOTS</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">アプリの画面</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="socialquest2.screenshots.title">アプリの画面</h2>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7 max-w-5xl mx-auto">
       <figure class="q-shot"><img src="assets/images/social-quest/quiz.png" alt="社会クエストの4択クイズ画面" loading="lazy"></figure>
@@ -221,23 +240,23 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#8FD4FF;color:#1F2E4D;">HOW TO</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">学習のながれ</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="socialquest2.howto.title">学習のながれ</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       <div class="q-step">
         <div class="n">1</div>
-        <h3 class="font-black text-lg mb-2">単元を選ぶ</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">地理・歴史・公民から、学びたい単元を選択。ロードマップで進捗もひと目でわかります。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="socialquest2.howto.step1.title">単元を選ぶ</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.howto.step1.desc">地理・歴史・公民から、学びたい単元を選択。ロードマップで進捗もひと目でわかります。</p>
       </div>
       <div class="q-step">
         <div class="n">2</div>
-        <h3 class="font-black text-lg mb-2">4択クイズに挑戦</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">テンポよく問題を解いて、イラスト解説で理解を深めます。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="socialquest2.howto.step2.title">4択クイズに挑戦</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.howto.step2.desc">テンポよく問題を解いて、イラスト解説で理解を深めます。</p>
       </div>
       <div class="q-step">
         <div class="n">3</div>
-        <h3 class="font-black text-lg mb-2">復習と実力テスト</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">まちがえた問題を復習し、実力テストで偏差値と全国順位をチェック。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="socialquest2.howto.step3.title">復習と実力テスト</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="socialquest2.howto.step3.desc">まちがえた問題を復習し、実力テストで偏差値と全国順位をチェック。</p>
       </div>
     </div>
   </div>
@@ -247,28 +266,28 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="sticker" style="background:#8FD4FF;color:#1F2E4D;">FAQ</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="socialquest2.faq.title">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span>無料で使えますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="socialquest2.faq.q1">無料で使えますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="socialquest2.faq.a1">無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>どんな人に向いていますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">中学受験をめざす小学生のための構成ですが、社会の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="socialquest2.faq.q2">どんな人に向いていますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="socialquest2.faq.a2">中学受験をめざす小学生のための構成ですが、社会の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>対応している端末は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。</p>
+        <summary><span class="qm">Q</span><span data-i18n="socialquest2.faq.q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="socialquest2.faq.a3">iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>収録内容を教えてください<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">地理・歴史・公民の3分野・53単元を収録。4択クイズ、イラスト解説、復習機能、実力テスト（偏差値）、全国ランキングをお使いいただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="socialquest2.faq.q4">収録内容を教えてください</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="socialquest2.faq.a4">地理・歴史・公民の3分野・53単元を収録。4択クイズ、イラスト解説、復習機能、実力テスト（偏差値）、全国ランキングをお使いいただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="socialquest2.faq.q5">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a"><span data-i18n="socialquest2.faq.a5"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</span></p>
       </details>
     </div>
   </div>
@@ -277,11 +296,11 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <section class="q-cta py-16 md:py-24 border-t-[3px] border-navy">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="q-logo mx-auto mb-6" style="transform:rotate(3deg);"><img src="assets/images/social-quest/logo.png" alt="合格！社会クエスト ロゴ"></div>
-    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4">社会を、いちばんの得意科目に。</h2>
-    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto">地理・歴史・公民をこの1本で。今日から社会クエストの冒険を始めよう。</p>
+    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-i18n="socialquest2.cta.title">社会を、いちばんの得意科目に。</h2>
+    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-i18n="socialquest2.cta.lead">地理・歴史・公民をこの1本で。今日から社会クエストの冒険を始めよう。</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC-%E7%A4%BE%E4%BC%9A%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88-%E4%B8%AD%E5%AD%A6%E5%8F%97%E9%A8%93%E3%81%AE%E5%9C%B0%E7%90%86%E6%AD%B4%E5%8F%B2%E5%85%AC%E6%B0%91/id6775411516" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i>App Store で無料ダウンロード</a>
-      <a href="https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-google-play-fill"></i>Google Play で無料ダウンロード</a>
+      <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC-%E7%A4%BE%E4%BC%9A%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88-%E4%B8%AD%E5%AD%A6%E5%8F%97%E9%A8%93%E3%81%AE%E5%9C%B0%E7%90%86%E6%AD%B4%E5%8F%B2%E5%85%AC%E6%B0%91/id6775411516" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-i18n="socialquest2.cta.appstore">App Store で無料ダウンロード</span></a>
+      <a href="https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-google-play-fill"></i><span data-i18n="socialquest2.cta.googleplay">Google Play で無料ダウンロード</span></a>
     </div>
   </div>
 </section>
@@ -309,7 +328,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -338,7 +357,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
       <div>
         <h4 class="font-black text-coral mb-3">📄 サポート</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">社会クエスト サポート</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition" data-i18n="socialquest2.footer.support">社会クエスト サポート</a></li>
           <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
         </ul>
       </div>
@@ -351,5 +370,805 @@ body{background:#FFFBF2;color:#1F2E4D;}
 </footer>
 <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
 <script src="assets/js/trailfusion-ui.js"></script>
+<script>
+window.pageTranslations = {
+ "ja": {
+  "socialquest2": {
+   "meta": {
+    "title": "合格！社会クエスト - 中学受験社会を、地理・歴史・公民まで一気に対策 | TrailFusion AI",
+    "description": "中学受験社会の学習アプリ「合格！社会クエスト」。地理・歴史・公民の53単元を4択クイズとイラスト解説で効率よく学習。苦手分析・偏差値・全国ランキングで楽しく実力アップ。iOS/Android対応・無料。"
+   },
+   "breadcrumb": "開発したアプリ一覧",
+   "hero": {
+    "platform": "iOS / Android 対応",
+    "subtitle": "中学受験社会を、地理・歴史・公民まで一気に対策",
+    "intro": "地理・歴史・公民の重要単元を、4択クイズとイラスト解説で効率よく学習。苦手分析、偏差値、全国ランキングで、入試に必要な知識を楽しく積み上げます。",
+    "chip1": "53単元",
+    "chip2": "地理・歴史・公民",
+    "chip3": "4択クイズ",
+    "chip4": "全国ランキング",
+    "chip5": "無料ダウンロード"
+   },
+   "features": {
+    "title": "社会が得意になる、4つのしかけ",
+    "lead": "「覚えるだけ」で終わらせない。理解して、確認して、成長を実感できる仕組みです。",
+    "f1": {
+     "title": "53単元を体系的にカバー",
+     "desc": "地理・歴史・公民の3分野を、この1本でまるごと対策。入試頻出の重要単元を網羅しています。"
+    },
+    "f2": {
+     "title": "4択クイズでスキマ時間に",
+     "desc": "テンポよく答えて知識を確認。通学中や寝る前の5分でも、着実に積み上がります。"
+    },
+    "f3": {
+     "title": "イラストで流れを理解",
+     "desc": "歴史の流れや地理のポイントをイラストで解説。丸暗記ではなくイメージで定着します。"
+    },
+    "f4": {
+     "title": "偏差値・苦手分析・ランキング",
+     "desc": "実力テストで偏差値がわかり、苦手単元は自動で見える化。全国ランキングで成長を実感。"
+    }
+   },
+   "screenshots": {
+    "title": "アプリの画面"
+   },
+   "howto": {
+    "title": "学習のながれ",
+    "step1": {
+     "title": "単元を選ぶ",
+     "desc": "地理・歴史・公民から、学びたい単元を選択。ロードマップで進捗もひと目でわかります。"
+    },
+    "step2": {
+     "title": "4択クイズに挑戦",
+     "desc": "テンポよく問題を解いて、イラスト解説で理解を深めます。"
+    },
+    "step3": {
+     "title": "復習と実力テスト",
+     "desc": "まちがえた問題を復習し、実力テストで偏差値と全国順位をチェック。"
+    }
+   },
+   "faq": {
+    "title": "よくあるご質問",
+    "q1": "無料で使えますか？",
+    "a1": "無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。",
+    "q2": "どんな人に向いていますか？",
+    "a2": "中学受験をめざす小学生のための構成ですが、社会の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。",
+    "q3": "対応している端末は？",
+    "a3": "iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。",
+    "q4": "収録内容を教えてください",
+    "a4": "地理・歴史・公民の3分野・53単元を収録。4択クイズ、イラスト解説、復習機能、実力テスト（偏差値）、全国ランキングをお使いいただけます。",
+    "q5": "お問い合わせ先は？",
+    "a5": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> までお気軽にご連絡ください。"
+   },
+   "cta": {
+    "title": "社会を、いちばんの得意科目に。",
+    "lead": "地理・歴史・公民をこの1本で。今日から社会クエストの冒険を始めよう。",
+    "appstore": "App Store で無料ダウンロード",
+    "googleplay": "Google Play で無料ダウンロード"
+   },
+   "footer": {
+    "support": "社会クエスト サポート"
+   }
+  }
+ },
+ "en": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Master Japanese Junior-High Entrance Social Studies | TrailFusion AI",
+    "description": "Social Quest is a learning app for Japanese junior-high entrance exam social studies, covering geography, history, and civics across 53 units with multiple-choice quizzes and illustrated explanations."
+   },
+   "breadcrumb": "All Apps",
+   "hero": {
+    "platform": "Available on iOS / Android",
+    "subtitle": "Master geography, history & civics for junior-high entrance exams in one app",
+    "intro": "Study the key units of geography, history, and civics efficiently with multiple-choice quizzes and illustrated explanations. Weak-point analysis, deviation scores, and a national ranking make building exam-ready knowledge fun.",
+    "chip1": "53 units",
+    "chip2": "Geography, History & Civics",
+    "chip3": "Multiple-choice quizzes",
+    "chip4": "National ranking",
+    "chip5": "Free download"
+   },
+   "features": {
+    "title": "4 features that make social studies click",
+    "lead": "It's not just memorization — understand, check, and actually feel yourself improve.",
+    "f1": {
+     "title": "Systematic coverage of 53 units",
+     "desc": "Cover geography, history, and civics completely in one app, covering the units that come up most on entrance exams."
+    },
+    "f2": {
+     "title": "Multiple-choice quizzes for spare moments",
+     "desc": "Answer at a good pace to check your knowledge — even 5 minutes on the commute or before bed adds up steadily."
+    },
+    "f3": {
+     "title": "Understand the flow through illustrations",
+     "desc": "Historical flows and geography key points are explained with illustrations, so ideas stick instead of rote memorization."
+    },
+    "f4": {
+     "title": "Deviation score, weak-point analysis & ranking",
+     "desc": "Mock tests reveal your deviation score, weak units are automatically surfaced, and the national ranking makes your progress visible."
+    }
+   },
+   "screenshots": {
+    "title": "App Screens"
+   },
+   "howto": {
+    "title": "How It Works",
+    "step1": {
+     "title": "Choose a unit",
+     "desc": "Pick the unit you want to study from geography, history, or civics — a roadmap shows your progress at a glance."
+    },
+    "step2": {
+     "title": "Take multiple-choice quizzes",
+     "desc": "Answer at a good pace and deepen your understanding with illustrated explanations."
+    },
+    "step3": {
+     "title": "Review & take mock tests",
+     "desc": "Review the questions you got wrong, then check your deviation score and national rank with a mock test."
+    }
+   },
+   "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Is it free to use?",
+    "a1": "Yes, it's free to download and use. Some features, like removing ads, are available via in-app purchase.",
+    "q2": "Who is this app for?",
+    "a2": "It's designed for elementary schoolers preparing for junior-high entrance exams, but it's also great for junior-high students shoring up the basics, or adults revisiting the subject.",
+    "q3": "Which devices are supported?",
+    "a3": "It supports iPhone/iPad (iOS) as well as Android smartphones and tablets.",
+    "q4": "What's covered in the app?",
+    "a4": "It covers 53 units across geography, history, and civics, with multiple-choice quizzes, illustrated explanations, a review feature, mock tests (deviation score), and a national ranking.",
+    "q5": "How can I get in touch?",
+    "a5": "Feel free to reach us at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Make social studies your best subject.",
+    "lead": "Geography, history, and civics — all in one app. Start your Social Quest adventure today.",
+    "appstore": "Download Free on the App Store",
+    "googleplay": "Download Free on Google Play"
+   },
+   "footer": {
+    "support": "Social Quest Support"
+   }
+  }
+ },
+ "zh": {
+  "socialquest2": {
+   "meta": {
+    "title": "社会探索者 - 全面攻克初中入学考试社会科 | TrailFusion AI",
+    "description": "「合格！社会探索者」是面向日本初中入学考试的社会科学习应用，涵盖地理、历史、公民共53个单元，配有四选一测验和插图讲解。"
+   },
+   "breadcrumb": "应用列表",
+   "hero": {
+    "platform": "支持 iOS / Android",
+    "subtitle": "一站式攻克初中入学考试的地理、历史与公民",
+    "intro": "通过四选一测验和插图讲解高效学习地理、历史、公民的重点单元。弱项分析、偏差值和全国排行榜，让备考知识的积累变得有趣。",
+    "chip1": "53个单元",
+    "chip2": "地理・历史・公民",
+    "chip3": "四选一测验",
+    "chip4": "全国排行榜",
+    "chip5": "免费下载"
+   },
+   "features": {
+    "title": "让社会科变得擅长的4个机制",
+    "lead": "不止是死记硬背，而是理解、确认，并切实感受到自己的进步。",
+    "f1": {
+     "title": "系统覆盖53个单元",
+     "desc": "地理、历史、公民三大领域，一款应用全面覆盖，网罗入学考试高频重点单元。"
+    },
+    "f2": {
+     "title": "利用碎片时间做四选一测验",
+     "desc": "以轻快的节奏答题确认知识。哪怕是上学路上或睡前的5分钟，也能扎实积累。"
+    },
+    "f3": {
+     "title": "用插图理解历史脉络",
+     "desc": "用插图讲解历史发展脉络和地理要点，靠印象记忆而非死记硬背。"
+    },
+    "f4": {
+     "title": "偏差值・弱项分析・排行榜",
+     "desc": "通过实力测试了解偏差值，自动发现薄弱单元，全国排行榜让你切实感受成长。"
+    }
+   },
+   "screenshots": {
+    "title": "应用界面"
+   },
+   "howto": {
+    "title": "学习流程",
+    "step1": {
+     "title": "选择单元",
+     "desc": "从地理、历史、公民中选择想学的单元，路线图让学习进度一目了然。"
+    },
+    "step2": {
+     "title": "挑战四选一测验",
+     "desc": "以轻快的节奏答题，并通过插图讲解加深理解。"
+    },
+    "step3": {
+     "title": "复习与实力测试",
+     "desc": "复习做错的题目，并通过实力测试查看偏差值和全国排名。"
+    }
+   },
+   "faq": {
+    "title": "常见问题",
+    "q1": "可以免费使用吗？",
+    "a1": "可以免费下载使用。去广告等部分功能可通过应用内购买获得。",
+    "q2": "适合什么样的人使用？",
+    "a2": "主要面向准备初中入学考试的小学生，但也适合想打好社会科基础的初中生，以及想重新学习的成年人。",
+    "q3": "支持哪些设备？",
+    "a3": "支持 iPhone・iPad（iOS）以及 Android 智能手机和平板电脑。",
+    "q4": "都收录了哪些内容？",
+    "a4": "收录地理、历史、公民三大领域共53个单元。可使用四选一测验、插图讲解、复习功能、实力测试（偏差值）和全国排行榜。",
+    "q5": "如何联系你们？",
+    "a5": "欢迎通过 <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> 联系我们。"
+   },
+   "cta": {
+    "title": "让社会科成为你最擅长的科目。",
+    "lead": "地理、历史、公民，一款应用全部搞定。今天就开始社会探索者的冒险吧。",
+    "appstore": "在 App Store 免费下载",
+    "googleplay": "在 Google Play 免费下载"
+   },
+   "footer": {
+    "support": "社会探索者支持"
+   }
+  }
+ },
+ "ko": {
+  "socialquest2": {
+   "meta": {
+    "title": "소셜 퀘스트 - 중학 입시 사회를 한번에 완벽 대비 | TrailFusion AI",
+    "description": "「합격! 소셜 퀘스트」는 일본 중학 입시 사회(지리·역사·공민) 전용 학습 앱으로, 53개 단원을 4지선다 퀴즈와 삽화 설명으로 학습합니다."
+   },
+   "breadcrumb": "앱 목록",
+   "hero": {
+    "platform": "iOS / Android 지원",
+    "subtitle": "중학 입시 사회를 지리·역사·공민까지 한번에 대비",
+    "intro": "지리·역사·공민의 핵심 단원을 4지선다 퀴즈와 삽화 설명으로 효율적으로 학습합니다. 약점 분석, 편차치, 전국 랭킹으로 입시에 필요한 지식을 즐겁게 쌓아갑니다.",
+    "chip1": "53개 단원",
+    "chip2": "지리·역사·공민",
+    "chip3": "4지선다 퀴즈",
+    "chip4": "전국 랭킹",
+    "chip5": "무료 다운로드"
+   },
+   "features": {
+    "title": "사회가 강해지는 4가지 장치",
+    "lead": "'외우기만'으로 끝내지 않습니다. 이해하고, 확인하고, 성장을 실감할 수 있는 구조입니다.",
+    "f1": {
+     "title": "53개 단원을 체계적으로 커버",
+     "desc": "지리·역사·공민 3개 분야를 이 앱 하나로 완벽 대비. 입시 빈출 핵심 단원을 망라합니다."
+    },
+    "f2": {
+     "title": "자투리 시간엔 4지선다 퀴즈",
+     "desc": "빠른 템포로 답하며 지식을 확인. 등하교 길이나 자기 전 5분으로도 착실히 쌓입니다."
+    },
+    "f3": {
+     "title": "삽화로 흐름을 이해",
+     "desc": "역사의 흐름과 지리 포인트를 삽화로 설명. 단순 암기가 아닌 이미지로 정착됩니다."
+    },
+    "f4": {
+     "title": "편차치·약점 분석·랭킹",
+     "desc": "실력 테스트로 편차치를 확인하고, 약한 단원은 자동으로 시각화. 전국 랭킹으로 성장을 실감합니다."
+    }
+   },
+   "screenshots": {
+    "title": "앱 화면"
+   },
+   "howto": {
+    "title": "학습 흐름",
+    "step1": {
+     "title": "단원 선택",
+     "desc": "지리·역사·공민 중 배우고 싶은 단원을 선택. 로드맵으로 진행 상황을 한눈에 확인할 수 있습니다."
+    },
+    "step2": {
+     "title": "4지선다 퀴즈 도전",
+     "desc": "빠른 템포로 문제를 풀고 삽화 설명으로 이해를 깊게 합니다."
+    },
+    "step3": {
+     "title": "복습과 실력 테스트",
+     "desc": "틀린 문제를 복습하고 실력 테스트로 편차치와 전국 순위를 확인합니다."
+    }
+   },
+   "faq": {
+    "title": "자주 묻는 질문",
+    "q1": "무료로 사용할 수 있나요？",
+    "a1": "무료로 다운로드하여 사용하실 수 있습니다. 광고 제거 등 일부 기능은 인앱 결제로 이용 가능합니다.",
+    "q2": "어떤 분에게 맞나요？",
+    "a2": "중학 입시를 준비하는 초등학생을 위한 구성이지만, 사회 기초를 다지고 싶은 중학생이나 다시 공부하고 싶은 성인에게도 좋습니다.",
+    "q3": "지원 기기는 무엇인가요？",
+    "a3": "iPhone·iPad(iOS)와 Android 스마트폰·태블릿을 지원합니다.",
+    "q4": "수록 내용을 알려주세요",
+    "a4": "지리·역사·공민 3개 분야·53개 단원을 수록. 4지선다 퀴즈, 삽화 설명, 복습 기능, 실력 테스트(편차치), 전국 랭킹을 이용할 수 있습니다.",
+    "q5": "문의처는 어디인가요？",
+    "a5": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> 으로 편하게 연락해 주세요."
+   },
+   "cta": {
+    "title": "사회를, 가장 자신 있는 과목으로.",
+    "lead": "지리·역사·공민을 이 앱 하나로. 오늘부터 소셜 퀘스트의 모험을 시작하세요.",
+    "appstore": "App Store에서 무료 다운로드",
+    "googleplay": "Google Play에서 무료 다운로드"
+   },
+   "footer": {
+    "support": "소셜 퀘스트 지원"
+   }
+  }
+ },
+ "es": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Domina los estudios sociales del examen de ingreso japonés | TrailFusion AI",
+    "description": "Social Quest es una app de aprendizaje para el examen de ingreso a secundaria japonés en estudios sociales, con 53 unidades de geografía, historia y civismo, cuestionarios de opción múltiple y explicaciones ilustradas."
+   },
+   "breadcrumb": "Todas las apps",
+   "hero": {
+    "platform": "Disponible en iOS / Android",
+    "subtitle": "Domina geografía, historia y civismo para los exámenes de ingreso a secundaria en una sola app",
+    "intro": "Estudia de forma eficiente las unidades clave de geografía, historia y civismo con cuestionarios de opción múltiple y explicaciones ilustradas. El análisis de puntos débiles, la puntuación de desviación y el ranking nacional hacen que acumular conocimientos para el examen sea divertido.",
+    "chip1": "53 unidades",
+    "chip2": "Geografía, historia y civismo",
+    "chip3": "Cuestionarios de opción múltiple",
+    "chip4": "Ranking nacional",
+    "chip5": "Descarga gratuita"
+   },
+   "features": {
+    "title": "4 mecanismos que te harán bueno en estudios sociales",
+    "lead": "No se trata solo de memorizar: entiende, comprueba y siente de verdad tu progreso.",
+    "f1": {
+     "title": "Cobertura sistemática de 53 unidades",
+     "desc": "Cubre por completo geografía, historia y civismo con una sola app, abarcando las unidades más frecuentes en los exámenes."
+    },
+    "f2": {
+     "title": "Cuestionarios de opción múltiple para ratos libres",
+     "desc": "Responde a buen ritmo para comprobar tus conocimientos: incluso 5 minutos de camino a la escuela o antes de dormir suman de forma constante."
+    },
+    "f3": {
+     "title": "Entiende el hilo de la historia con ilustraciones",
+     "desc": "Los flujos históricos y los puntos clave de geografía se explican con ilustraciones, para fijar ideas en lugar de memorizar de memoria."
+    },
+    "f4": {
+     "title": "Puntuación de desviación, análisis de puntos débiles y ranking",
+     "desc": "Los simulacros de examen revelan tu puntuación de desviación, las unidades débiles se detectan automáticamente y el ranking nacional hace visible tu progreso."
+    }
+   },
+   "screenshots": {
+    "title": "Capturas de la app"
+   },
+   "howto": {
+    "title": "Cómo funciona",
+    "step1": {
+     "title": "Elige una unidad",
+     "desc": "Elige la unidad que quieras estudiar entre geografía, historia o civismo; una hoja de ruta muestra tu progreso de un vistazo."
+    },
+    "step2": {
+     "title": "Responde cuestionarios de opción múltiple",
+     "desc": "Responde a buen ritmo y profundiza tu comprensión con explicaciones ilustradas."
+    },
+    "step3": {
+     "title": "Repasa y haz simulacros de examen",
+     "desc": "Repasa las preguntas que fallaste y comprueba tu puntuación de desviación y tu posición nacional con un simulacro."
+    }
+   },
+   "faq": {
+    "title": "Preguntas frecuentes",
+    "q1": "¿Es gratis usarla?",
+    "a1": "Sí, es gratis descargarla y usarla. Algunas funciones, como quitar los anuncios, están disponibles mediante compra dentro de la app.",
+    "q2": "¿Para quién es esta app?",
+    "a2": "Está diseñada para estudiantes de primaria que se preparan para el examen de ingreso a secundaria, pero también es útil para estudiantes de secundaria que quieren reforzar las bases o adultos que quieren repasar la materia.",
+    "q3": "¿Qué dispositivos son compatibles?",
+    "a3": "Es compatible con iPhone/iPad (iOS) y con smartphones y tablets Android.",
+    "q4": "¿Qué contenido incluye?",
+    "a4": "Incluye 53 unidades de geografía, historia y civismo, con cuestionarios de opción múltiple, explicaciones ilustradas, función de repaso, simulacros de examen (puntuación de desviación) y ranking nacional.",
+    "q5": "¿Cómo puedo contactaros?",
+    "a5": "No dudes en escribirnos a <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Haz de los estudios sociales tu mejor materia.",
+    "lead": "Geografía, historia y civismo, todo en una sola app. Empieza hoy tu aventura en Social Quest.",
+    "appstore": "Descarga gratis en la App Store",
+    "googleplay": "Descarga gratis en Google Play"
+   },
+   "footer": {
+    "support": "Soporte de Social Quest"
+   }
+  }
+ },
+ "fr": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Maîtrisez les sciences sociales de l'examen d'entrée au collège japonais | TrailFusion AI",
+    "description": "Social Quest est une application d'apprentissage pour l'examen d'entrée au collège japonais en sciences sociales, couvrant géographie, histoire et éducation civique sur 53 unités avec des quiz à choix multiples et des explications illustrées."
+   },
+   "breadcrumb": "Toutes les applications",
+   "hero": {
+    "platform": "Disponible sur iOS / Android",
+    "subtitle": "Maîtrisez géographie, histoire et éducation civique pour l'examen d'entrée au collège en une seule application",
+    "intro": "Étudiez efficacement les unités clés de géographie, d'histoire et d'éducation civique grâce à des quiz à choix multiples et des explications illustrées. L'analyse des points faibles, le score de déviation et le classement national rendent l'accumulation de connaissances amusante.",
+    "chip1": "53 unités",
+    "chip2": "Géographie, histoire et éducation civique",
+    "chip3": "Quiz à choix multiples",
+    "chip4": "Classement national",
+    "chip5": "Téléchargement gratuit"
+   },
+   "features": {
+    "title": "4 mécanismes pour exceller en sciences sociales",
+    "lead": "Pas seulement de la mémorisation : comprenez, vérifiez, et ressentez réellement vos progrès.",
+    "f1": {
+     "title": "Couverture systématique de 53 unités",
+     "desc": "Couvrez entièrement géographie, histoire et éducation civique dans une seule application, en couvrant les unités les plus fréquentes aux examens."
+    },
+    "f2": {
+     "title": "Quiz à choix multiples pour les moments libres",
+     "desc": "Répondez à un bon rythme pour vérifier vos connaissances — même 5 minutes dans les transports ou avant de dormir s'accumulent régulièrement."
+    },
+    "f3": {
+     "title": "Comprenez le fil conducteur grâce aux illustrations",
+     "desc": "Les enchaînements historiques et les points clés de géographie sont expliqués par des illustrations, pour ancrer les idées plutôt que les mémoriser par cœur."
+    },
+    "f4": {
+     "title": "Score de déviation, analyse des points faibles et classement",
+     "desc": "Les examens blancs révèlent votre score de déviation, les unités faibles sont automatiquement mises en évidence, et le classement national rend vos progrès visibles."
+    }
+   },
+   "screenshots": {
+    "title": "Captures d'écran"
+   },
+   "howto": {
+    "title": "Comment ça marche",
+    "step1": {
+     "title": "Choisissez une unité",
+     "desc": "Choisissez l'unité que vous voulez étudier parmi géographie, histoire ou éducation civique — une feuille de route montre votre progression en un coup d'œil."
+    },
+    "step2": {
+     "title": "Faites les quiz à choix multiples",
+     "desc": "Répondez à un bon rythme et approfondissez votre compréhension grâce aux explications illustrées."
+    },
+    "step3": {
+     "title": "Révisez et passez des examens blancs",
+     "desc": "Révisez les questions manquées, puis vérifiez votre score de déviation et votre rang national avec un examen blanc."
+    }
+   },
+   "faq": {
+    "title": "Questions fréquentes",
+    "q1": "Est-ce gratuit ?",
+    "a1": "Oui, le téléchargement et l'utilisation sont gratuits. Certaines fonctionnalités, comme la suppression des publicités, sont disponibles via un achat intégré.",
+    "q2": "À qui s'adresse cette application ?",
+    "a2": "Elle est conçue pour les écoliers préparant l'examen d'entrée au collège, mais convient aussi aux collégiens souhaitant renforcer les bases ou aux adultes souhaitant revoir la matière.",
+    "q3": "Quels appareils sont pris en charge ?",
+    "a3": "Elle prend en charge iPhone/iPad (iOS) ainsi que les smartphones et tablettes Android.",
+    "q4": "Que contient l'application ?",
+    "a4": "Elle couvre 53 unités de géographie, d'histoire et d'éducation civique, avec des quiz à choix multiples, des explications illustrées, une fonction de révision, des examens blancs (score de déviation) et un classement national.",
+    "q5": "Comment vous contacter ?",
+    "a5": "N'hésitez pas à nous écrire à <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Faites des sciences sociales votre meilleure matière.",
+    "lead": "Géographie, histoire et éducation civique, tout en une seule application. Commencez votre aventure Social Quest dès aujourd'hui.",
+    "appstore": "Télécharger gratuitement sur l'App Store",
+    "googleplay": "Télécharger gratuitement sur Google Play"
+   },
+   "footer": {
+    "support": "Support Social Quest"
+   }
+  }
+ },
+ "de": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Gesellschaftslehre für die japanische Mittelschul-Aufnahmeprüfung meistern | TrailFusion AI",
+    "description": "Social Quest ist eine Lern-App für Gesellschaftslehre der japanischen Mittelschul-Aufnahmeprüfung mit 53 Einheiten zu Geografie, Geschichte und Staatsbürgerkunde, Multiple-Choice-Quiz und illustrierten Erklärungen."
+   },
+   "breadcrumb": "Alle Apps",
+   "hero": {
+    "platform": "Verfügbar für iOS / Android",
+    "subtitle": "Geografie, Geschichte und Staatsbürgerkunde für die Mittelschul-Aufnahmeprüfung in einer App meistern",
+    "intro": "Lernen Sie effizient die wichtigsten Einheiten aus Geografie, Geschichte und Staatsbürgerkunde mit Multiple-Choice-Quiz und illustrierten Erklärungen. Schwachstellenanalyse, Abweichungswert und ein landesweites Ranking machen den Wissensaufbau für die Prüfung unterhaltsam.",
+    "chip1": "53 Einheiten",
+    "chip2": "Geografie, Geschichte & Staatsbürgerkunde",
+    "chip3": "Multiple-Choice-Quiz",
+    "chip4": "Landesweites Ranking",
+    "chip5": "Kostenloser Download"
+   },
+   "features": {
+    "title": "4 Mechanismen, die Sie in Gesellschaftslehre stark machen",
+    "lead": "Nicht nur Auswendiglernen — verstehen, überprüfen und Fortschritt wirklich spüren.",
+    "f1": {
+     "title": "Systematische Abdeckung von 53 Einheiten",
+     "desc": "Decken Sie Geografie, Geschichte und Staatsbürgerkunde vollständig mit einer App ab und erfassen Sie die in Prüfungen am häufigsten vorkommenden Einheiten."
+    },
+    "f2": {
+     "title": "Multiple-Choice-Quiz für kurze Momente",
+     "desc": "Beantworten Sie Fragen in gutem Tempo, um Ihr Wissen zu prüfen — selbst 5 Minuten auf dem Schulweg oder vor dem Schlafen summieren sich stetig."
+    },
+    "f3": {
+     "title": "Zusammenhänge durch Illustrationen verstehen",
+     "desc": "Historische Abläufe und geografische Kernpunkte werden mit Illustrationen erklärt, damit Inhalte bildlich statt durch reines Auswendiglernen haften bleiben."
+    },
+    "f4": {
+     "title": "Abweichungswert, Schwachstellenanalyse & Ranking",
+     "desc": "Probeprüfungen zeigen Ihren Abweichungswert, schwache Einheiten werden automatisch sichtbar gemacht, und das landesweite Ranking macht Ihren Fortschritt sichtbar."
+    }
+   },
+   "screenshots": {
+    "title": "App-Bildschirme"
+   },
+   "howto": {
+    "title": "So funktioniert's",
+    "step1": {
+     "title": "Einheit wählen",
+     "desc": "Wählen Sie die Einheit, die Sie lernen möchten, aus Geografie, Geschichte oder Staatsbürgerkunde — eine Roadmap zeigt Ihren Fortschritt auf einen Blick."
+    },
+    "step2": {
+     "title": "Multiple-Choice-Quiz lösen",
+     "desc": "Beantworten Sie Fragen in gutem Tempo und vertiefen Sie Ihr Verständnis mit illustrierten Erklärungen."
+    },
+    "step3": {
+     "title": "Wiederholen & Probeprüfung ablegen",
+     "desc": "Wiederholen Sie falsch beantwortete Fragen und prüfen Sie mit einer Probeprüfung Ihren Abweichungswert und Ihren landesweiten Rang."
+    }
+   },
+   "faq": {
+    "title": "Häufig gestellte Fragen",
+    "q1": "Ist die Nutzung kostenlos?",
+    "a1": "Ja, Download und Nutzung sind kostenlos. Einige Funktionen, wie das Entfernen von Werbung, sind über In-App-Käufe verfügbar.",
+    "q2": "Für wen ist diese App gedacht?",
+    "a2": "Sie ist für Grundschulkinder konzipiert, die sich auf die Mittelschul-Aufnahmeprüfung vorbereiten, eignet sich aber auch für Mittelschüler, die ihre Grundlagen festigen möchten, oder für Erwachsene, die den Stoff auffrischen wollen.",
+    "q3": "Welche Geräte werden unterstützt?",
+    "a3": "Unterstützt werden iPhone/iPad (iOS) sowie Android-Smartphones und -Tablets.",
+    "q4": "Was ist alles enthalten?",
+    "a4": "Enthalten sind 53 Einheiten aus Geografie, Geschichte und Staatsbürgerkunde mit Multiple-Choice-Quiz, illustrierten Erklärungen, einer Wiederholungsfunktion, Probeprüfungen (Abweichungswert) und einem landesweiten Ranking.",
+    "q5": "Wie kann ich Sie kontaktieren?",
+    "a5": "Schreiben Sie uns gerne an <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Machen Sie Gesellschaftslehre zu Ihrem Lieblingsfach.",
+    "lead": "Geografie, Geschichte und Staatsbürgerkunde — alles in einer App. Starten Sie noch heute Ihr Social-Quest-Abenteuer.",
+    "appstore": "Kostenlos im App Store herunterladen",
+    "googleplay": "Kostenlos bei Google Play herunterladen"
+   },
+   "footer": {
+    "support": "Social Quest Support"
+   }
+  }
+ },
+ "pt": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Domine os estudos sociais do exame de admissão japonês | TrailFusion AI",
+    "description": "Social Quest é um app de aprendizado para o exame de admissão ao ensino médio japonês em estudos sociais, cobrindo geografia, história e civismo em 53 unidades com questionários de múltipla escolha e explicações ilustradas."
+   },
+   "breadcrumb": "Todos os apps",
+   "hero": {
+    "platform": "Disponível em iOS / Android",
+    "subtitle": "Domine geografia, história e civismo para os exames de admissão em um só app",
+    "intro": "Estude de forma eficiente as unidades-chave de geografia, história e civismo com questionários de múltipla escolha e explicações ilustradas. Análise de pontos fracos, nota de desvio e ranking nacional tornam divertido acumular o conhecimento necessário para o exame.",
+    "chip1": "53 unidades",
+    "chip2": "Geografia, história e civismo",
+    "chip3": "Questionários de múltipla escolha",
+    "chip4": "Ranking nacional",
+    "chip5": "Download gratuito"
+   },
+   "features": {
+    "title": "4 recursos que fazem você dominar estudos sociais",
+    "lead": "Não é só decorar — entenda, verifique e sinta de verdade seu progresso.",
+    "f1": {
+     "title": "Cobertura sistemática de 53 unidades",
+     "desc": "Cubra geografia, história e civismo por completo em um único app, abrangendo as unidades mais frequentes nos exames."
+    },
+    "f2": {
+     "title": "Questionários de múltipla escolha para momentos livres",
+     "desc": "Responda em um bom ritmo para verificar seu conhecimento — mesmo 5 minutos no caminho da escola ou antes de dormir se acumulam de forma consistente."
+    },
+    "f3": {
+     "title": "Entenda o fio da história com ilustrações",
+     "desc": "Os fluxos históricos e pontos-chave de geografia são explicados com ilustrações, fixando ideias em vez de decoreba."
+    },
+    "f4": {
+     "title": "Nota de desvio, análise de pontos fracos e ranking",
+     "desc": "Simulados revelam sua nota de desvio, unidades fracas são identificadas automaticamente, e o ranking nacional torna seu progresso visível."
+    }
+   },
+   "screenshots": {
+    "title": "Telas do aplicativo"
+   },
+   "howto": {
+    "title": "Como funciona",
+    "step1": {
+     "title": "Escolha uma unidade",
+     "desc": "Escolha a unidade que deseja estudar entre geografia, história ou civismo — um roteiro mostra seu progresso rapidamente."
+    },
+    "step2": {
+     "title": "Faça os questionários de múltipla escolha",
+     "desc": "Responda em bom ritmo e aprofunde sua compreensão com explicações ilustradas."
+    },
+    "step3": {
+     "title": "Revise e faça simulados",
+     "desc": "Revise as questões que errou e confira sua nota de desvio e posição nacional com um simulado."
+    }
+   },
+   "faq": {
+    "title": "Perguntas frequentes",
+    "q1": "É gratuito usar?",
+    "a1": "Sim, é gratuito para baixar e usar. Alguns recursos, como remover anúncios, estão disponíveis via compra no aplicativo.",
+    "q2": "Para quem é este app?",
+    "a2": "Foi criado para alunos do ensino fundamental que se preparam para o exame de admissão, mas também é ótimo para estudantes do ensino médio que querem reforçar a base ou adultos que querem revisar o conteúdo.",
+    "q3": "Quais dispositivos são compatíveis?",
+    "a3": "Compatível com iPhone/iPad (iOS) e smartphones e tablets Android.",
+    "q4": "O que está incluído no app?",
+    "a4": "Inclui 53 unidades de geografia, história e civismo, com questionários de múltipla escolha, explicações ilustradas, função de revisão, simulados (nota de desvio) e ranking nacional.",
+    "q5": "Como posso entrar em contato?",
+    "a5": "Fique à vontade para nos escrever em <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Faça de estudos sociais sua melhor matéria.",
+    "lead": "Geografia, história e civismo, tudo em um só app. Comece hoje sua aventura no Social Quest.",
+    "appstore": "Baixe grátis na App Store",
+    "googleplay": "Baixe grátis no Google Play"
+   },
+   "footer": {
+    "support": "Suporte do Social Quest"
+   }
+  }
+ },
+ "ru": {
+  "socialquest2": {
+   "meta": {
+    "title": "Social Quest - Полное освоение обществознания для вступительных экзаменов в японскую школу | TrailFusion AI",
+    "description": "Social Quest — приложение для подготовки к вступительным экзаменам в японскую среднюю школу по обществознанию: география, история и граждановедение в 53 разделах с тестами и иллюстрированными объяснениями."
+   },
+   "breadcrumb": "Все приложения",
+   "hero": {
+    "platform": "Доступно на iOS / Android",
+    "subtitle": "Освойте географию, историю и граждановедение для вступительных экзаменов в одном приложении",
+    "intro": "Эффективно изучайте ключевые разделы географии, истории и граждановедения с помощью тестов с выбором ответа и иллюстрированных объяснений. Анализ слабых мест, рейтинг успеваемости и национальный рейтинг делают накопление знаний для экзамена увлекательным.",
+    "chip1": "53 раздела",
+    "chip2": "География, история и граждановедение",
+    "chip3": "Тесты с выбором ответа",
+    "chip4": "Национальный рейтинг",
+    "chip5": "Бесплатная загрузка"
+   },
+   "features": {
+    "title": "4 механизма, которые помогут полюбить обществознание",
+    "lead": "Это не просто зубрёжка — понимайте, проверяйте и по-настоящему ощущайте свой прогресс.",
+    "f1": {
+     "title": "Систематическое покрытие 53 разделов",
+     "desc": "Полностью охватите географию, историю и граждановедение в одном приложении, включая разделы, наиболее часто встречающиеся на экзаменах."
+    },
+    "f2": {
+     "title": "Тесты с выбором ответа для свободных минут",
+     "desc": "Отвечайте в хорошем темпе, чтобы проверить знания — даже 5 минут по дороге в школу или перед сном стабильно накапливаются."
+    },
+    "f3": {
+     "title": "Понимайте ход истории через иллюстрации",
+     "desc": "Исторические процессы и ключевые географические моменты объясняются с помощью иллюстраций, чтобы материал запоминался образно, а не механически."
+    },
+    "f4": {
+     "title": "Рейтинг успеваемости, анализ слабых мест и рейтинг",
+     "desc": "Пробные тесты показывают ваш рейтинг успеваемости, слабые разделы выявляются автоматически, а национальный рейтинг делает ваш прогресс наглядным."
+    }
+   },
+   "screenshots": {
+    "title": "Скриншоты приложения"
+   },
+   "howto": {
+    "title": "Как это работает",
+    "step1": {
+     "title": "Выберите раздел",
+     "desc": "Выберите раздел для изучения из географии, истории или граждановедения — дорожная карта показывает прогресс с первого взгляда."
+    },
+    "step2": {
+     "title": "Пройдите тест с выбором ответа",
+     "desc": "Отвечайте в хорошем темпе и углубляйте понимание с помощью иллюстрированных объяснений."
+    },
+    "step3": {
+     "title": "Повторите материал и пройдите пробный тест",
+     "desc": "Повторите вопросы, в которых ошиблись, и проверьте свой рейтинг успеваемости и место в национальном рейтинге с помощью пробного теста."
+    }
+   },
+   "faq": {
+    "title": "Часто задаваемые вопросы",
+    "q1": "Это бесплатно?",
+    "a1": "Да, загрузка и использование бесплатны. Некоторые функции, например удаление рекламы, доступны через покупки в приложении.",
+    "q2": "Кому подойдёт это приложение?",
+    "a2": "Оно рассчитано на школьников начальных классов, готовящихся к вступительным экзаменам, но также подойдёт и учащимся средней школы, желающим закрепить базу, или взрослым, желающим повторить материал.",
+    "q3": "Какие устройства поддерживаются?",
+    "a3": "Поддерживаются iPhone/iPad (iOS), а также смартфоны и планшеты на Android.",
+    "q4": "Что входит в приложение?",
+    "a4": "В приложение входят 53 раздела по географии, истории и граждановедению с тестами с выбором ответа, иллюстрированными объяснениями, функцией повторения, пробными тестами (рейтинг успеваемости) и национальным рейтингом.",
+    "q5": "Как с вами связаться?",
+    "a5": "Пишите нам на <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a>."
+   },
+   "cta": {
+    "title": "Сделайте обществознание своим любимым предметом.",
+    "lead": "География, история и граждановедение — всё в одном приложении. Начните своё приключение Social Quest уже сегодня.",
+    "appstore": "Скачать бесплатно в App Store",
+    "googleplay": "Скачать бесплатно в Google Play"
+   },
+   "footer": {
+    "support": "Поддержка Social Quest"
+   }
+  }
+ },
+ "hi": {
+  "socialquest2": {
+   "meta": {
+    "title": "सोशल क्वेस्ट - जापानी मिडिल स्कूल प्रवेश परीक्षा का सामाजिक अध्ययन में महारत हासिल करें | TrailFusion AI",
+    "description": "सोशल क्वेस्ट जापानी मिडिल स्कूल प्रवेश परीक्षा के सामाजिक अध्ययन के लिए एक लर्निंग ऐप है, जो भूगोल, इतिहास और नागरिकशास्त्र के 53 यूनिट्स को बहुविकल्पीय क्विज़ और चित्रित व्याख्याओं के साथ कवर करता है।"
+   },
+   "breadcrumb": "सभी ऐप्स",
+   "hero": {
+    "platform": "iOS / Android पर उपलब्ध",
+    "subtitle": "मिडिल स्कूल प्रवेश परीक्षा के लिए भूगोल, इतिहास और नागरिकशास्त्र एक ही ऐप में महारत हासिल करें",
+    "intro": "बहुविकल्पीय क्विज़ और चित्रित व्याख्याओं के साथ भूगोल, इतिहास और नागरिकशास्त्र की मुख्य यूनिट्स को कुशलता से सीखें। कमजोरी विश्लेषण, विचलन स्कोर और राष्ट्रीय रैंकिंग परीक्षा के लिए ज्ञान बढ़ाना मज़ेदार बनाते हैं।",
+    "chip1": "53 यूनिट्स",
+    "chip2": "भूगोल, इतिहास और नागरिकशास्त्र",
+    "chip3": "बहुविकल्पीय क्विज़",
+    "chip4": "राष्ट्रीय रैंकिंग",
+    "chip5": "मुफ्त डाउनलोड"
+   },
+   "features": {
+    "title": "सामाजिक अध्ययन में माहिर बनाने वाली 4 विशेषताएं",
+    "lead": "सिर्फ रटना नहीं — समझें, जांचें, और अपनी प्रगति को वास्तव में महसूस करें।",
+    "f1": {
+     "title": "53 यूनिट्स का व्यवस्थित कवरेज",
+     "desc": "भूगोल, इतिहास और नागरिकशास्त्र को एक ही ऐप में पूरी तरह कवर करें, परीक्षा में सबसे अधिक आने वाली यूनिट्स को शामिल करते हुए।"
+    },
+    "f2": {
+     "title": "खाली समय में बहुविकल्पीय क्विज़",
+     "desc": "अच्छी गति से उत्तर देकर अपने ज्ञान की जांच करें — स्कूल जाते समय या सोने से पहले के 5 मिनट भी लगातार जुड़ते जाते हैं।"
+    },
+    "f3": {
+     "title": "चित्रों के माध्यम से क्रम को समझें",
+     "desc": "ऐतिहासिक प्रवाह और भूगोल के मुख्य बिंदुओं को चित्रों के साथ समझाया जाता है, ताकि रटने के बजाय चित्र के माध्यम से याद रहे।"
+    },
+    "f4": {
+     "title": "विचलन स्कोर, कमजोरी विश्लेषण और रैंकिंग",
+     "desc": "मॉक टेस्ट आपका विचलन स्कोर दिखाते हैं, कमजोर यूनिट्स स्वचालित रूप से सामने आती हैं, और राष्ट्रीय रैंकिंग आपकी प्रगति को दृश्यमान बनाती है।"
+    }
+   },
+   "screenshots": {
+    "title": "ऐप स्क्रीन"
+   },
+   "howto": {
+    "title": "यह कैसे काम करता है",
+    "step1": {
+     "title": "एक यूनिट चुनें",
+     "desc": "भूगोल, इतिहास या नागरिकशास्त्र में से पढ़ाई करने के लिए यूनिट चुनें — एक रोडमैप आपकी प्रगति को एक नज़र में दिखाता है।"
+    },
+    "step2": {
+     "title": "बहुविकल्पीय क्विज़ में भाग लें",
+     "desc": "अच्छी गति से प्रश्नों के उत्तर दें और चित्रित व्याख्याओं के साथ समझ गहरी करें।"
+    },
+    "step3": {
+     "title": "समीक्षा करें और मॉक टेस्ट दें",
+     "desc": "गलत हुए प्रश्नों की समीक्षा करें, फिर मॉक टेस्ट के साथ अपना विचलन स्कोर और राष्ट्रीय रैंक जांचें।"
+    }
+   },
+   "faq": {
+    "title": "अक्सर पूछे जाने वाले प्रश्न",
+    "q1": "क्या यह मुफ्त है？",
+    "a1": "हां, डाउनलोड करना और उपयोग करना मुफ्त है। विज्ञापन हटाने जैसी कुछ सुविधाएं इन-ऐप खरीद के माध्यम से उपलब्ध हैं।",
+    "q2": "यह ऐप किसके लिए है？",
+    "a2": "यह मिडिल स्कूल प्रवेश परीक्षा की तैयारी करने वाले प्राथमिक स्कूल के छात्रों के लिए डिज़ाइन किया गया है, लेकिन यह बुनियादी बातों को मजबूत करना चाहने वाले मिडिल स्कूल के छात्रों या विषय को फिर से सीखना चाहने वाले वयस्कों के लिए भी बेहतरीन है।",
+    "q3": "कौन से डिवाइस समर्थित हैं？",
+    "a3": "यह iPhone/iPad (iOS) के साथ-साथ Android स्मार्टफोन और टैबलेट का समर्थन करता है।",
+    "q4": "ऐप में क्या शामिल है？",
+    "a4": "इसमें भूगोल, इतिहास और नागरिकशास्त्र की 53 यूनिट्स शामिल हैं, जिनमें बहुविकल्पीय क्विज़, चित्रित व्याख्याएं, समीक्षा सुविधा, मॉक टेस्ट (विचलन स्कोर) और राष्ट्रीय रैंकिंग शामिल हैं।",
+    "q5": "मैं संपर्क कैसे करूं？",
+    "a5": "बेझिझक हमें <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#FF6B5B;text-decoration:underline;\">trailfusionai@gmail.com</a> पर लिखें।"
+   },
+   "cta": {
+    "title": "सामाजिक अध्ययन को अपना सबसे मजबूत विषय बनाएं।",
+    "lead": "भूगोल, इतिहास और नागरिकशास्त्र, सब एक ही ऐप में। आज ही सोशल क्वेस्ट का साहसिक सफर शुरू करें।",
+    "appstore": "App Store पर मुफ्त डाउनलोड करें",
+    "googleplay": "Google Play पर मुफ्त डाउनलोड करें"
+   },
+   "footer": {
+    "support": "सोशल क्वेस्ट सहायता"
+   }
+  }
+ }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
+</script>
 </body>
 </html>

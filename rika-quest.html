@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合格！理科クエスト - 中学受験理科を、楽しくまるごと対策 | TrailFusion AI</title>
-<meta name="description" content="中学受験理科の学習アプリ「合格！理科クエスト」。生命・地球・物質・エネルギーの全28単元・2000問以上をイラスト付きクイズで攻略。偏差値・全国ランキング・育成要素で楽しく続く。iOS/Android対応・無料。">
+<title data-i18n="rikaquest2.meta.title">合格！理科クエスト - 中学受験理科を、楽しくまるごと対策 | TrailFusion AI</title>
+<meta name="description" content="中学受験理科の学習アプリ「合格！理科クエスト」。生命・地球・物質・エネルギーの全28単元・2000問以上をイラスト付きクイズで攻略。偏差値・全国ランキング・育成要素で楽しく続く。iOS/Android対応・無料。" data-i18n-content="rikaquest2.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/rika-quest.html">
@@ -30,6 +30,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
+<script>
+(function(){
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
+  window.__PAGE_LANG=lang;
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,13 +120,15 @@ body{background:#FFFBF2;color:#1F2E4D;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -131,8 +150,8 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="absolute inset-0 dot-pattern opacity-20 pointer-events-none"></div>
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <nav class="mb-8 text-sm font-bold text-navy/60" aria-label="パンくず">
-      <a href="apps.html" class="hover:text-coral transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
-      <span class="mx-2">/</span><span>理科クエスト</span>
+      <a href="apps.html" class="hover:text-coral transition"><i class="ri-arrow-left-line"></i> <span data-i18n="rikaquest2.breadcrumbApps">開発したアプリ一覧</span></a>
+      <span class="mx-2">/</span><span data-i18n="rikaquest2.breadcrumbCurrent">理科クエスト</span>
     </nav>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
       <div>
@@ -140,19 +159,19 @@ body{background:#FFFBF2;color:#1F2E4D;}
           <div class="q-logo"><img src="assets/images/rika-quest/rika-quest-logo.png" alt="合格！理科クエスト ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
             <span class="q-badge accent"><i class="ri-graduation-cap-fill"></i>SCIENCE QUEST</span>
-            <span class="q-badge"><i class="ri-smartphone-fill"></i>iOS / Android 対応</span>
+            <span class="q-badge"><i class="ri-smartphone-fill"></i><span data-i18n="rikaquest2.hero.platformBadge">iOS / Android 対応</span></span>
           </div>
         </div>
         <h1 class="display-xl text-4xl md:text-5xl lg:text-6xl mb-4 leading-none" style="letter-spacing:-.03em;">合格！理科クエスト</h1>
-        <p class="font-black text-lg md:text-2xl mb-4">中学受験理科を、楽しくまるごと対策</p>
-        <p class="text-navy/75 leading-loose font-medium mb-7">生命・地球・物質・エネルギーの4分野を、イラスト付きクイズでテンポよく攻略。単元別の進捗、偏差値、全国ランキングで、毎日の学習が続きます。</p>
+        <p class="font-black text-lg md:text-2xl mb-4" data-i18n="rikaquest2.hero.subtitle">中学受験理科を、楽しくまるごと対策</p>
+        <p class="text-navy/75 leading-loose font-medium mb-7" data-i18n="rikaquest2.hero.intro">生命・地球・物質・エネルギーの4分野を、イラスト付きクイズでテンポよく攻略。単元別の進捗、偏差値、全国ランキングで、毎日の学習が続きます。</p>
         <div class="flex flex-wrap gap-3 mb-6">
           <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC%E7%90%86%E7%A7%91%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88/id6772644144" target="_blank" rel="noopener" class="q-store"><i class="ri-apple-fill text-xl"></i><span>App Store</span></a>
           <a href="https://play.google.com/store/apps/details?id=com.gokakurikaquest.app" target="_blank" rel="noopener" class="q-store"><i class="ri-google-play-fill text-xl"></i><span>Google Play</span></a>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i>全28単元</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i>2000問以上</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i>イラスト解説</span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i>偏差値・ランキング</span>
-          <span class="q-chip"><i class="ri-price-tag-3-fill" style="color:#E0A800;"></i>無料ダウンロード</span>
+          <span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i><span data-i18n="rikaquest2.hero.chip1">全28単元</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i><span data-i18n="rikaquest2.hero.chip2">2000問以上</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i><span data-i18n="rikaquest2.hero.chip3">イラスト解説</span></span><span class="q-chip"><i class="ri-checkbox-circle-fill" style="color:#E0A800;"></i><span data-i18n="rikaquest2.hero.chip4">偏差値・ランキング</span></span>
+          <span class="q-chip"><i class="ri-price-tag-3-fill" style="color:#E0A800;"></i><span data-i18n="rikaquest2.hero.chip5">無料ダウンロード</span></span>
         </div>
       </div>
       <div class="q-frame">
@@ -166,36 +185,36 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#FFD84D;color:#1F2E4D;">FEATURES</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3">理科が好きになる、4つのしかけ</h2>
-      <p class="text-navy/70 font-medium max-w-2xl mx-auto">2000問以上の問題と育成要素で、「続けたくなる」理科学習を実現しました。</p>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5 mb-3" data-i18n="rikaquest2.features.title">理科が好きになる、4つのしかけ</h2>
+      <p class="text-navy/70 font-medium max-w-2xl mx-auto" data-i18n="rikaquest2.features.lead">2000問以上の問題と育成要素で、「続けたくなる」理科学習を実現しました。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5">全4分野・28単元を網羅</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">生命・地球・物質・エネルギーの4分野を体系的にカバー。入試に必要な単元をもれなく学べます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="rikaquest2.features.f1Title">全4分野・28単元を網羅</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.features.f1Desc">生命・地球・物質・エネルギーの4分野を体系的にカバー。入試に必要な単元をもれなく学べます。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5">圧倒的な2000問以上</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">基礎から入試レベルまで反復練習。確かな実力を積み上げられる問題数です。</p>
+          <h3 class="font-black mb-1.5" data-i18n="rikaquest2.features.f2Title">圧倒的な2000問以上</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.features.f2Desc">基礎から入試レベルまで反復練習。確かな実力を積み上げられる問題数です。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5">イラストと音声で定着</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">難しい理科用語も、イラストと音声でイメージから理解。丸暗記に頼りません。</p>
+          <h3 class="font-black mb-1.5" data-i18n="rikaquest2.features.f3Title">イラストと音声で定着</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.features.f3Desc">難しい理科用語も、イラストと音声でイメージから理解。丸暗記に頼りません。</p>
         </div>
       </div>
       <div class="q-feature flex items-start gap-4">
         <span class="q-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5">リカちゃんが進化する育成要素</h3>
-          <p class="text-navy/70 text-sm leading-relaxed font-medium">学習の成果でマスコット「リカちゃん」が成長。偏差値・ランキング・復習機能で弱点も見える化。</p>
+          <h3 class="font-black mb-1.5" data-i18n="rikaquest2.features.f4Title">リカちゃんが進化する育成要素</h3>
+          <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.features.f4Desc">学習の成果でマスコット「リカちゃん」が成長。偏差値・ランキング・復習機能で弱点も見える化。</p>
         </div>
       </div>
     </div>
@@ -206,7 +225,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#FFD84D;color:#1F2E4D;">SCREENSHOTS</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">アプリの画面</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="rikaquest2.screenshots.title">アプリの画面</h2>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7 max-w-5xl mx-auto">
       <figure class="q-shot"><img src="assets/images/rika-quest/rika-quest-2.png" alt="理科クエストの画面 1" loading="lazy"></figure>
@@ -221,23 +240,23 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="sticker" style="background:#FFD84D;color:#1F2E4D;">HOW TO</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">学習のながれ</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="rikaquest2.howto.title">学習のながれ</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       <div class="q-step">
         <div class="n">1</div>
-        <h3 class="font-black text-lg mb-2">単元を選ぶ</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">4分野・28単元のロードマップから今日の学習を選択。進捗と弱点がひと目でわかります。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="rikaquest2.howto.step1Title">単元を選ぶ</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.howto.step1Desc">4分野・28単元のロードマップから今日の学習を選択。進捗と弱点がひと目でわかります。</p>
       </div>
       <div class="q-step">
         <div class="n">2</div>
-        <h3 class="font-black text-lg mb-2">クイズに挑戦</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">イラスト付きの問題をテンポよく解いて、解説で理解を深めます。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="rikaquest2.howto.step2Title">クイズに挑戦</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.howto.step2Desc">イラスト付きの問題をテンポよく解いて、解説で理解を深めます。</p>
       </div>
       <div class="q-step">
         <div class="n">3</div>
-        <h3 class="font-black text-lg mb-2">育てて、競う</h3>
-        <p class="text-navy/70 text-sm leading-relaxed font-medium">学習するほどリカちゃんが進化。実力テストで偏差値と全国順位をチェック。</p>
+        <h3 class="font-black text-lg mb-2" data-i18n="rikaquest2.howto.step3Title">育てて、競う</h3>
+        <p class="text-navy/70 text-sm leading-relaxed font-medium" data-i18n="rikaquest2.howto.step3Desc">学習するほどリカちゃんが進化。実力テストで偏差値と全国順位をチェック。</p>
       </div>
     </div>
   </div>
@@ -247,28 +266,28 @@ body{background:#FFFBF2;color:#1F2E4D;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="sticker" style="background:#FFD84D;color:#1F2E4D;">FAQ</span>
-      <h2 class="display-xl text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+      <h2 class="display-xl text-3xl md:text-4xl mt-5" data-i18n="rikaquest2.faq.title">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span>無料で使えますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="rikaquest2.faq.q1">無料で使えますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="rikaquest2.faq.q1Answer">無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>どんな人に向いていますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">中学受験をめざす小学生のための構成ですが、理科の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="rikaquest2.faq.q2">どんな人に向いていますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="rikaquest2.faq.q2Answer">中学受験をめざす小学生のための構成ですが、理科の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>対応している端末は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。</p>
+        <summary><span class="qm">Q</span><span data-i18n="rikaquest2.faq.q3">対応している端末は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="rikaquest2.faq.q3Answer">iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>収録内容を教えてください<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">生命・地球・物質・エネルギーの4分野・28単元、2000問以上を収録。イラスト解説、復習機能、実力テスト（偏差値）、全国ランキング、育成要素をお使いいただけます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="rikaquest2.faq.q4">収録内容を教えてください</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="rikaquest2.faq.q4Answer">生命・地球・物質・エネルギーの4分野・28単元、2000問以上を収録。イラスト解説、復習機能、実力テスト（偏差値）、全国ランキング、育成要素をお使いいただけます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="rikaquest2.faq.q5">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#FF6B5B;text-decoration:underline;">trailfusionai@gmail.com</a> <span data-i18n="rikaquest2.faq.q5Answer">までお気軽にご連絡ください。</span></p>
       </details>
     </div>
   </div>
@@ -277,11 +296,11 @@ body{background:#FFFBF2;color:#1F2E4D;}
 <section class="q-cta py-16 md:py-24 border-t-[3px] border-navy">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="q-logo mx-auto mb-6" style="transform:rotate(3deg);"><img src="assets/images/rika-quest/rika-quest-logo.png" alt="合格！理科クエスト ロゴ"></div>
-    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4">理科を、冒険に変えよう。</h2>
-    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto">2000問以上の問題とリカちゃんが待っています。今日から理科クエストへ。</p>
+    <h2 class="display-xl text-3xl md:text-4xl text-white mb-4" data-i18n="rikaquest2.cta.title">理科を、冒険に変えよう。</h2>
+    <p class="text-white/75 font-medium mb-8 max-w-xl mx-auto" data-i18n="rikaquest2.cta.lead">2000問以上の問題とリカちゃんが待っています。今日から理科クエストへ。</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC%E7%90%86%E7%A7%91%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88/id6772644144" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i>App Store で無料ダウンロード</a>
-      <a href="https://play.google.com/store/apps/details?id=com.gokakurikaquest.app" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-google-play-fill"></i>Google Play で無料ダウンロード</a>
+      <a href="https://apps.apple.com/us/app/%E5%90%88%E6%A0%BC%E7%90%86%E7%A7%91%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88/id6772644144" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral"><i class="ri-apple-fill"></i><span data-i18n="rikaquest2.cta.appStoreBtn">App Store で無料ダウンロード</span></a>
+      <a href="https://play.google.com/store/apps/details?id=com.gokakurikaquest.app" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white"><i class="ri-google-play-fill"></i><span data-i18n="rikaquest2.cta.googlePlayBtn">Google Play で無料ダウンロード</span></a>
     </div>
   </div>
 </section>
@@ -309,7 +328,7 @@ body{background:#FFFBF2;color:#1F2E4D;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -352,5 +371,625 @@ body{background:#FFFBF2;color:#1F2E4D;}
 </footer>
 <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
 <script src="assets/js/trailfusion-ui.js"></script>
+<script>
+window.pageTranslations = {
+ "ja": {
+  "rikaquest2": {
+   "meta": {
+    "title": "合格！理科クエスト - 中学受験理科を、楽しくまるごと対策 | TrailFusion AI",
+    "description": "中学受験理科の学習アプリ「合格！理科クエスト」。生命・地球・物質・エネルギーの全28単元・2000問以上をイラスト付きクイズで攻略。偏差値・全国ランキング・育成要素で楽しく続く。iOS/Android対応・無料。"
+   },
+   "breadcrumbApps": "開発したアプリ一覧",
+   "breadcrumbCurrent": "理科クエスト",
+   "hero": {
+    "platformBadge": "iOS / Android 対応",
+    "subtitle": "中学受験理科を、楽しくまるごと対策",
+    "intro": "生命・地球・物質・エネルギーの4分野を、イラスト付きクイズでテンポよく攻略。単元別の進捗、偏差値、全国ランキングで、毎日の学習が続きます。",
+    "chip1": "全28単元",
+    "chip2": "2000問以上",
+    "chip3": "イラスト解説",
+    "chip4": "偏差値・ランキング",
+    "chip5": "無料ダウンロード"
+   },
+   "features": {
+    "title": "理科が好きになる、4つのしかけ",
+    "lead": "2000問以上の問題と育成要素で、「続けたくなる」理科学習を実現しました。",
+    "f1Title": "全4分野・28単元を網羅",
+    "f1Desc": "生命・地球・物質・エネルギーの4分野を体系的にカバー。入試に必要な単元をもれなく学べます。",
+    "f2Title": "圧倒的な2000問以上",
+    "f2Desc": "基礎から入試レベルまで反復練習。確かな実力を積み上げられる問題数です。",
+    "f3Title": "イラストと音声で定着",
+    "f3Desc": "難しい理科用語も、イラストと音声でイメージから理解。丸暗記に頼りません。",
+    "f4Title": "リカちゃんが進化する育成要素",
+    "f4Desc": "学習の成果でマスコット「リカちゃん」が成長。偏差値・ランキング・復習機能で弱点も見える化。"
+   },
+   "screenshots": { "title": "アプリの画面" },
+   "howto": {
+    "title": "学習のながれ",
+    "step1Title": "単元を選ぶ",
+    "step1Desc": "4分野・28単元のロードマップから今日の学習を選択。進捗と弱点がひと目でわかります。",
+    "step2Title": "クイズに挑戦",
+    "step2Desc": "イラスト付きの問題をテンポよく解いて、解説で理解を深めます。",
+    "step3Title": "育てて、競う",
+    "step3Desc": "学習するほどリカちゃんが進化。実力テストで偏差値と全国順位をチェック。"
+   },
+   "faq": {
+    "title": "よくあるご質問",
+    "q1": "無料で使えますか？",
+    "q1Answer": "無料でダウンロードしてお使いいただけます。広告の削除などの一部機能はアプリ内課金でご利用いただけます。",
+    "q2": "どんな人に向いていますか？",
+    "q2Answer": "中学受験をめざす小学生のための構成ですが、理科の基礎を固めたい中学生や、学び直しをしたい大人の方にもお使いいただけます。",
+    "q3": "対応している端末は？",
+    "q3Answer": "iPhone・iPad（iOS）と Android スマートフォン・タブレットに対応しています。",
+    "q4": "収録内容を教えてください",
+    "q4Answer": "生命・地球・物質・エネルギーの4分野・28単元、2000問以上を収録。イラスト解説、復習機能、実力テスト（偏差値）、全国ランキング、育成要素をお使いいただけます。",
+    "q5": "お問い合わせ先は？",
+    "q5Answer": "までお気軽にご連絡ください。"
+   },
+   "cta": {
+    "title": "理科を、冒険に変えよう。",
+    "lead": "2000問以上の問題とリカちゃんが待っています。今日から理科クエストへ。",
+    "appStoreBtn": "App Store で無料ダウンロード",
+    "googlePlayBtn": "Google Play で無料ダウンロード"
+   }
+  }
+ },
+ "en": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest - Science Prep for Japanese Junior-High Entrance Exams",
+    "description": "Rika Quest is a Japanese-language science learning app for junior-high entrance exam prep, with 28 units and 2,000+ illustrated quiz questions across life science, earth science, chemistry, and physics."
+   },
+   "breadcrumbApps": "All Apps",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Available on iOS / Android",
+    "subtitle": "Complete science prep for Japan's junior-high entrance exams — made fun",
+    "intro": "Master all four science fields — life, earth, chemistry, and physics — through fast-paced illustrated quizzes. Per-unit progress, a deviation-score rating, and a national leaderboard keep daily study going.",
+    "chip1": "28 units",
+    "chip2": "2,000+ questions",
+    "chip3": "Illustrated explanations",
+    "chip4": "Score rating & rankings",
+    "chip5": "Free download"
+   },
+   "features": {
+    "title": "Four reasons kids grow to love science",
+    "lead": "Over 2,000 questions plus a mascot-growth system make science study something you want to keep doing.",
+    "f1Title": "All 4 fields, 28 units covered",
+    "f1Desc": "Systematic coverage of life science, earth science, chemistry, and physics — every unit the exams require.",
+    "f2Title": "A massive 2,000+ questions",
+    "f2Desc": "Repeat practice from basics to exam level — enough volume to build real, lasting ability.",
+    "f3Title": "Illustrations and narration make it stick",
+    "f3Desc": "Even tough science vocabulary becomes intuitive with illustrations and read-aloud audio — no more rote memorization.",
+    "f4Title": "A mascot that grows as you learn",
+    "f4Desc": "The mascot \"Rika-chan\" grows with your progress. A score rating, rankings, and review tools surface your weak spots."
+   },
+   "screenshots": { "title": "App Screens" },
+   "howto": {
+    "title": "How It Works",
+    "step1Title": "Pick a unit",
+    "step1Desc": "Choose today's study topic from the 4-field, 28-unit roadmap. Progress and weak spots are visible at a glance.",
+    "step2Title": "Take the quiz",
+    "step2Desc": "Work through illustrated questions at a good pace, then deepen understanding with the explanations.",
+    "step3Title": "Grow and compete",
+    "step3Desc": "Rika-chan grows the more you study. Check your score rating and national rank with practice tests."
+   },
+   "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Is it free to use?",
+    "q1Answer": "Yes, it's free to download and use. Some features, such as removing ads, are available via in-app purchase.",
+    "q2": "Who is this app for?",
+    "q2Answer": "It's built for elementary schoolers preparing for junior-high entrance exams, but it also suits junior-high students wanting to solidify the basics, or adults revisiting science.",
+    "q3": "Which devices are supported?",
+    "q3Answer": "iPhone and iPad (iOS), plus Android phones and tablets.",
+    "q4": "What content does it cover?",
+    "q4Answer": "28 units across life science, earth science, chemistry, and physics, with 2,000+ questions. It includes illustrated explanations, a review tool, practice tests with a deviation score, a national leaderboard, and a mascot-growth system.",
+    "q5": "How can I contact support?",
+    "q5Answer": "— feel free to reach out anytime."
+   },
+   "cta": {
+    "title": "Turn science into an adventure.",
+    "lead": "2,000+ questions and Rika-chan are waiting. Start Rika Quest today.",
+    "appStoreBtn": "Free download on the App Store",
+    "googlePlayBtn": "Free download on Google Play"
+   }
+  }
+ },
+ "zh": {
+  "rikaquest2": {
+   "meta": {
+    "title": "合格！理科クエスト - 日本中学入学考试理科备考应用",
+    "description": "「合格！理科クエスト」是一款面向日本中学入学考试的日语理科学习应用,涵盖生命科学、地球科学、物质与能量4大领域共28个单元,收录2000多道配图测验题。"
+   },
+   "breadcrumbApps": "已开发应用列表",
+   "breadcrumbCurrent": "理科クエスト",
+   "hero": {
+    "platformBadge": "支持 iOS / Android",
+    "subtitle": "轻松搞定日本中学入学考试理科全部内容",
+    "intro": "通过节奏明快的配图测验,系统攻克生命、地球、物质、能量4大领域。按单元查看进度,配合偏差值和全国排名,让每天的学习持续下去。",
+    "chip1": "全28个单元",
+    "chip2": "2000道以上题目",
+    "chip3": "配图讲解",
+    "chip4": "偏差值·排名",
+    "chip5": "免费下载"
+   },
+   "features": {
+    "title": "让人爱上理科的4大设计",
+    "lead": "凭借2000多道题目和角色养成要素,打造让人\"想继续学\"的理科学习体验。",
+    "f1Title": "覆盖全部4大领域·28个单元",
+    "f1Desc": "系统覆盖生命、地球、物质、能量4大领域,考试所需单元一网打尽。",
+    "f2Title": "多达2000道以上题目",
+    "f2Desc": "从基础到考试难度反复练习,足够的题量帮你稳步积累实力。",
+    "f3Title": "配图与语音加深记忆",
+    "f3Desc": "再难的理科术语,也能通过插图和语音从画面理解,不必死记硬背。",
+    "f4Title": "角色\"理科酱\"养成要素",
+    "f4Desc": "学习成果会让吉祥物\"理科酱\"成长。偏差值、排名、复习功能让弱点一目了然。"
+   },
+   "screenshots": { "title": "应用截图" },
+   "howto": {
+    "title": "学习流程",
+    "step1Title": "选择单元",
+    "step1Desc": "从4大领域·28个单元的路线图中选择今天要学的内容,进度和弱点一目了然。",
+    "step2Title": "挑战测验",
+    "step2Desc": "节奏明快地解答配图题目,并通过讲解加深理解。",
+    "step3Title": "养成并比拼",
+    "step3Desc": "学得越多,\"理科酱\"越成长。通过实力测试查看偏差值和全国排名。"
+   },
+   "faq": {
+    "title": "常见问题",
+    "q1": "可以免费使用吗？",
+    "q1Answer": "可以免费下载使用。去广告等部分功能可通过应用内购买解锁。",
+    "q2": "适合什么人使用？",
+    "q2Answer": "主要面向准备中学入学考试的小学生,但也适合想打牢理科基础的初中生,或想重新学习理科的成年人。",
+    "q3": "支持哪些设备？",
+    "q3Answer": "支持 iPhone、iPad(iOS)以及 Android 手机和平板。",
+    "q4": "请问收录了哪些内容？",
+    "q4Answer": "收录生命、地球、物质、能量4大领域共28个单元、2000道以上题目。包含配图讲解、复习功能、实力测试(偏差值)、全国排名和角色养成要素。",
+    "q5": "如何联系客服？",
+    "q5Answer": "欢迎随时联系我们。"
+   },
+   "cta": {
+    "title": "把理科变成一场冒险吧。",
+    "lead": "2000多道题目和\"理科酱\"正等着你。今天就开始理科クエスト吧。",
+    "appStoreBtn": "在 App Store 免费下载",
+    "googlePlayBtn": "在 Google Play 免费下载"
+   }
+  }
+ },
+ "ko": {
+  "rikaquest2": {
+   "meta": {
+    "title": "합격! 리카 퀘스트 - 일본 중학 입시 이과 완벽 대비",
+    "description": "'합격! 리카 퀘스트'는 일본 중학 입시를 위한 일본어 이과 학습 앱으로, 생명·지구·물질·에너지 4개 분야 28단원, 2000문제 이상의 삽화 퀴즈를 담고 있습니다."
+   },
+   "breadcrumbApps": "개발한 앱 목록",
+   "breadcrumbCurrent": "리카 퀘스트",
+   "hero": {
+    "platformBadge": "iOS / Android 지원",
+    "subtitle": "일본 중학 입시 이과를 즐겁게 통째로 대비",
+    "intro": "생명·지구·물질·에너지 4개 분야를 삽화가 있는 퀴즈로 빠른 템포로 공략합니다. 단원별 진행 상황, 편차치, 전국 랭킹으로 매일의 학습이 이어집니다.",
+    "chip1": "전 28단원",
+    "chip2": "2000문제 이상",
+    "chip3": "삽화 해설",
+    "chip4": "편차치·랭킹",
+    "chip5": "무료 다운로드"
+   },
+   "features": {
+    "title": "이과를 좋아하게 되는 4가지 장치",
+    "lead": "2000문제 이상과 육성 요소로 \"계속하고 싶어지는\" 이과 학습을 실현했습니다.",
+    "f1Title": "전 4개 분야·28단원 망라",
+    "f1Desc": "생명·지구·물질·에너지 4개 분야를 체계적으로 커버. 입시에 필요한 단원을 빠짐없이 배웁니다.",
+    "f2Title": "압도적인 2000문제 이상",
+    "f2Desc": "기초부터 입시 수준까지 반복 연습. 확실한 실력을 쌓을 수 있는 문제 수입니다.",
+    "f3Title": "삽화와 음성으로 정착",
+    "f3Desc": "어려운 이과 용어도 삽화와 음성으로 이미지부터 이해. 단순 암기에 의존하지 않습니다.",
+    "f4Title": "리카짱이 진화하는 육성 요소",
+    "f4Desc": "학습 성과로 마스코트 '리카짱'이 성장. 편차치·랭킹·복습 기능으로 약점도 한눈에 확인."
+   },
+   "screenshots": { "title": "앱 화면" },
+   "howto": {
+    "title": "학습 흐름",
+    "step1Title": "단원 선택",
+    "step1Desc": "4개 분야·28단원 로드맵에서 오늘의 학습을 선택. 진행 상황과 약점을 한눈에 파악할 수 있습니다.",
+    "step2Title": "퀴즈에 도전",
+    "step2Desc": "삽화가 있는 문제를 빠른 템포로 풀고, 해설로 이해를 깊게 합니다.",
+    "step3Title": "육성하고 경쟁하기",
+    "step3Desc": "학습할수록 리카짱이 진화. 실력 테스트로 편차치와 전국 순위를 확인하세요."
+   },
+   "faq": {
+    "title": "자주 묻는 질문",
+    "q1": "무료로 사용할 수 있나요？",
+    "q1Answer": "무료로 다운로드하여 사용할 수 있습니다. 광고 제거 등 일부 기능은 인앱 결제로 이용할 수 있습니다.",
+    "q2": "어떤 분들에게 적합한가요？",
+    "q2Answer": "중학 입시를 목표로 하는 초등학생을 위한 구성이지만, 이과 기초를 다지고 싶은 중학생이나 다시 배우고 싶은 성인분들도 사용할 수 있습니다.",
+    "q3": "지원하는 기기는 무엇인가요？",
+    "q3Answer": "iPhone·iPad(iOS)와 Android 스마트폰·태블릿을 지원합니다.",
+    "q4": "수록 내용을 알려주세요",
+    "q4Answer": "생명·지구·물질·에너지 4개 분야·28단원, 2000문제 이상을 수록. 삽화 해설, 복습 기능, 실력 테스트(편차치), 전국 랭킹, 육성 요소를 이용할 수 있습니다.",
+    "q5": "문의처는 어디인가요？",
+    "q5Answer": "로 편하게 연락해 주세요."
+   },
+   "cta": {
+    "title": "이과를, 모험으로 바꿔보세요.",
+    "lead": "2000문제 이상과 리카짱이 기다리고 있습니다. 오늘부터 리카 퀘스트를 시작하세요.",
+    "appStoreBtn": "App Store에서 무료 다운로드",
+    "googlePlayBtn": "Google Play에서 무료 다운로드"
+   }
+  }
+ },
+ "es": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest - Preparación completa de ciencias para el examen de ingreso a secundaria en Japón",
+    "description": "Rika Quest es una app en japonés para preparar ciencias del examen de ingreso a secundaria en Japón, con 28 unidades y más de 2000 preguntas ilustradas en ciencias de la vida, la Tierra, la materia y la energía."
+   },
+   "breadcrumbApps": "Todas las apps desarrolladas",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Disponible en iOS / Android",
+    "subtitle": "Prepárate para las ciencias del examen de secundaria japonés, de forma divertida",
+    "intro": "Domina las cuatro áreas de ciencias — vida, Tierra, materia y energía — con cuestionarios ilustrados de ritmo ágil. El progreso por unidad, una puntuación de desviación y un ranking nacional mantienen el estudio diario.",
+    "chip1": "28 unidades",
+    "chip2": "Más de 2000 preguntas",
+    "chip3": "Explicaciones ilustradas",
+    "chip4": "Puntuación y rankings",
+    "chip5": "Descarga gratuita"
+   },
+   "features": {
+    "title": "Cuatro razones para que amen las ciencias",
+    "lead": "Más de 2000 preguntas y un sistema de crecimiento de mascota hacen que estudiar ciencias sea algo que quieras seguir haciendo.",
+    "f1Title": "Las 4 áreas y 28 unidades cubiertas",
+    "f1Desc": "Cobertura sistemática de ciencias de la vida, la Tierra, la materia y la energía — cada unidad que exige el examen.",
+    "f2Title": "Más de 2000 preguntas",
+    "f2Desc": "Práctica repetida desde lo básico hasta el nivel de examen — volumen suficiente para construir habilidad real y duradera.",
+    "f3Title": "Ilustraciones y audio que hacen que se quede",
+    "f3Desc": "Incluso el vocabulario científico difícil se vuelve intuitivo con ilustraciones y narración — se acabó la memorización mecánica.",
+    "f4Title": "Una mascota que crece contigo",
+    "f4Desc": "La mascota \"Rika-chan\" crece con tu progreso. Una puntuación, rankings y herramientas de repaso revelan tus puntos débiles."
+   },
+   "screenshots": { "title": "Capturas de la app" },
+   "howto": {
+    "title": "Cómo funciona",
+    "step1Title": "Elige una unidad",
+    "step1Desc": "Elige el tema de estudio de hoy en el mapa de 4 áreas y 28 unidades. El progreso y los puntos débiles se ven de un vistazo.",
+    "step2Title": "Haz el cuestionario",
+    "step2Desc": "Resuelve preguntas ilustradas a buen ritmo y profundiza tu comprensión con las explicaciones.",
+    "step3Title": "Crece y compite",
+    "step3Desc": "Rika-chan crece cuanto más estudias. Comprueba tu puntuación y tu posición nacional con exámenes de práctica."
+   },
+   "faq": {
+    "title": "Preguntas frecuentes",
+    "q1": "¿Es gratis?",
+    "q1Answer": "Sí, es gratis de descargar y usar. Algunas funciones, como quitar los anuncios, están disponibles mediante compra dentro de la app.",
+    "q2": "¿Para quién es esta app?",
+    "q2Answer": "Está pensada para escolares que se preparan para el examen de secundaria, pero también sirve para estudiantes de secundaria que quieran reforzar lo básico, o adultos que retoman las ciencias.",
+    "q3": "¿Qué dispositivos son compatibles?",
+    "q3Answer": "iPhone y iPad (iOS), además de teléfonos y tablets Android.",
+    "q4": "¿Qué contenido incluye?",
+    "q4Answer": "28 unidades de ciencias de la vida, la Tierra, la materia y la energía, con más de 2000 preguntas. Incluye explicaciones ilustradas, herramienta de repaso, exámenes de práctica con puntuación de desviación, ranking nacional y sistema de crecimiento de mascota.",
+    "q5": "¿Cómo contacto con soporte?",
+    "q5Answer": "— no dudes en escribirnos en cualquier momento."
+   },
+   "cta": {
+    "title": "Convierte las ciencias en una aventura.",
+    "lead": "Más de 2000 preguntas y Rika-chan te esperan. Empieza Rika Quest hoy.",
+    "appStoreBtn": "Descarga gratis en App Store",
+    "googlePlayBtn": "Descarga gratis en Google Play"
+   }
+  }
+ },
+ "fr": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest - Préparation complète aux sciences pour l'examen d'entrée au collège japonais",
+    "description": "Rika Quest est une application en japonais pour préparer les sciences de l'examen d'entrée au collège au Japon, avec 28 unités et plus de 2000 questions illustrées en sciences de la vie, de la Terre, de la matière et de l'énergie."
+   },
+   "breadcrumbApps": "Toutes les applications développées",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Disponible sur iOS / Android",
+    "subtitle": "Préparez les sciences de l'examen d'entrée au collège japonais, en vous amusant",
+    "intro": "Maîtrisez les quatre domaines scientifiques — vie, Terre, matière et énergie — grâce à des quiz illustrés au rythme soutenu. La progression par unité, un score de déviation et un classement national maintiennent l'étude quotidienne.",
+    "chip1": "28 unités",
+    "chip2": "Plus de 2000 questions",
+    "chip3": "Explications illustrées",
+    "chip4": "Score et classements",
+    "chip5": "Téléchargement gratuit"
+   },
+   "features": {
+    "title": "Quatre raisons de se prendre au jeu des sciences",
+    "lead": "Plus de 2000 questions et un système de mascotte évolutive rendent l'étude des sciences addictive.",
+    "f1Title": "Les 4 domaines, 28 unités couverts",
+    "f1Desc": "Couverture systématique des sciences de la vie, de la Terre, de la matière et de l'énergie — chaque unité exigée par l'examen.",
+    "f2Title": "Plus de 2000 questions",
+    "f2Desc": "Entraînement répété du niveau de base au niveau examen — un volume suffisant pour bâtir une compétence réelle et durable.",
+    "f3Title": "Illustrations et audio pour mieux retenir",
+    "f3Desc": "Même le vocabulaire scientifique difficile devient intuitif grâce aux illustrations et à la lecture audio — fini le par cœur.",
+    "f4Title": "Une mascotte qui évolue avec vous",
+    "f4Desc": "La mascotte « Rika-chan » évolue avec vos progrès. Un score, des classements et des outils de révision révèlent vos points faibles."
+   },
+   "screenshots": { "title": "Captures d'écran" },
+   "howto": {
+    "title": "Comment ça marche",
+    "step1Title": "Choisissez une unité",
+    "step1Desc": "Choisissez le sujet du jour dans la feuille de route de 4 domaines et 28 unités. Progression et points faibles visibles en un coup d'œil.",
+    "step2Title": "Faites le quiz",
+    "step2Desc": "Résolvez des questions illustrées à bon rythme, puis approfondissez votre compréhension grâce aux explications.",
+    "step3Title": "Progressez et affrontez les autres",
+    "step3Desc": "Rika-chan évolue à mesure que vous étudiez. Vérifiez votre score et votre classement national avec des tests blancs."
+   },
+   "faq": {
+    "title": "Questions fréquentes",
+    "q1": "Est-ce gratuit ?",
+    "q1Answer": "Oui, gratuit à télécharger et à utiliser. Certaines fonctionnalités, comme la suppression des publicités, sont disponibles via un achat intégré.",
+    "q2": "À qui s'adresse cette application ?",
+    "q2Answer": "Elle est conçue pour les écoliers préparant l'examen d'entrée au collège, mais convient aussi aux collégiens voulant consolider les bases, ou aux adultes qui redécouvrent les sciences.",
+    "q3": "Quels appareils sont pris en charge ?",
+    "q3Answer": "iPhone et iPad (iOS), ainsi que les téléphones et tablettes Android.",
+    "q4": "Quel contenu couvre l'application ?",
+    "q4Answer": "28 unités en sciences de la vie, de la Terre, de la matière et de l'énergie, avec plus de 2000 questions. Comprend des explications illustrées, un outil de révision, des tests blancs avec score de déviation, un classement national et un système de mascotte évolutive.",
+    "q5": "Comment contacter le support ?",
+    "q5Answer": "— n'hésitez pas à nous écrire à tout moment."
+   },
+   "cta": {
+    "title": "Transformez les sciences en aventure.",
+    "lead": "Plus de 2000 questions et Rika-chan vous attendent. Commencez Rika Quest dès aujourd'hui.",
+    "appStoreBtn": "Téléchargement gratuit sur l'App Store",
+    "googlePlayBtn": "Téléchargement gratuit sur Google Play"
+   }
+  }
+ },
+ "de": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest - Vollständige Naturwissenschafts-Vorbereitung für die japanische Mittelschul-Aufnahmeprüfung",
+    "description": "Rika Quest ist eine japanischsprachige Lern-App zur Vorbereitung auf die naturwissenschaftlichen Inhalte der japanischen Mittelschul-Aufnahmeprüfung mit 28 Einheiten und über 2000 illustrierten Quizfragen aus Biologie, Geowissenschaften, Chemie und Physik."
+   },
+   "breadcrumbApps": "Alle entwickelten Apps",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Verfügbar für iOS / Android",
+    "subtitle": "Naturwissenschaften für die japanische Mittelschul-Aufnahmeprüfung — mit Spaß komplett abdecken",
+    "intro": "Meistern Sie alle vier naturwissenschaftlichen Bereiche — Biologie, Geowissenschaften, Chemie und Physik — mit zügigen, illustrierten Quizzen. Fortschritt pro Einheit, eine Abweichungs-Bewertung und eine landesweite Rangliste halten das tägliche Lernen am Laufen.",
+    "chip1": "28 Einheiten",
+    "chip2": "Über 2000 Fragen",
+    "chip3": "Illustrierte Erklärungen",
+    "chip4": "Bewertung & Ranglisten",
+    "chip5": "Kostenloser Download"
+   },
+   "features": {
+    "title": "Vier Gründe, Naturwissenschaften lieben zu lernen",
+    "lead": "Über 2000 Fragen plus ein Maskottchen-Wachstumssystem machen das Lernen zu etwas, das man gerne fortsetzt.",
+    "f1Title": "Alle 4 Bereiche, 28 Einheiten abgedeckt",
+    "f1Desc": "Systematische Abdeckung von Biologie, Geowissenschaften, Chemie und Physik — jede von der Prüfung geforderte Einheit.",
+    "f2Title": "Über 2000 Fragen",
+    "f2Desc": "Wiederholtes Üben von den Grundlagen bis zum Prüfungsniveau — genug Volumen für echtes, dauerhaftes Können.",
+    "f3Title": "Illustrationen und Vertonung sorgen für Verankerung",
+    "f3Desc": "Selbst schwierige Fachbegriffe werden durch Illustrationen und Vorlese-Audio intuitiv verständlich — kein reines Auswendiglernen mehr.",
+    "f4Title": "Ein Maskottchen, das mit Ihnen wächst",
+    "f4Desc": "Das Maskottchen „Rika-chan“ wächst mit Ihrem Fortschritt. Bewertung, Ranglisten und Wiederholungs-Tools zeigen Ihre Schwachstellen auf."
+   },
+   "screenshots": { "title": "App-Bildschirme" },
+   "howto": {
+    "title": "So funktioniert's",
+    "step1Title": "Einheit wählen",
+    "step1Desc": "Wählen Sie das heutige Lernthema aus der Roadmap mit 4 Bereichen und 28 Einheiten. Fortschritt und Schwachstellen sind auf einen Blick sichtbar.",
+    "step2Title": "Quiz starten",
+    "step2Desc": "Bearbeiten Sie illustrierte Fragen in gutem Tempo und vertiefen Sie Ihr Verständnis mit den Erklärungen.",
+    "step3Title": "Wachsen und wetteifern",
+    "step3Desc": "Rika-chan wächst, je mehr Sie lernen. Prüfen Sie Ihre Bewertung und Ihren landesweiten Rang mit Übungstests."
+   },
+   "faq": {
+    "title": "Häufig gestellte Fragen",
+    "q1": "Ist die App kostenlos?",
+    "q1Answer": "Ja, der Download und die Nutzung sind kostenlos. Einige Funktionen, wie das Entfernen von Werbung, sind per In-App-Kauf verfügbar.",
+    "q2": "Für wen ist diese App gedacht?",
+    "q2Answer": "Sie ist für Grundschulkinder konzipiert, die sich auf die Mittelschul-Aufnahmeprüfung vorbereiten, eignet sich aber auch für Mittelschüler, die Grundlagen festigen möchten, oder Erwachsene, die Naturwissenschaften auffrischen.",
+    "q3": "Welche Geräte werden unterstützt?",
+    "q3Answer": "iPhone und iPad (iOS) sowie Android-Smartphones und -Tablets.",
+    "q4": "Welche Inhalte sind enthalten?",
+    "q4Answer": "28 Einheiten aus Biologie, Geowissenschaften, Chemie und Physik mit über 2000 Fragen. Enthalten sind illustrierte Erklärungen, ein Wiederholungs-Tool, Übungstests mit Abweichungs-Bewertung, eine landesweite Rangliste und ein Maskottchen-Wachstumssystem.",
+    "q5": "Wie erreiche ich den Support?",
+    "q5Answer": "— schreiben Sie uns jederzeit gerne."
+   },
+   "cta": {
+    "title": "Verwandeln Sie Naturwissenschaften in ein Abenteuer.",
+    "lead": "Über 2000 Fragen und Rika-chan warten auf Sie. Starten Sie noch heute mit Rika Quest.",
+    "appStoreBtn": "Kostenlos im App Store laden",
+    "googlePlayBtn": "Kostenlos bei Google Play laden"
+   }
+  }
+ },
+ "pt": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest - Preparação completa de ciências para o exame de admissão ao ensino médio japonês",
+    "description": "Rika Quest é um aplicativo em japonês para preparar ciências do exame de admissão ao ensino médio no Japão, com 28 unidades e mais de 2000 perguntas ilustradas em ciências da vida, da Terra, da matéria e da energia."
+   },
+   "breadcrumbApps": "Todos os apps desenvolvidos",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Disponível em iOS / Android",
+    "subtitle": "Prepare-se para as ciências do exame de admissão japonês, de forma divertida",
+    "intro": "Domine as quatro áreas de ciências — vida, Terra, matéria e energia — com questionários ilustrados em ritmo ágil. O progresso por unidade, uma pontuação de desvio e um ranking nacional mantêm o estudo diário.",
+    "chip1": "28 unidades",
+    "chip2": "Mais de 2000 questões",
+    "chip3": "Explicações ilustradas",
+    "chip4": "Pontuação e rankings",
+    "chip5": "Download gratuito"
+   },
+   "features": {
+    "title": "Quatro motivos para se apaixonar por ciências",
+    "lead": "Mais de 2000 questões e um sistema de crescimento de mascote tornam o estudo de ciências algo que você quer continuar fazendo.",
+    "f1Title": "As 4 áreas e 28 unidades cobertas",
+    "f1Desc": "Cobertura sistemática de ciências da vida, da Terra, da matéria e da energia — cada unidade exigida pelo exame.",
+    "f2Title": "Mais de 2000 questões",
+    "f2Desc": "Prática repetida do básico ao nível de exame — volume suficiente para construir habilidade real e duradoura.",
+    "f3Title": "Ilustrações e áudio que fixam o conteúdo",
+    "f3Desc": "Até o vocabulário científico difícil se torna intuitivo com ilustrações e narração em áudio — chega de decoreba.",
+    "f4Title": "Um mascote que cresce com você",
+    "f4Desc": "O mascote \"Rika-chan\" cresce com seu progresso. Pontuação, rankings e ferramentas de revisão revelam seus pontos fracos."
+   },
+   "screenshots": { "title": "Telas do app" },
+   "howto": {
+    "title": "Como funciona",
+    "step1Title": "Escolha uma unidade",
+    "step1Desc": "Escolha o tema de estudo do dia no roteiro de 4 áreas e 28 unidades. Progresso e pontos fracos visíveis de relance.",
+    "step2Title": "Faça o questionário",
+    "step2Desc": "Resolva questões ilustradas em bom ritmo e aprofunde o entendimento com as explicações.",
+    "step3Title": "Cresça e compita",
+    "step3Desc": "Rika-chan cresce quanto mais você estuda. Confira sua pontuação e posição nacional com testes práticos."
+   },
+   "faq": {
+    "title": "Perguntas frequentes",
+    "q1": "É gratuito?",
+    "q1Answer": "Sim, é gratuito para baixar e usar. Alguns recursos, como remover anúncios, estão disponíveis via compra no aplicativo.",
+    "q2": "Para quem é este app?",
+    "q2Answer": "Foi criado para estudantes do ensino fundamental se preparando para o exame de admissão, mas também serve para estudantes do ensino médio que queiram reforçar o básico, ou adultos revisitando ciências.",
+    "q3": "Quais dispositivos são compatíveis?",
+    "q3Answer": "iPhone e iPad (iOS), além de smartphones e tablets Android.",
+    "q4": "Que conteúdo o app cobre?",
+    "q4Answer": "28 unidades de ciências da vida, da Terra, da matéria e da energia, com mais de 2000 questões. Inclui explicações ilustradas, ferramenta de revisão, testes práticos com pontuação de desvio, ranking nacional e sistema de crescimento de mascote.",
+    "q5": "Como entro em contato com o suporte?",
+    "q5Answer": "— fique à vontade para nos contatar a qualquer momento."
+   },
+   "cta": {
+    "title": "Transforme ciências em uma aventura.",
+    "lead": "Mais de 2000 questões e a Rika-chan estão esperando. Comece o Rika Quest hoje.",
+    "appStoreBtn": "Baixe grátis na App Store",
+    "googlePlayBtn": "Baixe grátis no Google Play"
+   }
+  }
+ },
+ "ru": {
+  "rikaquest2": {
+   "meta": {
+    "title": "Rika Quest — полная подготовка по естественным наукам к вступительному экзамену в японскую среднюю школу",
+    "description": "Rika Quest — это приложение на японском языке для подготовки к естественнонаучной части вступительного экзамена в японскую среднюю школу: 28 разделов и более 2000 вопросов с иллюстрациями по биологии, науке о Земле, химии и физике."
+   },
+   "breadcrumbApps": "Все разработанные приложения",
+   "breadcrumbCurrent": "Rika Quest",
+   "hero": {
+    "platformBadge": "Доступно на iOS / Android",
+    "subtitle": "Полная и увлекательная подготовка по естественным наукам к японскому вступительному экзамену",
+    "intro": "Освойте все четыре научных направления — биологию, науку о Земле, химию и физику — в динамичных иллюстрированных тестах. Прогресс по разделам, рейтинг отклонения и национальный рейтинг поддерживают ежедневные занятия.",
+    "chip1": "28 разделов",
+    "chip2": "Более 2000 вопросов",
+    "chip3": "Иллюстрированные объяснения",
+    "chip4": "Рейтинг и место в списке",
+    "chip5": "Бесплатная загрузка"
+   },
+   "features": {
+    "title": "Четыре причины полюбить естественные науки",
+    "lead": "Более 2000 вопросов и система роста талисмана делают изучение наук занятием, которое хочется продолжать.",
+    "f1Title": "Все 4 направления, 28 разделов",
+    "f1Desc": "Системный охват биологии, науки о Земле, химии и физики — каждый раздел, требуемый экзаменом.",
+    "f2Title": "Более 2000 вопросов",
+    "f2Desc": "Повторная практика от основ до уровня экзамена — достаточный объём для формирования настоящих, устойчивых знаний.",
+    "f3Title": "Иллюстрации и озвучка закрепляют материал",
+    "f3Desc": "Даже сложные научные термины становятся понятными благодаря иллюстрациям и озвучке — никакой зубрёжки.",
+    "f4Title": "Талисман, который растёт вместе с вами",
+    "f4Desc": "Талисман «Рика-тян» растёт по мере вашего прогресса. Рейтинг, места в списке и инструменты повторения показывают слабые места."
+   },
+   "screenshots": { "title": "Скриншоты приложения" },
+   "howto": {
+    "title": "Как это работает",
+    "step1Title": "Выберите раздел",
+    "step1Desc": "Выберите сегодняшнюю тему из дорожной карты с 4 направлениями и 28 разделами. Прогресс и слабые места видны сразу.",
+    "step2Title": "Пройдите тест",
+    "step2Desc": "Решайте иллюстрированные вопросы в хорошем темпе и углубляйте понимание с помощью объяснений.",
+    "step3Title": "Растите и соревнуйтесь",
+    "step3Desc": "Рика-тян растёт по мере ваших занятий. Проверяйте рейтинг и место в стране с помощью пробных тестов."
+   },
+   "faq": {
+    "title": "Часто задаваемые вопросы",
+    "q1": "Это бесплатно?",
+    "q1Answer": "Да, загрузка и использование бесплатны. Некоторые функции, например отключение рекламы, доступны через покупки в приложении.",
+    "q2": "Кому подходит это приложение?",
+    "q2Answer": "Оно рассчитано на школьников, готовящихся к вступительному экзамену, но подойдёт и учащимся средней школы, желающим закрепить базу, а также взрослым, вспоминающим естественные науки.",
+    "q3": "Какие устройства поддерживаются?",
+    "q3Answer": "iPhone и iPad (iOS), а также смартфоны и планшеты Android.",
+    "q4": "Какой материал охватывает приложение?",
+    "q4Answer": "28 разделов по биологии, науке о Земле, химии и физике, более 2000 вопросов. Включает иллюстрированные объяснения, инструмент повторения, пробные тесты с рейтингом отклонения, национальный рейтинг и систему роста талисмана.",
+    "q5": "Как связаться с поддержкой?",
+    "q5Answer": "— пишите нам в любое время."
+   },
+   "cta": {
+    "title": "Превратите естественные науки в приключение.",
+    "lead": "Более 2000 вопросов и Рика-тян уже ждут вас. Начните Rika Quest уже сегодня.",
+    "appStoreBtn": "Бесплатно в App Store",
+    "googlePlayBtn": "Бесплатно в Google Play"
+   }
+  }
+ },
+ "hi": {
+  "rikaquest2": {
+   "meta": {
+    "title": "रिका क्वेस्ट - जापानी मिडिल स्कूल प्रवेश परीक्षा के लिए विज्ञान की पूर्ण तैयारी",
+    "description": "रिका क्वेस्ट जापान की मिडिल स्कूल प्रवेश परीक्षा के लिए एक जापानी-भाषा विज्ञान लर्निंग ऐप है, जिसमें जीव विज्ञान, पृथ्वी विज्ञान, रसायन और भौतिकी के 28 यूनिट और 2000 से अधिक चित्रित प्रश्न शामिल हैं।"
+   },
+   "breadcrumbApps": "सभी विकसित ऐप्स",
+   "breadcrumbCurrent": "रिका क्वेस्ट",
+   "hero": {
+    "platformBadge": "iOS / Android पर उपलब्ध",
+    "subtitle": "जापान की मिडिल स्कूल प्रवेश परीक्षा के विज्ञान की मज़ेदार, संपूर्ण तैयारी",
+    "intro": "तेज़ गति वाले चित्रित क्विज़ के ज़रिए जीव विज्ञान, पृथ्वी विज्ञान, रसायन और भौतिकी — चारों क्षेत्रों में महारत हासिल करें। यूनिट-वार प्रगति, एक डेविएशन स्कोर और एक राष्ट्रीय लीडरबोर्ड रोज़ाना पढ़ाई को जारी रखते हैं।",
+    "chip1": "पूरे 28 यूनिट",
+    "chip2": "2000 से अधिक प्रश्न",
+    "chip3": "चित्रित व्याख्या",
+    "chip4": "स्कोर और रैंकिंग",
+    "chip5": "मुफ़्त डाउनलोड"
+   },
+   "features": {
+    "title": "विज्ञान से प्यार कराने वाली 4 खासियतें",
+    "lead": "2000 से अधिक प्रश्न और एक शुभंकर-विकास सिस्टम विज्ञान की पढ़ाई को ऐसी चीज़ बना देते हैं जिसे आप जारी रखना चाहेंगे।",
+    "f1Title": "सभी 4 क्षेत्र, 28 यूनिट कवर",
+    "f1Desc": "जीव विज्ञान, पृथ्वी विज्ञान, रसायन और भौतिकी को व्यवस्थित रूप से कवर करता है — परीक्षा के लिए ज़रूरी हर यूनिट।",
+    "f2Title": "2000 से अधिक प्रश्नों का विशाल संग्रह",
+    "f2Desc": "बुनियादी से लेकर परीक्षा स्तर तक बार-बार अभ्यास — वास्तविक, स्थायी क्षमता बनाने के लिए पर्याप्त मात्रा।",
+    "f3Title": "चित्र और ऑडियो से याद रहता है",
+    "f3Desc": "कठिन वैज्ञानिक शब्दावली भी चित्रों और सुनाई गई ऑडियो से सहज हो जाती है — रटने की ज़रूरत नहीं।",
+    "f4Title": "आपके साथ बढ़ने वाला शुभंकर",
+    "f4Desc": "शुभंकर \"रिका-चान\" आपकी प्रगति के साथ बढ़ता है। स्कोर, रैंकिंग और रिव्यू टूल आपकी कमज़ोरियों को उजागर करते हैं।"
+   },
+   "screenshots": { "title": "ऐप स्क्रीन" },
+   "howto": {
+    "title": "यह कैसे काम करता है",
+    "step1Title": "एक यूनिट चुनें",
+    "step1Desc": "4 क्षेत्रों, 28 यूनिट के रोडमैप से आज का विषय चुनें। प्रगति और कमज़ोरियां एक नज़र में दिखती हैं।",
+    "step2Title": "क्विज़ लें",
+    "step2Desc": "चित्रित प्रश्नों को अच्छी गति से हल करें, फिर व्याख्याओं से समझ को गहरा करें।",
+    "step3Title": "बढ़ें और मुकाबला करें",
+    "step3Desc": "जितना अध्ययन करेंगे, रिका-चान उतना ही बढ़ेगा। अभ्यास परीक्षणों से अपना स्कोर और राष्ट्रीय रैंक जांचें।"
+   },
+   "faq": {
+    "title": "अक्सर पूछे जाने वाले प्रश्न",
+    "q1": "क्या यह मुफ़्त है？",
+    "q1Answer": "हां, डाउनलोड और उपयोग मुफ़्त है। विज्ञापन हटाने जैसी कुछ सुविधाएं इन-ऐप खरीद के ज़रिए उपलब्ध हैं।",
+    "q2": "यह ऐप किसके लिए है？",
+    "q2Answer": "यह मिडिल स्कूल प्रवेश परीक्षा की तैयारी करने वाले प्राथमिक विद्यालय के बच्चों के लिए बनाया गया है, लेकिन बुनियादी बातें मज़बूत करना चाहने वाले मिडिल स्कूल छात्रों या विज्ञान दोबारा सीखने वाले वयस्कों के लिए भी उपयुक्त है।",
+    "q3": "कौन से डिवाइस समर्थित हैं？",
+    "q3Answer": "iPhone और iPad (iOS), साथ ही Android फ़ोन और टैबलेट।",
+    "q4": "इसमें क्या सामग्री शामिल है？",
+    "q4Answer": "जीव विज्ञान, पृथ्वी विज्ञान, रसायन और भौतिकी के 28 यूनिट, 2000 से अधिक प्रश्न। इसमें चित्रित व्याख्याएं, रिव्यू टूल, डेविएशन स्कोर वाले अभ्यास परीक्षण, राष्ट्रीय लीडरबोर्ड और शुभंकर-विकास सिस्टम शामिल हैं।",
+    "q5": "सहायता से कैसे संपर्क करें？",
+    "q5Answer": "— कभी भी बेझिझक हमसे संपर्क करें।"
+   },
+   "cta": {
+    "title": "विज्ञान को एक रोमांच में बदलें।",
+    "lead": "2000 से अधिक प्रश्न और रिका-चान आपका इंतज़ार कर रहे हैं। आज ही रिका क्वेस्ट शुरू करें।",
+    "appStoreBtn": "App Store पर मुफ़्त डाउनलोड करें",
+    "googlePlayBtn": "Google Play पर मुफ़्त डाउनलोड करें"
+   }
+  }
+ }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
+</script>
 </body>
 </html>

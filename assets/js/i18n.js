@@ -144,11 +144,15 @@ class I18N {
       const translation = this.getTranslation(element.dataset.i18nPlaceholder);
       if (translation) element.placeholder = translation;
     });
-    const title = this.getTranslation('meta.title') || this.getTranslation('apps.meta.title');
-    const description = this.getTranslation('meta.description') || this.getTranslation('apps.meta.description');
+    // タイトル/メタ説明は、そのページの <title>/<meta> が自身の翻訳キーを
+    // data-i18n / data-i18n-content で明示している場合のみ同期する。
+    // 未指定のページ（詳細ページ等）まで全体共通の meta.title で上書きしない。
+    const titleEl = document.querySelector('title[data-i18n]');
+    const title = titleEl ? this.getTranslation(titleEl.dataset.i18n) : null;
+    const descEl = document.querySelector('meta[name="description"][data-i18n-content]');
+    const description = descEl ? this.getTranslation(descEl.dataset.i18nContent) : null;
     if (title) document.title = title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && description) metaDesc.content = description;
+    if (descEl && description) descEl.content = description;
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle && title) ogTitle.content = title;
     const ogDesc = document.querySelector('meta[property="og:description"]');

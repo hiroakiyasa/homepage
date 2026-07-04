@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hacking Timer - Apple Watchで集中力をハックするインターバルタイマー | TrailFusion AI</title>
-<meta name="description" content="Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。">
+<script>
+(function(){
+  var supported={ja:1,en:1,zh:1,ko:1,es:1,fr:1,de:1,pt:1,ru:1,hi:1};
+  var lang=null;
+  try{lang=localStorage.getItem('preferred-language');}catch(e){}
+  if(!lang||!supported[lang]){
+    var b=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').split('-')[0].toLowerCase();
+    lang=supported[b]?b:'en';
+  }
+  window.__PAGE_LANG=lang;
+  if(lang!=='ja'){
+    document.documentElement.style.visibility='hidden';
+    setTimeout(function(){document.documentElement.style.visibility='';},1800);
+  }
+})();
+</script>
+<title data-i18n="hackingtimer2.meta.title">Hacking Timer - Apple Watchで集中力をハックするインターバルタイマー | TrailFusion AI</title>
+<meta name="description" content="Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。" data-i18n-content="hackingtimer2.meta.description">
 <meta name="robots" content="index, follow">
 <meta name="author" content="TrailFusion AI">
 <link rel="canonical" href="https://trailfusionai.com/hacking-timer.html">
@@ -30,6 +46,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<script src="assets/js/i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,13 +125,15 @@ body{background:#0B0E1A;color:#F3F6FF;}
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="index.html" class="nav-item text-navy">ホーム</a>
-        <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
-        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy" aria-current="page">開発したアプリ</a>
-        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+        <a href="index.html" class="nav-item text-navy" data-i18n="nav.home">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" data-i18n="nav.camping">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy" data-i18n="nav.driveRoutes">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy" aria-current="page" data-i18n="nav.apps">開発したアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy" data-i18n="nav.maintenance">整備記録</a>
       </nav>
       <div class="flex items-center gap-2 sm:gap-3">
+        <div id="language-selector" class="hidden lg:block"></div>
+        <div id="mobile-language-selector" class="lg:hidden"></div>
         <a href="apps.html" class="hidden md:inline-flex btn-chunky btn-chunky-white text-sm"><i class="ri-arrow-left-line"></i>アプリ一覧へ</a>
         <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
           <i class="ri-menu-line text-xl"></i>
@@ -135,7 +154,7 @@ body{background:#0B0E1A;color:#F3F6FF;}
 <section class="k-hero">
   <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
     <nav class="mb-8 text-sm font-bold k-dim" aria-label="パンくず">
-      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> 開発したアプリ一覧</a>
+      <a href="apps.html" class="hover:text-white transition"><i class="ri-arrow-left-line"></i> <span data-i18n="hackingtimer2.breadcrumb">開発したアプリ一覧</span></a>
       <span class="mx-2">/</span><span>Hacking Timer</span>
     </nav>
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
@@ -143,22 +162,22 @@ body{background:#0B0E1A;color:#F3F6FF;}
         <div class="flex items-center gap-4 mb-6">
           <div class="k-logo"><img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer ロゴ"></div>
           <div class="flex flex-col gap-2 items-start">
-            <span class="k-badge accent"><i class="ri-timer-flash-fill mr-1"></i>生産性 × Apple Watch</span>
-            <span class="k-badge"><i class="ri-earth-fill"></i>全世界向け・開発中</span>
+            <span class="k-badge accent"><i class="ri-timer-flash-fill mr-1"></i><span data-i18n="hackingtimer2.badgeAccent">生産性 × Apple Watch</span></span>
+            <span class="k-badge"><i class="ri-earth-fill"></i><span data-i18n="hackingtimer2.badgeGlobal">全世界向け・開発中</span></span>
           </div>
         </div>
         <h1 class="k-title text-4xl md:text-5xl lg:text-6xl mb-5 leading-none k-grad">Hacking Timer</h1>
-        <p class="font-black text-lg md:text-2xl mb-4">手首の上で、集中力をハックする</p>
-        <p class="k-dim leading-loose font-medium mb-7">Apple Watchで集中力をハックするための、カスタマイズ可能なインターバルタイマーです。ポモドーロ・テクニックをはじめ様々な時間管理手法に対応し、生産性を最大化します。</p>
+        <p class="font-black text-lg md:text-2xl mb-4" data-i18n="hackingtimer2.sub">手首の上で、集中力をハックする</p>
+        <p class="k-dim leading-loose font-medium mb-7" data-i18n="hackingtimer2.intro">Apple Watchで集中力をハックするための、カスタマイズ可能なインターバルタイマーです。ポモドーロ・テクニックをはじめ様々な時間管理手法に対応し、生産性を最大化します。</p>
         <div class="flex flex-wrap gap-3 mb-6">
-          <span class="k-store disabled"><i class="ri-apple-fill text-xl"></i><span>App Store 準備中</span></span>
-          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span>Google Play 準備中</span></span>
+          <span class="k-store disabled"><i class="ri-apple-fill text-xl"></i><span data-i18n="hackingtimer2.storeIos">App Store 準備中</span></span>
+          <span class="k-store disabled"><i class="ri-google-play-fill text-xl"></i><span data-i18n="hackingtimer2.storeAndroid">Google Play 準備中</span></span>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="k-chip"><i class="ri-watch-fill" style="color:#7C8CF8;"></i>Apple Watch 完全対応</span>
-          <span class="k-chip"><i class="ri-timer-fill" style="color:#7C8CF8;"></i>ポモドーロ対応</span>
-          <span class="k-chip"><i class="ri-bar-chart-box-fill" style="color:#7C8CF8;"></i>生産性レポート</span>
-          <span class="k-chip"><i class="ri-settings-4-fill" style="color:#7C8CF8;"></i>カスタムインターバル</span>
+          <span class="k-chip"><i class="ri-watch-fill" style="color:#7C8CF8;"></i><span data-i18n="hackingtimer2.chip0">Apple Watch 完全対応</span></span>
+          <span class="k-chip"><i class="ri-timer-fill" style="color:#7C8CF8;"></i><span data-i18n="hackingtimer2.chip1">ポモドーロ対応</span></span>
+          <span class="k-chip"><i class="ri-bar-chart-box-fill" style="color:#7C8CF8;"></i><span data-i18n="hackingtimer2.chip2">生産性レポート</span></span>
+          <span class="k-chip"><i class="ri-settings-4-fill" style="color:#7C8CF8;"></i><span data-i18n="hackingtimer2.chip3">カスタムインターバル</span></span>
         </div>
       </div>
       <div class="k-frame">
@@ -172,36 +191,36 @@ body{background:#0B0E1A;color:#F3F6FF;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="k-badge accent">FEATURES</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3">深い集中を、仕組みで作る</h2>
-      <p class="k-dim font-medium max-w-2xl mx-auto">意志力に頼らない。タイマーが集中と休憩のリズムを自動で刻みます。</p>
+      <h2 class="k-title text-3xl md:text-4xl mt-5 mb-3" data-i18n="hackingtimer2.featTitle">深い集中を、仕組みで作る</h2>
+      <p class="k-dim font-medium max-w-2xl mx-auto" data-i18n="hackingtimer2.featLead">意志力に頼らない。タイマーが集中と休憩のリズムを自動で刻みます。</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">01</span>
         <div>
-          <h3 class="font-black mb-1.5">自由自在のインターバル設計</h3>
-          <p class="k-dim text-sm leading-relaxed">作業25分+休憩5分だけじゃない。自分の集中リズムに合わせて、作業・休憩の長さを細かくカスタマイズ。</p>
+          <h3 class="font-black mb-1.5" data-i18n="hackingtimer2.f0t">自由自在のインターバル設計</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="hackingtimer2.f0d">作業25分+休憩5分だけじゃない。自分の集中リズムに合わせて、作業・休憩の長さを細かくカスタマイズ。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">02</span>
         <div>
-          <h3 class="font-black mb-1.5">Apple Watch 完全対応</h3>
-          <p class="k-dim text-sm leading-relaxed">手首の振動で切り替えを通知。スマホを見ずに集中を守れる、Apple Watchファーストの設計です。</p>
+          <h3 class="font-black mb-1.5" data-i18n="hackingtimer2.f1t">Apple Watch 完全対応</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="hackingtimer2.f1d">手首の振動で切り替えを通知。スマホを見ずに集中を守れる、Apple Watchファーストの設計です。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">03</span>
         <div>
-          <h3 class="font-black mb-1.5">生産性の見える化</h3>
-          <p class="k-dim text-sm leading-relaxed">日・週・月の集中時間を自動記録。詳細な分析レポートで、自分の生産性パターンがわかります。</p>
+          <h3 class="font-black mb-1.5" data-i18n="hackingtimer2.f2t">生産性の見える化</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="hackingtimer2.f2d">日・週・月の集中時間を自動記録。詳細な分析レポートで、自分の生産性パターンがわかります。</p>
         </div>
       </div>
       <div class="k-feature flex items-start gap-4">
         <span class="k-num">04</span>
         <div>
-          <h3 class="font-black mb-1.5">様々な時間管理手法に対応</h3>
-          <p class="k-dim text-sm leading-relaxed">ポモドーロ、52/17法、タイムボクシングなど、好みの手法をそのまま再現できます。</p>
+          <h3 class="font-black mb-1.5" data-i18n="hackingtimer2.f3t">様々な時間管理手法に対応</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="hackingtimer2.f3d">ポモドーロ、52/17法、タイムボクシングなど、好みの手法をそのまま再現できます。</p>
         </div>
       </div>
     </div>
@@ -212,7 +231,7 @@ body{background:#0B0E1A;color:#F3F6FF;}
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <span class="k-badge accent">SCREENSHOTS</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5">アプリの画面</h2>
+      <h2 class="k-title text-3xl md:text-4xl mt-5" data-i18n="hackingtimer2.shotsTitle">アプリの画面</h2>
     </div>
     <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
       <div class="lg:col-span-7 grid grid-cols-2 gap-5">
@@ -223,8 +242,8 @@ body{background:#0B0E1A;color:#F3F6FF;}
       <div class="lg:col-span-5">
         <div class="k-card p-8 h-full flex flex-col justify-center text-center">
           <div class="text-6xl mb-4">⌚</div>
-          <h3 class="font-black text-2xl mb-3" style="color:#7C8CF8;">COMING SOON</h3>
-          <p class="k-dim text-sm leading-relaxed">Apple Watch に最適化したインターバルタイマーを開発中です。リリース情報はSNSでお知らせします。</p>
+          <h3 class="font-black text-2xl mb-3" style="color:#7C8CF8;" data-i18n="hackingtimer2.comingSoonTitle">COMING SOON</h3>
+          <p class="k-dim text-sm leading-relaxed" data-i18n="hackingtimer2.comingSoonDesc">Apple Watch に最適化したインターバルタイマーを開発中です。リリース情報はSNSでお知らせします。</p>
         </div>
       </div>
     </div>
@@ -235,24 +254,24 @@ body{background:#0B0E1A;color:#F3F6FF;}
   <div class="container mx-auto px-4 max-w-3xl">
     <div class="text-center mb-10">
       <span class="k-badge accent">FAQ</span>
-      <h2 class="k-title text-3xl md:text-4xl mt-5">よくあるご質問</h2>
+      <h2 class="k-title text-3xl md:text-4xl mt-5" data-i18n="hackingtimer2.faqTitle">よくあるご質問</h2>
     </div>
     <div class="space-y-4">
       <details class="faq-item">
-        <summary><span class="qm">Q</span>いつリリースされますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">現在開発中です。リリース情報はX（@trailfusionai）やTikTokでお知らせします。</p>
+        <summary><span class="qm">Q</span><span data-i18n="hackingtimer2.q0">いつリリースされますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="hackingtimer2.a0">現在開発中です。リリース情報はX（@trailfusionai）やTikTokでお知らせします。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>Apple Watchがなくても使えますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">iPhone単体でもお使いいただけるよう設計していますが、手首での通知などApple Watchとの組み合わせが最も効果的です。</p>
+        <summary><span class="qm">Q</span><span data-i18n="hackingtimer2.q1">Apple Watchがなくても使えますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="hackingtimer2.a1">iPhone単体でもお使いいただけるよう設計していますが、手首での通知などApple Watchとの組み合わせが最も効果的です。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>どんな時間管理手法に対応しますか？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a">ポモドーロ・テクニックをはじめ、作業・休憩の長さを自由に設定できるため、様々な手法を再現できます。</p>
+        <summary><span class="qm">Q</span><span data-i18n="hackingtimer2.q2">どんな時間管理手法に対応しますか？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="hackingtimer2.a2">ポモドーロ・テクニックをはじめ、作業・休憩の長さを自由に設定できるため、様々な手法を再現できます。</p>
       </details>
       <details class="faq-item">
-        <summary><span class="qm">Q</span>お問い合わせ先は？<i class="ri-arrow-down-s-line text-xl"></i></summary>
-        <p class="a"><a href="mailto:trailfusionai@gmail.com" style="color:#7C8CF8;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
+        <summary><span class="qm">Q</span><span data-i18n="hackingtimer2.q3">お問い合わせ先は？</span><i class="ri-arrow-down-s-line text-xl"></i></summary>
+        <p class="a" data-i18n="hackingtimer2.a3"><a href="mailto:trailfusionai@gmail.com" style="color:#7C8CF8;text-decoration:underline;">trailfusionai@gmail.com</a> までお気軽にご連絡ください。</p>
       </details>
     </div>
     <p class="text-center mt-8 text-sm font-bold">
@@ -266,9 +285,9 @@ body{background:#0B0E1A;color:#F3F6FF;}
 <section class="py-16 md:py-24" style="background:radial-gradient(circle at 50% 100%,#232B54 0%,#0B0E1A 70%);">
   <div class="container mx-auto px-4 text-center relative z-10">
     <div class="k-logo mx-auto mb-6"><img src="assets/images/hacking-timer/logo.png" alt="Hacking Timer ロゴ"></div>
-    <h2 class="k-title text-3xl md:text-4xl mb-4">その集中は、設計できる。</h2>
-    <p class="k-dim font-medium mb-8 max-w-xl mx-auto">Hacking Timer は現在開発中。リリースをどうぞお楽しみに。</p>
-    <span class="k-badge accent" style="font-size:.95rem;padding:.7rem 1.4rem;">🚧 COMING SOON — リリースをお楽しみに</span>
+    <h2 class="k-title text-3xl md:text-4xl mb-4" data-i18n="hackingtimer2.ctaTitle">その集中は、設計できる。</h2>
+    <p class="k-dim font-medium mb-8 max-w-xl mx-auto" data-i18n="hackingtimer2.ctaLead">Hacking Timer は現在開発中。リリースをどうぞお楽しみに。</p>
+    <span class="k-badge accent" style="font-size:.95rem;padding:.7rem 1.4rem;" data-i18n="hackingtimer2.ctaBadge">🚧 COMING SOON — リリースをお楽しみに</span>
   </div>
 </section>
 
@@ -295,7 +314,7 @@ body{background:#0B0E1A;color:#F3F6FF;}
             <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
           </div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md" data-i18n="footer.description">革新的なアプリとDIYキャンピングカー製作ガイドで、あなたの可能性を広げます。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
@@ -338,5 +357,235 @@ body{background:#0B0E1A;color:#F3F6FF;}
 </footer>
 <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
 <script src="assets/js/trailfusion-ui.js"></script>
+<script>
+window.pageTranslations = {
+ "ja": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Apple Watchで集中力をハックするインターバルタイマー | TrailFusion AI", "description": "Apple Watch対応インターバルタイマー「Hacking Timer」。カスタマイズ可能なタイマーとポモドーロ・テクニックで集中力をハック。生産性分析レポートで時間管理を最適化。" },
+  "badgeAccent": "生産性 × Apple Watch", "badgeGlobal": "全世界向け・開発中",
+  "sub": "手首の上で、集中力をハックする",
+  "intro": "Apple Watchで集中力をハックするための、カスタマイズ可能なインターバルタイマーです。ポモドーロ・テクニックをはじめ様々な時間管理手法に対応し、生産性を最大化します。",
+  "storeIos": "App Store 準備中", "storeAndroid": "Google Play 準備中",
+  "chip0": "Apple Watch 完全対応", "chip1": "ポモドーロ対応", "chip2": "生産性レポート", "chip3": "カスタムインターバル",
+  "breadcrumb": "開発したアプリ一覧",
+  "featTitle": "深い集中を、仕組みで作る", "featLead": "意志力に頼らない。タイマーが集中と休憩のリズムを自動で刻みます。",
+  "f0t": "自由自在のインターバル設計", "f0d": "作業25分+休憩5分だけじゃない。自分の集中リズムに合わせて、作業・休憩の長さを細かくカスタマイズ。",
+  "f1t": "Apple Watch 完全対応", "f1d": "手首の振動で切り替えを通知。スマホを見ずに集中を守れる、Apple Watchファーストの設計です。",
+  "f2t": "生産性の見える化", "f2d": "日・週・月の集中時間を自動記録。詳細な分析レポートで、自分の生産性パターンがわかります。",
+  "f3t": "様々な時間管理手法に対応", "f3d": "ポモドーロ、52/17法、タイムボクシングなど、好みの手法をそのまま再現できます。",
+  "shotsTitle": "アプリの画面",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Apple Watch に最適化したインターバルタイマーを開発中です。リリース情報はSNSでお知らせします。",
+  "faqTitle": "よくあるご質問",
+  "q0": "いつリリースされますか？", "a0": "現在開発中です。リリース情報はX（@trailfusionai）やTikTokでお知らせします。",
+  "q1": "Apple Watchがなくても使えますか？", "a1": "iPhone単体でもお使いいただけるよう設計していますが、手首での通知などApple Watchとの組み合わせが最も効果的です。",
+  "q2": "どんな時間管理手法に対応しますか？", "a2": "ポモドーロ・テクニックをはじめ、作業・休憩の長さを自由に設定できるため、様々な手法を再現できます。",
+  "q3": "お問い合わせ先は？", "a3": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a> までお気軽にご連絡ください。",
+  "ctaTitle": "その集中は、設計できる。", "ctaLead": "Hacking Timer は現在開発中。リリースをどうぞお楽しみに。", "ctaBadge": "🚧 COMING SOON — リリースをお楽しみに"
+ } },
+ "en": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - The Apple Watch Interval Timer That Hacks Your Focus | TrailFusion AI", "description": "Hacking Timer is a customizable Apple Watch interval timer built around the Pomodoro Technique. Hack your focus and optimize your time management with detailed productivity reports." },
+  "badgeAccent": "Productivity × Apple Watch", "badgeGlobal": "Worldwide · In Development",
+  "sub": "Hack your focus, right on your wrist",
+  "intro": "A customizable interval timer for hacking your focus with Apple Watch. Supports the Pomodoro Technique and many other time-management methods to maximize your productivity.",
+  "storeIos": "App Store — Coming Soon", "storeAndroid": "Google Play — Coming Soon",
+  "chip0": "Full Apple Watch Support", "chip1": "Pomodoro Ready", "chip2": "Productivity Reports", "chip3": "Custom Intervals",
+  "breadcrumb": "All Apps",
+  "featTitle": "Deep focus, built into the system", "featLead": "No willpower required — the timer keeps your focus and break rhythm on autopilot.",
+  "f0t": "Fully Flexible Interval Design", "f0d": "Not just 25 minutes on, 5 minutes off. Fine-tune the length of every work and break session to match your own focus rhythm.",
+  "f1t": "Full Apple Watch Support", "f1d": "A gentle wrist buzz signals every switch, so you can protect your focus without ever glancing at your phone — designed Apple Watch-first.",
+  "f2t": "Visualize Your Productivity", "f2d": "Automatically logs your focus time by day, week, and month, with detailed reports that reveal your own productivity patterns.",
+  "f3t": "Supports Every Time-Management Method", "f3d": "From the Pomodoro Technique to the 52/17 rule to timeboxing — recreate whichever method works best for you.",
+  "shotsTitle": "App Screens",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "An interval timer optimized for Apple Watch is currently in development. Follow our social channels for release updates.",
+  "faqTitle": "Frequently Asked Questions",
+  "q0": "When will it launch?", "a0": "It's currently in development. We'll share release updates on X (@trailfusionai) and TikTok.",
+  "q1": "Can I use it without an Apple Watch?", "a1": "It's designed to work on iPhone alone too, but pairing it with Apple Watch — for wrist notifications — gives the best experience.",
+  "q2": "Which time-management methods are supported?", "a2": "Starting with the Pomodoro Technique, you can freely set work and break lengths, so you can recreate a wide range of methods.",
+  "q3": "How can I get in touch?", "a3": "Feel free to reach us anytime at <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "Focus can be engineered.", "ctaLead": "Hacking Timer is currently in development. Stay tuned for the release.", "ctaBadge": "🚧 COMING SOON — Stay Tuned"
+ } },
+ "zh": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - 用Apple Watch黑掉你的专注力的间隔计时器 | TrailFusion AI", "description": "Hacking Timer是一款可自定义的Apple Watch间隔计时器,围绕番茄工作法打造。用详细的效率报告黑掉你的专注力,优化时间管理。" },
+  "badgeAccent": "效率 × Apple Watch", "badgeGlobal": "全球发行・开发中",
+  "sub": "在手腕上,黑掉你的专注力",
+  "intro": "一款可自定义的Apple Watch间隔计时器,帮你黑掉专注力。支持番茄工作法及多种时间管理方法,最大化你的效率。",
+  "storeIos": "App Store 即将上线", "storeAndroid": "Google Play 即将上线",
+  "chip0": "完美支持Apple Watch", "chip1": "支持番茄工作法", "chip2": "效率报告", "chip3": "自定义间隔",
+  "breadcrumb": "应用列表",
+  "featTitle": "用系统,打造深度专注", "featLead": "不必依赖意志力,计时器自动为你安排专注与休息的节奏。",
+  "f0t": "自由设计的间隔时间", "f0d": "不只是25分钟工作+5分钟休息。根据自己的专注节奏,精细调整工作与休息的时长。",
+  "f1t": "完美支持Apple Watch", "f1d": "用手腕震动提示切换。无需看手机也能守住专注,专为Apple Watch优先设计。",
+  "f2t": "效率可视化", "f2d": "自动记录每日、每周、每月的专注时间,通过详细分析报告了解自己的效率模式。",
+  "f3t": "支持多种时间管理方法", "f3d": "从番茄工作法、52/17法则到时间盒法,都能按你喜欢的方式重现。",
+  "shotsTitle": "应用界面",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "专为Apple Watch优化的间隔计时器正在开发中,发布信息将通过社交媒体公布。",
+  "faqTitle": "常见问题",
+  "q0": "什么时候发布？", "a0": "目前正在开发中。发布信息将在X(@trailfusionai)和TikTok上公布。",
+  "q1": "没有Apple Watch也能用吗？", "a1": "设计上也支持单独使用iPhone,但搭配Apple Watch的手腕提醒效果最佳。",
+  "q2": "支持哪些时间管理方法？", "a2": "从番茄工作法开始,可自由设置工作与休息时长,因此能重现多种方法。",
+  "q3": "如何联系你们？", "a3": "欢迎随时联系 <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>。",
+  "ctaTitle": "专注,是可以被设计的。", "ctaLead": "Hacking Timer 目前正在开发中,敬请期待发布。", "ctaBadge": "🚧 COMING SOON — 敬请期待"
+ } },
+ "ko": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Apple Watch로 집중력을 해킹하는 인터벌 타이머 | TrailFusion AI", "description": "Hacking Timer는 뽀모도로 기법을 중심으로 한 커스터마이즈 가능한 Apple Watch 인터벌 타이머입니다. 상세한 생산성 리포트로 집중력을 해킹하고 시간 관리를 최적화하세요." },
+  "badgeAccent": "생산성 × Apple Watch", "badgeGlobal": "전 세계 대상・개발 중",
+  "sub": "손목 위에서, 집중력을 해킹하다",
+  "intro": "Apple Watch로 집중력을 해킹하기 위한 커스터마이즈 가능한 인터벌 타이머입니다. 뽀모도로 기법을 비롯한 다양한 시간 관리법을 지원하여 생산성을 극대화합니다.",
+  "storeIos": "App Store 출시 예정", "storeAndroid": "Google Play 출시 예정",
+  "chip0": "Apple Watch 완벽 지원", "chip1": "뽀모도로 지원", "chip2": "생산성 리포트", "chip3": "커스텀 인터벌",
+  "breadcrumb": "앱 목록",
+  "featTitle": "깊은 집중을, 시스템으로 만들다", "featLead": "의지력에 기대지 않습니다. 타이머가 집중과 휴식의 리듬을 자동으로 새겨줍니다.",
+  "f0t": "자유자재의 인터벌 설계", "f0d": "작업 25분+휴식 5분만이 아닙니다. 자신의 집중 리듬에 맞춰 작업・휴식 시간을 세밀하게 커스터마이즈.",
+  "f1t": "Apple Watch 완벽 지원", "f1d": "손목 진동으로 전환을 알려줍니다. 스마트폰을 보지 않고도 집중을 지킬 수 있는 Apple Watch 퍼스트 설계.",
+  "f2t": "생산성 시각화", "f2d": "일・주・월 단위로 집중 시간을 자동 기록. 상세한 분석 리포트로 자신의 생산성 패턴을 파악할 수 있습니다.",
+  "f3t": "다양한 시간 관리법 지원", "f3d": "뽀모도로, 52/17법, 타임박싱 등 원하는 방법을 그대로 재현할 수 있습니다.",
+  "shotsTitle": "앱 화면",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Apple Watch에 최적화된 인터벌 타이머를 개발 중입니다. 출시 정보는 SNS에서 안내해 드립니다.",
+  "faqTitle": "자주 묻는 질문",
+  "q0": "언제 출시되나요？", "a0": "현재 개발 중입니다. 출시 정보는 X(@trailfusionai)와 TikTok에서 안내해 드립니다.",
+  "q1": "Apple Watch가 없어도 사용할 수 있나요？", "a1": "iPhone만으로도 사용할 수 있도록 설계했지만, 손목 알림 등 Apple Watch와 함께 사용할 때 가장 효과적입니다.",
+  "q2": "어떤 시간 관리법을 지원하나요？", "a2": "뽀모도로 기법을 비롯해 작업・휴식 시간을 자유롭게 설정할 수 있어 다양한 방법을 재현할 수 있습니다.",
+  "q3": "문의처는 어디인가요？", "a3": "<a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a> 으로 편하게 연락해 주세요.",
+  "ctaTitle": "그 집중, 설계할 수 있습니다.", "ctaLead": "Hacking Timer는 현재 개발 중입니다. 출시를 기대해 주세요.", "ctaBadge": "🚧 COMING SOON — 출시를 기대해 주세요"
+ } },
+ "es": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - El temporizador de intervalos para Apple Watch que hackea tu concentración | TrailFusion AI", "description": "Hacking Timer es un temporizador de intervalos personalizable para Apple Watch basado en la Técnica Pomodoro. Hackea tu concentración y optimiza tu gestión del tiempo con informes detallados de productividad." },
+  "badgeAccent": "Productividad × Apple Watch", "badgeGlobal": "Mundial · En desarrollo",
+  "sub": "Hackea tu concentración, justo en tu muñeca",
+  "intro": "Un temporizador de intervalos personalizable para hackear tu concentración con Apple Watch. Compatible con la Técnica Pomodoro y muchos otros métodos de gestión del tiempo para maximizar tu productividad.",
+  "storeIos": "App Store — Próximamente", "storeAndroid": "Google Play — Próximamente",
+  "chip0": "Compatible con Apple Watch", "chip1": "Listo para Pomodoro", "chip2": "Informes de productividad", "chip3": "Intervalos personalizados",
+  "breadcrumb": "Todas las apps",
+  "featTitle": "Concentración profunda, integrada en el sistema", "featLead": "Sin depender de la fuerza de voluntad: el temporizador marca el ritmo de concentración y descanso automáticamente.",
+  "f0t": "Diseño de intervalos totalmente flexible", "f0d": "No solo 25 minutos de trabajo y 5 de descanso. Ajusta la duración de cada sesión según tu propio ritmo de concentración.",
+  "f1t": "Compatible con Apple Watch", "f1d": "Una suave vibración en la muñeca avisa cada cambio, para proteger tu concentración sin mirar el teléfono — diseñado primero para Apple Watch.",
+  "f2t": "Visualiza tu productividad", "f2d": "Registra automáticamente tu tiempo de concentración por día, semana y mes, con informes detallados que revelan tus propios patrones de productividad.",
+  "f3t": "Compatible con múltiples métodos de gestión del tiempo", "f3d": "Desde la Técnica Pomodoro hasta la regla 52/17 o el timeboxing — recrea el método que mejor te funcione.",
+  "shotsTitle": "Capturas de la app",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Un temporizador de intervalos optimizado para Apple Watch está actualmente en desarrollo. Sigue nuestras redes sociales para novedades sobre el lanzamiento.",
+  "faqTitle": "Preguntas frecuentes",
+  "q0": "¿Cuándo se lanzará?", "a0": "Actualmente está en desarrollo. Compartiremos novedades en X (@trailfusionai) y TikTok.",
+  "q1": "¿Puedo usarlo sin Apple Watch?", "a1": "Está diseñado para funcionar también solo con iPhone, pero combinarlo con Apple Watch —para las notificaciones en la muñeca— ofrece la mejor experiencia.",
+  "q2": "¿Qué métodos de gestión del tiempo son compatibles?", "a2": "Empezando por la Técnica Pomodoro, puedes configurar libremente la duración del trabajo y los descansos, recreando así muchos métodos distintos.",
+  "q3": "¿Cómo puedo contactaros?", "a3": "Escríbenos cuando quieras a <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "La concentración se puede diseñar.", "ctaLead": "Hacking Timer está actualmente en desarrollo. Mantente atento a su lanzamiento.", "ctaBadge": "🚧 COMING SOON — Mantente atento"
+ } },
+ "fr": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Le minuteur par intervalles pour Apple Watch qui pirate votre concentration | TrailFusion AI", "description": "Hacking Timer est un minuteur par intervalles personnalisable pour Apple Watch, construit autour de la technique Pomodoro. Piratez votre concentration et optimisez votre gestion du temps avec des rapports de productivité détaillés." },
+  "badgeAccent": "Productivité × Apple Watch", "badgeGlobal": "Mondial · En développement",
+  "sub": "Piratez votre concentration, à même votre poignet",
+  "intro": "Un minuteur par intervalles personnalisable pour pirater votre concentration avec Apple Watch. Compatible avec la technique Pomodoro et bien d'autres méthodes de gestion du temps pour maximiser votre productivité.",
+  "storeIos": "App Store — Bientôt disponible", "storeAndroid": "Google Play — Bientôt disponible",
+  "chip0": "Compatible Apple Watch", "chip1": "Compatible Pomodoro", "chip2": "Rapports de productivité", "chip3": "Intervalles personnalisés",
+  "breadcrumb": "Toutes les applications",
+  "featTitle": "Une concentration profonde, intégrée au système", "featLead": "Pas besoin de volonté : le minuteur rythme automatiquement vos phases de concentration et de pause.",
+  "f0t": "Des intervalles entièrement modulables", "f0d": "Pas seulement 25 minutes de travail et 5 de pause. Ajustez finement la durée de chaque session selon votre propre rythme de concentration.",
+  "f1t": "Compatible Apple Watch", "f1d": "Une légère vibration au poignet signale chaque changement, pour protéger votre concentration sans regarder votre téléphone — conçu d'abord pour Apple Watch.",
+  "f2t": "Visualisez votre productivité", "f2d": "Enregistre automatiquement votre temps de concentration par jour, semaine et mois, avec des rapports détaillés qui révèlent vos propres habitudes de productivité.",
+  "f3t": "Compatible avec de nombreuses méthodes de gestion du temps", "f3d": "De la technique Pomodoro à la règle 52/17 en passant par le timeboxing — reproduisez la méthode qui vous convient le mieux.",
+  "shotsTitle": "Aperçu de l'application",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Un minuteur par intervalles optimisé pour Apple Watch est actuellement en développement. Suivez nos réseaux sociaux pour les actualités sur la sortie.",
+  "faqTitle": "Questions fréquentes",
+  "q0": "Quand sortira-t-elle ?", "a0": "Elle est actuellement en développement. Nous partagerons les actualités sur X (@trailfusionai) et TikTok.",
+  "q1": "Puis-je l'utiliser sans Apple Watch ?", "a1": "Elle est conçue pour fonctionner aussi avec l'iPhone seul, mais l'associer à l'Apple Watch — pour les notifications au poignet — offre la meilleure expérience.",
+  "q2": "Quelles méthodes de gestion du temps sont prises en charge ?", "a2": "À commencer par la technique Pomodoro, vous pouvez régler librement la durée du travail et des pauses, pour reproduire de nombreuses méthodes.",
+  "q3": "Comment vous contacter ?", "a3": "N'hésitez pas à nous écrire à <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "La concentration, ça se conçoit.", "ctaLead": "Hacking Timer est actuellement en développement. Restez à l'écoute pour la sortie.", "ctaBadge": "🚧 COMING SOON — Restez à l'écoute"
+ } },
+ "de": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Der Apple-Watch-Intervalltimer, der Ihre Konzentration hackt | TrailFusion AI", "description": "Hacking Timer ist ein anpassbarer Apple-Watch-Intervalltimer rund um die Pomodoro-Technik. Hacken Sie Ihre Konzentration und optimieren Sie Ihr Zeitmanagement mit detaillierten Produktivitätsberichten." },
+  "badgeAccent": "Produktivität × Apple Watch", "badgeGlobal": "Weltweit · In Entwicklung",
+  "sub": "Hacken Sie Ihre Konzentration – direkt am Handgelenk",
+  "intro": "Ein anpassbarer Intervalltimer, um Ihre Konzentration mit der Apple Watch zu hacken. Unterstützt die Pomodoro-Technik und viele weitere Zeitmanagement-Methoden, um Ihre Produktivität zu maximieren.",
+  "storeIos": "App Store — Demnächst", "storeAndroid": "Google Play — Demnächst",
+  "chip0": "Volle Apple-Watch-Unterstützung", "chip1": "Pomodoro-tauglich", "chip2": "Produktivitätsberichte", "chip3": "Individuelle Intervalle",
+  "breadcrumb": "Alle Apps",
+  "featTitle": "Tiefe Konzentration, fest im System verankert", "featLead": "Keine Willenskraft nötig — der Timer taktet Konzentrations- und Pausenrhythmus automatisch.",
+  "f0t": "Völlig flexibles Intervall-Design", "f0d": "Nicht nur 25 Minuten Arbeit plus 5 Minuten Pause. Passen Sie die Länge jeder Arbeits- und Pausenphase an Ihren eigenen Konzentrationsrhythmus an.",
+  "f1t": "Volle Apple-Watch-Unterstützung", "f1d": "Ein sanftes Vibrieren am Handgelenk signalisiert jeden Wechsel, sodass Sie Ihre Konzentration schützen können, ohne aufs Handy zu schauen — konsequent Apple-Watch-first designt.",
+  "f2t": "Produktivität sichtbar machen", "f2d": "Zeichnet Ihre Konzentrationszeit automatisch nach Tag, Woche und Monat auf und zeigt in detaillierten Berichten Ihre eigenen Produktivitätsmuster.",
+  "f3t": "Unterstützt viele Zeitmanagement-Methoden", "f3d": "Von der Pomodoro-Technik über die 52/17-Regel bis zum Timeboxing — bilden Sie die Methode nach, die zu Ihnen passt.",
+  "shotsTitle": "App-Ansichten",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Ein für die Apple Watch optimierter Intervalltimer befindet sich derzeit in Entwicklung. Release-Infos folgen auf unseren Social-Media-Kanälen.",
+  "faqTitle": "Häufig gestellte Fragen",
+  "q0": "Wann erscheint die App?", "a0": "Sie befindet sich aktuell in Entwicklung. Release-Infos teilen wir auf X (@trailfusionai) und TikTok.",
+  "q1": "Kann ich sie auch ohne Apple Watch nutzen?", "a1": "Sie ist so gestaltet, dass sie auch allein mit dem iPhone funktioniert, aber in Kombination mit der Apple Watch — für Benachrichtigungen am Handgelenk — ist die Erfahrung am besten.",
+  "q2": "Welche Zeitmanagement-Methoden werden unterstützt?", "a2": "Angefangen bei der Pomodoro-Technik lassen sich Arbeits- und Pausenlängen frei einstellen, sodass sich viele verschiedene Methoden nachbilden lassen.",
+  "q3": "Wie erreiche ich euch?", "a3": "Schreiben Sie uns jederzeit gerne an <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "Konzentration lässt sich konstruieren.", "ctaLead": "Hacking Timer befindet sich derzeit in Entwicklung. Freuen Sie sich auf den Release.", "ctaBadge": "🚧 COMING SOON — Bleiben Sie gespannt"
+ } },
+ "pt": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - O timer de intervalos para Apple Watch que hackeia seu foco | TrailFusion AI", "description": "Hacking Timer é um timer de intervalos personalizável para Apple Watch, construído em torno da Técnica Pomodoro. Hackeie seu foco e otimize sua gestão de tempo com relatórios detalhados de produtividade." },
+  "badgeAccent": "Produtividade × Apple Watch", "badgeGlobal": "Mundial · Em desenvolvimento",
+  "sub": "Hackeie seu foco, direto no seu pulso",
+  "intro": "Um timer de intervalos personalizável para hackear seu foco com o Apple Watch. Compatível com a Técnica Pomodoro e diversos outros métodos de gestão de tempo para maximizar sua produtividade.",
+  "storeIos": "App Store — Em breve", "storeAndroid": "Google Play — Em breve",
+  "chip0": "Suporte total ao Apple Watch", "chip1": "Compatível com Pomodoro", "chip2": "Relatórios de produtividade", "chip3": "Intervalos personalizados",
+  "breadcrumb": "Todos os apps",
+  "featTitle": "Foco profundo, incorporado ao sistema", "featLead": "Sem depender de força de vontade — o timer marca automaticamente o ritmo de foco e pausa.",
+  "f0t": "Design de intervalos totalmente flexível", "f0d": "Não é só 25 minutos de trabalho e 5 de pausa. Ajuste com precisão a duração de cada sessão de trabalho e pausa conforme seu próprio ritmo de foco.",
+  "f1t": "Suporte total ao Apple Watch", "f1d": "Uma vibração suave no pulso avisa cada troca, protegendo seu foco sem precisar olhar o celular — projetado com prioridade para o Apple Watch.",
+  "f2t": "Visualize sua produtividade", "f2d": "Registra automaticamente seu tempo de foco por dia, semana e mês, com relatórios detalhados que revelam seus próprios padrões de produtividade.",
+  "f3t": "Compatível com diversos métodos de gestão de tempo", "f3d": "Da Técnica Pomodoro à regra 52/17 e ao timeboxing — recrie o método que funciona melhor para você.",
+  "shotsTitle": "Telas do aplicativo",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Um timer de intervalos otimizado para o Apple Watch está atualmente em desenvolvimento. Acompanhe nossas redes sociais para novidades sobre o lançamento.",
+  "faqTitle": "Perguntas frequentes",
+  "q0": "Quando será lançado?", "a0": "Está atualmente em desenvolvimento. Vamos compartilhar novidades no X (@trailfusionai) e no TikTok.",
+  "q1": "Posso usar sem o Apple Watch?", "a1": "Foi projetado para funcionar também só com o iPhone, mas combinado com o Apple Watch — para notificações no pulso — oferece a melhor experiência.",
+  "q2": "Quais métodos de gestão de tempo são suportados?", "a2": "Começando pela Técnica Pomodoro, você pode definir livremente a duração do trabalho e das pausas, recriando diversos métodos.",
+  "q3": "Como posso entrar em contato?", "a3": "Fique à vontade para nos escrever a qualquer momento em <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "O foco pode ser projetado.", "ctaLead": "Hacking Timer está atualmente em desenvolvimento. Fique de olho no lançamento.", "ctaBadge": "🚧 COMING SOON — Fique de olho"
+ } },
+ "ru": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Интервальный таймер для Apple Watch, который хакает вашу концентрацию | TrailFusion AI", "description": "Hacking Timer — настраиваемый интервальный таймер для Apple Watch на основе техники Помодоро. Хакайте свою концентрацию и оптимизируйте тайм-менеджмент с помощью подробных отчётов о продуктивности." },
+  "badgeAccent": "Продуктивность × Apple Watch", "badgeGlobal": "По всему миру · В разработке",
+  "sub": "Хакайте концентрацию прямо на запястье",
+  "intro": "Настраиваемый интервальный таймер для того, чтобы хакнуть вашу концентрацию с Apple Watch. Поддерживает технику Помодоро и множество других методов тайм-менеджмента для максимальной продуктивности.",
+  "storeIos": "App Store — Скоро", "storeAndroid": "Google Play — Скоро",
+  "chip0": "Полная поддержка Apple Watch", "chip1": "Поддержка Помодоро", "chip2": "Отчёты о продуктивности", "chip3": "Настраиваемые интервалы",
+  "breadcrumb": "Все приложения",
+  "featTitle": "Глубокая концентрация, встроенная в систему", "featLead": "Без силы воли — таймер сам задаёт ритм концентрации и отдыха.",
+  "f0t": "Полностью гибкая настройка интервалов", "f0d": "Не только 25 минут работы и 5 минут отдыха. Точно настраивайте длительность каждой сессии работы и отдыха под свой собственный ритм концентрации.",
+  "f1t": "Полная поддержка Apple Watch", "f1d": "Лёгкая вибрация на запястье сигнализирует о каждом переключении, позволяя сохранять концентрацию, не глядя в телефон — приложение спроектировано в первую очередь для Apple Watch.",
+  "f2t": "Визуализация продуктивности", "f2d": "Автоматически фиксирует время концентрации по дням, неделям и месяцам, а подробные отчёты раскрывают ваши собственные паттерны продуктивности.",
+  "f3t": "Поддержка множества методов тайм-менеджмента", "f3d": "От техники Помодоро до правила 52/17 и таймбоксинга — воспроизведите тот метод, который подходит именно вам.",
+  "shotsTitle": "Экраны приложения",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Интервальный таймер, оптимизированный для Apple Watch, сейчас в разработке. Следите за новостями о релизе в наших соцсетях.",
+  "faqTitle": "Часто задаваемые вопросы",
+  "q0": "Когда выйдет релиз?", "a0": "Сейчас приложение в разработке. Мы поделимся новостями о релизе в X (@trailfusionai) и TikTok.",
+  "q1": "Можно ли пользоваться без Apple Watch?", "a1": "Приложение спроектировано так, чтобы работать и только с iPhone, но в паре с Apple Watch — благодаря уведомлениям на запястье — опыт использования лучше всего.",
+  "q2": "Какие методы тайм-менеджмента поддерживаются?", "a2": "Начиная с техники Помодоро, вы можете свободно настраивать длительность работы и отдыха, воспроизводя самые разные методы.",
+  "q3": "Как с вами связаться?", "a3": "Пишите нам в любое время на <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a>.",
+  "ctaTitle": "Концентрацию можно спроектировать.", "ctaLead": "Hacking Timer сейчас в разработке. Следите за новостями о релизе.", "ctaBadge": "🚧 COMING SOON — Следите за новостями"
+ } },
+ "hi": { "hackingtimer2": {
+  "meta": { "title": "Hacking Timer - Apple Watch इंटरवल टाइमर जो आपके फोकस को हैक करता है | TrailFusion AI", "description": "Hacking Timer, पोमोडोरो तकनीक पर आधारित एक कस्टमाइज़ेबल Apple Watch इंटरवल टाइमर है। विस्तृत उत्पादकता रिपोर्ट्स के साथ अपने फोकस को हैक करें और समय प्रबंधन को बेहतर बनाएं।" },
+  "badgeAccent": "उत्पादकता × Apple Watch", "badgeGlobal": "विश्वव्यापी · विकासाधीन",
+  "sub": "अपनी कलाई पर ही, फोकस को हैक करें",
+  "intro": "Apple Watch के साथ अपने फोकस को हैक करने के लिए एक कस्टमाइज़ेबल इंटरवल टाइमर। पोमोडोरो तकनीक सहित कई समय प्रबंधन विधियों का समर्थन करता है और आपकी उत्पादकता को अधिकतम करता है।",
+  "storeIos": "App Store — जल्द आ रहा है", "storeAndroid": "Google Play — जल्द आ रहा है",
+  "chip0": "Apple Watch का पूर्ण समर्थन", "chip1": "पोमोडोरो के लिए तैयार", "chip2": "उत्पादकता रिपोर्ट्स", "chip3": "कस्टम इंटरवल",
+  "breadcrumb": "सभी ऐप्स",
+  "featTitle": "गहरा फोकस, सिस्टम में निर्मित", "featLead": "इच्छाशक्ति की ज़रूरत नहीं — टाइमर खुद ही फोकस और ब्रेक की लय बनाए रखता है।",
+  "f0t": "पूरी तरह से लचीला इंटरवल डिज़ाइन", "f0d": "सिर्फ 25 मिनट काम + 5 मिनट ब्रेक नहीं। अपनी खुद की फोकस लय के हिसाब से काम और ब्रेक की अवधि को बारीकी से कस्टमाइज़ करें।",
+  "f1t": "Apple Watch का पूर्ण समर्थन", "f1d": "कलाई पर हल्के कंपन से हर बदलाव की सूचना मिलती है, ताकि आप फोन देखे बिना फोकस बनाए रख सकें — Apple Watch-फर्स्ट डिज़ाइन।",
+  "f2t": "उत्पादकता को देखें", "f2d": "दिन, सप्ताह और महीने के हिसाब से आपके फोकस समय को अपने आप रिकॉर्ड करता है, और विस्तृत रिपोर्ट्स आपके उत्पादकता पैटर्न को दिखाती हैं।",
+  "f3t": "कई समय प्रबंधन विधियों का समर्थन", "f3d": "पोमोडोरो तकनीक से लेकर 52/17 नियम और टाइमबॉक्सिंग तक — जो भी तरीका आपको सूट करे, उसे फिर से बना सकते हैं।",
+  "shotsTitle": "ऐप स्क्रीन्स",
+  "comingSoonTitle": "COMING SOON", "comingSoonDesc": "Apple Watch के लिए अनुकूलित एक इंटरवल टाइमर फ़िलहाल विकासाधीन है। रिलीज़ की जानकारी के लिए हमारे सोशल चैनल फॉलो करें।",
+  "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+  "q0": "यह कब रिलीज़ होगा？", "a0": "यह फ़िलहाल विकासाधीन है। रिलीज़ की जानकारी हम X (@trailfusionai) और TikTok पर साझा करेंगे।",
+  "q1": "क्या Apple Watch के बिना भी इस्तेमाल कर सकते हैं？", "a1": "इसे सिर्फ iPhone के साथ भी काम करने के लिए डिज़ाइन किया गया है, लेकिन कलाई पर सूचनाओं के लिए Apple Watch के साथ इस्तेमाल करना सबसे प्रभावी है।",
+  "q2": "कौन-कौन सी समय प्रबंधन विधियाँ समर्थित हैं？", "a2": "पोमोडोरो तकनीक से शुरू करते हुए, आप काम और ब्रेक की अवधि स्वतंत्र रूप से सेट कर सकते हैं, जिससे कई तरीकों को फिर से बनाया जा सकता है।",
+  "q3": "आप से कैसे संपर्क करें？", "a3": "बेझिझक हमें <a href=\"mailto:trailfusionai@gmail.com\" style=\"color:#7C8CF8;text-decoration:underline;\">trailfusionai@gmail.com</a> पर संपर्क करें।",
+  "ctaTitle": "फोकस को डिज़ाइन किया जा सकता है।", "ctaLead": "Hacking Timer फ़िलहाल विकासाधीन है। रिलीज़ का इंतज़ार करें।", "ctaBadge": "🚧 COMING SOON — रिलीज़ का इंतज़ार करें"
+ } }
+};
+</script>
+<script src="assets/js/translations-complete.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof I18N !== 'undefined' && !window.i18n) window.i18n = new I18N();
+});
+</script>
 </body>
 </html>
