@@ -3,50 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>車旅コンシェルジュ - P2P駐車場シェアリングサービス | TrailFusion AI</title>
-<meta name="description" content="車旅コンシェルジュは、個人オーナーの空き駐車場とドライバーをマッチングするP2P駐車場シェアリングサービスです。">
-<meta name="keywords" content="P2P 駐車場,シェアリング,車旅,駐車場マッチング,TrailFusion AI">
-<meta name="author" content="TrailFusion AI">
+<title>車旅コンシェルジュ - 駐車場・EV充電・絶景を地図で見つける旅アプリ | Trail Fusion AI</title>
+<meta name="description" content="車旅コンシェルジュは、駐車場を「料金」だけでなく「快適さ」で選べる旅の地図アプリ。EV充電の時間・料金計算、標高検索、航空写真、旅日記、日本の名所制覇まで。iOS / Android対応。">
+<meta name="keywords" content="駐車場,コインパーキング,EV充電,充電スタンド,快適度,標高,絶景ロード,道の駅,旅アプリ,車旅コンシェルジュ,Trail Fusion AI">
+<meta name="author" content="Trail Fusion AI">
 <link rel="canonical" href="https://trailfusionai.com/car-concierge.html">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="車旅コンシェルジュ - P2P駐車場シェアリングサービス">
-<meta property="og:description" content="個人オーナーの空き駐車場とドライバーをマッチングするP2P駐車場シェアリングサービス">
+<meta property="og:title" content="車旅コンシェルジュ - 駐車場・EV充電・絶景を地図で見つける旅アプリ">
+<meta property="og:description" content="駐車場を「快適さ」で選ぶ。EV充電の時間・料金計算、標高検索、旅日記、日本の名所制覇まで。">
 <meta property="og:url" content="https://trailfusionai.com/car-concierge.html">
-<meta property="og:image" content="https://trailfusionai.com/assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/car-concierge/01_parking_comfort.jpg">
 <meta property="og:locale" content="ja_JP">
-
-<meta name="theme-color" content="#FFD84D">
-<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
-<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
-
-<!-- Google Analytics -->
+<meta name="theme-color" content="#4ECDC4">
+<link rel="icon" type="image/png" href="assets/images/car-concierge/logo.png">
+<link rel="apple-touch-icon" href="assets/images/car-concierge/logo.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S57KSMSB8Y');
-</script>
-
-<!-- Fonts -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S57KSMSB8Y');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-<!-- Tailwind -->
 <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 <link rel="stylesheet" href="assets/css/trailfusion.css">
+<style>
+  /* 機能ショーケースの交互レイアウト（コンパイル済みCSSに依存せず自己完結） */
+  .feat-row{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;}
+  .feat-media{display:flex;justify-content:center;}
+  .feat-text .sticker{margin-bottom:.25rem;}
+  @media (min-width:768px){
+    .feat-row{grid-template-columns:1fr 1fr;gap:3.5rem;}
+    .feat-row.flip .feat-media{order:2;}
+  }
+  /* ヒーローの端末ビジュアル（hidden/md:flex に依存せず自己完結） */
+  .hero-visual{display:none;position:relative;justify-content:center;align-items:center;min-height:420px;}
+  @media (min-width:768px){ .hero-visual{display:flex;} }
+  /* ギャラリー横スクロール */
+  .cc-gallery{scroll-snap-type:x mandatory;}
+  .cc-gallery > div{scroll-snap-align:center;}
+  .cc-gallery::-webkit-scrollbar{height:8px;}
+  .cc-gallery::-webkit-scrollbar-thumb{background:rgba(255,216,77,.5);border-radius:999px;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"車旅コンシェルジュ","operatingSystem":"iOS, Android","applicationCategory":"TravelApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Organization","name":"Trail Fusion AI"},"url":"https://trailfusionai.com/car-concierge.html"}
+</script>
 </head>
 <body class="bg-cream">
 
-<!-- ============================== -->
 <!-- HEADER -->
-<!-- ============================== -->
 <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
   <div class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
@@ -60,22 +63,16 @@
           <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
         </div>
       </a>
-
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
         <a href="index.html" class="nav-item text-navy">ホーム</a>
         <a href="camping.html" class="nav-item text-navy">キャンピングカー</a>
         <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
-        <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="apps.html" class="nav-item text-navy">開発したアプリ</a>
         <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
       </nav>
-
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="mailto:trailfusionai@gmail.com" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">
-          <i class="ri-mail-send-line"></i>
-          お問い合わせ
-        </a>
-        <a href="camping.html" class="mobile-pill bg-sky lg:hidden">
-          <i class="ri-caravan-line"></i><span class="hidden sm:inline">キャンパー</span>
+        <a href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">
+          <i class="ri-download-2-line"></i> ダウンロード
         </a>
         <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
           <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
@@ -85,400 +82,496 @@
         </button>
       </div>
     </div>
-
     <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
       <div class="grid grid-cols-2 gap-2">
         <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
         <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
         <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
-        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ アプリ</a>
         <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
-        <a href="index.html#contact" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">✉️ お問い合わせ</a>
+        <a href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">⬇️ ダウンロード</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- ============================== -->
 <!-- HERO -->
-<!-- ============================== -->
-<section class="relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #B5EFE6 0%, #4ECDC4 40%, #3BB8B0 100%);">
+<section class="relative overflow-hidden" style="background: radial-gradient(circle at 82% 18%, #B5EFE6 0%, #4ECDC4 42%, #3BB8B0 100%);">
   <div class="absolute inset-0 dot-pattern opacity-30"></div>
-  <!-- AI: aerial parking illustration as soft background on right -->
-  <img src="assets/images/ai/concierge-hero-parking.jpg" alt="" aria-hidden="true" class="hidden md:block absolute right-[-80px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover rounded-full opacity-40 mix-blend-multiply pointer-events-none">
+  <div class="absolute top-[12%] left-[5%] hidden md:block float" style="--r:-8deg;"><div class="sticker sticker-coral">🅿️ 駐車場</div></div>
+  <div class="absolute top-[22%] right-[6%] hidden md:block float-slow" style="--r:6deg;"><div class="sticker sticker-sun">⚡ EV充電</div></div>
+  <div class="absolute bottom-[24%] left-[7%] hidden lg:block float-slow" style="--r:-4deg; animation-delay:-2s;"><div class="sticker sticker-peach">🏔️ 絶景</div></div>
 
-  <!-- Floating decorations -->
-  <div class="absolute top-[10%] left-[5%] hidden md:block float" style="--r:-8deg;">
-    <div class="sticker sticker-coral">🅿️ 駐車場シェア</div>
-  </div>
-  <div class="absolute top-[18%] right-[8%] hidden md:block float-slow" style="--r:6deg;">
-    <div class="sticker sticker-sun">🚙 マッチング</div>
-  </div>
-  <div class="absolute bottom-[20%] left-[8%] hidden lg:block float-slow" style="--r:-4deg; animation-delay: -2s;">
-    <div class="sticker sticker-peach">💰 副収入</div>
-  </div>
-
-  <div class="absolute top-12 right-8 sm:top-20 sm:right-16 z-10 spin-slow pointer-events-none hidden sm:block">
-    <div class="rotating-disc">
-      <div class="text-center leading-tight">
-        <div class="font-accent text-[10px] sm:text-xs text-navy">P2P</div>
-        <div class="font-accent text-2xl sm:text-3xl text-coral">PARK</div>
-        <div class="font-accent text-[8px] sm:text-[10px] text-navy tracking-widest">SHARING</div>
+  <div class="container mx-auto px-4 pt-16 pb-24 md:pt-20 md:pb-28 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
+          <img src="assets/images/car-concierge/logo.png" alt="" class="w-6 h-6 rounded-md">
+          <span class="font-bold text-sm text-navy">車旅コンシェルジュ ・ 旅の地図アプリ</span>
+        </div>
+        <h1 class="display-xl text-navy mb-6">
+          <span class="block pop-in" style="animation-delay:.2s;"><span class="highlight">駐車場</span>・<span class="highlight">EV充電</span>・絶景を、</span>
+          <span class="block pop-in" style="animation-delay:.35s;">地図でつなぐ。</span>
+          <span class="block pop-in gradient-text gradient-animated" style="animation-delay:.5s;">車旅コンシェルジュ。</span>
+        </h1>
+        <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in mx-auto lg:mx-0" style="animation-delay:.65s;">
+          駐車場を「料金」だけでなく「快適さ」で選ぶ。EV充電の時間と料金を計算し、標高で涼しさを探し、走った道を旅日記に残す。<br>
+          <span class="hand-font text-2xl md:text-3xl text-navy">クルマの旅を、もっと自由に。</span>
+        </p>
+        <div class="flex flex-wrap gap-4 pop-in justify-center lg:justify-start" style="animation-delay:.8s;">
+        <a href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white text-base">
+          <i class="ri-apple-fill text-xl"></i> App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.hiroakiyasa.carconciergeapp" target="_blank" rel="noopener" class="btn-chunky btn-chunky-sun text-base">
+          <i class="ri-google-play-fill text-xl"></i> Google Play
+        </a>
+        </div>
+        <p class="text-navy/60 text-sm mt-4 pop-in" style="animation-delay:.9s;">iOS / Android 対応 ・ 基本無料</p>
+      </div>
+      <div class="lg:col-span-5 hero-visual">
+        <img src="assets/images/car-concierge/06_aerial_street_view.jpg" alt="" aria-hidden="true" class="float-slow" style="position:absolute;width:230px;left:8%;top:8%;border:3px solid #1F2E4D;border-radius:26px;box-shadow:8px 8px 0 #1F2E4D;transform:rotate(-8deg);opacity:.95;">
+        <img src="assets/images/car-concierge/01_parking_comfort.jpg" alt="車旅コンシェルジュのアプリ画面" class="float" style="position:relative;width:268px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:10px 10px 0 #1F2E4D;transform:rotate(5deg);">
       </div>
     </div>
   </div>
-
-  <div class="container mx-auto px-4 pt-16 pb-24 md:pt-24 md:pb-32 relative z-10">
-    <div class="max-w-4xl">
-      <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
-        <span class="w-2 h-2 bg-coral rounded-full bounce-soft"></span>
-        <span class="font-bold text-sm text-navy">P2P PARKING SHARING SERVICE</span>
-      </div>
-
-      <h1 class="display-xl text-navy mb-6">
-        <span class="block pop-in" style="animation-delay: 0.2s;">
-          <span class="highlight">空き駐車場</span>を、
-        </span>
-        <span class="block pop-in" style="animation-delay: 0.35s;">
-          みんなで使う。
-        </span>
-        <span class="block pop-in" style="animation-delay: 0.5s;">
-          <span class="gradient-text gradient-animated">車旅コンシェルジュ。</span>
-        </span>
-      </h1>
-
-      <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in" style="animation-delay: 0.65s;">
-        個人オーナーの空き駐車場と、駐車場を探すドライバーをマッチング。<br>
-        <span class="hand-font text-2xl md:text-3xl text-navy">駐車スペースに、新しい価値を。</span>
-      </p>
-
-      <div class="flex flex-wrap gap-4 pop-in" style="animation-delay: 0.8s;">
-        <a href="#service" class="btn-chunky btn-chunky-coral text-base">
-          <i class="ri-information-line text-xl"></i>
-          サービス詳細
-        </a>
-        <a href="#contact" class="btn-chunky btn-chunky-sun text-base">
-          <i class="ri-mail-send-line text-xl"></i>
-          お問い合わせ
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none">
-    <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/>
-  </svg>
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/></svg>
 </section>
 
-<!-- ============================== -->
-<!-- SERVICE OVERVIEW -->
-<!-- ============================== -->
-<section id="service" class="py-20 md:py-28 bg-cream relative overflow-hidden">
-  <div class="absolute inset-0 grid-pattern opacity-50"></div>
-  <div class="absolute top-20 -left-20 w-80 h-80 bg-peach rounded-blob opacity-30 blur-2xl"></div>
-  <div class="absolute bottom-10 -right-20 w-96 h-96 bg-sky rounded-blob opacity-30 blur-2xl"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-14 reveal">
-      <span class="sticker sticker-coral mb-6">SERVICE</span>
-      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">
-        サービス概要
-      </h2>
-      <p class="text-navy/70 text-lg max-w-2xl mx-auto">
-        オーナーとドライバー、双方にメリットのある駐車場シェアリングを実現します。
-      </p>
-    </div>
-
-    <div class="max-w-4xl mx-auto card-chunky p-8 md:p-10 mb-12 reveal">
-      <p class="text-navy/80 leading-relaxed text-lg mb-6">
-        車旅コンシェルジュは、<strong class="text-coral">個人オーナーが所有する空き駐車スペース</strong>と、
-        <strong class="text-coral">駐車場を探すドライバー</strong>をマッチングする
-        P2P駐車場シェアリングサービスです。
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
-      <div class="card-chunky overflow-hidden">
-        <div class="aspect-[4/3] border-b-[3px] border-navy bg-sun overflow-hidden">
-          <img src="assets/images/ai/concierge-icon-host.jpg" alt="オーナー" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 text-left">
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">オーナー様へ</h3>
-          <p class="text-navy/70 leading-relaxed">空いている自宅駐車場を有効活用。眠っているスペースが、新しい収入源に。</p>
-        </div>
-      </div>
-      <div class="card-chunky overflow-hidden">
-        <div class="aspect-[4/3] border-b-[3px] border-navy bg-coral overflow-hidden">
-          <img src="assets/images/ai/concierge-icon-driver.jpg" alt="ドライバー" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 text-left">
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">ドライバー様へ</h3>
-          <p class="text-navy/70 leading-relaxed">目的地周辺で、安くて便利な駐車場をスマホひとつで予約。観光・出張に最適。</p>
-        </div>
-      </div>
-      <div class="card-chunky overflow-hidden">
-        <div class="aspect-[4/3] border-b-[3px] border-navy bg-ocean overflow-hidden">
-          <img src="assets/images/ai/concierge-hero-parking.jpg" alt="マッチング" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 text-left">
-          <h3 class="font-display font-black text-2xl mb-2 text-navy">Win-Win マッチング</h3>
-          <p class="text-navy/70 leading-relaxed">オーナーは収益化、ドライバーは利便性UP。地域の遊休資産を活用します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- BUSINESS INFO -->
-<!-- ============================== -->
-<section class="py-20 md:py-28 bg-navy relative overflow-hidden">
-  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,216,77,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
-
+<!-- 3 PILLARS -->
+<section class="py-16 md:py-24 bg-cream relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-40"></div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="text-center mb-12 reveal">
-      <span class="sticker sticker-ocean mb-6">OPERATOR</span>
-      <h2 class="display-xl text-4xl md:text-5xl text-white mt-6">
-        運営者情報
-      </h2>
+      <span class="sticker sticker-coral mb-4">WHAT IT DOES</span>
+      <h2 class="display-xl text-3xl md:text-5xl text-navy mt-5 mb-4">クルマの旅の、ぜんぶを一つに。</h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto">駐車場さがしから、EV充電、絶景ドライブ、旅の記録まで。走る人のための機能を、ひとつの地図にまとめました。</p>
     </div>
-
-    <div class="max-w-3xl mx-auto reveal">
-      <div class="card-chunky p-2">
-        <table class="table-chunky" style="box-shadow: none; border: none; border-radius: 0;">
-          <tbody>
-            <tr>
-              <th class="w-1/3 bg-sun text-navy">サービス名</th>
-              <td>車旅コンシェルジュ</td>
-            </tr>
-            <tr>
-              <th class="bg-sun text-navy">運営者</th>
-              <td>安 博明（Hiroaki Yasa）</td>
-            </tr>
-            <tr>
-              <th class="bg-sun text-navy">所在地</th>
-              <td>日本</td>
-            </tr>
-            <tr>
-              <th class="bg-sun text-navy">お問い合わせ</th>
-              <td>
-                <a href="mailto:trailfusionai@gmail.com" class="text-coral underline font-bold">
-                  trailfusionai@gmail.com
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+      <div class="card-chunky p-8 text-center">
+        <div class="w-16 h-16 bg-teal border-2 border-navy rounded-2xl grid place-items-center mx-auto mb-5" style="background:#4ECDC4;"><i class="ri-parking-box-line text-3xl text-navy"></i></div>
+        <h3 class="font-display font-black text-2xl mb-2 text-navy">駐車場を、賢く</h3>
+        <p class="text-navy/70 leading-relaxed">料金と快適さを両方見て、いちばん自分に合う駐車場所を地図から選べます。</p>
+      </div>
+      <div class="card-chunky p-8 text-center">
+        <div class="w-16 h-16 border-2 border-navy rounded-2xl grid place-items-center mx-auto mb-5" style="background:#7DD87A;"><i class="ri-charging-pile-2-line text-3xl text-navy"></i></div>
+        <h3 class="font-display font-black text-2xl mb-2 text-navy">EVを、自在に</h3>
+        <p class="text-navy/70 leading-relaxed">車種の充電曲線から時間・料金・航続距離を計算。充電スポットもランキングで比較。</p>
+      </div>
+      <div class="card-chunky p-8 text-center">
+        <div class="w-16 h-16 border-2 border-navy rounded-2xl grid place-items-center mx-auto mb-5" style="background:#FF8A7A;"><i class="ri-book-open-line text-3xl text-navy"></i></div>
+        <h3 class="font-display font-black text-2xl mb-2 text-navy">旅を、記録する</h3>
+        <p class="text-navy/70 leading-relaxed">走ったルートと絶景を旅日記に。日本の名所を巡って、少しずつ制覇していく楽しさも。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================== -->
-<!-- PRICING -->
-<!-- ============================== -->
+<!-- FEATURE SHOWCASE -->
+<section class="py-12 md:py-16 bg-cream relative overflow-hidden">
+  <div class="container mx-auto px-4 relative z-10 space-y-16 md:space-y-24">
+
+      <div class="text-center mt-20 mb-12 reveal">
+        <span class="sticker mb-4" style="background:#4ECDC4;border-color:#1F2E4D;color:#1F2E4D;">SMART PARKING</span>
+        <h2 class="display-xl text-3xl md:text-4xl text-navy mt-5">駐車場を、賢く。</h2>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#4ECDC4;"></div>
+            <img src="assets/images/car-concierge/01_parking_comfort.jpg" alt="駐車場所を、快適さで選ぶ。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(-2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#4ECDC4;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-parking-box-line"></i> 駐車場さがし
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">駐車場所を、快適さで選ぶ。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">平坦さ、トイレ、コンビニ、温泉、Wi-Fi。料金だけでは分からない「過ごしやすさ」まで、地図の上でまとめて比較できます。</p>
+        </div>
+      </div>
+
+      <div class="feat-row flip reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#FF6B5B;"></div>
+            <img src="assets/images/car-concierge/02_parking_fee_detail.jpg" alt="料金だけじゃない。快適さまで見える。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#FF6B5B;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-radar-line"></i> 快適度スコア
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">料金だけじゃない。快適さまで見える。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">駐車料金に加えて、静けさ・トイレ・買い物などを6項目のレーダーチャートで数値化。ひと目で「良い場所」が分かります。</p>
+        </div>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#3BB8B0;"></div>
+            <img src="assets/images/car-concierge/03_elevation_search.jpg" alt="暑い夏は、標高から涼しさを探す。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(-2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#3BB8B0;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-temp-cold-line"></i> 標高でさがす
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">暑い夏は、標高から涼しさを探す。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">標高と気温低下の目安を選んで検索。真夏でも、少し標高の高い涼しい駐車場所を地図から見つけられます。</p>
+        </div>
+      </div>
+
+      <div class="feat-row flip reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#8FC7F0;"></div>
+            <img src="assets/images/car-concierge/06_aerial_street_view.jpg" alt="到着前に、入口まで見える。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#8FC7F0;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-flight-takeoff-line"></i> 到着前の下見
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">到着前に、入口まで見える。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">航空写真とストリートビューで、駐車場の入口や周辺の様子を事前に確認。初めての場所でも、迷わずたどり着けます。</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-20 mb-12 reveal">
+        <span class="sticker mb-4" style="background:#7DD87A;border-color:#1F2E4D;color:#1F2E4D;">EV CHARGING</span>
+        <h2 class="display-xl text-3xl md:text-4xl text-navy mt-5">EV充電を、自在に。</h2>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#7DD87A;"></div>
+            <img src="assets/images/car-concierge/04_ev_charge_calculator.jpg" alt="あなたのEVなら、何分・いくら？" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(-2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#7DD87A;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-battery-charge-line"></i> EV充電計算
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">あなたのEVなら、何分・いくら？</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">車種の充電曲線をもとに、充電時間・料金・回復電力量・航続距離を計算。出発前に、充電計画が立てられます。</p>
+        </div>
+      </div>
+
+      <div class="feat-row flip reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#FFD84D;"></div>
+            <img src="assets/images/car-concierge/05_ev_charge_ranking.jpg" alt="速い・安いを、ランキングで発見。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#FFD84D;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-flashlight-line"></i> 充電ランキング
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">速い・安いを、ランキングで発見。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">周辺の充電スポットを、充電時間と料金で順位表示。「一番速い」「一番安い」を、地図とリストで即比較できます。</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-20 mb-12 reveal">
+        <span class="sticker mb-4" style="background:#FF8A7A;border-color:#1F2E4D;color:#1F2E4D;">RECORD & DISCOVER</span>
+        <h2 class="display-xl text-3xl md:text-4xl text-navy mt-5">旅を、記録して発見する。</h2>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#FF8A7A;"></div>
+            <img src="assets/images/car-concierge/07_trip_diary.jpg" alt="走った道が、旅の物語になる。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(-2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#FF8A7A;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-book-open-line"></i> 旅日記
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">走った道が、旅の物語になる。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">走行ログと絶景写真を、タイムラインの旅日記に。何気ないドライブが、あとで見返したくなる思い出に変わります。</p>
+        </div>
+      </div>
+
+      <div class="feat-row flip reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#FFC93D;"></div>
+            <img src="assets/images/car-concierge/08_conquest_challenge.jpg" alt="日本の名所を、ひとつずつ制覇。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#FFC93D;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-trophy-line"></i> 制覇チャレンジ
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">日本の名所を、ひとつずつ制覇。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">世界遺産、桜、紅葉、名水、温泉。テーマ別の名所を訪れて記録すると、あなたの「制覇」が少しずつ埋まっていきます。</p>
+        </div>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#B58BFF;"></div>
+            <img src="assets/images/car-concierge/09_world_heritage.jpg" alt="日本の世界遺産を、巡る旅へ。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(-2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#B58BFF;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-ancient-gate-line"></i> 世界遺産
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">日本の世界遺産を、巡る旅へ。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">日本の世界遺産を地域や距離から探し、訪問を記録。次の旅の目的地が、地図の上から自然と見つかります。</p>
+        </div>
+      </div>
+
+      <div class="feat-row flip reveal">
+        <div class="feat-media">
+          <div style="position:relative;display:inline-block;">
+            <div style="position:absolute;inset:-12px;border-radius:36px;filter:blur(24px);opacity:.3;background:#2AA79E;"></div>
+            <img src="assets/images/car-concierge/10_scenic_roads.jpg" alt="まだ知らない絶景へ、走り出そう。" loading="lazy"
+                 style="position:relative;width:100%;max-width:288px;border:3px solid #1F2E4D;border-radius:30px;box-shadow:9px 9px 0 #1F2E4D;transform:rotate(2deg);display:block;">
+          </div>
+        </div>
+        <div class="feat-text">
+          <span class="sticker" style="background:#2AA79E;border-color:#1F2E4D;color:#1F2E4D;">
+            <i class="ri-road-map-line"></i> 絶景ロード
+          </span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy leading-tight" style="margin:1rem 0 1rem;">まだ知らない絶景へ、走り出そう。</h3>
+          <p class="text-navy/70 text-base md:text-lg leading-relaxed">ビーナスラインのような絶景ロードを、地図・写真・距離・標高付きで紹介。走ること自体が目的になる道へ、案内します。</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="py-16 md:py-20 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0" style="background-image:radial-gradient(circle, rgba(255,216,77,.08) 1.5px, transparent 1.5px); background-size:30px 30px;"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-10 reveal">
+      <span class="sticker sticker-sun mb-4">GALLERY</span>
+      <h2 class="display-xl text-3xl md:text-4xl text-white mt-5">アプリ画面を、ひと目で。</h2>
+    </div>
+  </div>
+  <div class="cc-gallery flex gap-5 overflow-x-auto px-6 pb-4" style="scrollbar-width:thin;">
+
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/01_parking_comfort.jpg" alt="駐車場所を、快適さで選ぶ。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/02_parking_fee_detail.jpg" alt="料金だけじゃない。快適さまで見える。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/03_elevation_search.jpg" alt="暑い夏は、標高から涼しさを探す。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/04_ev_charge_calculator.jpg" alt="あなたのEVなら、何分・いくら？" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/05_ev_charge_ranking.jpg" alt="速い・安いを、ランキングで発見。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/06_aerial_street_view.jpg" alt="到着前に、入口まで見える。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/07_trip_diary.jpg" alt="走った道が、旅の物語になる。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/08_conquest_challenge.jpg" alt="日本の名所を、ひとつずつ制覇。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/09_world_heritage.jpg" alt="日本の世界遺産を、巡る旅へ。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+      <div class="snap-center flex-shrink-0" style="width:180px;">
+        <img src="assets/images/car-concierge/10_scenic_roads.jpg" alt="まだ知らない絶景へ、走り出そう。" loading="lazy"
+             style="width:100%;border:3px solid #1F2E4D;border-radius:22px;box-shadow:5px 5px 0 rgba(255,216,77,.9);display:block;">
+      </div>
+  </div>
+  <p class="text-center text-white/50 text-sm mt-4">← 横にスクロールできます →</p>
+</section>
+
+<!-- FACILITIES -->
 <section class="py-20 md:py-28 bg-cream relative overflow-hidden">
   <div class="absolute inset-0 dot-pattern opacity-30"></div>
   <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-14 reveal">
-      <span class="sticker sticker-grass mb-6">PRICING</span>
-      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">料金について</h2>
-      <p class="text-navy/70 text-lg max-w-2xl mx-auto">
-        料金はオーナー様が設定した金額に基づき、アプリ内で明確に表示されます。
-      </p>
+    <div class="text-center mb-12 reveal">
+      <span class="sticker sticker-grass mb-4">ON THE MAP</span>
+      <h2 class="display-xl text-3xl md:text-5xl text-navy mt-5 mb-4">地図で探せる、旅の施設。</h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto">駐車場だけじゃない。ドライブに必要なスポットを、まとめて地図に。</p>
     </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto reveal-stagger">
 
-    <div class="max-w-3xl mx-auto card-chunky p-8 md:p-10 reveal">
-      <ul class="space-y-4">
-        <li class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-sun border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-navy">1</div>
-          <p class="text-navy/80 leading-relaxed pt-1">料金はアプリ内に表示された価格に準じます</p>
-        </li>
-        <li class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-coral border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-white">2</div>
-          <p class="text-navy/80 leading-relaxed pt-1">支払方法: クレジットカード、Apple Pay、Google Pay</p>
-        </li>
-        <li class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-ocean border-2 border-navy rounded-full grid place-items-center flex-shrink-0 font-black text-navy">3</div>
-          <p class="text-navy/80 leading-relaxed pt-1">決済は予約確定時に行われます</p>
-        </li>
-      </ul>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-parking-box-line text-xl text-coral"></i> コインパーキング
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-charging-pile-2-line text-xl text-coral"></i> EV充電スタンド
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-store-2-line text-xl text-coral"></i> コンビニ
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-hotspring-line text-xl text-coral"></i> 温泉
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-gas-station-line text-xl text-coral"></i> ガソリンスタンド
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-riding-line text-xl text-coral"></i> 道の駅
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-restaurant-line text-xl text-coral"></i> レストラン
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-water-flash-line text-xl text-coral"></i> トイレ
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-fireworks-line text-xl text-coral"></i> お祭り・花火大会
+        </div>
+        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
+          <i class="ri-road-map-line text-xl text-coral"></i> 絶景ロード
+        </div>
     </div>
   </div>
 </section>
 
-<!-- ============================== -->
-<!-- CANCELLATION & REFUND -->
-<!-- ============================== -->
-<section class="py-20 md:py-28 bg-cream relative overflow-hidden border-t-[3px] border-navy/10">
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-14 reveal">
-      <span class="sticker sticker-berry mb-6">CANCELLATION & REFUND</span>
-      <h2 class="display-xl text-4xl md:text-5xl text-navy mt-6 mb-6">キャンセル・返金ポリシー</h2>
+<!-- DOWNLOAD CTA -->
+<section id="download" class="py-20 md:py-28 relative overflow-hidden" style="background: radial-gradient(circle at 20% 30%, #4ECDC4 0%, #3BB8B0 45%, #2AA79E 100%);">
+  <div class="absolute inset-0 dot-pattern opacity-20"></div>
+  <div class="container mx-auto px-4 relative z-10 text-center">
+    <div class="max-w-3xl mx-auto reveal">
+      <img src="assets/images/car-concierge/logo.png" alt="車旅コンシェルジュ" class="w-20 h-20 mx-auto mb-6 rounded-3xl border-[3px] border-navy" style="box-shadow:6px 6px 0 #1F2E4D;">
+      <h2 class="display-xl text-3xl md:text-5xl text-navy mb-5">次の旅は、地図から始めよう。</h2>
+      <p class="text-navy/80 text-lg mb-10 font-medium">車旅コンシェルジュは、iOS / Android で今すぐ使えます。基本無料。</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white text-base">
+          <i class="ri-apple-fill text-xl"></i> App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.hiroakiyasa.carconciergeapp" target="_blank" rel="noopener" class="btn-chunky btn-chunky-coral text-base">
+          <i class="ri-google-play-fill text-xl"></i> Google Play
+        </a>
+      </div>
     </div>
+  </div>
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#1F2E4D"/></svg>
+</section>
 
-    <div class="max-w-4xl mx-auto reveal">
-      <h3 class="font-display font-black text-2xl text-navy mb-4 flex items-center gap-2">
-        <i class="ri-calendar-close-line text-coral"></i> キャンセルポリシー
-      </h3>
-      <div class="overflow-x-auto mb-12">
-        <table class="table-chunky">
-          <thead>
-            <tr>
-              <th>キャンセルタイミング</th>
-              <th>返金額</th>
-            </tr>
-          </thead>
+<!-- OPERATOR & LEGAL -->
+<section class="py-20 md:py-24 bg-navy relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <span class="sticker sticker-ocean mb-4">OPERATOR</span>
+        <h2 class="display-xl text-3xl md:text-4xl text-white mt-5">運営者情報</h2>
+      </div>
+      <div class="card-chunky p-2 reveal mb-10">
+        <table class="table-chunky" style="box-shadow:none;border:none;border-radius:0;">
           <tbody>
-            <tr>
-              <td>利用開始 24 時間前まで</td>
-              <td><span class="sticker sticker-grass">全額返金</span></td>
-            </tr>
-            <tr>
-              <td>利用開始 24 時間以内</td>
-              <td><span class="sticker">50% 返金</span></td>
-            </tr>
-            <tr>
-              <td>利用開始後</td>
-              <td><span class="sticker sticker-coral">返金不可</span></td>
-            </tr>
+            <tr><th class="w-1/3 bg-sun text-navy">アプリ名</th><td>車旅コンシェルジュ</td></tr>
+            <tr><th class="bg-sun text-navy">提供</th><td>Trail Fusion AI</td></tr>
+            <tr><th class="bg-sun text-navy">運営者</th><td>安 博明（Hiroaki Yasa）</td></tr>
+            <tr><th class="bg-sun text-navy">所在地</th><td>日本</td></tr>
+            <tr><th class="bg-sun text-navy">対応OS</th><td>iOS / Android</td></tr>
+            <tr><th class="bg-sun text-navy">お問い合わせ</th><td><a href="mailto:trailfusionai@gmail.com" class="text-coral underline font-bold">trailfusionai@gmail.com</a></td></tr>
           </tbody>
         </table>
       </div>
-
-      <h3 class="font-display font-black text-2xl text-navy mb-4 flex items-center gap-2">
-        <i class="ri-refund-2-line text-ocean"></i> 返金ポリシー
-      </h3>
-      <div class="card-chunky p-8">
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
-            <p class="text-navy/80 leading-relaxed">返金はお支払いに使用されたカードに返金されます</p>
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
-            <p class="text-navy/80 leading-relaxed">返金処理には 5〜10 営業日かかる場合があります</p>
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-2xl text-grass mt-0.5"></i>
-            <p class="text-navy/80 leading-relaxed">オーナー都合によるキャンセルの場合は全額返金いたします</p>
-          </li>
-        </ul>
+      <div class="grid sm:grid-cols-2 gap-4 reveal">
+        <a href="car-concierge-privacy.html" class="card-chunky p-6 flex items-center gap-4 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 bg-coral border-2 border-navy rounded-xl grid place-items-center flex-shrink-0"><i class="ri-shield-check-line text-2xl text-white"></i></div>
+          <div><div class="font-display font-black text-lg text-navy">プライバシーポリシー</div><div class="text-navy/60 text-sm">個人情報の取扱いについて</div></div>
+        </a>
+        <a href="car-concierge-terms.html" class="card-chunky p-6 flex items-center gap-4 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 bg-ocean border-2 border-navy rounded-xl grid place-items-center flex-shrink-0"><i class="ri-file-list-3-line text-2xl text-white"></i></div>
+          <div><div class="font-display font-black text-lg text-navy">利用規約</div><div class="text-navy/60 text-sm">サービス利用の条件</div></div>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================== -->
-<!-- CONTACT -->
-<!-- ============================== -->
-<section id="contact" class="py-20 md:py-28 bg-navy relative overflow-hidden">
-  <div class="absolute inset-0 dot-pattern opacity-10"></div>
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-3xl mx-auto text-center reveal">
-      <span class="sticker sticker-coral mb-6">CONTACT</span>
-      <h2 class="display-xl text-4xl md:text-5xl text-white mt-6 mb-6">お問い合わせ</h2>
-      <p class="text-white/70 text-lg mb-10">
-        サービスに関するご質問・ご要望は、下記までお気軽にお問い合わせください。
-      </p>
-
-      <div class="card-chunky p-8 md:p-10 text-left">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-14 h-14 bg-coral border-2 border-navy rounded-2xl grid place-items-center">
-            <i class="ri-mail-send-line text-2xl text-white"></i>
-          </div>
-          <div>
-            <div class="font-accent text-xs text-coral tracking-widest mb-1">EMAIL</div>
-            <a href="mailto:trailfusionai@gmail.com" class="font-display font-black text-xl md:text-2xl text-navy underline decoration-2 underline-offset-4 hover:text-coral transition">
-              trailfusionai@gmail.com
-            </a>
-          </div>
-        </div>
-        <p class="text-navy/60 text-sm pl-[72px]">※ 通常 2〜3 営業日以内にご返信いたします</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
 <!-- FOOTER -->
-<!-- ============================== -->
 <footer class="bg-navy text-white relative overflow-hidden border-t-[3px] border-sun/20">
   <div class="absolute inset-0 opacity-5 dot-pattern"></div>
-
   <div class="border-b-2 border-white/10 py-3 overflow-hidden">
     <div class="marquee-track whitespace-nowrap hand-font text-2xl text-sun">
-      <span class="mx-6">やりたい事は、今やる。</span>
-      <span class="mx-6 text-coral">✦</span>
-      <span class="mx-6">好きを力に。</span>
-      <span class="mx-6 text-peach">✦</span>
-      <span class="mx-6">後悔しない人生を。</span>
-      <span class="mx-6 text-ocean">✦</span>
-      <span class="mx-6">やりたい事は、今やる。</span>
-      <span class="mx-6 text-coral">✦</span>
-      <span class="mx-6">好きを力に。</span>
-      <span class="mx-6 text-peach">✦</span>
-      <span class="mx-6">後悔しない人生を。</span>
-      <span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
+      <span class="mx-6">やりたい事は、今やる。</span><span class="mx-6 text-coral">✦</span>
+      <span class="mx-6">好きを力に。</span><span class="mx-6 text-peach">✦</span>
+      <span class="mx-6">後悔しない人生を。</span><span class="mx-6 text-ocean">✦</span>
     </div>
   </div>
-
   <div class="container mx-auto px-4 py-14 relative z-10">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-4">
           <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-12 rounded-xl border-2 border-sun">
-          <div>
-            <div class="font-display font-black text-xl">TrailFusion AI</div>
-            <div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div>
-          </div>
+          <div><div class="font-display font-black text-xl">TrailFusion AI</div><div class="font-accent text-[10px] text-sun tracking-widest">×AI ADVENTURE</div></div>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">
-          キャンピングカーDIYとAIアプリで、場所に縛られない人生を創ろう。あなたの「やってみたい」を、応援します。
-        </p>
+        <p class="text-white/60 text-sm leading-relaxed mb-4 max-w-md">キャンピングカーDIYとAIアプリで、場所に縛られない人生を創ろう。あなたの「やってみたい」を、応援します。</p>
         <div class="flex gap-2">
           <a href="https://www.youtube.com/@van_oasis" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-red-500 rounded-full grid place-items-center transition-colors" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           <a href="https://www.tiktok.com/@trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
           <a href="https://x.com/trailfusionai" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white hover:text-navy rounded-full grid place-items-center transition-colors" aria-label="X"><i class="ri-twitter-x-fill"></i></a>
         </div>
       </div>
-
       <div>
-        <h4 class="font-black text-sun mb-3 flex items-center gap-2">🚐 キャンパー</h4>
+        <h4 class="font-black text-sun mb-3">🚐 キャンパー</h4>
         <ul class="space-y-2 text-sm text-white/70">
           <li><a href="camping.html" class="hover:text-sun transition">DIYガイド</a></li>
           <li><a href="drive-routes/" class="hover:text-sun transition">ドライブルート</a></li>
           <li><a href="maintenance.html" class="hover:text-sun transition">整備記録</a></li>
         </ul>
       </div>
-
       <div>
-        <h4 class="font-black text-ocean mb-3 flex items-center gap-2">🤖 AIアプリ</h4>
+        <h4 class="font-black text-ocean mb-3">🤖 アプリ</h4>
         <ul class="space-y-2 text-sm text-white/70">
           <li><a href="apps.html" class="hover:text-ocean transition">アプリ一覧</a></li>
           <li><a href="car-concierge.html" class="hover:text-ocean transition">車旅コンシェルジュ</a></li>
         </ul>
       </div>
-
       <div>
-        <h4 class="font-black text-coral mb-3 flex items-center gap-2">📄 法務</h4>
+        <h4 class="font-black text-coral mb-3">📄 法務</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="buddytalk-privacy.html" class="hover:text-coral transition">プライバシー</a></li>
-          <li><a href="buddytalk-terms.html" class="hover:text-coral transition">利用規約</a></li>
-          <li><a href="index.html#contact" class="hover:text-coral transition">お問い合わせ</a></li>
+          <li><a href="car-concierge-privacy.html" class="hover:text-coral transition">プライバシー</a></li>
+          <li><a href="car-concierge-terms.html" class="hover:text-coral transition">利用規約</a></li>
+          <li><a href="mailto:trailfusionai@gmail.com" class="hover:text-coral transition">お問い合わせ</a></li>
         </ul>
       </div>
     </div>
-
     <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-      <p class="text-white/50">© 2024-2026 車旅コンシェルジュ / TrailFusion AI. All rights reserved.</p>
+      <p class="text-white/50">© 2024-2026 車旅コンシェルジュ / Trail Fusion AI. All rights reserved.</p>
       <p class="hand-font text-lg text-sun">Made with ❤️ on the road</p>
     </div>
   </div>
 </footer>
 
 <button id="scrollToTop" aria-label="ページトップへ"><i class="ri-arrow-up-line"></i></button>
-
 <script src="assets/js/trailfusion-ui.js"></script>
 </body>
 </html>
