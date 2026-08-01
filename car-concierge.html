@@ -12,7 +12,7 @@
 <meta property="og:title" content="車旅コンシェルジュ - 駐車場・EV充電・絶景を地図で見つける旅アプリ">
 <meta property="og:description" content="駐車場を「快適さ」で選ぶ。EV充電の時間・料金計算、標高検索、旅日記、日本の名所制覇まで。">
 <meta property="og:url" content="https://trailfusionai.com/car-concierge.html">
-<meta property="og:image" content="https://trailfusionai.com/assets/images/car-concierge/01_parking_comfort.jpg">
+<meta property="og:image" content="https://trailfusionai.com/drive-routes/images/38.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="theme-color" content="#4ECDC4">
 <link rel="icon" type="image/png" href="assets/images/car-concierge/logo.png">
@@ -42,6 +42,19 @@
   .cc-gallery > div{scroll-snap-align:center;}
   .cc-gallery::-webkit-scrollbar{height:8px;}
   .cc-gallery::-webkit-scrollbar-thumb{background:rgba(255,216,77,.5);border-radius:999px;}
+  /* 絶景ショーケース */
+  .cc-scenic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media (min-width:640px){ .cc-scenic-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (min-width:1024px){ .cc-scenic-grid{grid-template-columns:repeat(4,1fr);gap:18px;} }
+  .cc-scenic-card{position:relative;display:block;border:3px solid #1F2E4D;border-radius:20px;overflow:hidden;box-shadow:5px 5px 0 #1F2E4D;aspect-ratio:4/3;transition:transform .25s ease, box-shadow .25s ease;}
+  .cc-scenic-card:hover{transform:translateY(-4px);box-shadow:8px 8px 0 #1F2E4D;}
+  .cc-scenic-card img{width:100%;height:100%;object-fit:cover;display:block;}
+  .cc-scenic-meta{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .9rem .8rem;background:linear-gradient(to top, rgba(15,25,45,.92), rgba(15,25,45,0));color:#fff;}
+  .cc-scenic-pref{display:inline-flex;align-items:center;gap:.25rem;font-size:.72rem;font-weight:700;color:#FFD84D;letter-spacing:.02em;}
+  .cc-scenic-name{display:block;font-weight:800;font-size:.98rem;line-height:1.25;margin-top:.12rem;}
+  /* ヒーローの絶景背景 */
+  .cc-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .cc-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg, rgba(18,32,56,.86) 0%, rgba(24,40,66,.62) 40%, rgba(59,184,176,.34) 100%);}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"車旅コンシェルジュ","operatingSystem":"iOS, Android","applicationCategory":"TravelApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Organization","name":"Trail Fusion AI"},"url":"https://trailfusionai.com/car-concierge.html"}
@@ -96,27 +109,29 @@
 </header>
 
 <!-- HERO -->
-<section class="relative overflow-hidden" style="background: radial-gradient(circle at 82% 18%, #B5EFE6 0%, #4ECDC4 42%, #3BB8B0 100%);">
-  <div class="absolute inset-0 dot-pattern opacity-30"></div>
-  <div class="absolute top-[12%] left-[5%] hidden md:block float" style="--r:-8deg;"><div class="sticker sticker-coral">🅿️ 駐車場</div></div>
-  <div class="absolute top-[22%] right-[6%] hidden md:block float-slow" style="--r:6deg;"><div class="sticker sticker-sun">⚡ EV充電</div></div>
-  <div class="absolute bottom-[24%] left-[7%] hidden lg:block float-slow" style="--r:-4deg; animation-delay:-2s;"><div class="sticker sticker-peach">🏔️ 絶景</div></div>
+<section class="relative overflow-hidden" style="background:#1F2E4D;">
+  <img class="cc-hero-bg" src="drive-routes/images/38.jpg" alt="" aria-hidden="true">
+  <div class="cc-hero-overlay"></div>
+  <div class="absolute inset-0 dot-pattern opacity-20" style="z-index:2;"></div>
+  <div class="absolute top-[12%] left-[5%] hidden md:block float" style="--r:-8deg; z-index:3;"><div class="sticker sticker-coral">🅿️ 駐車場</div></div>
+  <div class="absolute top-[20%] right-[6%] hidden md:block float-slow" style="--r:6deg; z-index:3;"><div class="sticker sticker-sun">⚡ EV充電</div></div>
+  <div class="absolute bottom-[28%] left-[7%] hidden lg:block float-slow" style="--r:-4deg; animation-delay:-2s; z-index:3;"><div class="sticker sticker-peach">🏔️ 絶景</div></div>
 
-  <div class="container mx-auto px-4 pt-16 pb-24 md:pt-20 md:pb-28 relative z-10">
+  <div class="container mx-auto px-4 pt-16 pb-24 md:pt-24 md:pb-32 relative z-10">
     <div class="grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7 text-center lg:text-left">
         <div class="inline-flex items-center gap-2 bg-white border-2 border-navy rounded-full px-4 py-2 mb-6 pop-in">
           <img src="assets/images/car-concierge/logo.png" alt="" class="w-6 h-6 rounded-md">
-          <span class="font-bold text-sm text-navy">車旅コンシェルジュ ・ 旅の地図アプリ</span>
+          <span class="font-bold text-sm text-navy">あなたの車旅の、コンシェルジュ</span>
         </div>
-        <h1 class="display-xl text-navy mb-6">
-          <span class="block pop-in" style="animation-delay:.2s;"><span class="highlight">駐車場</span>・<span class="highlight">EV充電</span>・絶景を、</span>
-          <span class="block pop-in" style="animation-delay:.35s;">地図でつなぐ。</span>
-          <span class="block pop-in gradient-text gradient-animated" style="animation-delay:.5s;">車旅コンシェルジュ。</span>
+        <h1 class="display-xl text-white mb-6" style="text-shadow:0 2px 22px rgba(0,0,0,.4);">
+          <span class="block pop-in" style="animation-delay:.2s;">駐車場も、EV充電も、絶景も。</span>
+          <span class="block pop-in" style="animation-delay:.35s;">あなたの車旅を、まるごと</span>
+          <span class="block pop-in" style="animation-delay:.5s;color:#FFD84D;">コンシェルジュ。</span>
         </h1>
-        <p class="text-lg md:text-xl text-navy/80 max-w-2xl mb-8 leading-relaxed font-medium pop-in mx-auto lg:mx-0" style="animation-delay:.65s;">
-          駐車場を「料金」だけでなく「快適さ」で選ぶ。EV充電の時間と料金を計算し、標高で涼しさを探し、走った道を旅日記に残す。<br>
-          <span class="hand-font text-2xl md:text-3xl text-navy">クルマの旅を、もっと自由に。</span>
+        <p class="text-lg md:text-xl text-white/85 max-w-2xl mb-8 leading-relaxed font-medium pop-in mx-auto lg:mx-0" style="animation-delay:.65s; text-shadow:0 1px 14px rgba(0,0,0,.4);">
+          料金と快適さで駐車場を選び、EV充電の時間と料金を計算し、次の絶景ロードへ案内する。<br>
+          <span class="hand-font text-2xl md:text-3xl text-sun">走るほど、旅が好きになる。</span>
         </p>
         <div class="flex flex-wrap gap-4 pop-in justify-center lg:justify-start" style="animation-delay:.8s;">
         <a href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener" class="btn-chunky btn-chunky-white text-base">
@@ -126,15 +141,15 @@
           <i class="ri-google-play-fill text-xl"></i> Google Play
         </a>
         </div>
-        <p class="text-navy/60 text-sm mt-4 pop-in" style="animation-delay:.9s;">iOS / Android 対応 ・ 基本無料</p>
+        <p class="text-white/75 text-sm mt-4 pop-in" style="animation-delay:.9s;">iOS / Android 対応 ・ 基本無料</p>
       </div>
       <div class="lg:col-span-5 hero-visual">
-        <img src="assets/images/car-concierge/06_aerial_street_view.jpg" alt="" aria-hidden="true" class="float-slow" style="position:absolute;width:224px;left:4%;top:6%;border:3px solid #1F2E4D;border-radius:26px;box-shadow:8px 8px 0 #1F2E4D;opacity:.9;">
-        <img src="assets/images/car-concierge/01_parking_comfort.jpg" alt="車旅コンシェルジュのアプリ画面" class="float" style="position:relative;width:268px;margin-left:auto;border:3px solid #1F2E4D;border-radius:30px;box-shadow:10px 10px 0 #1F2E4D;">
+        <img src="assets/images/car-concierge/06_aerial_street_view.jpg" alt="" aria-hidden="true" class="float-slow" style="position:absolute;width:224px;left:4%;top:6%;border:3px solid #fff;border-radius:26px;box-shadow:8px 8px 0 rgba(0,0,0,.35);opacity:.95;">
+        <img src="assets/images/car-concierge/01_parking_comfort.jpg" alt="車旅コンシェルジュのアプリ画面" class="float" style="position:relative;width:268px;margin-left:auto;border:3px solid #fff;border-radius:30px;box-shadow:10px 10px 0 rgba(0,0,0,.4);">
       </div>
     </div>
   </div>
-  <svg class="wave-divider absolute bottom-0 left-0 right-0" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/></svg>
+  <svg class="wave-divider absolute bottom-0 left-0 right-0" style="z-index:5;" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#FFFBF2"/></svg>
 </section>
 
 <!-- 3 PILLARS -->
@@ -412,47 +427,106 @@
   <p class="text-center text-white/50 text-sm mt-4">← 横にスクロールできます →</p>
 </section>
 
-<!-- FACILITIES -->
+<!-- SCENIC ROUTES -->
 <section class="py-20 md:py-28 bg-cream relative overflow-hidden">
   <div class="absolute inset-0 dot-pattern opacity-30"></div>
+  <div class="absolute top-10 -left-20 w-80 h-80 bg-teal rounded-blob opacity-20 blur-2xl" style="background:#4ECDC4;"></div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="text-center mb-12 reveal">
-      <span class="sticker sticker-grass mb-4">ON THE MAP</span>
-      <h2 class="display-xl text-3xl md:text-5xl text-navy mt-5 mb-4">地図で探せる、旅の施設。</h2>
-      <p class="text-navy/70 text-lg max-w-2xl mx-auto">駐車場だけじゃない。ドライブに必要なスポットを、まとめて地図に。</p>
+      <span class="sticker sticker-coral mb-4">SCENIC ROUTES</span>
+      <h2 class="display-xl text-3xl md:text-5xl text-navy mt-5 mb-4">行き先は、日本の絶景。</h2>
+      <p class="text-navy/70 text-lg max-w-2xl mx-auto">全国の絶景ロードを収録。今日の気分と現在地から、コンシェルジュが次の「走りたい道」へ案内します。</p>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto reveal-stagger">
+    <div class="cc-scenic-grid max-w-6xl mx-auto">
 
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-parking-box-line text-xl text-coral"></i> コインパーキング
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="富士スバルライン（山梨県）">
+        <img src="drive-routes/images/38.jpg" alt="富士スバルライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 山梨県</span>
+          <span class="cc-scenic-name">富士スバルライン</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-charging-pile-2-line text-xl text-coral"></i> EV充電スタンド
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="白山白川郷ホワイトロード（石川県・岐阜県）">
+        <img src="drive-routes/images/88.jpg" alt="白山白川郷ホワイトロード" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 石川県・岐阜県</span>
+          <span class="cc-scenic-name">白山白川郷ホワイトロード</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-store-2-line text-xl text-coral"></i> コンビニ
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="古宇利大橋（沖縄県）">
+        <img src="drive-routes/images/111.jpg" alt="古宇利大橋" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 沖縄県</span>
+          <span class="cc-scenic-name">古宇利大橋</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-hotspring-line text-xl text-coral"></i> 温泉
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="阿蘇パノラマライン（熊本県）">
+        <img src="drive-routes/images/97.jpg" alt="阿蘇パノラマライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 熊本県</span>
+          <span class="cc-scenic-name">阿蘇パノラマライン</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-gas-station-line text-xl text-coral"></i> ガソリンスタンド
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="美ヶ原高原道路（長野県）">
+        <img src="drive-routes/images/82.jpg" alt="美ヶ原高原道路" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 長野県</span>
+          <span class="cc-scenic-name">美ヶ原高原道路</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-riding-line text-xl text-coral"></i> 道の駅
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="伊勢志摩スカイライン（三重県）">
+        <img src="drive-routes/images/96.jpg" alt="伊勢志摩スカイライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 三重県</span>
+          <span class="cc-scenic-name">伊勢志摩スカイライン</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-restaurant-line text-xl text-coral"></i> レストラン
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="指宿スカイライン（鹿児島県）">
+        <img src="drive-routes/images/52.jpg" alt="指宿スカイライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 鹿児島県</span>
+          <span class="cc-scenic-name">指宿スカイライン</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-water-flash-line text-xl text-coral"></i> トイレ
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="やまなみハイウェイ（大分県・熊本県）">
+        <img src="drive-routes/images/108.jpg" alt="やまなみハイウェイ" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 大分県・熊本県</span>
+          <span class="cc-scenic-name">やまなみハイウェイ</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-fireworks-line text-xl text-coral"></i> お祭り・花火大会
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="蒜山大山スカイライン（岡山県・鳥取県）">
+        <img src="drive-routes/images/51.jpg" alt="蒜山大山スカイライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 岡山県・鳥取県</span>
+          <span class="cc-scenic-name">蒜山大山スカイライン</span>
         </div>
-        <div class="flex items-center gap-3 bg-white border-2 border-navy rounded-2xl px-4 py-3 font-bold text-navy" style="box-shadow:3px 3px 0 #1F2E4D;">
-          <i class="ri-road-map-line text-xl text-coral"></i> 絶景ロード
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="西伊豆スカイライン（静岡県）">
+        <img src="drive-routes/images/15.jpg" alt="西伊豆スカイライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 静岡県</span>
+          <span class="cc-scenic-name">西伊豆スカイライン</span>
         </div>
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="福山グリーンライン（広島県）">
+        <img src="drive-routes/images/63.jpg" alt="福山グリーンライン" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 広島県</span>
+          <span class="cc-scenic-name">福山グリーンライン</span>
+        </div>
+      </a>
+      <a href="drive-routes/" class="cc-scenic-card reveal" title="西吾妻スカイバレー（福島県・山形県）">
+        <img src="drive-routes/images/32.jpg" alt="西吾妻スカイバレー" loading="lazy">
+        <div class="cc-scenic-meta">
+          <span class="cc-scenic-pref"><i class="ri-map-pin-2-fill"></i> 福島県・山形県</span>
+          <span class="cc-scenic-name">西吾妻スカイバレー</span>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-12 reveal">
+      <a href="drive-routes/" class="btn-chunky btn-chunky-coral text-base"><i class="ri-road-map-line text-xl"></i> 絶景ロード図鑑をすべて見る</a>
+      <p class="text-navy/50 text-sm mt-4">写真は「絶景ロード図鑑」に収録の実スポットです</p>
     </div>
   </div>
 </section>
