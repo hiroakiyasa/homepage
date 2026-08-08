@@ -29,6 +29,7 @@
   const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
   const removeHeroTripBadgeScript='<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".sticker").forEach(function(el){if((el.textContent||"").includes("実写の旅")){var p=el.closest(".float")||el.parentElement;if(p)p.remove();else el.remove();}});});</'+'script>';
   const renameAiAppLabelsScript='<script>document.addEventListener("DOMContentLoaded",function(){function walk(n){if(n.nodeType===3){n.nodeValue=n.nodeValue.replace(/AIアプリを見る/g,"開発したアプリを見る").replace(/AIアプリ/g,"開発したアプリ");return;}if(n.nodeType!==1||["SCRIPT","STYLE","NOSCRIPT","TEXTAREA"].includes(n.tagName))return;Array.from(n.childNodes).forEach(walk);}walk(document.body);});</'+'script>';
+  const addThreadsLinkScript='<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("a[href=\\"https://x.com/trailfusionai\\"]").forEach(function(a){if(a.nextElementSibling&&a.nextElementSibling.href&&a.nextElementSibling.href.includes("threads.com/@shevchenkofun"))return;var t=a.cloneNode(true);t.href="https://www.threads.com/@shevchenkofun?igshid=NTc4MTIwNjQ2YQ==";t.setAttribute("rel","noopener");var icon=t.querySelector("i");if(icon)icon.className=a.getAttribute("aria-label")==="X"?"ri-threads-fill":"ri-threads-fill text-white";if(a.getAttribute("aria-label")==="X"){t.setAttribute("aria-label","Threads");}else{var label=t.querySelector(".text-xs.font-bold");var handle=t.querySelector(".font-bold.text-navy.text-sm");if(label)label.textContent="Threads";if(handle)handle.textContent="@shevchenkofun";}a.insertAdjacentElement("afterend",t);});});</'+'script>';
   const i18nScript='<script src="assets/js/i18n.js"></'+'script>';
   const oldNav=`      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
         <a href="index.html" class="nav-item text-navy" aria-current="page">ホーム</a>
@@ -85,6 +86,7 @@
       html=html.replace('</body>', removeHeroTripBadgeScript+'</body>');
     }
     html=html.replace('</body>', renameAiAppLabelsScript+'</body>');
+    html=html.replace('</body>', addThreadsLinkScript+'</body>');
     if(!html.includes('assets/js/i18n.js')){
       html=html.replace(oldTitle,newTitle);
       html=html.replace(oldDesc,newDesc);
