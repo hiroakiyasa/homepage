@@ -9,7 +9,7 @@
     ["th", "ไทย"], ["hi", "हिन्दी"], ["ar", "العربية"],
   ];
   const EMAIL = "trailfusionai@gmail.com";
-  const UPDATED = "2026-06-30";
+  const UPDATED = "2026-08-16";
 
   const UI = {
     en: { apps: "Apps", appInfo: "App Info", privacy: "Privacy Policy", support: "Support", terms: "Terms of Service", footer: "© 2025-2026 TrailFusion AI." },
@@ -52,25 +52,25 @@
   function P(lang, h1, updatedLabel, intro, secs) { PRIVACY[lang] = { badge: (UI[lang] || UI.en).privacy.toUpperCase(), h1, updatedLabel, intro, sections: secs }; }
 
   P("en", "Reel Make — Privacy Policy", "Last updated", "This Privacy Policy explains how <b>Reel Make</b> (\"the App\"), operated by TrailFusion AI (\"we\"), handles your information. By using the App you agree to this policy.", [
-    ["1. No account required", "<p>The App does not require you to create an account or sign in. We do not collect your name, email, or contact list.</p>"],
+    ["1. No registration required", "<p>You do not need to provide a name, email address, password, or contact list. The App creates a pseudonymous technical identifier and anonymous session so we can protect jobs, restore purchase access, prevent abuse, and provide support. It is not used to identify you by name.</p>"],
     ["2. Photos & videos you select", "<p>To generate a reel, the photos and videos you choose are uploaded to our cloud render service (Cloudflare R2) and processed by AI to compose the video. <b>Uploaded source files and rendered results are automatically deleted within about 7 days</b> and are <b>never used to train AI models</b>. The App only accesses the specific media you select; it does not scan your library.</p>"],
     ["3. Text you enter", "<p>Prompts, themes, captions, and brand text you enter are sent to AI providers to generate the script, narration, and on-screen text for your reel.</p>"],
     ["4. Service providers (sub-processors)", null],
     ["5. Purchases", "<p>Subscriptions (Free / Pro / MAX) and credit packs are processed by Apple App Store or Google Play. We never receive or store your payment-card details. We receive only your subscription status (via RevenueCat) to unlock features. Manage or cancel anytime in your store account.</p>"],
-    ["6. Analytics", "<p>We do not sell your data or use it for advertising profiling. Any diagnostics are limited to anonymous, aggregated app-stability information.</p>"],
+    ["6. Analytics", "<p>We use Firebase Analytics to measure screens and feature funnels, render outcomes, app version, language, plan category, and coarse device/app information under a pseudonymous app identifier. We do not collect your selected media, prompt text, advertising ID, name, email, or precise location in analytics. We do not sell data or use it for cross-app advertising or profiling.</p>"],
     ["7. Children", "<p>The App is not directed to children under the age required by your local app store. We do not knowingly collect personal information from children.</p>"],
-    ["8. Your choices & rights", "<p>Because uploads auto-delete and we keep no account, there is little personal data to manage. For any request or question, contact <a class=\"rm-mail\">EMAIL</a>.</p>"],
+    ["8. Your choices & rights", "<p>You can withdraw AI-processing consent in Settings, disconnect social accounts, cancel scheduled posts, delete local projects, and manage or cancel purchases in your store account. For access, deletion, objection, or any privacy question, contact <a class=\"rm-mail\">EMAIL</a> with the support device ID shown in Settings when available.</p>"],
     ["9. Changes", "<p>We may update this policy; the \"Last updated\" date will change accordingly.</p>"],
   ]);
   P("ja", "Reel Make — プライバシーポリシー", "最終更新日", "本ポリシーは、TrailFusion AI が提供する <b>Reel Make</b>（以下「本アプリ」）における情報の取り扱いを説明します。本アプリの利用をもって本ポリシーに同意したものとみなします。", [
-    ["1. アカウント不要", "<p>本アプリの利用にアカウント登録やログインは不要です。氏名・メールアドレス・連絡先などは収集しません。</p>"],
+    ["1. 登録不要の匿名セッション", "<p>氏名・メールアドレス・パスワード・連絡先の登録は不要です。ジョブの保護、購入権利の復元、不正利用防止、サポートのため、仮名の技術IDと匿名セッションを作成します。氏名による本人特定には使用しません。</p>"],
     ["2. 選択した写真・動画", "<p>リール生成のため、選択した写真・動画はクラウドのレンダリングサービス（Cloudflare R2）にアップロードされ、AIが動画を構成します。<b>アップロード素材および生成結果は約7日以内に自動削除</b>され、<b>AIの学習には一切使用しません</b>。本アプリはあなたが選択した素材のみにアクセスし、ライブラリ全体をスキャンすることはありません。</p>"],
     ["3. 入力したテキスト", "<p>プロンプト・テーマ・字幕・ブランド名などの入力内容は、台本・ナレーション・画面テキストの生成のためAI提供者に送信されます。</p>"],
     ["4. 利用する外部サービス", null],
     ["5. 課金", "<p>サブスク（Free / Pro / MAX）およびクレジットは App Store / Google Play が処理します。カード情報を当方が受け取る・保存することはありません。機能解放のため購読状態（RevenueCat経由）のみを受け取ります。管理・解約は各ストアのアカウントからいつでも可能です。</p>"],
-    ["6. 解析・広告", "<p>データの販売や広告プロファイリングは行いません。診断情報は匿名・集計されたアプリ安定性の範囲に限られます。</p>"],
+    ["6. 解析・広告", "<p>Firebase Analyticsにより、画面・機能ファネル、生成結果、アプリ版、言語、プラン区分、概略的な端末／アプリ情報を仮名のアプリIDとともに測定します。選択素材、入力テキスト、広告ID、氏名、メールアドレス、正確な位置情報は解析に送信しません。データ販売、他社アプリをまたぐ広告追跡・プロファイリングは行いません。</p>"],
     ["7. お子さまの利用", "<p>本アプリは各ストアの定める年齢未満のお子さまを対象としていません。お子さまの個人情報を意図的に収集することはありません。</p>"],
-    ["8. お問い合わせ・権利", "<p>アップロードは自動削除され、アカウントも保持しないため、管理すべき個人データはほとんどありません。ご要望・ご質問は <a class=\"rm-mail\">EMAIL</a> まで。</p>"],
+    ["8. お問い合わせ・権利", "<p>設定からAI処理への同意を撤回し、SNS連携の解除、予約投稿の取消、端末内プロジェクトの削除ができます。購入の管理・解約はストアアカウントから行えます。開示・削除・異議申立て等は、可能であれば設定画面のサポート用デバイスIDを添えて <a class=\"rm-mail\">EMAIL</a> までご連絡ください。</p>"],
     ["9. 改定", "<p>本ポリシーは改定されることがあり、その場合「最終更新日」を更新します。</p>"],
   ]);
   P("zh-Hans", "Reel Make — 隐私政策", "最后更新", "本隐私政策说明由 TrailFusion AI 运营的 <b>Reel Make</b>（“本应用”）如何处理您的信息。使用本应用即表示您同意本政策。", [
@@ -256,8 +256,8 @@
 
   // sub-processor list (section 4) — localize labels, keep provider names
   const SUB = {
-    en: ["<b>Google (Gemini)</b> — AI service that receives your selected photos/video frames & text to recognize them and generate the script", "<b>Microsoft (Azure)</b> — AI service that receives the narration text to synthesize the voice", "<b>Cloudflare R2</b> — temporary storage of uploads & rendered videos", "<b>Supabase</b> — secure server-side key management", "<b>RevenueCat, Apple, Google</b> — subscription purchases & entitlement status"],
-    ja: ["<b>Google（Gemini）</b> … 選択した写真・動画フレームと入力テキストを受け取り、画像認識と台本生成を行うAIサービス", "<b>Microsoft（Azure）</b> … ナレーション原稿を受け取り音声を合成するAIサービス", "<b>Cloudflare R2</b> … アップロード/生成動画の一時保管", "<b>Supabase</b> … サーバー側の鍵管理", "<b>RevenueCat・Apple・Google</b> … サブスク購入と権利状態"],
+    en: ["<b>Google (Gemini)</b> — AI service that receives selected photos/video frames and text to recognize them and generate scripts", "<b>Microsoft (Azure)</b> — receives narration text to synthesize voice", "<b>Google Cloud</b> — API, task queue, secure secrets, and render processing", "<b>Google Firebase Analytics</b> — pseudonymous product analytics and app diagnostics", "<b>Cloudflare R2</b> — temporary storage of uploads and rendered media", "<b>Upstash Redis</b> — short-lived job, quota, rate-limit, encrypted schedule, and OAuth state", "<b>Supabase</b> — anonymous authentication and secure Edge Functions", "<b>RevenueCat, Apple, Google Play</b> — purchases and entitlement status", "<b>Expo</b> — optional render-completion push notifications", "<b>X, Meta (Instagram/Threads), TikTok, YouTube</b> — only when you choose to connect an account, publish, or schedule"],
+    ja: ["<b>Google（Gemini）</b> … 選択した写真・動画フレームと入力テキストを受け取り、画像認識と台本生成を行うAIサービス", "<b>Microsoft（Azure）</b> … ナレーション原稿を受け取り音声を合成", "<b>Google Cloud</b> … API、タスクキュー、秘密情報、レンダリング処理", "<b>Google Firebase Analytics</b> … 仮名の製品利用解析とアプリ診断", "<b>Cloudflare R2</b> … アップロード／生成メディアの一時保管", "<b>Upstash Redis</b> … ジョブ、利用枠、レート制限、暗号化した予約・OAuth状態の一時保管", "<b>Supabase</b> … 匿名認証と安全なEdge Function", "<b>RevenueCat・Apple・Google Play</b> … 購入処理と権利状態", "<b>Expo</b> … 任意の生成完了プッシュ通知", "<b>X・Meta（Instagram／Threads）・TikTok・YouTube</b> … 利用者が連携、投稿、予約を選んだ場合のみ"],
   };
   // Consent + equal-protection note shown after the section-4 provider list.
   // Required by App Store Guideline 5.1.1(i)/5.1.2(i).
@@ -280,6 +280,45 @@
   };
   function noteFor(lang) { return SUBNOTE[lang] || SUBNOTE.en; }
 
+  // Operational data and retention are shown in every locale. This section is
+  // intentionally separate from the AI-consent note because authentication,
+  // analytics, abuse prevention, notifications and social publishing have
+  // different purposes and retention periods.
+  const DATA_DETAILS = {
+    en: ["Data categories, retention & security", "<p>Depending on the features you use, we process: a pseudonymous user/session and support device ID; IP address and security/rate-limit logs; app version, language, plan and feature events; purchase/credit status; an optional Expo push token; and, only when you connect or schedule social publishing, the platform username, post text, schedule and encrypted OAuth tokens. We do not collect contacts, advertising ID, precise location, payment-card details, or analytics copies of your selected media and prompt text.</p><p>Normal source uploads and rendered results expire within about <b>7 days</b>. MAX campaign uploads may be retained for up to <b>120 days</b> to fulfill future scheduled posts. Encrypted schedule/OAuth records are kept only until the post is completed, canceled or expires, with bounded operational retention. Purchase, quota and anti-abuse records are retained as needed to provide entitlements, prevent duplicate charges/refunds and protect the service. Firebase Analytics follows Google's configured retention. Projects saved on your device remain until you delete them or the App.</p><p>We use encryption in transit, access controls, least-privilege service identities and encryption for stored social tokens. Providers may process data in countries outside yours under their privacy terms and applicable safeguards.</p>"],
+    ja: ["データ項目・保存期間・安全管理", "<p>利用機能に応じて、仮名のユーザー／セッションIDとサポート用デバイスID、IPアドレスとセキュリティ／レート制限ログ、アプリ版・言語・プラン・機能イベント、購入／クレジット状態、任意のExpoプッシュトークンを処理します。SNS連携・予約を選んだ場合のみ、プラットフォームのユーザー名、投稿文、予約日時、暗号化したOAuthトークンも処理します。連絡先、広告ID、正確な位置情報、カード情報、選択素材や入力文の解析用コピーは収集しません。</p><p>通常の素材アップロードと生成結果は約<b>7日以内</b>に失効します。MAXの長期キャンペーン素材は将来の予約投稿を実行するため最大<b>120日</b>保存する場合があります。暗号化した予約／OAuth情報は、投稿完了・取消・失効までの必要な期間に限り、上限を設けて保存します。購入、利用枠、不正利用防止の記録は、権利提供、二重請求／返金防止、サービス保護に必要な期間保存します。Firebase AnalyticsはGoogle側で設定した保存期間に従います。端末に保存したプロジェクトは、利用者が削除またはアプリを削除するまで残ります。</p><p>通信の暗号化、アクセス制御、最小権限のサービスID、SNSトークンの保存時暗号化を行います。委託先は、各社の規約と適用される保護措置のもと、利用者の国以外でデータを処理する場合があります。</p>"],
+    "zh-Hans": ["数据类别、保留期限与安全", "<p>根据所用功能，我们会处理化名用户/会话及支持设备 ID、IP 与安全限流日志、应用版本/语言/套餐/功能事件、购买与积分状态、可选推送令牌；仅在您连接或预约社交发布时，处理用户名、帖子、时间表及加密 OAuth 令牌。我们不收集通讯录、广告 ID、精确位置、银行卡信息，也不把所选素材或提示文本复制到分析系统。</p><p>普通上传及生成结果约 <b>7 天</b>内失效；MAX 长期活动素材最多保留 <b>120 天</b>。预约和 OAuth 记录仅保留至完成、取消或到期；购买、配额与防滥用记录按提供权益和保护服务所需保留。传输加密，并对社交令牌加密存储。</p>"],
+    ko: ["데이터 항목·보관 기간·보안", "<p>기능에 따라 가명 사용자/세션 및 지원 기기 ID, IP와 보안·요청 제한 로그, 앱 버전·언어·요금제·기능 이벤트, 구매/크레딧 상태, 선택적 푸시 토큰을 처리합니다. SNS 연결·예약 시에만 사용자명, 게시물, 일정과 암호화된 OAuth 토큰을 처리합니다. 연락처, 광고 ID, 정확한 위치, 카드 정보나 선택한 미디어/프롬프트의 분석 사본은 수집하지 않습니다.</p><p>일반 업로드와 결과는 약 <b>7일</b>, MAX 캠페인 자료는 최대 <b>120일</b> 보관됩니다. 예약/OAuth 기록은 완료·취소·만료 시까지 제한적으로 보관하며 전송 및 저장 토큰을 암호화합니다.</p>"],
+    es: ["Categorías de datos, conservación y seguridad", "<p>Según las funciones usadas, tratamos un ID seudónimo de usuario/sesión y dispositivo de soporte, IP y registros de seguridad/límites, versión, idioma, plan, eventos, compras/créditos y un token push opcional. Solo al conectar o programar redes tratamos usuario, publicación, horario y tokens OAuth cifrados. No recopilamos contactos, ID publicitario, ubicación precisa, tarjeta ni copias analíticas de tus medios o prompts.</p><p>Las cargas y resultados normales caducan en unos <b>7 días</b>; el material de campañas MAX, hasta <b>120 días</b>. Los datos de programación/OAuth se limitan a lo necesario hasta completar, cancelar o caducar. Ciframos el tránsito y los tokens almacenados.</p>"],
+    "pt-BR": ["Categorias de dados, retenção e segurança", "<p>Conforme os recursos usados, processamos ID pseudônimo de usuário/sessão e dispositivo de suporte, IP e logs de segurança/limite, versão, idioma, plano, eventos, compras/créditos e token push opcional. Só ao conectar ou agendar redes tratamos usuário, publicação, agenda e tokens OAuth criptografados. Não coletamos contatos, ID de publicidade, localização precisa, cartão nem cópias analíticas da mídia ou dos prompts.</p><p>Uploads e resultados comuns expiram em cerca de <b>7 dias</b>; materiais de campanhas MAX, em até <b>120 dias</b>. Agenda/OAuth ficam apenas até concluir, cancelar ou expirar. Usamos criptografia em trânsito e nos tokens armazenados.</p>"],
+    fr: ["Catégories, conservation et sécurité", "<p>Selon les fonctions utilisées, nous traitons un identifiant pseudonyme de session/utilisateur et d'assistance, l'IP et les journaux de sécurité/limitation, la version, la langue, le forfait, les événements, les achats/crédits et un jeton push facultatif. Uniquement si vous connectez ou programmez un réseau social : nom d'utilisateur, publication, horaire et jetons OAuth chiffrés. Nous ne collectons ni contacts, ni identifiant publicitaire, ni localisation précise, ni carte, ni copie analytique des médias ou prompts.</p><p>Les envois et résultats ordinaires expirent sous environ <b>7 jours</b>; les campagnes MAX sous <b>120 jours</b>. Les données de programmation/OAuth sont limitées jusqu'à exécution, annulation ou expiration. Les transferts et jetons stockés sont chiffrés.</p>"],
+    de: ["Datenkategorien, Aufbewahrung und Sicherheit", "<p>Je nach Funktion verarbeiten wir pseudonyme Nutzer-/Sitzungs- und Support-Geräte-IDs, IP- und Sicherheits-/Ratenlimit-Protokolle, App-Version, Sprache, Tarif, Funktionsereignisse, Kauf-/Guthabenstatus und optional ein Push-Token. Nur bei Social-Verbindung oder Planung: Nutzername, Beitrag, Zeitplan und verschlüsselte OAuth-Tokens. Keine Kontakte, Werbe-ID, genaue Position, Kartendaten oder Analysekopien deiner Medien/Prompts.</p><p>Normale Uploads und Ergebnisse verfallen nach etwa <b>7 Tagen</b>, MAX-Kampagnenmaterial nach bis zu <b>120 Tagen</b>. Planungs-/OAuth-Daten bleiben begrenzt bis Abschluss, Abbruch oder Ablauf. Übertragung und gespeicherte Tokens sind verschlüsselt.</p>"],
+    it: ["Categorie, conservazione e sicurezza", "<p>In base alle funzioni usate trattiamo ID pseudonimi di utente/sessione e dispositivo di supporto, IP e log di sicurezza/limite, versione, lingua, piano, eventi, acquisti/crediti e un token push facoltativo. Solo collegando o programmando social: nome utente, post, orario e token OAuth cifrati. Non raccogliamo contatti, ID pubblicitario, posizione precisa, carta o copie analitiche dei media/prompt.</p><p>Upload e risultati normali scadono in circa <b>7 giorni</b>; materiali campagne MAX entro <b>120 giorni</b>. Dati di programmazione/OAuth solo fino a completamento, annullamento o scadenza. Trasporto e token memorizzati sono cifrati.</p>"],
+    ru: ["Категории данных, хранение и безопасность", "<p>В зависимости от функций мы обрабатываем псевдонимные ID пользователя/сеанса и устройства поддержки, IP и журналы безопасности/лимитов, версию, язык, тариф, события, покупки/кредиты и необязательный push-токен. Только при подключении или планировании соцсетей — имя, пост, расписание и зашифрованные OAuth-токены. Мы не собираем контакты, рекламный ID, точное местоположение, данные карты или аналитические копии медиа/подсказок.</p><p>Обычные загрузки и результаты удаляются примерно за <b>7 дней</b>, материалы MAX-кампаний — до <b>120 дней</b>. Расписание/OAuth хранится ограниченно до выполнения, отмены или истечения. Передача и хранимые токены зашифрованы.</p>"],
+    tr: ["Veri kategorileri, saklama ve güvenlik", "<p>Kullanılan özelliklere göre takma adlı kullanıcı/oturum ve destek cihazı kimliği, IP ve güvenlik/hız sınırı günlükleri, sürüm, dil, plan, etkinlikler, satın alma/kredi durumu ve isteğe bağlı bildirim belirteci işleriz. Yalnızca sosyal hesap bağlama veya planlamada kullanıcı adı, gönderi, zamanlama ve şifreli OAuth belirteçleri işlenir. Kişiler, reklam kimliği, kesin konum, kart veya medya/istemlerin analiz kopyaları toplanmaz.</p><p>Normal yükleme ve sonuçlar yaklaşık <b>7 günde</b>, MAX kampanya malzemeleri en çok <b>120 günde</b> silinir. Plan/OAuth kayıtları tamamlanma, iptal veya süre dolumuna kadar sınırlıdır. Aktarım ve kayıtlı belirteçler şifrelenir.</p>"],
+    vi: ["Loại dữ liệu, thời hạn lưu và bảo mật", "<p>Tùy tính năng, chúng tôi xử lý ID người dùng/phiên và thiết bị hỗ trợ dạng biệt danh, IP và nhật ký bảo mật/giới hạn, phiên bản, ngôn ngữ, gói, sự kiện, trạng thái mua/tín dụng và token push tùy chọn. Chỉ khi kết nối hoặc hẹn lịch mạng xã hội mới xử lý tên người dùng, bài đăng, lịch và token OAuth mã hóa. Không thu thập danh bạ, ID quảng cáo, vị trí chính xác, thẻ hay bản sao phân tích của media/prompt.</p><p>Tải lên và kết quả thường hết hạn khoảng <b>7 ngày</b>; tài liệu chiến dịch MAX tối đa <b>120 ngày</b>. Lịch/OAuth chỉ giữ đến khi hoàn tất, hủy hoặc hết hạn. Dữ liệu truyền và token lưu trữ được mã hóa.</p>"],
+    th: ["ประเภทข้อมูล ระยะเวลาเก็บ และความปลอดภัย", "<p>ตามฟีเจอร์ที่ใช้ เราประมวลผล ID ผู้ใช้/เซสชันและอุปกรณ์ช่วยเหลือแบบนามแฝง, IP และบันทึกความปลอดภัย/จำกัดคำขอ, เวอร์ชัน ภาษา แผน เหตุการณ์ สถานะซื้อ/เครดิต และโทเค็นพุชที่เลือกได้ เฉพาะเมื่อเชื่อมหรือนัดโพสต์โซเชียลจึงประมวลผลชื่อผู้ใช้ โพสต์ ตาราง และโทเค็น OAuth ที่เข้ารหัส ไม่เก็บรายชื่อผู้ติดต่อ ID โฆษณา ตำแหน่งแม่นยำ บัตร หรือสำเนาสื่อ/พรอมต์เพื่อวิเคราะห์</p><p>ไฟล์และผลลัพธ์ทั่วไปหมดอายุประมาณ <b>7 วัน</b>; สื่อแคมเปญ MAX สูงสุด <b>120 วัน</b> ข้อมูลตาราง/OAuth เก็บเท่าที่จำเป็นจนเสร็จ ยกเลิก หรือหมดอายุ และมีการเข้ารหัส</p>"],
+    hi: ["डेटा श्रेणियाँ, रखरखाव और सुरक्षा", "<p>उपयोग किए गए फीचर के अनुसार हम छद्म उपयोगकर्ता/सत्र व सहायता डिवाइस ID, IP और सुरक्षा/दर-सीमा लॉग, संस्करण, भाषा, प्लान, इवेंट, खरीद/क्रेडिट स्थिति और वैकल्पिक push token प्रोसेस करते हैं। सोशल खाता जोड़ने या शेड्यूल करने पर ही username, पोस्ट, समय और encrypted OAuth token प्रोसेस होते हैं। संपर्क, विज्ञापन ID, सटीक स्थान, कार्ड या मीडिया/prompt की analytics कॉपी नहीं लेते।</p><p>सामान्य अपलोड व परिणाम लगभग <b>7 दिन</b>, MAX अभियान सामग्री अधिकतम <b>120 दिन</b> रहती है। schedule/OAuth केवल पूरा, रद्द या समाप्त होने तक सीमित है। ट्रांसफर और संग्रहित token encrypted हैं।</p>"],
+    ar: ["فئات البيانات والاحتفاظ والأمان", "<p dir=\"rtl\">بحسب الميزات المستخدمة نعالج معرّف مستخدم/جلسة وجهاز دعم مستعارًا، وعنوان IP وسجلات الأمان/تحديد المعدل، والإصدار واللغة والخطة والأحداث وحالة الشراء/الرصيد ورمز إشعار اختياري. وعند ربط أو جدولة شبكة اجتماعية فقط نعالج اسم المستخدم والمنشور والموعد ورموز OAuth المشفرة. لا نجمع جهات الاتصال أو معرّف الإعلانات أو الموقع الدقيق أو بيانات البطاقة أو نسخًا تحليلية من الوسائط/المطالبات.</p><p dir=\"rtl\">تنتهي الرفوعات والنتائج العادية خلال نحو <b>7 أيام</b>، ومواد حملات MAX خلال <b>120 يومًا</b>. تُحفظ بيانات الجدولة/OAuth بقدر الحاجة حتى الإكمال أو الإلغاء أو الانتهاء، مع تشفير النقل والرموز المخزنة.</p>"],
+  };
+  function detailsFor(lang) { return DATA_DETAILS[lang] || DATA_DETAILS.en; }
+  const RIGHTS_DETAILS = {
+    "zh-Hans": ["您的选择与权利", "<p>您可在设置中撤回 AI 处理同意、断开社交账户、取消预约并删除本地项目；购买可在商店账户中管理。如需访问、删除、反对或咨询，请将设置中的支持设备 ID（如有）发送至 <a class=\"rm-mail\">EMAIL</a>。</p>"],
+    ko: ["선택권과 권리", "<p>설정에서 AI 처리 동의를 철회하고 SNS 연결 해제, 예약 취소, 로컬 프로젝트 삭제가 가능합니다. 구매는 스토어 계정에서 관리하세요. 열람·삭제·이의 제기는 가능하면 설정의 지원 기기 ID와 함께 <a class=\"rm-mail\">EMAIL</a>로 문의해 주세요.</p>"],
+    es: ["Tus opciones y derechos", "<p>Puedes retirar el consentimiento de IA en Ajustes, desconectar redes, cancelar publicaciones y borrar proyectos locales; gestiona compras en tu cuenta de la tienda. Para acceso, borrado, oposición o consultas, escribe a <a class=\"rm-mail\">EMAIL</a> con el ID de soporte de Ajustes si está disponible.</p>"],
+    "pt-BR": ["Suas escolhas e direitos", "<p>Você pode retirar o consentimento de IA nos Ajustes, desconectar redes, cancelar agendamentos e excluir projetos locais; gerencie compras na conta da loja. Para acesso, exclusão, oposição ou dúvidas, escreva para <a class=\"rm-mail\">EMAIL</a> com o ID de suporte dos Ajustes, se disponível.</p>"],
+    fr: ["Vos choix et droits", "<p>Vous pouvez retirer le consentement IA dans les Réglages, déconnecter les réseaux, annuler les publications et supprimer les projets locaux; gérez les achats dans le compte du store. Pour accès, suppression, opposition ou question, écrivez à <a class=\"rm-mail\">EMAIL</a> avec l'ID d'assistance des Réglages si disponible.</p>"],
+    de: ["Deine Wahlmöglichkeiten und Rechte", "<p>Du kannst die KI-Einwilligung in den Einstellungen widerrufen, Social-Konten trennen, Planungen abbrechen und lokale Projekte löschen; Käufe verwaltest du im Store-Konto. Für Auskunft, Löschung, Widerspruch oder Fragen schreibe mit der Support-Geräte-ID aus den Einstellungen an <a class=\"rm-mail\">EMAIL</a>.</p>"],
+    it: ["Le tue scelte e i tuoi diritti", "<p>Puoi revocare il consenso AI nelle Impostazioni, scollegare social, annullare programmi ed eliminare progetti locali; gestisci gli acquisti nell'account dello store. Per accesso, eliminazione, opposizione o domande scrivi a <a class=\"rm-mail\">EMAIL</a> con l'ID di supporto nelle Impostazioni, se disponibile.</p>"],
+    ru: ["Ваш выбор и права", "<p>В настройках можно отозвать согласие на ИИ, отключить соцсети, отменить расписание и удалить локальные проекты; покупки управляются в магазине. Для доступа, удаления, возражения или вопросов пишите на <a class=\"rm-mail\">EMAIL</a>, указав ID поддержки из настроек, если доступен.</p>"],
+    tr: ["Seçimleriniz ve haklarınız", "<p>Ayarlar'da yapay zekâ onayını geri çekebilir, sosyal hesapları ayırabilir, planları iptal edip yerel projeleri silebilirsiniz; satın alımları mağaza hesabında yönetin. Erişim, silme, itiraz veya sorular için varsa Ayarlar'daki destek kimliğiyle <a class=\"rm-mail\">EMAIL</a> adresine yazın.</p>"],
+    vi: ["Lựa chọn và quyền của bạn", "<p>Bạn có thể thu hồi đồng ý AI trong Cài đặt, ngắt mạng xã hội, hủy lịch và xóa dự án cục bộ; quản lý mua hàng trong tài khoản cửa hàng. Để truy cập, xóa, phản đối hoặc hỏi, hãy gửi ID hỗ trợ trong Cài đặt (nếu có) tới <a class=\"rm-mail\">EMAIL</a>.</p>"],
+    th: ["ทางเลือกและสิทธิ์ของคุณ", "<p>คุณถอนความยินยอม AI ในการตั้งค่า ยกเลิกการเชื่อมโซเชียล ยกเลิกตาราง และลบโปรเจกต์ในเครื่องได้; จัดการการซื้อในบัญชีสโตร์ หากต้องการเข้าถึง ลบ คัดค้าน หรือสอบถาม โปรดส่ง ID ฝ่ายช่วยเหลือในหน้าตั้งค่า (ถ้ามี) ไปที่ <a class=\"rm-mail\">EMAIL</a></p>"],
+    hi: ["आपके विकल्प और अधिकार", "<p>सेटिंग्स में AI सहमति वापस लें, सोशल खाते हटाएँ, schedule रद्द करें और स्थानीय प्रोजेक्ट मिटाएँ; खरीद स्टोर खाते में प्रबंधित करें। पहुँच, deletion, objection या सवाल के लिए उपलब्ध होने पर Settings का support ID देकर <a class=\"rm-mail\">EMAIL</a> पर लिखें।</p>"],
+    ar: ["خياراتك وحقوقك", "<p dir=\"rtl\">يمكنك سحب موافقة الذكاء الاصطناعي من الإعدادات، وفصل الشبكات وإلغاء الجدولة وحذف المشاريع المحلية؛ وإدارة المشتريات من حساب المتجر. للوصول أو الحذف أو الاعتراض أو الاستفسار، راسل <a class=\"rm-mail\">EMAIL</a> مع معرّف الدعم في الإعدادات إن توفر.</p>"],
+  };
+  function rightsFor(lang) { return RIGHTS_DETAILS[lang] || PRIVACY.en.sections[7]; }
+
   function subFor(lang) {
     if (SUB[lang]) return SUB[lang];
     const dash = lang === "ar" ? " — " : " — ";
@@ -294,9 +333,11 @@
     return [
       "<b>Google (Gemini)</b>" + dash + g("img"),
       "<b>Microsoft (Azure)</b>" + dash + g("tts"),
+      "<b>Google Cloud / Firebase Analytics</b>" + dash + "API, rendering, security and pseudonymous app analytics",
       "<b>Cloudflare R2</b>" + dash + g("r2"),
-      "<b>Supabase</b>" + dash + g("sb"),
+      "<b>Upstash Redis / Supabase</b>" + dash + g("sb") + ", anonymous sessions and short-lived operational records",
       "<b>RevenueCat, Apple, Google</b>" + dash + g("rc"),
+      "<b>Expo / X / Meta / TikTok / YouTube</b>" + dash + "notifications and social publishing only when you choose those features",
     ];
   }
 
@@ -340,7 +381,20 @@
       const isTerms = page === "terms";
       const d = isTerms ? (TERMS[lang] || TERMS.en) : (PRIVACY[lang] || PRIVACY.en);
       const updatedVal = isTerms ? (TERMS_UPDATED[lang] || TERMS_UPDATED.en) : UPDATED;
-      const secHtml = d.sections.map(([h, body]) => {
+      const fullyLocalizedCore = lang === "en" || lang === "ja";
+      const detailSection = detailsFor(lang);
+      const rightsSection = rightsFor(lang);
+      const displayedSections = isTerms
+        ? d.sections
+        : [
+            ...d.sections.slice(0, 5),
+            ...(fullyLocalizedCore ? [d.sections[5]] : []),
+            fullyLocalizedCore ? detailSection : [`6. ${detailSection[0]}`, detailSection[1]],
+            d.sections[6],
+            fullyLocalizedCore ? d.sections[7] : [`8. ${rightsSection[0]}`, rightsSection[1]],
+            d.sections[8],
+          ];
+      const secHtml = displayedSections.map(([h, body]) => {
         let b = body;
         if (b === null) b = "<ul>" + subFor(lang).map((li) => `<li>${li}</li>`).join("") + "</ul>" + noteFor(lang);
         else b = b.replace('<a class="rm-mail">EMAIL</a>', mail);
