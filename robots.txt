@@ -1,24 +1,42 @@
-# TrailFusion AI - robots.txt
-# https://trailfusionai.com/
+# TrailFusion AI — https://trailfusionai.com/
 
+# ---- 検索エンジン ----
 User-agent: *
 Allow: /
-
-# サイトマップの場所
-Sitemap: https://trailfusionai.com/sitemap.xml
-
-# クロール頻度の推奨設定
-Crawl-delay: 1
-
-# 特定のディレクトリを除外（必要に応じて）
-Disallow: /assets/js/
 Disallow: /assets/videos/
+Disallow: /maintenance.html
 
-# 特定のファイルタイプを除外
-Disallow: /*.pdf$
+# ---- 生成AI・AI検索のクローラ ----
+# 引用元として扱われたいので明示的に許可する
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
 
-# 優先的にインデックスしてほしいページ
-Allow: /index.html
-Allow: /camping.html
-Allow: /apps.html
-Allow: /camping_note/
+Sitemap: https://trailfusionai.com/sitemap.xml

@@ -7,6 +7,17 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%231273E6' stroke-width='6'/%3E%3Cpath d='M50 18 L62 50 L50 82 L38 50 Z' fill='%23EE1B2E'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%231273E6' stroke-width='6'/%3E%3Cpath d='M50 18 L62 50 L50 82 L38 50 Z' fill='%23EE1B2E'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23fff'/%3E%3C/svg%3E">
 <title>TrailFusion AI - 巡るほどに、好きになる日本がある。</title>
+<meta property="og:image" content="https://trailfusionai.com/assets/og/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="巡るほどに、好きになる日本がある。 TrailFusion AI">
+<meta name="twitter:image" content="https://trailfusionai.com/assets/og/og-home.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://trailfusionai.com/"}]}</script>
+</head>
+<body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-S57KSMSB8Y');</script>
 <meta name="description" content="TrailFusion AI（トレイルフュージョンAI）公式サイト。ハイエースを自作キャンピングカーに改造し、47都道府県5万kmを走った経験から生まれた「車旅コンシェルジュ」をはじめ、合格クエスト・Reel Make・BuddyTalkなど9つのアプリを開発しています。">
 <meta name="keywords" content="TrailFusion AI,トレイルフュージョン,車旅コンシェルジュ,車中泊,キャンピングカー DIY,ハイエース,絶景ロード,中学受験 アプリ,合格クエスト">
 <link rel="canonical" href="https://trailfusionai.com/">
@@ -33,7 +44,7 @@
      "url":"https://trailfusionai.com/","name":"TrailFusion AI",
      "inLanguage":"ja","publisher":{"@id":"https://trailfusionai.com/#org"}},
     {"@type":"MobileApplication","name":"車旅コンシェルジュ",
-     "applicationCategory":"TravelApplication","operatingSystem":"iOS, Android",
+     "applicationCategory":"TravelApplication","operatingSystem":"iOS",
      "url":"https://apps.apple.com/jp/app/id6751795223",
      "description":"駐車場の快適さ・EV充電・絶景ロードを一枚の地図で探せる車旅アプリ。",
      "publisher":{"@id":"https://trailfusionai.com/#org"},
@@ -54,7 +65,7 @@
      "publisher":{"@id":"https://trailfusionai.com/#org"},
      "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}},
     {"@type":"MobileApplication","name":"Reel Make",
-     "applicationCategory":"MultimediaApplication","operatingSystem":"iOS, Android",
+     "applicationCategory":"MultimediaApplication","operatingSystem":"iOS",
      "url":"https://apps.apple.com/us/app/reel-make-ai-reels-videos/id6779420680",
      "publisher":{"@id":"https://trailfusionai.com/#org"},
      "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}},
@@ -1162,12 +1173,20 @@ h1,h2,h3,h4,.lead,.sub,.dek{text-wrap:balance;}
   .tf-counter .lb{display:none;}
 }
 
+
+/* Google Play 未公開アプリ: リンクではなく状態として見せる */
+.pstore.soon,.store.soon{cursor:default;opacity:.9;border-style:dashed !important;
+  background:transparent !important;transform:none !important;pointer-events:none}
+.pstore.soon:hover,.store.soon:hover{transform:none !important;background:transparent !important}
+.store.soon{color:var(--ink-3) !important;border-color:rgba(107,135,166,.6) !important}
+.pstore.soon{color:#DCEBFC !important;border-color:rgba(220,235,252,.75) !important;
+  background:rgba(10,42,82,.42) !important;backdrop-filter:blur(2px)}
+.pstore.soon b,.pstore.soon em{color:inherit !important}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+
 <!-- ================= サイトヘッダー ================= -->
 <div class="site-head">
   <div class="in">
@@ -1246,9 +1265,7 @@ h1,h2,h3,h4,.lead,.sub,.dek{text-wrap:balance;}
         <a class="pstore ios" href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.54c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.95 1.16 9.22.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.69M14.9 5.35c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28"/></svg><span><em>ダウンロード</em><b>App Store</b></span>
         </a>
-        <a class="pstore and" href="https://play.google.com/store/apps/details?id=com.carconcierge.app" target="_blank" rel="noopener">
-          <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00A0FF" d="M47 20c-6 6-9 16-9 28v416c0 12 3 22 9 28l2 2 233-233v-5L49 18z"/><path fill="#FFBC00" d="M357 335l-77-77v-5l77-78 2 1 92 52c26 15 26 39 0 54l-92 52z"/><path fill="#FF3A44" d="M359 334l-79-79L47 488c9 9 23 10 39 1l273-155z"/><path fill="#00C853" d="M359 176L86 21C70 12 56 13 47 22l233 233z"/></svg><span><em>ダウンロード</em><b>Google Play</b></span>
-        </a>
+        <span class="pstore and soon" role="note" aria-label="Google Play 近日公開"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00A0FF" d="M47 20c-6 6-9 16-9 28v416c0 12 3 22 9 28l2 2 233-233v-5L49 18z"/><path fill="#FFBC00" d="M357 335l-77-77v-5l77-78 2 1 92 52c26 15 26 39 0 54l-92 52z"/><path fill="#FF3A44" d="M359 334l-79-79L47 488c9 9 23 10 39 1l273-155z"/><path fill="#00C853" d="M359 176L86 21C70 12 56 13 47 22l233 233z"/></svg><span><em>近日公開</em><b>Google Play</b></span></span>
       </div>
       <a class="detail-link" href="car-concierge.html">アプリの詳細を見る<span class="ar">▸</span></a>
       <div class="trust">
@@ -1460,7 +1477,7 @@ h1,h2,h3,h4,.lead,.sub,.dek{text-wrap:balance;}
         <p>この物語から生まれた、いちばん最初のアプリです。泊まる場所、充電する場所、寄るべき絶景を、一枚の地図の上に。日本中を走った経験そのものを、かたちにしました。</p>
         <div class="acts">
           <a href="car-concierge.html" class="btn">アプリの詳細を見る<span class="ar">▸</span></a>
-          <a class="store light" href="https://play.google.com/store/apps/details?id=com.carconcierge.app" target="_blank" rel="noopener"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00A0FF" d="M47 20c-6 6-9 16-9 28v416c0 12 3 22 9 28l2 2 233-233v-5L49 18z"/><path fill="#FFBC00" d="M357 335l-77-77v-5l77-78 2 1 92 52c26 15 26 39 0 54l-92 52z"/><path fill="#FF3A44" d="M359 334l-79-79L47 488c9 9 23 10 39 1l273-155z"/><path fill="#00C853" d="M359 176L86 21C70 12 56 13 47 22l233 233z"/></svg>Google Play</a>
+          <span class="store light soon" role="note" aria-label="Google Play 近日公開"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00A0FF" d="M47 20c-6 6-9 16-9 28v416c0 12 3 22 9 28l2 2 233-233v-5L49 18z"/><path fill="#FFBC00" d="M357 335l-77-77v-5l77-78 2 1 92 52c26 15 26 39 0 54l-92 52z"/><path fill="#FF3A44" d="M359 334l-79-79L47 488c9 9 23 10 39 1l273-155z"/><path fill="#00C853" d="M359 176L86 21C70 12 56 13 47 22l233 233z"/></svg>Google Play 近日公開</span>
           <a class="store light" href="https://apps.apple.com/jp/app/id6751795223" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.54c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.95 1.16 9.22.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.69M14.9 5.35c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28"/></svg>App Store</a>
         </div>
       </div>

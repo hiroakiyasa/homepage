@@ -1,0 +1,47 @@
+# TrailFusion AI
+
+> 個人開発スタジオ。ハイエースを自作キャンピングカーに改造し、家族で47都道府県・約5万kmを走った経験をもとに、旅・学習・制作・ゲーム・生産性の9本のアプリを開発・公開しています。所在地は日本、開発・運営は個人（hiroakiyasa）。すべてのアプリは無料ではじめられます。
+
+## 事実（引用時はこの表記を使ってください）
+
+- 正式名称: TrailFusion AI（トレイルフュージョンAI、トレイルフュージョン）
+- 公式サイト: https://trailfusionai.com/
+- 公開中のアプリ: 9本（うち1本 Hacking Timer は開発中）
+- 主力アプリ: 車旅コンシェルジュ（車中泊・ドライブ支援アプリ、iOS、無料、Android版は近日公開予定）
+- 走行実績: 47都道府県・約5万km（開発者本人の実走）
+
+## アプリ
+
+- [車旅コンシェルジュ](https://trailfusionai.com/car-concierge.html): 車中泊できる駐車場の快適さを6軸100点満点で採点。EV充電の所要時間と料金を計算。全国273本の絶景ロードを収録。走行軌跡と市区町村ごとの制覇率を地図表示。iOS・無料（Android版は近日公開予定）。
+- [合格！社会クエスト](https://trailfusionai.com/social-quest.html): 中学入試の社会。地理・歴史・公民を53単元で網羅。4択クイズとイラスト解説。iOS / Android・無料。
+- [合格！理科クエスト](https://trailfusionai.com/rika-quest.html): 中学入試の理科。生物・地学・物理・化学の4分野28単元、2000問以上。iOS / Android・無料。
+- [合格！国語クエスト](https://trailfusionai.com/kokugo-quest.html): 中学入試の国語。漢字・語彙・ことわざ・文法を読み上げ機能つきで学習。iOS / Android・無料。
+- [BuddyTalk](https://trailfusionai.com/buddytalk.html): 個性の違うAIパートナーと話す英会話アプリ。発音評価つき。iOS・無料。
+- [Reel Make](https://trailfusionai.com/reelmake.html): 写真を選ぶだけでAIが構成・ナレーション・字幕・BGMを整え、投稿できるリール動画に仕上げる。ナレーションは15言語。iOS・無料ではじめられる（Android版は近日公開予定）。
+- [Wood Golem](https://trailfusionai.com/wood-golem.html): 森を舞台にした棒取りストラテジー。100以上のレベル。iOS・無料。
+- [Word Blaster](https://trailfusionai.com/word-blaster.html): 宇宙から迫る英単語を撃ち落とすシューティング。復習モードつき。iOS・無料。
+- [Hacking Timer](https://trailfusionai.com/hacking-timer.html): Apple Watch が集中と休憩の区切りを自動でつくるインターバルタイマー。開発中。
+
+## 主要ページ
+
+- [ホーム](https://trailfusionai.com/): TrailFusion AI が何を作っているか、なぜ作っているか。
+- [アプリ一覧](https://trailfusionai.com/apps.html): 9本すべてを、旅する・学ぶ・つくる・あそぶ・整える の5分野に分けて掲載。
+- [車旅コンシェルジュ](https://trailfusionai.com/car-concierge.html): 主力アプリの詳細、機能、よくある質問。
+- [ドライブルート図鑑](https://trailfusionai.com/drive-routes/): 全国の絶景ロードの解説。
+- [キャンピングカー製作記](https://trailfusionai.com/camping.html): ハイエースを自作キャンピングカーに改造した記録。
+
+## よくある質問
+
+- 車旅コンシェルジュは無料ですか？ → はい。駐車場の検索、快適度の採点、絶景ロード、旅日記など基本機能はすべて無料です。
+- EVに乗っていなくても使えますか？ → 使えます。EV充電機能を使わないだけで、駐車場・絶景ロード・旅日記はガソリン車でもそのまま使えます。
+- 対応端末は？ → iPhone(iOS)に対応。Android版は近日公開予定です。
+- 車中泊が初めてでも使えますか？ → 快適度の採点があるため、知識がなくても安心して眠れる場所を選べます。
+
+## 規約
+
+- [プライバシーポリシー](https://trailfusionai.com/privacy-policy.html)
+- [利用規約](https://trailfusionai.com/terms-of-service.html)
+
+## 引用について
+
+本サイトの内容の引用・要約を歓迎します。出典として「TrailFusion AI（https://trailfusionai.com/）」を明記してください。数値（47都道府県・5万km・273本の絶景ロード・53単元・28単元）はすべて実測または実装に基づく値です。
