@@ -1,0 +1,3722 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハイエースDIYキャンピングカー製作ガイド｜用途別レイアウト・基礎工事・内装・電装・構造変更まで完全解説 | TrailFusion AI</title>
+<meta name="description" content="ハイエース200系を自作キャンピングカーへ。用途別レイアウト6選・ベース車選び・基礎工事（制振断熱床下地）・内装仕上げ・電装（LiFePO4/ソーラー/FFヒーター）・8ナンバー構造変更まで、DIY初心者でも迷わないステップガイド。">
+<meta name="keywords" content="ハイエース キャンピングカー DIY,ハイエース 改造,自作 キャンパー,車中泊 DIY,バンライフ,キャンピングカー 製作,8ナンバー 構造変更,サブバッテリー LiFePO4,FFヒーター DIY">
+<meta name="author" content="TrailFusion AI">
+<link rel="canonical" href="https://trailfusionai.com/camping.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="ハイエースDIYキャンピングカー製作ガイド｜完全ステップ解説">
+<meta property="og:description" content="用途別レイアウトからベース車選び、基礎工事、内装、電装、8ナンバー構造変更まで、DIY初心者でも迷わない完全ガイド。">
+<meta property="og:url" content="https://trailfusionai.com/camping.html">
+<meta property="og:image" content="https://trailfusionai.com/assets/images/camper/camper_dramatic_sky%EF%BC%88%E5%A4%A7%EF%BC%89.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ハイエースDIYキャンピングカー製作ガイド｜完全ステップ解説">
+<meta name="twitter:description" content="用途別レイアウトからベース車選び、基礎工事、内装、電装、8ナンバー構造変更まで、DIY初心者でも迷わない完全ガイド。">
+<meta name="twitter:image" content="https://trailfusionai.com/assets/images/camper/camper_dramatic_sky%EF%BC%88%E5%A4%A7%EF%BC%89.jpg">
+
+<meta name="theme-color" content="#FFD84D">
+<link rel="icon" type="image/jpeg" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+<link rel="apple-touch-icon" href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57KSMSB8Y');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="assets/css/tailwind-compiled.css?v=20260419">
+<link rel="stylesheet" href="assets/css/trailfusion.css?v=20260419">
+
+<!-- Page specific -->
+<style>
+  /* trailfusion.css の .mobile-pill / .btn-chunky display: inline-flex を Tailwind の .hidden が上書きできるよう強制 */
+  .hidden { display: none !important; }
+  @media (min-width: 1024px) {
+    .lg\:hidden { display: none !important; }
+    .lg\:inline-flex { display: inline-flex !important; }
+    .lg\:flex { display: flex !important; }
+    .lg\:block { display: block !important; }
+  }
+
+  /* ステップチップ（大きな番号バッジ） */
+  .step-chip {
+    display: inline-grid;
+    place-items: center;
+    width: 64px; height: 64px;
+    border-radius: 999px;
+    background: #FFD84D;
+    color: #1F2E4D;
+    border: 3px solid #1F2E4D;
+    box-shadow: 5px 5px 0 #1F2E4D;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .step-chip-coral { background: #FF6B5B; color: #fff; }
+  .step-chip-ocean { background: #4ECDC4; }
+  .step-chip-grass { background: #7DD87A; }
+  .step-chip-peach { background: #FFB3BA; }
+  .step-chip-sky { background: #A5E3F5; }
+  .step-chip-berry { background: #E85A9A; color: #fff; }
+
+  /* ヒーロー画像のチラッとしたオーバーレイ */
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(31,46,77,0.05) 0%, rgba(31,46,77,0.35) 60%, rgba(31,46,77,0.8) 100%);
+  }
+
+  /* TOCリンクのホバーアニメ */
+  .toc-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .toc-item:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 #1F2E4D; }
+
+  /* 枠付き画像フレーム（章冒頭） */
+  .chapter-image {
+    border: 3px solid #1F2E4D;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 #1F2E4D;
+  }
+
+  /* エンジン・駆動方式インフォグラフィック（フルワイド） */
+  .engine-guide-figure {
+    margin: 0;
+    background: #fff;
+    border: 3px solid #FFD84D;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 rgba(255, 216, 77, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .engine-guide-figure:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 12px 12px 0 rgba(255, 216, 77, 0.5);
+  }
+  .engine-guide-figure a {
+    display: block;
+    line-height: 0;
+  }
+  .engine-guide-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .engine-guide-figure figcaption {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 216, 77, 0.3);
+  }
+  @media (min-width: 768px) {
+    .engine-guide-figure figcaption {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* 比較表用ヘッダー色バリエーション */
+  .th-coral { background: #FF6B5B !important; color: #fff !important; }
+  .th-ocean { background: #4ECDC4 !important; color: #1F2E4D !important; }
+  .th-grass { background: #7DD87A !important; color: #1F2E4D !important; }
+
+  /* テーブル内の文字色を強制（親の white を継承しないように） */
+  .table-chunky,
+  .table-chunky td,
+  .table-chunky tbody tr td,
+  .table-chunky tbody tr:hover td,
+  .table-chunky tbody tr:nth-child(even) td {
+    color: #1F2E4D !important;
+  }
+  .table-chunky td strong,
+  .table-chunky td b { color: #1F2E4D !important; }
+  /* thead のデフォルト（navy bg / yellow text）は維持、色指定カラムは override 可 */
+  .table-chunky th { color: #FFD84D !important; }
+  .table-chunky th.th-coral { color: #fff !important; }
+  .table-chunky th.th-ocean,
+  .table-chunky th.th-grass { color: #1F2E4D !important; }
+
+  /* 修正：navy セクション内のテーブルはヘッダーをイエロー反転（セクション地と同色だと見えない問題） */
+  .bg-navy .table-chunky th,
+  .bg-navy .table-chunky thead tr {
+    background: #FFD84D !important;
+    color: #1F2E4D !important;
+  }
+  .bg-navy .table-chunky th.th-coral { background: #FF6B5B !important; color: #fff !important; }
+  .bg-navy .table-chunky th.th-ocean { background: #4ECDC4 !important; color: #1F2E4D !important; }
+  .bg-navy .table-chunky th.th-grass { background: #7DD87A !important; color: #1F2E4D !important; }
+  /* navy セクション内のテーブル全体を白地で囲む（コントラスト確保） */
+  .bg-navy .table-chunky {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* 縦線区切りのプロセスリスト */
+  .process-list { position: relative; padding-left: 2.5rem; }
+  .process-list::before {
+    content: '';
+    position: absolute; left: 1rem; top: 0.5rem; bottom: 0.5rem;
+    width: 3px; background: #1F2E4D;
+    border-radius: 2px;
+  }
+  .process-list > li {
+    position: relative;
+    margin: 0 0 1rem;
+    list-style: none;
+  }
+  .process-list > li::before {
+    content: '';
+    position: absolute;
+    left: -1.6rem; top: 0.4rem;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #FFD84D;
+    border: 3px solid #1F2E4D;
+  }
+
+  /* 失敗カードの左ストライプ */
+  .failure-card {
+    border-left: 6px solid #FF6B5B;
+  }
+
+  /* KPIラベル */
+  .kpi-box {
+    background: #1F2E4D;
+    color: #FFD84D;
+    border-radius: 16px;
+    padding: 0.4rem 0.85rem;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+  }
+
+  /* チャプターヘッド用アイレット */
+  .chapter-label {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    background: #1F2E4D; color: #FFD84D;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+  }
+
+  /* SVG レイアウト図（車上面図） */
+  .layout-topview {
+    background: #FFFBF2;
+    border: 3px solid #1F2E4D;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 #1F2E4D;
+    padding: 1rem;
+  }
+  .layout-topview svg { display: block; width: 100%; height: auto; }
+  .topview-legend {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.72rem; font-weight: 700; color: #1F2E4D;
+  }
+  .topview-legend span {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: #fff; border: 2px solid #1F2E4D;
+  }
+  .topview-legend span::before {
+    content: '';
+    width: 10px; height: 10px; border-radius: 3px;
+    background: var(--swatch, #1F2E4D);
+  }
+
+  /* 大見出し（章タイトル）の装飾ライン */
+  .chapter-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* フローチャート */
+  .flow-node {
+    border: 3px solid #1F2E4D;
+    border-radius: 20px;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    font-weight: 700;
+    box-shadow: 4px 4px 0 #1F2E4D;
+  }
+
+  /* ============================== */
+  /* PREMIUM EDITORIAL LAYER (v2)   */
+  /* ============================== */
+
+  /* シネマフレーム：写真は重い枠線ではなく洗練された影で見せる */
+  .cinema-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow:
+      0 30px 60px -25px rgba(31,46,77,0.45),
+      0 12px 22px -12px rgba(31,46,77,0.18),
+      0 0 0 1px rgba(31,46,77,0.06);
+    isolation: isolate;
+  }
+  .cinema-frame > img { display:block; width:100%; height:100%; object-fit:cover; }
+  .cinema-frame::after {
+    content:'';
+    position:absolute; inset:0;
+    border-radius: 24px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 0 0 1px rgba(255,255,255,0.04);
+    pointer-events:none;
+  }
+  .cinema-caption {
+    position: absolute; left: 16px; bottom: 16px;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(255,255,255,0.92);
+    border-radius: 999px;
+    color: #1F2E4D;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .cinema-caption .dot { width:8px; height:8px; border-radius:50%; background:#FF6B5B; display:inline-block; }
+
+  /* エディトリアル・アイブロウ（章上のラインとラベル） */
+  .editorial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.32em;
+    color: #FF6B5B;
+    text-transform: uppercase;
+  }
+  .editorial-eyebrow::before {
+    content:''; width: 42px; height: 2px; background: currentColor; display:inline-block;
+  }
+  .editorial-eyebrow .num {
+    background:#1F2E4D; color:#FFD84D;
+    padding: 0.25rem 0.55rem; border-radius: 6px;
+    letter-spacing: 0.08em;
+  }
+
+  /* セリフ・ディスプレイ（章タイトル下のリードを上品に） */
+  .lede {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 500;
+    color: rgba(31,46,77,0.78);
+    line-height: 1.85;
+    font-size: 1.05rem;
+  }
+  .lede strong { font-weight:800; color:#1F2E4D; }
+
+  /* ハンドライト・キャプション */
+  .hand-caption {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    color: #FF6B5B;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  /* JOURNEY STRIP（ヒーロー直下：実際に走った場所の3カラム） */
+  .journey-strip {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.2fr;
+    gap: 14px;
+    min-height: 380px;
+  }
+  .journey-strip > figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 24px 50px -28px rgba(31,46,77,0.55);
+  }
+  .journey-strip img {
+    width:100%; height:100%; object-fit:cover; min-height: 320px;
+    transition: transform 0.9s cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .journey-strip > figure:hover img { transform: scale(1.05); }
+  .journey-strip figcaption {
+    position: absolute; left: 18px; right: 18px; bottom: 18px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+  }
+  .journey-strip figcaption .place {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .journey-strip figcaption .tag {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: #FFD84D;
+    margin-top: 2px;
+  }
+  .journey-strip > figure::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+  .journey-strip figcaption { z-index: 2; }
+  @media (max-width: 768px) {
+    .journey-strip { grid-template-columns: 1fr 1fr; min-height:auto; }
+    .journey-strip > figure:nth-child(3) { grid-column: span 2; }
+  }
+
+  /* LOOKBOOK GRID（中盤の没入ギャラリー） */
+  .lookbook {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 200px;
+    gap: 14px;
+  }
+  .lookbook figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 28px 56px -32px rgba(31,46,77,0.55);
+  }
+  .lookbook figure::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.65) 100%);
+  }
+  .lookbook img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 1.1s cubic-bezier(0.2,0.7,0.2,1); }
+  .lookbook figure:hover img { transform: scale(1.05); }
+  .lookbook figcaption {
+    position: absolute; left: 22px; right: 22px; bottom: 20px;
+    color: #fff; z-index: 2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .lookbook .place {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .lookbook .region {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: #FFD84D;
+    margin-bottom: 4px;
+  }
+  .lookbook .note {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    margin-top: 4px;
+    opacity: 0.92;
+  }
+  .lookbook .l-hero  { grid-column: span 7; grid-row: span 3; }
+  .lookbook .l-tall  { grid-column: span 5; grid-row: span 2; }
+  .lookbook .l-wide  { grid-column: span 5; grid-row: span 1; }
+  .lookbook .l-half  { grid-column: span 6; grid-row: span 2; }
+  .lookbook .l-half2 { grid-column: span 6; grid-row: span 2; }
+  @media (max-width: 900px) {
+    .lookbook { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+    .lookbook .l-hero { grid-column: span 2; grid-row: span 2; }
+    .lookbook .l-tall, .lookbook .l-wide, .lookbook .l-half, .lookbook .l-half2 {
+      grid-column: span 1; grid-row: span 1;
+    }
+  }
+
+  /* EDITORIAL QUOTE SECTION（フルブリード引用） */
+  .editorial-quote-section {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .editorial-quote-section .bg-photo {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+  }
+  .editorial-quote-section .bg-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(31,46,77,0.45) 0%, rgba(31,46,77,0.75) 100%);
+  }
+  .editorial-quote-section blockquote {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.65rem, 3.6vw, 2.85rem);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.4);
+  }
+  .editorial-quote-section .qmark {
+    display:block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(4rem, 9vw, 7rem);
+    line-height: 0.7;
+    color: #FFD84D;
+    margin-bottom: 1rem;
+    text-align:center;
+  }
+  .editorial-quote-section .attrib {
+    text-align: center;
+    color: rgba(255,255,255,0.88);
+    font-family: 'Caveat', cursive;
+    font-size: 1.45rem;
+    margin-top: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+  .editorial-quote-section .stat-row {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  .editorial-quote-section .stat {
+    text-align: center; color:#fff;
+  }
+  .editorial-quote-section .stat .n {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    color: #FFD84D;
+    line-height: 1;
+  }
+  .editorial-quote-section .stat .l {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-top: 6px;
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  /* DIAGONAL DESTINATION TICKER（写真とプレース名で構成） */
+  .destination-ticker {
+    background: #1F2E4D;
+    border-top: 3px solid #1F2E4D;
+    border-bottom: 3px solid #1F2E4D;
+    padding: 1.25rem 0;
+    overflow: hidden;
+  }
+  .destination-ticker .track {
+    display: flex; gap: 2.25rem;
+    animation: marquee 60s linear infinite;
+    width: max-content;
+  }
+  .destination-ticker .pill {
+    display: inline-flex; align-items: center; gap: 0.65rem;
+    padding: 0.45rem 0.95rem;
+    border: 1.5px solid rgba(255,216,77,0.4);
+    border-radius: 999px;
+    color: #FFD84D;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+  .destination-ticker .pill .num {
+    background: #FFD84D; color: #1F2E4D;
+    padding: 0.15rem 0.45rem; border-radius: 4px;
+    font-size: 0.7rem;
+  }
+
+  /* セクション接合用：上下に細いプレミアム・ハイライト */
+  .premium-hairline {
+    position: relative;
+  }
+  .premium-hairline::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, transparent, #FFD84D, transparent);
+  }
+
+  /* hero overhaul — もっとシネマティックに */
+  .hero-cinema {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 50px 90px -35px rgba(31,46,77,0.55), 0 0 0 1px rgba(31,46,77,0.06);
+  }
+  .hero-cinema img { width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.02); }
+  .hero-cinema .corner-tag {
+    position: absolute; top:18px; left:18px;
+    background: rgba(31,46,77,0.92);
+    color: #FFD84D;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .hero-cinema .corner-caption {
+    position: absolute; bottom:0; left:0; right:0;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 100%);
+    color: #fff;
+  }
+  .hero-cinema .corner-caption .place {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .hero-cinema .corner-caption .small {
+    font-family: 'Caveat', cursive;
+    font-size: 1.05rem;
+    color: #FFD84D;
+    margin-top: 2px;
+  }
+
+  /* CHAPTER 写真用に既存の .chapter-image を上書き：プレミアム版に近づける */
+  .chapter-image.premium {
+    border: 0;
+    border-radius: 22px;
+    box-shadow:
+      0 30px 50px -25px rgba(31,46,77,0.4),
+      0 0 0 1px rgba(31,46,77,0.06);
+  }
+
+  /* レイアウト6選のカード写真を、より大きくダイナミックに */
+  .layout-photo {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+  }
+  .layout-photo > img {
+    width:100%; height:100%; object-fit:cover;
+    transition: transform 0.9s cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .layout-photo:hover > img { transform: scale(1.04); }
+  .layout-photo::after {
+    content:'';
+    position: absolute; inset:0;
+    background: linear-gradient(180deg, transparent 55%, rgba(31,46,77,0.4) 100%);
+    pointer-events: none;
+  }
+
+  /* ============================== */
+  /* LAYOUT 6選カード v2             */
+  /* イラスト大／写真小（テキスト下） */
+  /* ============================== */
+  .layout-card-v2 .illust-pane {
+    position: relative;
+    /* イラスト列：カードと同じ白背景にして、画像下の余白を不可視にする */
+    background: #fff;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+  }
+  .layout-card-v2 .illust-pane img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .layout-card-v2 .illust-pane .corner-badge {
+    position: absolute; top: 18px; right: 18px; z-index: 2;
+  }
+  .layout-card-v2 .layout-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2.5px solid #1F2E4D;
+    box-shadow: 5px 5px 0 #1F2E4D;
+    width: 100%;
+    /* 4:3 横長フレームに統一：縦長写真は中央クロップで自然な印象を維持 */
+    aspect-ratio: 4 / 3;
+    background: #1F2E4D;
+  }
+  .layout-card-v2 .layout-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;   /* 人物・主題が見えるよう少し上めにセンタリング */
+    transition: transform 0.9s cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .layout-card-v2 .layout-thumb:hover img { transform: scale(1.04); }
+  .layout-card-v2 .layout-thumb::after {
+    content:'';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 35%;
+    background: linear-gradient(180deg, transparent 0%, rgba(31,46,77,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .layout-card-v2 .layout-thumb .thumb-caption {
+    position: absolute; left: 14px; right: 14px; bottom: 12px;
+    color: #fff; font-size: 0.75rem;
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: 0.12em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    z-index: 2;
+  }
+  .layout-card-v2 .thumb-label {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    color: #FF6B5B;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-bottom: 0.55rem;
+  }
+  .layout-card-v2 .thumb-label::before {
+    content: ''; width: 28px; height: 2px; background: currentColor;
+  }
+  /* 12カラム上の col 番号オーバーライド（HTMLの col-span-7/5 を上書き） */
+  .layout-card-v2 .illust-pane { grid-column: span 5 / span 5; }
+  .layout-card-v2 .text-pane   { grid-column: span 7 / span 7; }
+  @media (max-width: 1023px) {
+    .layout-card-v2 .illust-pane,
+    .layout-card-v2 .text-pane { grid-column: span 12 / span 12; }
+  }
+
+  /* ============================== */
+  /* HERO QUICK JUMP                */
+  /* ============================== */
+  .hero-jump {
+    position: relative;
+    padding: 1rem 1.1rem 1.1rem;
+    background: linear-gradient(180deg, rgba(255,251,242,0.65) 0%, rgba(255,251,242,0.9) 100%);
+    border: 2px dashed rgba(31,46,77,0.25);
+    border-radius: 18px;
+    max-width: 720px;
+    backdrop-filter: blur(2px);
+  }
+  .hero-jump-label {
+    position: absolute;
+    top: -10px; left: 18px;
+    background: #FFFBF2;
+    padding: 0 0.6rem;
+    line-height: 1;
+  }
+  .hero-jump-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+  .hero-jump-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.75rem 0.55rem 0.5rem;
+    background: #fff;
+    border: 2px solid #1F2E4D;
+    border-radius: 12px;
+    color: #1F2E4D;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 #1F2E4D;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  .hero-jump-pill:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 #1F2E4D;
+    background: #FFD84D;
+  }
+  .hero-jump-pill:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 #1F2E4D;
+  }
+  .hero-jump-pill .num {
+    flex: 0 0 28px;
+    height: 28px;
+    display: inline-grid;
+    place-items: center;
+    background: #1F2E4D;
+    color: #FFD84D;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.78rem;
+    border-radius: 8px;
+    letter-spacing: 0;
+  }
+  .hero-jump-pill .lbl {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .hero-jump-pill--bonus .num {
+    background: #FF6B5B; color: #fff;
+  }
+  .hero-jump-pill--bonus:hover {
+    background: #FFE5E2;
+  }
+  @media (max-width: 640px) {
+    .hero-jump-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-jump-pill .lbl { font-size: 0.78rem; }
+  }
+
+  /* ============================== */
+  /* FIX: .card-chunky の background shorthand が */
+  /* Tailwind の bg-* utility を上書きしてしまうので */
+  /* 明示的に背景色を再定義する                    */
+  /* ============================== */
+  .card-chunky.bg-navy,
+  .card-chunky-flat.bg-navy { background:#1F2E4D !important; }
+  .card-chunky.bg-cream,
+  .card-chunky-flat.bg-cream { background:#FFFBF2 !important; }
+  .card-chunky.bg-sun,
+  .card-chunky-flat.bg-sun { background:#FFD84D !important; }
+  .card-chunky.bg-coral,
+  .card-chunky-flat.bg-coral { background:#FF6B5B !important; }
+  .card-chunky.bg-ocean,
+  .card-chunky-flat.bg-ocean { background:#4ECDC4 !important; }
+</style>
+</head>
+<body class="bg-cream">
+
+<!-- ============================== -->
+<!-- HEADER -->
+<!-- ============================== -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b-[3px] border-navy">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="relative">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy group-hover:rotate-[-6deg] transition-transform duration-300">
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-coral rounded-full border-2 border-navy"></span>
+        </div>
+        <div>
+          <div class="font-display font-black text-navy text-base sm:text-lg leading-none">TrailFusion</div>
+          <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.html" class="nav-item text-navy">ホーム</a>
+        <a href="camping.html" class="nav-item text-navy" aria-current="page">キャンピングカー</a>
+        <a href="drive-routes/" class="nav-item text-navy">ドライブルート</a>
+        <a href="apps.html" class="nav-item text-navy">AIアプリ</a>
+        <a href="maintenance.html" class="nav-item text-navy">整備記録</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#roadmap" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">
+          <i class="ri-road-map-line"></i>
+          ロードマップを見る
+        </a>
+        <a href="index.html" class="mobile-pill bg-sky lg:hidden">
+          <i class="ri-home-smile-line"></i><span class="hidden sm:inline">ホーム</span>
+        </a>
+        <a href="apps.html" class="mobile-pill bg-peach lg:hidden">
+          <i class="ri-apps-2-line"></i><span class="hidden sm:inline">アプリ</span>
+        </a>
+        <button id="mobile-toggle" class="lg:hidden w-10 h-10 grid place-items-center bg-sun border-2 border-navy rounded-xl" aria-label="メニュー">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="p-3 text-center rounded-xl bg-white border-2 border-navy font-bold">🏠 ホーム</a>
+        <a href="camping.html" class="p-3 text-center rounded-xl bg-sky border-2 border-navy font-bold">🚐 キャンパー</a>
+        <a href="drive-routes/" class="p-3 text-center rounded-xl bg-ocean border-2 border-navy font-bold">🗺️ ドライブルート</a>
+        <a href="apps.html" class="p-3 text-center rounded-xl bg-peach border-2 border-navy font-bold">✨ AIアプリ</a>
+        <a href="maintenance.html" class="p-3 text-center rounded-xl bg-grass border-2 border-navy font-bold">🔧 整備記録</a>
+        <a href="#roadmap" class="p-3 text-center rounded-xl bg-coral text-white border-2 border-navy font-bold col-span-2">🧭 ロードマップ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================== -->
+<!-- HERO -->
+<!-- ============================== -->
+<section class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-28">
+  <div class="absolute inset-0 dot-pattern opacity-60"></div>
+  <div class="absolute -top-20 -left-16 w-[260px] h-[260px] rounded-full bg-sun/60 blur-3xl"></div>
+  <div class="absolute top-20 -right-16 w-[320px] h-[320px] rounded-full bg-peach/60 blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 order-2 lg:order-1">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="sticker sticker-coral">DIY BUILD GUIDE</span>
+          <span class="sticker sticker-ocean" style="transform: rotate(2deg);">200系 全対応</span>
+          <span class="sticker" style="transform: rotate(-1deg);">ステップ別解説</span>
+        </div>
+
+        <h1 class="display-xl text-navy text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+          ハイエースを、<br>
+          <span class="highlight-coral">自分だけの</span>
+          <span class="gradient-text">旅の拠点</span>へ。
+        </h1>
+
+        <p class="text-base md:text-lg text-navy/80 leading-relaxed font-medium max-w-xl mb-8">
+          用途別レイアウト <strong>6選</strong>、ベース車両選びの <strong>6ステップ</strong>、基礎工事・内装・電装・8ナンバー構造変更まで。
+          実体験と一次情報に基づく、ハイエース200系の <strong>DIYキャンピングカー完全ガイド</strong>。初めての1台でも迷わないロードマップを、プレミアム仕様で。
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a href="#roadmap" class="btn-chunky btn-chunky-coral"><i class="ri-road-map-line"></i> ロードマップを見る</a>
+          <a href="#real-life" class="btn-chunky btn-chunky-ocean"><i class="ri-youtube-fill"></i> 実際の様子（動画）</a>
+          <a href="#costs" class="btn-chunky btn-chunky-sun"><i class="ri-money-cny-circle-line"></i> 費用総まとめ</a>
+        </div>
+
+        <!-- HERO QUICK JUMP — 全章へ直接アクセス -->
+        <div class="hero-jump mb-10">
+          <div class="hero-jump-label">
+            <span class="font-accent text-[10px] tracking-[0.32em] text-coral">JUMP TO ⟶</span>
+          </div>
+          <div class="hero-jump-grid">
+            <a href="#why" class="hero-jump-pill">
+              <span class="num">01</span>
+              <span class="lbl">なぜハイエース</span>
+            </a>
+            <a href="#layouts" class="hero-jump-pill">
+              <span class="num">02</span>
+              <span class="lbl">レイアウト6選</span>
+            </a>
+            <a href="#base-car" class="hero-jump-pill">
+              <span class="num">03</span>
+              <span class="lbl">ベース車両選び</span>
+            </a>
+            <a href="#foundation" class="hero-jump-pill">
+              <span class="num">04</span>
+              <span class="lbl">基礎工事</span>
+            </a>
+            <a href="#interior" class="hero-jump-pill">
+              <span class="num">05</span>
+              <span class="lbl">内装仕上げ</span>
+            </a>
+            <a href="#galley" class="hero-jump-pill">
+              <span class="num">06</span>
+              <span class="lbl">家具・ギャレー</span>
+            </a>
+            <a href="#electrical" class="hero-jump-pill">
+              <span class="num">07</span>
+              <span class="lbl">サブバッテリー</span>
+            </a>
+            <a href="#ff-heater" class="hero-jump-pill hero-jump-pill--bonus">
+              <span class="num">＋</span>
+              <span class="lbl">FFヒーター</span>
+            </a>
+            <a href="#roof-ac" class="hero-jump-pill hero-jump-pill--bonus">
+              <span class="num">＋</span>
+              <span class="lbl">ルーフエアコン</span>
+            </a>
+            <a href="#registration" class="hero-jump-pill">
+              <span class="num">08</span>
+              <span class="lbl">8ナンバー構造変更</span>
+            </a>
+            <a href="#costs" class="hero-jump-pill">
+              <span class="num">09</span>
+              <span class="lbl">費用と失敗まとめ</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 max-w-xl">
+          <div class="card-chunky-flat p-4 text-center">
+            <div class="stat-num text-coral">6</div>
+            <div class="text-xs font-bold text-navy/70 mt-1">用途別レイアウト</div>
+          </div>
+          <div class="card-chunky-flat p-4 text-center">
+            <div class="stat-num text-ocean">9</div>
+            <div class="text-xs font-bold text-navy/70 mt-1">世代別マイナーチェンジ</div>
+          </div>
+          <div class="card-chunky-flat p-4 text-center">
+            <div class="stat-num text-navy">8</div>
+            <div class="text-xs font-bold text-navy/70 mt-1">ナンバー構造変更</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 order-1 lg:order-2 relative">
+        <div class="hero-cinema aspect-[4/5]">
+          <img src="assets/images/camper/camper_dramatic_sky%EF%BC%88%E5%A4%A7%EF%BC%89.jpg" alt="北海道・美瑛の丘とハイエース">
+          <div class="corner-tag">SHOT 01 · HOKKAIDO BIEI</div>
+          <div class="corner-caption">
+            <div class="place">北海道・美瑛 / 哲学の木の丘</div>
+            <div class="small">azure sky, golden fields — drive after the harvest</div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 rotating-disc spin-slow hidden md:grid">
+          <div class="text-center">
+            <div class="font-accent text-[10px]">ULTIMATE</div>
+            <div class="font-black text-lg leading-none">BUILD</div>
+            <div class="font-accent text-[10px]">GUIDE</div>
+          </div>
+        </div>
+        <div class="absolute -top-4 -right-4 badge-round bg-coral text-white wiggle hidden md:grid" style="--r: 6deg; width: 110px; height: 110px;">
+          <div>
+            <div class="text-2xl leading-none">1,672</div>
+            <div class="text-[10px]">行分の知見</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- MARQUEE / TOPIC RIBBON -->
+<!-- ============================== -->
+<section class="py-5 bg-navy overflow-hidden border-y-[3px] border-navy">
+  <div class="marquee-track text-sun font-accent text-lg sm:text-xl tracking-widest">
+    <div class="flex items-center gap-10 whitespace-nowrap px-5">
+      <span>★ 用途別レイアウト</span><span>★ ベース車両選び</span><span>★ 基礎工事</span><span>★ 制振・断熱</span><span>★ 床下地</span><span>★ 電気配線</span><span>★ 天井板張り</span><span>★ 壁パネル</span><span>★ ベッドキット</span><span>★ LED照明</span><span>★ ギャレー</span><span>★ LiFePO4</span><span>★ 走行充電</span><span>★ ソーラー</span><span>★ FFヒーター</span><span>★ 8ナンバー</span>
+    </div>
+    <div class="flex items-center gap-10 whitespace-nowrap px-5">
+      <span>★ 用途別レイアウト</span><span>★ ベース車両選び</span><span>★ 基礎工事</span><span>★ 制振・断熱</span><span>★ 床下地</span><span>★ 電気配線</span><span>★ 天井板張り</span><span>★ 壁パネル</span><span>★ ベッドキット</span><span>★ LED照明</span><span>★ ギャレー</span><span>★ LiFePO4</span><span>★ 走行充電</span><span>★ ソーラー</span><span>★ FFヒーター</span><span>★ 8ナンバー</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- ROADMAP (TOC) -->
+<!-- ============================== -->
+<section id="roadmap" class="py-20 md:py-28 relative">
+  <div class="absolute inset-0 grid-pattern opacity-60"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-12 reveal">
+      <span class="chapter-label"><i class="ri-road-map-line"></i> THE ROADMAP</span>
+      <h2 class="chapter-title text-navy mt-4">
+        <span class="highlight">6ステップ</span>で迷わず完走するDIYロードマップ
+      </h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        ハイエース200系のDIYキャンピングカー製作は、<strong>「誰と・どこで・何をするか」</strong>を決めるところから始まります。
+        各章は独立して読めますが、上から順番に進めると失敗が少ないように構成しています。
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
+      <a href="#why" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip">01</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 01</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">はじまりの章</h3>
+            <p class="text-sm text-navy/70">なぜハイエースなのか。3つの質問で方向性を決める。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#layouts" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-coral">02</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 02</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">用途別レイアウト6選</h3>
+            <p class="text-sm text-navy/70">ソロ〜大家族、趣味特化まで、平面図と費用付き。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#base-car" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-ocean">03</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 03</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">ベース車両を選ぶ</h3>
+            <p class="text-sm text-navy/70">ボディ・グレード・エンジン・型・相場・維持費。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#foundation" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-grass">04</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 04</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">基礎工事</h3>
+            <p class="text-sm text-navy/70">制振・防音・断熱・床下地・電気配線の下ごしらえ。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#interior" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-peach">05</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 05</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">内装仕上げ</h3>
+            <p class="text-sm text-navy/70">天井・壁・ベッド・LED・収納・カーテン。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#galley" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-sky">06</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 06</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">家具・ギャレー</h3>
+            <p class="text-sm text-navy/70">走行中も安全な固定設計と簡易キッチン構築。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#electrical" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-berry">07</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 07</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">サブバッテリー・電装</h3>
+            <p class="text-sm text-navy/70">LiFePO4、走行充電、ソーラー、インバーター、ヒューズ設計。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#ff-heater" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-coral">＋</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">BONUS</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">FFヒーター後付け</h3>
+            <p class="text-sm text-navy/70">10ステップ・排気と燃料の安全設計・CO対策まで。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#roof-ac" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-ocean">＋</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">BONUS</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">ルーフエアコン後付け</h3>
+            <p class="text-sm text-navy/70">選び方・取付手順・3重防水・電源設計・車検対応。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#registration" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip">08</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 08</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">8ナンバー構造変更</h3>
+            <p class="text-sm text-navy/70">自動車審査事務規程に沿った書類・図面・検査の流れ。</p>
+          </div>
+        </div>
+      </a>
+      <a href="#costs" class="toc-item card-chunky-flat p-6 block">
+        <div class="flex items-start gap-4">
+          <div class="step-chip step-chip-coral">09</div>
+          <div>
+            <div class="font-accent text-xs text-coral tracking-widest mb-1">CHAPTER 09</div>
+            <h3 class="font-display font-black text-xl text-navy mb-1">費用と失敗の総まとめ</h3>
+            <p class="text-sm text-navy/70">ライト〜本格フルDIYのレベル別総額と落とし穴。</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 01: なぜハイエース -->
+<!-- ============================== -->
+<section id="why" class="py-20 md:py-28 bg-white border-y-[3px] border-navy relative overflow-hidden">
+  <div class="absolute top-10 right-10 w-56 h-56 bg-sun/30 rounded-full blur-2xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 reveal">
+        <span class="chapter-label"><i class="ri-map-pin-line"></i> CHAPTER 01 / ORIGIN</span>
+        <h2 class="chapter-title text-navy mt-4 mb-6">
+          なぜ <span class="highlight-coral">ハイエース</span>が選ばれるのか？
+        </h2>
+        <p class="text-navy/80 leading-relaxed text-lg">
+          ハイエース200系は2004年から続く国内最長寿バンシリーズのひとつ。
+          DIYキャンピングカーのベース車両として圧倒的な人気を誇るのは、
+          <strong>①車内の広さ</strong>・<strong>②カスタムパーツの豊富さ</strong>・<strong>③リセールバリューの高さ</strong>という3本柱が揃っているからです。
+        </p>
+        <p class="text-navy/80 leading-relaxed mt-4">
+          特にバンタイプは荷室がシンプルな構造で、<strong>最低限の装備しかなくDIYしやすい</strong>のが最大の特徴。ナローボディは取り回しが良く、ワイドボディは横幅と居住性で勝ります。
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <div class="chapter-image premium aspect-[16/10]">
+          <img src="assets/images/camper/camper_exterior_countryside%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="日本の田園に停まるハイエース" class="w-full h-full object-cover">
+        </div>
+        <div class="hand-caption mt-3 ml-1">— 城崎温泉、コウノトリの湯にて。</div>
+        <div class="grid sm:grid-cols-3 gap-4 mt-6">
+          <div class="card-chunky-flat p-5">
+            <div class="w-12 h-12 bg-sun rounded-2xl border-2 border-navy grid place-items-center mb-3"><i class="ri-ruler-2-line text-xl text-navy"></i></div>
+            <h3 class="font-display font-black text-navy mb-1">圧倒的な広さ</h3>
+            <p class="text-sm text-navy/70">四角くフラットな荷室は、ベッドも長物も収納も両立可能。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="w-12 h-12 bg-coral rounded-2xl border-2 border-navy grid place-items-center mb-3"><i class="ri-tools-line text-xl text-white"></i></div>
+            <h3 class="font-display font-black text-navy mb-1">パーツ豊富</h3>
+            <p class="text-sm text-navy/70">20年以上同一プラットフォームでアフターパーツが潤沢。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="w-12 h-12 bg-ocean rounded-2xl border-2 border-navy grid place-items-center mb-3"><i class="ri-refund-2-line text-xl text-navy"></i></div>
+            <h3 class="font-display font-black text-navy mb-1">高リセール</h3>
+            <p class="text-sm text-navy/70">10年以上経っても価値が落ちにくく、手放すときも安心。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3つの質問 -->
+    <div class="mt-16 reveal">
+      <div class="card-chunky p-6 md:p-10 bg-cream">
+        <div class="flex flex-wrap items-center gap-4 mb-6">
+          <span class="sticker sticker-coral">MOST IMPORTANT</span>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy">DIY前に決めておく「3つの質問」</h3>
+        </div>
+        <p class="text-navy/75 mb-6">レイアウトを決める前にこの3点を明確にしないと、ほぼ確実に作り直しになります。</p>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="bg-white border-[3px] border-navy rounded-2xl p-6" style="box-shadow: 6px 6px 0 #FFD84D;">
+            <div class="step-chip mb-4">Q1</div>
+            <h4 class="font-black text-navy mb-2">誰が何人寝るのか？</h4>
+            <p class="text-sm text-navy/70">大人の人数・子供の人数・年齢を具体化。就寝スペースがすべての出発点。</p>
+          </div>
+          <div class="bg-white border-[3px] border-navy rounded-2xl p-6" style="box-shadow: 6px 6px 0 #FF6B5B;">
+            <div class="step-chip step-chip-coral mb-4">Q2</div>
+            <h4 class="font-black text-navy mb-2">どんな目的で使うのか？</h4>
+            <p class="text-sm text-navy/70">週末キャンプ／長期旅行／仕事（ノマド）／趣味（サーフ・スキー等）。</p>
+          </div>
+          <div class="bg-white border-[3px] border-navy rounded-2xl p-6" style="box-shadow: 6px 6px 0 #4ECDC4;">
+            <div class="step-chip step-chip-ocean mb-4">Q3</div>
+            <h4 class="font-black text-navy mb-2">荷物は何を積むのか？</h4>
+            <p class="text-sm text-navy/70">サーフボード・自転車・スキー板など長物の有無でレイアウトが決まる。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 02: LAYOUTS -->
+<!-- ============================== -->
+<section id="layouts" class="py-20 md:py-28 relative">
+  <div class="absolute inset-0 dot-pattern opacity-50"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-14 reveal">
+      <span class="chapter-label"><i class="ri-layout-masonry-line"></i> CHAPTER 02 / LAYOUTS</span>
+      <h2 class="chapter-title text-navy mt-4">
+        用途別レイアウト <span class="gradient-text">6選</span>
+      </h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        ソロ趣味、ノマドワーク、カップル、ファミリー、大家族、スポーツ仕様。
+        「誰と・何をしに行くか」で選ぶ、現実的で再現性のある6パターンを平面図と費用目安つきで解説します。
+      </p>
+    </div>
+
+    <!-- Layout 1: SOLO -->
+    <div class="card-chunky layout-card-v2 bg-white mb-10 overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-2">
+          <div class="corner-badge"><span class="sticker sticker-coral">LAYOUT ①</span></div>
+          <img src="assets/images/camper/layouts/layout-01-solo-hobby.png" alt="ソロ・趣味仕様の上面図：跳ね上げ式ベッド／長物スペース／道具スペース／折りたたみテーブル">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-user-line"></i> 大人1名</span>
+            <span class="kpi-box" style="background:#FF6B5B; color:#fff;"><i class="ri-money-cny-circle-line"></i> 3〜8万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">ソロ・趣味仕様<br><span class="text-coral text-lg font-bold">釣り・バイク・スキーのための荷物と寝る</span></h3>
+          <p class="text-navy/75 mb-5">1人で趣味を楽しみたいソロユーザー向け。片側（左）に跳ね上げ式ベッド、反対側（右）は道具スペース。中央をフリーにすることで<strong>サーフボード・スキー板・ロッドなどの長物がそのまま積載可能</strong>。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>イレクターパイプ＋コンパネでベッドフレームを自作すると最安構成</li>
+            <li>跳ね上げ式にすると収納時に荷室として使いやすい</li>
+            <li>テーブルはバーに板を掛けるだけの折りたたみ式で十分</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/layouts/photo-01-solo-surf.png?v=2" alt="海辺のハイエースから降りるサーファー">
+              <div class="thumb-caption">SURF TRIP · リアゲートを開けて海へ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout 2: NOMAD -->
+    <div class="card-chunky layout-card-v2 bg-white mb-10 overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-1">
+          <div class="corner-badge"><span class="sticker sticker-ocean">LAYOUT ②</span></div>
+          <img src="assets/images/camper/layouts/layout-02-nomad-work.png" alt="ソロ・ノマドワーク仕様の上面図：常設ベッド／作業デスク／27インチモニター／AC電源・USB／対座シート／サブバッテリー">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-2">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-user-line"></i> 大人1名</span>
+            <span class="kpi-box" style="background:#4ECDC4; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 10〜20万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">ソロ・ノマドワーク仕様<br><span class="text-ocean text-lg font-bold">走る仕事場、リモート特化</span></h3>
+          <p class="text-navy/75 mb-5">リモートワーカー・フリーランス・エンジニア向け。常設ベッド＋作業デスク＋AC電源が三種の神器。サイド窓に <strong>27インチモニター</strong> を設置する事例や、対座シート＋AC電源×9・USB×4の本格モバイルオフィス事例もあります。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>サブバッテリー 100〜200Ah ＋ ソーラー、または大容量ポータブル電源が基本</li>
+            <li>2人で作業するなら「互いが視界に入らない配置」が集中に有利</li>
+            <li>運転席〜荷室バーを利用した折りたたみデスクから始めると失敗が少ない</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/camper_mobile_office%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="車内モバイルオフィス">
+              <div class="thumb-caption">MOBILE OFFICE · 道の駅で稼働中</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout 3: COUPLE -->
+    <div class="card-chunky layout-card-v2 bg-white mb-10 overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-2">
+          <div class="corner-badge"><span class="sticker sticker-peach">LAYOUT ③</span></div>
+          <img src="assets/images/camper/layouts/layout-03-couple.jpg" alt="カップル・2人旅仕様の上面図：ダイネット／ギャレー（シンク・冷蔵庫）／常設ダブルベッド／ベッド下収納">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-heart-line"></i> 大人2名</span>
+            <span class="kpi-box" style="background:#FFB3BA; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 15〜30万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">カップル・2人旅仕様<br><span class="text-[#E85A9A] text-lg font-bold">長期旅行・バンライフへ</span></h3>
+          <p class="text-navy/75 mb-5">大人2名で長期旅行を楽しみたい方向け。<strong>常設ダブルベッド＋ギャレー＋ダイネット</strong> の3部屋構成。ハイエースの荷室長は約2mあり、2名が縦並びで寝られます。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>キッチンを左側にまとめると動線がすっきり</li>
+            <li>ベッド下は収納スペースとして必ず活用する</li>
+            <li>ダイネットは食事＋ちょっとした仕事も兼ねる</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/camper_seaside_sunset%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="海沿いに停まるハイエース">
+              <div class="thumb-caption">SEASIDE · 二人だけの夕暮れ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout 4: FAMILY -->
+    <div class="card-chunky layout-card-v2 bg-white mb-10 overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-1">
+          <div class="corner-badge"><span class="sticker sticker-grass">LAYOUT ④</span></div>
+          <img src="assets/images/camper/layouts/layout-04-family.png" alt="ファミリー仕様の上面図：セカンドシート前向き／上段ベッド・子供×2名（ワイドなら幅約170cm）／下段ベッド・大人×2名（下は収納スペース）／リバーシブル設計">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-2">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-parent-line"></i> 大人2＋子供2</span>
+            <span class="kpi-box" style="background:#7DD87A; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 10〜20万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">ファミリー仕様<br><span class="text-[#2A7E40] text-lg font-bold">大人2＋小学生以下2名</span></h3>
+          <p class="text-navy/75 mb-5">家族4人で週末キャンプ・旅行を楽しみたい方向け。<strong>2段ベッド方式</strong> で下段に大人2名、上段に子供2名。ワイドボディなら上段幅が約170cmとなり、女性でも横向きで就寝可能です。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>「シートからベッドへ誰でも展開できる」設計が疲れないコツ</li>
+            <li>ナローボディでも子供が小さいうちは4人縦並びで対応可能</li>
+            <li>プレートを外せば荷室として使えるリバーシブル設計が便利</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/camper_outdoor_camping_setup%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="家族でキャンプ">
+              <div class="thumb-caption">FAMILY CAMP · 設営はゼロ分</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout 5: MEGA FAMILY -->
+    <div class="card-chunky layout-card-v2 bg-white mb-10 overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-2">
+          <div class="corner-badge"><span class="sticker sticker-berry">LAYOUT ⑤</span></div>
+          <img src="assets/images/camper/layouts/layout-05-mega-family.jpg" alt="大家族・スーパーロング仕様の上面図：FASPシート前向き4〜5名／コの字ダイネット＋中央テーブル／間仕切り壁／後部2段ベッド常設・子供3〜4名">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-group-line"></i> 大人2＋子供3〜4</span>
+            <span class="kpi-box" style="background:#E85A9A; color:#fff;"><i class="ri-money-cny-circle-line"></i> 20〜40万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">大家族・スーパーロング仕様<br><span class="text-[#C14482] text-lg font-bold">5人以上の旅行</span></h3>
+          <p class="text-navy/75 mb-5">子供が多い大家族向け。スーパーロング・ワイドボディ推奨の「2ルーム」特注レイアウト。<strong>コの字ダイネット＋後部2段ベッド</strong> の組み合わせで、ボードを渡すと追加の子供ベッドになります。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>5人以上はワゴンタイプ or スーパーロングが快適性で勝る</li>
+            <li>子供が成長したら2段ベッドを外し、全面フラットに変更しやすい設計にする</li>
+            <li>間仕切り壁を付けると就寝時に「2部屋感覚」で使える</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/layouts/photo-05-mega-bunk-interior.jpg" alt="ハイエース車内の2段ベッドレイアウト">
+              <div class="thumb-caption">BUNK INTERIOR · 木で仕上げた2段車内</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout 6: SPORT -->
+    <div class="card-chunky layout-card-v2 bg-white overflow-hidden reveal">
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 illust-pane order-1 lg:order-1" style="background: linear-gradient(180deg, #EAF2F5 0%, #D7E5EB 100%);">
+          <div class="corner-badge"><span class="sticker sticker-sky">LAYOUT ⑥</span></div>
+          <img src="assets/images/camper/layouts/layout-06-sport.png" alt="趣味特化スポーツ仕様：天井ルーフラックにサーフボード／スキー板／キャンプギア、車内に跳ね上げベッド、ウェット・道具置き場、床下スライド収納">
+        </div>
+        <div class="text-pane lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col order-2 lg:order-2">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="kpi-box"><i class="ri-user-line"></i> 大人1〜2名</span>
+            <span class="kpi-box" style="background:#A5E3F5; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 8〜15万円</span>
+          </div>
+          <h3 class="font-display font-black text-2xl md:text-3xl text-navy mb-3">趣味特化＋キャンプ<br><span class="text-[#3476B8] text-lg font-bold">サーフィン・スキー・自転車</span></h3>
+          <p class="text-navy/75 mb-5">大きな道具を積みながら車内でも快適に寝たい方向け。<strong>天井ラック・床下スライド収納・跳ね上げベッド</strong> を組み合わせて、濡れ物にも強いFRP床仕様。</p>
+          <ul class="process-list text-navy/80 text-sm mb-6">
+            <li>ベッドを跳ね上げると荷室全面が道具スペースに</li>
+            <li>ルーフ内側にスキー板・サーフボード収納ラックを追加</li>
+            <li>床材はクッションフロアやFRP貼りで水濡れ対策</li>
+          </ul>
+          <div class="mt-auto">
+            <div class="thumb-label">REAL · PHOTO</div>
+            <div class="layout-thumb">
+              <img src="assets/images/camper/camper_snow_village%EF%BC%88%E5%A4%A7%EF%BC%89.jpg" alt="雪山のハイエース">
+              <div class="thumb-caption">SNOW VILLAGE · 板を積んで雪の里へ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary table -->
+    <div class="mt-14 reveal">
+      <h3 class="font-display font-black text-2xl text-navy mb-4">レイアウト別 就寝人数まとめ</h3>
+      <div class="overflow-x-auto">
+        <table class="table-chunky">
+          <thead>
+            <tr>
+              <th>#</th><th>レイアウト名</th><th>大人</th><th>子供</th><th>主な用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>①</strong></td><td>ソロ趣味仕様</td><td>1名</td><td>0名</td><td>釣り・スキー・バイク</td></tr>
+            <tr><td><strong>②</strong></td><td>ノマドワーク仕様</td><td>1名</td><td>0名</td><td>リモートワーク・フリーランス</td></tr>
+            <tr><td><strong>③</strong></td><td>カップル・2人旅</td><td>2名</td><td>0名</td><td>長期旅行・バンライフ</td></tr>
+            <tr><td><strong>④</strong></td><td>ファミリー</td><td>2名</td><td>2名</td><td>家族キャンプ・週末旅行</td></tr>
+            <tr><td><strong>⑤</strong></td><td>大家族</td><td>2名</td><td>3〜4名</td><td>大人数旅行（要スーパーロング）</td></tr>
+            <tr><td><strong>⑥</strong></td><td>趣味特化スポーツ</td><td>1〜2名</td><td>0名</td><td>サーフ・スノボ・自転車</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- LOOKBOOK: ドライブで実際に訪れた場所 -->
+<!-- ============================== -->
+<section id="drive-routes" class="py-20 md:py-28 bg-white border-y-[3px] border-navy relative overflow-hidden scroll-mt-20">
+  <div class="absolute -top-32 -right-24 w-[420px] h-[420px] rounded-full bg-ocean/15 blur-3xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-8 mb-10 items-end">
+      <div class="lg:col-span-7">
+        <span class="editorial-eyebrow"><span class="num">INTERMISSION</span> JOURNEY LOOKBOOK · ドライブルート</span>
+        <h2 class="chapter-title text-navy mt-3">
+          設計の前に、<span class="gradient-text">行きたい場所</span>を決めよう。
+        </h2>
+        <p class="lede mt-4 max-w-2xl">
+          「キャンピングカーは目的地と一緒に設計する」。ハイエースの自由度は、
+          道の駅にも、雪の里山にも、海岸線の路肩にも、駐車一台分のスペースさえあれば届くこと。
+          以下は実際にこの車で訪れた目的地の一部です。
+        </p>
+      </div>
+      <div class="lg:col-span-5 lg:text-right">
+        <div class="hand-caption">— mapped routes, real photos, no stock.</div>
+      </div>
+    </div>
+
+    <div class="lookbook">
+      <figure class="l-hero">
+        <img src="drive-routes/images/25.jpg" alt="本栖湖から望む富士山">
+        <figcaption>
+          <div class="region">CHUBU · YAMANASHI</div>
+          <div class="place">本栖湖と富士山の朝</div>
+          <div class="note">— 千円札の構図を、実車で。</div>
+        </figcaption>
+      </figure>
+      <figure class="l-tall">
+        <img src="drive-routes/images/120.jpg" alt="角島大橋">
+        <figcaption>
+          <div class="region">CHUGOKU · YAMAGUCHI</div>
+          <div class="place">角島大橋</div>
+          <div class="note">— turquoise water, sea-to-sea.</div>
+        </figcaption>
+      </figure>
+      <figure class="l-wide">
+        <img src="drive-routes/images/108.jpg" alt="阿蘇のミルクロード">
+        <figcaption>
+          <div class="region">KYUSHU · KUMAMOTO</div>
+          <div class="place">阿蘇 / ミルクロード</div>
+        </figcaption>
+      </figure>
+      <figure class="l-half">
+        <img src="drive-routes/images/10.jpg" alt="瀬戸内の島々">
+        <figcaption>
+          <div class="region">SETOUCHI · ISLANDS</div>
+          <div class="place">展望台から見渡す瀬戸の海</div>
+          <div class="note">— 凪いだ午後、車内でコーヒー。</div>
+        </figcaption>
+      </figure>
+      <figure class="l-half2">
+        <img src="drive-routes/images/75.jpg" alt="海岸線のドライブ">
+        <figcaption>
+          <div class="region">SEASIDE ROUTE</div>
+          <div class="place">日本海・国道沿いの一本道</div>
+          <div class="note">— カーブの先がまだ青い。</div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- 場所のティッカー -->
+    <div class="mt-10 destination-ticker rounded-2xl">
+      <div class="track">
+        <span class="pill"><span class="num">01</span> 北海道・美瑛</span>
+        <span class="pill"><span class="num">02</span> 羊蹄山</span>
+        <span class="pill"><span class="num">03</span> 白川郷</span>
+        <span class="pill"><span class="num">04</span> 本栖湖</span>
+        <span class="pill"><span class="num">05</span> 角島大橋</span>
+        <span class="pill"><span class="num">06</span> 阿蘇ミルクロード</span>
+        <span class="pill"><span class="num">07</span> 瀬戸内・しまなみ</span>
+        <span class="pill"><span class="num">08</span> 日本海沿岸</span>
+        <span class="pill"><span class="num">09</span> 静岡・茶畑</span>
+        <span class="pill"><span class="num">10</span> 出雲</span>
+        <!-- duplicate for loop -->
+        <span class="pill"><span class="num">01</span> 北海道・美瑛</span>
+        <span class="pill"><span class="num">02</span> 羊蹄山</span>
+        <span class="pill"><span class="num">03</span> 白川郷</span>
+        <span class="pill"><span class="num">04</span> 本栖湖</span>
+        <span class="pill"><span class="num">05</span> 角島大橋</span>
+        <span class="pill"><span class="num">06</span> 阿蘇ミルクロード</span>
+        <span class="pill"><span class="num">07</span> 瀬戸内・しまなみ</span>
+        <span class="pill"><span class="num">08</span> 日本海沿岸</span>
+        <span class="pill"><span class="num">09</span> 静岡・茶畑</span>
+        <span class="pill"><span class="num">10</span> 出雲</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 03: BASE CAR -->
+<!-- ============================== -->
+<section id="base-car" class="py-20 md:py-28 bg-navy text-white relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-10"></div>
+  <div class="absolute top-10 left-10 w-80 h-80 bg-coral/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 right-10 w-80 h-80 bg-ocean/20 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-14 reveal">
+      <span class="chapter-label" style="background:#FFD84D; color:#1F2E4D;"><i class="ri-car-line"></i> CHAPTER 03 / BASE VEHICLE</span>
+      <h2 class="chapter-title text-white mt-4">
+        ハイエース200系 <span class="text-sun">ベース車両選び</span>の6ステップ
+      </h2>
+      <p class="text-white/80 text-lg mt-4 leading-relaxed">
+        ボディ・グレード・エンジン・型（マイナーチェンジ）・価格相場・維持費。
+        DIY初心者がつまずきがちな「最初の1台選び」を、数字ベースで整理します。
+      </p>
+    </div>
+
+    <!-- STEP 1: Body type -->
+    <div class="mb-16 reveal">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="step-chip step-chip-coral">01</div>
+        <div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">ボディタイプを選ぼう</h3>
+          <p class="text-white/70 mt-1">すべての出発点。室内寸法と駐車条件のバランスで決める。</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 items-start">
+        <div style="background:#FFFBF2; border:3px solid #1F2E4D; border-radius:24px; box-shadow:8px 8px 0 #FFD84D; padding:1rem;">
+          <img src="assets/images/camper/hiace-body-size-comparison.png" alt="ハイエース4種ボディタイプのサイズ比較（標準×標準ルーフ／標準×ハイルーフ／ワイド×ミドルルーフ／ワイド スーパーロング×ハイルーフ）" style="display:block; width:100%; height:auto; border-radius:14px;">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table-chunky text-sm">
+            <thead>
+              <tr><th>ボディ</th><th>全長</th><th>全高</th><th>室内高</th><th>特徴</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>標準 × 標準ルーフ</td><td>4,695</td><td>1,980</td><td>1,220</td><td>普通駐車場OK・小型キャンプ向き</td></tr>
+              <tr><td><strong>標準 × ハイルーフ</strong></td><td>4,695</td><td>2,285</td><td><strong>1,825</strong></td><td><strong>立って動ける！DIY定番</strong></td></tr>
+              <tr><td>ワイド × ミドル</td><td>4,840</td><td>1,990</td><td>1,395</td><td>横幅余裕・立体駐車場はほぼ不可</td></tr>
+              <tr><td>ワイドSL × ハイルーフ</td><td>5,380</td><td>2,285</td><td>1,895</td><td>最大空間・取り回しは難</td></tr>
+            </tbody>
+          </table>
+          <div class="mt-4 p-4 bg-white/10 border-2 border-sun rounded-xl">
+            <div class="font-black text-sun mb-1"><i class="ri-star-fill"></i> DIY初心者おすすめ</div>
+            <p class="text-white/85 text-sm">標準ボディ・ハイルーフ。全幅1,695mmで立体駐車場（高さ2.1m以上）も利用可能、中古在庫豊富で価格も手頃。</p>
+          </div>
+
+          <!-- 駐車場対応マトリクス -->
+          <div class="mt-5">
+            <div class="font-accent text-[11px] tracking-[0.2em] text-coral mb-2">PARKING COMPATIBILITY</div>
+            <h4 class="font-display font-black text-base mb-3">📐 そのボディ、停められる？</h4>
+            <div class="overflow-x-auto">
+              <table class="table-chunky text-xs">
+                <thead>
+                  <tr>
+                    <th>条件</th>
+                    <th>標準<br>標準</th>
+                    <th>標準<br>ハイ</th>
+                    <th>ワイド<br>ミドル</th>
+                    <th>ワイドSL<br>ハイ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>立体駐車場（高 2.1m）</td><td style="color:#2A7E40;font-weight:800;">◯</td><td style="color:#FF6B5B;font-weight:800;">✕</td><td style="color:#FF6B5B;font-weight:800;">✕</td><td style="color:#FF6B5B;font-weight:800;">✕</td></tr>
+                  <tr><td>機械式駐車場（高 1.55m）</td><td style="color:#FF6B5B;font-weight:800;">✕</td><td style="color:#FF6B5B;font-weight:800;">✕</td><td style="color:#FF6B5B;font-weight:800;">✕</td><td style="color:#FF6B5B;font-weight:800;">✕</td></tr>
+                  <tr><td>コインパーキング 標準枠</td><td style="color:#2A7E40;font-weight:800;">◯</td><td style="color:#2A7E40;font-weight:800;">◯</td><td style="color:#C18B00;font-weight:800;">△</td><td style="color:#FF6B5B;font-weight:800;">✕</td></tr>
+                  <tr><td>自宅駐車場 一般</td><td style="color:#2A7E40;font-weight:800;">◯</td><td style="color:#2A7E40;font-weight:800;">◯</td><td style="color:#C18B00;font-weight:800;">△</td><td style="color:#FF6B5B;font-weight:800;">要計測</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-white/55 text-[10px] mt-2">※ 立体駐車場の代表値（2.1m）。施設により制限は異なります。</p>
+          </div>
+
+          <!-- 室内活用イメージ -->
+          <div class="mt-5 grid sm:grid-cols-2 gap-3">
+            <div class="rounded-xl p-4" style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.2);">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-8 h-8 rounded-lg bg-sun text-navy grid place-items-center"><i class="ri-arrow-up-down-line"></i></div>
+                <div class="font-black text-sun text-sm">室内高 1,825mm の意味</div>
+              </div>
+              <p class="text-white/70 text-xs leading-relaxed">標準的な身長の人が <strong style="color:#FFD84D;">立ったまま着替え・調理</strong>ができる目安。1,395mmだとかがむ必要があり、長期使用で疲労に直結。</p>
+            </div>
+            <div class="rounded-xl p-4" style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.2);">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-8 h-8 rounded-lg bg-coral text-white grid place-items-center"><i class="ri-bed-line"></i></div>
+                <div class="font-black text-sun text-sm">就寝定員の上限</div>
+              </div>
+              <p class="text-white/70 text-xs leading-relaxed">標準ボディ＝<strong style="color:#FFD84D;">2名フルフラット</strong>が基本。ワイドSLハイルーフなら<strong style="color:#FFD84D;">4〜5名</strong>2段ベッド構成可能。</p>
+            </div>
+          </div>
+
+          <!-- 失敗しない選び方フロー -->
+          <div class="mt-5 p-5 rounded-xl" style="background:#FFD84D; color:#1F2E4D;">
+            <div class="font-accent text-[10px] tracking-[0.2em] text-coral mb-2">DECISION TREE</div>
+            <div class="font-display font-black text-base mb-3">迷ったらこの順で決める ↓</div>
+            <ol class="space-y-1.5 text-sm">
+              <li class="flex gap-2">
+                <span class="font-black flex-shrink-0">①</span>
+                <span><strong>自宅・職場の駐車場制限</strong>を実測する（高さ・幅・長さ）</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-black flex-shrink-0">②</span>
+                <span><strong>就寝定員</strong>を決める（→ Chapter 02 レイアウト6選）</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-black flex-shrink-0">③</span>
+                <span><strong>立って動きたいか？</strong> Yes → ハイルーフ確定</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-black flex-shrink-0">④</span>
+                <span>残りはボディの長さで選ぶ（取り回し vs 居住性）</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: Grade -->
+    <div class="mb-16 reveal">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="step-chip step-chip-ocean">02</div>
+        <div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">グレードを選ぼう</h3>
+          <p class="text-white/70 mt-1">スーパーGL vs DX。完成度か、DIYの自由度か。</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white text-navy rounded-2xl border-[3px] border-sun p-6" style="box-shadow: 6px 6px 0 #FFD84D;">
+          <div class="font-accent text-xs text-coral tracking-widest">PRIVATE USE</div>
+          <h4 class="font-display font-black text-2xl mt-1 mb-2">スーパーGL</h4>
+          <ul class="text-sm space-y-1 text-navy/80">
+            <li>・本革調シート／木目パネル／カーペット</li>
+            <li>・大型スライドドア窓あり</li>
+            <li>・カーテン・ベッドキット対応</li>
+            <li>・新車価格 <strong>約330〜360万円</strong></li>
+            <li>・DIY向き <strong>◎（完成度高い）</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white text-navy rounded-2xl border-[3px] border-coral p-6" style="box-shadow: 6px 6px 0 #FF6B5B;">
+          <div class="font-accent text-xs text-coral tracking-widest">BUSINESS USE</div>
+          <h4 class="font-display font-black text-2xl mt-1 mb-2">DX（デラックス）</h4>
+          <ul class="text-sm space-y-1 text-navy/80">
+            <li>・樹脂内装／金属むき出し感</li>
+            <li>・側面無窓 or 標準窓</li>
+            <li>・標準装備は最小限</li>
+            <li>・新車価格 <strong>約270〜310万円</strong></li>
+            <li>・DIY向き <strong>○（自由度最大）</strong></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-white/75 text-sm">DXベースに装備を追加した <strong>「DX GLパッケージ」</strong> も存在。価格と装備のバランスが良くDIYベースとして人気。</p>
+    </div>
+
+    <!-- STEP 3: Engine -->
+    <div class="mb-16 reveal">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="step-chip step-chip-grass">03</div>
+        <div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">エンジン・駆動方式を選ぼう</h3>
+          <p class="text-white/70 mt-1">ガソリン vs ディーゼル／2WD vs 4WD の損益分岐点。</p>
+        </div>
+      </div>
+
+      <!-- フルワイド・インフォグラフィック -->
+      <figure class="engine-guide-figure mb-8">
+        <a href="assets/images/camper/hiace-engine-drivetrain-guide.png" target="_blank" rel="noopener" aria-label="ハイエース200系 エンジンと駆動方式まるわかりガイドを拡大表示">
+          <img
+            src="assets/images/camper/hiace-engine-drivetrain-guide.png"
+            alt="ハイエース200系 エンジンと駆動方式まるわかりガイド：5種類のエンジン比較、2WD/4WDの違い、用途別おすすめ、キャンピングカーDIYベースのランキング"
+            loading="lazy"
+            decoding="async"
+            class="block w-full h-auto"
+          >
+        </a>
+        <figcaption class="cinema-caption mt-3">
+          <span class="dot"></span> ENGINE × DRIVETRAIN — 1TR / 2TR / 2KD / 1KD / 1GD-FTV ＆ 2WD vs 4WD まるわかりガイド
+        </figcaption>
+      </figure>
+
+      <!-- 補足: ガソリン vs ディーゼル詳細比較 -->
+      <div class="overflow-x-auto mb-6">
+        <table class="table-chunky text-sm">
+          <thead>
+            <tr><th></th><th class="th-coral">ガソリン 2TR-FE</th><th class="th-ocean">ディーゼル 1GD-FTV</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>最高出力</td><td>152ps</td><td><strong>177ps</strong></td></tr>
+            <tr><td>最大トルク</td><td>241N·m</td><td><strong>450N·m</strong></td></tr>
+            <tr><td>燃費</td><td>9〜10km/L</td><td><strong>11〜12km/L</strong></td></tr>
+            <tr><td>年間燃料費</td><td>15〜18万円</td><td><strong>11〜14万円</strong></td></tr>
+            <tr><td>初期費用差</td><td>基準</td><td>+25〜30万円</td></tr>
+            <tr><td>向いている</td><td>街乗り・近距離</td><td>長距離・山岳・重荷</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+          <div class="font-black text-sun mb-1">2WD（FR）</div>
+          <p class="text-white/80 text-sm">燃費良好、車高低め、スタッドレスで関東〜近畿の雪道は対応可能。普段使い重視の人向け。</p>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+          <div class="font-black text-sun mb-1">4WD（+35〜40万円）</div>
+          <p class="text-white/80 text-sm">車高高め、東北・北海道・山間部キャンプに安心。長野・岐阜奥地を頻繁に行く人向け。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: Model year -->
+    <div class="mb-16 reveal">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="step-chip step-chip-peach">04</div>
+        <div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">1型〜9型の違いを知ろう</h3>
+          <p class="text-white/70 mt-1">2004→2026。20年続く同一プラットフォームの世代別評価。</p>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="table-chunky text-sm">
+          <thead>
+            <tr><th>型</th><th>発売</th><th>主な変更点</th><th>DIY観点評価</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1型</td><td>2004.8〜</td><td>初登場・丸目ヘッドライト</td><td>安価だが装備古め</td></tr>
+            <tr><td>2型</td><td>2007.8〜</td><td>角目フェイス・ディーゼル強化</td><td>程度次第でお買い得</td></tr>
+            <tr><td><strong>3型</strong></td><td>2010.7〜</td><td>内外装大幅刷新</td><td><strong>コスパ◎</strong></td></tr>
+            <tr><td>4型</td><td>2013.12〜</td><td>ダークグリル・衝突回避一部</td><td>装備バランス良</td></tr>
+            <tr><td><strong>5型</strong></td><td>2017.12〜</td><td><strong>Toyota Safety Sense 初採用</strong></td><td><strong>安全性の転換点</strong></td></tr>
+            <tr><td>6型</td><td>2019.4〜</td><td>クリアランスソナー・ウッドI/P</td><td>先進安全充実</td></tr>
+            <tr><td>7型</td><td>2021.11〜</td><td>1GD改良・後退時ブレーキ</td><td>エンジン信頼性UP</td></tr>
+            <tr><td>8型</td><td>2025.1〜</td><td>アースカラー・USB-C対応</td><td>最新デザイン</td></tr>
+            <tr><td><strong>9型</strong></td><td>2026.1〜</td><td><strong>ACC全車速・TSS 3.0</strong></td><td><strong>最新型・全LED標準</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4"><div class="text-sun font-black text-sm mb-1">〜100万円</div><div class="text-xs text-white/80">3型・4型狙い目</div></div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4"><div class="text-sun font-black text-sm mb-1">100〜200万円</div><div class="text-xs text-white/80">5型・6型（AEB付）</div></div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4"><div class="text-sun font-black text-sm mb-1">200万円〜</div><div class="text-xs text-white/80">7型・8型ほぼ新車品質</div></div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4"><div class="text-sun font-black text-sm mb-1">新車で買う</div><div class="text-xs text-white/80">9型・ACC＆全LED標準</div></div>
+      </div>
+    </div>
+
+    <!-- STEP 5 & 6: price & maintenance -->
+    <div class="grid md:grid-cols-2 gap-8 reveal">
+      <div>
+        <div class="flex items-start gap-4 mb-4">
+          <div class="step-chip step-chip-sky">05</div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">価格相場と予算計画</h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table-chunky text-sm">
+            <thead><tr><th>型（年式）</th><th>走行距離</th><th>中古相場（GL）</th></tr></thead>
+            <tbody>
+              <tr><td>1〜2型（〜'09）</td><td>10〜20万km</td><td>50〜100万円</td></tr>
+              <tr><td>3〜4型（'10〜'16）</td><td>8〜15万km</td><td>150〜250万円</td></tr>
+              <tr><td>5〜6型（'17〜'21）</td><td>3〜10万km</td><td>250〜380万円</td></tr>
+              <tr><td>7〜8型（'21〜'25）</td><td>1〜5万km</td><td>350〜500万円</td></tr>
+              <tr><td>9型（'26〜）</td><td>ほぼ新車</td><td>新車のみ</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-4 p-4 bg-coral/20 border-2 border-coral rounded-xl text-sm">
+          <strong class="text-sun"><i class="ri-error-warning-line"></i> 盗難リスク：</strong> ハイエースは盗難が多い車種。購入後すぐに <strong>イモビライザー／GPS追跡</strong> の導入を。
+        </div>
+      </div>
+      <div>
+        <div class="flex items-start gap-4 mb-4">
+          <div class="step-chip step-chip-berry">06</div>
+          <h3 class="font-display font-black text-2xl md:text-3xl">維持費を理解しよう</h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table-chunky text-sm">
+            <thead><tr><th>項目</th><th>4ナンバー</th><th>1ナンバー</th><th>3ナンバー</th></tr></thead>
+            <tbody>
+              <tr><td>自動車税/年</td><td>16,000</td><td>40,500</td><td>43,500〜</td></tr>
+              <tr><td>車検サイクル</td><td>1年 or 2年</td><td><strong>1年ごと</strong></td><td>2年ごと</td></tr>
+              <tr><td>高速料金</td><td>普通車</td><td><strong>中型車</strong></td><td>普通車</td></tr>
+              <tr><td>年間維持費目安</td><td>30〜50万</td><td>50〜70万</td><td>45〜65万</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-white/80 text-sm mt-3">DIY目的なら <strong>4ナンバーのまま維持が最も経済的</strong>。ただし本格的にキャンピング化するなら <strong>8ナンバー（特種）</strong> への構造変更が有利な場合も（後述Chapter 08）。</p>
+      </div>
+    </div>
+
+    <!-- Best combo -->
+    <div class="mt-16 card-chunky bg-sun text-navy p-8 md:p-10 reveal" style="color:#1F2E4D;">
+      <div class="flex items-center gap-3 mb-4">
+        <i class="ri-trophy-fill text-3xl text-coral"></i>
+        <span class="font-accent tracking-widest text-sm">TRAILFUSION PICK</span>
+      </div>
+      <h3 class="font-display font-black text-2xl md:text-3xl mb-3">初めてのDIYキャンピングカー ベスト構成</h3>
+      <p class="text-navy text-lg">
+        <strong>ハイエース200系 5〜6型（2017〜2021）スーパーGL 標準ボディ・ハイルーフ ディーゼル 2WD</strong>
+      </p>
+      <p class="text-navy/80 text-sm mt-3">Toyota Safety Sense 搭載で安全性確保／室内高1,825mmで大人が立って動ける／中古相場250〜380万円／普通の立体駐車場も利用可／ディーゼルの豊富なトルクで山道も楽々。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 04: FOUNDATION -->
+<!-- ============================== -->
+<section id="foundation" class="py-20 md:py-28 bg-cream relative">
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-10 reveal">
+      <span class="chapter-label"><i class="ri-hammer-line"></i> CHAPTER 04 / FOUNDATION</span>
+      <h2 class="chapter-title text-navy mt-4">基礎工事 <span class="highlight-ocean">（見えないところの勝負）</span></h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        ハイエースは商用車ベースで天井・床・側面・ホイールハウスの鉄板が大きく、<strong>雨音・ロードノイズ・熱・結露</strong> の影響を受けやすい。ここを最初にしっかりやると、後で家具・電装・ベッドを組んだときの快適性が全く変わります。
+      </p>
+    </div>
+
+    <!-- フルブリード・インフォグラフィック -->
+    <div class="reveal mb-14">
+      <div class="cinema-frame" style="aspect-ratio: 1492 / 1054; border-radius: 22px; background: #fff; box-shadow: 0 30px 60px -25px rgba(31,46,77,0.45), 0 0 0 1px rgba(31,46,77,0.06);">
+        <img src="assets/images/camper/hiace-foundation-guide.png" alt="ハイエース キャンピングカーDIYの基礎工事ガイド：制振・防音・断熱の役割、おすすめ順、施工場所別の貼り分け、代表材料、優先順位、施工の3つのキモまで実践まとめ" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 床下地・電気配線：画像にない核心工程 -->
+    <!-- ===================== -->
+    <div class="mb-14 reveal">
+      <div class="flex items-baseline gap-3 mb-5">
+        <span class="font-accent text-[11px] tracking-[0.22em] text-coral">PRACTICE 01</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl text-navy">床を閉じる前にやる、2つの仕事</h3>
+      </div>
+      <p class="text-navy/75 mb-6 max-w-3xl">基礎工事の図には書ききれない、<strong>床下地</strong>と<strong>電気の仮配線</strong>。この2つは「床を閉じてしまったらやり直しが効かない」工程。順番と段取りで仕上がりが決まります。</p>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- 床下地 -->
+        <div class="card-chunky bg-white p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-ocean border-2 border-navy grid place-items-center"><i class="ri-stack-line text-xl text-navy"></i></div>
+            <div>
+              <div class="font-accent text-[10px] tracking-widest text-coral">FLOORING SUBSTRUCTURE</div>
+              <h4 class="font-display font-black text-xl text-navy">床下地（根太＋コンパネ）</h4>
+            </div>
+          </div>
+          <p class="text-sm text-navy/75 mb-4">根太は荷重を分散してフラット化するだけでなく、<strong>断熱材を受ける枠・配線のルート</strong> にもなる。車体のリブ（凸部）の上に載せて、面で支える考え方。</p>
+          <ol class="process-list text-navy/85 text-sm">
+            <li>荷室寸法＆リブ位置を採寸してスケッチ図</li>
+            <li>2×4材や角材を図面に基づきカット</li>
+            <li>凹凸に合わせてスペーサーで水平出し</li>
+            <li>ビスで本固定しフレーム化、防腐塗料</li>
+            <li>根太間に断熱材＋仮配線を収める</li>
+            <li>12mm合板をビス固定（継ぎ目は根太上）</li>
+            <li>クッションフロアを接着剤＋ローラー圧着</li>
+          </ol>
+          <div class="mt-4 p-3 rounded-xl" style="background:#FFE5E2; border:2px solid #FF6B5B;">
+            <p class="text-xs text-navy/80"><strong style="color:#FF6B5B;">★ NG：</strong> 柔らかい断熱材だけ敷いて床板を置く → 人・家具・荷物の重みで沈みます。荷重は<strong>根太＋合板</strong>で受ける、断熱材は隙間を埋めるのが鉄則。</p>
+          </div>
+        </div>
+
+        <!-- 電気の仮配線 -->
+        <div class="card-chunky bg-white p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-coral border-2 border-navy grid place-items-center"><i class="ri-plug-line text-xl text-white"></i></div>
+            <div>
+              <div class="font-accent text-[10px] tracking-widest text-coral">PRE-WIRING</div>
+              <h4 class="font-display font-black text-xl text-navy">電気の仮配線</h4>
+            </div>
+          </div>
+          <p class="text-sm text-navy/75 mb-4">床を閉じる前に、<strong>9箇所の予定位置まで配線（or 空配管）</strong>を通しておく。後から通すと壁・床・天井をもう一度開ける羽目に。</p>
+          <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">① サブバッテリー位置</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">② 分電盤・主スイッチ</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">③ LED天井（6灯前後）</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">④ USB・AC コンセント</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">⑤ 冷蔵庫電源</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">⑥ インバーター位置</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">⑦ FFヒーター制御</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30">⑧ ソーラー引き込み</div>
+            <div class="px-3 py-2 rounded-lg bg-cream border-2 border-navy/30 col-span-2">⑨ 外部電源インレット</div>
+          </div>
+          <ul class="text-sm text-navy/80 list-disc ml-4 space-y-1">
+            <li>太い電源線はサイドステップ下／フロアサイド</li>
+            <li>根太の間に配線溝と<strong>点検口</strong>を確保</li>
+            <li>予備配管（CD管）を1本入れておくと将来追加が楽</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 結露・水抜き：HiAce固有の落とし穴 -->
+    <!-- ===================== -->
+    <div class="mb-14 reveal">
+      <div class="flex items-baseline gap-3 mb-5">
+        <span class="font-accent text-[11px] tracking-[0.22em] text-coral">PRACTICE 02</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl text-navy">結露と水抜き、HiAce固有の落とし穴</h3>
+      </div>
+      <p class="text-navy/75 mb-6 max-w-3xl">断熱だけで結露は消えません。<strong>断熱＋換気＋水の逃げ道</strong> がセット。商用ベースのハイエースには「水が入る前提で抜く穴」が複数あり、これを塞ぐと深刻なサビ→車体寿命直撃に。</p>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card-chunky-flat p-5">
+          <div class="w-12 h-12 rounded-xl bg-ocean border-2 border-navy grid place-items-center mb-3"><i class="ri-drop-line text-xl text-navy"></i></div>
+          <div class="font-display font-black text-navy text-base mb-1">① 冷たい鉄板に触れさせない</div>
+          <p class="text-xs text-navy/75">暖かく湿った空気が冷えた鉄板に触れた瞬間に結露。<strong>側面・天井・床は鉄板に直接室内空気が触れないよう連続した断熱層</strong>を作る。</p>
+        </div>
+        <div class="card-chunky-flat p-5">
+          <div class="w-12 h-12 rounded-xl bg-sun border-2 border-navy grid place-items-center mb-3"><i class="ri-windy-line text-xl text-navy"></i></div>
+          <div class="font-display font-black text-navy text-base mb-1">② 湿気を車内に溜めない</div>
+          <p class="text-xs text-navy/75">就寝中は人の呼気で湿度上昇。<strong>小窓を1cm開ける・換気扇を弱で常時運転・濡れ物は車外</strong>。除湿剤だけに頼ると吸湿後にむしろ放湿源に。</p>
+        </div>
+        <div class="card-chunky-flat p-5">
+          <div class="w-12 h-12 rounded-xl bg-coral border-2 border-navy grid place-items-center mb-3"><i class="ri-error-warning-line text-xl text-white"></i></div>
+          <div class="font-display font-black text-navy text-base mb-1">③ 水抜き穴を塞がない</div>
+          <p class="text-xs text-navy/75">ドア下・側面下部・床端の<strong>水抜き穴は絶対に塞がない</strong>。テープ・断熱材・吸水材の詰め込みでサビ事故多発。施工後に下から確認を。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 実測：成果を残す -->
+    <!-- ===================== -->
+    <div class="mb-14 reveal">
+      <div class="flex items-baseline gap-3 mb-5">
+        <span class="font-accent text-[11px] tracking-[0.22em] text-coral">PRACTICE 03</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl text-navy">施工効果を<span class="highlight">「実測」</span>で残す</h3>
+      </div>
+      <p class="text-navy/75 mb-6 max-w-3xl">「効いてる気がする」では設計に活きません。施工前後でデータを取ると、追加施工の判断もSNS発信も全部できるようになります。</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card-chunky bg-white p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center"><i class="ri-temp-hot-line text-xl text-white"></i></div>
+            <h4 class="font-display font-black text-navy">温度ロガーで断熱効果</h4>
+          </div>
+          <ul class="text-sm text-navy/80 space-y-1.5 list-disc ml-4">
+            <li>晴天日／同じ駐車場所／同じ時間帯／窓は閉</li>
+            <li>車内中央に温度ロガー、5〜10分間隔で記録</li>
+            <li>最低1〜2時間（夏は4時間以上推奨）</li>
+            <li>比較指標：<strong>最高温度／上昇スピード／夜間冷え方</strong></li>
+          </ul>
+        </div>
+        <div class="card-chunky bg-white p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-ocean border-2 border-navy grid place-items-center"><i class="ri-volume-up-line text-xl text-navy"></i></div>
+            <h4 class="font-display font-black text-navy">スマホ騒音計で制振効果</h4>
+          </div>
+          <ul class="text-sm text-navy/80 space-y-1.5 list-disc ml-4">
+            <li>高速80km/h・100km/hで定速走行</li>
+            <li>運転席耳元／セカンド／荷室／ベッド位置で測定</li>
+            <li>雨の日は天井の制振効果を測れる</li>
+            <li>絶対値より<strong>施工前後の差</strong>として読む</li>
+          </ul>
+          <div class="mt-3 p-3 rounded-lg bg-cream text-xs text-navy/80 border border-navy/15">
+            <strong>事例：</strong> 制振＋吸音施工で約 <strong>10dB</strong> の低減が報告される例も。10dB ＝体感で「音量が半分」。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 失敗パターン6種 -->
+    <!-- ===================== -->
+    <div class="mb-14 reveal">
+      <div class="flex items-baseline gap-3 mb-5">
+        <span class="font-accent text-[11px] tracking-[0.22em] text-coral">PRACTICE 04</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl text-navy">HiAce DIYで多い、<span class="highlight-coral">6つの失敗</span></h3>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">① 脱脂不足で剥がれる</div>
+          <p class="text-xs text-navy/75">天井で剥がれると最悪。<strong>パーツクリーナー＋シリコンオフ＋アルコール</strong>の三段拭き上げ、ローラー圧着で防げる。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">② グラスウールを裸詰め</div>
+          <p class="text-xs text-navy/75">湿気を吸って結露・カビ・サビの3点セット。使うなら<strong>防湿フィルムで包む＋下が開いた空間に詰めない</strong>。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">③ 配線ルートを決めずに床を閉じる</div>
+          <p class="text-xs text-navy/75">床を開け直すコストが想像以上。9箇所の予定位置を確定してから本固定。<strong>空配管</strong>を1本入れておくと未来の自分が救われる。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">④ 水抜き穴を塞ぐ</div>
+          <p class="text-xs text-navy/75">ドア・側面下部の純正穴をテープや断熱材で覆うとサビ事故。<strong>施工後は下から目視確認</strong>。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">⑤ エアバッグ・ハーネス干渉</div>
+          <p class="text-xs text-navy/75">サイドエアバッグ／リアヒーター／純正ハーネス周りは絶対に圧着・挟み込み禁止。<strong>事前にサービスマニュアル確認</strong>。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#fff;">
+          <div class="font-black text-navy mb-1">⑥ 重くしすぎる</div>
+          <p class="text-xs text-navy/75">制振材ベタ貼り＋断熱厚盛りで車両重量が増え、燃費・積載・走行性能に直撃。<strong>必要な場所に効率よく</strong>が鉄則。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 工具・費用・時間 -->
+    <!-- ===================== -->
+    <div class="reveal">
+      <div class="flex items-baseline gap-3 mb-5">
+        <span class="font-accent text-[11px] tracking-[0.22em] text-coral">PRACTICE 05</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl text-navy">工具・費用・時間の現実</h3>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- 工具 -->
+        <div class="card-chunky bg-white p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-sun border-2 border-navy grid place-items-center"><i class="ri-tools-line text-xl text-navy"></i></div>
+            <h4 class="font-display font-black text-navy">必要工具</h4>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5 text-xs">
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">内張りはがし</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">クリップ外し</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">制振ローラー</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">カッター／ハサミ</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">メジャー</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">マスキングテープ</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">パーツクリーナー</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">シリコンオフ</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">ウエス／手袋</span>
+            <span class="px-2 py-1.5 rounded-md bg-cream border border-navy/20">防塵マスク</span>
+            <span class="px-2 py-1.5 rounded-md bg-coral text-white border border-navy/20 col-span-2 font-black text-center">★ グラスウール使用なら長袖＋ゴム手袋＋保護メガネ</span>
+          </div>
+        </div>
+
+        <!-- 費用 -->
+        <div class="card-chunky bg-white p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center"><i class="ri-money-cny-circle-line text-xl text-white"></i></div>
+            <h4 class="font-display font-black text-navy">材料費目安</h4>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs" style="border-collapse:collapse;">
+              <thead>
+                <tr style="background:#1F2E4D; color:#FFD84D;">
+                  <th class="text-left p-2 font-black">内容</th>
+                  <th class="text-right p-2 font-black">低</th>
+                  <th class="text-right p-2 font-black">標準</th>
+                  <th class="text-right p-2 font-black">厚め</th>
+                </tr>
+              </thead>
+              <tbody class="text-navy">
+                <tr style="background:#FFFBF2;"><td class="p-2">制振材</td><td class="p-2 text-right">1.5万</td><td class="p-2 text-right">3〜5万</td><td class="p-2 text-right">5〜8万</td></tr>
+                <tr><td class="p-2">吸音材</td><td class="p-2 text-right">1〜2万</td><td class="p-2 text-right">2〜4万</td><td class="p-2 text-right">4〜7万</td></tr>
+                <tr style="background:#FFFBF2;"><td class="p-2">断熱材</td><td class="p-2 text-right">1.5万</td><td class="p-2 text-right">3〜6万</td><td class="p-2 text-right">6〜10万</td></tr>
+                <tr><td class="p-2">副資材</td><td class="p-2 text-right">1〜2万</td><td class="p-2 text-right">2〜3万</td><td class="p-2 text-right">3〜5万</td></tr>
+                <tr style="background:#FFD84D;"><td class="p-2 font-black">合計</td><td class="p-2 text-right font-black">5〜10万</td><td class="p-2 text-right font-black">10〜18万</td><td class="p-2 text-right font-black">18〜30万</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-navy/70 mt-2">初回は <strong>10〜15万円</strong> でバランス施工がおすすめ。</p>
+        </div>
+
+        <!-- 時間 -->
+        <div class="card-chunky bg-white p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-ocean border-2 border-navy grid place-items-center"><i class="ri-time-line text-xl text-navy"></i></div>
+            <h4 class="font-display font-black text-navy">作業時間と週末プラン</h4>
+          </div>
+          <ul class="text-sm text-navy/80 space-y-1">
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>内装分解・清掃</span><span class="font-black">4〜6h</span></li>
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>制振施工</span><span class="font-black">8〜12h</span></li>
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>防音・吸音</span><span class="font-black">4〜8h</span></li>
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>断熱施工</span><span class="font-black">6〜10h</span></li>
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>電気の仮配線</span><span class="font-black">4〜8h</span></li>
+            <li class="flex justify-between border-b border-navy/10 pb-1"><span>床下地</span><span class="font-black">6〜10h</span></li>
+            <li class="flex justify-between"><span>床仕上げ＋CF</span><span class="font-black">6〜10h</span></li>
+          </ul>
+          <div class="mt-3 p-3 rounded-lg" style="background:#FF6B5B; color:#fff;">
+            <div class="text-[10px] font-accent tracking-widest mb-1">TOTAL</div>
+            <div class="font-display font-black text-lg">延べ 40〜60時間 ／ 週末 3〜5週</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 05: INTERIOR FINISH -->
+<!-- ============================== -->
+<section id="interior" class="py-20 md:py-28 bg-white border-y-[3px] border-navy relative">
+  <div class="absolute inset-0 dot-pattern opacity-40"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-12 reveal">
+      <span class="chapter-label"><i class="ri-brush-line"></i> CHAPTER 05 / INTERIOR</span>
+      <h2 class="chapter-title text-navy mt-4">
+        内装仕上げ — <span class="gradient-text">完成度の8割はここで決まる</span>
+      </h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        基礎工事が終わったらいよいよ「見える部分」へ。<strong>天井板張り・壁パネル・ベッドキット・LED照明・収納／カーテン</strong> の5工程。週末3〜5回（延べ10〜15日）が目安。
+      </p>
+    </div>
+
+    <!-- 事前準備 -->
+    <div class="card-chunky-flat bg-cream p-6 md:p-8 mb-12 reveal">
+      <div class="flex items-start gap-4 mb-3">
+        <div class="w-12 h-12 bg-coral rounded-2xl border-2 border-navy grid place-items-center flex-shrink-0"><i class="ri-alarm-warning-line text-xl text-white"></i></div>
+        <div>
+          <div class="font-accent text-coral text-xs tracking-widest">BEFORE YOU START</div>
+          <h3 class="font-display font-black text-xl text-navy">絶対に先にやる3つ</h3>
+        </div>
+      </div>
+      <ol class="text-navy/85 list-decimal ml-6 space-y-2 text-sm">
+        <li><strong>電気配線を先に通す</strong> — 天井・壁を塞ぐ前にLEDテープ・ダウンライト・スイッチ類の電線をコルゲートチューブに通して配索。閉鎖後の通線は非常に困難。</li>
+        <li><strong>エビナット／ターンナットを先に打つ</strong> — 壁下地固定用の金具を鉄板に設置。後から穴開けしづらい場所がある。</li>
+        <li><strong>ウォルナット等の塗装は先に済ませる</strong> — 羽目板は取付前に2〜3回塗装。取付後に塗るとムラになる。</li>
+      </ol>
+    </div>
+
+    <!-- 工程1: 天井 -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center mb-16 reveal">
+      <div class="lg:col-span-6 chapter-image premium aspect-[4/3]">
+        <img src="assets/images/camper/camper_interior_popup_roof%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="杉羽目板の天井" class="w-full h-full object-cover">
+        <span class="cinema-caption"><span class="dot"></span> CEILING / 杉羽目板</span>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="step-chip">01</div>
+          <h3 class="font-display font-black text-2xl text-navy">天井板張り</h3>
+        </div>
+        <p class="text-navy/75 mb-4">ハイエース天井は約3.5㎡と室内で最大面積。内装の印象を左右する重要パーツ。杉羽目板（節なし）が定番で、とどまつ・合板も候補。</p>
+        <ol class="process-list text-navy/85 text-sm">
+          <li>天井内フレーム位置をマスキングテープでマーキング</li>
+          <li>取付前に水性ステインで全面2〜3回塗装＋#240やすり</li>
+          <li>車体中心線に平行に1枚目を設置（基準線）</li>
+          <li>本実加工の溝を噛み合わせながら4×19mmサラビスで固定</li>
+          <li>両端カーブ部はジグソーでカット調整、トリム／幕板で隠す</li>
+          <li>照明穴はホールソーで開け、通線済み配線を引き出す</li>
+        </ol>
+        <div class="flex gap-3 mt-4">
+          <span class="kpi-box"><i class="ri-time-line"></i> 1〜1.5日</span>
+          <span class="kpi-box" style="background:#FFD84D; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 4,000〜11,000円</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工程2: 壁 -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center mb-16 reveal">
+      <div class="lg:col-span-6 order-2 lg:order-1">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="step-chip step-chip-coral">02</div>
+          <h3 class="font-display font-black text-2xl text-navy">壁パネル（サイドパネル）</h3>
+        </div>
+        <p class="text-navy/75 mb-4">スライドドア側・ホイールハウス上・ピラー部分など<strong>複雑な形状への対応</strong>が必要。ダンボールで型紙を作るのが一番時間のかかる作業。</p>
+        <div class="overflow-x-auto mb-4">
+          <table class="table-chunky text-xs">
+            <thead><tr><th>方法</th><th>難易度</th><th>特徴</th></tr></thead>
+            <tbody>
+              <tr><td>エビナット＋ボルト</td><td>★★★</td><td>取外可・強固</td></tr>
+              <tr><td>ターンナット</td><td>★★</td><td>純正穴活用</td></tr>
+              <tr><td>両面テープ＋ボンド</td><td>★</td><td>剥がれリスク</td></tr>
+              <tr><td>内張りクリップ</td><td>★</td><td>強度低め</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex gap-3">
+          <span class="kpi-box"><i class="ri-time-line"></i> 2〜3日</span>
+          <span class="kpi-box" style="background:#FFD84D; color:#1F2E4D;"><i class="ri-money-cny-circle-line"></i> 約20,000円</span>
+        </div>
+      </div>
+      <div class="lg:col-span-6 chapter-image premium aspect-[4/3] order-1 lg:order-2">
+        <img src="assets/images/camper/ai/step-wall.jpg" alt="壁パネル" class="w-full h-full object-cover">
+        <span class="cinema-caption"><span class="dot"></span> WALL / サイドパネル</span>
+      </div>
+    </div>
+
+    <!-- 工程3: ベッド -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center mb-16 reveal">
+      <div class="lg:col-span-6 chapter-image premium aspect-[4/3]">
+        <img src="assets/images/camper/camper_interior_bed_area%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="ベッドキット" class="w-full h-full object-cover">
+        <span class="cinema-caption"><span class="dot"></span> BED / 常設フラット</span>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="step-chip step-chip-ocean">03</div>
+          <h3 class="font-display font-black text-2xl text-navy">ベッドキット（木材フレーム）</h3>
+        </div>
+        <p class="text-navy/75 mb-4">ラゲッジ部（セカンドシート後方）はフラット展開時 約1,900×1,400mm。成人男性が足を伸ばして就寝可能。<strong>2×4材＋構造用合板</strong> が初心者ベスト。</p>
+        <ul class="process-list text-navy/85 text-sm">
+          <li>ダンボール型紙で現物合わせ（リアヒーター／タイヤハウスの出っ張り注意）</li>
+          <li>ホームセンターのカットサービス（1カット50〜100円）</li>
+          <li>12mm合板はたわむので垂木補強 or 15mm合板</li>
+          <li>ウレタンスポンジ＋ビニールレザーをタッカーで固定</li>
+          <li>鋼製束・L字金具で根太にビス固定（走行中のガタつき防止）</li>
+        </ul>
+        <div class="flex gap-3 mt-4">
+          <span class="kpi-box"><i class="ri-time-line"></i> 2〜3日</span>
+          <span class="kpi-box" style="background:#FF6B5B; color:#fff;"><i class="ri-money-cny-circle-line"></i> 15,000〜30,000円</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工程4 & 5: LED・収納 -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8 reveal-stagger">
+      <div class="card-chunky bg-white overflow-hidden">
+        <div class="aspect-[4/3] relative">
+          <img src="assets/images/camper/camper_interior_dining%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="車内のLED照明とダイネット" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="step-chip step-chip-grass" style="width:48px;height:48px;font-size:1.25rem;">04</div>
+            <h3 class="font-display font-black text-xl text-navy">LED照明の配線と取付</h3>
+          </div>
+          <p class="text-sm text-navy/75 mb-3">12V・3W・外径68mmが汎用。<strong>Ra90以上の高演色タイプ</strong>にすると食事が美味しく見える。ホールソー68mm→配線→圧着スリーブ＋収縮チューブ→点灯確認→本固定。</p>
+          <div class="text-xs text-navy/70">
+            <strong>照明6灯の合計</strong> ≈ 5,000〜10,000円／所要時間 0.5〜1日
+          </div>
+        </div>
+      </div>
+      <div class="card-chunky bg-white overflow-hidden">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="step-chip step-chip-peach" style="width:48px;height:48px;font-size:1.25rem;">05</div>
+            <h3 class="font-display font-black text-xl text-navy">収納・棚・カーテン</h3>
+          </div>
+          <ul class="text-sm text-navy/80 list-disc ml-4 space-y-2">
+            <li><strong>ラゲッジボード／上部棚</strong>：L字アングルをエビナット固定、ラワン合板9mmを渡す方式（5,000〜10,000円）</li>
+            <li><strong>仕切りカーテン</strong>：突っ張り棒式の伸縮レール2本（5,000〜7,000円）＋断熱ライナー</li>
+            <li><strong>小物収納</strong>：アイアンバー・有孔ボード・木製ボックス等100均活用（1,000〜6,600円）</li>
+          </ul>
+        </div>
+        <div class="px-6 pb-6">
+          <div class="kpi-box mt-3"><i class="ri-time-line"></i> 1日</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ステップ3費用まとめ -->
+    <div class="card-chunky-flat bg-sun p-6 md:p-8 reveal">
+      <h3 class="font-display font-black text-xl md:text-2xl text-navy mb-4"><i class="ri-calculator-line"></i> 内装仕上げ 全体費用まとめ</h3>
+      <div class="overflow-x-auto">
+        <table class="table-chunky text-sm">
+          <thead><tr><th>工程</th><th>DIY費用</th><th>所要時間</th></tr></thead>
+          <tbody>
+            <tr><td>天井板張り</td><td>4,000〜11,000円</td><td>1〜1.5日</td></tr>
+            <tr><td>壁パネル（両側）</td><td>15,000〜25,000円</td><td>2〜3日</td></tr>
+            <tr><td>ベッドキット</td><td>15,000〜30,000円</td><td>2〜3日</td></tr>
+            <tr><td>LED照明（6灯）</td><td>5,000〜10,000円</td><td>0.5〜1日</td></tr>
+            <tr><td>収納・棚・カーテン</td><td>5,000〜15,000円</td><td>1日</td></tr>
+            <tr style="background:#FFF4D4;"><td><strong>合計</strong></td><td><strong>44,000〜91,000円</strong></td><td><strong>7〜10日</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-navy/75 text-sm mt-3">※ 工具（インパクト・丸ノコ等）新規購入は+15,000〜40,000円。市販の完成ベッドキットだけでも<strong>約15万円前後</strong>するため、DIYで大幅コスト削減可能。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 06: FURNITURE & GALLEY -->
+<!-- ============================== -->
+<section id="galley" class="py-20 md:py-28 bg-cream relative">
+  <div class="absolute top-10 right-10 w-64 h-64 bg-ocean/20 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-12 reveal">
+      <span class="chapter-label"><i class="ri-restaurant-line"></i> CHAPTER 06 / FURNITURE</span>
+      <h2 class="chapter-title text-navy mt-4">家具・設備・ギャレー <span class="highlight">（走行中の安全が最優先）</span></h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        見た目より先に「<strong>固定方法・重量・車検・安全性</strong>」を決めてから意匠を進めるのが、やり直しと異音を減らすコツ。
+        初心者には <strong>① 壁・天井の木張り → ② 常設 or 簡易折りたたみベッド → ③ ベッド下収納 → ④ 取り外し式ギャレー</strong> の順がおすすめ。
+      </p>
+    </div>
+
+    <!-- 3パターン -->
+    <div class="grid md:grid-cols-3 gap-5 mb-12 reveal-stagger">
+      <div class="card-chunky-flat p-6">
+        <div class="step-chip-ocean step-chip mb-3">A</div>
+        <h3 class="font-display font-black text-xl text-navy mb-2">常設ベッド＋片側収納</h3>
+        <p class="text-sm text-navy/70">2人車中泊優先。展開が速く収納量も確保しやすい。日常の大物積載は減る。</p>
+      </div>
+      <div class="card-chunky-flat p-6">
+        <div class="step-chip step-chip-coral mb-3">B</div>
+        <h3 class="font-display font-black text-xl text-navy mb-2">折りたたみ＋可搬収納</h3>
+        <p class="text-sm text-navy/70">普段使いと兼用。荷室を空けやすいが、展開・片付けの手間がある。</p>
+      </div>
+      <div class="card-chunky-flat p-6">
+        <div class="step-chip step-chip-grass mb-3">C</div>
+        <h3 class="font-display font-black text-xl text-navy mb-2">スライド式ベッド</h3>
+        <p class="text-sm text-navy/70">荷物整理と就寝を両立。下部収納を活かしやすいが、レール・フロア強度設計が難しい。</p>
+      </div>
+    </div>
+
+    <!-- ギャレー -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center mb-12 reveal">
+      <div class="lg:col-span-6 chapter-image premium aspect-[4/3]">
+        <img src="assets/images/camper/camper_kitchen_area%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="車内ギャレーとシンク" class="w-full h-full object-cover">
+        <span class="cinema-caption"><span class="dot"></span> GALLEY / 木制シンク台</span>
+      </div>
+      <div class="lg:col-span-6">
+        <h3 class="font-display font-black text-2xl text-navy mb-3">ギャレーと簡易キッチン</h3>
+        <p class="text-navy/75 mb-4">初心者は<strong>給水タンク・排水タンク・小型シンク・手動または簡易電動ポンプ</strong>の構成が扱いやすい。最初はユニット化して取り外しできる箱型ギャレーが現実的。</p>
+        <ol class="process-list text-navy/85 text-sm">
+          <li>家具内に給排水タンク置き場を確保</li>
+          <li>天板にホールソーでシンク穴→コーキングで固定</li>
+          <li>給水・排水ホースを接続</li>
+          <li>手動／電動ポンプを組み込む</li>
+          <li>走行中動かないようベルト・仕切りで固定</li>
+          <li>漏水試験と排水臭対策を必ず確認</li>
+        </ol>
+        <div class="flex gap-3 mt-4">
+          <span class="kpi-box"><i class="ri-money-cny-circle-line"></i> 簡易ギャレー 1〜5万円</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 安全原則 -->
+    <div class="card-chunky bg-navy text-white p-6 md:p-8 reveal">
+      <h3 class="font-display font-black text-xl md:text-2xl text-sun mb-4"><i class="ri-shield-check-line"></i> 走行中の家具飛散を防ぐ4原則</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 text-sm">
+          <div class="font-black text-sun mb-1">① 多点固定</div>
+          既存ボルト穴／ターンナットを優先しL字・平金具で床・側面へ複数点固定。
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 text-sm">
+          <div class="font-black text-sun mb-1">② ラッチ付ける</div>
+          扉・引き出しには走行中開かないラッチ or キャッチを必ず。
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 text-sm">
+          <div class="font-black text-sun mb-1">③ 重心は低く</div>
+          上置き収納は最小限。重量物は床近くに。軸重バランスも意識。
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 text-sm">
+          <div class="font-black text-sun mb-1">④ 角を面取り</div>
+          乗員接触時の怪我を減らす。鋭利な切り口はエッジガードで保護。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- EDITORIAL QUOTE: 走り続けるために -->
+<!-- ============================== -->
+<section class="editorial-quote-section">
+  <div class="bg-photo" style="background-image: url('assets/images/camper/camper_seaside_sunset%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg');"></div>
+  <div class="container mx-auto px-4 relative">
+    <span class="qmark">"</span>
+    <blockquote>
+      家を移動させるのではなく、<br>
+      <span style="color:#FFD84D;">行きたい場所が、いつもそこにある</span>状態にする。
+    </blockquote>
+    <div class="attrib">— ＴrailFusion AI ／ Hiace 200 build notes</div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">5万+</div><div class="l">km on this build</div></div>
+      <div class="stat"><div class="n">47</div><div class="l">prefectures touched</div></div>
+      <div class="stat"><div class="n">120+</div><div class="l">overnight spots</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">hotel night needed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 07: ELECTRICAL -->
+<!-- ============================== -->
+<section id="electrical" class="py-20 md:py-28 bg-navy text-white relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-10"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-sun/15 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-ocean/15 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative">
+    <!-- HERO -->
+    <div class="grid lg:grid-cols-12 gap-8 items-end mb-14 reveal">
+      <div class="lg:col-span-8">
+        <span class="chapter-label" style="background:#FFD84D; color:#1F2E4D;"><i class="ri-flashlight-line"></i> CHAPTER 07 / SUB-BATTERY &amp; ELECTRICAL</span>
+        <h2 class="chapter-title text-white mt-4">
+          サブバッテリー &amp; <span class="text-sun">電装システム</span>
+        </h2>
+        <p class="text-white/80 text-lg mt-4 leading-relaxed max-w-2xl">
+          ハイエースで初めて本格的に組むなら、最初に目指すべきは <strong>「大容量化」ではなく、DC中心・中容量・保護設計が整った安全な電装」</strong>。
+          バッテリー容量より、<strong>系統設計と保護設計の整合</strong>が最優先です。
+        </p>
+      </div>
+      <div class="lg:col-span-4 lg:text-right">
+        <div class="hand-caption" style="color:#FFD84D;">— wire size before watts.</div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 1. 結論：初回おすすめ構成 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">01 · CONCLUSION FIRST</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">初回おすすめ：<span class="text-sun">安全重視ミドル構成</span></h3>
+      </div>
+      <p class="text-white/75 mb-5 max-w-3xl">いきなり300Ah以上・2000W超インバーター・家庭用エアコン運用を狙うより、まずはこの構成。照明・USB・換気・冷蔵庫・PC・スマホ・小型家電はかなり快適に動きます。</p>
+      <div class="grid lg:grid-cols-5 gap-6 items-start">
+        <div class="lg:col-span-3 overflow-x-auto">
+          <table class="table-chunky text-sm" style="background:#fff;">
+            <thead><tr><th>項目</th><th>おすすめ仕様</th></tr></thead>
+            <tbody>
+              <tr><td><strong>バッテリー</strong></td><td>LiFePO4 12V <strong>200Ah</strong>（BMS・低温充電保護付き）</td></tr>
+              <tr><td><strong>走行充電器</strong></td><td>DC-DC <strong>40A</strong></td></tr>
+              <tr><td><strong>ソーラー</strong></td><td>200W前後</td></tr>
+              <tr><td><strong>MPPT</strong></td><td>20〜30A級</td></tr>
+              <tr><td><strong>インバーター</strong></td><td>純正弦波 <strong>1000W前後</strong></td></tr>
+              <tr><td>DC分電盤</td><td>12Vヒューズ付き</td></tr>
+              <tr><td><strong>主ヒューズ</strong></td><td>バッテリー直後に必須</td></tr>
+              <tr><td>監視</td><td>バッテリーモニターまたはBluetooth BMS</td></tr>
+              <tr><td>外部100V充電</td><td>将来拡張</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lg:col-span-2 space-y-3">
+          <div class="rounded-2xl p-5" style="background:#FFD84D; color:#1F2E4D; box-shadow:6px 6px 0 #FF6B5B;">
+            <div class="font-accent text-xs tracking-widest text-coral mb-1">THIS IS REALISTIC FOR</div>
+            <div class="font-display font-black text-lg">照明・USB・換気・冷蔵庫・PC・短時間電子レンジ</div>
+          </div>
+          <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.25);">
+            <div class="font-accent text-xs tracking-widest text-coral mb-1">SEPARATE DESIGN</div>
+            <div class="font-display font-black text-sun text-base mb-1">電子レンジ常用・ドライヤー・エアコン</div>
+            <p class="text-white/75 text-xs">インバーター・配線・ヒューズ・バッテリー放電能力が一気に大きくなる。別レベルの設計です。</p>
+          </div>
+          <div class="text-xs text-white/60">※ 空調は <a href="#ff-heater" class="text-sun underline font-bold">FFヒーター後付け</a> ／ <a href="#roof-ac" class="text-sun underline font-bold">ルーフエアコン後付け</a> の BONUS 章を参照。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 2. 一番大事な考え方 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">02 · THE GOLDEN RULE</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">最重要は容量ではなく、<span class="text-sun">この順番</span>。</h3>
+      </div>
+      <div class="rounded-2xl p-6 md:p-8" style="background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.2);">
+        <div class="grid md:grid-cols-5 gap-3">
+          <div class="rounded-xl p-4 text-center" style="background:#FFD84D; color:#1F2E4D;">
+            <div class="font-accent text-[10px] tracking-widest mb-1">STEP 1</div>
+            <div class="font-display font-black text-sm leading-tight">何を使うか</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#FF6B5B; color:#fff;">
+            <div class="font-accent text-[10px] tracking-widest mb-1">STEP 2</div>
+            <div class="font-display font-black text-sm leading-tight">何W必要か</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#4ECDC4; color:#1F2E4D;">
+            <div class="font-accent text-[10px] tracking-widest mb-1">STEP 3</div>
+            <div class="font-display font-black text-sm leading-tight">何A流れるか</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#7DD87A; color:#1F2E4D;">
+            <div class="font-accent text-[10px] tracking-widest mb-1">STEP 4</div>
+            <div class="font-display font-black text-sm leading-tight">配線がその電流に耐えるか</div>
+          </div>
+          <div class="rounded-xl p-4 text-center" style="background:#E85A9A; color:#fff;">
+            <div class="font-accent text-[10px] tracking-widest mb-1">STEP 5</div>
+            <div class="font-display font-black text-sm leading-tight">ヒューズで配線を守れているか</div>
+          </div>
+        </div>
+        <div class="mt-5 grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="font-black text-sun text-sm mb-2">同じ電力でも12V系は電流が大きい</div>
+            <div class="overflow-x-auto">
+              <table class="text-xs w-full" style="color:#fff;">
+                <thead>
+                  <tr style="background:rgba(255,255,255,0.12);">
+                    <th class="text-left p-2 font-black" style="color:#FFD84D;">機器</th>
+                    <th class="text-left p-2 font-black" style="color:#FFD84D;">消費電力</th>
+                    <th class="text-left p-2 font-black" style="color:#FFD84D;">12V側の電流</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-2">LED照明</td><td class="p-2">10W</td><td class="p-2">約 1A</td></tr>
+                  <tr><td class="p-2">冷蔵庫</td><td class="p-2">40W</td><td class="p-2">約 4A</td></tr>
+                  <tr><td class="p-2">ノートPC</td><td class="p-2">60W</td><td class="p-2">約 6A</td></tr>
+                  <tr><td class="p-2">電子レンジ</td><td class="p-2">1000W</td><td class="p-2" style="color:#FF6B5B;"><strong>約 90〜100A</strong></td></tr>
+                  <tr><td class="p-2">ドライヤー</td><td class="p-2">1200W</td><td class="p-2" style="color:#FF6B5B;"><strong>約 110〜130A</strong></td></tr>
+                  <tr><td class="p-2">2000Wインバーター最大</td><td class="p-2">2000W</td><td class="p-2" style="color:#FF6B5B;"><strong>180〜200A以上</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="rounded-xl p-5" style="background:#1F2E4D; border:2px solid #FF6B5B;">
+            <div class="font-accent text-[10px] tracking-widest text-coral mb-1">CRITICAL</div>
+            <div class="font-display font-black text-sun text-lg mb-2">1000W超 = 家庭用100Vの感覚と全く違う世界</div>
+            <p class="text-white/80 text-sm leading-relaxed">太いケーブル・大容量ヒューズ・強い圧着・短い配線が必要。製品マニュアル記載の <strong>DCケーブルサイズとヒューズサイズ</strong> を必ず確認してください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 3. 電力リスト & 容量計算 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">03 · POWER BUDGET</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">まず作るべき、<span class="text-sun">1日の電力リスト</span>。</h3>
+      </div>
+      <p class="text-white/75 mb-5 max-w-3xl">使いたい家電を全部書き出して、1日のWhを積み上げる。これがバッテリー容量を決める唯一の出発点です。</p>
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 overflow-x-auto">
+          <table class="table-chunky text-sm" style="background:#fff;">
+            <thead><tr><th>機器</th><th>消費W</th><th>使用時間</th><th>1日 Wh</th><th>AC/DC</th></tr></thead>
+            <tbody>
+              <tr><td>LED照明</td><td>10W</td><td>5h</td><td>50Wh</td><td>DC</td></tr>
+              <tr><td>換気扇</td><td>20W</td><td>6h</td><td>120Wh</td><td>DC</td></tr>
+              <tr><td>冷蔵庫</td><td>30W</td><td>24h</td><td>720Wh</td><td>DC</td></tr>
+              <tr><td>スマホ充電</td><td>20W</td><td>3h</td><td>60Wh</td><td>USB</td></tr>
+              <tr><td>PC充電</td><td>65W</td><td>4h</td><td>260Wh</td><td>AC/DC</td></tr>
+              <tr><td>電子レンジ</td><td>1000W</td><td>0.2h</td><td>200Wh</td><td>AC</td></tr>
+              <tr style="background:#FFF4D4;"><td><strong>合計</strong></td><td colspan="2"></td><td><strong>約 1,410Wh</strong></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lg:col-span-5 space-y-4">
+          <div class="rounded-2xl p-5" style="background:#FFD84D; color:#1F2E4D; box-shadow:6px 6px 0 #1F2E4D;">
+            <div class="font-accent text-xs tracking-widest text-coral mb-2">FORMULA</div>
+            <pre style="font-family:'Courier New', ui-monospace, monospace; font-weight:800; font-size:0.85rem; margin:0; white-space:pre-wrap;">必要Ah ＝ Wh ÷ 電圧V
+        ÷ 放電率 ÷ 効率</pre>
+          </div>
+          <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.25);">
+            <div class="font-accent text-xs tracking-widest text-coral mb-2">WORKED EXAMPLE — 1,500Wh/日</div>
+            <div class="text-white/85 text-sm leading-loose">
+              1500Wh ÷ 12.8V ÷ 0.8 ÷ 0.9<br>
+              = <span class="font-black text-sun text-xl">約 163Ah</span>
+            </div>
+            <div class="mt-3 text-xs text-white/70">→ 余裕を持って <strong style="color:#FFD84D;">200Ahクラス</strong> が現実解。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 4. LiFePO4 選び方 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">04 · LITHIUM IRON PHOSPHATE</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">LiFePO4の<span class="text-sun">必須チェック7項目</span>。</h3>
+      </div>
+      <p class="text-white/75 mb-5 max-w-3xl">安いLiFePO4を買えばよいわけではありません。BMSの品質と保護機能で使い勝手と寿命が大きく変わります。</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">① BMS内蔵</div>
+          <p class="text-white/75 text-xs">過充電・過放電・過電流から本体を保護。これがない製品は除外。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">② 低温充電保護</div>
+          <p class="text-white/75 text-xs">多くのLiFePO4は <strong>0℃以下で充電NG</strong>。冬の車中泊なら必須機能。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">③ 連続放電電流</div>
+          <p class="text-white/75 text-xs">インバーター運用の可否に直結。1000W使うなら100A以上が安心。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">④ 最大放電電流</div>
+          <p class="text-white/75 text-xs">電子レンジ・ドライヤーの突入電流に耐えるか。瞬間値で見る。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">⑤ Bluetooth監視</div>
+          <p class="text-white/75 text-xs">残量・電流・温度をスマホで確認可能だと運用が劇的に楽になる。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">⑥ 並列可否</div>
+          <p class="text-white/75 text-xs">100Ah×2で200Ah化する場合に必須。仕様書を必ず確認。</p>
+        </div>
+        <div class="rounded-2xl p-5 md:col-span-2 lg:col-span-3" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="text-sun font-display font-black text-base mb-1">⑦ 確実な固定</div>
+          <p class="text-white/75 text-xs">バッテリーは事故時に重量物の凶器になります。金具・ベルト・固定台で前後左右上下すべての方向に動かないこと。「置いただけ」は絶対NG。</p>
+        </div>
+      </div>
+      <!-- 低温警告 -->
+      <div class="rounded-2xl p-5" style="background:#FFFBF2; color:#1F2E4D; box-shadow:6px 6px 0 #FF6B5B;">
+        <div class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center flex-shrink-0"><i class="ri-snowy-line text-xl text-white"></i></div>
+          <div>
+            <div class="font-display font-black text-navy">寒冷地で使うなら：低温充電保護 or ヒーター内蔵モデル</div>
+            <p class="text-navy/80 text-sm mt-1">充電温度 0〜50℃／放電温度 -20〜60℃ のレンジが一般的。スキー場・標高の高い場所・雪中泊なら、<strong>低温充電保護付きBMS</strong> または <strong>自己加温ヒーター付きLiFePO4</strong> を強く推奨。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 5. DC-DC走行充電器 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">05 · DC-DC CHARGER</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">走行充電器は <span class="text-sun">DC-DC</span> 一択。</h3>
+      </div>
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 overflow-x-auto">
+          <table class="table-chunky text-sm" style="background:#fff;">
+            <thead><tr><th>出力</th><th>向いている構成</th><th>備考</th></tr></thead>
+            <tbody>
+              <tr><td>20A</td><td>100Ah・ライト構成</td><td>長距離移動派</td></tr>
+              <tr><td>30A</td><td>100〜200Ah・軽め</td><td>—</td></tr>
+              <tr style="background:#FFF4D4;"><td><strong>40A</strong></td><td><strong>200Ah・標準</strong></td><td><strong>初回バランス◎</strong></td></tr>
+              <tr><td>50〜60A</td><td>200〜300Ah・大きめ</td><td>太径ケーブル必須</td></tr>
+              <tr><td>60A超</td><td>業務向け</td><td>オルタネーター負荷／配線設計が難しくなる</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lg:col-span-5 space-y-4">
+          <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.25);">
+            <div class="font-display font-black text-sun mb-2">なぜDC-DCなのか</div>
+            <p class="text-white/80 text-sm">現代のハイエースは電圧制御車。単純なアイソレーターでは充電が安定しません。<strong>昇降圧と充電制御</strong>を内蔵したDC-DC型が、LiFePO4を確実に満充電にできる唯一の選択肢です。</p>
+          </div>
+          <div class="rounded-2xl p-5" style="background:#1F2E4D; border:2px solid #FFD84D;">
+            <div class="font-accent text-[10px] tracking-widest text-coral mb-1">CAUTION</div>
+            <p class="text-white/85 text-sm">大出力ほど充電は速いが、メインバッテリー側の配線・ヒューズ・オルタネーター負荷・熱の問題が大きくなる。「大きい＝良い」ではない。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 6. ソーラー & MPPT -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">06 · SOLAR + MPPT</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">ソーラーは主役ではなく、<span class="text-sun">日中の消費を補うもの</span>。</h3>
+      </div>
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 chapter-image premium aspect-[4/3]">
+          <img src="assets/images/camper/camper_solar_panels_roof%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="ルーフソーラーパネル" class="w-full h-full object-cover">
+          <span class="cinema-caption"><span class="dot"></span> ROOFTOP / 200W solar</span>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="grid sm:grid-cols-2 gap-3 mb-5">
+            <div class="rounded-2xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+              <div class="font-black text-sun">100W</div>
+              <div class="text-white/75 text-xs mt-1">補助充電・冷蔵庫補助</div>
+            </div>
+            <div class="rounded-2xl p-4" style="background:#FFD84D; color:#1F2E4D;">
+              <div class="font-black">200W ★</div>
+              <div class="text-xs mt-1">標準的、かなり実用的</div>
+            </div>
+            <div class="rounded-2xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+              <div class="font-black text-sun">300W</div>
+              <div class="text-white/75 text-xs mt-1">夏の冷蔵庫・換気・連泊向き</div>
+            </div>
+            <div class="rounded-2xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+              <div class="font-black text-sun">400W＋</div>
+              <div class="text-white/75 text-xs mt-1">ルーフ面積・重量・配線が課題</div>
+            </div>
+          </div>
+          <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.25);">
+            <div class="font-display font-black text-sun mb-2">PWMよりMPPTを選ぶ理由</div>
+            <p class="text-white/80 text-sm mb-3">部分日陰・ルーフ温度上昇・冬場の低日射でも変換効率が大きく落ちにくい。<strong>入力電圧上限／開放電圧Voc（冬は上がる）／防水グランド／パネル裏通気／前後ヒューズ</strong>に注意。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 7. インバーター -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">07 · INVERTER</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">インバーターは <span class="text-sun">純正弦波</span>、初回は1000W前後。</h3>
+      </div>
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 overflow-x-auto">
+          <table class="table-chunky text-sm" style="background:#fff;">
+            <thead><tr><th>出力</th><th>使えるもの</th><th>12V側 電流目安</th></tr></thead>
+            <tbody>
+              <tr><td>300W</td><td>PC・カメラ充電・小型家電</td><td>約 25A</td></tr>
+              <tr><td>600W</td><td>小型家電・軽めのAC機器</td><td>約 50A</td></tr>
+              <tr style="background:#FFF4D4;"><td><strong>1000W</strong></td><td><strong>小型電子レンジ一部・複数同時充電</strong></td><td><strong>約 85A</strong></td></tr>
+              <tr><td>1500W</td><td>電子レンジが現実的に使える</td><td>約 130A</td></tr>
+              <tr><td>2000W</td><td>ドライヤー・ケトル・電子レンジ常用</td><td style="color:#FF6B5B;"><strong>180〜220A</strong></td></tr>
+              <tr><td>3000W</td><td>家庭用エアコン等（設計難度極高）</td><td style="color:#FF6B5B;"><strong>250A超</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lg:col-span-5 space-y-3">
+          <div class="rounded-2xl p-5" style="background:#FFD84D; color:#1F2E4D; box-shadow:6px 6px 0 #1F2E4D;">
+            <div class="font-display font-black mb-2">疑似正弦波はNG</div>
+            <p class="text-sm">安いが電子レンジ・モーター・充電器・精密機器で相性問題。<strong>純正弦波（pure sine wave）</strong>を選ぶ。</p>
+          </div>
+          <div class="rounded-2xl p-5" style="background:#1F2E4D; border:2px solid #FF6B5B;">
+            <div class="font-accent text-[10px] tracking-widest text-coral mb-1">2000W級の意味</div>
+            <p class="text-white/85 text-sm">12V側で約180A以上が流れる領域。<strong>ケーブル・端子・圧着・ヒューズ・バッテリーBMSの全てが大電流対応</strong>でないと危険です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 8. 設置場所 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">08 · PLACEMENT</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">ハイエースの<span class="text-sun">どこに置くか</span>。</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="overflow-x-auto">
+          <table class="table-chunky text-sm" style="background:#fff;">
+            <thead><tr><th>場所</th><th>メリット</th><th>注意</th></tr></thead>
+            <tbody>
+              <tr><td>セカンドシート下</td><td>重心が低い／配線しやすい</td><td>スライド／足元干渉</td></tr>
+              <tr><td>ベッド下収納</td><td>容量を取りやすい</td><td>熱・メンテ性</td></tr>
+              <tr><td>荷室側ボックス</td><td>電装盤を作りやすい</td><td>配線距離が長い</td></tr>
+              <tr><td>運転席／助手席下</td><td>省スペース</td><td>車種・仕様で制約</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">低い位置</div>
+            <div class="text-white/70 text-xs mt-1">重心を上げない</div>
+          </div>
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">確実な固定</div>
+            <div class="text-white/70 text-xs mt-1">急ブレーキ・事故対策</div>
+          </div>
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">熱がこもらない</div>
+            <div class="text-white/70 text-xs mt-1">BMS・インバーター保護</div>
+          </div>
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">水がかからない</div>
+            <div class="text-white/70 text-xs mt-1">ショート防止</div>
+          </div>
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">メンテできる</div>
+            <div class="text-white/70 text-xs mt-1">ヒューズ交換・点検</div>
+          </div>
+          <div class="rounded-xl p-4" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+            <div class="font-black text-sun text-sm">配線を短く</div>
+            <div class="text-white/70 text-xs mt-1">電圧降下・発熱低減</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 9. 基本構成図 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">09 · SYSTEM DIAGRAM</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">基本構成図 — <span class="text-sun">バッテリー直結はしない</span>。</h3>
+      </div>
+      <p class="text-white/75 mb-5 max-w-3xl">全てをバッテリー端子に直接つながない。<strong>主ヒューズ → メインスイッチ → バスバー → 各機器</strong> の流れで整理すると、保守性と安全性が一気に上がります。</p>
+      <div class="cinema-frame" style="aspect-ratio: 1536 / 1024; border-radius: 22px; background: #fff;">
+        <img src="assets/images/camper/hiace-sub-battery-system-guide.png" alt="ハイエースのサブバッテリーシステム実践ガイド（初回おすすめ構成）：基本構成図／電力計算／重要ポイント／3構成比較／取付ステップ／最終チェックリスト" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+    <!-- ===================== -->
+    <!-- 10. ヒューズ・配線 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FF6B5B;">10 · MOST CRITICAL</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">ヒューズは <span class="text-sun">「機器」</span>ではなく <span class="text-sun">「配線」</span>を守る。</h3>
+      </div>
+      <p class="text-white/80 mb-6 max-w-3xl text-lg">
+        <strong>100A流れる機器があるから100Aヒューズ、ではありません。</strong>
+        正しくは「その配線が安全に流せる電流以下のヒューズを入れる」。
+        細い配線に大きなヒューズを入れると、ショート時にヒューズが切れる前に <span style="color:#FF6B5B;">配線が焼けます</span>。
+      </p>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- ヒューズを入れる場所 -->
+        <div>
+          <h4 class="font-display font-black text-sun text-lg mb-3">ヒューズを必ず入れる場所</h4>
+          <div class="overflow-x-auto">
+            <table class="table-chunky text-sm" style="background:#fff;">
+              <thead><tr><th>場所</th><th>必要性</th></tr></thead>
+              <tbody>
+                <tr style="background:#FFE5E2;"><td><strong>★ メインバッテリー＋直後</strong></td><td><strong>必須</strong></td></tr>
+                <tr style="background:#FFE5E2;"><td><strong>★ サブバッテリー＋直後</strong></td><td><strong>必須</strong></td></tr>
+                <tr><td>DC-DC 入力／出力</td><td>必須</td></tr>
+                <tr><td>MPPT 入力／出力</td><td>推奨〜必須</td></tr>
+                <tr><td>インバーター入力</td><td>必須</td></tr>
+                <tr><td>DC分電盤 各回路</td><td>必須</td></tr>
+                <tr><td>FFヒーター電源</td><td>必須</td></tr>
+                <tr><td>冷蔵庫電源</td><td>必須</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- 配線サイズ -->
+        <div>
+          <h4 class="font-display font-black text-sun text-lg mb-3">配線サイズの目安</h4>
+          <div class="overflow-x-auto">
+            <table class="table-chunky text-sm" style="background:#fff;">
+              <thead><tr><th>回路</th><th>電流</th><th>配線</th></tr></thead>
+              <tbody>
+                <tr><td>LED／USB</td><td>5〜15A</td><td>1.25〜2sq</td></tr>
+                <tr><td>冷蔵庫</td><td>5〜15A</td><td>2〜3.5sq</td></tr>
+                <tr><td>FFヒーター</td><td>10〜20A</td><td>2〜5.5sq</td></tr>
+                <tr><td>DC-DC 20A</td><td>20〜30A</td><td>5.5〜8sq</td></tr>
+                <tr style="background:#FFF4D4;"><td><strong>DC-DC 40A</strong></td><td>40〜60A</td><td><strong>14sq以上</strong></td></tr>
+                <tr><td>DC-DC 60A</td><td>60〜80A</td><td>22sq以上</td></tr>
+                <tr><td>1000W インバーター</td><td>約 100A</td><td>22〜38sq</td></tr>
+                <tr style="background:#FFE5E2;"><td><strong>2000W インバーター</strong></td><td>180〜220A</td><td><strong>38〜60sq</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-white/60 text-xs mt-2">※ 最終判断は必ず機器マニュアルと電線仕様で確認。後部まで長く引く場合は電圧降下も問題に。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 11. 3構成 (LIGHT/MIDDLE/HEAVY) -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">11 · THREE TIERS</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">用途別の <span class="text-sun">おすすめ3構成</span>。</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
+        <div class="bg-white text-navy rounded-3xl border-[3px] border-sun p-6" style="box-shadow: 6px 6px 0 #FFD84D;">
+          <div class="font-accent tracking-widest text-xs text-coral">LIGHT</div>
+          <h3 class="font-display font-black text-2xl mt-1 mb-2">ライト構成</h3>
+          <ul class="text-sm space-y-1 mb-3">
+            <li>LiFePO4 <strong>100Ah</strong></li>
+            <li>DC-DC走行充電器 <strong>20〜30A</strong></li>
+            <li>ソーラー <strong>100〜200W</strong></li>
+            <li>純正弦波インバーター 300〜600W</li>
+          </ul>
+          <p class="text-xs text-navy/70 mb-3">週末車中泊・日帰り・電気をあまり使わない人向け。照明・USB・換気・PC・冷蔵庫少しまで。</p>
+          <div><span class="kpi-box">十数万円〜</span></div>
+        </div>
+        <div class="bg-white text-navy rounded-3xl border-[3px] border-coral p-6 relative" style="box-shadow: 6px 6px 0 #FF6B5B;">
+          <div class="absolute -top-3 -right-3 px-3 py-1 rounded-full font-accent text-[10px] tracking-widest" style="background:#FF6B5B; color:#fff;">★ MOST POPULAR</div>
+          <div class="font-accent tracking-widest text-xs text-coral">MIDDLE</div>
+          <h3 class="font-display font-black text-2xl mt-1 mb-2">ミドル構成</h3>
+          <ul class="text-sm space-y-1 mb-3">
+            <li>LiFePO4 <strong>200Ah</strong></li>
+            <li>走行充電器 <strong>40A</strong></li>
+            <li>ソーラー <strong>200〜300W</strong></li>
+            <li>インバーター <strong>1000〜1500W</strong></li>
+          </ul>
+          <p class="text-xs text-navy/70 mb-3">一番おすすめ。ハイエースDIYの現実解。冷蔵庫・PC・照明・換気・短時間レンジまで快適。</p>
+          <div><span class="kpi-box" style="background:#FF6B5B; color:#fff;">30〜60万円</span></div>
+        </div>
+        <div class="bg-white text-navy rounded-3xl border-[3px] border-[#E85A9A] p-6" style="box-shadow: 6px 6px 0 #E85A9A;">
+          <div class="font-accent tracking-widest text-xs text-coral">HEAVY</div>
+          <h3 class="font-display font-black text-2xl mt-1 mb-2">ヘビー構成</h3>
+          <ul class="text-sm space-y-1 mb-3">
+            <li>LiFePO4 <strong>300Ah以上</strong></li>
+            <li>走行充電器 <strong>50〜60A以上</strong></li>
+            <li>ソーラー <strong>300〜500W</strong></li>
+            <li>インバーター <strong>2000W級</strong></li>
+          </ul>
+          <p class="text-xs text-navy/70 mb-3">長期連泊・夏の車中泊・家庭用家電を使いたい人向け。DIY難度と危険度が一気に上がる。</p>
+          <div><span class="kpi-box" style="background:#E85A9A; color:#fff;">50〜100万円＋</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 12. 試験手順 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">12 · COMMISSIONING</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">いきなり全部つながない、<span class="text-sun">5段階の試験</span>。</h3>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="font-accent text-[10px] tracking-widest mb-1" style="color:#FFD84D;">PHASE 01</div>
+          <div class="font-display font-black text-sun mb-2">目視確認</div>
+          <p class="text-white/75 text-xs">極性・ヒューズ容量・端子緩み・被覆傷・金属エッジ接触・通気を全数チェック。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="font-accent text-[10px] tracking-widest mb-1" style="color:#FFD84D;">PHASE 02</div>
+          <div class="font-display font-black text-sun mb-2">無負荷電圧</div>
+          <p class="text-white/75 text-xs">テスターでバッテリー端子・バスバー・DC分電盤・インバーター入力・MPPT出力の極性と電圧を確認。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="font-accent text-[10px] tracking-widest mb-1" style="color:#FFD84D;">PHASE 03</div>
+          <div class="font-display font-black text-sun mb-2">小負荷</div>
+          <p class="text-white/75 text-xs">LED・USBだけ通電。ヒューズが飛ばない／配線発熱なし／電圧降下なし／異臭なし。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="font-accent text-[10px] tracking-widest mb-1" style="color:#FFD84D;">PHASE 04</div>
+          <div class="font-display font-black text-sun mb-2">充電テスト</div>
+          <p class="text-white/75 text-xs">走行充電・MPPTを別々に確認。設定電流／バッテリー温度／BMS履歴／メインバッテリー電圧。</p>
+        </div>
+        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);">
+          <div class="font-accent text-[10px] tracking-widest mb-1" style="color:#FFD84D;">PHASE 05</div>
+          <div class="font-display font-black text-sun mb-2">インバーター</div>
+          <p class="text-white/75 text-xs">小さいAC機器から段階的に。警告／ケーブル発熱／端子発熱／電圧降下／BMS遮断なし。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 13. よくある失敗 -->
+    <!-- ===================== -->
+    <div class="reveal mb-16">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FF6B5B;">13 · COMMON FAILURES</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">先人がやらかした <span class="text-sun">7つの失敗</span>。</h3>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">① 容量だけ大きくする</div>
+          <p class="text-xs text-navy/75">300Ahにしても、配線・充電器・ヒューズ・インバーターが追いついていなければ危険。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">② インバーターを大きくしすぎる</div>
+          <p class="text-xs text-navy/75">2000W＝12V側で180A以上。配線もヒューズもBMSも全部大電流仕様にしないと意味がない。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">③ ヒューズが機器側にしかない</div>
+          <p class="text-xs text-navy/75">バッテリー＋直後の主ヒューズなしは、配線ショート時に大電流が流れ続ける。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">④ 配線が細い</div>
+          <p class="text-xs text-navy/75">電圧降下で走行充電器やFFヒーターがエラーに。後部まで長く引くなら太く。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">⑤ アースを車体任せ</div>
+          <p class="text-xs text-navy/75">大電流系はマイナスもバスバー戻しが分かりやすい。車体アースなら塗装除去・防錆・接触抵抗の確認を。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">⑥ 端子圧着が甘い</div>
+          <p class="text-xs text-navy/75">圧着不良は見た目で分かりにくく、使用中に発熱して火災リスク。太線は専用工具で確実に。</p>
+        </div>
+        <div class="rounded-2xl p-5 failure-card md:col-span-2 lg:col-span-3" style="background:#FFFBF2; color:#1F2E4D;">
+          <div class="font-black text-navy mb-1">⑦ 熱がこもる</div>
+          <p class="text-xs text-navy/75">インバーター・DC-DC・MPPTは熱を持つ。ベッド下や収納内に密閉すると、夏場に保護停止しやすい。<strong>必ず通気を確保</strong>すること。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- 14. 最終チェックリスト -->
+    <!-- ===================== -->
+    <div class="reveal">
+      <div class="flex items-baseline gap-3 mb-4">
+        <span class="font-accent text-xs tracking-widest" style="color:#FFD84D;">14 · FINAL CHECKLIST</span>
+        <h3 class="font-display font-black text-2xl md:text-3xl">通電前に、<span class="text-sun">この4つ</span>を全部✓。</h3>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl p-5" style="background:#FFFBF2; color:#1F2E4D; box-shadow:6px 6px 0 #FFD84D;">
+          <div class="font-accent text-[10px] tracking-widest text-coral mb-1">SET 01 · DESIGN</div>
+          <div class="font-display font-black text-navy mb-2">設計前</div>
+          <ul class="text-xs space-y-1 text-navy/85">
+            <li>☐ 使う家電を一覧化した</li>
+            <li>☐ 1日Whを計算した</li>
+            <li>☐ 同時使用最大Wを決めた</li>
+            <li>☐ AC機器とDC機器を分けた</li>
+            <li>☐ レンジ・エアコンの使用有無を決めた</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-5" style="background:#FFFBF2; color:#1F2E4D; box-shadow:6px 6px 0 #4ECDC4;">
+          <div class="font-accent text-[10px] tracking-widest text-coral mb-1">SET 02 · PARTS</div>
+          <div class="font-display font-black text-navy mb-2">部品選定</div>
+          <ul class="text-xs space-y-1 text-navy/85">
+            <li>☐ LiFePO4はBMS付き</li>
+            <li>☐ 低温充電保護あり</li>
+            <li>☐ 走行充電器はLiFePO4対応</li>
+            <li>☐ インバーターは純正弦波</li>
+            <li>☐ MPPT入力電圧上限を確認</li>
+            <li>☐ ヒューズ容量と配線sqを決めた</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-5" style="background:#FFFBF2; color:#1F2E4D; box-shadow:6px 6px 0 #FF6B5B;">
+          <div class="font-accent text-[10px] tracking-widest text-coral mb-1">SET 03 · INSTALL</div>
+          <div class="font-display font-black text-navy mb-2">施工</div>
+          <ul class="text-xs space-y-1 text-navy/85">
+            <li>☐ バッテリーを確実に固定した</li>
+            <li>☐ 主ヒューズをバッテリー直後に</li>
+            <li>☐ プラス端子を絶縁した</li>
+            <li>☐ 金属エッジを保護した</li>
+            <li>☐ 配線を固定／熱源から離した</li>
+            <li>☐ インバーターに通気を確保した</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-5" style="background:#FFFBF2; color:#1F2E4D; box-shadow:6px 6px 0 #E85A9A;">
+          <div class="font-accent text-[10px] tracking-widest text-coral mb-1">SET 04 · TEST</div>
+          <div class="font-display font-black text-navy mb-2">試験</div>
+          <ul class="text-xs space-y-1 text-navy/85">
+            <li>☐ 極性確認</li>
+            <li>☐ 無負荷電圧確認</li>
+            <li>☐ 小負荷テスト</li>
+            <li>☐ 走行充電／ソーラー充電テスト</li>
+            <li>☐ インバーターテスト</li>
+            <li>☐ 端子発熱／BMSエラー履歴確認</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-white/70 text-sm mt-8 max-w-2xl mx-auto">
+        <strong style="color:#FFD84D;">DC中心 → 冷蔵庫・照明・USB・FFヒーター → 小型インバーター → 必要なら大容量化</strong> の順で進めるのが、安全で失敗しにくい唯一の道です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- BONUS: FF HEATER INSTALLATION -->
+<!-- ============================== -->
+<section id="ff-heater" class="py-20 md:py-28 bg-white border-y-[3px] border-navy relative overflow-hidden">
+  <div class="absolute -top-20 -left-10 w-80 h-80 bg-coral/15 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-20 right-10 w-80 h-80 bg-sun/20 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10 reveal">
+      <div class="lg:col-span-8">
+        <span class="editorial-eyebrow"><span class="num">BONUS</span> FF HEATER INSTALLATION</span>
+        <h2 class="chapter-title text-navy mt-3">
+          冬の車中泊を変える、<br>
+          <span class="highlight-coral">FFヒーター後付け</span>10ステップ。
+        </h2>
+        <p class="lede mt-4 max-w-2xl">
+          ルーフエアコンと並んで、車中泊の体感品質を一気に底上げする装備。DIY可能ですが、<strong>排気漏れによる一酸化炭素中毒</strong>と<strong>燃料系の不備による火災</strong>が最大のリスク。
+          設置場所選び・床穴あけ・排気経路・燃料取り出しまで、外せないポイントを1枚に凝縮しました。
+        </p>
+      </div>
+      <div class="lg:col-span-4 lg:text-right">
+        <div class="hand-caption">— 雪の長野、車内+18℃。</div>
+      </div>
+    </div>
+
+    <!-- インフォグラフィック -->
+    <div class="reveal mb-10">
+      <div class="cinema-frame" style="aspect-ratio: 1492 / 1054; border-radius: 22px; background: #fff;">
+        <img src="assets/images/camper/hiace-ff-heater-guide.png" alt="ハイエース FFヒーター取り付けガイド：9つの工程／設置場所の決め方／事前確認／必要な工具・部材／取り付け10ステップ／絶対NG行為／車検・構造変更／安全装備／出力選び方／DIYおすすめ手順／最終チェックリスト" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+
+    <!-- ショート動画 + 重要4ポイント -->
+    <div class="grid lg:grid-cols-12 gap-8 items-stretch reveal">
+      <!-- 動画 -->
+      <div class="lg:col-span-4">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background:#000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/pVcjlClDY8I?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="ハイエース FFヒーター取り付けの実録"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+          <span class="cinema-caption" style="left:14px; bottom:14px;"><span class="dot"></span> SHORTS / 実際の取り付け</span>
+        </div>
+        <div class="mt-4 p-4 bg-cream rounded-2xl border-[3px] border-navy" style="box-shadow: 5px 5px 0 #FF6B5B;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">REAL FOOTAGE</div>
+          <div class="font-black text-navy text-sm leading-snug">実際にハイエースへ後付けした、FFヒーター取り付けの実録Shorts。</div>
+          <a href="https://youtube.com/shorts/pVcjlClDY8I" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+
+      <!-- 重要4ポイント -->
+      <div class="lg:col-span-8">
+        <div class="flex items-baseline gap-3 mb-4">
+          <span class="font-accent text-xs text-coral tracking-widest">THE FOUR NON-NEGOTIABLES</span>
+          <h3 class="font-display font-black text-2xl text-navy">命に関わる4つの絶対。</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-fire-line text-xl text-white"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">① 排気は車外へ確実に</div>
+            </div>
+            <p class="text-sm text-navy/75">排気管の隙間処理を怠ると一酸化炭素が車内へ。<strong>窓・吸気口から離す／水が溜まらない勾配／雪で塞がらない高さ</strong>を必ず確認。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-sun border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-gas-station-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">② 燃料系はやり直さない</div>
+            </div>
+            <p class="text-sm text-navy/75">車両タンク分岐は難易度高。DIY初回は<strong>専用タンクを追加</strong>する方が確実。燃料ホースはタイラップだけで固定しないこと。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-ocean border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-plug-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">③ ヒューズを必ず挟む</div>
+            </div>
+            <p class="text-sm text-navy/75">サブバッテリーから直結は禁忌。<strong>規定電流のヒューズ＋電圧降下を抑える太い配線</strong>。コントローラーは操作しやすい位置に。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-grass border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-alarm-warning-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">④ CO警報器は必須装備</div>
+            </div>
+            <p class="text-sm text-navy/75">設置後は<strong>一酸化炭素警報器・CO/温度モニター・消火器</strong>を必ず携行。試運転は燃料漏れ・排気漏れ・温風安定・床下熱害を全項目チェック。</p>
+          </div>
+        </div>
+
+        <!-- 出力の目安 -->
+        <div class="mt-5 p-5 rounded-2xl border-[3px] border-navy" style="background:#FFF4D4; box-shadow:6px 6px 0 #1F2E4D;">
+          <div class="flex flex-wrap items-baseline gap-3 mb-3">
+            <span class="font-accent text-xs text-coral tracking-widest">出力の目安</span>
+            <h4 class="font-display font-black text-navy text-lg">ハイエースなら何kWを選ぶ？</h4>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="bg-white border-2 border-navy rounded-xl p-3">
+              <div class="font-black text-navy">2kW</div>
+              <div class="text-xs text-navy/70 mt-1">標準ボディ・暖かい地域・静かに使いたい</div>
+            </div>
+            <div class="bg-white border-2 border-navy rounded-xl p-3">
+              <div class="font-black text-navy">3kW</div>
+              <div class="text-xs text-navy/70 mt-1">標準〜ワイドボディ。汎用性が高い定番</div>
+            </div>
+            <div class="bg-white border-2 border-navy rounded-xl p-3" style="background:#FFD84D;">
+              <div class="font-black text-navy">5kW <span class="text-xs">★寒冷地</span></div>
+              <div class="text-xs text-navy/80 mt-1">ワイドSL・寒冷地・雪中泊なら排気凍結対策込みで5kW＋</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 絶対NG -->
+    <div class="mt-10 p-5 md:p-6 reveal" style="background:#1F2E4D; border-radius:20px;">
+      <div class="flex items-start gap-3">
+        <div class="w-11 h-11 rounded-xl bg-coral border-2 border-coral grid place-items-center flex-shrink-0">
+          <i class="ri-close-circle-line text-xl text-white"></i>
+        </div>
+        <div>
+          <div class="font-display font-black text-sun">絶対にやってはいけないこと</div>
+          <p class="text-sm text-white/85 mt-1 leading-relaxed">
+            ① 排気管を車内側・ステップ方向に向ける　②  排気管の隙間を未処理にする　③ 排気管を樹脂・配線・木材の近くに通す　④ 燃料ホースをタイラップだけで固定する　⑤ 燃料ポンプを水平に取り付ける　⑥ ヒューズなしで直結する　⑦ CO警報器なしで就寝使用する　⑧ 雪で排気口が塞がる場所で使う　⑨ 点検できない場所に排気管を隠す
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- BONUS: ROOF AIR CONDITIONER -->
+<!-- ============================== -->
+<section id="roof-ac" class="py-20 md:py-28 bg-cream relative overflow-hidden">
+  <div class="absolute -top-20 right-10 w-72 h-72 bg-ocean/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 left-10 w-72 h-72 bg-sun/20 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10 reveal">
+      <div class="lg:col-span-8">
+        <span class="editorial-eyebrow"><span class="num">BONUS</span> ROOF AIR CONDITIONER</span>
+        <h2 class="chapter-title text-navy mt-3">
+          真夏の車中泊を救う、<br>
+          <span class="highlight-ocean">ルーフエアコン後付け</span>の完全ガイド。
+        </h2>
+        <p class="lede mt-4 max-w-2xl">
+          FFヒーターと並ぶ、車中泊の快適性を決定づける装備。DIY可能ですが <strong>雨漏り対策</strong> と <strong>電源容量</strong> の2点でつまずく人が大半です。
+          選び方・取り付け手順・防水処理・電源設計・車検対応まで、1枚に凝縮しました。
+        </p>
+      </div>
+      <div class="lg:col-span-4 lg:text-right">
+        <div class="hand-caption">— 真夏0時、車内26℃。</div>
+      </div>
+    </div>
+
+    <!-- 完全ガイド・インフォグラフィック -->
+    <div class="reveal mb-10">
+      <div class="cinema-frame" style="aspect-ratio: 1536 / 1024; border-radius: 22px; background: #fff;">
+        <img src="assets/images/camper/hiace-roof-ac-guide.png" alt="ハイエースにルーフエアコンを後付けする完全ガイド：選び方・取り付け方・失敗しやすい点・車検／構造変更・電源設計まで実践まとめ" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+
+    <!-- ショート動画 + 結論カード -->
+    <div class="grid lg:grid-cols-12 gap-8 items-stretch reveal">
+      <!-- 動画 -->
+      <div class="lg:col-span-4">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background:#000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/jzHFa5_7_Zo?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="ハイエース ルーフエアコン取り付けの実録"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+          <span class="cinema-caption" style="left:14px; bottom:14px;"><span class="dot"></span> SHORTS / DIYの記録</span>
+        </div>
+        <div class="mt-4 p-4 bg-white rounded-2xl border-[3px] border-navy" style="box-shadow: 5px 5px 0 #4ECDC4;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">REAL FOOTAGE</div>
+          <div class="font-black text-navy text-sm leading-snug">実際にハイエースへ後付けした、ルーフエアコン取り付けの実録Shorts。</div>
+          <a href="https://www.youtube.com/shorts/jzHFa5_7_Zo" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+
+      <!-- 5つの本質カード -->
+      <div class="lg:col-span-8">
+        <div class="flex items-baseline gap-3 mb-4">
+          <span class="font-accent text-xs text-coral tracking-widest">THE FIVE FUNDAMENTALS</span>
+          <h3 class="font-display font-black text-2xl text-navy">本質はこの5つ。</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-ocean border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-snowy-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">① 冷えるか</div>
+            </div>
+            <p class="text-sm text-navy/75">消費電力と冷房能力のバランスを見る。最大800W → 100W前後で巡航するモデルが車中泊向き。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-sun border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-battery-charge-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">② 何時間動くか</div>
+            </div>
+            <p class="text-sm text-navy/75">LiFePO4 200Ah＋走行充電＋ソーラーが実用域の起点。300Ah級なら一晩通して安心。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-drop-line text-xl text-white"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">③ 雨漏りしないか</div>
+            </div>
+            <p class="text-sm text-navy/75">ブチルテープ＋シーラント＋台座処理の3重防水。「面で止める→外周で止める→室内で確認」の順。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-grass border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-shield-check-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">④ 走行中に安全か</div>
+            </div>
+            <p class="text-sm text-navy/75">屋根上は重心への影響大。重量・固定方法・補強板で多点固定。溶接ではなく確実なボルト固定が基本。</p>
+          </div>
+          <div class="card-chunky-flat p-5 sm:col-span-2">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 rounded-xl bg-peach border-2 border-navy grid place-items-center flex-shrink-0">
+                <i class="ri-car-line text-xl text-navy"></i>
+              </div>
+              <div class="font-display font-black text-navy text-lg">⑤ 車検で困らないか</div>
+            </div>
+            <p class="text-sm text-navy/75">全高・重量・固定方法・構造変更を <strong>事前に検査場へ確認</strong>。寸法±3cm、重量±100kg（軽は±50kg）を越えるなら構造等変更検査が必要。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 安全のシメ -->
+    <div class="mt-10 p-5 md:p-6 reveal" style="background:#FFF4D4; border:3px solid #1F2E4D; border-radius:20px; box-shadow:6px 6px 0 #FF6B5B;">
+      <div class="flex items-start gap-3">
+        <div class="w-11 h-11 rounded-xl bg-coral border-2 border-navy grid place-items-center flex-shrink-0">
+          <i class="ri-alarm-warning-line text-xl text-white"></i>
+        </div>
+        <div>
+          <div class="font-display font-black text-navy">一番安全な進め方</div>
+          <p class="text-sm text-navy/80 mt-1 leading-relaxed">
+            ① 先に検査場へ確認 → ② 電源設計を固める → ③ 最後にルーフ加工。順番を逆にすると、せっかく開けた屋根が無駄になることがあります。
+            <strong>配線が細いと発熱・電圧降下・BMS遮断・火災のリスク</strong>。最大電流に耐えるケーブル・端子・ヒューズを必ず使うこと。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 08: REGISTRATION -->
+<!-- ============================== -->
+<section id="registration" class="py-20 md:py-28 bg-white relative border-y-[3px] border-navy">
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-12 reveal">
+      <span class="chapter-label"><i class="ri-government-line"></i> CHAPTER 08 / REGISTRATION</span>
+      <h2 class="chapter-title text-navy mt-4">8ナンバー（キャンピング車）構造変更</h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        1ナンバー／4ナンバーから8ナンバー（特種用途自動車＝キャンピング車）への構造変更。
+        自動車審査事務規程に沿った <strong>4種類の設備要件</strong> と <strong>図面・諸元計算書・難燃証明</strong> を整えれば、DIY車両でも合格可能です。
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start mb-12 reveal">
+      <div class="lg:col-span-4">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background: #000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/VNHVDvVtOW0?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="8ナンバー構造変更 ＤＩＹの記録"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+          <span class="cinema-caption" style="left:14px; bottom:14px;"><span class="dot"></span> SHORTS / 検査当日の実録</span>
+        </div>
+        <div class="mt-4 p-4 bg-cream rounded-2xl border-[3px] border-navy" style="box-shadow: 5px 5px 0 #FFD84D;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">REAL FOOTAGE · YOUTUBE SHORTS</div>
+          <div class="font-black text-navy text-sm leading-snug">自分のハイエースで実際に通した、8ナンバー構造変更の記録。</div>
+          <a href="https://youtube.com/shorts/VNHVDvVtOW0" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-8">
+        <h3 class="font-display font-black text-2xl text-navy mb-4">構造要件の基本4本柱</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="card-chunky-flat p-5">
+            <div class="step-chip mb-3" style="width:52px;height:52px;font-size:1.1rem;">①</div>
+            <h4 class="font-black text-navy mb-1">就寝設備</h4>
+            <p class="text-xs text-navy/70">ベッド面積と就寝定員の整合性、ベースフレームの車体固定、走行中に動かない構造。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="step-chip step-chip-coral mb-3" style="width:52px;height:52px;font-size:1.1rem;">②</div>
+            <h4 class="font-black text-navy mb-1">炊事設備</h4>
+            <p class="text-xs text-navy/70">シンク含むキッチンブロックの車体固定、コンロを安全に設置できる天板と区分。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="step-chip step-chip-ocean mb-3" style="width:52px;height:52px;font-size:1.1rem;">③</div>
+            <h4 class="font-black text-navy mb-1">給排水設備</h4>
+            <p class="text-xs text-navy/70">給水／排水タンクが別体で区別可能、確実な固定、排水は必ず排水タンクを経由。</p>
+          </div>
+          <div class="card-chunky-flat p-5">
+            <div class="step-chip step-chip-grass mb-3" style="width:52px;height:52px;font-size:1.1rem;">④</div>
+            <h4 class="font-black text-navy mb-1">収納・テーブル</h4>
+            <p class="text-xs text-navy/70">食器・調理器具の固定収納、テーブル機能（着脱式可）、単純な荷室とは明確に区分。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 必要書類 -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12 reveal">
+      <div class="card-chunky bg-cream p-6 md:p-8">
+        <h3 class="font-display font-black text-xl text-navy mb-4"><i class="ri-file-list-3-line text-coral"></i> 構造変更に必要な主な書類</h3>
+        <ul class="process-list text-navy/85 text-sm">
+          <li>自動車検査証（車検証）</li>
+          <li>構造等変更検査申請書（OCRシート）</li>
+          <li>手数料納付書／自動車重量税納付書／自賠責保険証明書</li>
+          <li><strong>改造概要説明書</strong>（使用目的と改造内容）</li>
+          <li><strong>諸元計算書</strong>（重量・寸法・就寝定員の計算根拠）</li>
+          <li><strong>図面</strong>（平面図・側面図・断面図）</li>
+          <li><strong>難燃証明書</strong>（シート・マット等）／設備仕様書</li>
+        </ul>
+      </div>
+      <div class="card-chunky bg-cream p-6 md:p-8">
+        <h3 class="font-display font-black text-xl text-navy mb-4"><i class="ri-stamp-line text-ocean"></i> 車検当日の流れ</h3>
+        <ol class="process-list text-navy/85 text-sm">
+          <li><strong>予約・受付</strong>：構造等変更検査／用途変更を選択</li>
+          <li><strong>保安基準適合性の確認</strong>：灯火類・ブレーキ・排ガス</li>
+          <li><strong>構造変更部分の検査</strong>：ベッド展開／固定／シンク・排水</li>
+          <li><strong>重量測定と書類整合</strong>：給水タンクは実使用水量を入れて測定</li>
+          <li><strong>合否判定</strong>：適合なら当日中に新しい車検証が交付</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- よくある不合格例 -->
+    <div class="card-chunky bg-white p-6 md:p-8 reveal">
+      <h3 class="font-display font-black text-xl md:text-2xl text-navy mb-5"><i class="ri-error-warning-line text-coral"></i> よくある不合格例と対策</h3>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="failure-card bg-cream rounded-xl p-5">
+          <div class="font-black text-navy mb-1">設備固定不足</div>
+          <p class="text-sm text-navy/75">ベッド／キッチン／タンク類がボルト固定されておらず走行中に動く可能性がある。対策は<strong>フロア補強材にボルトナット＋L字金具／ラッシングレール</strong>。</p>
+        </div>
+        <div class="failure-card bg-cream rounded-xl p-5">
+          <div class="font-black text-navy mb-1">難燃証明・材料不備</div>
+          <p class="text-sm text-navy/75">マットレス／内装材の難燃証明が提出できない。対策は<strong>自動車用難燃生地・マットの採用とカタログ持参</strong>。</p>
+        </div>
+        <div class="failure-card bg-cream rounded-xl p-5">
+          <div class="font-black text-navy mb-1">給排水設備の不備</div>
+          <p class="text-sm text-navy/75">タンク一体型で区別できない／排水が路面に流れる。<strong>給水・排水の完全分離、確実な固定、排水タンク経由</strong>を再確認。</p>
+        </div>
+        <div class="failure-card bg-cream rounded-xl p-5">
+          <div class="font-black text-navy mb-1">図面・諸元計算書との不整合</div>
+          <p class="text-sm text-navy/75">記載寸法と実車が異なる。改造中に仕様変更したら<strong>図面と計算書も必ず更新</strong>してから検査へ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CHAPTER 09: COSTS & FAILURES -->
+<!-- ============================== -->
+<section id="costs" class="py-20 md:py-28 bg-cream relative">
+  <div class="absolute inset-0 dot-pattern opacity-40"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-12 reveal">
+      <span class="chapter-label"><i class="ri-price-tag-3-line"></i> CHAPTER 09 / COSTS & FAILURES</span>
+      <h2 class="chapter-title text-navy mt-4">
+        DIY費用の全体像と、<span class="highlight-coral">先人の失敗</span>
+      </h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">
+        レベル別総額の目安と、初心者が必ず通る「5つの失敗」＋ベース車選びでの「5つのやらかし」。
+        先に知っておけば、ほぼ全て避けられます。
+      </p>
+    </div>
+
+    <!-- レベル別総額 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14 reveal-stagger">
+      <div class="card-chunky-flat p-6 bg-white">
+        <div class="text-xs font-accent text-coral tracking-widest">LEVEL 01</div>
+        <h3 class="font-display font-black text-xl text-navy mt-1 mb-2">最低限</h3>
+        <p class="text-sm text-navy/70 mb-3">床貼り＋ベッドキットのみ。車中泊を始める最短コース。</p>
+        <div class="stat-num text-navy" style="font-size: clamp(1.8rem, 4vw, 2.6rem);">5〜10万円</div>
+      </div>
+      <div class="card-chunky-flat p-6 bg-white">
+        <div class="text-xs font-accent text-coral tracking-widest">LEVEL 02</div>
+        <h3 class="font-display font-black text-xl text-navy mt-1 mb-2">標準</h3>
+        <p class="text-sm text-navy/70 mb-3">断熱＋床＋ベッド＋電源。連泊にも対応する一般的ライン。</p>
+        <div class="stat-num text-ocean" style="font-size: clamp(1.8rem, 4vw, 2.6rem);">15〜25万円</div>
+      </div>
+      <div class="card-chunky-flat p-6 bg-white">
+        <div class="text-xs font-accent text-coral tracking-widest">LEVEL 03</div>
+        <h3 class="font-display font-black text-xl text-navy mt-1 mb-2">快適仕様</h3>
+        <p class="text-sm text-navy/70 mb-3">キッチン・収納充実。長期旅行も視野に入るクラス。</p>
+        <div class="stat-num text-coral" style="font-size: clamp(1.8rem, 4vw, 2.6rem);">30〜50万円</div>
+      </div>
+      <div class="card-chunky-flat p-6 bg-white">
+        <div class="text-xs font-accent text-coral tracking-widest">LEVEL 04</div>
+        <h3 class="font-display font-black text-xl text-navy mt-1 mb-2">本格フルDIY</h3>
+        <p class="text-sm text-navy/70 mb-3">全面断熱＋家具造作＋電装フル装備。住めるレベル。</p>
+        <div class="stat-num text-[#E85A9A]" style="font-size: clamp(1.8rem, 4vw, 2.6rem);">50〜100万+</div>
+      </div>
+    </div>
+
+    <!-- 失敗 -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12 reveal">
+      <div class="card-chunky bg-white p-6 md:p-8">
+        <h3 class="font-display font-black text-xl text-navy mb-4"><i class="ri-bug-line text-coral"></i> 初心者が陥りやすい失敗と対策</h3>
+        <div class="space-y-4">
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">① 収納を考えずにベッドを作った</div>
+            <p class="text-xs text-navy/75">ベッド下の高さを最初から収納として設計する。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">② 電源が足りない</div>
+            <p class="text-xs text-navy/75">ポータブル電源1台では連泊で不安。ソーラーor2台体制を最初から。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">③ 断熱なしで夏・冬に後悔</div>
+            <p class="text-xs text-navy/75">内装完成後の断熱は全バラし必要。必ず最初に。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">④ 変更不可の固定式にしてしまった</div>
+            <p class="text-xs text-navy/75">取り外し可能な設計（イレクターパイプ等）を意識。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">⑤ 工具を揃えるのを後回しに</div>
+            <p class="text-xs text-navy/75">電動ドライバー・ジグソー・サンダー・パイプカッターは最初にレンタルでも。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-chunky bg-white p-6 md:p-8">
+        <h3 class="font-display font-black text-xl text-navy mb-4"><i class="ri-alarm-warning-line text-coral"></i> ベース車選びでよくある失敗</h3>
+        <div class="space-y-4">
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">① 安さで走行距離多い1〜2型を購入</div>
+            <p class="text-xs text-navy/75">エンジン・ミッション修理費が高い。最低限の走行歴チェックを。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">② ボディが大きすぎて自宅に停められない</div>
+            <p class="text-xs text-navy/75">購入前に駐車場の高さ・幅・長さを計測。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">③ 構造変更届出が必要と知らなかった</div>
+            <p class="text-xs text-navy/75">8ナンバー化の必要性を事前に陸運局に確認。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">④ ガソリン選んで長距離で燃料費高騰</div>
+            <p class="text-xs text-navy/75">年間走行距離から損益分岐点を計算してから選ぶ。</p>
+          </div>
+          <div class="failure-card bg-cream rounded-xl p-4">
+            <div class="font-black text-navy text-sm mb-1">⑤ 中古購入後に盗難に遭う</div>
+            <p class="text-xs text-navy/75">購入直後にセキュリティ強化（イモビライザー／GPS）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具ギャラリー -->
+    <div class="reveal">
+      <div class="cinema-frame" style="aspect-ratio: 1672 / 941; border-radius: 22px; background: #1F2E4D;">
+        <img src="assets/images/camper/diy-tools-checklist.png" alt="最低限そろえたいDIYツール一覧（インパクトドライバー／ジグソー・丸ノコ／サンダー／パイプカッター／メジャー・差し金／保護メガネ・防塵マスク）" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+      <p class="text-sm text-navy/70 mt-5 text-center"><i class="ri-information-line text-coral"></i> 初回はレンタルで揃えて、DIYを続ける確信が持てたら購入するのがおすすめ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- FLOWCHART -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-white border-t-[3px] border-navy relative">
+  <div class="container mx-auto px-4 relative">
+    <div class="max-w-3xl mb-10 reveal">
+      <span class="chapter-label"><i class="ri-flow-chart"></i> BONUS / DIAGNOSTIC</span>
+      <h2 class="chapter-title text-navy mt-4">あなたにぴったりのハイエース診断</h2>
+      <p class="text-navy/75 text-lg mt-4 leading-relaxed">どんなキャンプスタイルか、4つの分岐であなた向けのハイエースを診断。</p>
+    </div>
+
+    <div class="card-chunky bg-cream p-6 md:p-10 reveal">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="flow-node bg-white">
+          <div class="font-black text-navy mb-1"><i class="ri-group-line text-coral"></i> 荷物が多い／ファミリー</div>
+          <div class="text-sm text-navy/75">→ ワイドスーパーロング・ハイルーフ（スーパーGL）<br>→ 長距離多い＝ディーゼル／近距離＝ガソリン</div>
+        </div>
+        <div class="flow-node bg-white">
+          <div class="font-black text-navy mb-1"><i class="ri-user-line text-ocean"></i> 1〜2人でのんびり車中泊</div>
+          <div class="text-sm text-navy/75">→ 標準ボディ・ハイルーフ（スーパーGL）<br>→ 安全重視＝5型以降／コスパ優先＝3〜4型中古</div>
+        </div>
+        <div class="flow-node bg-white">
+          <div class="font-black text-navy mb-1"><i class="ri-hammer-line text-[#E85A9A]"></i> 本格的にゼロからDIY</div>
+          <div class="text-sm text-navy/75">→ DXグレード（標準 or ワイドSL・ハイルーフ）<br>→ 3〜4型の走行距離少ないもの</div>
+        </div>
+        <div class="flow-node bg-white">
+          <div class="font-black text-navy mb-1"><i class="ri-snowy-line text-[#3476B8]"></i> 雪山・北海道など極寒地</div>
+          <div class="text-sm text-navy/75">→ 4WD ＋ ディーゼル（5型以降推奨）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- REAL LIFE SHORTS / 実際の楽しみ方 -->
+<!-- ============================== -->
+<section id="real-life" class="py-20 md:py-28 bg-cream relative overflow-hidden border-t-[3px] border-navy">
+  <div class="absolute -top-32 -left-24 w-[420px] h-[420px] rounded-full bg-coral/15 blur-3xl"></div>
+  <div class="absolute -bottom-24 -right-24 w-[360px] h-[360px] rounded-full bg-sun/25 blur-3xl"></div>
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10">
+      <div class="lg:col-span-7">
+        <span class="editorial-eyebrow"><span class="num">REAL LIFE</span> WITH THE HIACE</span>
+        <h2 class="chapter-title text-navy mt-3">
+          DIYで作ったキャンピングカーで、<br>
+          <span class="highlight-coral">こんなふうに遊んでいます。</span>
+        </h2>
+        <p class="lede mt-4 max-w-2xl">
+          スペックと図面の話はここまで。実際にこの車で過ごしている、ふつうの週末・ふつうの旅の様子を、自撮りShortsで3本だけ。
+          車中泊って、こういうことです。
+        </p>
+      </div>
+      <div class="lg:col-span-5 lg:text-right">
+        <div class="hand-caption">— shot on this very Hiace.</div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Short 1 -->
+      <div class="reveal">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background:#000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/wSBkspu0b-o?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="DIYキャンピングカーでの一日 #1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+        </div>
+        <div class="mt-4 p-4 bg-white rounded-2xl border-[3px] border-navy" style="box-shadow:5px 5px 0 #FF6B5B;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">SHORT · 01</div>
+          <div class="font-black text-navy text-sm leading-snug">朝、車内のベッドから空を見上げる。</div>
+          <a href="https://youtube.com/shorts/wSBkspu0b-o" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+
+      <!-- Short 2 -->
+      <div class="reveal">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background:#000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/yDUakk_gexU?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="DIYキャンピングカーでの一日 #2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+        </div>
+        <div class="mt-4 p-4 bg-white rounded-2xl border-[3px] border-navy" style="box-shadow:5px 5px 0 #4ECDC4;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">SHORT · 02</div>
+          <div class="font-black text-navy text-sm leading-snug">週末、ふらっと走り出した先で。</div>
+          <a href="https://www.youtube.com/shorts/yDUakk_gexU" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+
+      <!-- Short 3 -->
+      <div class="reveal">
+        <div class="cinema-frame" style="aspect-ratio: 9 / 16; border-radius: 22px; background:#000;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/NjLs6DgbKZ0?rel=0&amp;modestbranding=1&amp;playsinline=1"
+            title="DIYキャンピングカーでの一日 #3"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="width:100%; height:100%; border:0; display:block;"></iframe>
+        </div>
+        <div class="mt-4 p-4 bg-white rounded-2xl border-[3px] border-navy" style="box-shadow:5px 5px 0 #FFD84D;">
+          <div class="font-accent text-[10px] text-coral tracking-widest mb-1">SHORT · 03</div>
+          <div class="font-black text-navy text-sm leading-snug">日が落ちてからの、車内タイム。</div>
+          <a href="https://youtube.com/shorts/NjLs6DgbKZ0" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-xs font-black text-coral hover:underline">
+            <i class="ri-youtube-fill text-base"></i> YouTubeで開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- CLOSING / CTA -->
+<!-- ============================== -->
+<section class="py-20 md:py-28 bg-navy text-white relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  <div class="absolute top-10 left-10 w-72 h-72 bg-coral/25 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-sun/25 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 reveal">
+        <span class="chapter-label" style="background:#FFD84D; color:#1F2E4D;"><i class="ri-rocket-line"></i> YOUR FIRST BUILD</span>
+        <h2 class="chapter-title text-white mt-4 mb-6">
+          <span class="text-sun">「誰と、何人で寝るか」</span>さえ決まれば、もう始められる。
+        </h2>
+        <p class="text-white/80 text-lg leading-relaxed mb-6">
+          一人でシンプルに始めたいなら <strong>レイアウト①か②</strong>、子供の成長に合わせて使うなら <strong>レイアウト④</strong>。
+          どの仕様でも <strong>「断熱 → 床 → 電源 → 家具」</strong> の順番が失敗を防ぐ鉄則です。
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#roadmap" class="btn-chunky btn-chunky-sun"><i class="ri-road-map-line"></i> ロードマップをもう一度見る</a>
+          <a href="index.html#contact" class="btn-chunky btn-chunky-coral"><i class="ri-mail-send-line"></i> 相談してみる</a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal">
+        <div class="hero-cinema aspect-[4/5]">
+          <img src="assets/images/camper/camper_interior_dining%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg" alt="プレミアムなインテリア">
+          <div class="corner-tag">SHOT 02 · INTERIOR</div>
+          <div class="corner-caption">
+            <div class="place">杉無垢で仕上げた車内ダイネット</div>
+            <div class="small">good light makes good food taste better.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- FOOTER -->
+<!-- ============================== -->
+<footer class="bg-cream border-t-[3px] border-navy py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-3">
+          <img src="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" alt="TrailFusion AI" class="h-10 rounded-xl border-2 border-navy">
+          <div>
+            <div class="font-display font-black text-navy text-lg leading-none">TrailFusion</div>
+            <div class="font-accent text-[10px] text-coral tracking-widest">×AI ADVENTURE</div>
+          </div>
+        </a>
+        <p class="text-sm text-navy/70 leading-relaxed">キャンピングカーDIYとAIアプリ開発で、「やりたいことを今やる」を叶える。</p>
+      </div>
+      <div>
+        <div class="font-black text-navy mb-3">章を読み返す</div>
+        <ul class="text-sm text-navy/75 space-y-1.5">
+          <li><a href="#why" class="hover:text-coral">01. はじまりの章</a></li>
+          <li><a href="#layouts" class="hover:text-coral">02. 用途別レイアウト6選</a></li>
+          <li><a href="#base-car" class="hover:text-coral">03. ベース車両を選ぶ</a></li>
+          <li><a href="#foundation" class="hover:text-coral">04. 基礎工事</a></li>
+          <li><a href="#interior" class="hover:text-coral">05. 内装仕上げ</a></li>
+          <li><a href="#galley" class="hover:text-coral">06. 家具・ギャレー</a></li>
+          <li><a href="#electrical" class="hover:text-coral">07. サブバッテリー・電装</a></li>
+          <li><a href="#ff-heater" class="hover:text-coral">＋ FFヒーター後付け</a></li>
+          <li><a href="#roof-ac" class="hover:text-coral">＋ ルーフエアコン後付け</a></li>
+          <li><a href="#registration" class="hover:text-coral">08. 8ナンバー構造変更</a></li>
+          <li><a href="#costs" class="hover:text-coral">09. 費用と失敗の総まとめ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-black text-navy mb-3">ほかのページ</div>
+        <ul class="text-sm text-navy/75 space-y-1.5">
+          <li><a href="index.html" class="hover:text-coral">🏠 ホーム</a></li>
+          <li><a href="drive-routes/" class="hover:text-coral">🗺️ ドライブルート</a></li>
+          <li><a href="apps.html" class="hover:text-coral">✨ AIアプリ</a></li>
+          <li><a href="maintenance.html" class="hover:text-coral">🔧 整備記録</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 border-t-2 border-navy/20 text-center text-sm text-navy/60">
+      © <span id="year"></span> TrailFusion AI — すべての挑戦者へ。
+    </div>
+  </div>
+</footer>
+
+<button id="scrollToTop" aria-label="ページ上部へ"><i class="ri-arrow-up-line"></i></button>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/trailfusion-ui.js"></script>
+</body>
+</html>
