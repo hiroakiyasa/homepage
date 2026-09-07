@@ -1,0 +1,33 @@
+name: Review LP navigation integration
+on:
+  push:
+    branches: [fix/lp-chrome-20260908]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /index.html
+            /camping.html
+            /assets/js/visitor-counter.js
+            /assets/js/trailfusion-ui.js
+            /assets/css/trailfusion.css
+            /assets/css/tailwind-compiled.css
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lp-source-review
+          retention-days: 3
+          path: |
+            index.html
+            camping.html
+            assets/js/visitor-counter.js
+            assets/js/trailfusion-ui.js
+            assets/css/trailfusion.css
+            assets/css/tailwind-compiled.css
