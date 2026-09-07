@@ -3,11 +3,11 @@ on:
   push:
     branches: [fix/lp-chrome-20260908]
 permissions:
-  contents: read
+  contents: write
 jobs:
-  snapshot:
+  integrate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,18 +16,26 @@ jobs:
           sparse-checkout: |
             /index.html
             /camping.html
-            /assets/js/visitor-counter.js
-            /assets/js/trailfusion-ui.js
-            /assets/css/trailfusion.css
-            /assets/css/tailwind-compiled.css
+            /scripts/sync_lp_chrome.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install beautifulsoup4==4.14.3 tinycss2==1.5.1
+      - name: Generate and verify header, footer, logo, links and counter identity
+        run: python scripts/sync_lp_chrome.py
+      - name: Commit generated pages to the isolated review branch
+        run: |
+          git add -- index.html camping.html lp-chrome-verification.json
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'feat: unify LP branding and add direct camping navigation'
+            git push origin HEAD:refs/heads/fix/lp-chrome-20260908
+          fi
+          git rev-parse HEAD
       - uses: actions/upload-artifact@v4
         with:
-          name: lp-source-review
+          name: lp-integrated-review
           retention-days: 3
           path: |
             index.html
             camping.html
-            assets/js/visitor-counter.js
-            assets/js/trailfusion-ui.js
-            assets/css/trailfusion.css
-            assets/css/tailwind-compiled.css
+            lp-chrome-verification.json
