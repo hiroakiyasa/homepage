@@ -1,0 +1,35 @@
+name: Reconstruct camping attachment
+
+on:
+  push:
+    branches: [upload/camping-20260908]
+    paths:
+      - '.github/camping-payload/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: upload/camping-20260908
+          fetch-depth: 0
+      - name: Reconstruct exact camping.html
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .github/camping-payload/*.part | base64 --decode | gzip -dc > camping.html
+          actual="$(sha256sum camping.html | awk '{print $1}')"
+          expected="d778337d893f88942b5e21d6e91f0d2bcc720fd2c6c7f50d94298aa7b809c4f2"
+          echo "camping.html sha256: ${actual}"
+          test "${actual}" = "${expected}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add camping.html
+          git rm -r .github/camping-payload
+          git rm .github/workflows/reconstruct-camping-upload.yml
+          git commit -m "Replace camping.html with uploaded attachment"
+          git push origin HEAD:upload/camping-20260908
