@@ -17,19 +17,25 @@ jobs:
         with:
           ref: upload/camping-20260908
           fetch-depth: 0
-      - name: Reconstruct exact camping.html
+      - name: Reconstruct camping.html from uploaded attachment payload
         shell: bash
         run: |
           set -euo pipefail
-          cat .github/camping-payload/*.part | base64 --decode | gzip -dc > camping.html
+          cat .github/camping-payload/*.b64 | base64 --decode | gzip -dc > camping.html
           actual="$(sha256sum camping.html | awk '{print $1}')"
-          expected="d778337d893f88942b5e21d6e91f0d2bcc720fd2c6c7f50d94298aa7b809c4f2"
+          expected="24708c8f30e6a9f4f733f11ce4aa28d62e0ee2a04b04ee062170896bc46827f8"
           echo "camping.html sha256: ${actual}"
           test "${actual}" = "${expected}"
+          grep -q 'id="hiace-atelier"' camping.html
+          grep -q 'id="hiace-model"' camping.html
+          grep -q 'id="hiace-app"' camping.html
+          grep -q 'キャンピングカーDIY' camping.html
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add camping.html
           git rm -r .github/camping-payload
+          git rm -f .github/scan-camping-images.trigger .github/find-camping-webp.trigger .github/camping-image-scan.txt .github/camping-webp-encoder.txt || true
+          git rm -f .github/workflows/scan-camping-image-sources.yml .github/workflows/find-camping-webp-encoder.yml || true
           git rm .github/workflows/reconstruct-camping-upload.yml
-          git commit -m "Replace camping.html with uploaded attachment"
+          git commit -m "Replace camping.html with attached 3D DIY studio"
           git push origin HEAD:upload/camping-20260908
