@@ -55,6 +55,21 @@ jobs:
               if target not in index:
                   raise SystemExit('AI app CTA target block not found in index.html')
               index = index.replace(target, insert, 1)
+
+          # Keep a direct, always-visible camping DIY shortcut in the header.
+          if 'header-camping-direct' not in index:
+              header_target = '''        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">'''
+              header_insert = '''        <a href="camping.html" class="header-camping-direct inline-flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 py-2 bg-sky border-2 border-navy rounded-xl font-black text-xs sm:text-sm whitespace-nowrap" style="box-shadow:3px 3px 0 #1F2E4D;" aria-label="キャンピングカーDIYページを開く">
+          <i class="ri-roadster-fill text-base sm:text-lg" aria-hidden="true"></i>
+          <span class="hidden sm:inline">キャンピングカーDIY</span><span class="sm:hidden">DIY</span>
+        </a>
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden lg:inline-flex btn-chunky btn-chunky-coral text-sm">'''
+              if header_target not in index:
+                  raise SystemExit('Header contact CTA target block not found in index.html')
+              index = index.replace(header_target, header_insert, 1)
+
           Path('index.html').write_text(index, encoding='utf-8')
           PY
       - name: Commit restored pages
@@ -66,5 +81,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html maintenance.html
-          git commit -m "Restore full pages and keep maintenance hero title on one line"
+          git commit -m "Restore full pages and keep direct camping shortcut"
           git push
