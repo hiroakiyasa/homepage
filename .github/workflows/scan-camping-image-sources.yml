@@ -1,0 +1,99 @@
+name: Scan camping image sources
+
+on:
+  push:
+    branches: [upload/camping-20260908]
+    paths:
+      - '.github/scan-camping-images.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find visual matches for embedded camping images
+        shell: bash
+        run: |
+          python -m pip install --quiet pillow
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+
+          TARGETS = [
+            ('00','ffffff00c0fe0500','1102b41c0c504d5d'),
+            ('01','28fe7e06ceded310','faead2ee383826a4'),
+            ('02','7ffff18181ffffff','ffda25233bd40800'),
+            ('03','efc7b787079fffff','df9c640d3d7c9048'),
+            ('04','85fdff9d848080fe','1d71613d1c562a10'),
+            ('05','80626000e3ffffff','218ec4a6eaa2b4c9'),
+            ('06','bf181efa1018f7ff','6875704622626d06'),
+            ('07','100000003fff7f0f','b024c4e6f2bcab7e'),
+            ('08','33fad858c8fed8fc','c556309311243348'),
+            ('09','9f67030301c3ffff','78cc8f373b0f8b0c'),
+            ('10','08e3f6e667672777','3186ac8cccceaea7'),
+            ('11','3f7f3f0f003ebd10','ece9f93e80706962'),
+            ('12','e1e9ecf4464f8f80','46db99a49c9e5910'),
+            ('13','c0c0ccc9df5717cf','311d391336b6b4b7'),
+            ('14','07070f0f1f05051b','5d1d5d5d75cd3d33'),
+            ('15','ecf9f1e79eba2060','c893274c3062c2cf'),
+            ('16','7f7fff0000000000','f0f2b0e838f1873e'),
+            ('17','e0efeeee0000781f','4eca88d89c9fb1f9'),
+            ('18','001808bdefef9fdf','6973716b4b093b2d'),
+            ('19','00ffffff7e7e7e00','27deb2ba9eaaa286'),
+            ('20','3c7effff3d000000','e0d4f0e0e16165e9'),
+          ]
+
+          def ahash(im):
+            g=ImageOps.grayscale(im).resize((8,8),Image.Resampling.LANCZOS)
+            vals=list(g.getdata()); avg=sum(vals)/64
+            n=0
+            for i,v in enumerate(vals):
+              if v >= avg: n |= 1 << i
+            return n
+
+          def dhash(im):
+            g=ImageOps.grayscale(im).resize((9,8),Image.Resampling.LANCZOS)
+            vals=list(g.getdata()); n=0; i=0
+            for y in range(8):
+              for x in range(8):
+                if vals[y*9+x] > vals[y*9+x+1]: n |= 1 << i
+                i += 1
+            return n
+
+          def hd(a,b): return (a ^ b).bit_count()
+
+          candidates=[]
+          exts={'.jpg','.jpeg','.png','.webp','.bmp','.gif'}
+          for p in Path('.').rglob('*'):
+            if not p.is_file() or p.suffix.lower() not in exts: continue
+            s=str(p)
+            if '/.git/' in s or 'node_modules' in s: continue
+            try:
+              with Image.open(p) as im:
+                im.load()
+                candidates.append((s, im.size, ahash(im), dhash(im)))
+            except Exception:
+              pass
+
+          lines=[f'candidates={len(candidates)}']
+          for tid,ta,td in TARGETS:
+            ta=int(ta,16); td=int(td,16)
+            scored=[]
+            for path,size,a,d in candidates:
+              score=hd(ta,a)+hd(td,d)
+              scored.append((score,path,size,hd(ta,a),hd(td,d)))
+            scored.sort(key=lambda x:x[0])
+            lines.append(f'\nTARGET {tid}')
+            for row in scored[:12]: lines.append(str(row))
+          out='\n'.join(lines)+'\n'
+          Path('.github/camping-image-scan.txt').write_text(out,encoding='utf-8')
+          print(out)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/camping-image-scan.txt
+          git commit -m "Report camping image source matches"
+          git push
