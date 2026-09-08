@@ -1,0 +1,53 @@
+name: Find camping WebP encoder
+
+on:
+  push:
+    branches: [upload/camping-20260908]
+    paths: ['.github/find-camping-webp.trigger']
+
+permissions:
+  contents: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet pillow
+      - name: Match known embedded images exactly
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          import hashlib, io
+          tests = [
+            ('08','assets/images/camper/camper_interior_popup_roof（大）.jpeg','432e33ee7dd8e46d94c0eaa15fdbbb6b93dff75fcf3bdabdfdbc8f4c5e024aaa',(1100,825)),
+            ('10','assets/images/camper/camper_interior_dining（大）.jpeg','a0d5fe162fd0e97097b32f3f48acfbd83a49eedd28a444af83aba59f8e1bcace',(1100,825)),
+          ]
+          lines=[]
+          for tid,path,target,size in tests:
+            im=ImageOps.exif_transpose(Image.open(path)).convert('RGB')
+            variants={
+              'resize': im.resize(size,Image.Resampling.LANCZOS),
+              'fit': ImageOps.fit(im,size,method=Image.Resampling.LANCZOS,centering=(.5,.5)),
+            }
+            found=[]
+            for vname,v in variants.items():
+              for q in range(1,101):
+                for method in range(0,7):
+                  for exact in (False,True):
+                    bio=io.BytesIO(); v.save(bio,'WEBP',quality=q,method=method,exact=exact)
+                    h=hashlib.sha256(bio.getvalue()).hexdigest()
+                    if h==target: found.append((vname,q,method,exact,len(bio.getvalue())))
+              bio=io.BytesIO(); v.save(bio,'WEBP',lossless=True,method=6,exact=True)
+              if hashlib.sha256(bio.getvalue()).hexdigest()==target: found.append((vname,'lossless',6,True,len(bio.getvalue())))
+            lines.append(f'{tid} {path}: {found}')
+          out='\n'.join(lines)+'\n'; print(out)
+          Path('.github/camping-webp-encoder.txt').write_text(out,encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/camping-webp-encoder.txt
+          git commit -m "Report camping WebP encoder matches"
+          git push
