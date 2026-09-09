@@ -1,62 +1,52 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ハイエース200系 整備ガイド | TrailFusion AI</title>
-<meta name="description" content="ハイエース200系ディーゼルの整備記録。症状から原因をすぐ診断。整備項目一覧表から各ガイドへ移動できます。">
-<style>
-body{margin:0;background:#fffbf2;color:#1f2e4d;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}.box{display:none;max-width:560px;background:#fff;border:3px solid #1f2e4d;border-radius:28px;box-shadow:8px 8px 0 #1f2e4d;padding:28px;text-align:center;margin:24px auto}body.error{display:grid;place-items:center;text-align:center;padding:24px}body.error .box{display:block}a{display:inline-flex;margin-top:16px;padding:14px 22px;border:3px solid #1f2e4d;border-radius:999px;background:#ff6b5b;color:#fff;font-weight:900;text-decoration:none;box-shadow:5px 5px 0 #1f2e4d}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ハイエースの、その奥へ。｜TrailFusion AI 整備ガイド</title>
+  <meta name="description" content="ハイエースの座席を開け、床下をのぞき、部品から整備を知る。4WDの3D車両・構造解説・工程ガイド・整備記録がつながるインタラクティブガイド。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23ffd84d'/%3E%3Ctext x='8' y='31' font-size='30' fill='%231f2e4d'%3E↗%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/maintenance.css">
+  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.js"}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S57KSMSB8Y',{page_path:'/maintenance.html',page_title:'ハイエース200系 整備ガイド'});</script>
 </head>
 <body>
-<div class="box" id="fallback"></div>
-<script>
-(async()=>{
-  const source='https://raw.githubusercontent.com/hiroakiyasa/homepage/dfe7aba9f7191c3d73aa870b069b1bef3943952e/maintenance.html';
-  const analyticsTag=`
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"><\/script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S57KSMSB8Y', { page_path: '/maintenance.html', page_title: 'ハイエース200系 整備ガイド' });
-<\/script>
-`;
-  const visitorCounterScript='<script src="assets/js/visitor-counter.js" defer></'+'script>';
-  try{
-    let html=await fetch(source,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()});
-    if(!html.includes('G-S57KSMSB8Y')){
-      html=html.replace('</head>', analyticsTag+'</head>');
-    }
-    if(!html.includes('visitor-counter.js')){
-      html=html.replace('</body>', visitorCounterScript+'</body>');
-    }
-    html=html.replace('<h1 class="hero-title">愛車、今日はどんな<br><span class="underline">「声」</span>してる？</h1>','<h1 class="hero-title"><span class="hero-title-nowrap">愛車、今日はどんな</span><br><span class="underline">「声」</span>してる？</h1>');
-    const fixedCss = `
-.hero-title-nowrap{white-space:nowrap;display:inline-block}
-/* 整備カード画像は常に大きく展開表示。PCでも折りたたみ・トリミングしない */
-#items .cards{display:grid!important;grid-template-columns:1fr!important;gap:3.25rem!important;width:100%!important}
-#items .item{display:flex!important;flex-direction:column!important;overflow:visible!important}
-#items .item-img-wrap,
-#items button.item-img-wrap,
-#items .open-img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;overflow:visible!important;visibility:visible!important;opacity:1!important;clip-path:none!important;border-bottom:3.5px solid var(--navy)!important;background:#16213a!important;padding:0!important}
-#items .item-img-wrap img,
-#items .open-img img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;object-fit:contain!important;object-position:center top!important;visibility:visible!important;opacity:1!important;transform:none!important}
-#items .item:hover .item-img-wrap img{transform:none!important}
-#items details.pro{display:block!important}
-@media(min-width:901px){#items .container{max-width:1240px!important}#items .item-img-wrap img,#items .open-img img{width:100%!important;height:auto!important;max-height:none!important}.item-body{padding-top:1.8rem!important}}
-@media(max-width:900px){.hero-title{font-size:clamp(1.9rem,9.4vw,3rem)!important;letter-spacing:-.055em}.hero-title-nowrap{white-space:nowrap;display:inline-block}}
-@media(max-width:380px){.hero-title{font-size:clamp(1.72rem,8.8vw,2.55rem)!important}}
-`;
-    html=html.replace('</style>', fixedCss + '</style>');
-    document.open();document.write(html);document.close();
-  }catch(e){
-    document.body.classList.add('error');
-    document.getElementById('fallback').innerHTML='<h1>整備記録</h1><p>ページの読み込みに失敗しました。</p><a href="index.html">ホームへ戻る</a>';
-  }
-})();
-</script>
+  <header class="site-header">
+    <a class="brand" href="https://trailfusionai.com/" aria-label="TrailFusion AI ホーム"><span class="brand-icon">↗</span><span>TRAILFUSION <b>AI</b><small>MAKE EVERY JOURNEY YOURS.</small></span></a>
+    <nav aria-label="メインナビゲーション"><a href="#explore" class="current">3Dで知る</a><a href="#guide">整備ガイド</a><a href="#journal">整備記録 <span id="record-count">0</span></a><a href="camping.html" class="camping-link">キャンピングカー ↗</a></nav>
+  </header>
+  <main>
+    <section id="explore" class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> HIACE / MAINTENANCE STUDIO</p><h1>愛車の、<br><span>その奥へ。</span></h1><p class="lead">開けて、見つけて、わかる。<br>一つひとつの部品から、<br>長く付き合うための整備を。</p><button class="primary" id="start-explore">シートを開けて、のぞいてみる <span>↗</span></button><p class="hero-sub">200系ハイエースを、360°から。</p></div>
+      <div class="studio" id="studio"><canvas id="vehicle" aria-label="ハイエース3Dモデル。部品は下の一覧からも選択できます" tabindex="0"></canvas><div id="hotspots" aria-label="3D上の整備ポイント"></div><div id="loading" role="status"><span class="loading-ring"></span><strong>ハイエースを準備しています</strong><small>ボディと整備パーツを組み立て中</small></div><div id="fallback" hidden><strong>3D表示を利用できません</strong><p>3Dを表示できませんでした。部品一覧・構造解説・整備記録はこのまま使えます。</p><button id="retry">3Dを再読み込み</button></div></div>
+      <div class="studio-top"><span class="pill">INTERACTIVE 3D</span><span id="view-label">01 / 外観</span></div>
+      <div class="scene-options"><button id="all-pins" aria-pressed="false">全パーツの位置</button><button id="power-flow" aria-pressed="false">動力の流れ ▷</button></div>
+      <div class="motion-controls"><button id="motion-toggle" aria-pressed="true">Ⅱ 回転を停止</button><button id="engine-cutaway" aria-pressed="false">エンジン内部</button><label>教材速度 <input id="motion-speed" type="range" min="0.25" max="2" value="1" step="0.25"><output id="motion-speed-label">1×</output></label><small>直進走行の低速模式アニメーション／実車の点検は停止して実施</small></div>
+      <aside class="selection-preview" id="preview"><span class="eyebrow">EXPLORE THE DETAILS</span><h2 id="preview-title">いつもの一台に、<br>新しい発見を。</h2><p id="preview-text">座席の下にはエンジン。床の下には、力をタイヤへ伝える仕組み。</p><button id="preview-guide" hidden>この部品の整備を見る ↓</button></aside>
+      <div class="scene-stepper" id="scene-stepper" hidden><span id="scene-step-label"></span><button data-scene-step="prev" aria-label="3Dで前の工程">←</button><button data-scene-step="play">▶ 工程</button><button data-scene-step="next" aria-label="3Dで次の工程">→</button></div>
+      <div class="view-toolbar" role="group" aria-label="3Dの視点"><button data-view="exterior" aria-pressed="true"><span>01</span>外観</button><button data-view="engine" aria-pressed="false"><span>02</span>シートを開く</button><button data-view="underbody" aria-pressed="false"><span>03</span>床下をのぞく</button><button data-view="xray" aria-pressed="false"><span>04</span>透視する</button><button data-view="explode" aria-pressed="false"><span>05</span>分解して見る</button></div>
+      <div class="studio-footer"><span>↔ ドラッグで回転 · ホイール / ピンチで拡大</span><div><button id="rotate" aria-pressed="false" aria-label="車両の自動回転">↻</button><button id="reset-view" aria-label="視点をリセット">⌂</button><button id="fullscreen" aria-label="3Dを全画面表示">⛶</button></div></div>
+    </section>
+    <div class="ribbon"><span>KNOW YOUR VAN.</span><span>エンジンから、足回りまで。</span><span>CARE FOR THE JOURNEY AHEAD. ↗</span></div>
+    <section class="vehicle-settings wrap" aria-labelledby="vehicle-title"><div><p class="eyebrow">YOUR HIACE</p><h2 id="vehicle-title">まずは、愛車の仕様から。</h2><p>型式は車検証・車両銘板で確認。記録は車両名ごとに保存します。</p></div><div class="settings-fields"><label>車両名<input id="vehicle-name" maxlength="40" value="マイハイエース" autocomplete="off"></label><label>エンジン<select id="engine-type"><option value="1kd">1KD-FTV / ディーゼル</option><option value="1gd" selected>1GD-FTV / ディーゼル</option><option value="gas">1TR・2TR / ガソリン</option></select></label><label>駆動方式<select id="drive-type"><option value="2wd">2WD（FR）</option><option value="4wd" selected>4WD</option></select></label><button id="apply-vehicle">この仕様で表示 ↗</button></div><p class="model-note">CGは既存のスーパーロング・ワイド・ハイルーフ形状を使用した配置説明モデルです。年式・ボディ・グレードによる位置や形状、配管経路の差を含みます。初期選択はガイド用の1GD・4WDです。全仕様の寸法・配置を保証するものではありません。</p></section>
+    <section id="learn" class="learning-section wrap">
+      <div class="section-heading"><div><p class="eyebrow">HOW YOUR HIACE WORKS / 4WD</p><h2>一つの部品から、<br>一台の仕組みへ。</h2></div><p>入口はやさしく、その先は深く。<br>6つの系統を、動く3Dと一緒に読み解く。</p></div>
+      <div class="structure-note"><strong>「はしご状の床下」と「ラダーフレーム車」は別。</strong><p>200系ハイエースはモノコック構造です。縦通材やクロスメンバーをボディから独立したフレームとして描かず、一体の荷重経路として扱います。<a href="https://www.toyota-body.co.jp/about/blog/20250326-02" target="_blank" rel="noopener noreferrer">トヨタ車体の説明 ↗</a></p></div>
+      <div id="lesson-grid" class="lesson-grid"></div>
+      <p class="model-note">1GD・1KD・1TR/2TRの代表構成を比較する教材です。全世代・全グレードの純正CADを再現したものではありません。寸法・配管・ブラケット位置と内部機構は模式化し、仕様不明の部品は適用未確認と明記しています。</p>
+    </section>
+    <section id="catalog" class="catalog-section wrap"><div class="section-heading"><div><p class="eyebrow">PARTS ATLAS / 33 GROUPS</p><h2>部品の分類を、立体につなぐ。</h2></div><p>部品分類の全33分類を収録。<br>番号 → 役割 → 3D配置へ。</p></div><p class="model-note">1101等は図の分類番号、17410等は参照記号です。注文用の完全な品番ではありません。ガソリン専用の図はディーゼルへ同時装着せず、比較ボタンで仕様を切り替えます。1706等の適用は年式別に要確認。</p><div id="catalog-grid" class="catalog-grid"></div><div class="exhaust-reading"><h3>排気展開図の読み方</h3><p>17410 フロントパイプ → 17451などのシール・17280Aのバルブ → 17420 マフラー → 17451A → 17430 テールパイプ。破線は組付け関係で、ホースではありません。</p><p>17571・17572は支持部、17565Aは防振吊りゴム、17593・17594は遮熱部の参照。CBU／1V5の末端管は選択肢で、両方をつなぐ構成ではありません。センサー系は図の別ページ参照先と実車型式の照合が必要です。</p><button data-knowledge-part="exhaust-fittings">排気の接続部を3Dで見る ↗</button></div></section>
+    <section id="guide" class="guide-section wrap">
+      <div class="section-heading"><div><p class="eyebrow">FIND A PART. UNDERSTAND THE PROCESS.</p><h2>部品を知れば、<br>整備が見えてくる。</h2></div><p>気になるパーツを選ぶと、3Dの位置と連動。<br>役割、点検の流れ、記録をひとつの場所に。</p></div>
+      <div class="guide-layout"><aside class="parts-sidebar"><label class="search-label"><span>⌕</span><input id="part-search" type="search" placeholder="部品・症状を検索" aria-label="部品・症状を検索"></label><div id="categories" class="categories" role="group" aria-label="部品カテゴリー"></div><p class="result-count" id="result-count"></p><div id="part-list" class="part-list"></div></aside><article id="part-detail" class="part-detail" aria-live="polite"></article></div>
+    </section>
+    <section id="journal" class="journal-section wrap"><div class="section-heading"><div><p class="eyebrow">A LITTLE CARE. A LONGER JOURNEY.</p><h2>愛車の記録を、つないでいく。</h2></div><button id="export-records" class="secondary">記録を書き出す ↓</button></div><p>選択中の車両の記録を、このブラウザーに保存します。点検と交換を分け、次の予定も残せます。実施記録がない部品は「未記録」と表示します。</p><div class="journal-layout"><form id="record-form"><label>対象部品<select id="record-part" required></select></label><div class="form-row"><label>実施日<input id="record-date" type="date" required></label><label>走行距離（km）<input id="record-km" type="number" min="0" max="9999999" step="1" required placeholder="例：82000"></label></div><div class="form-row"><label>作業内容<select id="record-action"><option>点検</option><option>交換</option><option>清掃</option><option>修理</option><option>整備工場で確認</option></select></label><label>結果<select id="record-result"><option>異常なし</option><option>経過観察</option><option>要整備</option><option>作業完了</option></select></label></div><label>メモ<textarea id="record-note" maxlength="2000" rows="3" placeholder="測定値、使用部品、油種、依頼した整備工場など"></textarea></label><div class="form-row"><label>次回予定日（任意）<input id="record-next-date" type="date"></label><label>次回予定距離（任意）<input id="record-next-km" type="number" min="0" max="9999999" step="1" placeholder="整備手帳をもとに入力"></label></div><button type="submit" class="primary">整備記録を保存する ＋</button><p id="save-status" role="status"></p><small>ブラウザーのデータ削除で記録が失われます。書き出しでバックアップしてください。これは法定の点検整備記録簿の代替ではありません。</small></form><div id="record-history" class="record-history"></div></div></section>
+    <section class="sources-section wrap" id="sources"><p class="eyebrow">CHECKED SOURCES / 2026.09.09</p><h2>確かめながら、整備する。</h2><p>日常点検はトヨタ公式資料、部品の役割・外観はメーカー公開資料を参照。交換・分解は整備工場での工程概要です。年式別の修理書で確認できない締付トルク、油量、学習値、交換周期は指定していません。4ナンバー等の点検周期は、自家用乗用車向けの周期を流用せず、車両の用途・登録区分で確認してください。</p><div id="source-list" class="source-list"></div></section>
+  </main>
+  <footer class="wrap footer"><span>TRAILFUSION AI <small> / KNOW YOUR VAN.</small></span><a href="#explore">ページの先頭へ ↑</a></footer>
+  <div id="announcement" class="sr-only" role="status"></div>
+  <script type="module" src="assets/js/maintenance.js"></script>
+  <script src="assets/js/visitor-counter.js" defer></script>
 </body>
 </html>
