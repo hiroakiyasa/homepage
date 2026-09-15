@@ -27,26 +27,18 @@ jobs:
           python-version: '3.12'
 
       - name: Restore the original logo and fix portrait previews
+        env:
+          HOTFIX_B64: CgovKiAyMDI2LTA5LTE2OiByZXN0b3JlIHRoZSBvcmlnaW5hbCBUcmFpbEZ1c2lvbiBsb2NrdXAgYW5kIGNvbnN0cmFpbiBwb3J0cmFpdCBhcHAgcHJldmlld3Mgb24gcGhvbmVzLiAqLwoudGYtYnJhbmR7CiAgcG9zaXRpb246cmVsYXRpdmUhaW1wb3J0YW50OwogIGRpc3BsYXk6aW5saW5lLWJsb2NrIWltcG9ydGFudDsKICBmbGV4OjAgMCBhdXRvIWltcG9ydGFudDsKICB3aWR0aDo4OHB4IWltcG9ydGFudDsKICBoZWlnaHQ6NTRweCFpbXBvcnRhbnQ7CiAgbWluLXdpZHRoOjg4cHghaW1wb3J0YW50OwogIG1hcmdpbjowIWltcG9ydGFudDsKICBwYWRkaW5nOjAhaW1wb3J0YW50OwogIGdhcDowIWltcG9ydGFudDsKICBmb250LXNpemU6MCFpbXBvcnRhbnQ7CiAgbGluZS1oZWlnaHQ6MCFpbXBvcnRhbnQ7CiAgbGV0dGVyLXNwYWNpbmc6MCFpbXBvcnRhbnQ7CiAgY29sb3I6dHJhbnNwYXJlbnQhaW1wb3J0YW50OwogIGJhY2tncm91bmQ6dXJsKCcvYXNzZXRzL2ljb25zL3RyYWlsZnVzaW9uLWxvY2t1cC53ZWJwJykgY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IWltcG9ydGFudDsKfQoudGYtYnJhbmQtbWFya3tkaXNwbGF5Om5vbmUhaW1wb3J0YW50fQoudGYtYnJhbmQgZW17CiAgcG9zaXRpb246YWJzb2x1dGUhaW1wb3J0YW50OwogIHdpZHRoOjFweCFpbXBvcnRhbnQ7CiAgaGVpZ2h0OjFweCFpbXBvcnRhbnQ7CiAgcGFkZGluZzowIWltcG9ydGFudDsKICBtYXJnaW46LTFweCFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6aGlkZGVuIWltcG9ydGFudDsKICBjbGlwOnJlY3QoMCwwLDAsMCkhaW1wb3J0YW50OwogIGNsaXAtcGF0aDppbnNldCg1MCUpIWltcG9ydGFudDsKICB3aGl0ZS1zcGFjZTpub3dyYXAhaW1wb3J0YW50OwogIGJvcmRlcjowIWltcG9ydGFudDsKfQoudGYtZm9vdGVyIC50Zi1icmFuZHt3aWR0aDoxMDRweCFpbXBvcnRhbnQ7aGVpZ2h0OjY0cHghaW1wb3J0YW50O21pbi13aWR0aDoxMDRweCFpbXBvcnRhbnR9CkBtZWRpYShtYXgtd2lkdGg6NzYwcHgpewogIC50Zi1icmFuZHt3aWR0aDo3NnB4IWltcG9ydGFudDtoZWlnaHQ6NDdweCFpbXBvcnRhbnQ7bWluLXdpZHRoOjc2cHghaW1wb3J0YW50fQogIC50Zi1mb290ZXIgLnRmLWJyYW5ke3dpZHRoOjk0cHghaW1wb3J0YW50O2hlaWdodDo1OHB4IWltcG9ydGFudDttaW4td2lkdGg6OTRweCFpbXBvcnRhbnR9CiAgLnRmLWhlYWRlcjpoYXMoLnRmLWV4dHJhKSAudGYtYnJhbmR7d2lkdGg6NjhweCFpbXBvcnRhbnQ7aGVpZ2h0OjQycHghaW1wb3J0YW50O21pbi13aWR0aDo2OHB4IWltcG9ydGFudH0KICAudGYtbGVnYWN5IC53aHktcGljewogICAgZGlzcGxheTpmbGV4IWltcG9ydGFudDsKICAgIGZsZXgtd3JhcDpub3dyYXAhaW1wb3J0YW50OwogICAganVzdGlmeS1jb250ZW50OmNlbnRlciFpbXBvcnRhbnQ7CiAgICBhbGlnbi1pdGVtczpmbGV4LXN0YXJ0IWltcG9ydGFudDsKICAgIGdhcDoxMnB4IWltcG9ydGFudDsKICAgIHdpZHRoOjEwMCUhaW1wb3J0YW50OwogICAgb3ZlcmZsb3c6aGlkZGVuIWltcG9ydGFudDsKICB9CiAgLnRmLWxlZ2FjeSAud2h5LXBpYyBmaWd1cmV7CiAgICBmbGV4OjAgMSBhdXRvIWltcG9ydGFudDsKICAgIHdpZHRoOmF1dG8haW1wb3J0YW50OwogICAgbWF4LXdpZHRoOmNhbGMoNTAlIC0gNnB4KSFpbXBvcnRhbnQ7CiAgICBtYXJnaW46MCFpbXBvcnRhbnQ7CiAgfQogIC50Zi1sZWdhY3kgLndoeS1waWMgaW1newogICAgZGlzcGxheTpibG9jayFpbXBvcnRhbnQ7CiAgICB3aWR0aDphdXRvIWltcG9ydGFudDsKICAgIGhlaWdodDoyNjBweCFpbXBvcnRhbnQ7CiAgICBtYXgtd2lkdGg6MTAwJSFpbXBvcnRhbnQ7CiAgICBtYXgtaGVpZ2h0OjM2c3ZoIWltcG9ydGFudDsKICAgIG1hcmdpbjowIGF1dG8haW1wb3J0YW50OwogICAgb2JqZWN0LWZpdDpjb250YWluIWltcG9ydGFudDsKICAgIHRyYW5zZm9ybTpub25lIWltcG9ydGFudDsKICB9CiAgLnRmLWxlZ2FjeSAuY2hlcm8gLnNob3RzewogICAgZGlzcGxheTpmbGV4IWltcG9ydGFudDsKICAgIGZsZXgtd3JhcDpub3dyYXAhaW1wb3J0YW50OwogICAganVzdGlmeS1jb250ZW50OmNlbnRlciFpbXBvcnRhbnQ7CiAgICBhbGlnbi1pdGVtczpmbGV4LWVuZCFpbXBvcnRhbnQ7CiAgICBnYXA6MTJweCFpbXBvcnRhbnQ7CiAgICBvdmVyZmxvdzpoaWRkZW4haW1wb3J0YW50OwogIH0KICAudGYtbGVnYWN5IC5jaGVybyAuc2hvdHMgaW1newogICAgZGlzcGxheTpibG9jayFpbXBvcnRhbnQ7CiAgICB3aWR0aDphdXRvIWltcG9ydGFudDsKICAgIGhlaWdodDoyODBweCFpbXBvcnRhbnQ7CiAgICBtYXgtd2lkdGg6Y2FsYyg1MCUgLSA2cHgpIWltcG9ydGFudDsKICAgIG1heC1oZWlnaHQ6MzlzdmghaW1wb3J0YW50OwogICAgb2JqZWN0LWZpdDpjb250YWluIWltcG9ydGFudDsKICAgIHRyYW5zZm9ybTpub25lIWltcG9ydGFudDsKICB9CiAgLnRmLWxlZ2FjeSAuY2hlcm8gLnNob3RzIGltZzpudGgtY2hpbGQoMyl7ZGlzcGxheTpub25lIWltcG9ydGFudH0KfQo=
         run: |
           python - <<'PY'
           from pathlib import Path
           import base64
+          import os
           import re
           import subprocess
 
           baseline = 'b8c922f00f90f1e443b02253dd78d5f60b2de53d'
-          try:
-              source = subprocess.check_output(
-                  ['git', 'show', f'{baseline}:index.html'],
-                  text=True,
-              )
-          except subprocess.CalledProcessError:
-              subprocess.run(['git', 'fetch', '--depth=1', 'origin', baseline], check=True)
-              source = subprocess.check_output(
-                  ['git', 'show', f'{baseline}:index.html'],
-                  text=True,
-              )
-
+          source = subprocess.check_output(['git', 'show', f'{baseline}:index.html'], text=True)
           match = re.search(
               r'<img src="data:image/webp;base64,([^"]+)" alt="TrailFusion AI" class="lockup">',
               source,
@@ -62,90 +54,7 @@ jobs:
           css = css_path.read_text(encoding='utf-8')
           marker = '2026-09-16: restore the original TrailFusion lockup'
           if marker not in css:
-              css += r'''
-
-/* 2026-09-16: restore the original TrailFusion lockup and constrain portrait app previews on phones. */
-.tf-brand{
-  position:relative!important;
-  display:inline-block!important;
-  flex:0 0 auto!important;
-  width:88px!important;
-  height:54px!important;
-  min-width:88px!important;
-  margin:0!important;
-  padding:0!important;
-  gap:0!important;
-  font-size:0!important;
-  line-height:0!important;
-  letter-spacing:0!important;
-  color:transparent!important;
-  background:url('/assets/icons/trailfusion-lockup.webp') center/contain no-repeat!important;
-}
-.tf-brand-mark{display:none!important}
-.tf-brand em{
-  position:absolute!important;
-  width:1px!important;
-  height:1px!important;
-  padding:0!important;
-  margin:-1px!important;
-  overflow:hidden!important;
-  clip:rect(0,0,0,0)!important;
-  clip-path:inset(50%)!important;
-  white-space:nowrap!important;
-  border:0!important;
-}
-.tf-footer .tf-brand{width:104px!important;height:64px!important;min-width:104px!important}
-@media(max-width:760px){
-  .tf-brand{width:76px!important;height:47px!important;min-width:76px!important}
-  .tf-footer .tf-brand{width:94px!important;height:58px!important;min-width:94px!important}
-  .tf-header:has(.tf-extra) .tf-brand{width:68px!important;height:42px!important;min-width:68px!important}
-  .tf-legacy .why-pic{
-    display:flex!important;
-    flex-wrap:nowrap!important;
-    justify-content:center!important;
-    align-items:flex-start!important;
-    gap:12px!important;
-    width:100%!important;
-    overflow:hidden!important;
-  }
-  .tf-legacy .why-pic figure{
-    flex:0 1 auto!important;
-    width:auto!important;
-    max-width:calc(50% - 6px)!important;
-    margin:0!important;
-  }
-  .tf-legacy .why-pic figure img{
-    display:block!important;
-    width:auto!important;
-    height:260px!important;
-    max-width:100%!important;
-    max-height:36vh!important;
-    max-height:36svh!important;
-    margin:0 auto!important;
-    object-fit:contain!important;
-    transform:none!important;
-  }
-  .tf-legacy .chero .shots{
-    display:flex!important;
-    flex-wrap:nowrap!important;
-    justify-content:center!important;
-    align-items:flex-end!important;
-    gap:12px!important;
-    overflow:hidden!important;
-  }
-  .tf-legacy .chero .shots img{
-    display:block!important;
-    width:auto!important;
-    height:280px!important;
-    max-width:calc(50% - 6px)!important;
-    max-height:39vh!important;
-    max-height:39svh!important;
-    object-fit:contain!important;
-    transform:none!important;
-  }
-  .tf-legacy .chero .shots img:nth-child(3){display:none!important}
-}
-'''
+              css += base64.b64decode(os.environ['HOTFIX_B64']).decode('utf-8')
               css_path.write_text(css, encoding='utf-8')
 
           logo = logo_path.read_bytes()
