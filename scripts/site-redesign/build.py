@@ -11,6 +11,9 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[2]
 BASE='b8c922f00f90f1e443b02253dd78d5f60b2de53d'
+# Explicit migration opt-in: normal CI validates committed HTML without regenerating it.
+if '--rebuild-from-backup' not in sys.argv:
+    raise SystemExit('One-time migration helper: use --rebuild-from-backup deliberately. Normal page edits do not require regeneration.')
 DOMAIN='https://trailfusionai.com'
 DATE='2026-09-16'
 OUT=Path('/tmp/site-redesign-results'); OUT.mkdir(parents=True,exist_ok=True)
@@ -44,13 +47,13 @@ def picture(source,alt,cls='',width=1000,eager=False):
     return f'<img src="{src}" alt="{esc(alt)}" width="{w}" height="{h}" class="{cls}" loading="{"eager" if eager else "lazy"}" decoding="async"'+(' fetchpriority="high"' if eager else '')+'>'
 
 def header(active='learn',extra=''):
-    hubs=[('learn','/quest/','学ぶ','合格クエスト'),('travel','/travel/','旅する','車旅'),('diy','/diy/','つくる','キャンピングカーDIY'),('care','/maintenance/','整える','ハイエース整備')]
+    hubs=[('learn','/quest/','学ぶ','合格クエスト'),('travel','/travel/','旅する','車旅'),('diy','/diy/','つくる','<span class="tf-desktop-label">キャンピングカーDIY</span><span class="tf-mobile-label">キャンパーDIY</span>'),('care','/maintenance/','整える','ハイエース整備')]
     links=''.join(f'<a href="{url}" data-hub="{key}" data-active="{str(key==active).lower()}"><b>{a}</b><small>{b}</small></a>' for key,url,a,b in hubs)
-    return '<a class="tf-skip" href="#tf-main">本文へ移動</a><header class="tf-header"><div class="tf-container"><div class="tf-top"><a class="tf-brand" href="/" aria-label="TrailFusion AI ホーム"><span class="tf-brand-mark" aria-hidden="true">TF</span>TrailFusion <em>AI</em></a><nav class="tf-utility" aria-label="補助メニュー"><a href="/apps.html">アプリ一覧</a><a href="/about/">私たちについて</a><a href="/support/">サポート</a>'+extra+'</nav><details class="tf-mobile-menu"><summary>メニュー</summary><nav class="tf-mobile-links" aria-label="モバイル補助メニュー"><a href="/choose/">クエストを選ぶ</a><a href="/parents/">保護者の方へ</a><a href="/study/">学習ガイド</a><a href="/apps.html">アプリ一覧</a><a href="/about/">私たちについて</a><a href="/support/">サポート</a></nav></details></div><nav class="tf-hubs" aria-label="4つのコンテンツ入口">'+links+'</nav></div></header>'
+    return '<a class="tf-skip" href="#tf-main">本文へ移動</a><header class="tf-header"><div class="tf-container"><div class="tf-top"><a class="tf-brand" href="/" aria-label="TrailFusion AI ホーム"><span class="tf-brand-mark" aria-hidden="true">TF</span>TrailFusion <em>AI</em></a><nav class="tf-utility" aria-label="補助メニュー"><a href="/apps.html">アプリ一覧</a><a href="/about/">私たちについて</a><a href="/support/">サポート</a>'+'</nav>'+('<div class="tf-extra">'+extra+'</div>' if extra else '')+'<details class="tf-mobile-menu"><summary>メニュー</summary><nav class="tf-mobile-links" aria-label="モバイル補助メニュー"><a href="/choose/">クエストを選ぶ</a><a href="/parents/">保護者の方へ</a><a href="/study/">学習ガイド</a><a href="/apps.html">アプリ一覧</a><a href="/about/">私たちについて</a><a href="/support/">サポート</a></nav></details></div><nav class="tf-hubs" aria-label="4つのコンテンツ入口">'+links+'</nav></div></header>'
 def footer():
     groups=[('学ぶ',[('/quest/','合格クエストシリーズ'),('/rika-quest.html','合格！理科クエスト'),('/social-quest.html','合格！社会クエスト'),('/kokugo-quest.html','合格！国語クエスト'),('/eigo-quest.html','英語・資格学習'),('/parents/','保護者の方へ'),('/study/','学習ガイド')]),('旅する・つくる・整える',[('/travel/','車旅の入口'),('/car-concierge.html','車旅コンシェルジュ'),('/drive-routes/','絶景ロード図鑑'),('/diy/','キャンピングカーDIY'),('/camping.html','3D間取りを体験'),('/camping-guide.html','DIY完全ガイド'),('/maintenance/','ハイエース整備')]),('TrailFusion AI',[('/apps.html','すべてのアプリ'),('/about/','運営・制作について'),('/support/','お問い合わせ・サポート'),('/support/#policies','アプリ別の規約・プライバシー'),('/privacy-policy.html','サイトのプライバシーポリシー'),('/terms-of-service.html','サイトの利用規約')])]
     columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join('<li><a href="'+url+'">'+text+'</a></li>' for url,text in links)+'</ul></div>' for title,links in groups)
-    return '<footer class="tf-footer"><div class="tf-container"><div class="tf-footer-grid"><div><a class="tf-brand" href="/"><span class="tf-brand-mark" aria-hidden="true">TF</span>TrailFusion <em>AI</em></a><p>学ぶ一歩も、旅する一歩も。<br>好奇心から生まれるアプリと、<br>自分らしい暮らしの記録。</p><a href="mailto:trailfusionai@gmail.com">お問い合わせ ↗</a></div>'+columns+'</div><div class="tf-footer-bottom"><span>© 2026 TrailFusion AI</span><span>学ぶ。旅する。つくる。整える。</span></div></div></footer>'
+    return '<footer class="tf-footer"><div class="tf-container"><div class="tf-footer-grid"><div><a class="tf-brand" href="/"><span class="tf-brand-mark" aria-hidden="true">TF</span>TrailFusion <em>AI</em></a><p>学ぶ一歩も、旅する一歩も。<br>好奇心から生まれるアプリと、<br>自分らしい暮らしの記録。</p><a href="mailto:trailfusionai@gmail.com">お問い合わせ ↗</a></div>'+columns+'</div><div class="tf-footer-bottom"><span>© <span id="year">2026</span> TrailFusion AI</span><span>学ぶ。旅する。つくる。整える。</span></div></div></footer>'
 def breadcrumb(items):
     return '<nav class="tf-breadcrumb" aria-label="パンくず"><a href="/">ホーム</a>'+''.join('<span aria-hidden="true">/</span>'+('<a href="'+url+'">'+esc(text)+'</a>' if url else '<span aria-current="page">'+esc(text)+'</span>') for text,url in items)+'</nav>'
 def button(url,text,kind='',app='',store='',placement='page'):
@@ -74,7 +77,7 @@ def metadata(soup,path,title,description,active='learn',app=None,noindex=False):
     for el in soup.find_all('link',rel='canonical'):el.decompose()
     url=DOMAIN+('/' if path=='index.html' else '/'+path.removesuffix('index.html'))
     head.append(soup.new_tag('link',rel='canonical',href=url))
-    og=DOMAIN+'/assets/og/site-v2-'+('learn' if active not in ['travel','diy','care'] else active)+'.jpg'
+    og=DOMAIN+'/assets/og/site-v2-'+(app['id'] if app and app.get('id') else ('learn' if active not in ['travel','diy','care'] else active))+'.jpg'
     for prop,value in [('og:title',title),('og:description',description),('og:type','website'),('og:site_name','TrailFusion AI'),('og:locale','ja_JP'),('og:url',url),('og:image',og),('og:image:width','1200'),('og:image:height','630')]:
         for el in soup.find_all('meta',attrs={'property':prop}):el.decompose()
         head.append(soup.new_tag('meta',attrs={'property':prop,'content':value}))
@@ -86,7 +89,19 @@ def metadata(soup,path,title,description,active='learn',app=None,noindex=False):
         if hub and DOMAIN+hub[1]!=url:entries.append({'@type':'ListItem','position':2,'name':hub[0],'item':DOMAIN+hub[1]})
         entries.append({'@type':'ListItem','position':len(entries)+1,'name':title.split(' | ')[0],'item':url})
         graph.append({'@type':'BreadcrumbList','itemListElement':entries})
+    retained_app_names={'car-concierge.html':('車旅コンシェルジュ','TravelApplication'),'reelmake.html':('Reel Make','MultimediaApplication'),'buddytalk.html':('BuddyTalk','EducationalApplication'),'wood-golem.html':('Wood Golem','GameApplication'),'word-blaster.html':('Word Blaster','GameApplication')}
+    if app is None and path in retained_app_names:
+        store=next((a.get('href') for a in soup.select('a[href]') if 'apps.apple.com/' in a.get('href','')),None)
+        if store:
+            aid=re.search(r'id(\d+)',store)
+            if aid:
+                store='https://apps.apple.com/jp/app/id'+aid.group(1)
+                graph.append({'@type':'SoftwareApplication','name':retained_app_names[path][0],'url':url,'description':description,'applicationCategory':retained_app_names[path][1],'publisher':{'@id':ORG['@id']},'operatingSystem':'iOS','installUrl':store,'sameAs':[store]})
+                for el in soup.find_all('meta',attrs={'name':'apple-itunes-app'}):el.decompose()
+                head.append(soup.new_tag('meta',attrs={'name':'apple-itunes-app','content':'app-id='+aid.group(1)}))
     if app and app.get('apple'):
+        for el in soup.find_all('link',rel='icon'):el.decompose()
+        head.append(soup.new_tag('link',rel='icon',href='/'+app['logo'].lstrip('/')))
         graph.append({'@type':'SoftwareApplication','@id':url+'#app','name':app['name'],'url':url,'description':app['description'],'applicationCategory':'EducationalApplication','operatingSystem':'iOS, Android' if app.get('google') else 'iOS','publisher':{'@id':ORG['@id']},'installUrl':app['apple'],'sameAs':[app['apple']]+([app['google']] if app.get('google') else []),'offers':{'@type':'Offer','price':'0','priceCurrency':'JPY'}})
         for el in soup.find_all('meta',attrs={'name':'apple-itunes-app'}):el.decompose()
         head.append(soup.new_tag('meta',attrs={'name':'apple-itunes-app','content':'app-id='+app['apple'].split('id')[-1]}))
@@ -94,7 +109,7 @@ def metadata(soup,path,title,description,active='learn',app=None,noindex=False):
     return soup
 
 def page(path,title,description,body,active='learn',app=None,noindex=False):
-    soup=fragment('<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/assets/images/rika-quest/rika-quest-logo.png"><link rel="stylesheet" href="/assets/css/site-v2.css"><script defer src="/assets/js/site-v2.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S57KSMSB8Y");</script></head><body class="tf-page">'+header(active)+'<main id="tf-main">'+body+'</main>'+footer()+'</body></html>')
+    soup=fragment('<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/assets/icons/trailfusion.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site-v2.css"><script defer src="/assets/js/site-v2.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S57KSMSB8Y");</script></head><body class="tf-page">'+header(active)+'<main id="tf-main">'+body+'</main>'+footer()+'</body></html>')
     metadata(soup,path,title+' | TrailFusion AI',description,active,app,noindex)
     write(path,str(soup))
 
@@ -127,7 +142,7 @@ def path_cards():
 
 def build_new():
     a,b=APPS[:2]
-    hero='<div class="tf-container"><section class="tf-hero"><div><span class="tf-kicker">合格クエスト / 中学受験の学びに</span><h1>学ぶ一歩を、<br><span class="tf-accent">夢中に変える。</span></h1><p class="tf-lead">理科・社会・国語を、クイズとわかりやすい解説で。<br>「知りたい」「もう一問」を、毎日の学びのきっかけに。</p><div class="tf-actions">'+button('/quest/','教科から選ぶ')+button('/parents/','保護者の方へ','secondary')+'</div><div class="tf-pills"><span class="tf-pill">教科別に学べる</span><span class="tf-pill">イラストで理解</span><span class="tf-pill">スマホで復習</span></div><p class="tf-note">TrailFusion AIは、学習アプリと車旅・DIYのコンテンツをつくる個人開発のスタジオです。</p></div><div class="tf-stage" aria-label="実際の学習アプリ画面"><div class="tf-phone">'+picture(a['hero'],'理科クエストの実際のメイン画面','',480,True)+'</div><div class="tf-phone back">'+picture(b['hero'],'社会クエストの単元選択画面','',420)+'</div><div class="tf-stage-tag">小さな「わかった」を、<b>次の一問へ。</b></div></div></section></div>'
+    hero='<div class="tf-container"><section class="tf-hero"><div><span class="tf-kicker">合格クエスト / 中学受験の学びに</span><h1>学ぶ一歩を、<br><span class="tf-accent">夢中に変える。</span></h1><p class="tf-lead">理科・社会・国語を、クイズと解説で。<br>「知りたい」「もう一問」を、毎日の学びのきっかけに。</p><div class="tf-actions">'+button('/quest/','教科から選ぶ')+button('/parents/','保護者の方へ','secondary')+'</div><div class="tf-pills"><span class="tf-pill">教科別に学べる</span><span class="tf-pill">イラストで理解</span><span class="tf-pill">スマホで復習</span></div><p class="tf-note">TrailFusion AIは、学習アプリと車旅・DIYのコンテンツをつくる個人開発のスタジオです。</p></div><div class="tf-stage" aria-label="実際の学習アプリ画面"><div class="tf-phone">'+picture(a['hero'],'理科クエストの実際のメイン画面','',480,True)+'</div><div class="tf-phone back">'+picture(b['hero'],'社会クエストの単元選択画面','',420)+'</div><div class="tf-stage-tag">小さな「わかった」を、<b>次の一問へ。</b></div></div></section></div>'
     steps='<div class="tf-grid">'+''.join('<article class="tf-step"><span class="tf-step-num">'+num+'</span><h3>'+title+'</h3><p>'+text+'</p></article>' for num,title,text in [('01 / CHOOSE','今日のテーマを一つ。','塾や学校で学んだ単元、気になった分野から。教科ごとに、自分に合うクエストを選びます。'),('02 / DISCOVER','正解より、わかること。','答え合わせのあとに、解説を確認。「なぜそうなる？」を確かめる時間も大切に。'),('03 / CONTINUE','短くても、また明日。','一度で全部を覚えようとせず、短い復習を日々の生活へ。紙の教材と組み合わせて使えます。')])+'</div>'
     home=hero+section('EXPLORE TRAILFUSION','学ぶ、その先にも好奇心を。',path_cards(),'white')+section('GOKAKU QUEST','今、伸ばしたい教科から。',app_cards(placement='home')+english_band(),link=('/choose/','クエスト選びを手伝ってもらう'))+section('SMALL STEPS, EVERY DAY','「もう一問」を、日々の習慣へ。',steps,'white')+section('FOR PARENTS','安心して選べることも、大切に。','<div class="tf-editorial"><div><p class="tf-pullquote">楽しいだけで終わらない。<br>わかったことを、確かめる学びに。</p><p class="tf-lead">対応する学習範囲、無料と有料の違い、個人情報の扱い。使い始める前に知っておきたいことをまとめました。</p><div class="tf-actions">'+button('/parents/','保護者向けガイド','secondary')+'</div></div><div class="tf-answer"><strong>「これだけで合格」とは言いません。</strong>クエストは、知識の確認と復習を支える学習アプリです。記述や思考過程は、紙の教材や授業での学びと組み合わせてください。成績向上や合格を保証するものではありません。</div></div>')+final()
     page('index.html','合格クエストと、好奇心のある暮らし','合格クエストシリーズの理科・社会・国語学習アプリを中心に、車旅コンシェルジュ、キャンピングカーDIY、ハイエース整備を紹介するTrailFusion AI公式サイト。',home)
@@ -136,13 +151,13 @@ def build_new():
     page('quest/index.html','合格クエストシリーズ | 中学受験の理科・社会・国語','合格クエストシリーズの教科別案内。中学受験理科・社会・国語の学習範囲と使い方、英語・資格学習向けアプリをご紹介します。',quest)
     for app in APPS:
         p=app['path'];subject=app['subject']
-        body='<div class="tf-container">'+breadcrumb([('合格クエスト','/quest/'),(app['name'],None)])+'<section class="tf-hero tf-app-hero"><div><div class="tf-product-name">'+picture(app['logo'],app['name']+' アイコン','tf-app-icon',160)+'<span>'+app['name']+'</span></div><span class="tf-kicker">中学受験 / '+subject+'の知識と復習</span><h1>'+app['headline']+'</h1><p class="tf-lead">'+app['description']+'</p>'+store_buttons(app)+'<div class="tf-pills">'+''.join('<span class="tf-pill">'+x+'</span>' for x in app['areas'])+'</div></div><figure class="tf-product-stage">'+picture(app['hero'],app['name']+' メイン画面','',620,True)+'<figcaption>実際のアプリ画面。表示はバージョンにより異なります。</figcaption></figure></section></div>'
+        body='<div class="tf-container">'+breadcrumb([('合格クエスト','/quest/'),(app['name'],None)])+'<section class="tf-hero tf-app-hero"><div><div class="tf-product-name">'+picture(app['logo'],app['name']+' アイコン','tf-app-icon',160)+'<span>'+app['name']+'</span></div><span class="tf-kicker">中学受験 / '+subject+'の知識と復習</span><h1>'+app['headline']+'</h1><p class="tf-lead">'+app['description']+'</p>'+store_buttons(app)+'<div class="tf-pills">'+''.join('<span class="tf-pill">'+x+'</span>' for x in app['areas'])+'</div></div><figure class="tf-product-stage">'+picture(app['hero'],app['name']+' メイン画面','',620,True)+'<figcaption>アプリの紹介画像。画面・収録内容はバージョンにより異なります。</figcaption></figure></section></div>'
         featuretexts={'rika':['生命・地球・物質・エネルギーから、気になる単元を選べます。習った内容の振り返りにも。','文字だけでは捉えにくいことを、イラストと読み上げで確かめられます。','学習と一緒に育つキャラクター。毎日の一問に、小さな楽しみを添えます。'],'social':['地理・歴史・公民を分けて学習。塾や学校で扱ったテーマから復習できます。','短い時間にも取り組める4択問題。答えを選んだあとは解説を確かめましょう。','結果を振り返り、理解があいまいなところを確認。復習のきっかけにできます。'],'kokugo':['漢字・語彙・慣用句・文法を、分野別に確認。知っていることばの意味を深めます。','イラストと読み上げを組み合わせ、文字と音から意味を確かめられます。','友達との対戦やランキングを、学習を続ける楽しみとして活用できます。']}
         cards='<div class="tf-grid">'+''.join('<article class="tf-step"><span class="tf-step-num">0'+str(i+1)+'</span><h3>'+name+'</h3><p>'+featuretexts[app['id']][i]+'</p></article>' for i,name in enumerate(app['features']))+'</div>'
         body+=section('DESIGNED FOR LEARNING',subject+'の学びを支える、3つの工夫。',cards,'white')
         screens='<div class="tf-shot-grid">'+''.join('<figure>'+picture(src,alt or app['name']+' 学習画面','',600)+'<figcaption>'+esc(alt or '実際のアプリ画面')+'</figcaption></figure>' for src,alt in app['shots'])+'</div>'
-        body+=section('INSIDE THE APP','実際の画面で、学びをイメージ。',screens)
-        scope='<div class="tf-answer"><strong>'+subject+'クエストで学べること</strong>'+('・'.join(app['areas']))+'を中心に、知識の確認と復習に取り組めます。単元や問題の収録状況は、アプリの最新版でご確認ください。</div><p class="tf-note">'+('文章読解の記述練習まで、このアプリだけで完結するものではありません。' if subject=='国語' else '途中式・記述・実験の考察などは、授業や紙の教材と組み合わせて学びましょう。')+' アプリ内の偏差値は、塾の模試の偏差値や志望校合格可能性を表すものではありません。</p>'
+        body+=section('INSIDE THE APP','紹介画像で、学びをイメージ。',screens)
+        scope='<div class="tf-answer"><strong>'+subject+'クエストで学べること</strong>'+('・'.join(app['areas']))+'を中心に、知識の確認と復習に取り組めます。単元や問題の収録状況は、アプリの最新版でご確認ください。掲載画像は紹介用のため、収録内容や表示が最新版と異なる場合があります。</div><p class="tf-note">'+('文章読解の記述練習まで、このアプリだけで完結するものではありません。' if subject=='国語' else '途中式・記述・実験の考察などは、授業や紙の教材と組み合わせて学びましょう。')+' アプリ内の偏差値は、塾の模試の偏差値や志望校合格可能性を表すものではありません。</p>'
         body+=section('CURRICULUM','学習範囲と、上手な使い分け。',scope,'white')
         body+=section('START SMALL','今日学んだ単元から、始めよう。',steps)
         fee='<div class="tf-table-scroll"><table class="tf-table"><thead><tr><th scope="col">確認すること</th><th scope="col">ご案内</th></tr></thead><tbody><tr><th scope="row">ダウンロード</th><td>無料でダウンロードできます。アプリ内課金があります。</td></tr><tr><th scope="row">有料機能・価格</th><td>利用できる範囲や購入内容は、アプリの購入画面でご確認ください。OS・地域・バージョンで異なる場合があります。</td></tr><tr><th scope="row">広告・個人情報</th><td>利用する機能に応じた取り扱いを、<a href="/'+app['policy']+'">プライバシーポリシー</a>でご確認ください。</td></tr><tr><th scope="row">対応端末</th><td>iOS・Androidの各ストアで、OS要件とお使いの端末の対応をご確認ください。</td></tr></tbody></table></div>'
@@ -153,7 +168,7 @@ def build_new():
         page(p,app['name']+' | 中学受験'+subject+'の学習アプリ',app['description'],body,app=app)
     eng='<div class="tf-container">'+breadcrumb([('合格クエスト','/quest/'),('英語クエスト',None)])+'<div class="tf-page-heading"><span class="tf-kicker">ENGLISH & QUALIFICATION STUDY</span><h1>英語の学びにも、<br><span class="tf-accent">次のクエストを。</span></h1><p class="tf-lead">合格！英語クエストは、英語の文法・語彙・会話表現と、TOEIC・TOEFL・CETなどに関連する学習を扱うアプリです。</p><div class="tf-actions">'+button('/support/?app=eigo','配信・利用について問い合わせる')+'</div></div><div class="tf-answer"><strong>中学受験の主要3教科とは、別の学習領域です。</strong>理科・社会・国語クエストとは学習対象が異なります。資格試験の公式アプリではなく、スコアや合格を保証するものではありません。</div></div>'
     eng+=section('LEARNING AREAS','基礎から、目的のある学びへ。','<div class="tf-grid">'+''.join('<article class="tf-step"><span class="tf-step-num">'+n+'</span><h3>'+t+'</h3><p>'+d+'</p></article>' for n,t,d in [('01','文法・語彙・表現','英語の文法、単語、会話表現をクイズで学ぶためのコンテンツ。'),('02','演習と学習記録','実力テスト・模試に関連する学習と、取り組みの記録。'),('03','文法の参照教材','GrammarMasterBookなど、学習を振り返るための教材を提供します。')])+'</div>','white')
-    eng+=section('AVAILABILITY & PRICING','配信情報と、購入前のご確認。','<div class="tf-read"><p>このページには、確認できた正式なストアURLが揃うまではダウンロードボタンを掲載しません。最新の配信先・対応端末についてはサポートにお問い合わせください。</p><p>通常クイズの無料利用、広告、広告非表示・教材・チケットなどのアプリ内課金、Quest Proの月額・年額プランについては、利用規約をご確認ください。提供内容と価格はアプリ内の購入画面が優先されます。</p><div class="tf-actions">'+button('/eigo-quest-terms.html','利用規約','secondary')+button('/eigo-quest-privacy.html','プライバシー','secondary')+'</div></div>')
+    eng+=section('AVAILABILITY & PRICING','配信情報と、購入前のご確認。','<div class="tf-read"><p>最新の配信先・対応端末については、サポート窓口へお問い合わせください。ご利用前に、学習内容とお使いの端末の対応をご確認ください。</p><p>通常クイズの無料利用、広告、広告非表示・教材・チケットなどのアプリ内課金、Quest Proの月額・年額プランについては、利用規約をご確認ください。提供内容と価格はアプリ内の購入画面が優先されます。</p><div class="tf-actions">'+button('/eigo-quest-terms.html','利用規約','secondary')+button('/eigo-quest-privacy.html','プライバシー','secondary')+'</div></div>')
     page('eigo-quest.html','合格！英語クエスト | 英語・資格学習のご案内','合格！英語クエストの文法・語彙・資格学習、無料利用とアプリ内課金、配信情報とサポートをご案内します。',eng)
 
     choose='<div class="tf-container">'+breadcrumb([('合格クエスト','/quest/'),('クエストを選ぶ',None)])+'<div class="tf-page-heading"><span class="tf-kicker">FIND YOUR QUEST</span><h1>いま学びたいことから、<br><span class="tf-accent">クエストを選ぼう。</span></h1><p class="tf-lead">教科と使い方を選ぶと、おすすめの入口をご案内します。学力を診断する機能ではありません。</p></div><div class="tf-finder"><form id="quest-finder"><label class="tf-field"><span>学びたい教科</span><select name="subject"><option value="rika">理科 / 中学受験</option><option value="social">社会 / 中学受験</option><option value="kokugo">国語 / 中学受験</option><option value="eigo">英語 / 英語・資格学習</option></select></label><label class="tf-field"><span>使ってみたい場面</span><select name="goal"><option value="basic">学んだ知識を確かめたい</option><option value="review">間違えた内容を復習したい</option><option value="habit">短い時間から続けたい</option></select></label><button class="tf-button" type="submit">クエストを見る →</button><p class="tf-note">選択内容はこの画面内だけで処理し、保存・送信しません。</p></form><section class="tf-result" id="finder-result" tabindex="-1" aria-live="polite"><span class="tf-kicker">YOUR NEXT STEP</span><h2>気になる教科を、選んでください。</h2><p data-result-text>迷ったときは、今日の授業や塾で学んだ教科から。下の一覧から直接選ぶこともできます。</p><div class="tf-actions">'+button('/quest/','シリーズ一覧を見る')+'</div></section></div><noscript><p>JavaScriptが無効な場合は、下の教科一覧から直接お選びください。</p></noscript></div>'+section('ALL QUESTS','教科から直接選ぶ。',app_cards()+english_band())
@@ -184,7 +199,7 @@ def build_new():
     body='<div class="tf-container">'+breadcrumb([('学習ガイド',None)])+'<div class="tf-page-heading"><span class="tf-kicker">LEARNING JOURNAL</span><h1>毎日の学びに、<br><span class="tf-accent">小さな工夫を。</span></h1><p class="tf-lead">合格クエストを、授業や紙の教材と組み合わせるヒント。ご家庭に合う使い方を探してみてください。</p></div><div class="tf-directory">'+''.join(articlecards)+'</div></div>'+final()
     page('study/index.html','学習ガイド | 合格クエストと家庭学習','塾の復習、間違えた問題の見直し、漢字・語彙の学習など、合格クエストと紙の教材を組み合わせる使い方を紹介します。',body)
 
-    body='<div class="tf-container">'+breadcrumb([('運営・制作について',None)])+'<div class="tf-page-heading"><span class="tf-kicker">ABOUT TRAILFUSION AI</span><h1>好奇心から、<br><span class="tf-accent">使いたくなるものを。</span></h1><p class="tf-lead">学ぶこと。旅すること。自分の手でつくること。TrailFusion AIは、日々の関心や実体験からアプリとコンテンツをつくる、個人開発のスタジオです。</p></div><article class="tf-read"><h2>いま、力を注いでいること。</h2><p>合格クエストシリーズを中心に、クイズや解説を通じて知識を確かめる学習アプリを開発しています。中学受験の理科・社会・国語に加え、英語や日本語の学習にも取り組んでいます。</p><h2>旅とものづくりは、もう一つの原点。</h2><p>ハイエースで日本を巡る経験から生まれた車旅コンシェルジュ。キャンピングカーの間取りやDIY、愛車の仕組みを知る整備コンテンツも、このサイトの大切な柱です。</p><p><a href="/travel/story.html">車旅から始まったストーリーを読む →</a></p><h2>内容を、確かめながら改善する。</h2><p>掲載内容やアプリの問題に気になる点があれば、該当するページや単元とともにお知らせください。確認できていない利用者数・評価・学習成果を、実績として掲載することはしません。</p><h2>運営・お問い合わせ</h2><p>運営：TrailFusion AI<br>お問い合わせ：<a href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p><p>アプリのサポート、コンテンツの訂正、掲載についてのお問い合わせは、サポートページをご確認ください。</p><div class="tf-actions">'+button('/support/','サポートへ')+'</div></article></div>'
+    body='<div class="tf-container">'+breadcrumb([('運営・制作について',None)])+'<div class="tf-page-heading"><span class="tf-kicker">ABOUT TRAILFUSION AI</span><h1>好奇心から、<br><span class="tf-accent">使いたくなるものを。</span></h1><p class="tf-lead">学ぶこと。旅すること。自分の手でつくること。TrailFusion AIは、日々の関心や実体験からアプリとコンテンツをつくる、個人開発のスタジオです。</p></div><article class="tf-read"><h2>いま、力を注いでいること。</h2><p>合格クエストシリーズを中心に、クイズや解説を通じて知識を確かめる学習アプリを開発しています。中学受験の理科・社会・国語に加え、英語や日本語の学習にも取り組んでいます。</p><h2>旅とものづくりは、もう一つの原点。</h2><p>ハイエースで日本を巡る経験から生まれた車旅コンシェルジュ。キャンピングカーの間取りやDIY、愛車の仕組みを知る整備コンテンツも、このサイトの大切な柱です。</p><p><a href="/travel/story.html">車旅から始まったストーリーを読む →</a></p><h2>内容を、確かめながら改善する。</h2><p>掲載内容やアプリの問題に気になる点があれば、該当するページや単元とともにお知らせください。ご利用者からの声をもとに、問題や解説、使い勝手の改善を続けていきます。</p><h2>運営・お問い合わせ</h2><p>運営：TrailFusion AI<br>お問い合わせ：<a href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p><p>アプリのサポート、コンテンツの訂正、掲載についてのお問い合わせは、サポートページをご確認ください。</p><div class="tf-actions">'+button('/support/','サポートへ')+'</div></article></div>'
     page('about/index.html','TrailFusion AIについて | 学習アプリと車旅・DIY','合格クエストを中心に、車旅コンシェルジュ、キャンピングカーDIY、ハイエース整備のコンテンツをつくるTrailFusion AIの運営案内。',body,'all')
     policies=[]
     for a in APPS+ [{'name':'合格！英語クエスト','policy':'eigo-quest-privacy.html','terms':'eigo-quest-terms.html','support':''},{'name':'車旅コンシェルジュ','policy':'car-concierge-privacy.html','terms':'car-concierge-terms.html','support':''},{'name':'Reel Make','policy':'reelmake-privacy.html','terms':'reelmake-terms.html','support':'reelmake-support.html'},{'name':'にほんごクエスト','policy':'nihongo-quest-privacy.html','terms':'nihongo-quest-terms.html','support':'nihongo-quest-support.html'},{'name':'BuddyTalk','policy':'buddytalk-privacy.html','terms':'buddytalk-terms.html','support':'buddytalk-legal.html'}]:
@@ -230,13 +245,21 @@ def preserve(path,active='all',destination=None,legal=False):
     extra=''
     rm=soup.find(id='rm-lang');rmcta=soup.find(id='rm-nav-cta')
     if rm:extra=str(rm.extract())+(str(rmcta.extract()) if rmcta else '')
-    oldhead=soup.find('tf-lp-header') or soup.find('header')
+    oldhead=soup.find('tf-lp-header') or soup.select_one('.site-head') or soup.find('header')
+    contenthead=None
+    if legal and oldhead and oldhead.find('h1'):
+        contenthead=oldhead.extract();oldhead=None
+    if oldhead:
+        for control in list(oldhead.select('select, #language-selector, #mobile-language-selector')):
+            if control.get('id') not in ['rm-lang']:
+                extra+=str(control.extract())
     oldfoot=soup.find('tf-lp-footer') or soup.find('footer')
     for thing in [oldhead,oldfoot,soup.find(id='drawer'),soup.find(id='mobile-menu'),soup.find(id='lp-site-chrome-runtime')]:
         if thing:thing.decompose()
     soup.body['class']=soup.body.get('class',[])+['tf-legal' if legal else 'tf-legacy']
     if legal:
         inner=soup.new_tag('div',attrs={'class':'tf-legal-content','id':'tf-main'})
+        if contenthead:inner.append(contenthead)
         for child in list(soup.body.contents):inner.append(child.extract())
         soup.body.append(inner)
     else:
@@ -271,6 +294,10 @@ def preserve(path,active='all',destination=None,legal=False):
     if path=='car-concierge.html':
         for a in soup.select('a[href]'):
             if 'apps.apple.com' in a['href']:a['data-store']='apple';a['data-app']='travel-app'
+    for legacy_script in soup.find_all('script'):
+        code=legacy_script.string
+        if code and "document.getElementById('year').textContent = new Date().getFullYear();" in code:
+            legacy_script.string=code.replace("document.getElementById('year').textContent = new Date().getFullYear();", "document.addEventListener('DOMContentLoaded',function(){var year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();});")
     remaining={x.get('id') for x in soup.select('[id]')}
     removed=sorted(coreids-remaining)
     for scriptid,sha in engine.items():
@@ -292,23 +319,25 @@ def build_preserved():
     p='drive-routes/index.html';s=fragment(original(p));dialog=s.find(id='aboutDialog')
     if dialog:
         nav=fragment('<nav aria-label="関連コンテンツ" style="display:flex;flex-wrap:wrap;gap:14px;margin:20px 0"><a href="/travel/">車旅の入口</a><a href="/diy/">キャンピングカーDIY</a><a href="/maintenance/">ハイエース整備</a><a href="/quest/">合格クエスト</a></nav>').nav;dialog.append(nav)
-    home=s.select_one('.brand')
+    home=s.select_one('.logo')
     if home and home.name=='a':home['href']='/travel/'
+    for navlink in s.select('.topbar a.ghost-btn'):
+        if navlink.get('href')=='../index.html':navlink['href']='/travel/';navlink.string='← 車旅トップ'
     metadata(s,p,'絶景ロード図鑑 | 車旅のドライブルート | TrailFusion AI','地域やテーマから日本のドライブルートを探すインタラクティブな地図。車旅コンシェルジュやDIY・整備のコンテンツも紹介します。','travel')
     write(p,str(s))
 
 
 def og_images():
     folder=ROOT/'assets/og';folder.mkdir(parents=True,exist_ok=True)
-    for key in ['learn','travel','diy','care']:
+    for key in ['learn','travel','diy','care','rika','social','kokugo']:
         canvas=Image.new('RGB',(1200,630),'#edf3fa');d=ImageDraw.Draw(canvas)
         fontpath='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';font=ImageFont.truetype(fontpath,60);small=ImageFont.truetype(fontpath,26)
         d.rectangle((0,0,28,630),fill='#145cdb');d.text((70,70),'TrailFusion AI',font=small,fill='#536672')
-        words={'learn':['GOKAKU','QUEST'],'travel':['TRAVEL,','YOUR WAY.'],'diy':['BUILD','YOUR VAN.'],'care':['KNOW','YOUR HIACE.']}[key]
+        words={'learn':['GOKAKU','QUEST'],'travel':['TRAVEL,','YOUR WAY.'],'diy':['BUILD','YOUR VAN.'],'care':['KNOW','YOUR HIACE.'],'rika':['SCIENCE','QUEST'],'social':['SOCIAL','QUEST'],'kokugo':['JAPANESE','QUEST']}[key]
         for i,w in enumerate(words):d.text((66,200+i*85),w,font=font,fill='#172b3a')
         d.text((70,540),'LEARN / TRAVEL / DIY / MAINTENANCE',font=ImageFont.truetype(fontpath,17),fill='#536672')
-        if key=='learn':
-            for i,a in enumerate(APPS):
+        if key in ['learn','rika','social','kokugo']:
+            for i,a in enumerate(APPS if key=='learn' else [a for a in APPS if a['id']==key]):
                 pic=Image.open(ROOT/image(a['logo'],200).lstrip('/')).convert('RGBA');pic=ImageOps.contain(pic,(158,158));canvas.paste(pic,(720+(i%2)*180,100+(i//2)*210),pic)
         else:
             pic=Image.open(ROOT/image(PHOTOS[key],1200).lstrip('/')).convert('RGB');pic=ImageOps.fit(pic,(510,630));canvas.paste(pic,(690,0))
@@ -328,7 +357,8 @@ def machine_files():
     urls=sorted(set([DOMAIN+u for u in urls]+list(olddates)))
     lines=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        lines.append('  <url><loc>'+esc(u)+'</loc><lastmod>'+DATE+'</lastmod></url>')
+        modified=DATE if u in {DOMAIN+'/'+p.removesuffix('index.html') for p in paths if p.endswith('.html')} else olddates.get(u,DATE)
+        lines.append('  <url><loc>'+esc(u)+'</loc><lastmod>'+modified+'</lastmod></url>')
     lines.append('</urlset>');write('sitemap.xml','\n'.join(lines)+'\n')
     write('sitemap-index.xml','<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>'+DOMAIN+'/sitemap.xml</loc></sitemap></sitemapindex>\n')
     text='# TrailFusion AI\n\n> Official site for the Gokaku Quest learning-app series, car travel, camper DIY and Hiace educational maintenance content.\n\nUpdated: '+DATE+'\n\n## Primary learning series\n'
@@ -345,11 +375,13 @@ def machine_files():
 
 
 def docs():
-    write('docs/ROLLBACK-SITE-20260916.md','# 復元手順\n\n## 保存済みの改修前状態\n- Backup branch: `backup/pre-site-restructure-20260915`\n- Commit: `'+BASE+'`\n\nmasterへの公開は改修内容を一つにまとめたコミットで行います。公開コミットを取り消す場合は、履歴を書き換えるforce pushではなく、次の方法を使用してください。\n\n```sh\ngit fetch origin\ngit switch master\ngit pull --ff-only origin master\ngit revert <この改修の公開コミットSHA>\ngit push origin master\n```\n\n公開後に追加変更がある場合は、競合内容を確認してからrevertを完了してください。バックアップブランチは改修しないでください。ローカルの整備記録はGit管理の対象ではありません。ブラウザの記録書き出しで別途バックアップしてください。\n')
-    write('docs/SITE-REDESIGN-20260916.md','# サイト再構成と運用\n\n## 構成\n合格クエストをトップの主役にしつつ、学ぶ・旅する・つくる・整えるの4入口を常設。既存の商品・3D間取り・DIY記事・整備記録・地図のURLは維持。学習の3教科と英語・資格学習は用途を区別。\n\n## 生成\n`python scripts/site-redesign/build.py`。基準コミット `'+BASE+'` の原文から旧ページを再構成するため冪等です。今後旧コンテンツを更新するときは、元ページを参照する方式を見直して新しい編集を上書きしないこと。直接編集するページと生成ページを混在運用しないでください。\n\n## 保持対象\nキャンピングカー3Dのhiace-*スクリプト、整備アプリのJS/ローカルストレージ、地図アプリの操作・データを保持。契約・プライバシー本文は変更せず周辺UIだけ更新。中学受験の3LPは日本語の静的ページとして再構築。既存の英語などのアプリ内機能を変更するものではありません。旧3LPのページ翻訳UIは新しい日本語中心の構成には移植していません。\n\n## SEO / AI検索\n静的HTMLの説明、カテゴリ内リンク、canonical、OG、BreadcrumbList、実内容と一致する構造化データを整備。robotsの既存AI検索/学習クローラー許可方針は保持し、整備ページの一律拒否を解除。llms.txt/llms-full.txtは補助索引であり表示・引用・順位の保証ではありません。\n\n## ASOとの境界\nウェブ側の商品名・説明・実画面・ストアリンク・Smart App Bannerを整備。App Store Connect / Google Play Consoleの名称、サブタイトル、キーワード、ストアスクリーンショット、カスタムプロダクトページは変更していません。確認できていない英語クエストのストアURL、評価・DL数・問題数・最新価格は捏造しません。\n\n## 計測\n既存GA4 IDを使用。`store_click`（app_id/store/placement/page_path）、`app_detail_click`、`hub_navigation`を送信。選択ガイドの回答や学年、氏名は送信しない。ストアクリックはインストール・課金の計測ではありません。AppleのキャンペーントークンはApp Store Connectで取得し、実際のプロバイダートークンを設定する必要があります。\n\n## 次のストア運用\n実際のストア情報で対象・料金・画像を揃える。公式のプロダクトページ最適化で画像やコピーを検証。インストール後の継続・課金と合わせて評価する。自動で順位が上がるとは考えない。\n\n## 一次資料\n- https://developers.google.com/search/docs/appearance/ai-features\n- https://developer.apple.com/app-store/product-page/\n- https://developer.apple.com/jp/help/app-store-connect-analytics/acquisition/campaign-links\n- https://developers.openai.com/api/docs/bots\n')
+    write('docs/ROLLBACK-SITE-20260916.md','# 復元手順\n\n## 保存済みの改修前状態\n- Backup branch: `backup/pre-site-restructure-20260915`\n- Commit: `'+BASE+'`\n\nmasterへの公開は改修内容を一つにまとめたコミットで行います。公開コミットを取り消すと、元のページ内容へ戻り、旧自動上書き処理の停止は維持されます。公開コミットを取り消す場合は、履歴を書き換えるforce pushではなく、次の方法を使用してください。\n\n```sh\ngit fetch origin\ngit switch master\ngit pull --ff-only origin master\ngit revert <この改修の公開コミットSHA>\ngit push origin master\n```\n\n公開後に追加変更がある場合は、競合内容を確認してからrevertを完了してください。バックアップブランチは改修しないでください。ローカルの整備記録はGit管理の対象ではありません。ブラウザの記録書き出しで別途バックアップしてください。\n')
+    write('docs/SITE-REDESIGN-20260916.md','# サイト再構成と運用\n\n## 構成\n合格クエストをトップの主役にしつつ、学ぶ・旅する・つくる・整えるの4入口を常設。既存の商品・3D間取り・DIY記事・整備記録・地図のURLは維持。学習の3教科と英語・資格学習は用途を区別。\n\n## 生成（初回移行専用）\n通常の更新はコミット済みのHTML・CSS・JSを編集し、検証だけを実行してください。移行用スクリプトは過去の内容を基準にするため、自動デプロイや通常の修正時には再実行しません。\n\n`python scripts/site-redesign/build.py --rebuild-from-backup`。基準コミット `'+BASE+'` の原文から旧ページを再構成するため冪等です。今後旧コンテンツを更新するときは、元ページを参照する方式を見直して新しい編集を上書きしないこと。直接編集するページと生成ページを混在運用しないでください。\n\n## 保持対象\nキャンピングカー3Dのhiace-*スクリプト、整備アプリのJS/ローカルストレージ、地図アプリの操作・データを保持。契約・プライバシー本文は変更せず周辺UIだけ更新。中学受験の3LPは日本語の静的ページとして再構築。既存の英語などのアプリ内機能を変更するものではありません。旧3LPのページ翻訳UIは新しい日本語中心の構成には移植していません。\n\n## SEO / AI検索\n静的HTMLの説明、カテゴリ内リンク、canonical、OG、BreadcrumbList、実内容と一致する構造化データを整備。robotsの既存AI検索/学習クローラー許可方針は保持し、整備ページの一律拒否を解除。llms.txt/llms-full.txtは補助索引であり表示・引用・順位の保証ではありません。\n\n## ASOとの境界\nウェブ側の商品名・説明・実画面・ストアリンク・Smart App Bannerを整備。App Store Connect / Google Play Consoleの名称、サブタイトル、キーワード、ストアスクリーンショット、カスタムプロダクトページは変更していません。確認できていない英語クエストのストアURL、評価・DL数・問題数・最新価格は捏造しません。\n\n## 計測\n既存GA4 IDを使用。`store_click`（app_id/store/placement/page_path）、`app_detail_click`、`hub_navigation`を送信。選択ガイドの回答や学年、氏名は送信しない。ストアクリックはインストール・課金の計測ではありません。AppleのキャンペーントークンはApp Store Connectで取得し、実際のプロバイダートークンを設定する必要があります。\n\n## 次のストア運用\n実際のストア情報で対象・料金・画像を揃える。公式のプロダクトページ最適化で画像やコピーを検証。インストール後の継続・課金と合わせて評価する。自動で順位が上がるとは考えない。\n\n## 一次資料\n- https://developers.google.com/search/docs/appearance/ai-features\n- https://developer.apple.com/app-store/product-page/\n- https://developer.apple.com/jp/help/app-store-connect-analytics/acquisition/campaign-links\n- https://developers.openai.com/api/docs/bots\n')
 
+write('assets/icons/trailfusion.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#172b3a"/><path d="M12 19h25v5H27v24h-5V24H12zm27 0h17v5H44v8h10v5H44v11h-5z" fill="white"/></svg>')
 build_new();build_preserved();og_images();machine_files();docs()
 report={'base_commit':BASE,'date':DATE,'changed_pages':sorted(set(p for p in CHANGED if p.endswith('.html'))),'new_media_count':len(set(MEDIA.values())),'preservation':PRESERVED,'page_bytes':{p:(ROOT/p).stat().st_size for p in sorted(set(CHANGED)) if p.endswith('.html')}}
+write('docs/site-redesign-manifest.json',json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 (OUT/'build-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
 # Attach generated text for inspection, without republishing original source snapshots.
 for p in sorted(set(CHANGED)):

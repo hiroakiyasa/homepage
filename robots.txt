@@ -4,7 +4,7 @@
 User-agent: *
 Allow: /
 Disallow: /assets/videos/
-Disallow: /maintenance.html
+Allow: /maintenance.html
 
 # ---- 生成AI・AI検索のクローラ ----
 # 引用元として扱われたいので明示的に許可する
