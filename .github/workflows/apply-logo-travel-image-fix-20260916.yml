@@ -1,0 +1,167 @@
+name: Apply original logo and travel screenshot fix
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/apply-logo-travel-image-fix-20260916.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: original-logo-travel-screenshot-fix-20260916
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore the original logo and fix portrait previews
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import re
+          import subprocess
+
+          baseline = 'b8c922f00f90f1e443b02253dd78d5f60b2de53d'
+          try:
+              source = subprocess.check_output(
+                  ['git', 'show', f'{baseline}:index.html'],
+                  text=True,
+              )
+          except subprocess.CalledProcessError:
+              subprocess.run(['git', 'fetch', '--depth=1', 'origin', baseline], check=True)
+              source = subprocess.check_output(
+                  ['git', 'show', f'{baseline}:index.html'],
+                  text=True,
+              )
+
+          match = re.search(
+              r'<img src="data:image/webp;base64,([^"]+)" alt="TrailFusion AI" class="lockup">',
+              source,
+          )
+          if not match:
+              raise SystemExit('Original TrailFusion lockup was not found in the preserved page.')
+
+          logo_path = Path('assets/icons/trailfusion-lockup.webp')
+          logo_path.parent.mkdir(parents=True, exist_ok=True)
+          logo_path.write_bytes(base64.b64decode(match.group(1)))
+
+          css_path = Path('assets/css/site-v2.css')
+          css = css_path.read_text(encoding='utf-8')
+          marker = '2026-09-16: restore the original TrailFusion lockup'
+          if marker not in css:
+              css += r'''
+
+/* 2026-09-16: restore the original TrailFusion lockup and constrain portrait app previews on phones. */
+.tf-brand{
+  position:relative!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:88px!important;
+  height:54px!important;
+  min-width:88px!important;
+  margin:0!important;
+  padding:0!important;
+  gap:0!important;
+  font-size:0!important;
+  line-height:0!important;
+  letter-spacing:0!important;
+  color:transparent!important;
+  background:url('/assets/icons/trailfusion-lockup.webp') center/contain no-repeat!important;
+}
+.tf-brand-mark{display:none!important}
+.tf-brand em{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.tf-footer .tf-brand{width:104px!important;height:64px!important;min-width:104px!important}
+@media(max-width:760px){
+  .tf-brand{width:76px!important;height:47px!important;min-width:76px!important}
+  .tf-footer .tf-brand{width:94px!important;height:58px!important;min-width:94px!important}
+  .tf-header:has(.tf-extra) .tf-brand{width:68px!important;height:42px!important;min-width:68px!important}
+  .tf-legacy .why-pic{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    justify-content:center!important;
+    align-items:flex-start!important;
+    gap:12px!important;
+    width:100%!important;
+    overflow:hidden!important;
+  }
+  .tf-legacy .why-pic figure{
+    flex:0 1 auto!important;
+    width:auto!important;
+    max-width:calc(50% - 6px)!important;
+    margin:0!important;
+  }
+  .tf-legacy .why-pic figure img{
+    display:block!important;
+    width:auto!important;
+    height:260px!important;
+    max-width:100%!important;
+    max-height:36vh!important;
+    max-height:36svh!important;
+    margin:0 auto!important;
+    object-fit:contain!important;
+    transform:none!important;
+  }
+  .tf-legacy .chero .shots{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    justify-content:center!important;
+    align-items:flex-end!important;
+    gap:12px!important;
+    overflow:hidden!important;
+  }
+  .tf-legacy .chero .shots img{
+    display:block!important;
+    width:auto!important;
+    height:280px!important;
+    max-width:calc(50% - 6px)!important;
+    max-height:39vh!important;
+    max-height:39svh!important;
+    object-fit:contain!important;
+    transform:none!important;
+  }
+  .tf-legacy .chero .shots img:nth-child(3){display:none!important}
+}
+'''
+              css_path.write_text(css, encoding='utf-8')
+
+          logo = logo_path.read_bytes()
+          assert logo[:4] == b'RIFF' and logo[8:12] == b'WEBP'
+          updated = css_path.read_text(encoding='utf-8')
+          assert marker in updated
+          assert "trailfusion-lockup.webp" in updated
+          assert ".tf-legacy .why-pic figure img" in updated
+          print(f'Original logo restored: {len(logo):,} bytes')
+          PY
+
+      - name: Commit and push the verified fix
+        run: |
+          git rm --ignore-unmatch .github/workflows/apply-logo-travel-image-fix-20260916.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site-v2.css assets/icons/trailfusion-lockup.webp
+          git commit -m 'fix: restore original TrailFusion logo and resize travel app previews'
+          git push origin HEAD:master
