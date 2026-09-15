@@ -49,3 +49,83 @@
 /* Retained language controls remain usable on both phone and desktop. */
 .tf-header{height:auto!important;padding:0!important;min-height:0!important}.tf-extra{display:flex;align-items:center;gap:8px;margin-left:auto}.tf-extra select{max-width:135px;min-height:38px;border:1px solid #dce4e8;border-radius:8px;background:#fff;color:#172b3a;font:12px/1.5 sans-serif;padding:5px}.tf-extra #language-selector{display:block!important}.tf-extra #mobile-language-selector{display:none!important}.tf-local-links{position:relative;z-index:2}.tf-final .tf-store-note{color:#d2dee9}.tf-final .tf-button.secondary{background:white}.tf-legal-content>header{position:static}.tf-footer .tf-brand{color:#172b3a}.tf-mobile-label{display:none}
 @media(max-width:760px){.tf-header:has(.tf-extra) .tf-brand{font-size:14px;gap:7px}.tf-header:has(.tf-extra) .tf-brand-mark{width:27px;height:27px;font-size:13px}.tf-extra{max-width:112px}.tf-extra select{max-width:100px}.tf-extra a{display:none}.tf-header:has(.tf-extra) .tf-top{gap:8px}.tf-extra #language-selector{font-size:11px}.tf-desktop-label{display:none}.tf-mobile-label{display:inline}}
+
+
+/* 2026-09-16 hotfix: original TrailFusion lockup and vehicle-app screenshots */
+.tf-brand{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:0!important;
+  min-width:81px;
+  font-size:0!important;
+  line-height:1;
+  letter-spacing:0!important;
+}
+.tf-brand::before{
+  content:"";
+  display:block;
+  width:81px;
+  height:50px;
+  flex:0 0 auto;
+  background:url('/assets/icons/trailfusion-lockup.webp') center/contain no-repeat;
+}
+.tf-brand-mark{display:none!important}
+.tf-footer .tf-brand::before{width:110px;height:68px}
+@media(max-width:760px){
+  .tf-brand{min-width:68px}
+  .tf-brand::before{width:68px;height:42px}
+  .tf-footer .tf-brand::before{width:94px;height:58px}
+  .tf-header:has(.tf-extra) .tf-brand{min-width:58px}
+  .tf-header:has(.tf-extra) .tf-brand::before{width:58px;height:36px}
+}
+
+/* Preserve portrait proportions without letting screenshots dominate a phone viewport. */
+.tf-legacy .why-pic{align-items:flex-start!important}
+.tf-legacy .why-pic figure{min-width:0!important}
+.tf-legacy .why-pic img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:440px!important;
+  margin-inline:auto!important;
+  object-fit:contain!important;
+  transform:none!important;
+}
+@media(max-width:760px){
+  .tf-legacy .why-pic{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+    justify-items:center!important;
+    align-items:start!important;
+  }
+  .tf-legacy .why-pic figure{
+    width:100%!important;
+    max-width:none!important;
+  }
+  .tf-legacy .why-pic img{
+    width:auto!important;
+    height:min(48vh,320px)!important;
+    max-width:100%!important;
+    max-height:320px!important;
+  }
+  .tf-legacy .chero .shots{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:flex-end!important;
+    gap:12px!important;
+    flex-wrap:nowrap!important;
+  }
+  .tf-legacy .chero .shots img{
+    display:block!important;
+    width:auto!important;
+    height:min(48vh,320px)!important;
+    max-width:calc(50% - 8px)!important;
+    max-height:320px!important;
+    object-fit:contain!important;
+  }
+  .tf-legacy .chero .shots img:nth-child(2){transform:translateY(-8px)!important}
+  .tf-legacy .chero .shots img:nth-child(3){display:none!important}
+}
