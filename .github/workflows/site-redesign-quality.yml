@@ -29,6 +29,7 @@ jobs:
         run: |
           python scripts/site-redesign/harden.py
           python scripts/site-redesign/finalize.py
+          python scripts/site-redesign/compat.py
           python -m py_compile scripts/site-redesign/build.py scripts/site-redesign/validate.py
       - name: Build redesigned static pages
         run: python scripts/site-redesign/build.py --rebuild-from-backup
