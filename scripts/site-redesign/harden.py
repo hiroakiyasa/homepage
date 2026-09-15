@@ -1,0 +1,12 @@
+"""One-time source hardening before the initial regression build."""
+from pathlib import Path
+p=Path('scripts/site-redesign/build.py');s=p.read_text()
+s=s.replace("oldhead=soup.find('tf-lp-header') or soup.find('header')", "oldhead=soup.find('tf-lp-header') or soup.select_one('.site-head') or soup.find('header')\n    contenthead=None\n    if legal and oldhead and oldhead.find('h1'):\n        contenthead=oldhead.extract();oldhead=None\n    if oldhead:\n        for control in list(oldhead.select('select, #language-selector, #mobile-language-selector')):\n            if control.get('id') not in ['rm-lang']:\n                extra+=str(control.extract())")
+s=s.replace("for child in list(soup.body.contents):inner.append(child.extract())", "if contenthead:inner.append(contenthead)\n        for child in list(soup.body.contents):inner.append(child.extract())")
+s=s.replace("+extra+'</nav><details class=\"tf-mobile-menu\">'", "+'</nav>'+('<div class=\"tf-extra\">'+extra+'</div>' if extra else '')+'<details class=\"tf-mobile-menu\">'")
+# Exact template uses a longer string; handle it directly without altering unrelated content.
+s=s.replace("+extra+'</nav><details class=\"tf-mobile-menu\"><summary>", "+'</nav>'+('<div class=\"tf-extra\">'+extra+'</div>' if extra else '')+'<details class=\"tf-mobile-menu\"><summary>")
+p.write_text(s)
+p=Path('assets/css/site-v2.css');s=p.read_text()
+extra='''\n/* Retained language controls remain usable on both phone and desktop. */\n.tf-header{height:auto!important;padding:0!important;min-height:0!important}.tf-extra{display:flex;align-items:center;gap:8px;margin-left:auto}.tf-extra select{max-width:135px;min-height:38px;border:1px solid #dce4e8;border-radius:8px;background:#fff;color:#172b3a;font:12px/1.5 sans-serif;padding:5px}.tf-extra #language-selector{display:block!important}.tf-extra #mobile-language-selector{display:none!important}.tf-local-links{position:relative;z-index:2}.tf-final .tf-store-note{color:#d2dee9}.tf-final .tf-button.secondary{background:white}.tf-legal-content>header{position:static}.tf-footer .tf-brand{color:#172b3a}\n@media(max-width:760px){.tf-header:has(.tf-extra) .tf-brand{font-size:14px;gap:7px}.tf-header:has(.tf-extra) .tf-brand-mark{width:27px;height:27px;font-size:13px}.tf-extra{max-width:112px}.tf-extra select{max-width:100px}.tf-extra a{display:none}.tf-header:has(.tf-extra) .tf-top{gap:8px}.tf-extra #language-selector{font-size:11px}}\n'''
+if 'Retained language controls remain usable' not in s:p.write_text(s+extra)
