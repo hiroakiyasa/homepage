@@ -1,0 +1,386 @@
+{
+  "base_commit": "b8c922f00f90f1e443b02253dd78d5f60b2de53d",
+  "date": "2026-09-16",
+  "changed_pages": [
+    "404.html",
+    "about/index.html",
+    "apps.html",
+    "buddytalk-legal.html",
+    "buddytalk-privacy.html",
+    "buddytalk-terms.html",
+    "buddytalk.html",
+    "camping-guide.html",
+    "camping.html",
+    "car-concierge-privacy.html",
+    "car-concierge-terms.html",
+    "car-concierge.html",
+    "choose/index.html",
+    "diy/index.html",
+    "drive-routes/index.html",
+    "eigo-quest-privacy.html",
+    "eigo-quest-terms.html",
+    "eigo-quest.html",
+    "hacking-timer.html",
+    "index.html",
+    "kokugo-quest-privacy.html",
+    "kokugo-quest-support.html",
+    "kokugo-quest.html",
+    "maintenance.html",
+    "maintenance/index.html",
+    "nihongo-quest-privacy.html",
+    "nihongo-quest-support.html",
+    "nihongo-quest-terms.html",
+    "nihongo-quest.html",
+    "parents/index.html",
+    "privacy-policy.html",
+    "quest/index.html",
+    "reelmake-privacy.html",
+    "reelmake-support.html",
+    "reelmake-terms.html",
+    "reelmake.html",
+    "rika-quest-privacy.html",
+    "rika-quest-support.html",
+    "rika-quest-terms.html",
+    "rika-quest.html",
+    "shakai-quest-privacy.html",
+    "shakai-quest-terms.html",
+    "social-quest.html",
+    "study/after-class/index.html",
+    "study/index.html",
+    "study/review/index.html",
+    "study/words/index.html",
+    "support/index.html",
+    "terms-of-service.html",
+    "trailfusion-privacy.html",
+    "trailfusion-terms.html",
+    "travel/index.html",
+    "travel/story.html",
+    "wood-golem.html",
+    "word-blaster.html"
+  ],
+  "new_media_count": 118,
+  "preservation": {
+    "travel/story.html": {
+      "source": "index.html",
+      "source_bytes": 4446605,
+      "removed_ids": [
+        "burger",
+        "drawer"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "buddytalk-legal.html": {
+      "source": "buddytalk-legal.html",
+      "source_bytes": 65988,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "buddytalk-privacy.html": {
+      "source": "buddytalk-privacy.html",
+      "source_bytes": 47429,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "buddytalk-terms.html": {
+      "source": "buddytalk-terms.html",
+      "source_bytes": 43100,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "buddytalk.html": {
+      "source": "buddytalk.html",
+      "source_bytes": 61481,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "camping-guide.html": {
+      "source": "camping-guide.html",
+      "source_bytes": 221120,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "camping.html": {
+      "source": "camping.html",
+      "source_bytes": 2172413,
+      "removed_ids": [
+        "burger",
+        "drawer",
+        "ig-grad",
+        "lp-site-chrome-runtime"
+      ],
+      "unchanged_engine_sha256": {
+        "hiace-launch": "bf0c25a4c9b4ccd4b406fb14e6448adf16c0248d63c60a6daf2b7f36f013525c",
+        "hiace-model": "258fdfc0e1512b02831a9ddf2e3b4951d7ec6771c581f118c6711833c02aa3b4",
+        "hiace-worker": "af3be744523b8dd45a620f8a1f3e3d96d52e8823154ccf0055cf57be5606b58e",
+        "hiace-app": "0779a4646339cc5f6fc4136c2fcdb1b15960d636ed30ff8dcd1f95ba2e4ee72a"
+      }
+    },
+    "car-concierge-privacy.html": {
+      "source": "car-concierge-privacy.html",
+      "source_bytes": 20416,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "car-concierge-terms.html": {
+      "source": "car-concierge-terms.html",
+      "source_bytes": 22666,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "car-concierge.html": {
+      "source": "car-concierge.html",
+      "source_bytes": 6299427,
+      "removed_ids": [
+        "burger",
+        "drawer"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "eigo-quest-privacy.html": {
+      "source": "eigo-quest-privacy.html",
+      "source_bytes": 9044,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "eigo-quest-terms.html": {
+      "source": "eigo-quest-terms.html",
+      "source_bytes": 11104,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "hacking-timer.html": {
+      "source": "hacking-timer.html",
+      "source_bytes": 61972,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "kokugo-quest-privacy.html": {
+      "source": "kokugo-quest-privacy.html",
+      "source_bytes": 4733,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "kokugo-quest-support.html": {
+      "source": "kokugo-quest-support.html",
+      "source_bytes": 2357,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "maintenance.html": {
+      "source": "maintenance.html",
+      "source_bytes": 13076,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "nihongo-quest-privacy.html": {
+      "source": "nihongo-quest-privacy.html",
+      "source_bytes": 24969,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "nihongo-quest-support.html": {
+      "source": "nihongo-quest-support.html",
+      "source_bytes": 11086,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "nihongo-quest-terms.html": {
+      "source": "nihongo-quest-terms.html",
+      "source_bytes": 21819,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "nihongo-quest.html": {
+      "source": "nihongo-quest.html",
+      "source_bytes": 67907,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "privacy-policy.html": {
+      "source": "privacy-policy.html",
+      "source_bytes": 5363,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "reelmake-privacy.html": {
+      "source": "reelmake-privacy.html",
+      "source_bytes": 3025,
+      "removed_ids": [
+        "rm-foot"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "reelmake-support.html": {
+      "source": "reelmake-support.html",
+      "source_bytes": 2479,
+      "removed_ids": [
+        "rm-foot"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "reelmake-terms.html": {
+      "source": "reelmake-terms.html",
+      "source_bytes": 2985,
+      "removed_ids": [
+        "rm-foot"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "reelmake.html": {
+      "source": "reelmake.html",
+      "source_bytes": 303550,
+      "removed_ids": [
+        "rm-foot"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "rika-quest-privacy.html": {
+      "source": "rika-quest-privacy.html",
+      "source_bytes": 9886,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "rika-quest-support.html": {
+      "source": "rika-quest-support.html",
+      "source_bytes": 9007,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "rika-quest-terms.html": {
+      "source": "rika-quest-terms.html",
+      "source_bytes": 10641,
+      "removed_ids": [
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "shakai-quest-privacy.html": {
+      "source": "shakai-quest-privacy.html",
+      "source_bytes": 11044,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "shakai-quest-terms.html": {
+      "source": "shakai-quest-terms.html",
+      "source_bytes": 11685,
+      "removed_ids": [
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "terms-of-service.html": {
+      "source": "terms-of-service.html",
+      "source_bytes": 4719,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "trailfusion-privacy.html": {
+      "source": "trailfusion-privacy.html",
+      "source_bytes": 5368,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "trailfusion-terms.html": {
+      "source": "trailfusion-terms.html",
+      "source_bytes": 4720,
+      "removed_ids": [],
+      "unchanged_engine_sha256": {}
+    },
+    "wood-golem.html": {
+      "source": "wood-golem.html",
+      "source_bytes": 59773,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    },
+    "word-blaster.html": {
+      "source": "word-blaster.html",
+      "source_bytes": 63574,
+      "removed_ids": [
+        "mobile-menu",
+        "mobile-toggle"
+      ],
+      "unchanged_engine_sha256": {}
+    }
+  },
+  "page_bytes": {
+    "404.html": 8438,
+    "about/index.html": 8643,
+    "apps.html": 15105,
+    "buddytalk-legal.html": 65747,
+    "buddytalk-privacy.html": 47127,
+    "buddytalk-terms.html": 42740,
+    "buddytalk.html": 58524,
+    "camping-guide.html": 199409,
+    "camping.html": 1769119,
+    "car-concierge-privacy.html": 25541,
+    "car-concierge-terms.html": 27693,
+    "car-concierge.html": 1040377,
+    "choose/index.html": 11342,
+    "diy/index.html": 10542,
+    "drive-routes/index.html": 12929,
+    "eigo-quest-privacy.html": 14973,
+    "eigo-quest-terms.html": 16917,
+    "eigo-quest.html": 9615,
+    "hacking-timer.html": 58453,
+    "index.html": 14982,
+    "kokugo-quest-privacy.html": 9845,
+    "kokugo-quest-support.html": 7419,
+    "kokugo-quest.html": 18540,
+    "maintenance.html": 18559,
+    "maintenance/index.html": 9581,
+    "nihongo-quest-privacy.html": 28882,
+    "nihongo-quest-support.html": 15303,
+    "nihongo-quest-terms.html": 25654,
+    "nihongo-quest.html": 64597,
+    "parents/index.html": 10052,
+    "privacy-policy.html": 10801,
+    "quest/index.html": 12046,
+    "reelmake-privacy.html": 7983,
+    "reelmake-support.html": 7340,
+    "reelmake-terms.html": 7855,
+    "reelmake.html": 295532,
+    "rika-quest-privacy.html": 14751,
+    "rika-quest-support.html": 13599,
+    "rika-quest-terms.html": 14282,
+    "rika-quest.html": 18466,
+    "shakai-quest-privacy.html": 15920,
+    "shakai-quest-terms.html": 15292,
+    "social-quest.html": 18519,
+    "study/after-class/index.html": 8932,
+    "study/index.html": 8183,
+    "study/review/index.html": 8887,
+    "study/words/index.html": 8761,
+    "support/index.html": 10642,
+    "terms-of-service.html": 10175,
+    "trailfusion-privacy.html": 10826,
+    "trailfusion-terms.html": 10180,
+    "travel/index.html": 9383,
+    "travel/story.html": 728509,
+    "wood-golem.html": 56777,
+    "word-blaster.html": 60645
+  }
+}

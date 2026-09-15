@@ -1,0 +1,41 @@
+name: Site quality
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [feat/site-restructure-20260915]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
+      - name: Install Chromium and Japanese rendering support
+        run: |
+          python -m playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Validate committed pages without regenerating or modifying them
+        run: python scripts/site-redesign/validate.py
+      - name: Ensure validation did not modify tracked files
+        run: git diff --exit-code
+      - name: Save validation report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-quality-${{ github.sha }}
+          path: /tmp/site-redesign-results
+          retention-days: 14

@@ -1,0 +1,115 @@
+{
+  "updated": "2026-09-16",
+  "source_commit": "b8c922f00f90f1e443b02253dd78d5f60b2de53d",
+  "notes": "Store URLs retained from existing official site; no claim of current storefront availability. Pricing must be checked in the purchase screen.",
+  "products": [
+    {
+      "id": "rika",
+      "subject": "理科",
+      "path": "rika-quest.html",
+      "name": "合格！理科クエスト",
+      "description": "生命・地球・物質・エネルギーを、クイズとイラストで。中学受験理科の基礎知識を、単元ごとに確かめる学習アプリ。",
+      "apple": "https://apps.apple.com/jp/app/id6772644144",
+      "google": "https://play.google.com/store/apps/details?id=com.gokakurikaquest.app",
+      "category": "learn",
+      "policy": "rika-quest-privacy.html",
+      "terms": "rika-quest-terms.html"
+    },
+    {
+      "id": "social",
+      "subject": "社会",
+      "path": "social-quest.html",
+      "name": "合格！社会クエスト",
+      "description": "地理・歴史・公民を、4択クイズとイラスト解説で学ぶ中学受験社会のアプリ。苦手なテーマを見つけて、日々の復習に。",
+      "apple": "https://apps.apple.com/jp/app/id6775411516",
+      "google": "https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app",
+      "category": "learn",
+      "policy": "shakai-quest-privacy.html",
+      "terms": "shakai-quest-terms.html"
+    },
+    {
+      "id": "kokugo",
+      "subject": "国語",
+      "path": "kokugo-quest.html",
+      "name": "合格！国語クエスト",
+      "description": "漢字・語彙・ことわざ・慣用句・文法を、イラストと読み上げで。中学受験国語の知識を、目と耳から学ぶアプリ。",
+      "apple": "https://apps.apple.com/jp/app/id6780125916",
+      "google": "https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app",
+      "category": "learn",
+      "policy": "kokugo-quest-privacy.html",
+      "terms": "kokugo-quest-terms.html"
+    },
+    {
+      "id": "eigo",
+      "name": "合格！英語クエスト",
+      "subject": "英語",
+      "path": "eigo-quest.html",
+      "category": "learn",
+      "description": "文法・語彙・英語資格に関連する学習。配信情報は詳細ページをご確認ください。",
+      "apple": null
+    },
+    {
+      "id": "nihongo",
+      "name": "にほんごクエスト",
+      "subject": "日本語",
+      "path": "nihongo-quest.html",
+      "category": "learn",
+      "description": "日本で暮らすための日本語を、クイズと読みのサポートで学ぶ。",
+      "apple": null
+    },
+    {
+      "id": "buddy",
+      "name": "BuddyTalk",
+      "subject": "英会話",
+      "path": "buddytalk.html",
+      "category": "learn",
+      "description": "英会話を日常に。AIとの会話学習を支えるアプリ。",
+      "apple": "https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274"
+    },
+    {
+      "id": "travel-app",
+      "name": "車旅コンシェルジュ",
+      "subject": "車旅",
+      "path": "car-concierge.html",
+      "category": "travel",
+      "description": "泊まる場所やドライブを探し、旅を記録する車旅のアプリ。",
+      "apple": "https://apps.apple.com/jp/app/id6751795223"
+    },
+    {
+      "id": "reel",
+      "name": "Reel Make",
+      "subject": "動画制作",
+      "path": "reelmake.html",
+      "category": "create",
+      "description": "短い動画やリールづくりを支える、AI動画制作アプリ。",
+      "apple": "https://apps.apple.com/us/app/reel-make-ai-reels-videos/id6779420680"
+    },
+    {
+      "id": "wood",
+      "name": "Wood Golem",
+      "subject": "ゲーム",
+      "path": "wood-golem.html",
+      "category": "play",
+      "description": "木製ゴーレムの世界を楽しむゲーム。",
+      "apple": "https://apps.apple.com/jp/app/%E6%A3%92%E5%8F%96%E3%82%8A%E6%94%BB%E7%95%A5-%E6%A3%AE%E3%81%AE%E3%82%A6%E3%83%83%E3%83%89%E3%82%B4%E3%83%BC%E3%83%AC%E3%83%A0%E5%A4%A7%E5%86%92%E9%99%BA/id6739466549"
+    },
+    {
+      "id": "word",
+      "name": "Word Blaster",
+      "subject": "ゲーム",
+      "path": "word-blaster.html",
+      "category": "play",
+      "description": "ことばとゲームを組み合わせたWord Blaster。",
+      "apple": "https://apps.apple.com/jp/app/%E3%83%AF%E3%83%BC%E3%83%89%E3%83%96%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC/id6745741796"
+    },
+    {
+      "id": "timer",
+      "name": "Hacking Timer",
+      "subject": "生産性",
+      "path": "hacking-timer.html",
+      "category": "tool",
+      "description": "時間に集中するためのツール。開発・配信状況は紹介ページをご確認ください。",
+      "apple": null
+    }
+  ]
+}
