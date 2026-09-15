@@ -1,21 +1,20 @@
-name: Site redesign quality
+name: Site quality
+
 on:
+  workflow_call:
+  workflow_dispatch:
   push:
     branches: [feat/site-restructure-20260915]
-    paths:
-      - '.github/workflows/site-redesign-quality.yml'
-      - 'scripts/site-redesign/**'
-      - 'assets/css/site-v2.css'
-      - 'assets/js/site-v2.js'
+  pull_request:
+    branches: [master]
+
 permissions:
-  contents: write
-concurrency:
-  group: site-redesign-${{ github.ref }}
-  cancel-in-progress: false
+  contents: read
+
 jobs:
-  build-and-check:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,45 +24,18 @@ jobs:
           python-version: '3.12'
       - name: Install validation dependencies
         run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
-      - name: Apply migration refinements
-        run: |
-          python scripts/site-redesign/harden.py
-          python scripts/site-redesign/finalize.py
-          python scripts/site-redesign/compat.py
-          python -m py_compile scripts/site-redesign/build.py scripts/site-redesign/validate.py
-      - name: Build redesigned static pages
-        run: python scripts/site-redesign/build.py --rebuild-from-backup
-      - name: Install browser and Japanese fallback fonts
+      - name: Install Chromium and Japanese rendering support
         run: |
           python -m playwright install --with-deps chromium
           sudo apt-get install -y fonts-noto-cjk
-      - name: Validate links, metadata, layout and interactions
+      - name: Validate committed pages without regenerating or modifying them
         run: python scripts/site-redesign/validate.py
-      - name: Prepare review archive
+      - name: Ensure validation did not modify tracked files
+        run: git diff --exit-code
+      - name: Save validation report and screenshots
         if: always()
-        run: |
-          mkdir -p /tmp/site-review/source
-          if [ -d /tmp/site-redesign-results ]; then cp -R /tmp/site-redesign-results /tmp/site-review/; fi
-          cp -R scripts/site-redesign /tmp/site-review/source/
-          cp assets/css/site-v2.css /tmp/site-review/source/
-          cp assets/js/site-v2.js /tmp/site-review/source/
-          if [ -d assets/media ]; then cp -R assets/media /tmp/site-review/; fi
-          if [ -d assets/og ]; then mkdir -p /tmp/site-review/og; cp assets/og/site-v2-* /tmp/site-review/og/ || true; fi
-      - uses: actions/upload-artifact@v4
-        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: site-redesign-review
-          path: /tmp/site-review
+          name: site-quality-${{ github.sha }}
+          path: /tmp/site-redesign-results
           retention-days: 14
-      - name: Commit validated generated pages to feature branch only
-        if: success()
-        run: |
-          test "$GITHUB_REF_NAME" = 'feat/site-restructure-20260915'
-          find scripts/site-redesign -type d -name __pycache__ -prune -exec rm -rf {} +
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m 'feat: publish validated learning-first site with travel, DIY and maintenance hubs'
-            git push origin HEAD:feat/site-restructure-20260915
-          fi
