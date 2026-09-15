@@ -1,0 +1,65 @@
+name: Retry direct hubs and Quest promotion
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/retry-direct-hubs-promo-20260916.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: direct-hubs-promo-20260916
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore the reviewed patch and promotional stylesheet
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, gzip, re
+
+          source = Path('.github/workflows/apply-direct-hubs-promo-20260916.yml').read_text(encoding='utf-8')
+          payloads = re.findall(r"echo '([A-Za-z0-9+/=]+)' \| base64 -d \| gzip -d > ([^\n]+)", source)
+          if len(payloads) != 2:
+              raise SystemExit(f'Expected two embedded reviewed payloads, found {len(payloads)}')
+          for encoded, target in payloads:
+              destination = Path(target.strip())
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              destination.write_bytes(gzip.decompress(base64.b64decode(encoded)))
+          patch = Path('/tmp/apply_route_promo.py')
+          text = patch.read_text(encoding='utf-8').replace(
+              'ROOT = Path(__file__).resolve().parent',
+              'ROOT = Path.cwd()'
+          )
+          patch.write_text(text, encoding='utf-8')
+          PY
+          python -m pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
+      - name: Apply requested destinations and promotional Quest design
+        run: python /tmp/apply_route_promo.py
+      - name: Install browser and Japanese fonts
+        run: |
+          python -m playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Validate the full site including 3D and maintenance records
+        run: python scripts/site-redesign/validate.py
+      - name: Commit and push the verified result
+        run: |
+          rm -f .github/workflows/apply-direct-hubs-promo-20260916.yml
+          rm -f .github/workflows/retry-direct-hubs-promo-20260916.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat: open travel DIY and maintenance directly and restore promotional Quest design'
+          git push origin HEAD:master
