@@ -36,38 +36,56 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Verify the public learning and travel entrances
+      - name: Verify the public learning, travel, DIY and maintenance entrances
         env:
           RELEASE_SHA: ${{ github.sha }}
         run: |
           python - <<'PY'
           import json, os, time, urllib.request
           from pathlib import Path
+
           base='https://trailfusionai.com'
-          paths=['/','/quest/','/travel/','/diy/','/maintenance/']
+          pages=['/','/quest/','/travel/story.html','/camping.html','/maintenance.html']
+          entrances=['/quest/','/travel/story.html','/camping.html','/maintenance.html']
           results=[]
-          for path in paths:
+
+          for path in pages:
               error=None
               for attempt in range(6):
                   try:
-                      req=urllib.request.Request(base+path+'?release='+os.environ['RELEASE_SHA'],headers={'User-Agent':'TrailFusion-Release-Check/1.0','Cache-Control':'no-cache'})
+                      req=urllib.request.Request(
+                          base+path+'?release='+os.environ['RELEASE_SHA'],
+                          headers={
+                              'User-Agent':'TrailFusion-Release-Check/1.1',
+                              'Cache-Control':'no-cache'
+                          }
+                      )
                       with urllib.request.urlopen(req,timeout=20) as response:
                           text=response.read().decode('utf-8')
                           if response.status!=200 or 'tf-hubs' not in text:
                               raise RuntimeError('Expected redesigned HTML was not served')
-                          for target in ['/quest/','/travel/','/diy/','/maintenance/']:
+                          for target in entrances:
                               if 'href="'+target+'"' not in text:
-                                  raise RuntimeError('Missing section entrance: '+target)
-                          results.append({'path':path,'status':response.status,'redesigned_navigation':True})
+                                  raise RuntimeError('Missing direct section entrance: '+target)
+                          results.append({
+                              'path':path,
+                              'status':response.status,
+                              'direct_navigation':True
+                          })
                           error=None
                           break
                   except Exception as exc:
                       error=exc
-                      if attempt<5:time.sleep(10)
-              if error:raise RuntimeError(path+': '+str(error))
+                      if attempt<5:
+                          time.sleep(10)
+              if error:
+                  raise RuntimeError(path+': '+str(error))
+
           report={'commit':os.environ['RELEASE_SHA'],'pages':results}
           print(json.dumps(report,ensure_ascii=False,indent=2))
-          Path('/tmp/site-live-check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          Path('/tmp/site-live-check.json').write_text(
+              json.dumps(report,ensure_ascii=False,indent=2)
+          )
           PY
       - name: Save live verification
         uses: actions/upload-artifact@v4
