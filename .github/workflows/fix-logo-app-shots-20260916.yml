@@ -1,0 +1,155 @@
+name: Restore original logo and app screenshot proportions
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/fix-logo-app-shots-20260916.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: logo-app-shots-hotfix-20260916
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preserve current published source
+        run: |
+          if git ls-remote --exit-code --heads origin backup/pre-logo-app-shots-fix-20260916 >/dev/null 2>&1; then
+            echo 'Backup branch already exists.'
+          else
+            git push origin HEAD^:refs/heads/backup/pre-logo-app-shots-fix-20260916
+          fi
+      - name: Restore the original TrailFusion logo and fix tall app screenshots
+        run: |
+          git fetch --depth=1 origin b8c922f00f90f1e443b02253dd78d5f60b2de53d
+          python - <<'PY'
+          from pathlib import Path
+          import base64, re, subprocess
+
+          base='b8c922f00f90f1e443b02253dd78d5f60b2de53d'
+          old=subprocess.check_output(['git','show',base+':index.html'],text=True)
+          match=re.search(r'<img src="data:image/webp;base64,([^\"]+)" alt="TrailFusion AI" class="lockup">',old)
+          if not match:
+              raise SystemExit('Original TrailFusion lockup was not found in the backup commit.')
+          raw=base64.b64decode(match.group(1),validate=True)
+          if len(raw)<10000 or raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP':
+              raise SystemExit('Extracted logo is not the expected WebP asset.')
+          logo=Path('assets/icons/trailfusion-lockup.webp')
+          logo.parent.mkdir(parents=True,exist_ok=True)
+          logo.write_bytes(raw)
+
+          css_path=Path('assets/css/site-v2.css')
+          css=css_path.read_text(encoding='utf-8')
+          marker='2026-09-16 hotfix: original TrailFusion lockup and vehicle-app screenshots'
+          hotfix=r'''
+
+/* 2026-09-16 hotfix: original TrailFusion lockup and vehicle-app screenshots */
+.tf-brand{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:0!important;
+  min-width:81px;
+  font-size:0!important;
+  line-height:1;
+  letter-spacing:0!important;
+}
+.tf-brand::before{
+  content:"";
+  display:block;
+  width:81px;
+  height:50px;
+  flex:0 0 auto;
+  background:url('/assets/icons/trailfusion-lockup.webp') center/contain no-repeat;
+}
+.tf-brand-mark{display:none!important}
+.tf-footer .tf-brand::before{width:110px;height:68px}
+@media(max-width:760px){
+  .tf-brand{min-width:68px}
+  .tf-brand::before{width:68px;height:42px}
+  .tf-footer .tf-brand::before{width:94px;height:58px}
+  .tf-header:has(.tf-extra) .tf-brand{min-width:58px}
+  .tf-header:has(.tf-extra) .tf-brand::before{width:58px;height:36px}
+}
+
+/* Preserve the portrait aspect ratio without letting screenshots dominate a phone viewport. */
+.tf-legacy .why-pic{align-items:flex-start!important}
+.tf-legacy .why-pic figure{min-width:0!important}
+.tf-legacy .why-pic img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:440px!important;
+  margin-inline:auto!important;
+  object-fit:contain!important;
+  transform:none!important;
+}
+@media(max-width:760px){
+  .tf-legacy .why-pic{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+    justify-items:center!important;
+    align-items:start!important;
+  }
+  .tf-legacy .why-pic figure{
+    width:100%!important;
+    max-width:none!important;
+  }
+  .tf-legacy .why-pic img{
+    width:auto!important;
+    height:min(48vh,320px)!important;
+    max-width:100%!important;
+    max-height:320px!important;
+  }
+  .tf-legacy .chero .shots{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:flex-end!important;
+    gap:12px!important;
+    flex-wrap:nowrap!important;
+  }
+  .tf-legacy .chero .shots img{
+    display:block!important;
+    width:auto!important;
+    height:min(48vh,320px)!important;
+    max-width:calc(50% - 8px)!important;
+    max-height:320px!important;
+    object-fit:contain!important;
+  }
+  .tf-legacy .chero .shots img:nth-child(2){transform:translateY(-8px)!important}
+  .tf-legacy .chero .shots img:nth-child(3){display:none!important}
+}
+'''
+          if marker not in css:
+              css_path.write_text(css+hotfix,encoding='utf-8')
+
+          assert logo.is_file() and logo.stat().st_size==len(raw)
+          final_css=css_path.read_text(encoding='utf-8')
+          for token in [marker,'trailfusion-lockup.webp','.tf-legacy .why-pic','.tf-legacy .chero .shots']:
+              if token not in final_css:
+                  raise SystemExit('Missing CSS token: '+token)
+          print({'logo_bytes':len(raw),'css_bytes':css_path.stat().st_size})
+          PY
+      - name: Commit and push the verified hotfix
+        run: |
+          git rm .github/workflows/fix-logo-app-shots-20260916.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site-v2.css assets/icons/trailfusion-lockup.webp
+          git commit -m 'fix: restore original logo and normalize vehicle app screenshots on mobile'
+          git pull --rebase origin master
+          git push origin HEAD:master
