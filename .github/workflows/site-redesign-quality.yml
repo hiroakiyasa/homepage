@@ -1,0 +1,83 @@
+name: Site redesign quality
+on:
+  push:
+    branches: [feat/site-restructure-20260915]
+    paths:
+      - '.github/workflows/site-redesign-quality.yml'
+      - 'scripts/site-redesign/**'
+      - 'assets/css/site-v2.css'
+      - 'assets/js/site-v2.js'
+permissions:
+  contents: write
+concurrency:
+  group: site-redesign-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
+      - name: Audit existing content
+        run: |
+          mkdir -p /tmp/site-review/source /tmp/site-review/reports
+          python - <<'PY'
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+          import json, shutil
+          root=Path('.')
+          report=[]
+          for p in sorted(root.glob('*.html'))+sorted(root.glob('drive-routes/index.html')):
+            soup=BeautifulSoup(p.read_text(), 'html.parser')
+            row={'path':str(p),'bytes':p.stat().st_size,'title':soup.title.get_text() if soup.title else '', 'headings':[x.get_text(' ',strip=True) for x in soup.select('h1,h2,h3')], 'ids':[x.get('id') for x in soup.select('[id]')], 'stores':sorted(set(a['href'] for a in soup.select('a[href]') if 'apps.apple.com' in a['href'] or 'play.google.com' in a['href'])), 'images':[{'src':x.get('src','')[:180] if not x.get('src','').startswith('data:') else '[inline image]', 'alt':x.get('alt','')} for x in soup.select('img')], 'scripts':[x.get('src') for x in soup.select('script[src]')]}
+            report.append(row)
+            target=Path('/tmp/site-review/source')/p
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(p,target)
+          for name in ['robots.txt','llms.txt','sitemap.xml','package.json','README.md']:
+            p=Path(name)
+            if p.exists(): shutil.copy2(p,Path('/tmp/site-review/source')/p)
+          for folder in ['assets/css','assets/js']:
+            if Path(folder).exists(): shutil.copytree(folder,Path('/tmp/site-review/source')/folder,dirs_exist_ok=True)
+          paths=[str(p) for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and ('assets' in p.parts or p.suffix in ['.html','.xml','.json'])]
+          Path('/tmp/site-review/reports/inventory.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          Path('/tmp/site-review/reports/file-paths.json').write_text(json.dumps(paths,ensure_ascii=False,indent=2))
+          print(json.dumps([{k:v for k,v in row.items() if k in ['path','bytes','title','stores']} for row in report],ensure_ascii=False,indent=2))
+          PY
+      - name: Build redesigned static pages
+        if: ${{ hashFiles('scripts/site-redesign/build.py') != '' }}
+        run: python scripts/site-redesign/build.py
+      - name: Install browser
+        if: ${{ hashFiles('scripts/site-redesign/validate.py') != '' }}
+        run: python -m playwright install --with-deps chromium
+      - name: Validate links, metadata, layout and interactions
+        if: ${{ hashFiles('scripts/site-redesign/validate.py') != '' }}
+        run: python scripts/site-redesign/validate.py
+      - name: Archive changed text and visual reports
+        if: always()
+        run: |
+          if [ -d /tmp/site-redesign-results ]; then cp -R /tmp/site-redesign-results /tmp/site-review/; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-redesign-review
+          path: /tmp/site-review
+          retention-days: 14
+      - name: Commit validated generated pages to feature branch only
+        if: ${{ success() && hashFiles('scripts/site-redesign/validate.py') != '' }}
+        run: |
+          test "$GITHUB_REF_NAME" = 'feat/site-restructure-20260915'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html' 'assets' 'study' 'travel' 'parents' 'about' 'support' 'choose' 'docs' 'scripts/site-redesign' 'robots.txt' 'llms.txt' 'llms-full.txt' 'sitemap.xml' 'sitemap-index.xml' 'drive-routes' '404.html'
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat: publish validated learning-first site with travel, DIY and maintenance hubs'
+            git push origin HEAD:feat/site-restructure-20260915
+          fi
