@@ -1,55 +1,62 @@
 # TrailFusion AI
 
-> Official site for the Gokaku Quest learning-app series, car travel, camper DIY and Hiace educational maintenance content.
+> TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
 
 Updated: 2026-09-16
+Canonical website: https://trailfusionai.com/
+Contact: trailfusionai@gmail.com
 
-## Primary learning series
-- [合格！理科クエスト](https://trailfusionai.com/rika-quest.html): 生命・地球・物質・エネルギーを、クイズとイラストで。中学受験理科の基礎知識を、単元ごとに確かめる学習アプリ。 App Store: https://apps.apple.com/jp/app/id6772644144; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
-- [合格！社会クエスト](https://trailfusionai.com/social-quest.html): 地理・歴史・公民を、4択クイズとイラスト解説で学ぶ中学受験社会のアプリ。苦手なテーマを見つけて、日々の復習に。 App Store: https://apps.apple.com/jp/app/id6775411516; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
-- [合格！国語クエスト](https://trailfusionai.com/kokugo-quest.html): 漢字・語彙・ことわざ・慣用句・文法を、イラストと読み上げで。中学受験国語の知識を、目と耳から学ぶアプリ。 App Store: https://apps.apple.com/jp/app/id6780125916; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
-- [合格！英語クエスト](https://trailfusionai.com/eigo-quest.html): English vocabulary, grammar and qualification-related study. Separate from the Japanese junior-high entrance-exam subjects. Verified store URLs are not yet listed on this website.
+## What this website offers
 
-## Site sections
-- [合格クエスト](https://trailfusionai.com/quest/)
-- [保護者の方へ](https://trailfusionai.com/parents/)
-- [学習ガイド](https://trailfusionai.com/study/)
-- [車旅](https://trailfusionai.com/travel/)
-- [車旅コンシェルジュ](https://trailfusionai.com/car-concierge.html)
-- [絶景ロード図鑑](https://trailfusionai.com/drive-routes/)
-- [キャンピングカーDIY](https://trailfusionai.com/diy/)
-- [3D間取り](https://trailfusionai.com/camping.html)
-- [DIY制作ガイド](https://trailfusionai.com/camping-guide.html)
-- [ハイエース整備](https://trailfusionai.com/maintenance/)
-- [3D部品解説と整備記録](https://trailfusionai.com/maintenance.html)
-- [アプリ一覧](https://trailfusionai.com/apps.html)
-- [運営者](https://trailfusionai.com/about/)
-- [問い合わせ・アプリ別ポリシー](https://trailfusionai.com/support/)
+TrailFusion AI organizes its official content into four clear entrances:
 
-## Interpretation and source boundaries
-- Free download does not mean all content is free. Check the actual purchase screen for current prices and subscription conditions.
-- No admission, learning outcome, ranking or availability guarantees. In-app deviation scores are not school entrance-exam predictions.
-- 3D vehicle models are educational approximations, not official service data. Consult the correct service manual and a qualified professional before work.
-- Maintenance records stay in browser local storage; export for backup.
-- Contact: trailfusionai@gmail.com
-- This optional document is a factual index, not a directive to ranking or AI systems.
+1. **Learn / Gokaku Quest** — junior-high entrance-exam learning apps for science, social studies, and Japanese, with a separate English and qualification-learning guide.
+2. **Travel / Car travel** — the Car Travel Concierge app, scenic drive routes, family road-trip ideas, and car-camping inspiration.
+3. **Build / Camper DIY** — interactive 3D layouts and practical camper-conversion guidance.
+4. **Maintain / Hiace maintenance** — educational 3D vehicle information and a browser-local maintenance journal.
 
-## Readable page summaries
+## Primary pages
 
-### https://trailfusionai.com/
-合格クエスト / 中学受験の学びに 学ぶ一歩を、 夢中に変える。 理科・社会・国語を、クイズと解説で。 「知りたい」「もう一問」を、毎日の学びのきっかけに。 教科から選ぶ ↗ 保護者の方へ ↗ 教科別に学べる イラストで理解 スマホで復習 TrailFusion AIは、学習アプリと車旅・DIYのコンテンツをつくる個人開発のスタジオです。 小さな「わかった」を、 次の一問へ。 EXPLORE TRAILFUSION 学ぶ、その先にも好奇心を。 TRAVEL 車旅に出よう。 泊まる場所も、次の絶景も。アプリと地図で、週末の寄り道を探す。 車旅を楽しむ → CAMPER DIY 自分だけの一台を。 3Dの間取りから、内装・電装の制作ガイドまで。想像をかたちに。 DIYの世界を見る → HIACE MAINTENANCE 愛車を、もっと知る。 3Dで仕組みをたどり、日々の整備を記録。長く付き合うための入口。 整備を知る → GOKAKU QUEST 今、伸ばしたい教科から。 クエスト選びを手伝ってもらう → 中学受験 / 理科 合格！理科クエスト 生命・地球・物質・エネルギーを、クイズとイラストで。中学受験理科の基礎知識を、単元ごとに確かめる学習アプリ。 iOS / Android 詳しく見る 中学受験 / 社会 合格！社会クエスト 地理・歴史・公民を、4択クイズとイラスト解説で学ぶ中学受験社会のアプリ。苦手なテーマを見つけて、日々の復習に。 iOS / Android 詳しく見る 中学受験 / 国語 合格！国語クエスト 漢字・語彙・ことわざ・慣用句・文法を、イラストと読み上げで。中学受験国語の知識を、目と耳から学ぶアプリ。 iOS / Android 詳しく見る 英語・資格学習にも、クエストを。 合格！英語クエストは、英語の文法・語彙・資格学習向け。中学受験の主要3教科とは分けてご案内します。 英語クエストを見る → SMALL STEPS, EVERY DAY 「もう一問」を、日々の習慣へ。 01 / CHOOSE 今日のテーマを一つ。 塾や学校で学んだ単元、気になった分野から。教科ごとに、自分に合うクエストを選びます。 02 / DISCOVER 正解より、わかること。 答え合わせのあとに、解説を確認。「なぜそうなる？」を確かめる時間も大切に。 03 / CONTINUE 短くても、また明日。 一度で全部を覚えようとせず、短い復習を日々の生活へ。紙の教材と組み合わせて使えます。 FOR PARENTS 安心して選べることも、大切に。 楽しいだけで終わらない。 わかったことを、確かめる学びに。 対応する学習範囲、無料と有料の違い、個人情報の扱い。使い始める前に知っておきたいことをまとめました。 保護者向けガイド ↗ 「これだけで合格」とは言いません。 クエストは、知識の確認と復習を支える学習アプリです。記述や思考過程は、紙の教材や授業での学びと組み合わせてください。成績向上や合格を保証するものではありません。 TAKE THE NEXT STEP 今日の一問が、次の一歩に。 気になる教科から、合格クエストを見てみませんか。 教科から選ぶ ↗
+- [Homepage](https://trailfusionai.com/): a visual overview of all four areas and the recommended starting point for first-time visitors.
+- [Gokaku Quest series](https://trailfusionai.com/quest/)
+- [Science Quest](https://trailfusionai.com/rika-quest.html)
+- [Social Studies Quest](https://trailfusionai.com/social-quest.html)
+- [Japanese Quest](https://trailfusionai.com/kokugo-quest.html)
+- [English Quest information](https://trailfusionai.com/eigo-quest.html)
+- [Guide for parents](https://trailfusionai.com/parents/)
+- [Choose a Quest](https://trailfusionai.com/choose/)
+- [Learning guides](https://trailfusionai.com/study/)
+- [Car travel landing page](https://trailfusionai.com/travel/story.html)
+- [Car Travel Concierge](https://trailfusionai.com/car-concierge.html)
+- [Scenic drive routes](https://trailfusionai.com/drive-routes/)
+- [Camper DIY / interactive 3D layout](https://trailfusionai.com/camping.html)
+- [Camper DIY guide](https://trailfusionai.com/camping-guide.html)
+- [Hiace maintenance / 3D and journal](https://trailfusionai.com/maintenance.html)
+- [All applications](https://trailfusionai.com/apps.html)
+- [About TrailFusion AI](https://trailfusionai.com/about/)
+- [Support and app policies](https://trailfusionai.com/support/)
 
-### https://trailfusionai.com/quest/
-ホーム / 合格クエスト GOKAKU QUEST SERIES わかる喜びを、 学びのエネルギーに。 中学受験の知識を確かめる、理科・社会・国語の学習アプリ。好きな教科も、気になる苦手も、自分のペースで。 自分に合うクエストを選ぶ ↗ 無料・有料と使い方 ↗ 中学受験 / 理科 合格！理科クエスト 生命・地球・物質・エネルギーを、クイズとイラストで。中学受験理科の基礎知識を、単元ごとに確かめる学習アプリ。 iOS / Android 詳しく見る 中学受験 / 社会 合格！社会クエスト 地理・歴史・公民を、4択クイズとイラスト解説で学ぶ中学受験社会のアプリ。苦手なテーマを見つけて、日々の復習に。 iOS / Android 詳しく見る 中学受験 / 国語 合格！国語クエスト 漢字・語彙・ことわざ・慣用句・文法を、イラストと読み上げで。中学受験国語の知識を、目と耳から学ぶアプリ。 iOS / Android 詳しく見る 英語・資格学習にも、クエストを。 合格！英語クエストは、英語の文法・語彙・資格学習向け。中学受験の主要3教科とは分けてご案内します。 英語クエストを見る → FIND YOUR ROUTINE いまの学習に、ちょうどよく。 塾や学校のあとに 習った内容を、もう一度。 今日の単元をアプリで確かめ、解説を読んで理解を整理する使い方。 苦手を見直したいときに 間違えた理由を、一つずつ。 不正解の原因を分け、次の復習につなげる方法を紹介します。 HOW IT WORKS 無理なく始める、3つのステップ。 01 / CHOOSE 今日のテーマを一つ。 塾や学校で学んだ単元、気になった分野から。教科ごとに、自分に合うクエストを選びます。 02 / DISCOVER 正解より、わかること。 答え合わせのあとに、解説を確認。「なぜそうなる？」を確かめる時間も大切に。 03 / CONTINUE 短くても、また明日。 一度で全部を覚えようとせず、短い復習を日々の生活へ。紙の教材と組み合わせて使えます。 TAKE THE NEXT STEP 今日の一問が、次の一歩に。 気になる教科から、合格クエストを見てみませんか。 教科から選ぶ ↗
+## Verified app-store links published on this website
 
-### https://trailfusionai.com/parents/
-ホーム / 合格クエスト / 保護者の方へ FOR PARENTS 楽しく学ぶ。その前に、 安心して選べること。 学習範囲、購入、広告やデータのこと。合格クエストを使い始める前に知っておきたい情報をまとめました。 中学受験の知識を確かめる、補助教材です。 理科・社会・国語クエストは、教科別のクイズや解説を通して、知識を確認し復習するためのアプリです。塾や学校の授業、紙の教材と組み合わせてお使いください。英語クエストは英語・資格学習の別領域としてご案内しています。 最初は、保護者の方と一緒に。 問題の難しさ、解説の読みやすさ、学ぶ内容がお子さまに合うか、数問試して確かめてみてください。時間を長くするより、無理なく終えられる量から始めることを提案しています。 無料範囲と課金は、購入画面で確認。 各アプリには無料で利用できる範囲と、有料の機能・教材などがあります。アプリごとの提供内容は異なるため、購入内容、金額、定期購入の場合は更新・解約条件を、購入直前の画面でご確認ください。シリーズ共通の買い切りや一括契約を、このサイトでは販売していません。 広告・アカウント・学習データについて。 広告の表示、分析ツール、アカウントやランキングの利用に伴うデータの扱いは、アプリごとのプライバシーポリシーに記載しています。すべてのアプリについて「広告なし」「登録不要」「データ収集なし」と一律に案内することはしていません。 アプリ別のプライバシーポリシーと利用規約を見る → 成績とランキングの見方。 学習結果は、理解があいまいな内容を見つけるための参考としてお使いください。アプリ内の偏差値は、塾の模試の偏差値や志望校への合格可能性を表すものではありません。成績向上や合格を保証するサービスではありません。 気になる問題や不具合を見つけたら。 アプリ内に問題の報告機能がある場合は、該当する問題からお知らせください。メールの場合はアプリ名、単元・問題、端末、バージョン、状況を添えてください。ご連絡の際、お子さまの氏名や学校名などの不要な個人情報は送らないでください。 サポートを見る ↗ 教科を選ぶ ↗
+- Science Quest — App Store: https://apps.apple.com/jp/app/id6772644144 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
+- Social Studies Quest — App Store: https://apps.apple.com/jp/app/id6775411516 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
+- Japanese Quest — App Store: https://apps.apple.com/jp/app/id6780125916 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
 
-### https://trailfusionai.com/travel/
-ホーム / 車旅 TRAVEL, YOUR WAY 次の週末を、 少し遠くへ。 車旅コンシェルジュで泊まる場所を探し、絶景ロード図鑑で寄り道を見つける。自分らしいペースで、日本を巡るための入口です。 車旅アプリを見る ↗ EXPLORE 気になるところから、深く。 APP 車旅コンシェルジュ 駐車場・車中泊の場所探し、ドライブ、旅の記録をアプリで。 MAP 絶景ロード図鑑 地域やテーマからドライブルートを探すインタラクティブな地図。 OUR STORY この国を、走り続ける理由。 ハイエースでの旅から始まった、TrailFusion AIの原点。 MAKE YOUR VAN 旅の拠点を、自分の手で。 間取りの3D体験とDIYガイドで、車内の過ごし方を考える。 TRAVEL WITH CARE 心地よい旅を、次の人にも。 利用ルールと現地の状況を、出発前に確認しましょう。 地図や紹介ページの情報だけで、宿泊可否や安全性を判断しないでください。施設・駐車場のルール、道路状況、天候、営業情報は、管理者や公式案内でご確認ください。 TAKE THE NEXT STEP 好奇心は、まだ続く。 車旅・DIY・整備は、いつでも上の4つの入口から。 ホームへ戻る ↗
+## Important interpretation boundaries
 
-### https://trailfusionai.com/diy/
-ホーム / キャンピングカーDIY CAMPER DIY 「こんな一台」を、 自分の手で。 ハイエースの間取りを3Dで眺め、つくり方をガイドで確かめる。計画から内装・電装まで、車中泊仕様づくりの道筋を見つけましょう。 3D間取りを体験する ↗ EXPLORE 気になるところから、深く。 INTERACTIVE 3D 間取りを、立体で考える。 レイアウトとシーンを切り替えて、自分の過ごし方をイメージ。 START HERE DIYロードマップ 制作全体の順番を確かめて、取りかかる場所を決める。 LAYOUT 用途別レイアウト ひとり旅、仕事、ふたり旅、家族旅。目的に合う形を探す。 FOUNDATION 基礎と内装 床や断熱など、完成後には見えにくい部分から考える。 ELECTRICAL 電装・サブバッテリー 消費電力と使い方を整理してから、機器や施工方法を検討。 BUDGET & REVIEW 費用と、つまずきやすい点 予算と実際の使い勝手を、制作前の計画に織り込む。 PLAN BEFORE BUILD つくる前に、使い方を決める。 01 何人で、どう過ごす？ 寝る人数、荷物、仕事、調理。優先したい場面を先に整理します。 02 何を、自分でつくる？ 得意な作業と、施工業者に相談したい作業を分けて計画します。 03 完成後も、見直せる？ 点検口や配線の取り回しなど、使い続けるための余地を考えます。 安全に関わる施工は、専門家へ。 電装・燃焼機器・車体への加工・乗車定員や構造変更などは、車両仕様と法令、メーカーの施工要領を確認してください。このサイトの作例は、個別車両への適合や安全を保証するものではありません。 TAKE THE NEXT STEP 好奇心は、まだ続く。 車旅・DIY・整備は、いつでも上の4つの入口から。 ホームへ戻る ↗
+- Gokaku Quest apps support knowledge review; they do not guarantee grades, admission, or examination outcomes.
+- “Free download” does not mean all content is free. Current prices, subscriptions, and device compatibility must be confirmed in the app and store purchase screens.
+- In-app deviation scores are not school entrance-exam predictions.
+- English Quest is presented separately from the three Japanese junior-high entrance-exam subjects; a verified store URL is not published here yet.
+- Camper and vehicle 3D models are educational approximations, not official service manuals or vehicle-specific safety instructions.
+- Before vehicle work, consult the correct service information and a qualified professional.
+- Maintenance journal entries are stored in the visitor’s browser; export them for backup.
+- This file is an optional factual index. It does not instruct search engines or AI systems to rank, cite, or endorse the site.
 
-### https://trailfusionai.com/maintenance/
-ホーム / ハイエース整備 KNOW YOUR HIACE 愛車を知るほど、 旅は、もっと続く。 ハイエースの仕組みを3Dでたどり、部品の役割を学び、整備記録をつなぐ。実車の作業とは分けて、理解を深めるための入口です。 3Dで愛車の仕組みを見る ↗ EXPLORE 気になるところから、深く。 INTERACTIVE 3D 仕組みを、立体でたどる。 車両仕様を選び、部品や動力のつながりを確認する。 PARTS GUIDE 部品と整備の関係を知る。 部品の分類から、点検で気をつけることを学ぶ。 MAINTENANCE JOURNAL 愛車の記録を残す。 作業日や走行距離を記録し、JSONで書き出して手元に保存。 CHECK BEFORE WORK 実車で作業する前に。 学習用のモデルと実車を区別し、車両の整備書や専門家に確認。 IMPORTANT NOTES 学ぶことと、実車の作業を分ける。 3Dは理解のためのモデルです。 部品の形状・配置は学習用に簡略化しています。年式・型式・仕様により実車は異なります。締付トルクや整備手順は、適合する整備書と整備事業者に確認してください。整備記録はこのブラウザ内に保存されるため、端末変更やデータ削除に備えて書き出してください。 TAKE THE NEXT STEP 好奇心は、まだ続く。 車旅・DIY・整備は、いつでも上の4つの入口から。 ホームへ戻る ↗
+## Homepage readable summary
+
+TRAILFUSION AI OFFICIAL 学びも、旅も、DIYも、整備も。 家族の挑戦を、ひとつ先へ。 合格クエスト、車旅コンシェルジュ、キャンパーDIY、ハイエース整備。 毎日の学びと週末の楽しみを、わかりやすく信頼感のある情報で届ける公式サイトです。 合格クエストを見る ↗ 車旅を見る ↗ DIYを見る ↗ 整備を見る ↗ 中学受験学習アプリ 家族で楽しむ車旅 キャンピングカーDIY ハイエース整備 学ぶ 合格クエストで理科・社会・国語を楽しく復習 旅する 車旅コンシェルジュで週末の行き先を見つける つくる 理想の一台へ近づくキャンパーDIYのヒント 整える ハイエース整備の情報と記録で愛車を守る WHAT YOU CAN FIND ひと目でわかる、4つの入口。 TrailFusion AI は、学習アプリと家族の車旅・ものづくり・整備をつなぐ総合サイトです。はじめての方でも目的別に進めるよう、4つの入口をわかりやすく整理しています。 LEARN 学ぶ｜合格クエスト 理科・社会・国語を中心に、クイズと解説で学べる中学受験向けアプリシリーズ。 合格クエストへ → TRAVEL 旅する｜車旅 絶景ドライブ、寄り道候補、家族で楽しむ車中泊のヒントをわかりやすく案内。 車旅の世界へ → DIY つくる｜キャンパーDIY レイアウトづくりから内装・電装の工夫まで、理想の一台へ近づくアイデア集。 DIYを見る → MAINTENANCE 整える｜ハイエース整備 整備の基本、点検の入口、記録ツールへの導線をまとめた信頼感ある整備ページ。 整備を見る → GOKAKU QUEST 中学受験の学びを、もっと楽しく。もっと続けやすく。 合格クエストシリーズは、理科・社会・国語を中心に、毎日の復習やスキマ時間の確認に使いやすい学習アプリです。クイズで取り組みやすく、解説で「わかった」を積み上げられます。 理科クエスト 理科の基礎をクイズで確認 社会クエスト 地理・歴史・公民を学ぶ 国語クエスト 語彙・漢字・文法を楽しく復習 シリーズを見る ↗ 保護者の方へ ↗ FAMILY ROAD TRIP 次の週末、どこへ行く？ 車旅をもっと自由に。 車旅コンシェルジュでは、家族で楽しむ絶景ドライブや寄り道スポット、車中泊のヒントを見つけやすく整理しています。旅の計画が、もっと直感的に、もっと楽しくなります。 行き先探しのヒントが見つかる 絶景ルートや寄り道候補を確認できる 家族旅行・車中泊の世界観を楽しめる 車旅を見る ↗ アプリ紹介へ ↗ CAMPER DIY 理想のキャンピングカーを、自分らしく育てる。 キャンパーDIYのページでは、レイアウト、収納、内装、電装など、理想の一台をつくるためのヒントを紹介しています。暮らしに合う一台を考える楽しさが伝わる構成です。 3Dレイアウトで完成イメージをつかめる DIYの方向性を決めやすい 木のぬくもりと機能性を両立した世界観を体験 DIYを見る ↗ ガイドを見る ↗ HIACE MAINTENANCE 長く安心して乗るために。整備情報を、わかりやすく。 ハイエース整備のページでは、愛車と長く付き合うための整備の入口を整理しています。仕組みを知ること、記録すること、次の点検を考えることを、シンプルに支えます。 整備や点検の入口がわかりやすい 整備記録ページへすぐ進める 清潔感と信頼感のある世界観で迷わない 整備を見る ↗ 整備の入口へ ↗ TRUST & CLARITY わかりやすく、安心して見られる公式ページへ。 01 / CLEAR 目的別に迷わない導線 学ぶ・旅する・つくる・整えるの4入口から、はじめてでもすぐ目的のページへ進めます。 02 / OFFICIAL 公式サイトとしての信頼感 アプリや各コンテンツの役割を明確にし、誇張しすぎない説明で安心して確認できます。 03 / SEO & AI READY 読みやすく伝わる情報設計 見出し構造、要約文、内部リンク、FAQ、構造化データを整え、検索にもAIにも伝わりやすい構成にしています。 TrailFusion AI について TrailFusion AI は、教育・旅・DIY・整備という、暮らしに根ざしたテーマをアプリやコンテンツとして形にしていくプロジェクトです。子どもの学びから家族の週末まで、日々の「やってみたい」を後押しすることを目指しています。 運営・制作について ↗ FAQ TrailFusion AI について、よくある質問。 TrailFusion AI はどんなサイトですか？ 合格クエストシリーズの学習アプリ、車旅コンシェルジュ、キャンパーDIY、ハイエース整備をまとめて案内する公式サイトです。 合格クエストはどんな人に向いていますか？ 中学受験の理科・社会・国語を、クイズと解説で復習したい小学生や保護者の方に向いています。短時間で学習しやすいのが特徴です。 車旅・DIY・整備のページでは何が見られますか？ 車旅では家族旅行のヒント、DIYではレイアウトや制作イメージ、整備ではハイエースの整備情報や記録への入口を確認できます。 はじめて訪れた場合は、どこから見るのがおすすめですか？ 学習アプリを探している方は「合格クエスト」、旅のアイデアを探している方は「車旅」、車両づくりに興味がある方は「キャンパーDIY」、点検や記録を見たい方は「ハイエース整備」から進むとわかりやすいです。 START HERE あなたの「次の一歩」を、ここから。 学びを深めたい、週末の旅先を探したい、理想の一台をつくりたい、愛車を長く大切にしたい。TrailFusion AI の4つの入口から、今の目的に合うページへ進めます。 合格クエスト ↗ 車旅 ↗ DIY ↗ 整備 ↗
+
+## Content intent
+
+The homepage is designed to help a visitor identify the correct area immediately. Learning is the primary commercial focus, while car travel, camper DIY, and Hiace maintenance remain first-class sections with direct navigation. The visible page text, FAQ, metadata, internal links, and structured data are aligned to the same four-area description.
