@@ -32,6 +32,8 @@ jobs:
         run: python scripts/site-redesign/validate.py
       - name: Validate bright hero, mobile gutters and WebKit rendering
         run: python scripts/site-redesign/validate-daylight.py
+      - name: Check homepage gutters and unique visuals at twelve viewport widths
+        run: python scripts/site-redesign/homepage-regression.py
       - name: Ensure validation did not modify tracked files
         run: git diff --exit-code
       - name: Save validation report and screenshots
