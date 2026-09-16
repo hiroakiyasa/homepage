@@ -1,1 +1,3 @@
-PLACEHOLDER
+/* TrailFusion AI shared design system loader. */
+@import url('./site-v2-base.css');
+@import url('./travel-mobile-hotfix.css');

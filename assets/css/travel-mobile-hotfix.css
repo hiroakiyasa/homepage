@@ -1,0 +1,8 @@
+/* Travel story mobile product screenshot containment. */
+@media(max-width:760px){
+  .tf-legacy #products .lead-app{padding:22px 18px!important;overflow:hidden!important}
+  .tf-legacy #products .lshots{display:flex!important;width:100%!important;max-width:100%!important;gap:8px!important;justify-content:center!important;align-items:flex-start!important;overflow:hidden!important}
+  .tf-legacy #products .lshots img{display:block!important;flex:0 1 calc((100% - 16px)/3)!important;width:calc((100% - 16px)/3)!important;min-width:0!important;max-width:140px!important;height:auto!important;object-fit:contain!important;border-radius:10px!important;transform:none!important}
+  .tf-legacy #products .lead-app .acts{gap:10px!important}
+  .tf-legacy #products .lead-app .btn{max-width:100%!important}
+}
