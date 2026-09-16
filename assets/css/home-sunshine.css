@@ -1,0 +1,168 @@
+/* Bright, progressively enhanced homepage hero. No JavaScript or extra image requests for the collage. */
+.tf-home-premium-page{background:#fffdf8}
+.tf-sunny-hero{--sunny-ink:#17384a;--sunny-blue:#2458ba;--sunny-green:#167767;--sunny-orange:#ad511f;position:relative;isolation:isolate;overflow:hidden;padding:62px 0 30px;background:radial-gradient(ellipse at 94% 14%,#dff3f6 0,transparent 44%),radial-gradient(ellipse at 4% 82%,#fff0cc 0,transparent 40%),#fffdf8;color:var(--sunny-ink)}
+.tf-sunny-hero::before{content:'';position:absolute;z-index:-1;width:440px;height:440px;right:-255px;top:240px;border:1px solid #b6dcd6;border-radius:50%;box-shadow:0 0 0 48px #ddf0e84d,0 0 0 100px #e8f5ed4d;pointer-events:none}
+.tf-sunny-hero__inner{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:30px}
+.tf-sunny-hero__copy{position:relative;z-index:2;padding:5px 0 22px;min-width:0}
+.tf-sunny-hero .tf-sunny-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:6px 14px 6px 10px;border:1px solid #e1dfce;border-radius:999px;background:#fffef9;font-size:12px;font-weight:700;letter-spacing:.1em}
+.tf-sunny-eyebrow>span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#ffe6a0;color:#795216;font-size:18px}
+.tf-sunny-hero h1{margin:0;font-size:clamp(36px,4.65vw,64px);font-weight:900;line-height:1.45;letter-spacing:-.07em;overflow-wrap:normal;word-break:normal}
+.tf-sunny-line{display:block;white-space:nowrap}
+.tf-word-learn{color:var(--sunny-blue)}
+.tf-word-travel{color:var(--sunny-green)}
+.tf-word-diy{color:var(--sunny-orange)}
+.tf-word-road{position:relative;color:var(--sunny-ink)}
+.tf-word-road::after{content:'';position:absolute;z-index:-1;left:0;right:.2em;bottom:.035em;height:.18em;border-radius:55% 35% 50% 35%;background:#f8d87d;transform:rotate(-2deg)}
+.tf-sunny-hero .tf-sunny-tagline{margin-top:20px;font-size:clamp(17px,1.65vw,23px);font-weight:800;letter-spacing:.015em;line-height:1.7}
+.tf-sunny-hero .tf-sunny-description{margin-top:16px;font-size:14px;line-height:2.05;color:#526773;overflow-wrap:normal}
+.tf-sunny-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 22px;margin-top:28px}
+.tf-sunny-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;min-height:58px;padding:8px 10px 8px 24px;background:#ffd16b;border:1px solid #edbc52;border-radius:999px;color:#17384a;font-size:14px;font-weight:800;box-shadow:0 8px 22px #b1802320;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.tf-sunny-primary>span{display:grid;place-items:center;flex:none;width:38px;height:38px;background:#17384a;color:#fff;border-radius:50%;font-size:21px;font-weight:400}
+.tf-sunny-secondary{display:inline-flex;align-items:center;gap:14px;min-height:48px;font-size:13px;font-weight:700;text-decoration:underline!important;text-decoration-color:#91a2a9!important;text-underline-offset:6px}
+.tf-sunny-secondary>span{font-size:20px}
+.tf-sunny-subjects{display:flex;align-items:center;gap:13px;margin-top:27px}
+.tf-sunny-apps{display:flex;flex:none;padding-left:3px}
+.tf-sunny-apps img{width:38px!important;height:38px!important;object-fit:cover;border:2px solid #fff;border-radius:12px;margin-left:-3px;box-shadow:0 3px 7px #17384a14}
+.tf-sunny-apps img:nth-child(2){transform:translateY(-3px)}
+.tf-sunny-subjects p{font-size:11px;line-height:1.9;color:#526773}
+.tf-sunny-subjects strong,.tf-sunny-subjects p>span{display:block}
+.tf-sunny-subjects strong{font-size:12px;color:#17384a}
+/* Keep each of the existing sprite's five 16:9 frames intact. */
+.tf-sunny-collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;align-items:start;min-width:0;padding:10px 10px 0 20px}
+.tf-sunny-collage::before{content:'';position:absolute;z-index:-1;inset:0 -12px 0 12px;background:#deeee7;border-radius:45% 55% 48% 52%;transform:rotate(-7deg)}
+.tf-sunny-card{position:relative;display:block;padding:7px;background:#fff;border:1px solid #e0e8e1;border-radius:20px;box-shadow:0 14px 32px #254c3b12;color:var(--sunny-ink);transition:transform .25s ease,box-shadow .25s ease}
+.tf-sunny-card--learn{grid-column:1/-1;margin:0 38px 0 0;transform:rotate(-3deg);z-index:1}
+.tf-sunny-card--travel{margin-top:-8px;transform:rotate(-4deg)}
+.tf-sunny-card--diy{margin-top:4px;transform:rotate(5deg)}
+.tf-sunny-picture{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;background-color:#eef4e8;background-image:url('/assets/hero/trailfusion-home-sprite.avif');background-repeat:no-repeat;background-size:500% 100%;overflow:hidden}
+.tf-sunny-picture--learn{background-position:25% center}
+.tf-sunny-picture--travel{background-position:50% center}
+.tf-sunny-picture--diy{background-position:75% center}
+.tf-sunny-photo-label{position:absolute;top:10px;left:10px;max-width:calc(100% - 20px);padding:5px 9px;border-radius:999px;background:#fffdf4f5;color:#37534b;font-size:8px;font-weight:800;line-height:1.7;letter-spacing:.07em}
+.tf-sunny-card__caption{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 9px 8px}
+.tf-sunny-card__category{display:block;color:#52665e;font-size:9px;font-weight:700;letter-spacing:.035em;margin-bottom:5px;line-height:1.7}
+.tf-sunny-card__caption strong{display:block;font-size:15px;font-weight:800;line-height:1.65;letter-spacing:-.025em}
+.tf-sunny-card--learn .tf-sunny-card__caption{padding:14px 14px 12px}
+.tf-sunny-card--learn .tf-sunny-card__caption strong{font-size:21px;line-height:1.5}
+.tf-sunny-card--learn .tf-sunny-card__caption strong br{display:none}
+.tf-sunny-card--learn .tf-sunny-card__category{color:var(--sunny-blue);font-size:11px}
+.tf-sunny-card__arrow{display:grid;place-items:center;width:30px;height:30px;flex:none;border:1px solid #dbe4de;border-radius:50%;font-size:18px;font-weight:400}
+.tf-sunny-card--learn .tf-sunny-card__arrow{background:#e9f0ff;border-color:#dce6f9;color:var(--sunny-blue);width:36px;height:36px}
+.tf-sunny-sticker{position:absolute;z-index:3;right:-4px;top:-14px;display:grid;place-content:center;width:94px;height:94px;background:#ffdb7e;color:#61461e;border:5px solid #fff8de;border-radius:50%;transform:rotate(12deg);font-size:10px;font-weight:900;line-height:1.65;letter-spacing:.01em;text-align:center;box-shadow:0 5px 12px #927f3912;pointer-events:none}
+.tf-sunny-spark{position:absolute;z-index:2;color:#bd671d;pointer-events:none;font-family:serif;line-height:1}
+.tf-sunny-spark--one{top:-16px;left:-8px;font-size:34px;transform:rotate(8deg)}
+.tf-sunny-spark--two{bottom:12px;right:-16px;font-size:28px;color:#2b8c7b}
+.tf-sunny-hero .tf-sunny-collage__note{grid-column:1/-1;justify-self:center;margin:0 0 0 16px;font-size:11px;letter-spacing:.08em;font-weight:600;color:#526b60;transform:rotate(-2deg);line-height:1.8}
+.tf-sunny-routes{display:flex;gap:22px;align-items:center;margin-top:42px;padding:20px 0 0;border-top:1px solid #dedfd0}
+.tf-sunny-routes>p{flex:none;font-size:12px;font-weight:700;line-height:1.8;color:#536468}
+.tf-sunny-routes nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-width:0}
+.tf-sunny-route{display:flex;align-items:center;gap:10px;min-width:0;min-height:70px;padding:10px 12px;background:#ffffffb3;border:1px solid #e4e5db;border-radius:15px;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.tf-sunny-route__icon{display:grid;place-content:center;position:relative;flex:none;width:36px;height:36px;border-radius:12px;background:#e8efff;color:var(--sunny-blue);font-size:20px;font-weight:800;line-height:1}
+.tf-sunny-route__icon>span{position:absolute;top:5px;right:2px;font-size:10px}
+.tf-sunny-route--travel .tf-sunny-route__icon{background:#dff2e9;color:#167767}
+.tf-sunny-route--diy .tf-sunny-route__icon{background:#fff0d3;color:#995015}
+.tf-sunny-route--care .tf-sunny-route__icon{background:#e8eef0;color:#355663}
+.tf-sunny-route small{display:block;font-size:8px;color:#596c73;font-weight:700;letter-spacing:.1em;line-height:1.5}
+.tf-sunny-route strong{display:block;font-size:12px;line-height:1.7;white-space:nowrap}
+.tf-sunny-route__arrow{margin-left:auto;font-size:17px;color:#526b75}
+/* Home-only finishing touches. Existing product pages and shared scripts remain unchanged. */
+.tf-home-premium-page .tf-hubs a[data-hub=travel]:hover{background:#edf7f0}
+.tf-home-premium-page .tf-hubs a[data-hub=diy]:hover{background:#fff5e0}
+.tf-home-premium-page .tf-home-intro{background:#fffdf8}
+.tf-home-premium-page .tf-home-intro .tf-kicker{color:#92703b}
+@media(hover:hover){
+  .tf-sunny-primary:hover{transform:translateY(-3px);background:#ffda85;box-shadow:0 12px 25px #a37c322c}
+  .tf-sunny-secondary:hover{color:var(--sunny-blue)}
+  .tf-sunny-card:hover{transform:translateY(-5px) rotate(0deg);box-shadow:0 19px 34px #254c3b20}
+  .tf-sunny-route:hover{background:#fff;transform:translateY(-3px);box-shadow:0 8px 15px #17384a0c}
+}
+@media(min-width:1440px){.tf-sunny-hero{padding-top:70px}.tf-sunny-hero__inner{gap:48px}}
+@media(max-width:1100px){
+  .tf-sunny-hero{padding-top:45px}
+  .tf-sunny-hero__inner{gap:18px}
+  .tf-sunny-hero h1{font-size:clamp(36px,4.55vw,50px)}
+  .tf-sunny-description .tf-sunny-desktop-break{display:none}
+  .tf-sunny-card--learn{margin-right:20px}
+  .tf-sunny-card--learn .tf-sunny-card__caption strong{font-size:17px}
+  .tf-sunny-card__caption strong{font-size:13px}
+  .tf-sunny-collage{gap:13px;padding-left:12px}
+  .tf-sunny-sticker{width:78px;height:78px;font-size:8px;right:-7px}
+  .tf-sunny-routes{gap:14px}
+  .tf-sunny-route{padding:9px 8px;gap:7px}
+  .tf-sunny-route__icon{width:30px;height:30px;border-radius:10px}
+  .tf-sunny-route strong{font-size:11px}
+  .tf-sunny-route__arrow{display:none}
+}
+@media(max-width:800px){
+  .tf-sunny-hero{padding:34px 0 24px}
+  .tf-sunny-hero__inner{grid-template-columns:1fr;gap:16px}
+  .tf-sunny-hero__copy{max-width:570px;justify-self:center;width:100%;padding:0}
+  .tf-sunny-hero h1{font-size:clamp(37px,7.8vw,60px);line-height:1.38}
+  .tf-sunny-hero .tf-sunny-eyebrow{margin-bottom:18px}
+  .tf-sunny-hero .tf-sunny-tagline{margin-top:17px;font-size:21px}
+  .tf-sunny-hero .tf-sunny-description{font-size:14px;margin-top:12px}
+  .tf-sunny-actions{gap:12px 22px;margin-top:20px}
+  .tf-sunny-subjects{margin-top:19px}
+  .tf-sunny-collage{width:100%;max-width:550px;justify-self:center;margin-top:18px;padding:8px 15px 0 12px;gap:15px}
+  .tf-sunny-card--learn{margin-right:35px}
+  .tf-sunny-card--learn .tf-sunny-card__caption strong{font-size:20px}
+  .tf-sunny-card__caption strong{font-size:15px}
+  .tf-sunny-sticker{width:88px;height:88px;right:0;font-size:9px;top:-14px}
+  .tf-sunny-routes{display:block;margin-top:29px}
+  .tf-sunny-routes>p{margin-bottom:12px;font-size:12px}
+  .tf-sunny-routes>p br{display:none}
+  .tf-sunny-routes nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .tf-sunny-route{padding:12px;min-height:72px;gap:10px}
+  .tf-sunny-route__icon{width:34px;height:34px}
+  .tf-sunny-route strong{font-size:12px}
+  .tf-sunny-route__arrow{display:block}
+}
+@media(max-width:480px){
+  .tf-sunny-hero .tf-container{width:calc(100% - 36px)}
+  .tf-sunny-hero{padding-top:26px}
+  .tf-sunny-hero h1{font-size:clamp(32px,9.1vw,43px);line-height:1.46;letter-spacing:-.075em}
+  .tf-sunny-hero .tf-sunny-eyebrow{font-size:10px;margin-bottom:16px;padding:4px 11px 4px 7px;gap:7px}
+  .tf-sunny-eyebrow>span{width:21px;height:21px;font-size:15px}
+  .tf-sunny-hero .tf-sunny-tagline{font-size:17px;margin-top:14px}
+  .tf-sunny-hero .tf-sunny-description{font-size:12px;line-height:2;margin-top:10px}
+  .tf-sunny-desktop-break{display:none}
+  .tf-sunny-actions{gap:6px 15px;margin-top:19px}
+  .tf-sunny-primary{min-height:54px;font-size:13px;padding-left:20px;gap:19px}
+  .tf-sunny-primary>span{width:34px;height:34px}
+  .tf-sunny-secondary{font-size:11px;min-height:42px;gap:10px}
+  .tf-sunny-subjects{margin-top:12px;gap:10px}
+  .tf-sunny-apps img{width:31px!important;height:31px!important;border-radius:10px}
+  .tf-sunny-subjects strong{font-size:10px}
+  .tf-sunny-subjects p{font-size:9px}
+  .tf-sunny-collage{margin-top:15px;gap:13px 12px;padding-inline:5px 8px}
+  .tf-sunny-collage::before{inset:5px -9px 0 -5px}
+  .tf-sunny-card{border-radius:16px;padding:5px}
+  .tf-sunny-card--learn{margin:0 24px 0 4px}
+  .tf-sunny-picture{border-radius:11px}
+  .tf-sunny-card--learn .tf-sunny-card__caption{padding:9px 9px 8px}
+  .tf-sunny-card--learn .tf-sunny-card__caption strong{font-size:16px}
+  .tf-sunny-card--learn .tf-sunny-card__category{font-size:9px;margin-bottom:2px}
+  .tf-sunny-card__caption{padding:8px 5px 6px;gap:4px}
+  .tf-sunny-card__caption strong{font-size:12px}
+  .tf-sunny-card__category{font-size:8px;letter-spacing:0}
+  .tf-sunny-card__arrow{width:24px;height:24px;font-size:15px}
+  .tf-sunny-card--learn .tf-sunny-card__arrow{width:29px;height:29px}
+  .tf-sunny-photo-label{font-size:6px;top:7px;left:7px;padding:4px 6px}
+  .tf-sunny-sticker{width:70px;height:70px;right:-2px;top:-13px;border-width:4px;font-size:7px}
+  .tf-sunny-spark--one{left:-7px;top:-12px;font-size:24px}
+  .tf-sunny-spark--two{right:-10px;bottom:8px;font-size:22px}
+  .tf-sunny-hero .tf-sunny-collage__note{font-size:9px}
+  .tf-sunny-route{padding:10px 8px;gap:7px;min-height:65px}
+  .tf-sunny-route__icon{width:28px;height:28px;border-radius:9px;font-size:17px}
+  .tf-sunny-route strong{font-size:10px}
+  .tf-sunny-route small{font-size:7px}
+  .tf-sunny-route__arrow{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tf-sunny-hero *,.tf-sunny-hero *::before,.tf-sunny-hero *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .tf-sunny-primary:hover,.tf-sunny-route:hover{transform:none}
+  .tf-sunny-card--learn:hover{transform:rotate(-3deg)}
+  .tf-sunny-card--travel:hover{transform:rotate(-4deg)}
+  .tf-sunny-card--diy:hover{transform:rotate(5deg)}
+}
+@media(forced-colors:active){.tf-sunny-primary,.tf-sunny-card,.tf-sunny-route,.tf-sunny-eyebrow{border:1px solid CanvasText}.tf-word-road::after,.tf-sunny-sticker,.tf-sunny-spark{display:none}}
