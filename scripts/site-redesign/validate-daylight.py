@@ -12,6 +12,7 @@ def check(ok,label):
 s=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser')
 check(len(s.find_all('h1'))==1 and s.h1.get_text()=='学びも、旅も、DIYも、車旅も。','Exact requested headline in static HTML')
 check(s.select_one('.tf-premium-hero__overlay') is None,'No dark hero overlay remains')
+check(s.select_one('.tf-daylight__picture img')['src']=='/assets/hero/daylight-scene.avif','Independent image exported from original generated artwork')
 expected=['/quest/','/travel/story.html','/camping.html','/maintenance.html']
 check([a['href'] for a in s.select('.tf-hubs a')]==expected,'Original four direct navigation destinations')
 check(s.select_one('.tf-brand-logo')['src']=='/assets/icons/trailfusion-lockup.webp','Original TrailFusion logo')
@@ -53,7 +54,7 @@ try:
                     check(data['button']['height']>=44,label+'primary button touch target')
                     check(not data['broken'],label+'hero images load')
                     check(abs(data['picture']['width']/data['picture']['height']-450/253)<0.03,label+'picture frame keeps proportions')
-                    check(abs(data['imageRatio']-data['naturalRatio'])<0.03,label+'sprite is not distorted')
+                    check(abs(data['imageRatio']-data['naturalRatio'])<0.03,label+'image is not distorted')
                     check(data['filter']=='none' and 'url(' not in data['background'],label+'bright surface with unobscured image')
                     check(not js,label+'no JavaScript errors '+str(js))
                     if width in [390,1440]:

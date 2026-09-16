@@ -2,7 +2,7 @@
 
 Headline: 学びも、旅も、DIYも、車旅も。
 
-The homepage hero uses a pale sky/mint/daylight background with dark readable typography. The existing generated scene is displayed in its original 450:253 frame, not stretched over a tall mobile background. No new generated image is claimed. Original brand artwork and direct destinations (/quest/, /travel/story.html, /camping.html, /maintenance.html) are preserved. The learning-series CTA remains primary. FAQ structured data matches visible content and the readable homepage summary is refreshed.
+The homepage hero uses a pale sky/mint/daylight background with dark readable typography. The original generated scene is re-exported as an independent 959x540 AVIF (22,021 bytes), preserving its proportions instead of enlarging a low-resolution sprite frame. No new generated image is claimed. Original brand artwork and direct destinations (/quest/, /travel/story.html, /camping.html, /maintenance.html) are preserved. The learning-series CTA remains primary. FAQ structured data matches visible content and the readable homepage summary is refreshed.
 
 Styles are isolated in assets/css/home-daylight.css. Existing home-premium.css and app/3D/maintenance pages are unchanged. Mobile gutters are 20px (18px below 360px). Existing site regression checks and scripts/site-redesign/validate-daylight.py cover the change. The latter checks Chromium and WebKit, not a physical iPhone.
 
