@@ -1,26 +1,29 @@
-"""One-time hero migration, feature branch only. Removed before publication."""
+"""One-time verified image import. Only runs on the isolated work branch."""
 from pathlib import Path
-import re,json,hashlib
-from bs4 import BeautifulSoup
-p=Path('index.html');original=p.read_text()
-assert hashlib.sha1(b'blob '+str(len(p.read_bytes())).encode()+b'\0'+p.read_bytes()).hexdigest()=='b337f58f945f8b48d3342d5a2638da77fe4ded9d','Index changed: review instead of overwriting'
-hero=Path('scripts/daylight-migration/hero.html').read_text()
-new,n=re.subn(r'<section class="tf-premium-hero">[\s\S]*?</section>',hero,original,count=1)
-assert n==1
-new=new.replace('<section class="tf-section white tf-home-intro">','<section class="tf-section white tf-home-intro" id="explore">')
-new=new.replace('ひと目でわかる、4つの入口。','今日の「やってみたい」は？')
-new=new.replace('TrailFusion AI は、学習アプリと家族の車旅・ものづくり・整備をつなぐ総合サイトです。はじめての方でも目的別に進めるよう、4つの入口をわかりやすく整理しています。','一問解いてみる。次の旅先を探す。理想の一台を思い描く。気になるところから、あなたのペースで。')
-new=new.replace('<link href="/assets/css/home-premium.css" rel="stylesheet"/>','<link href="/assets/css/home-premium.css" rel="stylesheet"/><link href="/assets/css/home-daylight.css?v=20260916-1" rel="stylesheet"/>')
-s=BeautifulSoup(new,'html.parser');tag=s.find('script',type='application/ld+json');oldld=tag.string;ld=json.loads(oldld)
-for item in ld['@graph']:
-    if item.get('@type')=='WebPage':item['headline']='学びも、旅も、DIYも、車旅も。'
-    if item.get('@type')=='FAQPage':item['mainEntity']=[{'@type':'Question','name':x.summary.get_text(' ',strip=True),'acceptedAnswer':{'@type':'Answer','text':x.p.get_text(' ',strip=True)}} for x in s.select('.tf-faq-item')]
-new=new.replace(oldld,json.dumps(ld,ensure_ascii=False,separators=(',',':')))
-new=new.replace('学び・車旅・キャンパーDIY・ハイエース整備を表現したTrailFusion AIのメインビジュアル','TrailFusion AIの合格クエストシリーズ紹介画像')
-p.write_text(new)
-llm=Path('llms-full.txt');txt=llm.read_text();s=BeautifulSoup(new,'html.parser');summary=s.find('main').get_text(' ',strip=True)
-txt,n=re.subn(r'(## Homepage readable summary\n\n)[\s\S]*?(\n\n## Content intent)',lambda m:m.group(1)+summary+m.group(2),txt,count=1)
-assert n==1
-llm.write_text(txt)
-assert s.h1.get_text()=='学びも、旅も、DIYも、車旅も。'
-print('Daylight hero migrated; logo, direct navigation, other pages and 3D modules preserved.')
+import hashlib
+parts=sorted(Path('scripts/daylight-migration/media').glob('part-*.bin'))
+assert len(parts)==3
+raw=b''.join(p.read_bytes() for p in parts)
+assert len(raw)==22021
+assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='ec6bbd114cbf30da1c3c95d4ad6efef3f53caa04'
+assert b'ftypavif' in raw[:64]
+asset=Path('assets/hero/daylight-scene.avif');asset.write_bytes(raw)
+p=Path('index.html');s=p.read_text()
+assert 'tf-daylight__picture' in s
+old='<img src="/assets/hero/trailfusion-home-sprite.avif" width="2250" height="253"'
+new='<img src="/assets/hero/daylight-scene.avif" width="959" height="540"'
+assert old in s;s=s.replace(old,new,1)
+old='href="/assets/hero/trailfusion-home-sprite.avif" rel="preload"'
+assert old in s;s=s.replace(old,'href="/assets/hero/daylight-scene.avif" rel="preload"',1)
+p.write_text(s)
+p=Path('assets/css/home-daylight.css');s=p.read_text()
+s=s.replace('aspect-ratio:450 / 253','aspect-ratio:959 / 540')
+s=s.replace('/* Show only frame one. Never stretch the five-frame strip over a tall phone viewport. */','/* Independent 959x540 export: preserve the bright image without a stretched sprite. */')
+s=s.replace('width:500%;max-width:none;height:100%;object-fit:fill','width:100%;max-width:100%;height:100%;object-fit:cover')
+p.write_text(s)
+p=Path('docs/DAYLIGHT-HERO-20260916.md');s=p.read_text().replace('The existing generated scene is displayed in its original 450:253 frame, not stretched over a tall mobile background.','The original generated scene is re-exported as an independent 959x540 AVIF (22,021 bytes), preserving its proportions instead of enlarging a low-resolution sprite frame.')
+p.write_text(s)
+p=Path('scripts/site-redesign/validate-daylight.py');s=p.read_text().replace("'sprite is not distorted'","'image is not distorted'")
+s=s.replace("check(s.select_one('.tf-premium-hero__overlay') is None,'No dark hero overlay remains')", "check(s.select_one('.tf-premium-hero__overlay') is None,'No dark hero overlay remains')\ncheck(s.select_one('.tf-daylight__picture img')['src']=='/assets/hero/daylight-scene.avif','Independent image exported from original generated artwork')")
+p.write_text(s)
+print('Independent hero AVIF imported and byte-verified; no unrelated site pages changed.')

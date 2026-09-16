@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
-      - name: Apply only the reviewed homepage migration
+      - name: Import verified original-resolution hero export
         run: python scripts/daylight-migration/apply.py
       - name: Install browsers and Japanese font fallback
         run: |
@@ -33,19 +33,19 @@ jobs:
         if: always()
         run: |
           mkdir -p /tmp/site-redesign-results/daylight/source
-          cp index.html llms-full.txt assets/css/home-daylight.css /tmp/site-redesign-results/daylight/source/
+          cp index.html llms-full.txt assets/css/home-daylight.css assets/hero/daylight-scene.avif scripts/site-redesign/validate-daylight.py docs/DAYLIGHT-HERO-20260916.md /tmp/site-redesign-results/daylight/source/
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: daylight-hero-review
           path: /tmp/site-redesign-results
           retention-days: 14
-      - name: Commit generated HTML on feature branch only
+      - name: Commit verified hero assets on feature branch only
         if: success()
         run: |
           test "$GITHUB_REF_NAME" = agent/daylight-hero-20260916
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html llms-full.txt
-          git commit -m 'feat: apply bright editorial homepage hero and requested Japanese headline'
+          git add index.html assets/css/home-daylight.css assets/hero/daylight-scene.avif scripts/site-redesign/validate-daylight.py docs/DAYLIGHT-HERO-20260916.md
+          git commit -m 'fix: use sharp independently sized artwork for daylight hero'
           git push origin HEAD:agent/daylight-hero-20260916
