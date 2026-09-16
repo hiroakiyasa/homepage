@@ -1,99 +1,35 @@
 @import url('./home-premium-base.css');
 
-/* Mobile and brand compatibility fixes for the premium homepage. */
-.tf-home-premium-page .tf-brand{
-  position:relative!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  width:auto!important;
-  height:auto!important;
-  min-width:0!important;
-  max-width:100%!important;
-  margin:0!important;
-  padding:0!important;
-  gap:0!important;
-  background:none!important;
-  color:inherit!important;
-  font-size:0!important;
-  line-height:1!important;
-}
+/* Premium homepage refinements: original brand lockup, high-resolution generated image sprite, and mobile-safe layout. */
+.tf-home-premium-page .tf-brand{position:relative!important;display:inline-flex!important;align-items:center!important;width:auto!important;height:auto!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;gap:0!important;background:none!important;color:inherit!important;font-size:0!important;line-height:1!important}
 .tf-home-premium-page .tf-brand::before{display:none!important;content:none!important}
-.tf-home-premium-page .tf-brand-logo{
-  display:block!important;
-  width:auto!important;
-  height:44px!important;
-  max-width:160px!important;
-  object-fit:contain!important;
-}
+.tf-home-premium-page .tf-brand-logo{display:block!important;width:auto!important;height:44px!important;max-width:160px!important;object-fit:contain!important}
 .tf-home-premium-page .tf-footer .tf-brand-logo{height:52px!important;max-width:190px!important}
-.tf-home-premium-page .tf-brand-sr{
-  position:absolute!important;
-  width:1px!important;
-  height:1px!important;
-  padding:0!important;
-  margin:-1px!important;
-  overflow:hidden!important;
-  clip:rect(0,0,0,0)!important;
-  clip-path:inset(50%)!important;
-  white-space:nowrap!important;
-  border:0!important;
-}
-
-/* Preserve the 16:9 generated hero frame inside the five-image sprite. */
-.tf-premium-hero{
-  background-size:500% auto!important;
-  background-position:0 center!important;
-}
-
-.tf-home-premium,
-.tf-home-premium section,
-.tf-home-premium .tf-container,
-.tf-premium-hero__inner,
-.tf-premium-hero__copy,
-.tf-premium-hero__panel,
-.tf-home-pillars,
-.tf-pillar-card,
-.tf-pillar-card__body,
-.tf-home-feature__grid,
-.tf-home-feature__copy,
-.tf-home-feature__visual,
-.tf-quest-mini-grid,
-.tf-quest-mini,
-.tf-home-aboutband,
-.tf-final--premium,
-.tf-final--premium .tf-actions{min-width:0;max-width:100%}
-
-.tf-home-premium h1,
-.tf-home-premium h2,
-.tf-home-premium h3,
-.tf-home-premium p,
-.tf-home-premium span,
-.tf-home-premium li,
-.tf-home-premium a{overflow-wrap:anywhere}
-
+.tf-home-premium-page .tf-brand-sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+.tf-premium-hero{background-image:url('/assets/hero/trailfusion-home-sprite.avif')!important;background-size:500% auto!important;background-position:0 center!important;background-repeat:no-repeat!important}
+.tf-sprite-visual{background-image:url('/assets/hero/trailfusion-home-sprite.avif')!important}
+.tf-home-premium,.tf-home-premium section,.tf-home-premium .tf-container,.tf-premium-hero__inner,.tf-premium-hero__copy,.tf-premium-hero__panel,.tf-home-pillars,.tf-pillar-card,.tf-pillar-card__body,.tf-home-feature__grid,.tf-home-feature__copy,.tf-home-feature__visual,.tf-quest-mini-grid,.tf-quest-mini,.tf-home-aboutband,.tf-final--premium,.tf-final--premium .tf-actions{min-width:0;max-width:100%}
+.tf-home-premium h1,.tf-home-premium h2,.tf-home-premium h3,.tf-home-premium p,.tf-home-premium span,.tf-home-premium li,.tf-home-premium a{overflow-wrap:anywhere}
+.tf-home-premium-page .tf-header{box-shadow:0 1px 0 rgba(16,50,85,.08)}
+.tf-premium-hero .tf-kicker{color:#c6ddff}
+.tf-premium-hero .tf-kicker::before{background:#8fc2ff}
+.tf-premium-hero .tf-button.secondary{background:rgba(255,255,255,.94);border-color:rgba(255,255,255,.82);color:#12314f!important}
+.tf-home-feature--learn{background:linear-gradient(180deg,#f4f8ff 0%,#fff 100%)}
+.tf-home-feature--travel{background:linear-gradient(180deg,#fffaf4 0%,#fff 100%)}
+.tf-home-feature--diy{background:linear-gradient(180deg,#f8f5ef 0%,#fff 100%)}
+.tf-home-feature--care{background:linear-gradient(180deg,#f2f7fb 0%,#fff 100%)}
 @media(max-width:760px){
   .tf-home-premium-page .tf-header .tf-top{min-width:0}
   .tf-home-premium-page .tf-brand-logo{height:36px!important;max-width:132px!important}
   .tf-home-premium-page .tf-footer .tf-brand-logo{height:44px!important;max-width:160px!important}
   .tf-home-premium-page .tf-mobile-menu{flex:0 0 auto}
-  .tf-premium-hero{
-    background-size:auto 100%!important;
-    background-position:0 center!important;
-  }
-  .tf-home-premium .tf-button{
-    width:100%;
-    min-width:0;
-    max-width:100%;
-    white-space:normal;
-    text-align:center;
-  }
-  .tf-premium-hero__inner,
-  .tf-home-feature__grid,
-  .tf-home-feature__grid--reverse{width:100%}
+  .tf-premium-hero{background-size:auto 100%!important;background-position:0 center!important;min-height:720px}
+  .tf-premium-hero__panel{display:none}
+  .tf-premium-hero__copy .tf-lead br{display:none}
+  .tf-home-premium .tf-button{width:100%;min-width:0;max-width:100%;white-space:normal;text-align:center}
+  .tf-premium-hero__inner,.tf-home-feature__grid,.tf-home-feature__grid--reverse{width:100%}
+  .tf-home-feature__grid--reverse .tf-home-feature__copy{order:1}
+  .tf-home-feature__grid--reverse .tf-home-feature__visual{order:2}
   .tf-final--premium .tf-actions{display:grid;grid-template-columns:1fr;width:100%}
 }
-
-@media(max-width:390px){
-  .tf-home-premium-page .tf-brand-logo{height:34px!important;max-width:120px!important}
-  .tf-home-premium .tf-container{width:calc(100% - 28px)}
-}
+@media(max-width:390px){.tf-home-premium-page .tf-brand-logo{height:34px!important;max-width:120px!important}.tf-home-premium .tf-container{width:calc(100% - 28px)}}
