@@ -6,6 +6,10 @@
   measureHeader();
   if (header && 'ResizeObserver' in window) new ResizeObserver(measureHeader).observe(header);
   window.addEventListener('resize', measureHeader, {passive:true});
+  /* The standalone Quest hub is retired. On the homepage, every Quest entry opens the restored apps catalog directly. */
+  if (location.pathname === '/' || location.pathname === '/index.html') {
+    document.querySelectorAll('a[href="/quest/"],a[href="/quest.html"]').forEach(a => { a.href='/apps.html'; });
+  }
   document.querySelectorAll('.tf-mobile-menu').forEach(menu => {
     menu.addEventListener('click', e => { if (e.target.closest('a')) menu.open=false; });
     document.addEventListener('keydown', e => { if (e.key==='Escape' && menu.open) { menu.open=false; menu.querySelector('summary').focus(); } });
