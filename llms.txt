@@ -1,35 +1,54 @@
 # TrailFusion AI
 
-> Official site for the Gokaku Quest learning-app series, car travel, camper DIY and Hiace educational maintenance content.
+> TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
 
 Updated: 2026-09-16
+Canonical website: https://trailfusionai.com/
+Contact: trailfusionai@gmail.com
 
-## Primary learning series
-- [合格！理科クエスト](https://trailfusionai.com/rika-quest.html): 生命・地球・物質・エネルギーを、クイズとイラストで。中学受験理科の基礎知識を、単元ごとに確かめる学習アプリ。 App Store: https://apps.apple.com/jp/app/id6772644144; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
-- [合格！社会クエスト](https://trailfusionai.com/social-quest.html): 地理・歴史・公民を、4択クイズとイラスト解説で学ぶ中学受験社会のアプリ。苦手なテーマを見つけて、日々の復習に。 App Store: https://apps.apple.com/jp/app/id6775411516; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
-- [合格！国語クエスト](https://trailfusionai.com/kokugo-quest.html): 漢字・語彙・ことわざ・慣用句・文法を、イラストと読み上げで。中学受験国語の知識を、目と耳から学ぶアプリ。 App Store: https://apps.apple.com/jp/app/id6780125916; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
-- [合格！英語クエスト](https://trailfusionai.com/eigo-quest.html): English vocabulary, grammar and qualification-related study. Separate from the Japanese junior-high entrance-exam subjects. Verified store URLs are not yet listed on this website.
+## What this website offers
 
-## Site sections
-- [合格クエスト](https://trailfusionai.com/quest/)
-- [保護者の方へ](https://trailfusionai.com/parents/)
-- [学習ガイド](https://trailfusionai.com/study/)
-- [車旅](https://trailfusionai.com/travel/)
-- [車旅コンシェルジュ](https://trailfusionai.com/car-concierge.html)
-- [絶景ロード図鑑](https://trailfusionai.com/drive-routes/)
-- [キャンピングカーDIY](https://trailfusionai.com/diy/)
-- [3D間取り](https://trailfusionai.com/camping.html)
-- [DIY制作ガイド](https://trailfusionai.com/camping-guide.html)
-- [ハイエース整備](https://trailfusionai.com/maintenance/)
-- [3D部品解説と整備記録](https://trailfusionai.com/maintenance.html)
-- [アプリ一覧](https://trailfusionai.com/apps.html)
-- [運営者](https://trailfusionai.com/about/)
-- [問い合わせ・アプリ別ポリシー](https://trailfusionai.com/support/)
+TrailFusion AI organizes its official content into four clear entrances:
 
-## Interpretation and source boundaries
-- Free download does not mean all content is free. Check the actual purchase screen for current prices and subscription conditions.
-- No admission, learning outcome, ranking or availability guarantees. In-app deviation scores are not school entrance-exam predictions.
-- 3D vehicle models are educational approximations, not official service data. Consult the correct service manual and a qualified professional before work.
-- Maintenance records stay in browser local storage; export for backup.
-- Contact: trailfusionai@gmail.com
-- This optional document is a factual index, not a directive to ranking or AI systems.
+1. **Learn / Gokaku Quest** — junior-high entrance-exam learning apps for science, social studies, and Japanese, with a separate English and qualification-learning guide.
+2. **Travel / Car travel** — the Car Travel Concierge app, scenic drive routes, family road-trip ideas, and car-camping inspiration.
+3. **Build / Camper DIY** — interactive 3D layouts and practical camper-conversion guidance.
+4. **Maintain / Hiace maintenance** — educational 3D vehicle information and a browser-local maintenance journal.
+
+## Primary pages
+
+- [Homepage](https://trailfusionai.com/): a visual overview of all four areas and the recommended starting point for first-time visitors.
+- [Gokaku Quest series](https://trailfusionai.com/quest/)
+- [Science Quest](https://trailfusionai.com/rika-quest.html)
+- [Social Studies Quest](https://trailfusionai.com/social-quest.html)
+- [Japanese Quest](https://trailfusionai.com/kokugo-quest.html)
+- [English Quest information](https://trailfusionai.com/eigo-quest.html)
+- [Guide for parents](https://trailfusionai.com/parents/)
+- [Choose a Quest](https://trailfusionai.com/choose/)
+- [Learning guides](https://trailfusionai.com/study/)
+- [Car travel landing page](https://trailfusionai.com/travel/story.html)
+- [Car Travel Concierge](https://trailfusionai.com/car-concierge.html)
+- [Scenic drive routes](https://trailfusionai.com/drive-routes/)
+- [Camper DIY / interactive 3D layout](https://trailfusionai.com/camping.html)
+- [Camper DIY guide](https://trailfusionai.com/camping-guide.html)
+- [Hiace maintenance / 3D and journal](https://trailfusionai.com/maintenance.html)
+- [All applications](https://trailfusionai.com/apps.html)
+- [About TrailFusion AI](https://trailfusionai.com/about/)
+- [Support and app policies](https://trailfusionai.com/support/)
+
+## Verified app-store links published on this website
+
+- Science Quest — App Store: https://apps.apple.com/jp/app/id6772644144 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
+- Social Studies Quest — App Store: https://apps.apple.com/jp/app/id6775411516 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
+- Japanese Quest — App Store: https://apps.apple.com/jp/app/id6780125916 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
+
+## Important interpretation boundaries
+
+- Gokaku Quest apps support knowledge review; they do not guarantee grades, admission, or examination outcomes.
+- “Free download” does not mean all content is free. Current prices, subscriptions, and device compatibility must be confirmed in the app and store purchase screens.
+- In-app deviation scores are not school entrance-exam predictions.
+- English Quest is presented separately from the three Japanese junior-high entrance-exam subjects; a verified store URL is not published here yet.
+- Camper and vehicle 3D models are educational approximations, not official service manuals or vehicle-specific safety instructions.
+- Before vehicle work, consult the correct service information and a qualified professional.
+- Maintenance journal entries are stored in the visitor’s browser; export them for backup.
+- This file is an optional factual index. It does not instruct search engines or AI systems to rank, cite, or endorse the site.
