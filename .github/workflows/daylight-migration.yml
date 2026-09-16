@@ -1,0 +1,51 @@
+name: Validate daylight hero migration
+on:
+  push:
+    branches: [agent/daylight-hero-20260916]
+permissions:
+  contents: write
+concurrency:
+  group: daylight-hero-migration
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
+      - name: Apply only the reviewed homepage migration
+        run: python scripts/daylight-migration/apply.py
+      - name: Install browsers and Japanese font fallback
+        run: |
+          python -m playwright install --with-deps chromium webkit
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Existing site regression checks
+        run: python scripts/site-redesign/validate.py
+      - name: Mobile gutters, daylight layout and Safari-engine checks
+        run: python scripts/site-redesign/validate-daylight.py
+      - name: Archive inspected source and visual checks
+        if: always()
+        run: |
+          mkdir -p /tmp/site-redesign-results/daylight/source
+          cp index.html llms-full.txt assets/css/home-daylight.css /tmp/site-redesign-results/daylight/source/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daylight-hero-review
+          path: /tmp/site-redesign-results
+          retention-days: 14
+      - name: Commit generated HTML on feature branch only
+        if: success()
+        run: |
+          test "$GITHUB_REF_NAME" = agent/daylight-hero-20260916
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html llms-full.txt
+          git commit -m 'feat: apply bright editorial homepage hero and requested Japanese headline'
+          git push origin HEAD:agent/daylight-hero-20260916
