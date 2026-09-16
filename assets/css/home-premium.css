@@ -25,11 +25,14 @@
   .tf-home-premium-page .tf-mobile-menu{flex:0 0 auto}
   .tf-premium-hero{background-size:auto 100%!important;background-position:0 center!important;min-height:720px}
   .tf-premium-hero__panel{display:none}
+  .tf-premium-hero__copy{width:100%}
+  .tf-premium-hero__copy h1{font-size:clamp(2.05rem,9.5vw,2.75rem)!important;line-height:1.12!important}
   .tf-premium-hero__copy .tf-lead br{display:none}
   .tf-home-premium .tf-button{width:100%;min-width:0;max-width:100%;white-space:normal;text-align:center}
-  .tf-premium-hero__inner,.tf-home-feature__grid,.tf-home-feature__grid--reverse{width:100%}
+  .tf-premium-hero__inner{width:calc(100% - 32px)!important;margin-inline:auto!important}
+  .tf-home-feature__grid,.tf-home-feature__grid--reverse{width:100%}
   .tf-home-feature__grid--reverse .tf-home-feature__copy{order:1}
   .tf-home-feature__grid--reverse .tf-home-feature__visual{order:2}
   .tf-final--premium .tf-actions{display:grid;grid-template-columns:1fr;width:100%}
 }
-@media(max-width:390px){.tf-home-premium-page .tf-brand-logo{height:34px!important;max-width:120px!important}.tf-home-premium .tf-container{width:calc(100% - 28px)}}
+@media(max-width:390px){.tf-home-premium-page .tf-brand-logo{height:34px!important;max-width:120px!important}.tf-home-premium .tf-container{width:calc(100% - 28px)}.tf-home-premium .tf-premium-hero__inner{width:calc(100% - 32px)!important}}
