@@ -84,6 +84,7 @@
   .tf-sunny-description .tf-sunny-desktop-break{display:none}
   .tf-sunny-card--learn{margin-right:20px}
   .tf-sunny-card--learn .tf-sunny-card__caption strong{font-size:17px}
+  .tf-sunny-card--learn .tf-sunny-card__caption strong br{display:block}
   .tf-sunny-card__caption strong{font-size:13px}
   .tf-sunny-collage{gap:13px;padding-left:12px}
   .tf-sunny-sticker{width:78px;height:78px;font-size:8px;right:-7px}
