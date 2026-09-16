@@ -1,0 +1,102 @@
+/* Premium TrailFusion AI homepage
+   Generated for the official landing page. */
+/* --- Premium homepage redesign (2026-09-16 local build) --- */
+.tf-home-premium-page{background:#f5f8fb}
+.tf-home-premium .tf-section{padding:88px 0}
+.tf-premium-hero{position:relative;isolation:isolate;min-height:82vh;display:flex;align-items:center;background-image:url('/assets/hero/trailfusion-home-sprite.avif');background-size:500% 100%;background-position:0% center;background-repeat:no-repeat;color:#fff;overflow:hidden}
+.tf-premium-hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,28,52,.82) 0%,rgba(10,28,52,.68) 38%,rgba(10,28,52,.35) 68%,rgba(10,28,52,.18) 100%),linear-gradient(180deg,rgba(10,28,52,.12),rgba(10,28,52,.28));z-index:0}
+.tf-premium-hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.72fr);gap:28px;align-items:end;padding:72px 0}
+.tf-premium-hero__copy{max-width:720px}
+.tf-premium-hero__copy h1{font-size:clamp(2.6rem,5vw,5rem);line-height:1.04;letter-spacing:-.03em;margin:10px 0 18px;color:#fff}
+.tf-premium-hero__copy .tf-lead{max-width:62ch;color:rgba(255,255,255,.94)}
+.tf-hero-tags{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:22px 0 0}
+.tf-hero-tags li{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);font-weight:700;color:#fff}
+.tf-premium-hero .tf-actions{margin-top:26px}
+.tf-premium-hero .tf-button{box-shadow:0 16px 36px rgba(10,28,52,.24)}
+.tf-premium-hero__panel{display:grid;gap:14px}
+.tf-panel-card{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);padding:18px;border-radius:22px;box-shadow:0 22px 44px rgba(7,24,44,.22);border:1px solid rgba(255,255,255,.65)}
+.tf-panel-card strong{display:block;font-size:1.05rem;color:#103255;margin-bottom:6px}
+.tf-panel-card span{display:block;color:#4d5f72;line-height:1.65}
+.tf-home-summary{margin-top:12px;max-width:72ch;color:#52657a;line-height:1.9;font-size:1.02rem}
+.tf-home-intro .tf-section-head{margin-bottom:28px}
+.tf-home-pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tf-pillar-card{display:grid;grid-template-rows:auto 1fr;background:#fff;border:1px solid #dfe8f0;border-radius:28px;overflow:hidden;box-shadow:0 22px 44px rgba(16,50,85,.08);transition:transform .2s ease, box-shadow .2s ease;text-decoration:none;color:inherit}
+.tf-pillar-card:hover{transform:translateY(-4px);box-shadow:0 28px 54px rgba(16,50,85,.14)}
+.tf-pillar-card img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.tf-pillar-card__body{padding:24px}
+.tf-pillar-card__body h3{font-size:1.45rem;line-height:1.2;margin:8px 0 12px;color:#172b3a}
+.tf-pillar-card__body p{margin:0;color:#57687a;line-height:1.8}
+.tf-home-feature{padding:88px 0;background:#f8fbff}
+.tf-home-feature:nth-of-type(odd){background:#fff}
+.tf-home-feature__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:32px;align-items:center}
+.tf-home-feature__grid--reverse{grid-template-columns:minmax(0,.95fr) minmax(0,1fr)}
+.tf-home-feature__copy h2{font-size:clamp(2rem,3vw,3rem);line-height:1.12;margin:10px 0 16px}
+.tf-home-feature__copy .tf-actions{margin-top:24px}
+.tf-home-feature__visual{position:relative}
+.tf-home-feature__visual img{display:block;width:100%;height:auto;border-radius:30px;box-shadow:0 28px 56px rgba(12,34,58,.16)}
+.tf-benefits{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.tf-benefits li{position:relative;padding-left:28px;color:#4f6276;line-height:1.8}
+.tf-benefits li::before{content:'✓';position:absolute;left:0;top:0;color:#246ad3;font-weight:800}
+.tf-quest-mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.tf-quest-mini{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border:1px solid #dde7ef;border-radius:22px;text-decoration:none;color:inherit;box-shadow:0 12px 24px rgba(16,50,85,.06)}
+.tf-quest-mini img{width:68px;height:68px;border-radius:18px;flex:0 0 auto}
+.tf-quest-mini strong{display:block;color:#172b3a}
+.tf-quest-mini span{display:block;color:#596d80;font-size:.94rem;line-height:1.5;margin-top:4px}
+.tf-home-trust{background:linear-gradient(180deg,#f4f8fc,#fff)}
+.tf-trust-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tf-home-aboutband{margin-top:28px;padding:26px 28px;border-radius:28px;background:#fff;border:1px solid #e0e8f0;box-shadow:0 18px 36px rgba(16,50,85,.07);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.tf-home-aboutband h3{margin:0 0 10px;font-size:1.35rem}
+.tf-home-aboutband p{margin:0;color:#56687b;line-height:1.8;max-width:68ch}
+.tf-home-faq{background:#fff}
+.tf-faq-list{display:grid;gap:14px}
+.tf-faq-item{background:#f8fbff;border:1px solid #dce6ef;border-radius:22px;padding:0 20px;box-shadow:0 12px 24px rgba(16,50,85,.04)}
+.tf-faq-item summary{cursor:pointer;list-style:none;font-weight:800;padding:20px 0;color:#172b3a}
+.tf-faq-item summary::-webkit-details-marker{display:none}
+.tf-faq-item p{padding:0 0 20px;color:#56687b;line-height:1.85;margin:0}
+.tf-final--premium{background:linear-gradient(135deg,#0f2c4e,#1e5bb1);box-shadow:0 28px 56px rgba(16,50,85,.18)}
+.tf-final--premium .tf-actions{justify-content:flex-end}
+@media (max-width:1100px){
+  .tf-premium-hero__inner,.tf-home-feature__grid,.tf-home-feature__grid--reverse{grid-template-columns:1fr}
+  .tf-premium-hero__panel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tf-trust-grid{grid-template-columns:1fr}
+  .tf-home-aboutband{flex-direction:column;align-items:flex-start}
+  .tf-quest-mini-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .tf-home-premium .tf-section,.tf-home-feature{padding:64px 0}
+  .tf-premium-hero{min-height:auto;background-position:63% center}
+  .tf-premium-hero__overlay{background:linear-gradient(180deg,rgba(10,28,52,.82) 0%,rgba(10,28,52,.55) 48%,rgba(10,28,52,.72) 100%)}
+  .tf-premium-hero__inner{padding:56px 0;gap:22px}
+  .tf-premium-hero__copy h1{font-size:clamp(2.2rem,10vw,3.5rem)}
+  .tf-premium-hero .tf-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tf-premium-hero .tf-button{justify-content:center}
+  .tf-hero-tags li{font-size:.92rem}
+  .tf-premium-hero__panel{grid-template-columns:1fr}
+  .tf-home-pillars{grid-template-columns:1fr}
+  .tf-pillar-card__body{padding:20px}
+  .tf-home-feature__copy h2{font-size:1.9rem}
+  .tf-home-feature__visual img{border-radius:24px}
+  .tf-home-aboutband{padding:22px}
+  .tf-final--premium .tf-actions{justify-content:flex-start}
+}
+@media (max-width:560px){
+  .tf-premium-hero .tf-actions{grid-template-columns:1fr}
+  .tf-quest-mini{padding:12px}
+  .tf-quest-mini img{width:60px;height:60px}
+  .tf-pillar-card img{aspect-ratio:5/4}
+}
+
+
+/* One optimized image sprite contains the five generated campaign visuals. */
+.tf-sprite-visual{display:block;width:100%;aspect-ratio:16/9;background-image:url('/assets/hero/trailfusion-home-sprite.avif');background-size:500% 100%;background-repeat:no-repeat;background-position:0% center}
+.tf-sprite-visual--learn{background-position:25% center}
+.tf-sprite-visual--travel{background-position:50% center}
+.tf-sprite-visual--diy{background-position:75% center}
+.tf-sprite-visual--care{background-position:100% center}
+.tf-pillar-card>.tf-sprite-visual{aspect-ratio:3/2;background-size:auto 100%;background-repeat:no-repeat}
+.tf-pillar-card>.tf-sprite-visual--learn{background-position:25% center}
+.tf-pillar-card>.tf-sprite-visual--travel{background-position:50% center}
+.tf-pillar-card>.tf-sprite-visual--diy{background-position:75% center}
+.tf-pillar-card>.tf-sprite-visual--care{background-position:100% center}
+.tf-home-feature__visual .tf-sprite-visual{border-radius:30px;box-shadow:0 28px 56px rgba(12,34,58,.16)}
+@media(max-width:760px){.tf-home-feature__visual .tf-sprite-visual{border-radius:24px}.tf-pillar-card>.tf-sprite-visual{aspect-ratio:5/4}}
