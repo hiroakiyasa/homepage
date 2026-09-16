@@ -24,12 +24,14 @@ jobs:
           python-version: '3.12'
       - name: Install validation dependencies
         run: pip install beautifulsoup4==4.13.4 pillow==11.3.0 playwright==1.55.0
-      - name: Install Chromium and Japanese rendering support
+      - name: Install Chromium, WebKit and Japanese rendering support
         run: |
-          python -m playwright install --with-deps chromium
+          python -m playwright install --with-deps chromium webkit
           sudo apt-get install -y fonts-noto-cjk
       - name: Validate committed pages without regenerating or modifying them
         run: python scripts/site-redesign/validate.py
+      - name: Validate bright hero, mobile gutters and WebKit rendering
+        run: python scripts/site-redesign/validate-daylight.py
       - name: Ensure validation did not modify tracked files
         run: git diff --exit-code
       - name: Save validation report and screenshots

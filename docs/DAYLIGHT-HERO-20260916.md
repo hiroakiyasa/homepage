@@ -1,11 +1,19 @@
-# Daylight hero refresh — 2026-09-16
+# 明るいヒーローへの更新 — 2026-09-16
 
-Headline: 学びも、旅も、DIYも、車旅も。
+見出し：学びも、旅も、DIYも、車旅も。
 
-The homepage hero uses a pale sky/mint/daylight background with dark readable typography. The original generated scene is re-exported as an independent 959x540 AVIF (22,021 bytes), preserving its proportions instead of enlarging a low-resolution sprite frame. No new generated image is claimed. Original brand artwork and direct destinations (/quest/, /travel/story.html, /camping.html, /maintenance.html) are preserved. The learning-series CTA remains primary. FAQ structured data matches visible content and the readable homepage summary is refreshed.
+白・空色・ミントを基調に、読みやすい濃色の文字と明るい画像カードを組み合わせました。既存の生成画像の元データを959×540の独立したAVIF（22,021 bytes）へ書き出し、低解像度のスプライトを縦長に拡大する方式をやめています。画像の新規生成はしていません。
 
-Styles are isolated in assets/css/home-daylight.css. Existing home-premium.css and app/3D/maintenance pages are unchanged. Mobile gutters are 20px (18px below 360px). Existing site regression checks and scripts/site-redesign/validate-daylight.py cover the change. The latter checks Chromium and WebKit, not a physical iPhone.
+元のロゴと、/quest/・/travel/story.html・/camping.html・/maintenance.htmlへの共通ナビゲーションを保持。合格クエストのボタンを主導線としています。FAQの構造化データは実際に表示する質問・回答と一致させ、llms-full.txtのトップページ要約も更新しました。
 
-Backup: backup/pre-daylight-hero-20260916 at 7044a6f5b08207fa5f2c079a3999bae5fd9d581b.
+変更したヒーローのスタイルは assets/css/home-daylight.css に分離。スマートフォンの左右余白は20px（360px未満は18px）。学習アプリ・3D・地図・整備記録の機能は変更していません。
 
-To undo publication, revert the single publication commit titled `feat: brighten homepage hero with requested learning travel DIY copy` and push normally. Do not force-push, and do not rerun legacy migration scripts.
+公開直前のmasterに追加されていたヒーロー関連変更も確認してから、この検証済みヒーローへ統合しました。assets/css/home-sunshine.css は削除せず履歴とともに保持していますが、新ヒーローでは読み込みません。
+
+検証：既存625件、新規127件。Chromium・WebKit、幅320/390/430/768/1024/1440px。実機iPhoneでの検証ではありません。通常のPages公開前にも両検証を実施します。移行用の書き戻しスクリプトやワークフローは本番に含めていません。
+
+## バックアップ
+- 作業開始前：backup/pre-daylight-hero-20260916（7044a6f5b08207fa5f2c079a3999bae5fd9d581b）
+- 公開直前：backup/pre-daylight-release-20260916（eef93da0a871f1ca3a74bfb09f3c13f8431c6b90）
+
+元へ戻す場合は `feat: brighten homepage hero with requested learning travel DIY copy` という公開コミットを `git revert` して通常のpushを行います。force pushや過去の移行スクリプトの再実行は不要です。
