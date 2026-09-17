@@ -33,6 +33,34 @@ jobs:
           assert '10のアプリ' in apps, 'legacy hero app count is missing'
           print('Direct legacy apps hero verified')
           PY
+      - name: Apply mobile catalog layout
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('apps.html')
+          html=p.read_text()
+          css=r'''<style id="apps-mobile-layout-fix">
+          @media(max-width:767px){
+            html,body{overflow-x:hidden!important}
+            .app-section-v2{padding-top:2.5rem!important;padding-bottom:2.5rem!important;min-height:0!important;height:auto!important}
+            .app-section-v2 .container{padding-left:20px!important;padding-right:20px!important;max-width:100%!important}
+            .app-section-v2 .grid{display:flex!important;flex-direction:column!important;gap:1.5rem!important}
+            .app-section-v2 .grid>*{width:100%!important;max-width:100%!important;min-width:0!important;grid-column:auto!important}
+            .app-section-v2 .flex{min-width:0!important}
+            .app-section-v2 img,.app-section-v2 video{max-width:100%!important;height:auto!important}
+            .app-section-v2 h2,.app-section-v2 h3,.app-section-v2 p{max-width:100%!important;overflow-wrap:anywhere}
+            .app-section-v2 h2{font-size:clamp(1.75rem,8vw,2.35rem)!important;line-height:1.25!important}
+            .app-section-v2 p{font-size:1rem!important;line-height:1.8!important}
+            .app-section-v2 .btn-chunky{max-width:100%!important;white-space:normal!important;text-align:center!important;justify-content:center!important}
+          }
+          @media(max-width:420px){.app-section-v2 .container{padding-left:18px!important;padding-right:18px!important}.app-section-v2{padding-top:2.1rem!important;padding-bottom:2.1rem!important}}
+          </style>'''
+          assert '</head>' in html
+          html=html.replace('</head>',css+'</head>',1)
+          p.write_text(html)
+          assert 'apps-mobile-layout-fix' in p.read_text()
+          print('Mobile catalog layout injected')
+          PY
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload static site
@@ -42,24 +70,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Verify public hero is persistent
+      - name: Verify public apps release
         env:
           RELEASE_SHA: ${{ github.sha }}
         run: |
           python - <<'PY'
           import os,time,urllib.request
           error=None
-          for attempt in range(12):
+          for attempt in range(18):
               try:
-                  req=urllib.request.Request('https://trailfusionai.com/apps.html?release='+os.environ['RELEASE_SHA'],headers={'User-Agent':'TrailFusion-Release-Check/3.0','Cache-Control':'no-cache'})
+                  req=urllib.request.Request('https://trailfusionai.com/apps.html?release='+os.environ['RELEASE_SHA'],headers={'User-Agent':'TrailFusion-Release-Check/3.1','Cache-Control':'no-cache'})
                   with urllib.request.urlopen(req,timeout=30) as r: html=r.read().decode('utf-8')
                   if r.status!=200: raise RuntimeError('apps HTTP '+str(r.status))
                   if '<iframe' in html: raise RuntimeError('old iframe wrapper still live')
-                  if 'この机から' not in html or '10のアプリ' not in html: raise RuntimeError('legacy hero not live yet')
-                  print('Live apps hero verified')
+                  if 'この机から' not in html or '10のアプリ' not in html: raise RuntimeError('legacy hero not live')
+                  if 'apps-mobile-layout-fix' not in html: raise RuntimeError('mobile layout fix not live')
+                  print('Live apps hero and mobile layout verified')
                   error=None;break
               except Exception as exc:
                   error=exc
-                  if attempt<11: time.sleep(10)
+                  if attempt<17: time.sleep(10)
           if error: raise error
           PY
