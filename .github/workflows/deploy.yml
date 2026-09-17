@@ -40,6 +40,10 @@ jobs:
           p=Path('apps.html')
           html=p.read_text()
           css=r'''<style id="apps-mobile-layout-fix">
+          /* Keep the Car Concierge screenshot trio at the source image aspect ratio.
+             apps.html uses .fshots; width is responsive, so height must remain automatic. */
+          .fshots{align-items:flex-start!important;height:auto!important}
+          .fshots img{height:auto!important;object-fit:contain!important;object-position:top center!important}
           @media(max-width:767px){
             html,body{overflow-x:hidden!important}
             .app-section-v2{padding-top:2.5rem!important;padding-bottom:2.5rem!important;min-height:0!important;height:auto!important}
@@ -58,8 +62,10 @@ jobs:
           assert '</head>' in html
           html=html.replace('</head>',css+'</head>',1)
           p.write_text(html)
-          assert 'apps-mobile-layout-fix' in p.read_text()
-          print('Mobile catalog layout injected')
+          rendered=p.read_text()
+          assert 'apps-mobile-layout-fix' in rendered
+          assert '.fshots img{height:auto!important' in rendered
+          print('Catalog layout and screenshot aspect ratio fix injected')
           PY
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -85,7 +91,8 @@ jobs:
                   if '<iframe' in html: raise RuntimeError('old iframe wrapper still live')
                   if 'この机から' not in html or '10のアプリ' not in html: raise RuntimeError('legacy hero not live')
                   if 'apps-mobile-layout-fix' not in html: raise RuntimeError('mobile layout fix not live')
-                  print('Live apps hero and mobile layout verified')
+                  if '.fshots img{height:auto!important' not in html: raise RuntimeError('screenshot aspect ratio fix not live')
+                  print('Live apps hero, mobile layout, and screenshot aspect ratio verified')
                   error=None;break
               except Exception as exc:
                   error=exc
