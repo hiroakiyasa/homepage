@@ -1,0 +1,1 @@
+Run corrected Pages deployment for restored apps catalog.
