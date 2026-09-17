@@ -1,0 +1,1 @@
+Deploy restored apps catalog and retired Quest routing.
