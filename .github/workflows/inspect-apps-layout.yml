@@ -16,56 +16,63 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Inspect car screenshot layout
+      - name: Inspect legacy lead screenshots
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import base64
           import re
 
-          def strip_images(value):
-              return re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', value, flags=re.I)
+          text = Path('apps.html').read_text(encoding='utf-8')
 
           def compact(value):
-              return re.sub(r'\s+', ' ', strip_images(value)).strip()
+              value = re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', value, flags=re.I)
+              return re.sub(r'\s+', ' ', value).strip()
 
-          def print_rules(text, keywords):
-              css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
-              seen = set()
-              for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
-                  selector = compact(match.group(1))
-                  if re.search(keywords, selector, re.I):
-                      rule = selector + '{' + compact(match.group(2)) + '}'
-                      if rule not in seen:
-                          seen.add(rule)
-                          print(rule)
+          css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
+          print('=== FSHOTS / LEAD CSS ===')
+          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
+              selector = compact(match.group(1))
+              body = compact(match.group(2))
+              if re.search(r'(fshots|lead-app)', selector, re.I):
+                  print(selector + '{' + body + '}')
 
-          apps = Path('apps.html').read_text(encoding='utf-8')
-          print('=== APPS CSS ===')
-          print_rules(apps, r'(ccshots|lead-app|#travel|flagship)')
+          print('\n=== IMAGE HEIGHT RULES ===')
+          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
+              selector = compact(match.group(1))
+              body = compact(match.group(2))
+              if 'img' in selector.lower() and re.search(r'height\s*:', body, re.I):
+                  print(selector + '{' + body + '}')
 
-          print('\n=== APPS CAR SECTION ===')
-          idx = apps.find('class="ccshots')
-          print(f'CCSHOTS_INDEX={idx}')
+          idx = text.find('class="fshots')
+          print(f'\nFSHOTS_INDEX={idx}')
           if idx != -1:
-              start = apps.rfind('<section', 0, idx)
-              end = apps.find('</section>', idx)
-              end = end + len('</section>') if end != -1 else idx + 16000
-              print(compact(apps[start:end])[:22000])
+              start_candidates = [
+                  text.rfind('<section', 0, idx),
+                  text.rfind('<div class="lead-app', 0, idx),
+                  text.rfind('<article', 0, idx),
+              ]
+              start = max(start_candidates)
+              end_candidates = [
+                  text.find('</section>', idx),
+                  text.find('</article>', idx),
+              ]
+              end_candidates = [value for value in end_candidates if value != -1]
+              end = min(end_candidates) if end_candidates else idx + 12000
+              print('\n=== LEAD APP MARKUP ===')
+              print(compact(text[start:end])[:20000])
 
-          detail = Path('car-concierge.html').read_text(encoding='utf-8')
-          print('\n=== DETAIL CSS ===')
-          print_rules(detail, r'(shot|screen|phone|mock|gallery|preview)')
-
-          print('\n=== DETAIL IMAGE REFERENCES ===')
-          for filename in ('0dd51c79245df1297a-1400.webp', '7e3bda281bf4742c73-1400.webp', '21ca2b9879dce9c414-1400.webp'):
-              idx = detail.find(filename)
-              print(f'{filename}: {idx}')
-              if idx != -1:
-                  print(compact(detail[max(0, idx-1000):idx+2400]))
+              tag_end = text.find('</div>', idx)
+              block = text[idx:tag_end if tag_end != -1 else idx + 200000]
+              data_uris = re.findall(r'src=[\"\']data:image/([^;]+);base64,([^\"\']+)[\"\']', block, re.I)
+              print(f'\nFSHOTS_DATA_URI_COUNT={len(data_uris)}')
+              for number, (kind, payload) in enumerate(data_uris[:3], start=1):
+                  suffix = 'webp' if 'webp' in kind.lower() else ('png' if 'png' in kind.lower() else 'jpg')
+                  out = Path(f'/tmp/fshot-{number}.{suffix}')
+                  out.write_bytes(base64.b64decode(payload))
+                  print(f'FSHOT_FILE_{number}={out} bytes={out.stat().st_size} type={kind}')
           PY
 
-          echo '=== IMAGE FILE INFO ==='
-          file assets/media/0dd51c79245df1297a-1400.webp || true
-          file assets/media/7e3bda281bf4742c73-1400.webp || true
-          file assets/media/21ca2b9879dce9c414-1400.webp || true
+          echo '=== FSHOT FILE INFO ==='
+          file /tmp/fshot-* 2>/dev/null || true
