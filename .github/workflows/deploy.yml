@@ -23,27 +23,51 @@ jobs:
     steps:
       - name: Checkout release commit
         uses: actions/checkout@v4
-      - name: Verify direct legacy apps page
+
+      - name: Verify direct apps page
         run: |
           python - <<'PY'
           from pathlib import Path
-          apps=Path('apps.html').read_text()
+
+          apps = Path('apps.html').read_text(encoding='utf-8')
           assert '<iframe' not in apps, 'apps page must not use iframe'
-          assert 'この机から' in apps, 'legacy hero is missing'
-          assert '10のアプリ' in apps, 'legacy hero app count is missing'
-          print('Direct legacy apps hero verified')
+          assert 'この机から' in apps, 'apps hero is missing'
+          assert '10のアプリ' in apps, 'apps hero app count is missing'
+          assert 'class="ccshots' in apps, 'Car Concierge preview container is missing'
+          for image in (
+              '/assets/media/0dd51c79245df1297a-1400.webp',
+              '/assets/media/7e3bda281bf4742c73-1400.webp',
+              '/assets/media/21ca2b9879dce9c414-1400.webp',
+          ):
+              assert image in apps, f'Car Concierge preview is missing: {image}'
+          print('Apps page and Car Concierge previews verified')
           PY
-      - name: Apply mobile catalog layout
+
+      - name: Apply responsive catalog layout
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('apps.html')
-          html=p.read_text()
-          css=r'''<style id="apps-mobile-layout-fix">
-          /* Keep the Car Concierge screenshot trio at the source image aspect ratio.
-             apps.html uses .fshots; width is responsive, so height must remain automatic. */
-          .fshots{align-items:flex-start!important;height:auto!important}
-          .fshots img{height:auto!important;object-fit:contain!important;object-position:top center!important}
+          import re
+
+          path = Path('apps.html')
+          html = path.read_text(encoding='utf-8')
+          css = r'''<style id="apps-mobile-layout-fix">
+          /* Keep current and legacy app-preview groups at a real phone ratio.
+             This prevents old tall promotional artwork from stretching the section. */
+          .ccshots,.fshots,.lshots{
+            height:auto!important;
+            min-height:0!important;
+          }
+          .ccshots{align-items:end!important}
+          .fshots,.lshots{align-items:flex-start!important}
+          .ccshots img,.fshots img,.lshots img{
+            display:block!important;
+            height:auto!important;
+            aspect-ratio:852/1846!important;
+            object-fit:cover!important;
+            object-position:top center!important;
+          }
+          .ccshots img{width:100%!important;max-width:100%!important}
           @media(max-width:767px){
             html,body{overflow-x:hidden!important}
             .app-section-v2{padding-top:2.5rem!important;padding-bottom:2.5rem!important;min-height:0!important;height:auto!important}
@@ -57,45 +81,82 @@ jobs:
             .app-section-v2 p{font-size:1rem!important;line-height:1.8!important}
             .app-section-v2 .btn-chunky{max-width:100%!important;white-space:normal!important;text-align:center!important;justify-content:center!important}
           }
-          @media(max-width:420px){.app-section-v2 .container{padding-left:18px!important;padding-right:18px!important}.app-section-v2{padding-top:2.1rem!important;padding-bottom:2.1rem!important}}
+          @media(max-width:420px){
+            .app-section-v2 .container{padding-left:18px!important;padding-right:18px!important}
+            .app-section-v2{padding-top:2.1rem!important;padding-bottom:2.1rem!important}
+          }
           </style>'''
+
+          html = re.sub(
+              r'\s*<style id="apps-mobile-layout-fix">.*?</style>',
+              '',
+              html,
+              flags=re.S,
+          )
           assert '</head>' in html
-          html=html.replace('</head>',css+'</head>',1)
-          p.write_text(html)
-          rendered=p.read_text()
+          html = html.replace('</head>', css + '</head>', 1)
+          path.write_text(html, encoding='utf-8')
+
+          rendered = path.read_text(encoding='utf-8')
           assert 'apps-mobile-layout-fix' in rendered
-          assert '.fshots img{height:auto!important' in rendered
-          print('Catalog layout and screenshot aspect ratio fix injected')
+          assert 'aspect-ratio:852/1846!important' in rendered
+          assert '.ccshots img{width:100%!important' in rendered
+          print('Responsive layout and phone-ratio preview fix injected')
           PY
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
       - name: Verify public apps release
         env:
           RELEASE_SHA: ${{ github.sha }}
         run: |
           python - <<'PY'
-          import os,time,urllib.request
-          error=None
+          import os
+          import time
+          import urllib.request
+
+          error = None
           for attempt in range(18):
               try:
-                  req=urllib.request.Request('https://trailfusionai.com/apps.html?release='+os.environ['RELEASE_SHA'],headers={'User-Agent':'TrailFusion-Release-Check/3.1','Cache-Control':'no-cache'})
-                  with urllib.request.urlopen(req,timeout=30) as r: html=r.read().decode('utf-8')
-                  if r.status!=200: raise RuntimeError('apps HTTP '+str(r.status))
-                  if '<iframe' in html: raise RuntimeError('old iframe wrapper still live')
-                  if 'この机から' not in html or '10のアプリ' not in html: raise RuntimeError('legacy hero not live')
-                  if 'apps-mobile-layout-fix' not in html: raise RuntimeError('mobile layout fix not live')
-                  if '.fshots img{height:auto!important' not in html: raise RuntimeError('screenshot aspect ratio fix not live')
-                  print('Live apps hero, mobile layout, and screenshot aspect ratio verified')
-                  error=None;break
+                  request = urllib.request.Request(
+                      'https://trailfusionai.com/apps.html?release=' + os.environ['RELEASE_SHA'],
+                      headers={
+                          'User-Agent': 'TrailFusion-Release-Check/4.0',
+                          'Cache-Control': 'no-cache',
+                      },
+                  )
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      html = response.read().decode('utf-8')
+                      status = response.status
+                  if status != 200:
+                      raise RuntimeError('apps HTTP ' + str(status))
+                  if '<iframe' in html:
+                      raise RuntimeError('old iframe wrapper still live')
+                  if 'この机から' not in html or '10のアプリ' not in html:
+                      raise RuntimeError('apps hero not live')
+                  if 'apps-mobile-layout-fix' not in html:
+                      raise RuntimeError('responsive layout fix not live')
+                  if 'aspect-ratio:852/1846!important' not in html:
+                      raise RuntimeError('phone-ratio preview fix not live')
+                  if 'class="ccshots' not in html:
+                      raise RuntimeError('Car Concierge previews not live')
+                  print('Live apps page and phone-ratio previews verified')
+                  error = None
+                  break
               except Exception as exc:
-                  error=exc
-                  if attempt<17: time.sleep(10)
-          if error: raise error
+                  error = exc
+                  if attempt < 17:
+                      time.sleep(10)
+          if error:
+              raise error
           PY
