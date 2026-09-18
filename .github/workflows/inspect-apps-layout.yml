@@ -16,47 +16,107 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Locate legacy flagship markup
+      - name: Install browser driver
         shell: bash
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
+          google-chrome --version || chromium --version || chromium-browser --version
+          npm install --no-save puppeteer-core@24.16.0
 
-          text = Path('apps.html').read_text(encoding='utf-8')
+      - name: Inspect live layout
+        shell: bash
+        run: |
+          cat > /tmp/inspect-live.cjs <<'JS'
+          const fs = require('fs');
+          const puppeteer = require('puppeteer-core');
 
-          def clean(value):
-              value = re.sub(r'data:image/[^;\"\']+;base64,[^\"\']+', '[DATA_URI]', value, flags=re.I)
-              return re.sub(r'\s+', ' ', value).strip()
+          const executablePath = [
+            '/usr/bin/google-chrome',
+            '/usr/bin/google-chrome-stable',
+            '/usr/bin/chromium',
+            '/usr/bin/chromium-browser'
+          ].find((path) => fs.existsSync(path));
+          if (!executablePath) throw new Error('No Chromium executable found');
 
-          terms = (
-              'この物語から',
-              'いちばん最初',
-              'アプリの詳細を見る',
-              'Google Play 近日公開',
-              'FLAGSHIP',
-              'flagship',
-              'fshots',
-              '車旅コンシェルジュ',
-          )
-          for term in terms:
-              positions = [m.start() for m in re.finditer(re.escape(term), text, re.I)]
-              print(f'\n=== {term}: {len(positions)} {positions[:20]} ===')
-              for pos in positions[:8]:
-                  before = max(
-                      text.rfind('<section', 0, pos),
-                      text.rfind('<article', 0, pos),
-                      text.rfind('<div', 0, pos),
-                  )
-                  start = before if before >= 0 else max(0, pos-800)
-                  print(f'-- AT {pos}, START {start} --')
-                  print(clean(text[start:pos+5000])[:9000])
+          (async () => {
+            const browser = await puppeteer.launch({
+              headless: true,
+              executablePath,
+              args: ['--no-sandbox', '--disable-dev-shm-usage']
+            });
+            try {
+              for (const viewport of [
+                { name: 'tablet', width: 1216, height: 1280, deviceScaleFactor: 1 },
+                { name: 'mobile', width: 390, height: 844, deviceScaleFactor: 1 }
+              ]) {
+                const page = await browser.newPage();
+                await page.setViewport(viewport);
+                const url = `https://trailfusionai.com/apps.html?layout-inspect=${Date.now()}-${viewport.name}`;
+                await page.goto(url, { waitUntil: 'networkidle2', timeout: 120000 });
+                await page.waitForSelector('.ccshots, .fshots, .lshots', { timeout: 30000 });
+                const target = await page.$('.ccshots, .fshots, .lshots');
+                await target.evaluate((element) => element.scrollIntoView({ block: 'center', inline: 'center' }));
+                await new Promise((resolve) => setTimeout(resolve, 1500));
 
-          print('\n=== CLASS ATTRIBUTES CONTAINING SHOT / FLAG / LEAD ===')
-          seen=set()
-          for match in re.finditer(r'class=[\"\']([^\"\']+)[\"\']', text, re.I):
-              value=match.group(1)
-              if re.search(r'(shot|flag|lead)', value, re.I) and value not in seen:
-                  seen.add(value)
-                  print(match.start(), value)
-          PY
+                const data = await page.evaluate(() => {
+                  const container = document.querySelector('.ccshots, .fshots, .lshots');
+                  const rectOf = (element) => {
+                    const rect = element.getBoundingClientRect();
+                    return {
+                      x: Math.round(rect.x * 10) / 10,
+                      y: Math.round(rect.y * 10) / 10,
+                      width: Math.round(rect.width * 10) / 10,
+                      height: Math.round(rect.height * 10) / 10
+                    };
+                  };
+                  const cssOf = (element) => {
+                    const css = getComputedStyle(element);
+                    return {
+                      display: css.display,
+                      width: css.width,
+                      height: css.height,
+                      maxWidth: css.maxWidth,
+                      maxHeight: css.maxHeight,
+                      aspectRatio: css.aspectRatio,
+                      objectFit: css.objectFit,
+                      alignItems: css.alignItems,
+                      gridTemplateColumns: css.gridTemplateColumns,
+                      overflow: css.overflow
+                    };
+                  };
+                  return {
+                    href: location.href,
+                    title: document.title,
+                    containerClass: container ? container.className : null,
+                    containerRect: container ? rectOf(container) : null,
+                    containerCss: container ? cssOf(container) : null,
+                    images: container ? [...container.querySelectorAll('img')].map((img) => ({
+                      src: img.currentSrc || img.src,
+                      naturalWidth: img.naturalWidth,
+                      naturalHeight: img.naturalHeight,
+                      rect: rectOf(img),
+                      css: cssOf(img)
+                    })) : [],
+                    styleMarker: Boolean(document.getElementById('apps-mobile-layout-fix'))
+                  };
+                });
+                console.log(`\n=== ${viewport.name.toUpperCase()} ${viewport.width}x${viewport.height} ===`);
+                console.log(JSON.stringify(data, null, 2));
+                await page.screenshot({ path: `/tmp/apps-${viewport.name}.png`, fullPage: false });
+                await page.close();
+              }
+            } finally {
+              await browser.close();
+            }
+          })().catch((error) => {
+            console.error(error);
+            process.exit(1);
+          });
+          JS
+          node /tmp/inspect-live.cjs
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: apps-layout-screenshots
+          path: /tmp/apps-*.png
+          retention-days: 1
