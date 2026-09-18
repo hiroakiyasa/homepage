@@ -80,6 +80,19 @@
   .tf-header:has(.tf-extra) .tf-brand::before{width:58px;height:36px}
 }
 
+
+
+/* Car Concierge hero screenshot ratio guard. */
+/* The page carries intrinsic width/height attributes. When only width was
+   overridden at tablet/desktop sizes, the 1846px HTML height remained and
+   stretched each phone preview vertically. */
+.tf-legacy .chero .shots img{
+  height:auto!important;
+  aspect-ratio:auto 852/1846;
+  object-fit:contain!important;
+  object-position:top center!important;
+}
+
 /* Preserve portrait proportions without letting screenshots dominate a phone viewport. */
 .tf-legacy .why-pic{align-items:flex-start!important}
 .tf-legacy .why-pic figure{min-width:0!important}
