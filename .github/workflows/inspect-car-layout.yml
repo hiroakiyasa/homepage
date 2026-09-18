@@ -1,0 +1,97 @@
+name: Inspect Car Layout
+
+on:
+  push:
+    paths:
+      - '.github/workflows/inspect-car-layout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser driver
+        run: npm install --no-save puppeteer-core@24.16.0
+      - name: Inspect live Car Concierge layout
+        shell: bash
+        run: |
+          cat > inspect-car.cjs <<'JS'
+          const fs = require('fs');
+          const puppeteer = require('puppeteer-core');
+          const executablePath = [
+            '/usr/bin/google-chrome',
+            '/usr/bin/google-chrome-stable',
+            '/usr/bin/chromium',
+            '/usr/bin/chromium-browser'
+          ].find((p) => fs.existsSync(p));
+          if (!executablePath) throw new Error('Chromium not found');
+
+          const rect = (el) => {
+            const r = el.getBoundingClientRect();
+            return {x:+r.x.toFixed(1),y:+r.y.toFixed(1),width:+r.width.toFixed(1),height:+r.height.toFixed(1)};
+          };
+
+          (async () => {
+            const browser = await puppeteer.launch({headless:true, executablePath, args:['--no-sandbox','--disable-dev-shm-usage']});
+            try {
+              const viewports = [
+                {name:'iphone',width:390,height:844,deviceScaleFactor:1},
+                {name:'iphone-max',width:430,height:932,deviceScaleFactor:1},
+                {name:'tablet',width:1216,height:1280,deviceScaleFactor:1}
+              ];
+              for (const viewport of viewports) {
+                const page = await browser.newPage();
+                await page.setViewport(viewport);
+                const url = `https://trailfusionai.com/car-concierge.html?inspect=${Date.now()}-${viewport.name}`;
+                await page.goto(url,{waitUntil:'networkidle2',timeout:120000});
+                await page.waitForSelector('.chero .shots img',{timeout:30000});
+                const shots = await page.$('.chero .shots');
+                await shots.evaluate((el)=>el.scrollIntoView({block:'center',inline:'center'}));
+                await new Promise((resolve)=>setTimeout(resolve,1200));
+                const data = await page.evaluate(() => {
+                  const r = (el) => {
+                    const x = el.getBoundingClientRect();
+                    return {x:+x.x.toFixed(1),y:+x.y.toFixed(1),width:+x.width.toFixed(1),height:+x.height.toFixed(1)};
+                  };
+                  const css = (el) => {
+                    const s = getComputedStyle(el);
+                    return {
+                      display:s.display,width:s.width,height:s.height,maxWidth:s.maxWidth,maxHeight:s.maxHeight,
+                      minHeight:s.minHeight,aspectRatio:s.aspectRatio,objectFit:s.objectFit,objectPosition:s.objectPosition,
+                      transform:s.transform,overflow:s.overflow,alignItems:s.alignItems,gap:s.gap
+                    };
+                  };
+                  const container = document.querySelector('.chero .shots');
+                  return {
+                    url:location.href,
+                    viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
+                    hero:r(document.querySelector('.chero')),
+                    container:r(container),
+                    containerCss:css(container),
+                    images:[...container.querySelectorAll('img')].map((img)=>({
+                      alt:img.alt,src:img.currentSrc||img.src,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
+                      rect:r(img),ratio:+(img.getBoundingClientRect().height/img.getBoundingClientRect().width).toFixed(3),css:css(img)
+                    }))
+                  };
+                });
+                console.log(`\n=== ${viewport.name.toUpperCase()} ===`);
+                console.log(JSON.stringify(data,null,2));
+                await page.screenshot({path:`/tmp/car-${viewport.name}.png`,fullPage:false});
+                await page.close();
+              }
+            } finally {
+              await browser.close();
+            }
+          })().catch((e)=>{console.error(e);process.exit(1)});
+          JS
+          node inspect-car.cjs
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: car-layout-screenshots
+          path: /tmp/car-*.png
+          retention-days: 1
