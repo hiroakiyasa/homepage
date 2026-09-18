@@ -16,84 +16,56 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Inspect Apps page layout rules
+      - name: Inspect car screenshot layout
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          from collections import Counter
           import re
 
-          path = Path('apps.html')
-          text = path.read_text(encoding='utf-8')
-          print(f'FILE_SIZE={len(text)}')
+          def strip_images(value):
+              return re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', value, flags=re.I)
 
-          def strip_data_uri(value: str) -> str:
-              return re.sub(
-                  r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])',
-                  r'\1[DATA_URI]\2',
-                  value,
-                  flags=re.I,
-              )
+          def compact(value):
+              return re.sub(r'\s+', ' ', strip_images(value)).strip()
 
-          def compact(value: str) -> str:
-              value = strip_data_uri(value)
-              value = re.sub(r'\s+', ' ', value)
-              return value.strip()
+          def print_rules(text, keywords):
+              css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
+              seen = set()
+              for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
+                  selector = compact(match.group(1))
+                  if re.search(keywords, selector, re.I):
+                      rule = selector + '{' + compact(match.group(2)) + '}'
+                      if rule not in seen:
+                          seen.add(rule)
+                          print(rule)
 
-          print('\n=== EXTERNAL LINKS / SCRIPTS ===')
-          for match in re.finditer(r'<(?:link|script)\b[^>]*(?:href|src)=[\"\'][^\"\']+[\"\'][^>]*>', text, re.I):
-              print(compact(match.group(0)))
+          apps = Path('apps.html').read_text(encoding='utf-8')
+          print('=== APPS CSS ===')
+          print_rules(apps, r'(ccshots|lead-app|#travel|flagship)')
 
-          print('\n=== RELEVANT CLASS NAMES ===')
-          classes = Counter()
-          for match in re.finditer(r'class=[\"\']([^\"\']+)[\"\']', text, re.I):
-              classes.update(match.group(1).split())
-          for name, count in sorted(classes.items()):
-              if re.search(r'(shot|lead|pane|phone|screen|visual|product|app)', name, re.I):
-                  print(f'{name}: {count}')
-
-          print('\n=== RELEVANT CSS RULES ===')
-          css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
-          print(f'STYLE_CHARS={len(css)}')
-          seen = set()
-          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
-              selector = compact(match.group(1))
-              body = compact(match.group(2))
-              if re.search(r'(lshots|lead-app|apane|shot|phone|screen|visual|product)', selector, re.I):
-                  rule = selector + '{' + body + '}'
-                  if rule not in seen:
-                      seen.add(rule)
-                      print(rule)
-
-          print('\n=== EXACT CAR CARD MARKUP ===')
-          patterns = [
-              'href="car-concierge.html"',
-              "href='car-concierge.html'",
-              'href="/car-concierge.html"',
-              "href='/car-concierge.html'",
-          ]
-          idx = next((text.find(p) for p in patterns if text.find(p) != -1), -1)
-          print(f'CAR_HREF_INDEX={idx}')
+          print('\n=== APPS CAR SECTION ===')
+          idx = apps.find('class="ccshots')
+          print(f'CCSHOTS_INDEX={idx}')
           if idx != -1:
-              starts = [text.rfind(tag, 0, idx) for tag in ('<article', '<section', '<div')]
-              start = max(starts)
-              if start < 0:
-                  start = max(0, idx - 1500)
-              end_candidates = [
-                  text.find('</article>', idx),
-                  text.find('</section>', idx),
-              ]
-              end_candidates = [e for e in end_candidates if e != -1]
-              end = min(end_candidates) if end_candidates else idx + 12000
-              end += 20
-              print(compact(text[start:end])[:18000])
+              start = apps.rfind('<section', 0, idx)
+              end = apps.find('</section>', idx)
+              end = end + len('</section>') if end != -1 else idx + 16000
+              print(compact(apps[start:end])[:22000])
 
-          print('\n=== ALL CAR LINK CONTEXTS ===')
-          for n, match in enumerate(re.finditer(r'car-concierge\.html', text, re.I), start=1):
-              if n > 12:
-                  break
-              chunk = text[max(0, match.start() - 450):match.end() + 900]
-              print(f'-- OCCURRENCE {n} @ {match.start()} --')
-              print(compact(chunk))
+          detail = Path('car-concierge.html').read_text(encoding='utf-8')
+          print('\n=== DETAIL CSS ===')
+          print_rules(detail, r'(shot|screen|phone|mock|gallery|preview)')
+
+          print('\n=== DETAIL IMAGE REFERENCES ===')
+          for filename in ('0dd51c79245df1297a-1400.webp', '7e3bda281bf4742c73-1400.webp', '21ca2b9879dce9c414-1400.webp'):
+              idx = detail.find(filename)
+              print(f'{filename}: {idx}')
+              if idx != -1:
+                  print(compact(detail[max(0, idx-1000):idx+2400]))
           PY
+
+          echo '=== IMAGE FILE INFO ==='
+          file assets/media/0dd51c79245df1297a-1400.webp || true
+          file assets/media/7e3bda281bf4742c73-1400.webp || true
+          file assets/media/21ca2b9879dce9c414-1400.webp || true
