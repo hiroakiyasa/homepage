@@ -1,4 +1,4 @@
-name: Inspect Car Layout
+name: Fix Car Layout
 
 on:
   push:
@@ -7,18 +7,60 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  fix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install browser driver
-        run: npm install --no-save puppeteer-core@24.16.0
-      - name: Inspect live Car Concierge layout
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Patch screenshot proportions
         shell: bash
         run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('assets/css/site-v2-base.css')
+          css = path.read_text(encoding='utf-8')
+          marker = '/* Car Concierge hero screenshot ratio guard. */'
+          rule = '''
+
+/* Car Concierge hero screenshot ratio guard. */
+/* The page carries intrinsic width/height attributes. When only width was
+   overridden at tablet/desktop sizes, the 1846px HTML height remained and
+   stretched each phone preview vertically. */
+.tf-legacy .chero .shots img{
+  height:auto!important;
+  aspect-ratio:auto 852/1846;
+  object-fit:contain!important;
+  object-position:top center!important;
+}
+'''
+          anchor = '/* Preserve portrait proportions without letting screenshots dominate a phone viewport. */'
+          if marker not in css:
+              if anchor not in css:
+                  raise SystemExit('Expected CSS insertion anchor was not found')
+              css = css.replace(anchor, rule + '\n' + anchor, 1)
+              path.write_text(css, encoding='utf-8')
+          updated = path.read_text(encoding='utf-8')
+          assert marker in updated
+          assert '.tf-legacy .chero .shots img{' in updated
+          assert 'height:auto!important' in updated
+          print('Car Concierge ratio guard added')
+          PY
+
+      - name: Install browser driver
+        run: npm install --no-save puppeteer-core@24.16.0
+
+      - name: Validate patched page locally
+        shell: bash
+        run: |
+          python3 -m http.server 8000 >/tmp/car-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
           cat > inspect-car.cjs <<'JS'
           const fs = require('fs');
           const puppeteer = require('puppeteer-core');
@@ -30,68 +72,123 @@ jobs:
           ].find((p) => fs.existsSync(p));
           if (!executablePath) throw new Error('Chromium not found');
 
-          const rect = (el) => {
-            const r = el.getBoundingClientRect();
-            return {x:+r.x.toFixed(1),y:+r.y.toFixed(1),width:+r.width.toFixed(1),height:+r.height.toFixed(1)};
-          };
+          const baseUrl = process.env.BASE_URL;
+          const prefix = process.env.SHOT_PREFIX || 'car-after';
+          const live = baseUrl.startsWith('https://');
 
           (async () => {
             const browser = await puppeteer.launch({headless:true, executablePath, args:['--no-sandbox','--disable-dev-shm-usage']});
             try {
-              const viewports = [
+              for (const viewport of [
                 {name:'iphone',width:390,height:844,deviceScaleFactor:1},
-                {name:'iphone-max',width:430,height:932,deviceScaleFactor:1},
                 {name:'tablet',width:1216,height:1280,deviceScaleFactor:1}
-              ];
-              for (const viewport of viewports) {
+              ]) {
                 const page = await browser.newPage();
                 await page.setViewport(viewport);
-                const url = `https://trailfusionai.com/car-concierge.html?inspect=${Date.now()}-${viewport.name}`;
-                await page.goto(url,{waitUntil:'networkidle2',timeout:120000});
+                await page.goto(`${baseUrl}/car-concierge.html?ratio-check=${Date.now()}-${viewport.name}`,{
+                  waitUntil: live ? 'networkidle2' : 'domcontentloaded',
+                  timeout:120000
+                });
                 await page.waitForSelector('.chero .shots img',{timeout:30000});
-                const shots = await page.$('.chero .shots');
-                await shots.evaluate((el)=>el.scrollIntoView({block:'center',inline:'center'}));
-                await new Promise((resolve)=>setTimeout(resolve,1200));
-                const data = await page.evaluate(() => {
-                  const r = (el) => {
-                    const x = el.getBoundingClientRect();
-                    return {x:+x.x.toFixed(1),y:+x.y.toFixed(1),width:+x.width.toFixed(1),height:+x.height.toFixed(1)};
-                  };
-                  const css = (el) => {
-                    const s = getComputedStyle(el);
-                    return {
-                      display:s.display,width:s.width,height:s.height,maxWidth:s.maxWidth,maxHeight:s.maxHeight,
-                      minHeight:s.minHeight,aspectRatio:s.aspectRatio,objectFit:s.objectFit,objectPosition:s.objectPosition,
-                      transform:s.transform,overflow:s.overflow,alignItems:s.alignItems,gap:s.gap
-                    };
-                  };
+                const result = await page.evaluate(() => {
                   const container = document.querySelector('.chero .shots');
+                  const visible = [...container.querySelectorAll('img')].filter((img) => getComputedStyle(img).display !== 'none');
+                  const box = (el) => {
+                    const r = el.getBoundingClientRect();
+                    return {width:r.width,height:r.height,ratio:r.height/r.width};
+                  };
                   return {
-                    url:location.href,
-                    viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},
-                    hero:r(document.querySelector('.chero')),
-                    container:r(container),
-                    containerCss:css(container),
-                    images:[...container.querySelectorAll('img')].map((img)=>({
-                      alt:img.alt,src:img.currentSrc||img.src,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
-                      rect:r(img),ratio:+(img.getBoundingClientRect().height/img.getBoundingClientRect().width).toFixed(3),css:css(img)
+                    hero:box(document.querySelector('.chero')),
+                    container:box(container),
+                    images:visible.map((img)=>({
+                      naturalWidth:img.naturalWidth,
+                      naturalHeight:img.naturalHeight,
+                      ...box(img),
+                      cssHeight:getComputedStyle(img).height,
+                      cssWidth:getComputedStyle(img).width
                     }))
                   };
                 });
-                console.log(`\n=== ${viewport.name.toUpperCase()} ===`);
-                console.log(JSON.stringify(data,null,2));
-                await page.screenshot({path:`/tmp/car-${viewport.name}.png`,fullPage:false});
+                console.log(`\n${viewport.name}:`, JSON.stringify(result,null,2));
+                if (!result.images.length) throw new Error(`${viewport.name}: no visible preview images`);
+                for (const image of result.images) {
+                  if (image.ratio < 2.05 || image.ratio > 2.25) {
+                    throw new Error(`${viewport.name}: stretched preview ratio ${image.ratio}`);
+                  }
+                  if (viewport.name === 'tablet' && image.height > 650) {
+                    throw new Error(`${viewport.name}: preview still too tall (${image.height}px)`);
+                  }
+                  if (viewport.name === 'iphone' && image.height > 330) {
+                    throw new Error(`${viewport.name}: preview exceeds mobile height (${image.height}px)`);
+                  }
+                }
+                if (viewport.name === 'tablet' && result.hero.height > 1050) {
+                  throw new Error(`tablet: hero still too tall (${result.hero.height}px)`);
+                }
+                const target = await page.$('.chero .shots');
+                await target.evaluate((el)=>el.scrollIntoView({block:'center',inline:'center'}));
+                await new Promise((resolve)=>setTimeout(resolve,700));
+                await page.screenshot({path:`/tmp/${prefix}-${viewport.name}.png`,fullPage:false});
                 await page.close();
               }
             } finally {
               await browser.close();
             }
-          })().catch((e)=>{console.error(e);process.exit(1)});
+          })().catch((error)=>{console.error(error);process.exit(1)});
           JS
-          node inspect-car.cjs
-      - name: Upload screenshots
+          BASE_URL=http://127.0.0.1:8000 SHOT_PREFIX=car-local node inspect-car.cjs
+
+      - name: Commit fix and remove inspector
+        shell: bash
+        run: |
+          git config user.name 'TRAIL FUSION AI'
+          git config user.email 'hiroakiyasa@yahoo.co.jp'
+          git add assets/css/site-v2-base.css
+          git rm .github/workflows/inspect-car-layout.yml
+          git commit -m 'fix: preserve Car Concierge phone preview proportions'
+          git push origin HEAD:master
+          echo "FIX_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Wait for published CSS
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          import time
+          import urllib.request
+
+          marker = 'Car Concierge hero screenshot ratio guard.'
+          url = 'https://trailfusionai.com/assets/css/site-v2-base.css?release=' + os.environ['FIX_SHA']
+          last_error = None
+          for attempt in range(36):
+              try:
+                  request = urllib.request.Request(url, headers={
+                      'User-Agent': 'TrailFusion-Car-Layout-Check/1.0',
+                      'Cache-Control': 'no-cache',
+                  })
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      css = response.read().decode('utf-8')
+                  if marker not in css:
+                      raise RuntimeError('new ratio guard is not live yet')
+                  print('Published CSS contains the ratio guard')
+                  last_error = None
+                  break
+              except Exception as exc:
+                  last_error = exc
+                  print(f'Waiting for Pages deployment ({attempt + 1}/36): {exc}')
+                  time.sleep(10)
+          if last_error:
+              raise last_error
+          PY
+
+      - name: Validate published page
+        shell: bash
+        run: |
+          BASE_URL=https://trailfusionai.com SHOT_PREFIX=car-live node inspect-car.cjs
+
+      - name: Upload verification screenshots
         uses: actions/upload-artifact@v4
         with:
-          name: car-layout-screenshots
+          name: car-layout-after-fix
           path: /tmp/car-*.png
           retention-days: 1
