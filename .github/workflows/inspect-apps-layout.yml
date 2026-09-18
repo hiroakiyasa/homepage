@@ -16,47 +16,47 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Inspect archived app showcase
+      - name: Locate legacy flagship markup
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import base64
           import re
 
+          text = Path('apps.html').read_text(encoding='utf-8')
+
           def clean(value):
-              value = re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', value, flags=re.I)
+              value = re.sub(r'data:image/[^;\"\']+;base64,[^\"\']+', '[DATA_URI]', value, flags=re.I)
               return re.sub(r'\s+', ' ', value).strip()
 
-          def inspect(path):
-              text = Path(path).read_text(encoding='utf-8')
-              print(f'\n===== {path} size={len(text)} =====')
-              for term in ('fshots', 'lshots', 'lead-app', 'この物語から生まれた', '車旅コンシェルジュ'):
-                  positions = [m.start() for m in re.finditer(re.escape(term), text, re.I)]
-                  print(f'{term}: count={len(positions)} first={positions[:8]}')
-                  for pos in positions[:2]:
-                      print(clean(text[max(0,pos-600):pos+1800]))
+          terms = (
+              'この物語から',
+              'いちばん最初',
+              'アプリの詳細を見る',
+              'Google Play 近日公開',
+              'FLAGSHIP',
+              'flagship',
+              'fshots',
+              '車旅コンシェルジュ',
+          )
+          for term in terms:
+              positions = [m.start() for m in re.finditer(re.escape(term), text, re.I)]
+              print(f'\n=== {term}: {len(positions)} {positions[:20]} ===')
+              for pos in positions[:8]:
+                  before = max(
+                      text.rfind('<section', 0, pos),
+                      text.rfind('<article', 0, pos),
+                      text.rfind('<div', 0, pos),
+                  )
+                  start = before if before >= 0 else max(0, pos-800)
+                  print(f'-- AT {pos}, START {start} --')
+                  print(clean(text[start:pos+5000])[:9000])
 
-              for cls in ('fshots', 'lshots'):
-                  match = re.search(r'<[^>]+class=[\"\'][^\"\']*\b'+cls+r'\b[^\"\']*[\"\'][^>]*>', text, re.I)
-                  print(f'CLASS_{cls.upper()}={match.start() if match else -1}')
-                  if not match:
-                      continue
-                  start = match.start()
-                  close = text.find('</div>', match.end())
-                  block = text[start: close if close != -1 else start+300000]
-                  print(clean(block)[:24000])
-                  data_uris = re.findall(r'src=[\"\']data:image/([^;]+);base64,([^\"\']+)[\"\']', block, re.I)
-                  print(f'{cls}_data_uri_count={len(data_uris)}')
-                  for i,(kind,payload) in enumerate(data_uris[:3],1):
-                      suffix='webp' if 'webp' in kind.lower() else ('png' if 'png' in kind.lower() else 'jpg')
-                      out=Path(f'/tmp/{Path(path).stem}-{cls}-{i}.{suffix}')
-                      out.write_bytes(base64.b64decode(payload))
-                      print(f'EXTRACTED {out} bytes={out.stat().st_size}')
-
-          inspect('apps.html')
-          inspect('archive/apps-pre-restructure.html')
+          print('\n=== CLASS ATTRIBUTES CONTAINING SHOT / FLAG / LEAD ===')
+          seen=set()
+          for match in re.finditer(r'class=[\"\']([^\"\']+)[\"\']', text, re.I):
+              value=match.group(1)
+              if re.search(r'(shot|flag|lead)', value, re.I) and value not in seen:
+                  seen.add(value)
+                  print(match.start(), value)
           PY
-
-          echo '=== EXTRACTED IMAGE INFO ==='
-          file /tmp/apps-* /tmp/apps-pre-restructure-* 2>/dev/null || true
