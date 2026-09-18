@@ -25,7 +25,7 @@ jobs:
       - name: Inspect live layout
         shell: bash
         run: |
-          cat > /tmp/inspect-live.cjs <<'JS'
+          cat > inspect-live.cjs <<'JS'
           const fs = require('fs');
           const puppeteer = require('puppeteer-core');
 
@@ -112,7 +112,7 @@ jobs:
             process.exit(1);
           });
           JS
-          node /tmp/inspect-live.cjs
+          node inspect-live.cjs
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
