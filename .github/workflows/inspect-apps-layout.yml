@@ -16,7 +16,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Inspect legacy lead screenshots
+      - name: Inspect archived app showcase
         shell: bash
         run: |
           python3 - <<'PY'
@@ -24,55 +24,39 @@ jobs:
           import base64
           import re
 
-          text = Path('apps.html').read_text(encoding='utf-8')
-
-          def compact(value):
+          def clean(value):
               value = re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', value, flags=re.I)
               return re.sub(r'\s+', ' ', value).strip()
 
-          css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
-          print('=== FSHOTS / LEAD CSS ===')
-          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
-              selector = compact(match.group(1))
-              body = compact(match.group(2))
-              if re.search(r'(fshots|lead-app)', selector, re.I):
-                  print(selector + '{' + body + '}')
+          def inspect(path):
+              text = Path(path).read_text(encoding='utf-8')
+              print(f'\n===== {path} size={len(text)} =====')
+              for term in ('fshots', 'lshots', 'lead-app', 'この物語から生まれた', '車旅コンシェルジュ'):
+                  positions = [m.start() for m in re.finditer(re.escape(term), text, re.I)]
+                  print(f'{term}: count={len(positions)} first={positions[:8]}')
+                  for pos in positions[:2]:
+                      print(clean(text[max(0,pos-600):pos+1800]))
 
-          print('\n=== IMAGE HEIGHT RULES ===')
-          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
-              selector = compact(match.group(1))
-              body = compact(match.group(2))
-              if 'img' in selector.lower() and re.search(r'height\s*:', body, re.I):
-                  print(selector + '{' + body + '}')
+              for cls in ('fshots', 'lshots'):
+                  match = re.search(r'<[^>]+class=[\"\'][^\"\']*\b'+cls+r'\b[^\"\']*[\"\'][^>]*>', text, re.I)
+                  print(f'CLASS_{cls.upper()}={match.start() if match else -1}')
+                  if not match:
+                      continue
+                  start = match.start()
+                  close = text.find('</div>', match.end())
+                  block = text[start: close if close != -1 else start+300000]
+                  print(clean(block)[:24000])
+                  data_uris = re.findall(r'src=[\"\']data:image/([^;]+);base64,([^\"\']+)[\"\']', block, re.I)
+                  print(f'{cls}_data_uri_count={len(data_uris)}')
+                  for i,(kind,payload) in enumerate(data_uris[:3],1):
+                      suffix='webp' if 'webp' in kind.lower() else ('png' if 'png' in kind.lower() else 'jpg')
+                      out=Path(f'/tmp/{Path(path).stem}-{cls}-{i}.{suffix}')
+                      out.write_bytes(base64.b64decode(payload))
+                      print(f'EXTRACTED {out} bytes={out.stat().st_size}')
 
-          idx = text.find('class="fshots')
-          print(f'\nFSHOTS_INDEX={idx}')
-          if idx != -1:
-              start_candidates = [
-                  text.rfind('<section', 0, idx),
-                  text.rfind('<div class="lead-app', 0, idx),
-                  text.rfind('<article', 0, idx),
-              ]
-              start = max(start_candidates)
-              end_candidates = [
-                  text.find('</section>', idx),
-                  text.find('</article>', idx),
-              ]
-              end_candidates = [value for value in end_candidates if value != -1]
-              end = min(end_candidates) if end_candidates else idx + 12000
-              print('\n=== LEAD APP MARKUP ===')
-              print(compact(text[start:end])[:20000])
-
-              tag_end = text.find('</div>', idx)
-              block = text[idx:tag_end if tag_end != -1 else idx + 200000]
-              data_uris = re.findall(r'src=[\"\']data:image/([^;]+);base64,([^\"\']+)[\"\']', block, re.I)
-              print(f'\nFSHOTS_DATA_URI_COUNT={len(data_uris)}')
-              for number, (kind, payload) in enumerate(data_uris[:3], start=1):
-                  suffix = 'webp' if 'webp' in kind.lower() else ('png' if 'png' in kind.lower() else 'jpg')
-                  out = Path(f'/tmp/fshot-{number}.{suffix}')
-                  out.write_bytes(base64.b64decode(payload))
-                  print(f'FSHOT_FILE_{number}={out} bytes={out.stat().st_size} type={kind}')
+          inspect('apps.html')
+          inspect('archive/apps-pre-restructure.html')
           PY
 
-          echo '=== FSHOT FILE INFO ==='
-          file /tmp/fshot-* 2>/dev/null || true
+          echo '=== EXTRACTED IMAGE INFO ==='
+          file /tmp/apps-* /tmp/apps-pre-restructure-* 2>/dev/null || true
