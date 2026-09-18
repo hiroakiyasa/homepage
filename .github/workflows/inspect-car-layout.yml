@@ -25,19 +25,18 @@ jobs:
           path = Path('assets/css/site-v2-base.css')
           css = path.read_text(encoding='utf-8')
           marker = '/* Car Concierge hero screenshot ratio guard. */'
-          rule = '''
-
-/* Car Concierge hero screenshot ratio guard. */
-/* The page carries intrinsic width/height attributes. When only width was
-   overridden at tablet/desktop sizes, the 1846px HTML height remained and
-   stretched each phone preview vertically. */
-.tf-legacy .chero .shots img{
-  height:auto!important;
-  aspect-ratio:auto 852/1846;
-  object-fit:contain!important;
-  object-position:top center!important;
-}
-'''
+          rule = (
+              "\n\n/* Car Concierge hero screenshot ratio guard. */\n"
+              "/* The page carries intrinsic width/height attributes. When only width was\n"
+              "   overridden at tablet/desktop sizes, the 1846px HTML height remained and\n"
+              "   stretched each phone preview vertically. */\n"
+              ".tf-legacy .chero .shots img{\n"
+              "  height:auto!important;\n"
+              "  aspect-ratio:auto 852/1846;\n"
+              "  object-fit:contain!important;\n"
+              "  object-position:top center!important;\n"
+              "}\n"
+          )
           anchor = '/* Preserve portrait proportions without letting screenshots dominate a phone viewport. */'
           if marker not in css:
               if anchor not in css:
