@@ -21,14 +21,23 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          from collections import Counter
           import re
 
           path = Path('apps.html')
           text = path.read_text(encoding='utf-8')
           print(f'FILE_SIZE={len(text)}')
 
+          def strip_data_uri(value: str) -> str:
+              return re.sub(
+                  r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])',
+                  r'\1[DATA_URI]\2',
+                  value,
+                  flags=re.I,
+              )
+
           def compact(value: str) -> str:
-              value = re.sub(r'data:image/[^;\"\']+;base64,[^\"\']+', '[DATA_URI]', value)
+              value = strip_data_uri(value)
               value = re.sub(r'\s+', ' ', value)
               return value.strip()
 
@@ -36,37 +45,55 @@ jobs:
           for match in re.finditer(r'<(?:link|script)\b[^>]*(?:href|src)=[\"\'][^\"\']+[\"\'][^>]*>', text, re.I):
               print(compact(match.group(0)))
 
-          print('\n=== CSS RULES CONTAINING ACARD / AVIS / SHOTS ===')
-          head_end = text.lower().find('</head>')
-          css_scope = text[:head_end if head_end != -1 else min(len(text), 300000)]
+          print('\n=== RELEVANT CLASS NAMES ===')
+          classes = Counter()
+          for match in re.finditer(r'class=[\"\']([^\"\']+)[\"\']', text, re.I):
+              classes.update(match.group(1).split())
+          for name, count in sorted(classes.items()):
+              if re.search(r'(shot|lead|pane|phone|screen|visual|product|app)', name, re.I):
+                  print(f'{name}: {count}')
+
+          print('\n=== RELEVANT CSS RULES ===')
+          css = '\n'.join(re.findall(r'<style[^>]*>(.*?)</style>', text, re.I | re.S))
+          print(f'STYLE_CHARS={len(css)}')
           seen = set()
-          for match in re.finditer(r'([^{}]*(?:\.acard|\.avis|\.shots)[^{}]*)\{([^{}]*)\}', css_scope, re.I | re.S):
-              rule = compact(match.group(1) + '{' + match.group(2) + '}')
-              if rule not in seen:
-                  seen.add(rule)
-                  print(rule)
+          for match in re.finditer(r'([^{}]+)\{([^{}]*)\}', css, re.S):
+              selector = compact(match.group(1))
+              body = compact(match.group(2))
+              if re.search(r'(lshots|lead-app|apane|shot|phone|screen|visual|product)', selector, re.I):
+                  rule = selector + '{' + body + '}'
+                  if rule not in seen:
+                      seen.add(rule)
+                      print(rule)
 
-          print('\n=== CAR CONCIERGE MARKUP CONTEXT ===')
-          idx = text.find('car-concierge.html')
-          print(f'CAR_LINK_INDEX={idx}')
+          print('\n=== EXACT CAR CARD MARKUP ===')
+          patterns = [
+              'href="car-concierge.html"',
+              "href='car-concierge.html'",
+              'href="/car-concierge.html"',
+              "href='/car-concierge.html'",
+          ]
+          idx = next((text.find(p) for p in patterns if text.find(p) != -1), -1)
+          print(f'CAR_HREF_INDEX={idx}')
           if idx != -1:
-              start = max(0, text.rfind('<article', 0, idx))
-              end = text.find('</article>', idx)
-              if end == -1:
-                  end = idx + 5000
-              else:
-                  end += len('</article>')
-              article = text[start:end]
-              article = re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', article)
-              print(compact(article)[:12000])
+              starts = [text.rfind(tag, 0, idx) for tag in ('<article', '<section', '<div')]
+              start = max(starts)
+              if start < 0:
+                  start = max(0, idx - 1500)
+              end_candidates = [
+                  text.find('</article>', idx),
+                  text.find('</section>', idx),
+              ]
+              end_candidates = [e for e in end_candidates if e != -1]
+              end = min(end_candidates) if end_candidates else idx + 12000
+              end += 20
+              print(compact(text[start:end])[:18000])
 
-          print('\n=== FIRST SHOTS MARKUP CONTEXT ===')
-          idx = text.find('class="shots"')
-          if idx == -1:
-              idx = text.find("class='shots'")
-          print(f'FIRST_SHOTS_INDEX={idx}')
-          if idx != -1:
-              chunk = text[max(0, idx - 500):idx + 5000]
-              chunk = re.sub(r'(src=[\"\'])data:image/[^;]+;base64,[^\"\']+([\"\'])', r'\1[DATA_URI]\2', chunk)
+          print('\n=== ALL CAR LINK CONTEXTS ===')
+          for n, match in enumerate(re.finditer(r'car-concierge\.html', text, re.I), start=1):
+              if n > 12:
+                  break
+              chunk = text[max(0, match.start() - 450):match.end() + 900]
+              print(f'-- OCCURRENCE {n} @ {match.start()} --')
               print(compact(chunk))
           PY
