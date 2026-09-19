@@ -6,6 +6,16 @@ Allow: /
 Disallow: /assets/videos/
 Allow: /maintenance.html
 
+# ---- AdMob / Google app-ads.txt crawler ----
+User-agent: Google-adstxt
+Disallow:
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Googlebot
+Disallow:
+
 # ---- 生成AI・AI検索のクローラ ----
 # 引用元として扱われたいので明示的に許可する
 User-agent: GPTBot
