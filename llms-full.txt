@@ -2,7 +2,7 @@
 
 > TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
 
-Updated: 2026-09-16
+Updated: 2026-09-23
 Canonical website: https://trailfusionai.com/
 Contact: trailfusionai@gmail.com
 
@@ -60,3 +60,6 @@ TrailFusion AI organizes its official content into four clear entrances:
 ## Content intent
 
 The homepage is designed to help a visitor identify the correct area immediately. Learning is the primary commercial focus, while car travel, camper DIY, and Hiace maintenance remain first-class sections with direct navigation. The visible page text, FAQ, metadata, internal links, and structured data are aligned to the same four-area description.
+
+## Founder and collaboration
+See https://trailfusionai.com/partners/ for the founder profile, collaboration areas, and dated public track-record statements.
