@@ -336,4 +336,20 @@
   <url><loc>https://trailfusionai.com/car-concierge/parking/kagoshima/46201/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://trailfusionai.com/car-concierge/parking/okinawa/47201/</loc><lastmod>2026-09-23</lastmod></url>
   <!-- parking-areas:end -->
+<!-- home-locales:start -->
+<url><loc>https://trailfusionai.com/en/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/zh-hans/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/ko/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/es/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/pt-br/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/fr/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/de/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/it/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/ru/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/tr/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/vi/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/th/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/hi/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://trailfusionai.com/ar/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<!-- home-locales:end -->
 </urlset>

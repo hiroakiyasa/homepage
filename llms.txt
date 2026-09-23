@@ -36,6 +36,26 @@ TrailFusion AI organizes its official content into four clear entrances:
 - [About TrailFusion AI](https://trailfusionai.com/about/)
 - [Support and app policies](https://trailfusionai.com/support/)
 
+## Localized homepages
+
+The homepage is available as static, crawlable pages in the same 15 languages used by Reel Make. Japanese remains the canonical root page; visitors can also switch language manually, and the homepage selects an appropriate initial language from local timezone/locale signals when no preference has been saved.
+
+- Japanese: https://trailfusionai.com/
+- English: https://trailfusionai.com/en/
+- Simplified Chinese: https://trailfusionai.com/zh-hans/
+- Korean: https://trailfusionai.com/ko/
+- Spanish: https://trailfusionai.com/es/
+- Brazilian Portuguese: https://trailfusionai.com/pt-br/
+- French: https://trailfusionai.com/fr/
+- German: https://trailfusionai.com/de/
+- Italian: https://trailfusionai.com/it/
+- Russian: https://trailfusionai.com/ru/
+- Turkish: https://trailfusionai.com/tr/
+- Vietnamese: https://trailfusionai.com/vi/
+- Thai: https://trailfusionai.com/th/
+- Hindi: https://trailfusionai.com/hi/
+- Arabic: https://trailfusionai.com/ar/
+
 ## Verified app-store links published on this website
 
 - Science Quest — App Store: https://apps.apple.com/jp/app/id6772644144 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
