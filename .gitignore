@@ -39,3 +39,6 @@ build/
 # Temporary files
 *.tmp
 tmp/campingcar (1)/
+
+# Raw parking rows / fee caches for scripts/parking-areas (never publish)
+.cache/

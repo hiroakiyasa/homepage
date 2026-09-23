@@ -42,6 +42,12 @@ TrailFusion AI organizes its official content into four clear entrances:
 - Social Studies Quest — App Store: https://apps.apple.com/jp/app/id6775411516 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
 - Japanese Quest — App Store: https://apps.apple.com/jp/app/id6780125916 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
 
+<!-- parking-areas:start -->
+## Parking fee levels by area (Car Travel Concierge data)
+
+- [Parking fee levels by municipality](https://trailfusionai.com/car-concierge/parking/): area-level medians of weekday 1-hour, 24-hour and overnight (18:00–08:00) coin-parking fees for 235 municipalities / wards in 37 prefectures, computed from the app's rate data with the app's own fee calculation. Aggregates only; no individual parking lots are listed. Values are reference levels; on-site signs are authoritative.
+<!-- parking-areas:end -->
+
 ## Important interpretation boundaries
 
 - Gokaku Quest apps support knowledge review; they do not guarantee grades, admission, or examination outcomes.
