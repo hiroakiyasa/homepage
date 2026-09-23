@@ -56,6 +56,10 @@ TrailFusion AI organizes its official content into four clear entrances:
 ## Founder and collaboration
 
 - Founder / operator: Hiroaki Yuasa (Hiro), an indie builder focused on education, AI-native product development, consumer apps, ASO, product analytics and continuous improvement through TrailFusion AI.
+- Founder motivation: turn real problems experienced by himself and his family into useful products; build a second area of expertise in AI, software and B2C; and get direct feedback from the people who use what he builds.
+- Builder identity: Builder × Explorer × Integrator. He prefers to explore unfamiliar fields, learn by doing, connect different technologies and experiences, and finish real working products rather than stop at ideas.
+- Product philosophy: start with something he or his family genuinely needs; reduce confusion until the experience feels self-explanatory; and treat release as the start of continuous improvement.
+- Long-term direction: transform experiences that feel difficult, tedious, intimidating or unclear into experiences that feel understandable, simple, enjoyable and sustainable, and deliver useful products beyond language and national borders.
 - Product track record: 10 apps created, 9 publicly released across education, travel, AI video and games.
 - 2026 milestone: the indie app portfolio reached a personal target of USD 100 in revenue in one day. This is a dated milestone, not a statement of constant daily revenue.
 - Open to collaboration with schools, tutoring/cram schools, educational publishers, EdTech companies, Japanese-language education, ASO/app-growth marketers, B2C growth teams, localization/overseas expansion partners, AI-agent/MCP builders, mobility and travel-tech teams.
