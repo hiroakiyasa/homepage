@@ -101,85 +101,85 @@
       "locale": "en",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12687
+      "html_bytes": 12691
     },
     "zh-hans/diy/index.html": {
       "locale": "zh-Hans",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12497
+      "html_bytes": 12498
     },
     "ko/diy/index.html": {
       "locale": "ko",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12955
+      "html_bytes": 12986
     },
     "es/diy/index.html": {
       "locale": "es",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 13115
+      "html_bytes": 13151
     },
     "pt-br/diy/index.html": {
       "locale": "pt-BR",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 13167
+      "html_bytes": 13187
     },
     "fr/diy/index.html": {
       "locale": "fr",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 13309
+      "html_bytes": 13346
     },
     "de/diy/index.html": {
       "locale": "de",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12729
+      "html_bytes": 12755
     },
     "it/diy/index.html": {
       "locale": "it",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12978
+      "html_bytes": 13015
     },
     "ru/diy/index.html": {
       "locale": "ru",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 15751
+      "html_bytes": 15924
     },
     "tr/diy/index.html": {
       "locale": "tr",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 12980
+      "html_bytes": 13017
     },
     "vi/diy/index.html": {
       "locale": "vi",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 13593
+      "html_bytes": 13674
     },
     "th/diy/index.html": {
       "locale": "th",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 16792
+      "html_bytes": 17001
     },
     "hi/diy/index.html": {
       "locale": "hi",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 16869
+      "html_bytes": 17115
     },
     "ar/diy/index.html": {
       "locale": "ar",
       "text_and_attribute_segments": 124,
       "untranslated_japanese": 0,
-      "html_bytes": 14532
+      "html_bytes": 14677
     },
     "maintenance/index.html": {
       "locale": "ja",
@@ -191,85 +191,85 @@
       "locale": "en",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12197
+      "html_bytes": 12200
     },
     "zh-hans/maintenance/index.html": {
       "locale": "zh-Hans",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11887
+      "html_bytes": 11868
     },
     "ko/maintenance/index.html": {
       "locale": "ko",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12306
+      "html_bytes": 12323
     },
     "es/maintenance/index.html": {
       "locale": "es",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12455
+      "html_bytes": 12480
     },
     "pt-br/maintenance/index.html": {
       "locale": "pt-BR",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12524
+      "html_bytes": 12547
     },
     "fr/maintenance/index.html": {
       "locale": "fr",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12614
+      "html_bytes": 12657
     },
     "de/maintenance/index.html": {
       "locale": "de",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12327
+      "html_bytes": 12360
     },
     "it/maintenance/index.html": {
       "locale": "it",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12331
+      "html_bytes": 12362
     },
     "ru/maintenance/index.html": {
       "locale": "ru",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 14915
+      "html_bytes": 15060
     },
     "tr/maintenance/index.html": {
       "locale": "tr",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12488
+      "html_bytes": 12509
     },
     "vi/maintenance/index.html": {
       "locale": "vi",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12972
+      "html_bytes": 13038
     },
     "th/maintenance/index.html": {
       "locale": "th",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 15924
+      "html_bytes": 16106
     },
     "hi/maintenance/index.html": {
       "locale": "hi",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 15785
+      "html_bytes": 15965
     },
     "ar/maintenance/index.html": {
       "locale": "ar",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 13582
+      "html_bytes": 13689
     },
     "travel/index.html": {
       "locale": "ja",
@@ -281,85 +281,85 @@
       "locale": "en",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11469
+      "html_bytes": 11474
     },
     "zh-hans/travel/index.html": {
       "locale": "zh-Hans",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11506
+      "html_bytes": 11526
     },
     "ko/travel/index.html": {
       "locale": "ko",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11774
+      "html_bytes": 11809
     },
     "es/travel/index.html": {
       "locale": "es",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11985
+      "html_bytes": 12002
     },
     "pt-br/travel/index.html": {
       "locale": "pt-BR",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12037
+      "html_bytes": 12050
     },
     "fr/travel/index.html": {
       "locale": "fr",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12075
+      "html_bytes": 12111
     },
     "de/travel/index.html": {
       "locale": "de",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11619
+      "html_bytes": 11656
     },
     "it/travel/index.html": {
       "locale": "it",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11855
+      "html_bytes": 11875
     },
     "ru/travel/index.html": {
       "locale": "ru",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 14136
+      "html_bytes": 14294
     },
     "tr/travel/index.html": {
       "locale": "tr",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 11946
+      "html_bytes": 11977
     },
     "vi/travel/index.html": {
       "locale": "vi",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 12504
+      "html_bytes": 12597
     },
     "th/travel/index.html": {
       "locale": "th",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 15037
+      "html_bytes": 15225
     },
     "hi/travel/index.html": {
       "locale": "hi",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 14820
+      "html_bytes": 15017
     },
     "ar/travel/index.html": {
       "locale": "ar",
       "text_and_attribute_segments": 109,
       "untranslated_japanese": 0,
-      "html_bytes": 13405
+      "html_bytes": 13504
     }
   }
 }

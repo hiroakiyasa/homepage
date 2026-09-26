@@ -1,0 +1,37 @@
+{
+  "checked_on": "2026-09-26",
+  "browser_checks": [
+    {
+      "scenario": "US automatic",
+      "status": "PASS",
+      "url": "https://trailfusionai.com/en/apps.html",
+      "lang": "en",
+      "title": "Apps | Road Trips, Japanese Entrance Exams & AI Video — TrailFusion AI",
+      "heading": "Ten apps. All born at this desk."
+    },
+    {
+      "scenario": "Japan explicit English",
+      "status": "PASS",
+      "url": "https://trailfusionai.com/en/apps.html",
+      "lang": "en",
+      "title": "Apps | Road Trips, Japanese Entrance Exams & AI Video — TrailFusion AI",
+      "heading": "Ten apps. All born at this desk."
+    },
+    {
+      "scenario": "Arabic URL",
+      "status": "PASS",
+      "url": "https://trailfusionai.com/ar/apps.html",
+      "lang": "ar",
+      "title": "التطبيقات | رحلات السيارات واختبارات القبول في اليابان وفيديو الذكاء الاصطناعي — TrailFusion AI",
+      "heading": "عشرة تطبيقات وُلدت من هذا المكتب."
+    },
+    {
+      "scenario": "German DIY",
+      "status": "PASS",
+      "url": "https://trailfusionai.com/de/diy/",
+      "lang": "de",
+      "title": "Camper-DIY | HiAce 3D-Layout & Bauguide | TrailFusion AI",
+      "heading": "Den Traumcamper mit eigenen Händen bauen."
+    }
+  ]
+}
