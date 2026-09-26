@@ -24,6 +24,11 @@ jobs:
       - name: Checkout release commit
         uses: actions/checkout@v4
 
+      - name: Verify complete static translations without network calls
+        run: |
+          python scripts/build-localized-pages.py
+          git diff --exit-code -- apps.html diy/index.html maintenance/index.html travel/index.html en zh-hans ko es pt-br fr de it ru tr vi th hi ar reports/localization-build.json
+
       - name: Verify direct apps page
         run: |
           python - <<'PY'

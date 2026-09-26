@@ -1,0 +1,25 @@
+/* Layout for complete, static translations. Shared images remain unaltered. */
+.tf-page-language{display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;margin-inline-start:auto;color:#12243a}
+.tf-page-language select{max-width:152px;min-height:40px;border:1px solid #c5d5e7;border-radius:10px;padding:6px 8px;background:#fff;color:#12243a;font:600 12px/1.4 system-ui,sans-serif}
+.tf-page-language select:focus-visible{outline:3px solid #1273e6;outline-offset:2px}
+html:not([lang="ja"]) body,html:not([lang="ja"]) h1,html:not([lang="ja"]) h2,html:not([lang="ja"]) h3,html:not([lang="ja"]) h4{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:normal}
+html:not([lang="ja"]) .ap-hero h1{font-size:clamp(2.1rem,4.9vw,4.3rem);line-height:1.24;max-width:20ch;margin-inline:auto;overflow-wrap:anywhere}
+html:not([lang="ja"]) .nw{white-space:normal}
+html:not([lang="ja"]) .atxt,html:not([lang="ja"]) .ahead>div{min-width:0;overflow-wrap:anywhere}
+html:not([lang="ja"]) .ahead h3{font-size:clamp(1.25rem,2.2vw,1.8rem);line-height:1.35}
+html:not([lang="ja"]) .ap-band dd{font-size:clamp(.7rem,1.2vw,.9rem);overflow-wrap:anywhere}
+.ap-band dt.tf-free-stat{font-size:clamp(1.5rem,3vw,2.7rem);line-height:1.4;overflow-wrap:anywhere}
+html[dir="rtl"] body{text-align:right}
+html[dir="rtl"] .drawer a{flex-direction:row}
+html[dir="rtl"] .socials,html[dir="rtl"] .astores svg{direction:ltr}
+@media(max-width:1380px){html:not([lang="ja"]) .site-nav,html:not([lang="ja"]) .head-cta{display:none}html:not([lang="ja"]) .burger{display:grid}}
+@media(max-width:760px){.site-head .in{gap:8px}.tf-page-language span{display:none}.tf-page-language select{max-width:112px;font-size:11px}.brandlink .lockup{max-width:145px;height:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1!important;transform:none!important}}
+
+@media(max-width:760px){.site-head .head-cta,.site-head .head-sns{display:none!important}.site-head .in{gap:8px!important;padding-inline:16px!important}.site-head .brandlink{min-width:0;flex-shrink:1}.site-head .burger{flex-shrink:0}.tf-page-language{margin-inline-start:auto}}
+@media(max-width:1380px){html:not([lang="ja"]) .site-head .head-cta,html:not([lang="ja"]) .site-head .site-nav{display:none!important}}
+
+.ccshots,.fshots,.lshots{height:auto!important;min-height:0!important}
+.ccshots{align-items:end!important}.fshots,.lshots{align-items:flex-start!important}
+.ccshots img,.fshots img,.lshots img{display:block!important;height:auto!important;aspect-ratio:852/1846!important;object-fit:cover!important;object-position:top center!important}
+.ccshots img{width:100%!important;max-width:100%!important}

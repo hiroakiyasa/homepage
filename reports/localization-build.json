@@ -1,0 +1,365 @@
+{
+  "method": "ChatGPT-authored static translations; no translation API",
+  "pages": {
+    "apps.html": {
+      "locale": "ja",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 191807
+    },
+    "en/apps.html": {
+      "locale": "en",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 191083
+    },
+    "zh-hans/apps.html": {
+      "locale": "zh-Hans",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 190127
+    },
+    "ko/apps.html": {
+      "locale": "ko",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 191650
+    },
+    "es/apps.html": {
+      "locale": "es",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 192095
+    },
+    "pt-br/apps.html": {
+      "locale": "pt-BR",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 191791
+    },
+    "fr/apps.html": {
+      "locale": "fr",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 192494
+    },
+    "de/apps.html": {
+      "locale": "de",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 192070
+    },
+    "it/apps.html": {
+      "locale": "it",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 191893
+    },
+    "ru/apps.html": {
+      "locale": "ru",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 199534
+    },
+    "tr/apps.html": {
+      "locale": "tr",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 192001
+    },
+    "vi/apps.html": {
+      "locale": "vi",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 193523
+    },
+    "th/apps.html": {
+      "locale": "th",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 202602
+    },
+    "hi/apps.html": {
+      "locale": "hi",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 204463
+    },
+    "ar/apps.html": {
+      "locale": "ar",
+      "text_and_attribute_segments": 286,
+      "untranslated_japanese": 0,
+      "html_bytes": 196629
+    },
+    "diy/index.html": {
+      "locale": "ja",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12705
+    },
+    "en/diy/index.html": {
+      "locale": "en",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12687
+    },
+    "zh-hans/diy/index.html": {
+      "locale": "zh-Hans",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12497
+    },
+    "ko/diy/index.html": {
+      "locale": "ko",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12955
+    },
+    "es/diy/index.html": {
+      "locale": "es",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 13115
+    },
+    "pt-br/diy/index.html": {
+      "locale": "pt-BR",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 13167
+    },
+    "fr/diy/index.html": {
+      "locale": "fr",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 13309
+    },
+    "de/diy/index.html": {
+      "locale": "de",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12729
+    },
+    "it/diy/index.html": {
+      "locale": "it",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12978
+    },
+    "ru/diy/index.html": {
+      "locale": "ru",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 15751
+    },
+    "tr/diy/index.html": {
+      "locale": "tr",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 12980
+    },
+    "vi/diy/index.html": {
+      "locale": "vi",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 13593
+    },
+    "th/diy/index.html": {
+      "locale": "th",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 16792
+    },
+    "hi/diy/index.html": {
+      "locale": "hi",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 16869
+    },
+    "ar/diy/index.html": {
+      "locale": "ar",
+      "text_and_attribute_segments": 124,
+      "untranslated_japanese": 0,
+      "html_bytes": 14532
+    },
+    "maintenance/index.html": {
+      "locale": "ja",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11880
+    },
+    "en/maintenance/index.html": {
+      "locale": "en",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12197
+    },
+    "zh-hans/maintenance/index.html": {
+      "locale": "zh-Hans",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11887
+    },
+    "ko/maintenance/index.html": {
+      "locale": "ko",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12306
+    },
+    "es/maintenance/index.html": {
+      "locale": "es",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12455
+    },
+    "pt-br/maintenance/index.html": {
+      "locale": "pt-BR",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12524
+    },
+    "fr/maintenance/index.html": {
+      "locale": "fr",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12614
+    },
+    "de/maintenance/index.html": {
+      "locale": "de",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12327
+    },
+    "it/maintenance/index.html": {
+      "locale": "it",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12331
+    },
+    "ru/maintenance/index.html": {
+      "locale": "ru",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 14915
+    },
+    "tr/maintenance/index.html": {
+      "locale": "tr",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12488
+    },
+    "vi/maintenance/index.html": {
+      "locale": "vi",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12972
+    },
+    "th/maintenance/index.html": {
+      "locale": "th",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 15924
+    },
+    "hi/maintenance/index.html": {
+      "locale": "hi",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 15785
+    },
+    "ar/maintenance/index.html": {
+      "locale": "ar",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 13582
+    },
+    "travel/index.html": {
+      "locale": "ja",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11597
+    },
+    "en/travel/index.html": {
+      "locale": "en",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11469
+    },
+    "zh-hans/travel/index.html": {
+      "locale": "zh-Hans",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11506
+    },
+    "ko/travel/index.html": {
+      "locale": "ko",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11774
+    },
+    "es/travel/index.html": {
+      "locale": "es",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11985
+    },
+    "pt-br/travel/index.html": {
+      "locale": "pt-BR",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12037
+    },
+    "fr/travel/index.html": {
+      "locale": "fr",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12075
+    },
+    "de/travel/index.html": {
+      "locale": "de",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11619
+    },
+    "it/travel/index.html": {
+      "locale": "it",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11855
+    },
+    "ru/travel/index.html": {
+      "locale": "ru",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 14136
+    },
+    "tr/travel/index.html": {
+      "locale": "tr",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 11946
+    },
+    "vi/travel/index.html": {
+      "locale": "vi",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 12504
+    },
+    "th/travel/index.html": {
+      "locale": "th",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 15037
+    },
+    "hi/travel/index.html": {
+      "locale": "hi",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 14820
+    },
+    "ar/travel/index.html": {
+      "locale": "ar",
+      "text_and_attribute_segments": 109,
+      "untranslated_japanese": 0,
+      "html_bytes": 13405
+    }
+  }
+}

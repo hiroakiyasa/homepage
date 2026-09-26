@@ -1,0 +1,567 @@
+{
+  "checks": 83,
+  "results": [
+    {
+      "locale": "ja",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "ja",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "zh-Hans",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "ko",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "ko",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "es",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "pt-BR",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "pt-BR",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "fr",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "fr",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "de",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "de",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "it",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "it",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "ru",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "ru",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "tr",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "tr",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "vi",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "vi",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "th",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "th",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "hi",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "hi",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "ar",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": true
+    },
+    {
+      "locale": "ar",
+      "width": 1280,
+      "status": "PASS",
+      "japanese_leftovers": 0,
+      "menu": false
+    },
+    {
+      "locale": "ja",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ja",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ja",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "en",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "en",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "en",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "zh-Hans",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "zh-Hans",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "zh-Hans",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ko",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ko",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ko",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "es",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "es",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "es",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "pt-BR",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "pt-BR",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "pt-BR",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "fr",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "fr",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "fr",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "de",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "de",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "de",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "it",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "it",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "it",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ru",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ru",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ru",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "tr",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "tr",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "tr",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "vi",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "vi",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "vi",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "th",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "th",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "th",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "hi",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "hi",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "hi",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ar",
+      "page": "diy",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ar",
+      "page": "maintenance",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "locale": "ar",
+      "page": "travel",
+      "width": 390,
+      "status": "PASS",
+      "japanese_leftovers": 0
+    },
+    {
+      "scenario": "Japan",
+      "locale": "ja",
+      "status": "PASS"
+    },
+    {
+      "scenario": "US",
+      "locale": "en",
+      "status": "PASS"
+    },
+    {
+      "scenario": "France",
+      "locale": "fr",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Brazil",
+      "locale": "pt-BR",
+      "status": "PASS"
+    },
+    {
+      "scenario": "UAE",
+      "locale": "ar",
+      "status": "PASS"
+    },
+    {
+      "scenario": "manual choice, persistence and automatic reset",
+      "status": "PASS"
+    },
+    {
+      "scenario": "English content without JavaScript",
+      "status": "PASS"
+    },
+    {
+      "scenario": "English home to English apps in Japanese browser",
+      "status": "PASS"
+    }
+  ]
+}

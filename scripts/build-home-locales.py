@@ -23,7 +23,7 @@ LOCALES = {
     "ar": ("ar", "ar_SA"),
 }
 BASE_URL = "https://trailfusionai.com/"
-VERSION = "20260923-1"
+VERSION = "20260926-1"
 
 # Locale JSON files contain the final ChatGPT-reviewed translations.
 

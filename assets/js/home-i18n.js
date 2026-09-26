@@ -23,7 +23,15 @@
 
   function getSaved() { try { return localStorage.getItem(KEY); } catch (_) { return null; } }
   function setSaved(v) {
-    try { v ? localStorage.setItem(KEY,v) : localStorage.removeItem(KEY); } catch (_) {}
+    try {
+      if (v) {
+        localStorage.setItem(KEY, v);
+        localStorage.setItem("tf_site_language", v);
+      } else {
+        localStorage.removeItem(KEY);
+        localStorage.removeItem("tf_site_language");
+      }
+    } catch (_) {}
   }
   function norm(raw) {
     if (!raw) return null;
@@ -148,7 +156,25 @@
     style.textContent = ".tf-language-switcher{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}.tf-language-switcher__label{font-size:15px;line-height:1}.tf-language-switcher select{max-width:145px;padding:7px 28px 7px 9px;border:1px solid var(--tf-line,#d8dee5);border-radius:9px;background:#fff;color:var(--tf-ink,#172b3a);font:600 12px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:pointer}.tf-language-switcher select:focus-visible{outline:2px solid var(--tf-blue,#145cdb);outline-offset:2px}html[dir=rtl] .tf-header,html[dir=rtl] .tf-footer{text-align:right}@media(max-width:760px){.tf-language-switcher{gap:3px}.tf-language-switcher__label{display:none}.tf-language-switcher select{max-width:104px;padding-left:7px;padding-right:22px;font-size:11px}.tf-header .tf-top{gap:8px}.tf-brand-logo{max-width:132px;height:auto}}";
     document.head.appendChild(style);
   }
+  function localizeKnownLinks() {
+    const code = current();
+    const slug = byCode[code].path.replace(/\/$/, "");
+    const paths = new Set(["/apps.html", "/diy/", "/maintenance/", "/travel/"]);
+    document.querySelectorAll('a[href]').forEach(a => {
+      const raw = a.getAttribute('href');
+      if (!raw || raw.startsWith('#')) return;
+      const url = new URL(raw, location.href);
+      if (url.origin !== location.origin) return;
+      let path = url.pathname.replace(/\/index\.html$/, '/');
+      if (path === '/quest/' || path === '/quest.html') path = '/apps.html';
+      if (!paths.has(path)) return;
+      url.pathname = slug + path;
+      a.setAttribute('href', url.pathname + url.search + url.hash);
+    });
+  }
+
   function installSelector() {
+    localizeKnownLinks();
     const top = document.querySelector(".tf-header .tf-top");
     if (!top || document.getElementById("tf-home-language")) return;
 

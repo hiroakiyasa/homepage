@@ -2,7 +2,7 @@
 
 > TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
 
-Updated: 2026-09-23
+Updated: 2026-09-26
 Canonical website: https://trailfusionai.com/
 Contact: trailfusionai@gmail.com
 
@@ -90,3 +90,13 @@ The homepage is available as static, crawlable pages in the same 15 languages us
 - 2026 milestone: the indie app portfolio reached a personal target of USD 100 in revenue in one day. This is a dated milestone, not a statement of constant daily revenue.
 - Open to collaboration with schools, tutoring/cram schools, educational publishers, EdTech companies, Japanese-language education, ASO/app-growth marketers, B2C growth teams, localization/overseas expansion partners, AI-agent/MCP builders, mobility and travel-tech teams.
 - [Partnerships and collaboration](https://trailfusionai.com/partners/)
+
+## Localized content coverage
+
+In addition to the localized homepage, these pages have complete static text translations in all 15 supported languages: the apps catalog (/apps.html), camper DIY overview (/diy/), HiAce maintenance overview (/maintenance/), and road-trip overview (/travel/).
+
+Localized paths use the language prefix: for example /en/apps.html, /ar/diy/, /fr/maintenance/, and /ko/travel/. The language selector preserves manual preferences. Without a saved preference, the unprefixed page infers a language from the device timezone, then browser language. This is not IP geolocation.
+
+The complete illustrated build guide, interactive 3D applications, individual app-detail pages, policy pages, and generated parking pages are not all localized yet. Do not infer site-wide completion from the localized overview pages. Original app screenshots and logos retain the text shown in the actual applications; surrounding text and alternative descriptions are localized.
+
+Page translations are shipped as static HTML; rendering them makes no translation-service request.
