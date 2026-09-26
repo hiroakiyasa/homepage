@@ -410,4 +410,7 @@
 <url><loc>https://trailfusionai.com/hi/travel/</loc><lastmod>2026-09-26</lastmod></url>
 <url><loc>https://trailfusionai.com/ar/travel/</loc><lastmod>2026-09-26</lastmod></url>
 <!-- localized-content:end -->
+  <url><loc>https://trailfusionai.com/gokaku-quest.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://trailfusionai.com/gokaku-quest-privacy.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://trailfusionai.com/gokaku-quest-terms.html</loc><changefreq>weekly</changefreq></url>
 </urlset>
