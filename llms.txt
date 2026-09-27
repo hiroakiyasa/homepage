@@ -2,7 +2,7 @@
 
 > TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
 
-Updated: 2026-09-26
+Updated: 2026-09-27
 Canonical website: https://trailfusionai.com/
 Contact: trailfusionai@gmail.com
 
@@ -100,3 +100,8 @@ Localized paths use the language prefix: for example /en/apps.html, /ar/diy/, /f
 The complete illustrated build guide, interactive 3D applications, individual app-detail pages, policy pages, and generated parking pages are not all localized yet. Do not infer site-wide completion from the localized overview pages. Original app screenshots and logos retain the text shown in the actual applications; surrounding text and alternative descriptions are localized.
 
 Page translations are shipped as static HTML; rendering them makes no translation-service request.
+
+## 合格！クエスト（次期1.2.0・公開準備中）
+
+- [合格！クエスト公式説明](https://trailfusionai.com/gokaku-quest.html): 今回の提供対象は中学受験の理科・社会・国語・算数、宅建士、FP技能検定、ITパスポート、簿記、日本語、英語の10コース。日本語は生活日本語・JLPT N5〜N1・JFT-Basic。今後もコースを追加予定。追加内容・時期は未確定。
+- 図鑑・音声・復習・複数プロフィールの対応範囲はコースやプランによる。収録問題は113,132問、全10コースの図鑑は4,714ページ（無料・有料範囲の合計）。全10コースの世界ランキングを連続スクロールで閲覧可能。参加は任意。公式試験アプリではなく、合格を保証しない。最新の提供状況と価格は公式説明ページとストアで確認。
