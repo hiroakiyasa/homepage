@@ -3,93 +3,93 @@
   "pages": {
     "apps.html": {
       "locale": "ja",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 191807
+      "html_bytes": 197175
     },
     "en/apps.html": {
       "locale": "en",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 191083
+      "html_bytes": 196358
     },
     "zh-hans/apps.html": {
       "locale": "zh-Hans",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 190127
+      "html_bytes": 195191
     },
     "ko/apps.html": {
       "locale": "ko",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 191650
+      "html_bytes": 197075
     },
     "es/apps.html": {
       "locale": "es",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 192095
+      "html_bytes": 197438
     },
     "pt-br/apps.html": {
       "locale": "pt-BR",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 191791
+      "html_bytes": 197146
     },
     "fr/apps.html": {
       "locale": "fr",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 192494
+      "html_bytes": 197963
     },
     "de/apps.html": {
       "locale": "de",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 192070
+      "html_bytes": 197437
     },
     "it/apps.html": {
       "locale": "it",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 191893
+      "html_bytes": 197210
     },
     "ru/apps.html": {
       "locale": "ru",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 199534
+      "html_bytes": 206198
     },
     "tr/apps.html": {
       "locale": "tr",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 192001
+      "html_bytes": 197299
     },
     "vi/apps.html": {
       "locale": "vi",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 193523
+      "html_bytes": 199260
     },
     "th/apps.html": {
       "locale": "th",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 202602
+      "html_bytes": 209749
     },
     "hi/apps.html": {
       "locale": "hi",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 204463
+      "html_bytes": 212112
     },
     "ar/apps.html": {
       "locale": "ar",
-      "text_and_attribute_segments": 286,
+      "text_and_attribute_segments": 313,
       "untranslated_japanese": 0,
-      "html_bytes": 196629
+      "html_bytes": 202552
     },
     "diy/index.html": {
       "locale": "ja",
