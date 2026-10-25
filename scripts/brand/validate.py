@@ -13,7 +13,9 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path('/tmp/brand-site-results')
 OUT.mkdir(parents=True, exist_ok=True)
-PAGES = ['/', '/en/', '/apps.html', '/en/apps.html', '/about/', '/garage/', '/support/', '/car-concierge.html',
+PAGES = ['/', '/en/', '/apps.html', '/en/apps.html', '/about/', '/garage/', '/support/', '/car-concierge.html', '/mochi.html',
+         '/reelmake.html', '/en/voicelink.html', '/buddytalk.html', '/fp-quest.html', '/en/word-blaster.html', '/wood-golem.html',
+         '/hacking-timer.html', '/eigo-quest.html', '/rika-quest.html', '/kokugo-quest.html',
          '/diy/', '/en/diy/', '/reelmake-privacy.html', '/maintenance/', '/404.html']
 passed, errors = [], []
 
@@ -98,6 +100,12 @@ try:
             page.goto(origin + '/ko/', wait_until='load')
             page.wait_for_url('**/en/')
             check(True, engine + ' retired locale redirects to English')
+            page.goto(origin + '/', wait_until='load')
+            sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
+            check(all(has for _, has in sections), engine + ' every top-page section has a background ' + str([c for c, h in sections if not h]))
+            page.goto(origin + '/reelmake.html', wait_until='load')
+            sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
+            check(all(has for _, has in sections), engine + ' every detail-page section has a background ' + str([c for c, h in sections if not h]))
             check(not js, engine + ' no JavaScript errors ' + str(js[:3]))
             ctx.close()
             nojs = browser.new_context(java_script_enabled=False)

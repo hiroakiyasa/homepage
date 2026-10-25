@@ -57,7 +57,7 @@ def proof(lang):
              (t('合格！クエストの問題', 'Questions in Gokaku! Quest'), f'{Q_QUESTIONS:,}', t('問（12教材の合計）', 'across 12 courses')),
              (t('いちばん新しい更新', 'Latest update'), latest_txt, t(f'{y}年', y))]
     body = ''.join(f'<div><dt>{a}</dt><dd><span class="num">{b}</span><small>{c}</small></dd></div>' for a, b, c in cells)
-    return f'''<section class="proof" aria-label="{t("数字で見る TrailFusion", "TrailFusion in numbers")}"><div class="br-wrap"><dl class="proof-board">{body}</dl>
+    return f'''<section class="proof veil" aria-label="{t("数字で見る TrailFusion", "TrailFusion in numbers")}">{bg("kites")}<div class="br-wrap"><dl class="proof-board">{body}</dl>
 <p class="note">{t(f"{SNAPSHOT_DATE[0]}時点の App Store（日本）の公開情報と、合格！クエストの収録データ。もちのへやは審査中のため数に含めていません。", f"App Store (Japan) public data and Gokaku! Quest course data as of {SNAPSHOT_DATE[1]}. Mochi is in review and not counted.")}</p></div></section>'''
 
 
@@ -70,7 +70,7 @@ def flagship(lang):
              t('問題の絵・イラスト解説・読み上げで、理由までわかる', 'Question art, illustrated explanations and read-aloud audio'),
              t('学ぶほど自分の王国マップが育つ', 'A kingdom map that grows as you learn'),
              t('1台をきょうだいで。プロフィールを切りかえて記録を分けられる', 'Switch profiles so siblings keep separate records')]
-    return f'''<section class="sec flagship" id="quest">{bg("dawn")}<div class="br-wrap flag-grid">
+    return f'''<section class="sec flagship veil" id="quest">{bg("quest:kingdom")}<div class="br-wrap flag-grid">
 <div>{head(t("フラッグシップ", "Flagship"), t("まんなかにあるのは、<br><mark>合格！クエスト</mark>。", "At the centre:<br><mark>Gokaku! Quest</mark>."),
            t("家族の中学受験から生まれた学習アプリです。理科・社会・国語・算数に、宅建士・FP・簿記・ITパスポート・SPI3・日本語・英語・運転免許を加えた12教材を、ひとつのアプリで学べます。",
              "A study app born from our own family's entrance-exam years. Science, social studies, Japanese and math, plus real-estate, financial planning, bookkeeping, IT Passport, SPI3, Japanese, English and driving theory, in one app."))}
@@ -90,11 +90,11 @@ SPOTS = {
                                           ['全国10万件以上の駐車場を収録し、料金を比較', 'EV充電スポットと、充電時間・料金の目安', '走った道を「旅ログ」として地図に残せる']),
                           en=('Where to rest tonight,<br>on <mark>one map</mark>.', 'A road-trip app born from a parent-and-child drive around Hokkaido. Roadside stations, RV parks, service areas, parking and hot springs on a single map.',
                               ['Over 100,000 car parks with fee comparison', 'EV chargers with charging-time and cost estimates', 'Keep the roads you drove as a travel log'])),
-    'reelmake': dict(bg=None, ja=('写真を選ぶだけで、<br><mark>ナレーションつき</mark>の動画に。', 'スマホの写真と短い動画から、縦型のリール動画をAIが仕上げます。動画づくりの知識はいりません。',
+    'reelmake': dict(bg='studio', ja=('写真を選ぶだけで、<br><mark>ナレーションつき</mark>の動画に。', 'スマホの写真と短い動画から、縦型のリール動画をAIが仕上げます。動画づくりの知識はいりません。',
                                    ['構成・台本・ナレーション・字幕・カット編集をAIが自動で', '最大60種類の多言語ボイスから話し手を選べる', 'SNSに合わせた縦型サイズで書き出し']),
                      en=('Pick your photos.<br>Get a video with <mark>narration</mark>.', 'AI turns the photos and short clips on your phone into a finished vertical reel. No editing skills needed.',
                          ['Structure, script, voice, captions and cuts done by AI', 'Up to 60 multilingual voices to choose from', 'Exports in vertical sizes for social media'])),
-    'voicelink': dict(bg=None, ja=('話した内容は、<br><mark>端末の外に出ない</mark>。', '音声認識・翻訳・要約をすべて iPhone・iPad の中で処理するリアルタイム通訳アプリです。',
+    'voicelink': dict(bg='world', ja=('話した内容は、<br><mark>端末の外に出ない</mark>。', '音声認識・翻訳・要約をすべて iPhone・iPad の中で処理するリアルタイム通訳アプリです。',
                                    ['言語モデルのダウンロード後は機内モードでも使える', '原文と訳文を1文ずつ並べて表示。20言語に対応', 'アカウント登録なし・広告なし。Pro は買い切り']),
                       en=('What you say<br><mark>never leaves the device</mark>.', 'A real-time interpreter that runs speech recognition, translation and summaries entirely on your iPhone or iPad.',
                           ['Works in airplane mode once the language model is downloaded', 'Original and translation side by side, 20 languages', 'No account, no ads. Pro is a one-time purchase'])),
@@ -116,7 +116,7 @@ def spotlights(lang):
 <div class="spot-copy"><p class="spot-app">{icon(slug, lang, "spot-icon")}<span><small style="color:{cat[2]}">{cat[0] if lang == "ja" else cat[1]}</small><strong>{name(slug, lang)}</strong>{rating(slug, lang) if a["status"] == "live" else ""}</span></p>
 <h3>{title}</h3><p>{lead}</p>{checks(items)}{stores(slug, lang, "home-spot", True)}{more}</div>
 <div class="spot-shots">{shots}</div></article>''')
-    return f'''<section class="sec spots" id="apps">{head(t("アプリのなかま", "The app family"), t("暮らしのいろんな場面に、<br><mark>ちいさな相棒</mark>を。", "A small companion<br>for <mark>each part of the day</mark>."),
+    return f'''<section class="sec spots veil" id="apps">{bg("dawn")}{head(t("アプリのなかま", "The app family"), t("暮らしのいろんな場面に、<br><mark>ちいさな相棒</mark>を。", "A small companion<br>for <mark>each part of the day</mark>."),
                                                       t("話す、旅する、つくる、伝える。どのアプリも「自分たちが使いたかったもの」から始まっています。", "Talking, travelling, making, translating. Every app started as something we wanted to use ourselves."), True)}
 <div class="br-wrap">{"".join(out)}</div></section>'''
 
@@ -131,7 +131,7 @@ def more_apps(lang):
         cards += (f'<a class="mini" href="{a["detail"] or p + "/apps.html#" + slug}" style="--c:{cat[2]}">{icon(slug, lang, "mini-icon")}'
                   f'<span><small>{cat[0] if lang == "ja" else cat[1]}</small><strong>{name(slug, lang)}</strong>{rating(slug, lang)}</span>'
                   f'<p>{a["tag_ja"] if lang == "ja" else a["tag_en"]}</p></a>')
-    return f'''<section class="sec more"><div class="br-wrap">{head(t("ほかのアプリ", "More apps"), t("学ぶ・遊ぶ・集中する。", "Learn, play, focus."), "", True)}
+    return f'''<section class="sec more veil">{bg("shelf")}<div class="br-wrap">{head(t("ほかのアプリ", "More apps"), t("学ぶ・遊ぶ・集中する。", "Learn, play, focus."), "", True)}
 <div class="mini-grid">{cards}</div><p class="center"><a class="btn btn-sub" href="{p}/apps.html">{t("すべてのアプリと規約・サポート", "All apps, policies and support")} →</a></p></div></section>'''
 
 
@@ -152,7 +152,7 @@ def trust(lang):
         ('04', t('出したあとも直し続ける', 'We keep improving after release'), t('最近の更新日（App Store）', 'Recent App Store updates') + f'<ul class="updates">{rows}</ul>'),
     ]
     body = ''.join(f'<article><span class="no">{n}</span><h3>{h}</h3><div>{d}</div></article>' for n, h, d in cards)
-    return f'''<section class="sec trust">{bg("dawn")}<div class="br-wrap">{head(t("信頼のために", "Trust"), t("安心して使ってもらうために、<br><mark>決めていること</mark>。", "What we promise,<br><mark>so you can trust the apps</mark>."), "", True)}
+    return f'''<section class="sec trust veil">{bg("planes")}<div class="br-wrap">{head(t("信頼のために", "Trust"), t("安心して使ってもらうために、<br><mark>決めていること</mark>。", "What we promise,<br><mark>so you can trust the apps</mark>."), "", True)}
 <div class="trust-grid">{body}</div><p class="note center">{t(f"App Store の評価は全アプリ合計 {RATINGS}件（{SNAPSHOT_DATE[0]}時点・日本）。", f"{RATINGS} App Store ratings across all apps (Japan, as of {SNAPSHOT_DATE[1]}).")}</p></div></section>'''
 
 
@@ -163,7 +163,7 @@ def maker(lang):
                     ('/maintenance/' if lang == 'ja' else '/en/maintenance/', t('ハイエース整備ノート', 'Van maintenance notes'), t('愛車の仕組みと整備の記録を3Dで。', 'How the van works, with 3D models and service notes.'))]
     gc = ''.join(f'<a class="g-card" href="{h}"><strong>{a}</strong><span>{b}</span></a>' for h, a, b in garage_cards)
     about = '/about/' if lang == 'ja' else '/about/'
-    return f'''<section class="sec maker" id="maker"><div class="br-wrap maker-grid">
+    return f'''<section class="sec maker veil" id="maker">{bg("desk")}<div class="br-wrap maker-grid">
 <div>{head(t("つくり手", "The maker"), t("ひとりの親が、<br><mark>家族と一緒に</mark>、<br>つくっています。", "Made by one parent,<br><mark>with the family</mark>."),
            t("TrailFusion AI は、湯浅 浩章（Hiro）の個人開発スタジオです。家族で中学受験に向き合い、親子で日本中を車で旅し、キャンピングカーを自分の手で作ってきました。その「困った」と「楽しい」を、アプリにしています。",
              "TrailFusion AI is the indie studio of Hiroaki Yuasa (Hiro). Facing entrance exams as a family, driving across Japan with the kids and building a camper van by hand: the troubles and the fun become apps."))}
@@ -191,7 +191,7 @@ FAQ = {
 def faq(lang):
     t = tx(lang)
     items = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ[lang])
-    return f'''<section class="sec faq-sec"><div class="br-wrap narrow">{head(t("よくある質問", "FAQ"), t("はじめての方へ。", "Before you start."), "", True)}<div class="faq">{items}</div></div></section>'''
+    return f'''<section class="sec faq-sec veil">{bg("mailbox")}<div class="br-wrap narrow">{head(t("よくある質問", "FAQ"), t("はじめての方へ。", "Before you start."), "", True)}<div class="faq">{items}</div></div></section>'''
 
 
 def closing(lang):

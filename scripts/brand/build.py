@@ -13,12 +13,13 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from brandsite import ROOT, BASE, CSS_VERSION, APPS, LIVE, STORE, header, footer, page, app_schema  # noqa: E402
-import home, pages  # noqa: E402
+from brandsite import ROOT, BASE, CSS_VERSION, APPS, BY, LIVE, STORE, header, footer, page, app_schema  # noqa: E402
+import home, pages, detail  # noqa: E402
+from apps_content import C  # noqa: E402
 
 TODAY = datetime.date(2026, 10, 25).isoformat()
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
-SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/', 'en/index.html', 'en/apps.html') + tuple(d + '/' for d in RETIRED)
+SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(d + '/' for d in RETIRED)
 EN_HOBBY = {'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
 HEADER_RE = re.compile(r'<header class="(?:tf-header|br-header)".*?</header>', re.S)
 FOOTER_RE = re.compile(r'<footer class="(?:tf-footer|br-footer)".*?</footer>', re.S)
@@ -44,6 +45,13 @@ def new_pages():
                             t(f'TrailFusion AI のアプリ一覧。合格！クエスト、もちのへや、車旅コンシェルジュ、Reel Make、VoiceLink AI通訳など、App Store 公開中の{len(LIVE)}本と規約・サポート。',
                               f'All apps by TrailFusion AI: Gokaku! Quest, Mochi, Car Concierge, Reel Make, VoiceLink and more. {len(LIVE)} apps on the App Store, with terms and support.'),
                             pages.apps_body(lang), '/en/apps.html' if lang == 'ja' else '/apps.html', app_schema(lang)))
+    for slug, c in C.items():
+        has_en = 'en' in c
+        for lang in (('ja', 'en') if has_en else ('ja',)):
+            title, desc = detail.meta(slug, lang)
+            other = ('/en/' + c['page'] if lang == 'ja' else '/' + c['page']) if has_en else '/en/apps.html'
+            schema = [s for s in app_schema(lang) if s['name'] == (BY[slug]['ja'] if lang == 'ja' else BY[slug]['en'])]
+            written.append(page(detail.path_of(slug, lang), lang, title, desc, detail.body(slug, lang), other, schema))
     written.append(page('about/index.html', 'ja', 'つくり手について｜TrailFusion AI',
                         'TrailFusion AI は湯浅 浩章（Hiro）の個人開発スタジオ。家族の中学受験、親子の車旅、キャンピングカーの自作から生まれたアプリづくりの考え方と原則。',
                         pages.about_body(), '/en/'))
@@ -88,6 +96,8 @@ def legacy_pages(generated):
             continue
         if rel.startswith('en/'):
             src = rel.removeprefix('en/')
+            if '/' + rel in generated:
+                continue
             if src not in EN_HOBBY:
                 continue
             ok = swap_chrome(path, 'en', '/' + src.removesuffix('index.html'))
@@ -122,8 +132,6 @@ def sitemap(changed):
         url = BASE + rel if rel.startswith('/') else BASE + '/' + rel.removesuffix('index.html')
         if url.endswith('404.html'):
             continue
-        keep[url] = TODAY
-    for url in [BASE + '/en/', BASE + '/en/apps.html', BASE + '/garage/']:
         keep[url] = TODAY
     rows = ''.join(f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n' for u, d in sorted(keep.items(), key=lambda x: (x[0] != BASE + '/', x[0])))
     (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{rows}</urlset>\n')

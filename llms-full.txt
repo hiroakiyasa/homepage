@@ -14,13 +14,13 @@ App Store publisher name: hiroaki yuasa
 
 ## Apps
 - [Gokaku! Quest](https://trailfusionai.com/quest/) — Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 12 courses in one app. App Store: https://apps.apple.com/app/id6775411516
-- [Mochi](https://trailfusionai.com/apps.html#mochi) — A soft companion to talk with. Put feelings into words and spend a little time together every day. (in App Store review)
+- [Mochi](https://trailfusionai.com/mochi.html) — A soft companion to talk with. Put feelings into words and spend a little time together every day. (in App Store review)
 - [Car Concierge](https://trailfusionai.com/car-concierge.html) — Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan. App Store: https://apps.apple.com/app/id6751795223
 - [Reel Make](https://trailfusionai.com/reelmake.html) — Pick photos and clips. AI builds a vertical video with narration and captions. App Store: https://apps.apple.com/app/id6779420680
 - [VoiceLink AI Translator](https://trailfusionai.com/voicelink.html) — Speech recognition, translation and summaries run entirely on the device. Nothing you say is sent to a server. App Store: https://apps.apple.com/app/id6746684736
 - [BuddyTalk](https://trailfusionai.com/buddytalk.html) — Talk with AI until English comes out naturally. An English app focused on speaking practice. App Store: https://apps.apple.com/app/id6744263274
 - [English Quest](https://trailfusionai.com/eigo-quest.html) — Grammar, vocabulary and English exams, learned through quizzes and explanations. App Store: https://apps.apple.com/app/id6782028599
-- [Gokaku! FP Quest](https://trailfusionai.com/quest/courses/fp/) — The six areas of the Japanese financial planner exam, with illustrated guides and questions. App Store: https://apps.apple.com/app/id6812542387
+- [Gokaku! FP Quest](https://trailfusionai.com/fp-quest.html) — The six areas of the Japanese financial planner exam, with illustrated guides and questions. App Store: https://apps.apple.com/app/id6812542387
 - [Word Blaster](https://trailfusionai.com/word-blaster.html) — Words fly at you as enemies. A vocabulary shooter for 10 languages. App Store: https://apps.apple.com/app/id6745741796
 - [Wood Golem](https://trailfusionai.com/wood-golem.html) — A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win. App Store: https://apps.apple.com/app/id6739466549
 - [Hacking Timer](https://trailfusionai.com/hacking-timer.html) — An interval timer for Apple Watch that keeps a rhythm of focus and rest. App Store: https://apps.apple.com/app/id6746063846

@@ -19,6 +19,18 @@
     600,
     1299
   ],
+  "car-concierge/shot-4": [
+    600,
+    1299
+  ],
+  "car-concierge/shot-5": [
+    600,
+    1299
+  ],
+  "car-concierge/shot-6": [
+    600,
+    1299
+  ],
   "reelmake/icon": [
     256,
     256
@@ -32,6 +44,42 @@
     1304
   ],
   "reelmake/shot-3": [
+    600,
+    1304
+  ],
+  "reelmake/shot-4": [
+    600,
+    1304
+  ],
+  "reelmake/shot-5": [
+    600,
+    1304
+  ],
+  "reelmake/shot-6": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-1": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-2": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-3": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-4": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-5": [
+    600,
+    1304
+  ],
+  "reelmake/shot-en-6": [
     600,
     1304
   ],
@@ -51,6 +99,18 @@
     600,
     1304
   ],
+  "voicelink/shot-en-1": [
+    600,
+    1304
+  ],
+  "voicelink/shot-en-2": [
+    600,
+    1304
+  ],
+  "voicelink/shot-en-3": [
+    600,
+    1304
+  ],
   "buddytalk/icon": [
     256,
     256
@@ -63,33 +123,265 @@
     600,
     1300
   ],
+  "buddytalk/shot-3": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-4": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-5": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-6": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-1": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-2": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-3": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-4": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-5": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-en-6": [
+    600,
+    1300
+  ],
   "wood-golem/icon": [
     256,
     256
+  ],
+  "wood-golem/shot-1": [
+    600,
+    1300
+  ],
+  "wood-golem/shot-2": [
+    600,
+    1304
+  ],
+  "wood-golem/shot-3": [
+    600,
+    1304
+  ],
+  "wood-golem/shot-en-1": [
+    600,
+    1300
+  ],
+  "wood-golem/shot-en-2": [
+    600,
+    1304
+  ],
+  "wood-golem/shot-en-3": [
+    600,
+    1304
   ],
   "word-blaster/icon": [
     256,
     256
   ],
+  "word-blaster/shot-1": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-2": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-3": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-4": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-5": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-en-1": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-en-2": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-en-3": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-en-4": [
+    600,
+    1304
+  ],
+  "word-blaster/shot-en-5": [
+    600,
+    1304
+  ],
   "hacking-timer/icon": [
     256,
     256
+  ],
+  "hacking-timer/shot-1": [
+    600,
+    1304
+  ],
+  "hacking-timer/shot-en-1": [
+    600,
+    1304
   ],
   "english-quest/icon": [
     256,
     256
   ],
+  "english-quest/shot-1": [
+    600,
+    1304
+  ],
+  "english-quest/shot-2": [
+    600,
+    1304
+  ],
+  "english-quest/shot-3": [
+    600,
+    1304
+  ],
+  "english-quest/shot-4": [
+    600,
+    1304
+  ],
+  "english-quest/shot-5": [
+    600,
+    1304
+  ],
+  "english-quest/shot-6": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-1": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-2": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-3": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-4": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-5": [
+    600,
+    1304
+  ],
+  "english-quest/shot-en-6": [
+    600,
+    1304
+  ],
   "fp-quest/icon": [
     256,
     256
+  ],
+  "fp-quest/shot-1": [
+    600,
+    1300
+  ],
+  "fp-quest/shot-2": [
+    600,
+    1300
+  ],
+  "fp-quest/shot-3": [
+    600,
+    1300
+  ],
+  "fp-quest/shot-4": [
+    600,
+    1300
+  ],
+  "fp-quest/shot-5": [
+    600,
+    1300
+  ],
+  "fp-quest/shot-6": [
+    600,
+    1300
   ],
   "rika-quest/icon": [
     256,
     256
   ],
+  "rika-quest/shot-1": [
+    600,
+    1300
+  ],
+  "rika-quest/shot-2": [
+    600,
+    1300
+  ],
+  "rika-quest/shot-3": [
+    600,
+    1300
+  ],
+  "rika-quest/shot-4": [
+    600,
+    1300
+  ],
+  "rika-quest/shot-5": [
+    600,
+    1300
+  ],
+  "rika-quest/shot-6": [
+    600,
+    1300
+  ],
   "kokugo-quest/icon": [
     256,
     256
+  ],
+  "kokugo-quest/shot-1": [
+    600,
+    1304
+  ],
+  "kokugo-quest/shot-2": [
+    600,
+    1304
+  ],
+  "kokugo-quest/shot-3": [
+    600,
+    1304
+  ],
+  "kokugo-quest/shot-4": [
+    600,
+    1304
+  ],
+  "kokugo-quest/shot-5": [
+    600,
+    1304
+  ],
+  "kokugo-quest/shot-6": [
+    600,
+    1304
   ],
   "mochi/icon": [
     256,
@@ -104,6 +396,42 @@
     1304
   ],
   "mochi/shot-3": [
+    600,
+    1304
+  ],
+  "mochi/shot-4": [
+    600,
+    1304
+  ],
+  "mochi/shot-5": [
+    600,
+    1304
+  ],
+  "mochi/shot-6": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-1": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-2": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-3": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-4": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-5": [
+    600,
+    1304
+  ],
+  "mochi/shot-en-6": [
     600,
     1304
   ],
@@ -144,6 +472,134 @@
     941
   ],
   "bg/garage-m": [
+    900,
+    507
+  ],
+  "bg/world": [
+    1672,
+    941
+  ],
+  "bg/world-m": [
+    900,
+    507
+  ],
+  "bg/studio": [
+    1672,
+    941
+  ],
+  "bg/studio-m": [
+    900,
+    507
+  ],
+  "bg/cafe": [
+    1672,
+    941
+  ],
+  "bg/cafe-m": [
+    900,
+    507
+  ],
+  "bg/library": [
+    1672,
+    941
+  ],
+  "bg/library-m": [
+    900,
+    507
+  ],
+  "bg/timer": [
+    1672,
+    941
+  ],
+  "bg/timer-m": [
+    900,
+    507
+  ],
+  "bg/space": [
+    1672,
+    941
+  ],
+  "bg/space-m": [
+    900,
+    507
+  ],
+  "bg/forest": [
+    1672,
+    941
+  ],
+  "bg/forest-m": [
+    900,
+    507
+  ],
+  "bg/money": [
+    1672,
+    941
+  ],
+  "bg/money-m": [
+    900,
+    507
+  ],
+  "bg/science": [
+    1672,
+    941
+  ],
+  "bg/science-m": [
+    900,
+    507
+  ],
+  "bg/kokugo": [
+    1672,
+    941
+  ],
+  "bg/kokugo-m": [
+    900,
+    507
+  ],
+  "bg/planes": [
+    1672,
+    941
+  ],
+  "bg/planes-m": [
+    900,
+    507
+  ],
+  "bg/desk": [
+    1672,
+    941
+  ],
+  "bg/desk-m": [
+    900,
+    507
+  ],
+  "bg/kites": [
+    1672,
+    941
+  ],
+  "bg/kites-m": [
+    900,
+    507
+  ],
+  "bg/mailbox": [
+    1672,
+    941
+  ],
+  "bg/mailbox-m": [
+    900,
+    507
+  ],
+  "bg/camper": [
+    1672,
+    940
+  ],
+  "bg/camper-m": [
+    900,
+    506
+  ],
+  "bg/shelf": [
+    1672,
+    941
+  ],
+  "bg/shelf-m": [
     900,
     507
   ]

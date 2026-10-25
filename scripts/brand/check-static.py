@@ -13,7 +13,7 @@ from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://trailfusionai.com'
-NEW = ['index.html', 'en/index.html', 'apps.html', 'en/apps.html', 'about/index.html', 'garage/index.html']
+NEW = ['index.html', 'en/index.html', 'apps.html', 'en/apps.html', 'about/index.html', 'garage/index.html'] + sorted(p.relative_to(ROOT).as_posix() for p in [*ROOT.glob('*.html'), *(ROOT / 'en').glob('*.html')] if 'class="d-hero"' in p.read_text(errors='ignore'))
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
 problems = []
 

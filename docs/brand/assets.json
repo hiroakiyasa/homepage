@@ -30,6 +30,24 @@
     "kind": "App Store screenshot"
   },
   {
+    "asset": "assets/brand/car-concierge/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0f/59/100f59b2-b526-5e5a-a3b7-159561bae254/04-aerial-image2-1242x2688.png/700x0w.jpg",
+    "sha256": "bd3d2ff9cb5a6bc075468e5242ef3e572620b41d6640b039001ec2241bf5adea",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/car-concierge/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/69/ba/ba/69baba79-05f9-4080-5aa9-f05d3a0e2045/05-parking-time-image2-1242x2688.png/700x0w.jpg",
+    "sha256": "4dcc812ef266b724d99ec4db91b8eb4e2159a8dbf5cbbac9f273c68e317a545d",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/car-concierge/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/50/cb/b2/50cbb2d4-52ad-9cf2-c1b6-f278527bfccf/07-conquest-image2-1242x2688.png/700x0w.jpg",
+    "sha256": "bc6624b9836b676b9964a0d9df8791554ea4e015f47c80579a1547316b006e98",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/reelmake/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/4c/6b/6d4c6b14-1ae8-7380-d433-400dbf9c4701/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.png",
     "sha256": "a17c9b2760aae2d3326dc1e1883bd21c5a9839f2b4750c3a603c3095e8caa582",
@@ -51,6 +69,60 @@
     "asset": "assets/brand/reelmake/shot-3.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/06/c5/2406c526-65b5-f18f-3c26-916563f28d50/02.png/700x0w.jpg",
     "sha256": "934c0252dbc18ba4ef75c348719baf3f2c5eb24a6e8fca4b21ea495ca02d9095",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/ca/c4/2ccac444-ed0e-5614-b77a-9fdc45d4d66e/05.png/700x0w.jpg",
+    "sha256": "71d8968776c4c74f48fd5306e1464de1df3564c034680f22e8a868f0fe1653ae",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/51/8d/d6518d09-bc41-2b26-e348-5a5168f6758e/03.png/700x0w.jpg",
+    "sha256": "e53c2709a0135a50f058b4e7ed030c4ebc3a00c112daf716adb124782857b7cb",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9e/89/ce/9e89ce68-1f8a-85c8-f7be-aaf6e452b2ae/01.png/700x0w.jpg",
+    "sha256": "f7ab788898c14f94f1d646b824bc3c9bf9184c02e829a6b8ca342887299465c4",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/1a/7d/e51a7de4-5b2a-0fcf-0e9e-d828ef54201a/01.png/700x0w.jpg",
+    "sha256": "7f7447470b70f3d264083b45b706731f4d0aa911e66d5083073a637bad022034",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/46/d9/ab/46d9ab48-4627-76f5-9b73-8f7752caf1e8/02.png/700x0w.jpg",
+    "sha256": "ebbdf2ae239ac91bf9b42ecb8ca1cd003217092f9f25d31cee307d64c8f3ebe2",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/f1/ae/8cf1ae0c-7c26-6e57-aaf6-39319a9fb53e/06.png/700x0w.jpg",
+    "sha256": "eaa24492546ea14fc36e1f8049932dbe928978035d19b411ab660d223d5cfb41",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a9/f7/cb/a9f7cb84-98e2-1f83-9cfa-432ecd54e2e1/05.png/700x0w.jpg",
+    "sha256": "c53499059a4d6d81254f79ba94274444bbd8a84781cd388a8133b67242a5a4ff",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/5a/f8/495af8bb-8f25-f628-ed81-6a75aa9cdfee/03.png/700x0w.jpg",
+    "sha256": "baad114539156c0d6af83432547d20dcd88f6a37368e97652a20a98840a38167",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/reelmake/shot-en-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/f0/b6/bbf0b677-9a29-64c0-9d5f-ab65f4be8d10/04.png/700x0w.jpg",
+    "sha256": "4fd5294ee2f993416fb3cad7dcdeb50514e47ce013277f6d64f683b373dcc88a",
     "kind": "App Store screenshot"
   },
   {
@@ -78,6 +150,24 @@
     "kind": "App Store screenshot"
   },
   {
+    "asset": "assets/brand/voicelink/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/0a/d4/fd0ad454-4f57-f21b-ec50-3725de0c897a/01.png/700x0w.jpg",
+    "sha256": "6fd116ee878f4325874197e8b52721f9f7c27a21a7c28a778b06a9b260447e97",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/voicelink/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/02/bf/5b02bffd-a869-f800-3b9c-1f82b60c79ba/02.png/700x0w.jpg",
+    "sha256": "a1e70c3d150841068d2af91ed2b5e82af89a2d09ee04b0751d9cba5e1e72cf6c",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/voicelink/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/1b/3e/b71b3efc-555f-5d11-c967-58f7c740d0cf/03.png/700x0w.jpg",
+    "sha256": "c4648bcf6ff9e5eeea204bc1e5e8b3436ce2accb6865d35d11a98471c29b549d",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/buddytalk/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5e/39/ca/5e39caca-8a08-8c4f-ace9-1964d0b6947b/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.png",
     "sha256": "a111ba39fb7687e1d911de08a23a294e4907913b72cbcbf89ec3ebe0541cfd08",
@@ -96,10 +186,106 @@
     "kind": "App Store screenshot"
   },
   {
+    "asset": "assets/brand/buddytalk/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/30/5f/62305f46-e88d-bb8b-c6c2-36164f011648/iPhone_16_Plus-04-StoryMode.png/700x0w.jpg",
+    "sha256": "64ace1fb0199780180ca07942a468ca3815f25dc76f8ddb91082b902d3ad3ff7",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/bd/c9/b3bdc9c7-ab49-1283-65fe-a96f86cd1afe/iPhone_16_Plus-05-StoryDetail.png/700x0w.jpg",
+    "sha256": "8134950af51ef9363d3087c4eb2b59c58608c48d06c43b7ef53eb1159d6ca5fb",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/33/87/91338741-fc1d-f332-7019-6902fc55cf6c/iPhone_16_Plus-06-CommunityList.png/700x0w.jpg",
+    "sha256": "71387f8e89489afad34464debe6c360e754e81f9c7156293b28e289d612f8e5a",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b8/6b/6d/b86b6d8b-5944-5973-2974-20d46eda312a/iPhone_16_Plus-07-CommunityDetail.png/700x0w.jpg",
+    "sha256": "91996cc3c6de39eddfd9871ec8e801a2740ea6aa28b9ecce7e182db9ed65179e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/32/42/f0/3242f026-48b7-4f8a-c9e5-77c07e0ab537/iPhone_16_Plus-02-LessonList.png/700x0w.jpg",
+    "sha256": "8a2741e3b3cbc67217af88ef3e0240e150286927fa265bafbd57913c4584b70f",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/04/20/9504202e-b3e7-74d2-ba6f-bf1691f0bb9b/iPhone_16_Plus-03-WordBlaster.png/700x0w.jpg",
+    "sha256": "19c4663a82aec98260ae5abd3ad0a0e088501e4b2f84656f74e192b22f2c53d7",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/6e/00/756e0027-1035-473b-a42a-012d7253571b/iPhone_16_Plus-04-StoryMode.png/700x0w.jpg",
+    "sha256": "c8c17a5f7543d25bca1acde7cc14aec6871b990b3181c3f89b02c12c55fec51e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/eb/66/d6/eb66d65a-ac8c-d930-f5fd-d0ea8328f045/iPhone_16_Plus-05-StoryDetail.png/700x0w.jpg",
+    "sha256": "7a4c075da7a57e88b61dc631b6efb6168a8edf5622d4cdb63818f7b99004e966",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/88/6f/13886f53-4958-6cc2-2861-11fca34fba74/iPhone_16_Plus-06-CommunityList.png/700x0w.jpg",
+    "sha256": "c245af4d46eeffbf39ade5ca08f5d19f4d5e8815bcd84ca0515f0656f0a77698",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/buddytalk/shot-en-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/df/4c/43df4c43-136a-8b11-777e-2ddb722c5009/iPhone_16_Plus-07-CommunityDetail.png/700x0w.jpg",
+    "sha256": "6dd4f327c6870380cf1708c29df335ed962f6639206dd3dd3c22600612341287",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/wood-golem/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/81/1f/0b/811f0b88-9936-9dfb-61b9-fd864ffbfe8e/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.png",
     "sha256": "1179105f35b00ab7839bb7b8a360e43b0fdb25cf718ac6b8ea8505020be6476d",
     "kind": "App Store icon"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2a/da/96/2ada969e-7b04-30ef-7589-d829148a9051/_U6700_U5f8c_U306e_U68d2_U3092_U30a6_U30c3_U30c8_U3099_U30b3_U3099_U30fc_U30ec_U30e0_U306b_U53d6_U3089_U305b_U308d_Uff01.png/700x0w.jpg",
+    "sha256": "75f0178f8c9d05a573a7e79af684b82ccb64ccb71945965061eb660b8c53608e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/af/44/a1af44e6-7d99-1ed1-2031-4878cbd762ca/IMG_2170.PNG/700x0w.jpg",
+    "sha256": "39c0a8e2943792e62c13f8bc5d7501b9e289f0b57d7e4b30d86caf1a569c4d21",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/9b/19/f99b19bc-b8cc-3cd6-6729-e8108842bd22/IMG_1383.PNG/700x0w.jpg",
+    "sha256": "b328d1575189f15536fb23b533652b0048c777b928a5674087dae5305c69a549",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/95/e7/6e/95e76e85-151c-eb6b-48fa-63401bd41402/_U6700_U5f8c_U306e_U68d2_U3092_U30a6_U30c3_U30c8_U3099_U30b3_U3099_U30fc_U30ec_U30e0_U306b_U53d6_U3089_U305b_U308d_Uff01-3.png/700x0w.jpg",
+    "sha256": "22cde348ff6f2c4cfcc4a4d551050dc442c7c629f89c07c6e33ae5a9c3a18121",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/ad/09/43ad093a-78cd-8302-0c08-0ec43814d022/IMG_1740.PNG/700x0w.jpg",
+    "sha256": "925ac852e175d460e949a0ee2861423333965be8ce5bea49c93819ab971c0286",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/wood-golem/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/89/db/40/89db4071-d31b-f9a9-0c02-b9e9dc5d0803/IMG_1741.PNG/700x0w.jpg",
+    "sha256": "1c690b75b8ed42a4a3a66510b9d22a11e58afe07160c982e98edbca7046ddfb8",
+    "kind": "App Store screenshot"
   },
   {
     "asset": "assets/brand/word-blaster/icon.webp",
@@ -108,10 +294,82 @@
     "kind": "App Store icon"
   },
   {
+    "asset": "assets/brand/word-blaster/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/04/b0/aa04b00b-4791-a0e3-abab-ee7d22165033/hoban1_1242.png/700x0w.jpg",
+    "sha256": "d3f4325549a4847d3dc949adf7dca9b1c3f1dd1bd9069f2ac296c25b0bcf5f96",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9c/fd/86/9cfd86f4-6d5e-c6a9-4fb4-d51e103d9274/honba3_1242.png/700x0w.jpg",
+    "sha256": "ea75281740bf06be85c0a33355bd7ace247afbf0ade92debd4ea7bec34897e4e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9c/e1/af/9ce1afc7-9ef5-cbde-6535-0cfb938dd42f/IMG_3481.PNG/700x0w.jpg",
+    "sha256": "079df6858cacd64263f41dbfa0bbde881984c6ca416d42a4abde69ad7d79b7b6",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/94/d6/60/94d66015-df01-096d-14b2-6c5c1ad0147f/IMG_3478.PNG/700x0w.jpg",
+    "sha256": "43edabf6c3f68efa756813dfeb4977f9ecbcfd5b6d3b0735e01ff302b088fcba",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/91/1e/44911e12-668b-aaf4-14e0-abb0e1180be3/IMG_3473.PNG/700x0w.jpg",
+    "sha256": "1181ec7cdb4dbb20b12193effa0dc05c70e522c9c25b48f3e5e9a2eeed1f99d7",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/b6/4e/45b64e47-6c5f-e7aa-74a1-427d64fa8d40/En1_result_result.png/700x0w.jpg",
+    "sha256": "af38386449e95957726c7840cfc961d411df57a42945c084ece3dcd994f52693",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dd/a5/1c/dda51cfe-4847-2043-ee1b-39df92264972/En2_result_result.png/700x0w.jpg",
+    "sha256": "6a04951a2290e8e02d268036156e0fd3689ad7d625e23b1403b9e439633be4c9",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/46/48/f146489d-0b19-700a-3200-5337c0da1187/IMG_3473.PNG/700x0w.jpg",
+    "sha256": "7633b9ad0ad301f0f9419335dd2ca6259df827d05fbcce21d331ff5516dc7739",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-en-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2b/e1/62/2be16259-cf4f-fc3b-191f-45aed4ea4705/IMG_3478.PNG/700x0w.jpg",
+    "sha256": "f9973c502b51e1c424689b091e53cd1d7108d9d08052c2e23ef01c6e1750cd77",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/word-blaster/shot-en-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/fb/03/44fb0330-93c4-efe4-26ac-ec15c139b7b3/IMG_3481.PNG/700x0w.jpg",
+    "sha256": "9df8f3d9467f46c00d70069ee34a7595d45d3155636965fd1be54f0b49d47133",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/hacking-timer/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e7/1a/a5/e71aa5c6-2567-6bb2-2318-6c95d643593b/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.png",
     "sha256": "638475c796684dd0cf639800fc51e1ccfe9b55abae17fcfade3c9d9cdceec7b6",
     "kind": "App Store icon"
+  },
+  {
+    "asset": "assets/brand/hacking-timer/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/81/34/8b/81348b8c-845f-3ab8-00bd-7fc0f4381b39/build8-ja-phone67.jpg/700x0w.jpg",
+    "sha256": "40624f399b2c933eb16ab1996564a83d597b6071353c0027ad5734c6cd3c0e10",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/hacking-timer/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/94/1a/1b941ac7-e489-25b6-a724-c9d521810863/build8-en-US-phone67.jpg/700x0w.jpg",
+    "sha256": "044702ebc6fceed070ed394c61d798ae1535ffc0bdcb27022d2032bed83b5379",
+    "kind": "App Store screenshot"
   },
   {
     "asset": "assets/brand/english-quest/icon.webp",
@@ -120,10 +378,118 @@
     "kind": "App Store icon"
   },
   {
+    "asset": "assets/brand/english-quest/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b4/15/ac/b415ac71-84d0-a6e7-3bb7-be77fdeafa43/01_subject.png/700x0w.jpg",
+    "sha256": "e4cfc1fb1b0d2e2efff6298156b92ba0cd82ff302b633bc93edfba032184e8fc",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/ae/c1/55aec192-6c2c-b877-d5d4-b5ff647506cc/02_path.png/700x0w.jpg",
+    "sha256": "596f9465d3d28eac5f70a56c21a3d18fc465ce19406f6bc5b9a4cbfea5ceb33e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/21/d6/69/21d6692c-1d01-5ff4-621d-d6df79655de7/03_units.png/700x0w.jpg",
+    "sha256": "741cb1e5b3da37c064542d5d0c03ce552a7d2ae10860de4c8822c5ed3e297f80",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/08/3a/a3/083aa336-eba0-bc0e-fe8a-35a8e253b74b/04_grammar.png/700x0w.jpg",
+    "sha256": "0217fda39915104cb1cdebd02f15e8f0e985c7aa512dfee49114d3df052faa33",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/1b/70/931b709a-26f2-2f1c-efc3-1766b96fd595/05_ranking.png/700x0w.jpg",
+    "sha256": "1f13b034e623549db6494fdc4fc92d290be497a797057c5b87bd9a70100b2ca3",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f7/f6/2f/f7f62f68-c9fb-bfa7-4a64-4dd477a33ae4/06_review.png/700x0w.jpg",
+    "sha256": "77366ad9d87ea8bce71a3bc36416561a591bada5a0513262d0cd8322327643bb",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/8f/af/cc8fafa6-d892-f5e4-d3e1-5b263dfd8f5f/01_subject.png/700x0w.jpg",
+    "sha256": "851f492b2fa605d59a7b936b3795b7f870e2039fdc2f7c1b085468cb10b405ba",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2c/a2/07/2ca20711-6edc-3d72-dcb5-77fae82ab4ef/02_path.png/700x0w.jpg",
+    "sha256": "931efc3778b44e72569ef380ee09bc089e7434f1c19653e50e1550a5af92534f",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/a5/d7/5aa5d706-89b2-3fae-1b53-276fd1088648/03_units.png/700x0w.jpg",
+    "sha256": "5ed368da434e64ad098d38486c0d65b0ccde2f4edf84de2e9e6645a2b5d2f097",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/2e/91/c72e9136-f79a-7f27-d378-71e844f8dbe9/04_grammar.png/700x0w.jpg",
+    "sha256": "57435a8548badfe3e417dae67fa86f320c4921b3052bb5af089625c63fcaf75e",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/b5/e0/76b5e0a7-25c6-9180-cf56-32536ad7026d/05_ranking.png/700x0w.jpg",
+    "sha256": "5a353ec9d23654a817cf8262f96b92d73f43e22419230a7151a27986aa7176d5",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/english-quest/shot-en-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/04/02/ce04020b-762f-365f-9f54-2425512c3a21/06_review.png/700x0w.jpg",
+    "sha256": "44168505f3c4c077a2e21946eb180a14b0065879a17c0ce63565590b476c3fea",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/fp-quest/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/02/c5/c6/02c5c681-b39b-f5e3-01e1-f53013dded71/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.png",
     "sha256": "32e409e38c6e622485ed9a3afa78b5b021337dd0bf5875d1a575b4092612923d",
     "kind": "App Store icon"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ca/94/b5/ca94b5e3-5069-6d2a-1ed4-310cfb507ece/appstore-69-1.png/700x0w.jpg",
+    "sha256": "c70954c76936a3cccdf1faffcebd65e19c3a581290304fe92b64cdd3c3f3bfbe",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6a/1d/36/6a1d3624-6f17-04a4-6795-8358f878f96a/appstore-69-2.png/700x0w.jpg",
+    "sha256": "9bc4be40097ea0cd9dffec15c970ccff00d5ad4047878ee9e313060a6baeed14",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c4/f6/21/c4f6213a-1176-36e5-728c-997f09f3e005/appstore-69-3.png/700x0w.jpg",
+    "sha256": "1741971bf914b3c2f8665abe3bcb79274d9a787bde6a46782e80972a132b4cf6",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/09/54/78095436-92b5-47a5-90f8-3fa22e5609e3/appstore-69-4.png/700x0w.jpg",
+    "sha256": "9ba18066c1116fd8e9193e124718691bd5b8f5a58c0d1bf227e31ca739a33313",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/af/44/1baf4429-dd8b-fccd-b039-eeca0daea975/appstore-69-5.png/700x0w.jpg",
+    "sha256": "7a20876e5714fc55d7b0429940a39d1676d741941638e260d8e08a746c9b5d54",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/fp-quest/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/9a/8e/6c9a8e3d-4bca-9a96-bd59-02c28b567caf/appstore-69-6.png/700x0w.jpg",
+    "sha256": "b3aea12fda238360d356aa1956c0b5271a94957b7d2330ca41824bba51457281",
+    "kind": "App Store screenshot"
   },
   {
     "asset": "assets/brand/rika-quest/icon.webp",
@@ -132,10 +498,82 @@
     "kind": "App Store icon"
   },
   {
+    "asset": "assets/brand/rika-quest/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/6d/ae/126dae9d-e002-8dc4-558b-614d7829ac1a/01-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "888490996c7ab6e04c25a7a5bda3a477518c5490b56b64e514f3a47df39440bb",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/rika-quest/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/79/36/4f/79364f0b-9ff7-bfd8-9ad6-d7e7e1d2e31a/02-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "e62314fa0d907caff9a1302bb862a6cce39fabd0978ec96e89a3840b5470d992",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/rika-quest/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/01/4c/d1/014cd1c9-f0d2-fc13-6f6b-67f7cd649c85/03-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "12e65eecc984b51cb59fd91b81eebe48b85b97ba4620cf9dc68b369d0d68f733",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/rika-quest/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/67/02/c26702e1-8fcd-b65a-1eb3-bcb0e513c7a2/04-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "1deed0b54c48497e12886b501de214de23330109b1dfdd98ad8d3334be204dcb",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/rika-quest/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/49/ad/c249ad19-406f-96dc-0806-72ad1117dc3f/05-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "488095702a2f0ddac72b4b46f5edddb6ce24983a478db3adc391091eeb0cba9f",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/rika-quest/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3b/c9/7a/3bc97a90-1486-d213-a3a0-270b819eb9c7/06-rika-iphone-69.png/700x0w.jpg",
+    "sha256": "f0af5d2b6a1ea6046108b74cd2cfa8363958914db907b593a0f2168f0c2a2447",
+    "kind": "App Store screenshot"
+  },
+  {
     "asset": "assets/brand/kokugo-quest/icon.webp",
     "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ff/7e/ee/ff7eee98-0123-a075-23e0-0014ac0c838f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.png",
     "sha256": "08ac2e7a29f2ed70bd0a0e33499ccf6f51c039e181aa6a59e1c46d7fa6553efd",
     "kind": "App Store icon"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-1.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/3b/68/d23b687f-6bc0-d7d5-21b5-815dc077a4b5/DFCF3AE3-6C78-4E05-A6A4-3E2E8D9F8C86_1242.png/700x0w.jpg",
+    "sha256": "0cb5caf0e850b5f608710285900ad8d5c70a0e42fba88c14884035ab0b9b837b",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-2.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/f6/a9/c5f6a940-eb70-29f5-9ca7-c93c95186e13/909A8676-0A5C-4628-AD3C-039181CBCE1D_1242.png/700x0w.jpg",
+    "sha256": "b3e0926e2de294a355727549467ac9cce18ca15a96eef9873c2219aedf798f0b",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-3.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2e/d6/bc/2ed6bc20-dd0a-decd-c3e9-2745722a38b9/DFDFC88A-A277-48E3-B9E9-7F8E15FC4C57_1242.png/700x0w.jpg",
+    "sha256": "34f65d2c7d4df3d2c9b1bf5f7f861c8b68f5e7adefaf42c194f61a5ef87a0be5",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-4.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/bf/f6/fabff618-34ca-ffdb-0292-49a74337c7c0/1E4834A5-538B-4AC5-A4C7-8D73CE94F9D4_1242.png/700x0w.jpg",
+    "sha256": "69a4c3c1d3b05f534ad73a94b0a7604661c4995db128a07dc723c9e5292b379d",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-5.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/9c/72/5c9c725d-524a-e5ba-3b39-b3a3ab7c30cd/C2B1B5EA-2FAC-46D6-8E1F-67603A05BEF4_1242.png/700x0w.jpg",
+    "sha256": "e33e5817921dae3cdaf002e5d0a4359f6c462562b53b6c7c50ba7a3a22e30821",
+    "kind": "App Store screenshot"
+  },
+  {
+    "asset": "assets/brand/kokugo-quest/shot-6.webp",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/e0/a5/a7e0a53f-21b1-31fb-1fe6-c8b84cb88927/BC5631C6-C9B0-4A99-A66D-82478BDD297D_1242.png/700x0w.jpg",
+    "sha256": "5890d7a92d102b97d78e34cb772744b7b587d62f69f6ed64e417acba0e3ab1a9",
+    "kind": "App Store screenshot"
   },
   {
     "asset": "assets/brand/quest/icon.webp",
@@ -165,6 +603,60 @@
     "asset": "assets/brand/mochi/shot-3.webp",
     "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/ja/3-words.png",
     "sha256": "4486821993aa8c38ca3164e8b8bdb1f99241075c90a15f5a2d6e60716b0071d5",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-4.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/ja/4-memories.png",
+    "sha256": "326e83788f16ead149bd64e773e768c2f058f2a46c23284bfbbee78c78be4ace",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-5.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/ja/5-wardrobe.png",
+    "sha256": "93f22d0b01686f9c743be1649fa07593c3ca0c96e2bb6a17e7bd28668be1dbe4",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-6.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/ja/7-shop.png",
+    "sha256": "e94421f654e6fca32d82c11887b831b919545da083e81758c75b4d7e51001a75",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-1.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/1-room.png",
+    "sha256": "1f4c449c7137bae7c9402724780ccf0517d7fdc302d396ec4d7a1b98be9204ee",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-2.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/2-talk.png",
+    "sha256": "3980fb9e79a2c8f42e7c48777ea1bee471cadd59f1dd536dbea43fd6b488bc26",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-3.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/3-words.png",
+    "sha256": "22a3234d534f8dfa572d24285f841532d14109ab1704d5b609cae5ee9f8d440d",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-4.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/4-memories.png",
+    "sha256": "42f5cc65b703ae1c2c17faa8536f2a11d0661cb12d4a549a0355a6be7bcd0a37",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-5.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/5-wardrobe.png",
+    "sha256": "672b1b277dc82af23d0aa96c7ebbe362d83fc1d1e9d1cc482cfe1ac868015229",
+    "kind": "store image (in review)"
+  },
+  {
+    "asset": "assets/brand/mochi/shot-en-6.webp",
+    "source": "/Users/user/swift/MochiPet/Reports/store/final/iphone/en/7-shop.png",
+    "sha256": "0594f90616fff9a840ea26c3fd15fca89c5ffd93a3afd24dc7930802f8f75b82",
     "kind": "store image (in review)"
   },
   {
@@ -208,5 +700,117 @@
     "sha256": "ecf9fd0f69355daa8bcbcd51a9aadb7044ffc5af862d7c6fc0568277a7bc18a3",
     "kind": "Codex image generation",
     "purpose": "decorative background (sunny garage workbench); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/world.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e360-7253-8d9c-559a56ba0b5b/exec-a4faeb12-02a8-4d0e-bd58-d3ad69150933.png",
+    "sha256": "493a39cc7fa471038e3517aa9a4bfeda602a16e56d79ef581d8f61cd3e363d01",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (watercolour world map with flight paths (VoiceLink)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/studio.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e360-7253-8d9c-559a56ba0b5b/exec-d9986e3e-5a99-41b2-bda4-b9af2e41cdca.png",
+    "sha256": "fa58f9c8895949e266bbd92521110d60923b5b7bd6f6c81985eb0c8b38b68669",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (creator desk with photos and film (Reel Make)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/cafe.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e360-7253-8d9c-559a56ba0b5b/exec-0d467e88-130a-4f8a-bdb8-224340bdeb31.png",
+    "sha256": "83d66797856077d00007edb1b81ac1427e679d31ceaa3d84ddea13c7f32137ab",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (cafe terrace with cups and a sprout (BuddyTalk)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/library.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e360-7253-8d9c-559a56ba0b5b/exec-f299e80c-018c-4d13-a6ec-f93cdbaebe1e.png",
+    "sha256": "47d47504bf21f6808b888f72cd820d8a7da70fb1c08237017c36c9e68c80b356",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (bright library (English Quest)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/timer.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e362-7412-a266-f746514dc84f/exec-c70853d1-cbd5-416e-8516-e14a0a0bdd17.png",
+    "sha256": "990e7a4d6f62e9165f3fc0193c8c35199aa272f1b0912df1fc4fa4d24a70ad85",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (morning desk with an hourglass (Hacking Timer)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/space.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e362-7412-a266-f746514dc84f/exec-dfe2cb3b-7c97-4660-8206-f08ae065f7ea.png",
+    "sha256": "027bdf5a2d055c8e540e300f2ad19b3f1282f523c98308473feae483ce505faa",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (pastel space (Word Blaster)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/forest.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e362-7412-a266-f746514dc84f/exec-b07959f9-e1a7-48e0-a3bc-c73af8222519.png",
+    "sha256": "690e34c679551a80863daca32143648e14b901892ee512ef96223d2f34b12616",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (forest with a pile of sticks (Wood Golem)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/money.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e362-7412-a266-f746514dc84f/exec-8f5b8a5d-010a-466a-91f0-b93d35021c54.png",
+    "sha256": "da04d3d874746ee56aa4b404a09487077e4bb0218e231310c99bffa5fdc7bc74",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (piggy bank and a small house (FP Quest)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/science.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-79b3-80e2-34e04fe4e7f0/exec-c492e26d-b963-4d46-b642-f92c922b456b.png",
+    "sha256": "f828cf751dc1b9a9718eac82c3a6f4d0fdd9447e1bf1a7b2757879c77a90e2c1",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (field desk with a microscope (science)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/kokugo.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-79b3-80e2-34e04fe4e7f0/exec-b10c8413-203f-4286-9195-db5b04900882.png",
+    "sha256": "40774a0a77a9e37161a4971c6c0602401c87f3484c6cf137061e5250869841b8",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (brush, inkstone and a blank book (Japanese language)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/planes.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-79b3-80e2-34e04fe4e7f0/exec-f58da349-e35b-4a9d-ba49-c7a2da3bfbeb.png",
+    "sha256": "d0ab83301967772c6da721a065874e133f3aad7d83eebcd8702d4508baab6b9b",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (paper planes in the sky (FAQ)); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/desk.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-79b3-80e2-34e04fe4e7f0/exec-c44cdf31-a92c-41d2-b166-cf3b4ba0571c.png",
+    "sha256": "fe54c411f24b572e4e32a01f72363f9134fe4b1ffb7382d7e5962fbc52514e65",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (maker desk by a window); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/kites.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-7db2-ace4-e7f675db801b/exec-7d659c3d-2d1c-48fc-90a4-509dca170b80.png",
+    "sha256": "1d4c95d609ff87d4fce53c57a984b12012171781f08d396db011b6a9596ace30",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (kites over a meadow); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/mailbox.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-7db2-ace4-e7f675db801b/exec-c7bfc2be-2787-4953-a1be-2b4ba6c2d2f2.png",
+    "sha256": "b680ec019ba76282a562aae419353dba20596479a537ab8b5f72b9fa9fce42fd",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (post box on a hill path); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/camper.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720b-e361-7db2-ace4-e7f675db801b/exec-3d1af77d-6dc2-4cad-bb73-9d9c068f3800.png",
+    "sha256": "6c23a31306514ce9a39496b1c2de5be43a610fe634003d787afaced95a08aaea",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (camper van interior by the sea); not an app screen"
+  },
+  {
+    "asset": "assets/brand/bg/shelf.webp",
+    "source": "/Users/user/.codex/generated_images/01a1720f-33a9-7020-b7dd-0a712e0d5016/exec-a26cdd9b-697b-4cae-873e-0252f0010ef7.png",
+    "sha256": "0e3175290b9dfb9b8c781c44cbe7ae1d6f51fffe1507d0afa12d065da01d3a7c",
+    "kind": "Codex image generation",
+    "purpose": "decorative background (shelf of miniatures (apps catalog)); not an app screen"
   }
 ]

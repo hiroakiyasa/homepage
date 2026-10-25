@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://trailfusionai.com'
 A = '/assets/brand/'
-CSS_VERSION = '20261025-1'
+CSS_VERSION = '20261025-2'
 DIM = json.loads((ROOT / 'docs/brand/image-dimensions.json').read_text())
 STORE = json.loads((ROOT / 'docs/brand/store-snapshot.json').read_text())['apps']
 QUEST_STATS = json.loads((ROOT / 'docs/quest/course-stats.json').read_text())['courses']
@@ -32,13 +32,16 @@ def app(slug, cat, ja, en, tag_ja, tag_en, detail=None, android=None, status='li
                 ios=STORE.get(slug, {}).get('id'), android=android, status=status, legal=legal or {}, group=group)
 
 
+SITE_LEGAL = {'privacy': '/privacy-policy.html', 'terms': '/terms-of-service.html'}  # these apps use the site-wide policy
+JP_ONLY = {'car-concierge'}  # not distributed on other App Store regions
+
 APPS = [
     app('quest', 'learn', '合格！クエスト', 'Gokaku! Quest', '中学受験の4科から、資格・語学まで。12教材をひとつのアプリで。',
         'Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 12 courses in one app.',
         '/quest/', 'com.gokakushakaiquest.app', legal={'privacy': '/gokaku-quest-privacy.html', 'terms': '/gokaku-quest-terms.html', 'support': '/support/'}),
     app('mochi', 'heart', 'もちのへや', 'Mochi', 'もちもちの相棒と話して、気持ちをことばにする。毎日いっしょに過ごすペットアプリ。',
         'A soft companion to talk with. Put feelings into words and spend a little time together every day.',
-        None, status='review', legal={'privacy': '/mochi-privacy.html', 'support': '/mochi-support.html'}),
+        '/mochi.html', status='review', legal={'privacy': '/mochi-privacy.html', 'support': '/mochi-support.html'}),
     app('car-concierge', 'travel', '車旅コンシェルジュ', 'Car Concierge', '今夜休む場所、駐車場の料金、EV充電、次の目的地。車旅をひとつの地図で。',
         'Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan.',
         '/car-concierge.html', legal={'privacy': '/car-concierge-privacy.html', 'terms': '/car-concierge-terms.html'}),
@@ -56,13 +59,13 @@ APPS = [
         '/eigo-quest.html', legal={'privacy': '/eigo-quest-privacy.html', 'terms': '/eigo-quest-terms.html'}),
     app('fp-quest', 'learn', '合格！FPクエスト', 'Gokaku! FP Quest', 'ファイナンシャル・プランナーの6分野を、図鑑と問題で学ぶ。',
         'The six areas of the Japanese financial planner exam, with illustrated guides and questions.',
-        '/quest/courses/fp/', legal={'privacy': '/fp-quest-privacy.html', 'terms': '/fp-quest-terms.html'}),
+        '/fp-quest.html', legal={'privacy': '/fp-quest-privacy.html', 'terms': '/fp-quest-terms.html'}),
     app('word-blaster', 'learn', 'ワードブラスター', 'Word Blaster', '単語が敵になって飛んでくる。10言語に対応した単語学習シューティング。',
-        'Words fly at you as enemies. A vocabulary shooter for 10 languages.', '/word-blaster.html'),
+        'Words fly at you as enemies. A vocabulary shooter for 10 languages.', '/word-blaster.html', legal=SITE_LEGAL),
     app('wood-golem', 'play', '森のウッドゴーレム', 'Wood Golem', '棒取りゲームの読み合いと、ゴーレムの成長物語を楽しむ戦略パズル。',
-        'A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win.', '/wood-golem.html'),
+        'A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win.', '/wood-golem.html', legal=SITE_LEGAL),
     app('hacking-timer', 'focus', 'ハッキングタイマー', 'Hacking Timer', 'Apple Watchで使うインターバルタイマー。集中と休憩のリズムをつくる。',
-        'An interval timer for Apple Watch that keeps a rhythm of focus and rest.', '/hacking-timer.html'),
+        'An interval timer for Apple Watch that keeps a rhythm of focus and rest.', '/hacking-timer.html', legal=SITE_LEGAL),
     app('rika-quest', 'learn', '合格理科クエスト', 'Gokaku Rika Quest', '以前の理科の単科アプリ。学習記録と購入は合格！クエストへ引き継げます。',
         'The earlier single-subject science app. Progress and purchases can move to Gokaku! Quest.',
         '/rika-quest.html', 'com.gokakurikaquest.app', group='legacy', legal={'privacy': '/rika-quest-privacy.html', 'terms': '/rika-quest-terms.html', 'support': '/rika-quest-support.html'}),
@@ -96,9 +99,15 @@ def icon(slug, lang, cls='app-icon', eager=False):
 
 
 def bg(name, eager=False, cls='bg'):
+    """Decorative background. `name` is a brand background key, or 'quest:<file>' for a 合格！クエスト site background."""
     load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
-    return (f'<picture class="{cls}" aria-hidden="true"><source media="(max-width:720px)" srcset="{A}bg/{name}-m.webp">'
-            f'<img src="{A}bg/{name}.webp" alt="" {load} decoding="async"></picture>')
+    if name.startswith('quest:'):
+        base = '/assets/quest/backgrounds/v3-' + name.split(':', 1)[1]
+        wide, narrow = base + '.webp', base + '-m.webp'
+    else:
+        wide, narrow = f'{A}bg/{name}.webp', f'{A}bg/{name}-m.webp'
+    return (f'<picture class="{cls}" aria-hidden="true"><source media="(max-width:720px)" srcset="{narrow}">'
+            f'<img src="{wide}" alt="" {load} decoding="async"></picture>')
 
 
 APPLE = '<svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M18 14c0-3 2-4.5 3-5-1.5-2-4-2.3-5-2.3-2 0-3 1-4 1s-2.5-1-4-1C4 6.8 1 10 1 14c0 6 4 12 6.5 12 1.5 0 2-1 4-1s2.5 1 4 1c2 0 5-4 6-7-2-.8-3.5-2.8-3.5-5ZM16 0c-3 .2-5 2-5 5 3 .3 5-2 5-5Z"/></svg>'
@@ -109,8 +118,8 @@ def stores(slug, lang, place, small=False):
     a, t = BY[slug], tx(lang)
     if a['status'] != 'live':
         return f'<p class="status-pill">{t("App Store 審査中・まもなく公開", "In App Store review, coming soon")}</p>'
-    country = 'jp' if lang == 'ja' else 'us'
-    out = (f'<a class="store{" small" if small else ""}" href="https://apps.apple.com/{country}/app/id{a["ios"]}" data-store="apple" data-app="{slug}" data-placement="{place}">'
+    region = 'jp/' if lang == 'ja' or slug in JP_ONLY else ''
+    out = (f'<a class="store{" small" if small else ""}" href="https://apps.apple.com/{region}app/id{a["ios"]}" data-store="apple" data-app="{slug}" data-placement="{place}">'
            f'{APPLE}<span><small>{t("iPhone・iPad", "iPhone & iPad")}</small><strong>App Store</strong></span></a>')
     if a['android']:
         out += (f'<a class="store{" small" if small else ""}" href="https://play.google.com/store/apps/details?id={a["android"]}" data-store="google" data-app="{slug}" data-placement="{place}">'
