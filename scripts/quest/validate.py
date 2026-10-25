@@ -38,9 +38,12 @@ try:
      label=f'{engine} {route} {width}px'
      check(not state['overflow'],label+' no horizontal overflow');check(not state['broken'],label+' images loaded '+str(state['broken']));check(state['h1']==1,label+' one h1')
      if route=='/quest/':
-      hero=page.locator('.ipad-preview img').evaluate('''img=>({fit:getComputedStyle(img).objectFit,ratio:img.clientWidth/img.clientHeight,natural:img.naturalWidth/img.naturalHeight,src:img.getAttribute('src')})''')
-      check(hero['fit']=='contain' and abs(hero['ratio']-hero['natural'])<.015,label+' complete uncropped iPad screenshot')
-      check('night-overview' in hero['src'],label+' hero starts on kingdom overview')
+      check(page.locator('.hero-subject').count()==4,label+' hero shows four school subjects')
+      check(page.locator('.collection-more a').count()==8,label+' hero shows eight additional courses')
+      check('ひとつのアプリに' in page.locator('h1').inner_text(),label+' unified learning headline')
+      check(page.locator('.course-card .course-numbers').count()==12,label+' all courses show quantity metrics')
+      check(page.locator('#track-record').count()==1,label+' scoped download evidence visible')
+      check(page.locator('.course-numbers dd').evaluate_all('(es)=>es.every(e=>e.scrollWidth<=e.clientWidth+1)'),label+' quantity labels are not clipped')
       bg=page.locator('main > section').evaluate_all('(items)=>items.map(e=>getComputedStyle(e).backgroundImage)')
       check(all('/assets/quest/backgrounds/' in x for x in bg),label+' generated backgrounds on every main section')
      if width in [390,1440] and route in ['/quest/','/quest/courses/science/','/quest/kingdom/','/quest/plans/']:
@@ -50,9 +53,6 @@ try:
    page.set_viewport_size({'width':390,'height':844});page.goto(origin+'/quest/',wait_until='load')
    for name,count in [('中学受験',4),('資格・就職',5),('語学',2),('暮らし',1),('すべて',12)]:
     page.get_by_role('button',name=name,exact=True).click();check(page.locator('.course-card:visible').count()==count,f'{engine} filter {name} shows {count} courses')
-   page.get_by_role('button',name='街を近くで',exact=True).click();check('day-tablet' in page.locator('.ipad-preview img').get_attribute('src'),engine+' hero close view switch')
-   check('day-tablet' in page.locator('.ipad-preview').get_attribute('href'),engine+' hero zoom link follows selected screen')
-   page.get_by_role('button',name='王国の全体像',exact=True).click()
    audio=page.locator('audio');audio.evaluate('(a)=>a.load()');page.wait_for_function('document.querySelector("audio").readyState>=1')
    duration=audio.evaluate('(a)=>a.duration');check(duration>1,engine+' real question audio decodes')
    audio.evaluate('(a)=>a.play()');page.wait_for_timeout(400);check(audio.evaluate('(a)=>a.currentTime')>0,engine+' audio playback advances');audio.evaluate('(a)=>a.pause()')

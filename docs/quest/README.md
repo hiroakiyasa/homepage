@@ -80,3 +80,13 @@ python3 scripts/quest/validate.py
 - 無料とPro：同じ比較表では40・50が無料、60・70がPro。読み上げは最初の5単元、図鑑はプレビューが無料。全図鑑などはPro対象であるため、「全教材のすべてを無制限に無料」とは表記しない。
 - 図鑑の権利判定は `packages/learning/library-access.cjs`、音声・応用問題等は `packages/monetization/course-feature-access.cjs`。無料範囲のページには画像や音声の対象範囲を併記する。
 - 「もれなく全て学べる」という全試験範囲の網羅保証は未検証。サイトでは「全12教材にイラスト図鑑」「基礎から応用まで」「体系的に学べる」と表現する。
+
+## 2026-10-25 教材中心のヒーローと収録数
+
+- ヒーローは実際の中学受験4科の図鑑を主役に変更し、追加8教材とアプリアイコンで統合を表現。王国は補助的な楽しみとして掲載。
+- 明るい空色、ミント、黄色と教科別カラー、丸いカード、読みやすい太字を使用。
+- `course-stats.json` は統合版 `release-manifest.json` と `release-structure.json` から取得。開発中の `course-manifest.json` の数字は混ぜない。日本語は固定リリースの問題パックから sourceId を重複排除。図鑑はページキーの重複がないことを確認。
+- カードに問題数・図鑑ページ数・単元数、詳細に全単元の開閉一覧を表示。英語などは複数単元に問題を共有するため、単元の問題数の合計と教材内ユニーク問題数は異なる。無料とProの収録内容を含む。OSや配信版の差は注記。
+- `usage-summary.json` はApp Store ID 6775411516の初回DLのみ。旧社会版期間を含む2025-11-01〜2026-10-23の1,599件。再DL290件を含めない。人数・教材別学習数とは呼ばない。教材別実績は未集計と明記。
+- 取得はapp-analytics-reportスキルの読み取り専用処理。AdMobは取得未完了だが、この表示に広告データは使用していない。GA4やSupabaseの別指標をDL数に足していない。生の分析レポートは公開リポジトリに保存しない。
+- 再取り込み: `python3 scripts/quest/import-stats.py --platform-root /path/to/quest_platform --analytics-snapshot /path/to/analytics.json --as-of YYYY-MM-DD`。公開前に日付・本文・配信版との整合を確認する。

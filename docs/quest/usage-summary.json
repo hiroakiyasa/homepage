@@ -1,0 +1,11 @@
+{
+  "asOf": "2026-10-25T03:59:54.116Z",
+  "source": "App Store Connect Sales and Trends",
+  "appId": "6775411516",
+  "periodStart": "2025-11-01",
+  "periodEnd": "2026-10-23",
+  "firstDownloads": 1599,
+  "redownloads": 290,
+  "scope": "同一App Store IDの旧・社会クエスト期間を含むiOSアプリの初回ダウンロード数。利用人数・教材別学習人数ではない。",
+  "courseUsageAvailable": false
+}
