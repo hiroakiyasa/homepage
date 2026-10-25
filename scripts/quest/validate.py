@@ -2,7 +2,7 @@
 from pathlib import Path
 from urllib.parse import urlsplit, urljoin, unquote
 from collections import Counter
-import json, http.server, socketserver, threading
+import json, http.server, socketserver, threading, re
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2]
@@ -16,6 +16,9 @@ def file_for(url):
 class Handler(http.server.SimpleHTTPRequestHandler):
  def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(ROOT),**kwargs)
  def log_message(self,*args):pass
+ def copyfile(self,source,outputfile):
+  try:super().copyfile(source,outputfile)
+  except (BrokenPipeError,ConnectionResetError):pass  # Browser cancelled a request during navigation.
 server=socketserver.ThreadingTCPServer(('127.0.0.1',0),Handler)
 threading.Thread(target=server.serve_forever,daemon=True).start();origin=f'http://127.0.0.1:{server.server_address[1]}'
 try:
@@ -34,6 +37,12 @@ try:
      state=page.evaluate('''()=>({overflow:document.documentElement.scrollWidth>innerWidth+1, broken:[...document.images].filter(i=>!i.naturalWidth).map(i=>i.src),h1:document.querySelectorAll('h1').length})''')
      label=f'{engine} {route} {width}px'
      check(not state['overflow'],label+' no horizontal overflow');check(not state['broken'],label+' images loaded '+str(state['broken']));check(state['h1']==1,label+' one h1')
+     if route=='/quest/':
+      hero=page.locator('.ipad-preview img').evaluate('''img=>({fit:getComputedStyle(img).objectFit,ratio:img.clientWidth/img.clientHeight,natural:img.naturalWidth/img.naturalHeight,src:img.getAttribute('src')})''')
+      check(hero['fit']=='contain' and abs(hero['ratio']-hero['natural'])<.015,label+' complete uncropped iPad screenshot')
+      check('night-overview' in hero['src'],label+' hero starts on kingdom overview')
+      bg=page.locator('main > section').evaluate_all('(items)=>items.map(e=>getComputedStyle(e).backgroundImage)')
+      check(all('/assets/quest/backgrounds/' in x for x in bg),label+' generated backgrounds on every main section')
      if width in [390,1440] and route in ['/quest/','/quest/courses/science/','/quest/kingdom/','/quest/plans/']:
       slug=route.strip('/').replace('/','-');page.screenshot(path=str(OUT/f'{engine}-{slug}-{width}.png'),full_page=True)
      if route=='/quest/' and width==1440 and engine=='chromium':
@@ -41,6 +50,12 @@ try:
    page.set_viewport_size({'width':390,'height':844});page.goto(origin+'/quest/',wait_until='load')
    for name,count in [('中学受験',4),('資格・就職',5),('語学',2),('暮らし',1),('すべて',12)]:
     page.get_by_role('button',name=name,exact=True).click();check(page.locator('.course-card:visible').count()==count,f'{engine} filter {name} shows {count} courses')
+   page.get_by_role('button',name='街を近くで',exact=True).click();check('day-tablet' in page.locator('.ipad-preview img').get_attribute('src'),engine+' hero close view switch')
+   check('day-tablet' in page.locator('.ipad-preview').get_attribute('href'),engine+' hero zoom link follows selected screen')
+   page.get_by_role('button',name='王国の全体像',exact=True).click()
+   audio=page.locator('audio');audio.evaluate('(a)=>a.load()');page.wait_for_function('document.querySelector("audio").readyState>=1')
+   duration=audio.evaluate('(a)=>a.duration');check(duration>1,engine+' real question audio decodes')
+   audio.evaluate('(a)=>a.play()');page.wait_for_timeout(400);check(audio.evaluate('(a)=>a.currentTime')>0,engine+' audio playback advances');audio.evaluate('(a)=>a.pause()')
    page.get_by_role('button',name='1個',exact=True).click();check('答えは、2個' in page.locator('[data-quiz-result]').inner_text(),engine+' incorrect answer explains')
    page.get_by_role('button',name='2個',exact=True).click();check('正解' in page.locator('[data-quiz-result]').inner_text(),engine+' correct answer explains')
    preview=page.locator('[data-preview]').first;preview.click();check(page.locator('dialog').evaluate('(d)=>d.open'),engine+' image modal opens')
@@ -59,12 +74,14 @@ try:
  # The OG image is a direct rendering of the implemented hero.
  from PIL import Image,ImageOps
  im=Image.open(OUT/'hero.png').convert('RGB');im=ImageOps.contain(im,(1200,630));og=Image.new('RGB',(1200,630),'#faf9f3');og.paste(im,((1200-im.width)//2,(630-im.height)//2));og.save(ROOT/'assets/quest/og-quest.jpg',quality=90)
+ for relative in re.findall(r"url\(['\"]?(/assets/quest/backgrounds/[^)'\"]+)", (ROOT/'assets/quest/quest.css').read_text()):
+  check((ROOT/relative.lstrip('/')).is_file(),'generated background exists '+relative)
  titles=[]
  for route in PAGES:
   p=file_for(route);s=BeautifulSoup(p.read_text(),'html.parser');titles.append(s.title.string)
   check(s.select_one('link[rel="canonical"]')['href']=='https://trailfusionai.com'+route,route+' canonical URL')
   ids=[x['id'] for x in s.select('[id]')];check(len(ids)==len(set(ids)),route+' unique anchor IDs')
-  for x in s.select('a[href],img[src],script[src],link[href]'):
+  for x in s.select('a[href],img[src],script[src],link[href],source[src]'):
    href=x.get('href') or x.get('src');u=urlsplit(urljoin('https://trailfusionai.com'+route,href))
    if u.netloc!='trailfusionai.com' or u.scheme not in ['http','https']:continue
    target=file_for(u.path);check(target.is_file(),route+' asset/link '+href)

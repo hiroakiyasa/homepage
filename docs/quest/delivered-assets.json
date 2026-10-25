@@ -1,5 +1,65 @@
 [
   {
+    "file": "assets/quest/backgrounds/catalog-mobile.webp",
+    "sha256": "34f248b9966435862775f1740b7b33f61418427fdc438cdf64af9d9513e0be75",
+    "bytes": 26968
+  },
+  {
+    "file": "assets/quest/backgrounds/catalog.webp",
+    "sha256": "6ffb10165ca197734dc45a9f43b16d9509de9343f3309a2e34e16c09a98ba46d",
+    "bytes": 132476
+  },
+  {
+    "file": "assets/quest/backgrounds/family-mobile.webp",
+    "sha256": "9c3421d00f17d9d74e46e14dc17d608078c69354e126fe5f6ef57a410f6cac0b",
+    "bytes": 23452
+  },
+  {
+    "file": "assets/quest/backgrounds/family.webp",
+    "sha256": "ad8faec23d18d803eba3bf945f029b793b37012e5a99f708031ccc6e42eab293",
+    "bytes": 61564
+  },
+  {
+    "file": "assets/quest/backgrounds/hero-mobile.webp",
+    "sha256": "010d674730873ec8b859f28dbe4257c39ade18a15a2b354405150642461a967a",
+    "bytes": 30738
+  },
+  {
+    "file": "assets/quest/backgrounds/hero.webp",
+    "sha256": "9c0bd8cee73ee75e8bf78a6f20c39f74e6a93fa69af33463cdd16dbf3e0e351f",
+    "bytes": 77826
+  },
+  {
+    "file": "assets/quest/backgrounds/kingdom-mobile.webp",
+    "sha256": "6f15e911d9263b722cdc3de6414e1902bdc504d21193022a0009ed73fcee977b",
+    "bytes": 17242
+  },
+  {
+    "file": "assets/quest/backgrounds/kingdom.webp",
+    "sha256": "37344cc7ab173219980930e354eb81a4072fcf5ae6e6eaaa82b7fde1971a374f",
+    "bytes": 55806
+  },
+  {
+    "file": "assets/quest/backgrounds/learn-mobile.webp",
+    "sha256": "2d9a041ad7427c26840ba648d0e5253e0f9cb8a772a13aa5ebec5c955513f065",
+    "bytes": 21798
+  },
+  {
+    "file": "assets/quest/backgrounds/learn.webp",
+    "sha256": "2d13eba2132e6abf5e4895d062fb1cd3979402ec02e1a12458c6c8f5a6b314ba",
+    "bytes": 92654
+  },
+  {
+    "file": "assets/quest/backgrounds/paper-mobile.webp",
+    "sha256": "f09f9e3c72ed3ea9545d288e5b02fe71d8b8a12d98a59da568a561505e8de57b",
+    "bytes": 25040
+  },
+  {
+    "file": "assets/quest/backgrounds/paper.webp",
+    "sha256": "c31627f565637df7d9f31e70351414d5aefe2504196a4ef245b163efecb4dbb5",
+    "bytes": 160330
+  },
+  {
     "file": "assets/quest/bookkeeping-japan-atlas.webp",
     "sha256": "161f20bbcd9ee64ab97de42400703d4dc47a6a21b665922701a957377ed97050",
     "bytes": 188248
@@ -115,9 +175,24 @@
     "bytes": 40202
   },
   {
+    "file": "assets/quest/learning-microscope-after.webp",
+    "sha256": "6d334fc4252b2366f7c200c289dbd2ff9d9076417af2c603428e485f7ba2784d",
+    "bytes": 31166
+  },
+  {
+    "file": "assets/quest/learning-microscope-before.webp",
+    "sha256": "d30f92c6e0ac9549f85b69de48137be81b2bdcffa3755fae29167cb145b2337a",
+    "bytes": 26652
+  },
+  {
+    "file": "assets/quest/learning-microscope-voice.m4a",
+    "sha256": "f665a7fc7a9b86358267525a022162958c49283c88180e381cc1b7deea2801a1",
+    "bytes": 16656
+  },
+  {
     "file": "assets/quest/og-quest.jpg",
-    "sha256": "6641559f8430217ce087cbf6eadda8aee5a5dad7418bbfa4f5a9c8055357deec",
-    "bytes": 113642
+    "sha256": "f2518a51e4e39a8fda9d515651de9c77c3f16e61c6e184ef8f29a1c2d88d5607",
+    "bytes": 159439
   },
   {
     "file": "assets/quest/spi3-japan-atlas.webp",

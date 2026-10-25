@@ -1,0 +1,50 @@
+[
+  {
+    "name": "hero",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-43474306-2a2d-42c8-8af6-1a05bec1ce87.png",
+    "sourceSha256": "0f46f46bf8527be68c2139f8c05252ec8ccd4e9db852f829a5e4c4f14f934cab",
+    "asset": "assets/quest/backgrounds/hero.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  },
+  {
+    "name": "learn",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-640cd269-efb2-4744-bf46-9071954d17fd.png",
+    "sourceSha256": "258757a573aa1c5e5c99c546cd72303babd6d9cd94caba4d29c43e5fcec5d2b7",
+    "asset": "assets/quest/backgrounds/learn.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  },
+  {
+    "name": "catalog",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-4268a924-ad08-4a32-acbd-5675f296251b.png",
+    "sourceSha256": "4831519765c17beeb55f4774bb844fd76718f3131961e6bb71f4e16b4214fa47",
+    "asset": "assets/quest/backgrounds/catalog.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  },
+  {
+    "name": "kingdom",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-7fc0999e-42cf-4df8-ba42-47327ade86f3.png",
+    "sourceSha256": "2f92852143a44caa47b72ea0ef5c90be8cc310dd7994d243837cf847a61a33c0",
+    "asset": "assets/quest/backgrounds/kingdom.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  },
+  {
+    "name": "family",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-05bc1d28-c155-429f-b879-5a545c337049.png",
+    "sourceSha256": "b87947bda6080bee08e1a24f095ea882c74be76517c12bd1b46ae254f6c71bc3",
+    "asset": "assets/quest/backgrounds/family.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  },
+  {
+    "name": "paper",
+    "source": "/Users/user/.codex/generated_images/01a170f2-a90a-7840-82ed-c84fca89d0d0/exec-7655695b-84bd-4572-9070-30bd2eafbf0e.png",
+    "sourceSha256": "79dc63e7ea34613812bcbb7e5ab580c9fb261539745b5b73186b20f94939a26a",
+    "asset": "assets/quest/backgrounds/paper.webp",
+    "tool": "image_gen.imagegen",
+    "purpose": "decorative website background; not an app screenshot"
+  }
+]

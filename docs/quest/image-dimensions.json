@@ -3,13 +3,13 @@
     390,
     844
   ],
-  "science": [
-    620,
-    1347
-  ],
   "japanese-everyday-quiz": [
     390,
     844
+  ],
+  "learning-microscope-after": [
+    864,
+    384
   ],
   "kingdom-night-overview": [
     1467,
@@ -22,10 +22,6 @@
   "step2-build": [
     720,
     600
-  ],
-  "audio": [
-    300,
-    650
   ],
   "junior-kokugo-atlas": [
     788,
@@ -83,14 +79,6 @@
     390,
     844
   ],
-  "history": [
-    620,
-    1346
-  ],
-  "social": [
-    620,
-    1346
-  ],
   "kingdom": [
     720,
     600
@@ -98,10 +86,6 @@
   "fp-japan-atlas": [
     788,
     1400
-  ],
-  "encyclopedia": [
-    300,
-    650
   ],
   "kingdom-day-tablet": [
     1467,
@@ -130,5 +114,9 @@
   "it-passport-japan-atlas": [
     788,
     1400
+  ],
+  "learning-microscope-before": [
+    864,
+    384
   ]
 }

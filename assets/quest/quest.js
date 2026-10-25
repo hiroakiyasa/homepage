@@ -41,9 +41,12 @@ if (dialog && typeof dialog.showModal === 'function') {
   dialog.addEventListener('close', () => { if (opener) opener.focus(); });
 }
 document.querySelectorAll('[data-world-view]').forEach(button => button.addEventListener('click', () => {
-  const img = document.querySelector('[data-world-image]');
+  const group = button.closest('[data-world-gallery]') || document;
+  const img = group.querySelector('[data-world-image]');
   img.src = `/assets/quest/kingdom-${button.dataset.worldView}.webp`;
   img.alt = button.dataset.worldView === 'day-tablet' ? '建物と道が広がる王国マップの昼の実画面' : '王都の周囲へ広がる領地を見渡す王国マップの実画面';
-  document.querySelectorAll('[data-world-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+  const preview = img.closest('[data-preview]');
+  if (preview) { preview.href = img.src; preview.dataset.preview = img.alt; }
+  group.querySelectorAll('[data-world-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
 }));
 document.querySelectorAll('.mobile-menu nav a').forEach(link => link.addEventListener('click', () => link.closest('details').removeAttribute('open')));

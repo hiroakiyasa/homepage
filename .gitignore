@@ -47,3 +47,6 @@ tmp/campingcar (1)/
 .playwright-cli/
 output/playwright/quest/
 scripts/quest/__pycache__/
+
+# Generated originals, preserved locally; optimized web assets are versioned
+output/imagegen/quest-backgrounds-v2/

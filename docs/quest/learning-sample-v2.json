@@ -1,0 +1,36 @@
+{
+  "sourceId": "life-observation-l40-q02",
+  "question": "顕微鏡でプレパラートをのせる場所はどれですか。",
+  "options": [
+    {
+      "label": "鏡筒",
+      "sub": ""
+    },
+    {
+      "label": "ステージ",
+      "sub": ""
+    },
+    {
+      "label": "接眼レンズ",
+      "sub": ""
+    },
+    {
+      "label": "反射鏡",
+      "sub": ""
+    }
+  ],
+  "correctIndex": 1,
+  "hint": "観察した事実と、生き物の体のつくりを結びつけて考えよう。",
+  "explanation": "正解の「ステージ」が正しい理由は、ステージはプレパラートを平らに置いて固定する台です。標本を動かさずに観察するための場所なので、最初にここへ置きます。 この問題の「顕微鏡でプレパラートをのせる場所はどれですか」という条件が、その判断の根拠です。次に似た問題では、見つけた場所、形、数、時刻などを具体的に記録し、体のつくりやくらしと結びつけて考えましょう。",
+  "visualKind": "life-observation-l40-q02",
+  "level": 40,
+  "coverageTags": [
+    "microscope",
+    "equipment"
+  ],
+  "media": {
+    "before": "/Users/user/jyuken_sience/rika-app/content/science-quiz-images/v1/life-observation/life-observation-l40-q02-before.webp",
+    "after": "/Users/user/jyuken_sience/rika-app/content/science-quiz-images/v1/life-observation/life-observation-l40-q02-after.webp",
+    "voice": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/79a04296b240e02d6d5bdfb9e3b5e8b68e120c4e9bd5793d18238227e8b34534.m4a"
+  }
+}
