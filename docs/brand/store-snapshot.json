@@ -1,0 +1,113 @@
+{
+  "store": "App Store Japan (iTunes lookup)",
+  "apps": {
+    "quest": {
+      "id": 6775411516,
+      "name": "合格！クエスト 受験・資格・語学",
+      "version": "1.2.1",
+      "rating": 4.37,
+      "ratings": 114,
+      "updated": "2026-10-23",
+      "released": "2026-06-04"
+    },
+    "car-concierge": {
+      "id": 6751795223,
+      "name": "車旅コンシェルジュ - 駐車場・EV充電・温泉・道の駅検索",
+      "version": "1.0.7",
+      "rating": 5,
+      "ratings": 5,
+      "updated": "2026-10-12",
+      "released": "2026-08-08"
+    },
+    "reelmake": {
+      "id": 6779420680,
+      "name": "Reel Make:AI動画・リール字幕を自動生成",
+      "version": "0.2.4",
+      "rating": 5,
+      "ratings": 7,
+      "updated": "2026-10-16",
+      "released": "2026-06-30"
+    },
+    "voicelink": {
+      "id": 6746684736,
+      "name": "VoiceLink AI通訳",
+      "version": "2.0.1",
+      "rating": 5,
+      "ratings": 3,
+      "updated": "2026-10-21",
+      "released": "2026-10-20"
+    },
+    "buddytalk": {
+      "id": 6744263274,
+      "name": "BuddyTalk：AI英会話・英語学習",
+      "version": "1.4.6",
+      "rating": 5,
+      "ratings": 6,
+      "updated": "2026-06-03",
+      "released": "2025-04-10"
+    },
+    "wood-golem": {
+      "id": 6739466549,
+      "name": "棒取り攻略！森のウッドゴーレム大冒険",
+      "version": "1.2.2",
+      "rating": 5,
+      "ratings": 7,
+      "updated": "2025-02-10",
+      "released": "2025-01-06"
+    },
+    "word-blaster": {
+      "id": 6745741796,
+      "name": "ワードブラスター",
+      "version": "1.0.3",
+      "rating": 0,
+      "ratings": 0,
+      "updated": "2025-05-27",
+      "released": "2025-05-19"
+    },
+    "hacking-timer": {
+      "id": 6746063846,
+      "name": "ハッキングタイマー: Watchアラーム",
+      "version": "1.4.0",
+      "rating": 5,
+      "ratings": 1,
+      "updated": "2026-10-05",
+      "released": "2025-05-19"
+    },
+    "english-quest": {
+      "id": 6782028599,
+      "name": "English Quest 英語学習",
+      "version": "1.0.1",
+      "rating": 0,
+      "ratings": 0,
+      "updated": "2026-09-10",
+      "released": "2026-09-10"
+    },
+    "fp-quest": {
+      "id": 6812542387,
+      "name": "合格！FPクエスト --目指せファイナンシャルプランナー",
+      "version": "1.0",
+      "rating": 0,
+      "ratings": 0,
+      "updated": "2026-09-18",
+      "released": "2026-09-18"
+    },
+    "rika-quest": {
+      "id": 6772644144,
+      "name": "合格理科クエスト",
+      "version": "1.3.0",
+      "rating": 4.31,
+      "ratings": 96,
+      "updated": "2026-10-14",
+      "released": "2026-06-01"
+    },
+    "kokugo-quest": {
+      "id": 6780125916,
+      "name": "合格！国語クエスト",
+      "version": "1.1.0",
+      "rating": 4.52,
+      "ratings": 23,
+      "updated": "2026-10-14",
+      "released": "2026-06-18"
+    }
+  }
+}

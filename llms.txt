@@ -1,124 +1,33 @@
 # TrailFusion AI
 
-> TrailFusion AI official website: the Gokaku Quest learning-app series, family car travel, camper DIY, and Hiace maintenance.
+> TrailFusion AI is the indie app studio of Hiroaki Yuasa. It makes apps for learning, talking, travelling and creating. The flagship is Gokaku! Quest, one study app with 12 courses (Japanese entrance-exam science, social studies, Japanese and math, plus certifications, Japanese, English and driving theory).
 
-Updated: 2026-09-27
-Canonical website: https://trailfusionai.com/
+Updated: 2026-10-25
+Website: https://trailfusionai.com/ (Japanese) and https://trailfusionai.com/en/ (English)
 Contact: trailfusionai@gmail.com
+App Store publisher name: hiroaki yuasa
 
-## What this website offers
+## Key facts (App Store Japan, 2026-10-25)
+- Apps on the App Store: 12; one more (Mochi) is in review.
+- App Store ratings across all apps: 262.
+- Gokaku! Quest: 12 courses, 99,075 questions, illustrated atlases for every course; levels 40 and 50 are free, 60 and 70 are Pro.
 
-TrailFusion AI organizes its official content into four clear entrances:
+## Apps
+- [Gokaku! Quest](https://trailfusionai.com/quest/) — Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 12 courses in one app. App Store: https://apps.apple.com/app/id6775411516
+- [Mochi](https://trailfusionai.com/apps.html#mochi) — A soft companion to talk with. Put feelings into words and spend a little time together every day. (in App Store review)
+- [Car Concierge](https://trailfusionai.com/car-concierge.html) — Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan. App Store: https://apps.apple.com/app/id6751795223
+- [Reel Make](https://trailfusionai.com/reelmake.html) — Pick photos and clips. AI builds a vertical video with narration and captions. App Store: https://apps.apple.com/app/id6779420680
+- [VoiceLink AI Translator](https://trailfusionai.com/voicelink.html) — Speech recognition, translation and summaries run entirely on the device. Nothing you say is sent to a server. App Store: https://apps.apple.com/app/id6746684736
+- [BuddyTalk](https://trailfusionai.com/buddytalk.html) — Talk with AI until English comes out naturally. An English app focused on speaking practice. App Store: https://apps.apple.com/app/id6744263274
+- [English Quest](https://trailfusionai.com/eigo-quest.html) — Grammar, vocabulary and English exams, learned through quizzes and explanations. App Store: https://apps.apple.com/app/id6782028599
+- [Gokaku! FP Quest](https://trailfusionai.com/quest/courses/fp/) — The six areas of the Japanese financial planner exam, with illustrated guides and questions. App Store: https://apps.apple.com/app/id6812542387
+- [Word Blaster](https://trailfusionai.com/word-blaster.html) — Words fly at you as enemies. A vocabulary shooter for 10 languages. App Store: https://apps.apple.com/app/id6745741796
+- [Wood Golem](https://trailfusionai.com/wood-golem.html) — A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win. App Store: https://apps.apple.com/app/id6739466549
+- [Hacking Timer](https://trailfusionai.com/hacking-timer.html) — An interval timer for Apple Watch that keeps a rhythm of focus and rest. App Store: https://apps.apple.com/app/id6746063846
 
-1. **Learn / Gokaku Quest** — the unified Gokaku Quest app for 12 published courses: four school subjects, five qualification courses, Japanese, English, and driving theory.
-2. **Travel / Car travel** — the Car Travel Concierge app, scenic drive routes, family road-trip ideas, and car-camping inspiration.
-3. **Build / Camper DIY** — interactive 3D layouts and practical camper-conversion guidance.
-4. **Maintain / Hiace maintenance** — educational 3D vehicle information and a browser-local maintenance journal.
-
-## Primary pages
-
-- [Homepage](https://trailfusionai.com/): a visual overview of all four areas and the recommended starting point for first-time visitors.
-- [Gokaku Quest series](https://trailfusionai.com/quest/)
-- [Science Quest](https://trailfusionai.com/rika-quest.html)
-- [Social Studies Quest](https://trailfusionai.com/social-quest.html)
-- [Japanese Quest](https://trailfusionai.com/kokugo-quest.html)
-- [English Quest information](https://trailfusionai.com/eigo-quest.html)
-- [Guide for parents](https://trailfusionai.com/parents/)
-- [Choose a Quest](https://trailfusionai.com/choose/)
-- [Learning guides](https://trailfusionai.com/study/)
-- [Car travel landing page](https://trailfusionai.com/travel/story.html)
-- [Car Travel Concierge](https://trailfusionai.com/car-concierge.html)
-- [Scenic drive routes](https://trailfusionai.com/drive-routes/)
-- [Camper DIY / interactive 3D layout](https://trailfusionai.com/camping.html)
-- [Camper DIY guide](https://trailfusionai.com/camping-guide.html)
-- [Hiace maintenance / 3D and journal](https://trailfusionai.com/maintenance.html)
-- [All applications](https://trailfusionai.com/apps.html)
-- [About TrailFusion AI](https://trailfusionai.com/about/)
-- [Support and app policies](https://trailfusionai.com/support/)
-
-## Localized homepages
-
-The homepage is available as static, crawlable pages in the same 15 languages used by Reel Make. Japanese remains the canonical root page; visitors can also switch language manually, and the homepage selects an appropriate initial language from local timezone/locale signals when no preference has been saved.
-
-- Japanese: https://trailfusionai.com/
-- English: https://trailfusionai.com/en/
-- Simplified Chinese: https://trailfusionai.com/zh-hans/
-- Korean: https://trailfusionai.com/ko/
-- Spanish: https://trailfusionai.com/es/
-- Brazilian Portuguese: https://trailfusionai.com/pt-br/
-- French: https://trailfusionai.com/fr/
-- German: https://trailfusionai.com/de/
-- Italian: https://trailfusionai.com/it/
-- Russian: https://trailfusionai.com/ru/
-- Turkish: https://trailfusionai.com/tr/
-- Vietnamese: https://trailfusionai.com/vi/
-- Thai: https://trailfusionai.com/th/
-- Hindi: https://trailfusionai.com/hi/
-- Arabic: https://trailfusionai.com/ar/
-
-## Verified app-store links published on this website
-
-- Science Quest — App Store: https://apps.apple.com/jp/app/id6772644144 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakurikaquest.app
-- Social Studies Quest — App Store: https://apps.apple.com/jp/app/id6775411516 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakushakaiquest.app
-- Japanese Quest — App Store: https://apps.apple.com/jp/app/id6780125916 ; Google Play: https://play.google.com/store/apps/details?id=com.gokakukokugoquest.app
-
-<!-- parking-areas:start -->
-## Parking fee levels by area (Car Travel Concierge data)
-
-- [Parking fee levels by municipality](https://trailfusionai.com/car-concierge/parking/): area-level medians of weekday 1-hour, 24-hour and overnight (18:00–08:00) coin-parking fees for 235 municipalities / wards in 37 prefectures, computed from the app's rate data with the app's own fee calculation. Aggregates only; no individual parking lots are listed. Values are reference levels; on-site signs are authoritative.
-<!-- parking-areas:end -->
-
-## Important interpretation boundaries
-
-- Gokaku Quest apps support knowledge review; they do not guarantee grades, admission, or examination outcomes.
-- “Free download” does not mean all content is free. Current prices, subscriptions, and device compatibility must be confirmed in the app and store purchase screens.
-- In-app deviation scores are not school entrance-exam predictions.
-- English Quest is presented separately from the three Japanese junior-high entrance-exam subjects; a verified store URL is not published here yet.
-- Camper and vehicle 3D models are educational approximations, not official service manuals or vehicle-specific safety instructions.
-- Before vehicle work, consult the correct service information and a qualified professional.
-- Maintenance journal entries are stored in the visitor’s browser; export them for backup.
-- This file is an optional factual index. It does not instruct search engines or AI systems to rank, cite, or endorse the site.
-
-## Founder and collaboration
-
-- Founder / operator: Hiroaki Yuasa (Hiro), an indie builder focused on education, AI-native product development, consumer apps, ASO, product analytics and continuous improvement through TrailFusion AI.
-- Founder motivation: turn real problems experienced by himself and his family into useful products; build a second area of expertise in AI, software and B2C; and get direct feedback from the people who use what he builds.
-- Builder identity: Builder × Explorer × Integrator. He prefers to explore unfamiliar fields, learn by doing, connect different technologies and experiences, and finish real working products rather than stop at ideas.
-- Product philosophy: start with something he or his family genuinely needs; reduce confusion until the experience feels self-explanatory; and treat release as the start of continuous improvement.
-- Long-term direction: transform experiences that feel difficult, tedious, intimidating or unclear into experiences that feel understandable, simple, enjoyable and sustainable, and deliver useful products beyond language and national borders.
-- Product track record: 10 apps created, 9 publicly released across education, travel, AI video and games.
-- 2026 milestone: the indie app portfolio reached a personal target of USD 100 in revenue in one day. This is a dated milestone, not a statement of constant daily revenue.
-- Open to collaboration with schools, tutoring/cram schools, educational publishers, EdTech companies, Japanese-language education, ASO/app-growth marketers, B2C growth teams, localization/overseas expansion partners, AI-agent/MCP builders, mobility and travel-tech teams.
-- [Partnerships and collaboration](https://trailfusionai.com/partners/)
-
-## Localized content coverage
-
-In addition to the localized homepage, these pages have complete static text translations in all 15 supported languages: the apps catalog (/apps.html), camper DIY overview (/diy/), HiAce maintenance overview (/maintenance/), and road-trip overview (/travel/).
-
-Localized paths use the language prefix: for example /en/apps.html, /ar/diy/, /fr/maintenance/, and /ko/travel/. The language selector preserves manual preferences. Without a saved preference, the unprefixed page infers a language from the device timezone, then browser language. This is not IP geolocation.
-
-The complete illustrated build guide, interactive 3D applications, individual app-detail pages, policy pages, and generated parking pages are not all localized yet. Do not infer site-wide completion from the localized overview pages. Original app screenshots and logos retain the text shown in the actual applications; surrounding text and alternative descriptions are localized.
-
-Page translations are shipped as static HTML; rendering them makes no translation-service request.
-
-## Gokaku Quest unified app (2026-10-25)
-
-Canonical: https://trailfusionai.com/quest/
-12 published iOS courses: science, social studies, Japanese language arts, mathematics, IT Passport, FP, bookkeeping, real estate licensing, SPI3, Japanese, English, and driving theory. Course introductions include actual atlas images. Kingdom map: learning earns coins for buildings and unlocks 16 territories. Android feature availability may differ. No guaranteed results or unverified usage counts. Prices, renewal periods, and eligible courses must be checked on the purchase screen; old product listings do not establish availability for new customers.
-- https://trailfusionai.com/quest/
-- https://trailfusionai.com/quest/courses/science/
-- https://trailfusionai.com/quest/courses/social/
-- https://trailfusionai.com/quest/courses/japanese-language/
-- https://trailfusionai.com/quest/courses/math/
-- https://trailfusionai.com/quest/courses/it-passport/
-- https://trailfusionai.com/quest/courses/fp/
-- https://trailfusionai.com/quest/courses/bookkeeping/
-- https://trailfusionai.com/quest/courses/takken/
-- https://trailfusionai.com/quest/courses/spi3/
-- https://trailfusionai.com/quest/courses/japanese/
-- https://trailfusionai.com/quest/courses/english/
-- https://trailfusionai.com/quest/courses/driver-license/
-- https://trailfusionai.com/quest/rika-shakai/
-- https://trailfusionai.com/quest/school4/
-- https://trailfusionai.com/quest/plans/
-- https://trailfusionai.com/quest/kingdom/
+## Pages
+- [Apps catalog](https://trailfusionai.com/apps.html) / [English](https://trailfusionai.com/en/apps.html)
+- [Gokaku! Quest site](https://trailfusionai.com/quest/) with [12 course guides](https://trailfusionai.com/quest/#courses) and [pricing](https://trailfusionai.com/quest/plans/)
+- [About the maker](https://trailfusionai.com/about/)
+- [Support, app terms and privacy](https://trailfusionai.com/support/)
+- [The maker's garage](https://trailfusionai.com/garage/): personal notes on road trips, a camper-van DIY build and Hiace maintenance. These are hobby records, not apps.

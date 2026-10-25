@@ -28,12 +28,10 @@ jobs:
         run: |
           python -m playwright install --with-deps chromium webkit
           sudo apt-get install -y fonts-noto-cjk
-      - name: Validate committed pages without regenerating or modifying them
-        run: python scripts/site-redesign/validate.py
-      - name: Validate bright hero, mobile gutters and WebKit rendering
-        run: python scripts/site-redesign/validate-daylight.py
-      - name: Check homepage gutters and unique visuals at twelve viewport widths
-        run: python scripts/site-redesign/homepage-regression.py
+      - name: Static checks (links, sitemap, retired locales)
+        run: python scripts/brand/check-static.py
+      - name: Browser checks in Chromium and WebKit at four widths
+        run: python scripts/brand/validate.py
       - name: Ensure validation did not modify tracked files
         run: git diff --exit-code
       - name: Save validation report and screenshots
@@ -41,5 +39,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: site-quality-${{ github.sha }}
-          path: /tmp/site-redesign-results
+          path: /tmp/brand-site-results
           retention-days: 14

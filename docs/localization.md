@@ -1,3 +1,5 @@
+> **2026-10-25 で置き換え済み。** 現在の構成は [docs/brand/README.md](brand/README.md) を参照（13言語は廃止、生成スクリプトは削除）。
+
 # Static localization release — 2026-09-26
 
 ## Published scope

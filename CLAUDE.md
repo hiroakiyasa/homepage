@@ -1,5 +1,10 @@
 # CLAUDE.md
 
+> **サイト全体の構成（2026-10-25〜）は [docs/brand/README.md](docs/brand/README.md)。** トップ・アプリ一覧・つくり手・ガレージは
+> `scripts/brand/` で生成し、既存ページはヘッダー・フッターだけ差し替える。合格！クエストは `docs/quest/README.md`。言語は日本語＋英語のみ。
+> 以下は旧来の車中泊スポット生成システムの説明。
+
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview

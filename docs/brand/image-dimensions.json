@@ -1,0 +1,150 @@
+{
+  "quest/icon": [
+    256,
+    256
+  ],
+  "car-concierge/icon": [
+    256,
+    256
+  ],
+  "car-concierge/shot-1": [
+    600,
+    1299
+  ],
+  "car-concierge/shot-2": [
+    600,
+    1299
+  ],
+  "car-concierge/shot-3": [
+    600,
+    1299
+  ],
+  "reelmake/icon": [
+    256,
+    256
+  ],
+  "reelmake/shot-1": [
+    600,
+    1304
+  ],
+  "reelmake/shot-2": [
+    600,
+    1304
+  ],
+  "reelmake/shot-3": [
+    600,
+    1304
+  ],
+  "voicelink/icon": [
+    256,
+    256
+  ],
+  "voicelink/shot-1": [
+    600,
+    1304
+  ],
+  "voicelink/shot-2": [
+    600,
+    1304
+  ],
+  "voicelink/shot-3": [
+    600,
+    1304
+  ],
+  "buddytalk/icon": [
+    256,
+    256
+  ],
+  "buddytalk/shot-1": [
+    600,
+    1300
+  ],
+  "buddytalk/shot-2": [
+    600,
+    1300
+  ],
+  "wood-golem/icon": [
+    256,
+    256
+  ],
+  "word-blaster/icon": [
+    256,
+    256
+  ],
+  "hacking-timer/icon": [
+    256,
+    256
+  ],
+  "english-quest/icon": [
+    256,
+    256
+  ],
+  "fp-quest/icon": [
+    256,
+    256
+  ],
+  "rika-quest/icon": [
+    256,
+    256
+  ],
+  "kokugo-quest/icon": [
+    256,
+    256
+  ],
+  "mochi/icon": [
+    256,
+    256
+  ],
+  "mochi/shot-1": [
+    600,
+    1304
+  ],
+  "mochi/shot-2": [
+    600,
+    1304
+  ],
+  "mochi/shot-3": [
+    600,
+    1304
+  ],
+  "bg/hero": [
+    1672,
+    941
+  ],
+  "bg/hero-m": [
+    760,
+    1350
+  ],
+  "bg/dawn": [
+    1672,
+    940
+  ],
+  "bg/dawn-m": [
+    900,
+    506
+  ],
+  "bg/room": [
+    1672,
+    941
+  ],
+  "bg/room-m": [
+    900,
+    507
+  ],
+  "bg/coast": [
+    1672,
+    941
+  ],
+  "bg/coast-m": [
+    900,
+    507
+  ],
+  "bg/garage": [
+    1672,
+    941
+  ],
+  "bg/garage-m": [
+    900,
+    507
+  ]
+}
