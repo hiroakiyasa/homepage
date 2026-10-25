@@ -3,6 +3,8 @@
 const emit = (name, params) => {
   if (typeof window.gtag === 'function') window.gtag('event', name, params);
 };
+// Filters only work with JavaScript, so they stay hidden without it.
+document.querySelectorAll('.filters[hidden]').forEach(group => { group.hidden = false; });
 document.querySelectorAll('[data-filter]').forEach(button => {
   button.addEventListener('click', () => {
     const category = button.dataset.filter;
@@ -50,3 +52,9 @@ document.querySelectorAll('[data-world-view]').forEach(button => button.addEvent
   group.querySelectorAll('[data-world-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
 }));
 document.querySelectorAll('.mobile-menu nav a').forEach(link => link.addEventListener('click', () => link.closest('details').removeAttribute('open')));
+// The voice wave only moves while the sample is actually playing.
+document.querySelectorAll('.voice-card audio').forEach(audio => {
+  const card = audio.closest('.voice-card');
+  const sync = () => card.classList.toggle('playing', !audio.paused && !audio.ended);
+  ['play', 'pause', 'ended'].forEach(type => audio.addEventListener(type, sync));
+});

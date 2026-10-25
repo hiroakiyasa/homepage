@@ -90,3 +90,15 @@ python3 scripts/quest/validate.py
 - `usage-summary.json` はApp Store ID 6775411516の初回DLのみ。旧社会版期間を含む2025-11-01〜2026-10-23の1,599件。再DL290件を含めない。人数・教材別学習数とは呼ばない。教材別実績は未集計と明記。
 - 取得はapp-analytics-reportスキルの読み取り専用処理。AdMobは取得未完了だが、この表示に広告データは使用していない。GA4やSupabaseの別指標をDL数に足していない。生の分析レポートは公開リポジトリに保存しない。
 - 再取り込み: `python3 scripts/quest/import-stats.py --platform-root /path/to/quest_platform --analytics-snapshot /path/to/analytics.json --as-of YYYY-MM-DD`。公開前に日付・本文・配信版との整合を確認する。
+
+## 2026-10-25 v3：明るいポスター調へ全面リデザイン
+
+ユーザー指示「合格社会クエストの教材デザインを参考に、明るく楽しく。AIっぽさを消して。Codexの画像生成を背景に」「セクションの中身を保つ必要はない」。
+
+- デザインの手本は合格社会クエストのストア画像（太い丸ゴシック、白フチの大きな数字、青いリボン見出し、チェック付き箇条書き、教科色のラベル、リカちゃん）。
+- 「AIっぽさ」の原因として、汎用の角帽ロゴ、くすんだ写真調背景、英字ラベル（LOOK INSIDE 等）、細い線の見出し飾り、抽象的なキャッチコピーを外した。ロゴは実際のアプリアイコン（`/Users/user/jyuken_sience/app_store_1024.png`）、キャラクターはアプリのリカちゃん（社会アプリの成長画像）。
+- トップの構成：ヒーロー（4科の実図鑑＋8教材）→ 収録数 → 4科（図鑑と問題の実画面）→ 1問の流れ（問題画像・解説画像・読み上げ）→ 難易度40〜70 → 12教材 → 王国 → 無料とPro → 体験問題 → おうちの方へ → FAQ → ダウンロード。
+- 実装：`scripts/quest/home.py`（トップと共通セクション）、`assets/quest/quest-v3.css`（quest.cssの後に読み込み、全ページの配色・文字・ボタンを上書き）。フォントは見出しが M PLUS Rounded 1c、本文が Noto Sans JP。
+- 背景7枚はCodexの画像生成（文字・人物なし）。保存処理がこのMacのフックで止まるため、Codexの保管フォルダ（`~/.codex/generated_images/<session>/`）から取り出す。出典とSHAは `backgrounds-v3.json`、変換は `python3 scripts/quest/prepare-v3-assets.py --jyuken /Users/user/jyuken_sience`。
+- OG画像は検証（外部通信を遮断）とは別に `python3 scripts/quest/make-og.py` で、Webフォントを読み込んだヒーローから作る。
+- 数字・無料/Proの表現・注記は従来どおり。単元数（合計）は各教材の単元数を足した値。

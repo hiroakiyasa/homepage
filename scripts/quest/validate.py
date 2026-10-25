@@ -38,21 +38,22 @@ try:
      label=f'{engine} {route} {width}px'
      check(not state['overflow'],label+' no horizontal overflow');check(not state['broken'],label+' images loaded '+str(state['broken']));check(state['h1']==1,label+' one h1')
      if route=='/quest/':
-      check(page.locator('.hero-subject').count()==4,label+' hero shows four school subjects')
-      check(page.locator('.collection-more a').count()==8,label+' hero shows eight additional courses')
-      check('ひとつのアプリに' in page.locator('h1').inner_text(),label+' unified learning headline')
-      check(page.locator('.course-card .course-numbers').count()==12,label+' all courses show quantity metrics')
-      check(page.locator('#track-record').count()==1,label+' scoped download evidence visible')
-      check(page.locator('.course-numbers dd').evaluate_all('(es)=>es.every(e=>e.scrollWidth<=e.clientWidth+1)'),label+' quantity labels are not clipped')
-      bg=page.locator('main > section').evaluate_all('(items)=>items.map(e=>getComputedStyle(e).backgroundImage)')
-      check(all('/assets/quest/backgrounds/' in x for x in bg),label+' generated backgrounds on every main section')
+      check(page.locator('.shelf .book').count()==4,label+' hero shows four school subjects')
+      check(page.locator('.more-courses a').count()==8,label+' hero shows eight additional courses')
+      check('中学受験の4科' in page.locator('h1').inner_text() and 'ひとつのアプリ' in page.locator('.v-hero').inner_text(),label+' unified learning headline')
+      check(page.locator('.subj').count()==4,label+' four school subjects shown with real atlas and quiz screens')
+      check(page.locator('.ccard .ccard-num').count()==12,label+' all courses show quantity metrics')
+      check(page.locator('.stat-notes').count()==1,label+' scoped number and download notes available')
+      check(page.locator('.ccard-num dd, .stat-board .num').evaluate_all('(es)=>es.every(e=>e.scrollWidth<=e.clientWidth+1)'),label+' quantity labels are not clipped')
+      art=page.locator('main > section').evaluate_all('(items)=>items.filter(e=>e.querySelector(":scope > picture.bg img[src*=\'/backgrounds/v3-\']")).length')
+      check(art>=6,label+f' generated backgrounds in key sections ({art})')
      if width in [390,1440] and route in ['/quest/','/quest/courses/science/','/quest/kingdom/','/quest/plans/']:
       slug=route.strip('/').replace('/','-');page.screenshot(path=str(OUT/f'{engine}-{slug}-{width}.png'),full_page=True)
      if route=='/quest/' and width==1440 and engine=='chromium':
-      page.locator('.hero').screenshot(path=str(OUT/'hero.png'))
+      page.locator('.v-hero').screenshot(path=str(OUT/'hero.png'))
    page.set_viewport_size({'width':390,'height':844});page.goto(origin+'/quest/',wait_until='load')
    for name,count in [('中学受験',4),('資格・就職',5),('語学',2),('暮らし',1),('すべて',12)]:
-    page.get_by_role('button',name=name,exact=True).click();check(page.locator('.course-card:visible').count()==count,f'{engine} filter {name} shows {count} courses')
+    page.get_by_role('button',name=name,exact=True).click();check(page.locator('.ccard:visible').count()==count,f'{engine} filter {name} shows {count} courses')
    audio=page.locator('audio');audio.evaluate('(a)=>a.load()');page.wait_for_function('document.querySelector("audio").readyState>=1')
    duration=audio.evaluate('(a)=>a.duration');check(duration>1,engine+' real question audio decodes')
    audio.evaluate('(a)=>a.play()');page.wait_for_timeout(400);check(audio.evaluate('(a)=>a.currentTime')>0,engine+' audio playback advances');audio.evaluate('(a)=>a.pause()')
@@ -70,11 +71,11 @@ try:
    page.goto(origin+'/quest/kingdom/',wait_until='load');page.get_by_role('button',name='領地を見渡す').click();check('night-overview' in page.locator('[data-world-image]').get_attribute('src'),engine+' kingdom view toggles')
    page.goto(origin+'/gokaku-quest.html?utm_source=qa#courses',wait_until='load');page.wait_for_url('**/quest/?utm_source=qa#courses');check(True,engine+' old URL preserves query and fragment')
    check(not js,engine+' no JavaScript runtime errors '+str(js));context.close()
-   context=browser.new_context(java_script_enabled=False);context.route('**/*',lambda r:r.continue_() if r.request.url.startswith(origin) else r.abort());p=context.new_page();p.goto(origin+'/quest/');check(p.locator('.course-card').count()==12,engine+' all courses accessible without JavaScript');check(p.locator('[data-store]').count()==2,engine+' both download links work without JavaScript');browser.close()
- # The OG image is a direct rendering of the implemented hero.
- from PIL import Image,ImageOps
- im=Image.open(OUT/'hero.png').convert('RGB');im=ImageOps.contain(im,(1200,630));og=Image.new('RGB',(1200,630),'#faf9f3');og.paste(im,((1200-im.width)//2,(630-im.height)//2));og.save(ROOT/'assets/quest/og-quest.jpg',quality=90)
- for relative in re.findall(r"url\(['\"]?(/assets/quest/backgrounds/[^)'\"]+)", (ROOT/'assets/quest/quest.css').read_text()):
+   context=browser.new_context(java_script_enabled=False);context.route('**/*',lambda r:r.continue_() if r.request.url.startswith(origin) else r.abort());p=context.new_page();p.goto(origin+'/quest/');check(p.locator('.ccard').count()==12,engine+' all courses accessible without JavaScript');check(p.locator('[data-store]').count()==4,engine+' hero and bottom download links work without JavaScript');browser.close()
+ # The OG image is rendered with web fonts by scripts/quest/make-og.py; here we only check its size.
+ from PIL import Image
+ check(Image.open(ROOT/'assets/quest/og-quest.jpg').size==(1200,630),'OG image is 1200x630')
+ for relative in re.findall(r"url\(['\"]?(/assets/quest/backgrounds/[^)'\"]+)", (ROOT/'assets/quest/quest.css').read_text()+(ROOT/'assets/quest/quest-v3.css').read_text()):
   check((ROOT/relative.lstrip('/')).is_file(),'generated background exists '+relative)
  titles=[]
  for route in PAGES:

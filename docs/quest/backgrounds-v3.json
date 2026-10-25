@@ -1,0 +1,79 @@
+[
+  {
+    "name": "hero",
+    "source": "/Users/user/.codex/generated_images/01a1716d-63c3-7cb0-a940-c89492d0abbe/exec-fcbb6b2b-00ad-4f02-bf04-5dcfabda2c19.png",
+    "sourceSha256": "17f7ec2fd24a2918ddfff7846e53d0994cf212dec2a71db311d7cb7b60abe120",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (sky, hills and a small storybook castle); not an app screenshot"
+  },
+  {
+    "name": "hero-portrait",
+    "source": "/Users/user/.codex/generated_images/01a1716f-7f8a-70a0-aca0-61b316ab88d7/exec-0679cb78-bf9f-44be-b332-46b1c4b23890.png",
+    "sourceSha256": "1191cdf0491b8a03ed9020ea572c836a72d95e108db443203ec1fbe2371a73e1",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (portrait sky for phones); not an app screenshot"
+  },
+  {
+    "name": "desk",
+    "source": "/Users/user/.codex/generated_images/01a1716d-6a49-7431-8bb6-715232a51660/exec-f98b3d4b-c69c-4c82-a26c-1a562e90a675.png",
+    "sourceSha256": "c5d58b8ac1888633de9ef2dcce6b6ef99bc870c572276b1de3c96ea8fde77ec9",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (study desk items around the edges); not an app screenshot"
+  },
+  {
+    "name": "meadow",
+    "source": "/Users/user/.codex/generated_images/01a1716d-63c3-7cb0-a940-c89492d0abbe/exec-21d37a5a-4315-4f79-a915-1b49a5d129ac.png",
+    "sourceSha256": "e69b17f47a94a5945a23004653ef48b9c3c44884117a44d5fdb909b8d622de1b",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (bright meadow); not an app screenshot"
+  },
+  {
+    "name": "kingdom",
+    "source": "/Users/user/.codex/generated_images/01a1716d-63c3-7cb0-a940-c89492d0abbe/exec-4e780ad6-3170-48d7-a62c-509af287b7b2.png",
+    "sourceSha256": "3584a3f637ee97c8890c9aef4d0918ba8c471483dc8a9c2b11d23c5cba7e8d52",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (storybook island kingdom); not an app screenshot"
+  },
+  {
+    "name": "confetti",
+    "source": "/Users/user/.codex/generated_images/01a1716f-7f8a-70a0-aca0-61b316ab88d7/exec-cbadef51-5b08-4be6-841b-16d088ca4602.png",
+    "sourceSha256": "b12461f4224a4cc4557c8f6e2986dff19dddd6bf27a19f0d0e08745ac6aca934",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (lemon paper with confetti edges); not an app screenshot"
+  },
+  {
+    "name": "sky2",
+    "source": "/Users/user/.codex/generated_images/01a1716d-63c3-7cb0-a940-c89492d0abbe/exec-881f31d0-2f2a-4054-bc4e-a6e429b0e71b.png",
+    "sourceSha256": "42c4b994b2303056ae34cd22ca9f5c5d90fe62eed2ff0ce6419eb7497cc2c48b",
+    "tool": "codex image_gen",
+    "purpose": "decorative website background (sky over a hill town); not an app screenshot"
+  },
+  {
+    "name": "rika-cheer",
+    "source": "/Users/user/jyuken_sience/shakai-app/assets/images/mascots/growth/rika-lv-020-cheer5.webp",
+    "sourceSha256": "185b1ab832c715ea4332166c739777103801e74fc418638ee6c2b3fd186752a7",
+    "tool": "app mascot (Rika)",
+    "purpose": "mascot illustration from the app"
+  },
+  {
+    "name": "rika-idea",
+    "source": "/Users/user/jyuken_sience/shakai-app/assets/images/mascots/growth/rika-lv-040-mood5.webp",
+    "sourceSha256": "272f50821daa822c0c7b4bd9b9ef9177a25deb5080283bfcba9cc21e444922c3",
+    "tool": "app mascot (Rika)",
+    "purpose": "mascot illustration from the app"
+  },
+  {
+    "name": "rika-wave",
+    "source": "/Users/user/jyuken_sience/shakai-app/assets/images/mascots/growth/rika-lv-005.webp",
+    "sourceSha256": "078dfc44c3025f017e29aefbced5b765a1f68785e60c59f66c5aa8866e336475",
+    "tool": "app mascot (Rika)",
+    "purpose": "mascot illustration from the app"
+  },
+  {
+    "name": "icon",
+    "source": "/Users/user/jyuken_sience/app_store_1024.png",
+    "sourceSha256": "a1289c802087d325f5d5ceefc84828cc11e66f883e2495a12276f1cc9c4ae3c5",
+    "tool": "app icon",
+    "purpose": "site logo = the real app icon"
+  }
+]

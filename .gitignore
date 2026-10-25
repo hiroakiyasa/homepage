@@ -50,3 +50,4 @@ scripts/quest/__pycache__/
 
 # Generated originals, preserved locally; optimized web assets are versioned
 output/imagegen/quest-backgrounds-v2/
+output/imagegen/quest-backgrounds-v3/
