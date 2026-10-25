@@ -1,0 +1,15 @@
+{
+  "checksPassed": 1410,
+  "errors": [],
+  "pages": 17,
+  "browsers": [
+    "Chrome",
+    "WebKit"
+  ],
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "course": "junior-science",
+    "title": "1身近な生き物の観察",
+    "key": "junior-science:study:life-observation:p23-79E21B02",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/aeb255306cc496f000fb0bb7ea07351397df44bb8da4652bfa83a342bf5d93b0.webp",
+    "sourceSha256": "c9b1d4a6fc6bc7836dd9903718d7fe5fdb09cd1012414baf8001d3b5ab776449",
+    "asset": "assets/quest/junior-science-atlas.webp"
+  },
+  {
+    "course": "junior-social",
+    "title": "米づくり",
+    "key": "junior-social:study:agriculture-region:agriculture-region-074",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/416d1f7612e7fcf35dc406e39df8c79b16f8e932fa20b302a6cc81a3d72e36df.webp",
+    "sourceSha256": "79fbfc121052b8b972cd1a4a2a43966101d688eed76b53a20f9bdfab60257471",
+    "asset": "assets/quest/junior-social-atlas.webp"
+  },
+  {
+    "course": "junior-kokugo",
+    "title": "国語図鑑｜全体地図",
+    "key": "junior-kokugo:generated:kokugo-zukan-p001",
+    "source": "/Users/user/jyuken_sience/kokugo-app/content/kokugo-zukan-image-pipeline/v2/generated/final/kokugo-zukan-p001.webp",
+    "sourceSha256": "5da1c520b751f480880f790f40641a2d4e69a081add7654a0ee474b7182c9e23",
+    "asset": "assets/quest/junior-kokugo-atlas.webp"
+  },
+  {
+    "course": "junior-math",
+    "title": "算数の世界をつなぐ地図",
+    "key": "junior-math:generated:sansu-zukan-0001",
+    "source": "/Users/user/jyuken_sience/sansu-app/sansu_normalized/image_generation_v2/generated/IMG_0001.png",
+    "sourceSha256": "7c679baec9e1fb94655407d07ee18f6a7ccb657973129056fb19bf9291447ab9",
+    "asset": "assets/quest/junior-math-atlas.webp"
+  },
+  {
+    "course": "fp-japan",
+    "title": "FP参考書 1ページ",
+    "key": "fp-japan:fp-page-001",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/e32085d1f37905225ffdeed9ffd6f030565805e0ba6fdaa76a5e744308df0692.png",
+    "sourceSha256": "d8412c02a3cc9ce249e444bab2f375c47cabf39778f3206b29adc055868384e3",
+    "asset": "assets/quest/fp-japan-atlas.webp"
+  },
+  {
+    "course": "bookkeeping-japan",
+    "title": "簿記の目的",
+    "key": "bookkeeping-japan:generated:bookkeeping-zukan-001-bk-intro-purpose",
+    "source": "/Users/user/jyuken_sience/bookkeeping_quest/content/bookkeeping-zukan-image-pipeline/v1/output/webp/bookkeeping-zukan-001-bk-intro-purpose.webp",
+    "sourceSha256": "384d68912f03461b2a866c3e6cd4bbf38129362e9cebc6d9ad40edf9914a0fa9",
+    "asset": "assets/quest/bookkeeping-japan-atlas.webp"
+  },
+  {
+    "course": "it-passport-japan",
+    "title": "企業活動と企業の責任",
+    "key": "it-passport-japan:generated:it-zukan-p0001",
+    "source": "/Users/user/jyuken_sience/IT_quest/content/it-zukan-image-pipeline/v1/output/webp/it-zukan-p0001.webp",
+    "sourceSha256": "ded5197052c2c95e6a76415d65bf20986873238f884f2a56568242460d6e277c",
+    "asset": "assets/quest/it-passport-japan-atlas.webp"
+  },
+  {
+    "course": "japanese-everyday",
+    "title": "あいさつ · 1",
+    "key": "japanese-everyday:nihongo-page-1",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/28b6654c16c9d72dad5865673cc9d6fe71ec40b296f97643cb04b1d3c20e1b93.webp",
+    "sourceSha256": "b52185a2834d09f8c2a949af4233b5f7fe0562082b29806475f3de04746db35f",
+    "asset": "assets/quest/japanese-everyday-atlas.webp"
+  },
+  {
+    "course": "spi3-japan",
+    "title": "二語の関係｜全体像",
+    "key": "spi3-japan:generated:spi3-japan-zukan-0001",
+    "source": "/Users/user/jyuken_sience/spi_quest/content/spi-zukan-image-pipeline/v1/output/webp/spi3-japan-zukan-0001.webp",
+    "sourceSha256": "ea35bc7771398e698d2230e91109c9fb04e1a4e2982e107b923e2aa3f7053cde",
+    "asset": "assets/quest/spi3-japan-atlas.webp"
+  },
+  {
+    "course": "english-travel",
+    "title": "文の穴が、名詞を呼ぶ",
+    "key": "english-travel:grammar:grammar-master-0009",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/864a6ca98cb2f40f39bb5f3e5107cd4da03c9fb8f94b9aa786ce879a9a59624e.webp",
+    "sourceSha256": "3acc46f49ee1a2cba91f5ab6d4c047ac06a40bd062f7405554602cc72824b0a9",
+    "asset": "assets/quest/english-travel-atlas.webp"
+  },
+  {
+    "course": "takken-japan",
+    "title": "民法総則・権利能力・行為能力｜全体像",
+    "key": "takken-japan:generated:takken-zukan-v2-rights-capacity-01",
+    "source": "/Users/user/jyuken_sience/quest_platform/apps/mobile/assets/starter/4302cfb1535374a52347b746be674ca8a1601d591361c5be717ed03c96fa4523.webp",
+    "sourceSha256": "5e26fd5d49084cef13827c331c85ad2a803c6867e235c67ff9b73af92ac12c36",
+    "asset": "assets/quest/takken-japan-atlas.webp"
+  },
+  {
+    "course": "driver-license-japan",
+    "title": "安全運転の基本姿勢｜法令遵守",
+    "key": "driver-license-japan:generated:driver-license-japan-zukan-0001",
+    "source": "/Users/user/jyuken_sience/driver_license_quest/content/driver-license-zukan-image-pipeline/v4-current-grid/output/webp/driver-license-japan-zukan-0001.webp",
+    "sourceSha256": "e8b118e4deff5af3903f73a3f4726a6aae70112441ce47c8c56ca706992425bd",
+    "asset": "assets/quest/driver-license-japan-atlas.webp"
+  }
+]

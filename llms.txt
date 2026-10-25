@@ -10,7 +10,7 @@ Contact: trailfusionai@gmail.com
 
 TrailFusion AI organizes its official content into four clear entrances:
 
-1. **Learn / Gokaku Quest** — junior-high entrance-exam learning apps for science, social studies, and Japanese, with a separate English and qualification-learning guide.
+1. **Learn / Gokaku Quest** — the unified Gokaku Quest app for 12 published courses: four school subjects, five qualification courses, Japanese, English, and driving theory.
 2. **Travel / Car travel** — the Car Travel Concierge app, scenic drive routes, family road-trip ideas, and car-camping inspiration.
 3. **Build / Camper DIY** — interactive 3D layouts and practical camper-conversion guidance.
 4. **Maintain / Hiace maintenance** — educational 3D vehicle information and a browser-local maintenance journal.
@@ -101,7 +101,24 @@ The complete illustrated build guide, interactive 3D applications, individual ap
 
 Page translations are shipped as static HTML; rendering them makes no translation-service request.
 
-## 合格！クエスト（次期1.2.0・公開準備中）
+## Gokaku Quest unified app (2026-10-25)
 
-- [合格！クエスト公式説明](https://trailfusionai.com/gokaku-quest.html): 今回の提供対象は中学受験の理科・社会・国語・算数、宅建士、FP技能検定、ITパスポート、簿記、日本語、英語の10コース。日本語は生活日本語・JLPT N5〜N1・JFT-Basic。今後もコースを追加予定。追加内容・時期は未確定。
-- 図鑑・音声・復習・複数プロフィールの対応範囲はコースやプランによる。収録問題は113,132問、全10コースの図鑑は4,714ページ（無料・有料範囲の合計）。全10コースの世界ランキングを連続スクロールで閲覧可能。参加は任意。公式試験アプリではなく、合格を保証しない。最新の提供状況と価格は公式説明ページとストアで確認。
+Canonical: https://trailfusionai.com/quest/
+12 published iOS courses: science, social studies, Japanese language arts, mathematics, IT Passport, FP, bookkeeping, real estate licensing, SPI3, Japanese, English, and driving theory. Course introductions include actual atlas images. Kingdom map: learning earns coins for buildings and unlocks 16 territories. Android feature availability may differ. No guaranteed results or unverified usage counts. Prices, renewal periods, and eligible courses must be checked on the purchase screen; old product listings do not establish availability for new customers.
+- https://trailfusionai.com/quest/
+- https://trailfusionai.com/quest/courses/science/
+- https://trailfusionai.com/quest/courses/social/
+- https://trailfusionai.com/quest/courses/japanese-language/
+- https://trailfusionai.com/quest/courses/math/
+- https://trailfusionai.com/quest/courses/it-passport/
+- https://trailfusionai.com/quest/courses/fp/
+- https://trailfusionai.com/quest/courses/bookkeeping/
+- https://trailfusionai.com/quest/courses/takken/
+- https://trailfusionai.com/quest/courses/spi3/
+- https://trailfusionai.com/quest/courses/japanese/
+- https://trailfusionai.com/quest/courses/english/
+- https://trailfusionai.com/quest/courses/driver-license/
+- https://trailfusionai.com/quest/rika-shakai/
+- https://trailfusionai.com/quest/school4/
+- https://trailfusionai.com/quest/plans/
+- https://trailfusionai.com/quest/kingdom/

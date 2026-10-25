@@ -42,3 +42,8 @@ tmp/campingcar (1)/
 
 # Raw parking rows / fee caches for scripts/parking-areas (never publish)
 .cache/
+
+# Quest website local browser artifacts
+.playwright-cli/
+output/playwright/quest/
+scripts/quest/__pycache__/

@@ -1,0 +1,147 @@
+[
+  {
+    "file": "assets/quest/bookkeeping-japan-atlas.webp",
+    "sha256": "161f20bbcd9ee64ab97de42400703d4dc47a6a21b665922701a957377ed97050",
+    "bytes": 188248
+  },
+  {
+    "file": "assets/quest/bookkeeping-japan-quiz.webp",
+    "sha256": "7c084be94d597601eba7de4aa929544db569b3d61cb6bdeaf8cd1972b63ddad5",
+    "bytes": 49590
+  },
+  {
+    "file": "assets/quest/driver-license-japan-atlas.webp",
+    "sha256": "e295d91f062c1d2319ed056bd49ee28711ff0d0458b7e1c255c1c5ccd47439db",
+    "bytes": 66564
+  },
+  {
+    "file": "assets/quest/driver-license-japan-question.webp",
+    "sha256": "73f625d53363d47b7c93467fcf61450d0f0e2aaffb6bb2ea91f5edd2e16ec39e",
+    "bytes": 69488
+  },
+  {
+    "file": "assets/quest/english-travel-atlas.webp",
+    "sha256": "8df768c11cb1a576beca837d76bc887f94d46e58ca34db5191490f5e3dbe30d6",
+    "bytes": 345214
+  },
+  {
+    "file": "assets/quest/fp-japan-atlas.webp",
+    "sha256": "4fc06068a2bc46ab71f1c425b19f70f88c33202b17dbc44098771b65395bdf8f",
+    "bytes": 179542
+  },
+  {
+    "file": "assets/quest/fp-japan-quiz.webp",
+    "sha256": "b86a3b99af61592291ab399cf4b4801430c6a5de93a77bc22e2884bf18d7617f",
+    "bytes": 39626
+  },
+  {
+    "file": "assets/quest/icon.webp",
+    "sha256": "d2e41f30fba4a3809e9c2ef9d38ccfb270a00092aaa05f38d0a5cb01a4ff2ff0",
+    "bytes": 1944
+  },
+  {
+    "file": "assets/quest/it-passport-japan-atlas.webp",
+    "sha256": "0c5a58b16193ea1b217fcfd0327c00e5e3b4bfe7e1901b801aefd4f37cd3a42c",
+    "bytes": 163996
+  },
+  {
+    "file": "assets/quest/it-passport-japan-question.webp",
+    "sha256": "38bc4f1ccc923c4fa231a6a7364ee541ddb6a47be746bd99b8c80252989c45e3",
+    "bytes": 60226
+  },
+  {
+    "file": "assets/quest/japanese-everyday-atlas.webp",
+    "sha256": "a22f28e9ae575405c7417a66690562339cab6c9a9d78975d707f38b71ff5673f",
+    "bytes": 275198
+  },
+  {
+    "file": "assets/quest/japanese-everyday-quiz.webp",
+    "sha256": "7d9f162af307bafc125172daade1e6f0c8f186f96c766d19d8ad39cd30dba273",
+    "bytes": 42200
+  },
+  {
+    "file": "assets/quest/junior-kokugo-atlas.webp",
+    "sha256": "560f8b6f62717ed7235a76d02d6e101c0b53a4008a9ee235b4fc6a719ad593f6",
+    "bytes": 212076
+  },
+  {
+    "file": "assets/quest/junior-kokugo-quiz.webp",
+    "sha256": "47becd3f4d241ac4917b1cdde5e14e12ac2894c6179340dc62d1dac33b88710e",
+    "bytes": 28506
+  },
+  {
+    "file": "assets/quest/junior-math-atlas.webp",
+    "sha256": "b06c555d5994cc9177b07c2b6bd9169ca0630eb10abb62069062cf4531905cc2",
+    "bytes": 416410
+  },
+  {
+    "file": "assets/quest/junior-math-quiz.webp",
+    "sha256": "e3aa0447c1215e2c879d64d4e5bdafe525e597b498c57c0cf984bd70a2b4b9be",
+    "bytes": 28598
+  },
+  {
+    "file": "assets/quest/junior-science-atlas.webp",
+    "sha256": "3a640441bcda62de34ba533dfedca7c58608fb743b17fea87f8cc315565b503c",
+    "bytes": 339740
+  },
+  {
+    "file": "assets/quest/junior-science-quiz.webp",
+    "sha256": "0d1459bb33d497ca2c30d6c3dd9bdc2b7f3147c481d3880b720fa60875521cd8",
+    "bytes": 62106
+  },
+  {
+    "file": "assets/quest/junior-social-atlas.webp",
+    "sha256": "607bf32e9063adf9b92217357919d5299e23bbe6388257efa32b307bc033c451",
+    "bytes": 189872
+  },
+  {
+    "file": "assets/quest/junior-social-quiz.webp",
+    "sha256": "9c9903ed916c43fd0ea5a7e039035312ef05611cf88633bd21f95d8e326506a6",
+    "bytes": 41932
+  },
+  {
+    "file": "assets/quest/kingdom-day-tablet.webp",
+    "sha256": "884a029890b8526e1b238d914caec1c49ca336d57c948a93e2d48bb7ff4bbf85",
+    "bytes": 185954
+  },
+  {
+    "file": "assets/quest/kingdom-night-overview.webp",
+    "sha256": "866d214464acf2f40ed25376c2996b2db17013bec65f9a38d6cab028163a28ad",
+    "bytes": 169658
+  },
+  {
+    "file": "assets/quest/kingdom.webp",
+    "sha256": "64d987999b031fb0a956442f63eafbabfdb09b1c5db19ba2aa032f61f472be4c",
+    "bytes": 40202
+  },
+  {
+    "file": "assets/quest/og-quest.jpg",
+    "sha256": "6641559f8430217ce087cbf6eadda8aee5a5dad7418bbfa4f5a9c8055357deec",
+    "bytes": 113642
+  },
+  {
+    "file": "assets/quest/spi3-japan-atlas.webp",
+    "sha256": "19773508695b29273a6047907e7bf011d124cd53ba99901dcef29620aa4b0b09",
+    "bytes": 151018
+  },
+  {
+    "file": "assets/quest/step2-build.webp",
+    "sha256": "499a2fdebf1cc342e610bf24458f09e93ce2199b66c87c59491013c01d52d8e0",
+    "bytes": 20302
+  },
+  {
+    "file": "assets/quest/step6-landmarks.webp",
+    "sha256": "3246018457b6040f7050233fb068ea5b71cae1953a6f718c4e62c249bb14673e",
+    "bytes": 33282
+  },
+  {
+    "file": "assets/quest/takken-japan-atlas.webp",
+    "sha256": "d39641c9ad2c19314a3f5c1c694b87bb412907988339be432c4ac017978eac4e",
+    "bytes": 177382
+  },
+  {
+    "file": "assets/quest/takken-japan-quiz.webp",
+    "sha256": "5c06069fda8bb08ca9a1e0e3c0051971295ca268d7f162508b0531d0859e7e14",
+    "bytes": 40548
+  }
+]
