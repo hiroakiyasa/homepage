@@ -477,3 +477,15 @@ h2 em, .kingdom h2 em, .hero h1 em { font-style: normal; color: var(--coral); ba
 .qa-toggle { display: inline-flex; gap: 8px; }
 .qa-toggle button { font-family: var(--round); font-weight: 800; font-size: 14px; padding: 9px 18px; border-radius: 999px; border: 0; cursor: pointer; background: #fff; color: var(--ink); box-shadow: inset 0 0 0 2px #cfdcea, 0 4px 0 #cfdcea; }
 .qa-toggle button[aria-pressed="true"] { background: var(--sun); box-shadow: 0 4px 0 #d9a91f; }
+
+/* 中学受験 科目別ガイド（/quest/juken/） */
+.unit-list { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 8px 0 10px; }
+.checks-plain { margin: 14px 0 0; padding-left: 1.2em; line-height: 1.9; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.juken-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; font-size: 14px; }
+.juken-table caption { text-align: left; font-size: 12px; color: var(--muted); padding: 0 0 10px; }
+.juken-table th, .juken-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.juken-table thead th { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.juken-table tbody th a { font-weight: 800; }
+.juken-table td:last-child { min-width: 14em; }
+@media (max-width: 480px) { .detail-hero h1 { font-size: clamp(26px, 7.6vw, 34px); line-height: 1.3; } }

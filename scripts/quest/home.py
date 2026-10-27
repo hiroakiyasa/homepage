@@ -195,7 +195,7 @@ def family():
 <div class="fam-photo">{H["preview"]("junior-social-atlas", "社会の図鑑：日本の米づくり")}{H["preview"]("junior-math-atlas", "算数の図鑑：算数の世界をつなぐ地図")}</div>
 <div>{head("おうちの方へ", '「勉強した？」より、<br><mark>「何がわかった？」</mark>', '')}
 <ul class="checks"><li>{CHECK}<b>1台をきょうだいで</b>。プロフィールを切りかえて、学習記録を分けられます</li><li>{CHECK}<b>まちがえた問題</b>から、もう一度ときなおせます</li><li>{CHECK}<b>図鑑を一緒に</b>ながめて、今日の単元を話題に</li></ul>
-<div class="actions"><a class="btn btn-sky" href="/quest/rika-shakai/">理科・社会の復習 <b aria-hidden="true">→</b></a><a class="btn btn-ghost" href="/quest/school4/">中学受験4科</a></div>
+<div class="actions"><a class="btn btn-sky" href="/quest/rika-shakai/">理科・社会の復習 <b aria-hidden="true">→</b></a><a class="btn btn-ghost" href="/quest/school4/">中学受験4科</a></div><p class="fine" style="margin-top:12px">科目別ガイド：<a href="/quest/juken/science/">理科</a>・<a href="/quest/juken/social/">社会</a>・<a href="/quest/juken/kokugo/">国語</a>・<a href="/quest/juken/math/">算数</a>・<a href="/quest/juken/anki/">暗記アプリ</a>・<a href="/quest/faq/">よくある質問</a></p>
 <p class="fine">プロフィールの切りかえと、別のApple／Googleアカウントへの購入の共有は別の機能です。購入の適用範囲は購入画面とストアの条件をご確認ください。</p></div>
 </div></section>'''
 

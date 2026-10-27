@@ -18,6 +18,7 @@ import home, pages, detail  # noqa: E402
 from apps_content import C  # noqa: E402
 
 TODAY = datetime.date(2026, 10, 25).isoformat()
+QUEST_TODAY = datetime.date(2026, 10, 27).isoformat()  # /quest/ subject guides and FAQ added
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
 SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(d + '/' for d in RETIRED)
 EN_HOBBY = {'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
@@ -128,6 +129,9 @@ def retire_locales():
 def sitemap(changed):
     old = re.findall(r'<url><loc>(.*?)</loc><lastmod>(.*?)</lastmod></url>', (ROOT / 'sitemap.xml').read_text())
     keep = {u: d for u, d in old if not any(u.startswith(f'{BASE}/{x}/') for x in RETIRED)}
+    quest_pages = json.loads((ROOT / 'docs/quest/pages.json').read_text())
+    for rel in quest_pages:
+        keep[BASE + rel] = QUEST_TODAY
     for rel in changed:
         url = BASE + rel if rel.startswith('/') else BASE + '/' + rel.removesuffix('index.html')
         if url.endswith('404.html'):
@@ -136,6 +140,47 @@ def sitemap(changed):
     rows = ''.join(f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n' for u, d in sorted(keep.items(), key=lambda x: (x[0] != BASE + '/', x[0])))
     (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{rows}</urlset>\n')
     return len(keep)
+
+
+LLMS_JA = """## 日本語の要約（{today}）
+合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、イラスト図鑑と4択クイズで復習する学習アプリです。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
+
+### 中学受験の科目別ガイド
+- [中学受験 理科・社会・国語・算数アプリ（総合）]({base}/quest/juken/)
+- [中学受験 理科アプリ]({base}/quest/juken/science/)：36単元・7,742問・図鑑539ページ。生命・地球・物質・エネルギー。
+- [中学受験 社会アプリ]({base}/quest/juken/social/)：53単元・5,327問・図鑑630ページ。地理・歴史・公民。
+- [中学受験 国語アプリ]({base}/quest/juken/kokugo/)：94単元・4,550問・図鑑500ページ。語彙・ことわざ慣用句・漢字・ことばのきまり・読解。
+- [中学受験 算数アプリ]({base}/quest/juken/math/)：55単元・6,600問・図鑑540ページ。数と計算・変化と関係・データの活用・図形・文章題。
+- [中学受験 暗記アプリ]({base}/quest/juken/anki/)：図鑑で理解、4択で思い出し、まちがい直しで定着。
+- [よくある質問]({base}/quest/faq/)、[料金・購入ガイド]({base}/quest/plans/)、[中学受験4科]({base}/quest/school4/)
+数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。各問題は偏差値の目安で40・50・60・70の4段階（難易度区分であり模試の偏差値とは別）。
+
+### 単体アプリとの関係
+- 合格理科クエスト（理科だけの単体アプリ）: https://apps.apple.com/jp/app/id6772644144
+- 合格！国語クエスト（国語だけの単体アプリ）: https://apps.apple.com/jp/app/id6780125916
+- 合格！クエスト（統合版・4科まとめて）: https://apps.apple.com/jp/app/id6775411516 / Google Play: com.gokakushakaiquest.app
+- 以前の「合格！社会クエスト」のストア掲載ページは、現在は統合版です。
+- 単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。
+
+### 無料とPro
+無料: 偏差値40・50の問題、まちがい直し、王国マップ、最初の5単元の読み上げ。Pro（1科目・中学受験4科・全科目）: 偏差値60・70、全対象の読み上げ、図鑑の全ページ、広告なし。価格はアプリ内の購入画面の表示が正です。
+
+### 資格・語学（別セクション）
+合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [12教材の一覧]({base}/quest/#courses)
+"""
+
+LLMS_FULL = """
+## Gokaku! Quest for Japanese junior-high entrance exams (chugaku juken), in English
+Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with an illustrated atlas, one-question-per-screen four-choice quizzes, a mistakes review and a kingdom-building map that grows as you study.
+- Science: 36 units, 7,742 questions, 539 atlas pages. {base}/quest/juken/science/
+- Social studies: 53 units, 5,327 questions, 630 atlas pages. {base}/quest/juken/social/
+- Japanese language: 94 units, 4,550 questions, 500 atlas pages. {base}/quest/juken/kokugo/
+- Math: 55 units, 6,600 questions, 540 atlas pages. {base}/quest/juken/math/
+- Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). 40 and 50 are free; 60 and 70 are Pro.
+- It is a review aid, not a replacement for cram school or past-paper practice, and it does not guarantee admission.
+- Single-subject predecessors: Gokaku Rika Quest (science) and Gokaku! Kokugo Quest (Japanese language). Their purchases and progress can move to Gokaku! Quest from inside the app.
+- Figures as of 2026-10-25 (release manifest). App Store Japan rating 4.37 from 114 ratings (2026-10-27).
+"""
 
 
 def llms():
@@ -162,12 +207,15 @@ App Store publisher name: hiroaki yuasa
 ## Pages
 - [Apps catalog]({BASE}/apps.html) / [English]({BASE}/en/apps.html)
 - [Gokaku! Quest site]({BASE}/quest/) with [12 course guides]({BASE}/quest/#courses) and [pricing]({BASE}/quest/plans/)
+- [Entrance-exam (chugaku juken) subject guides]({BASE}/quest/juken/) and [FAQ]({BASE}/quest/faq/)
 - [About the maker]({BASE}/about/)
 - [Support, app terms and privacy]({BASE}/support/)
 - [The maker's garage]({BASE}/garage/): personal notes on road trips, a camper-van DIY build and Hiace maintenance. These are hobby records, not apps.
 '''
-    (ROOT / 'llms.txt').write_text(text)
-    (ROOT / 'llms-full.txt').write_text(text)  # the full file used to describe the old four-entrance site
+    ja = LLMS_JA.format(base=BASE, today=QUEST_TODAY)
+    full = text + '\n' + ja + LLMS_FULL.format(base=BASE)
+    (ROOT / 'llms.txt').write_text(text + '\n' + ja)
+    (ROOT / 'llms-full.txt').write_text(full)
 
 
 def main():

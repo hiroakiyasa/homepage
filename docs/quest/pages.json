@@ -15,5 +15,12 @@
   "/quest/rika-shakai/",
   "/quest/school4/",
   "/quest/plans/",
-  "/quest/kingdom/"
+  "/quest/kingdom/",
+  "/quest/juken/",
+  "/quest/juken/science/",
+  "/quest/juken/social/",
+  "/quest/juken/kokugo/",
+  "/quest/juken/math/",
+  "/quest/juken/anki/",
+  "/quest/faq/"
 ]

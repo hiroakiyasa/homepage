@@ -28,6 +28,33 @@ App Store publisher name: hiroaki yuasa
 ## Pages
 - [Apps catalog](https://trailfusionai.com/apps.html) / [English](https://trailfusionai.com/en/apps.html)
 - [Gokaku! Quest site](https://trailfusionai.com/quest/) with [12 course guides](https://trailfusionai.com/quest/#courses) and [pricing](https://trailfusionai.com/quest/plans/)
+- [Entrance-exam (chugaku juken) subject guides](https://trailfusionai.com/quest/juken/) and [FAQ](https://trailfusionai.com/quest/faq/)
 - [About the maker](https://trailfusionai.com/about/)
 - [Support, app terms and privacy](https://trailfusionai.com/support/)
 - [The maker's garage](https://trailfusionai.com/garage/): personal notes on road trips, a camper-van DIY build and Hiace maintenance. These are hobby records, not apps.
+
+## 日本語の要約（2026-10-27）
+合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、イラスト図鑑と4択クイズで復習する学習アプリです。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
+
+### 中学受験の科目別ガイド
+- [中学受験 理科・社会・国語・算数アプリ（総合）](https://trailfusionai.com/quest/juken/)
+- [中学受験 理科アプリ](https://trailfusionai.com/quest/juken/science/)：36単元・7,742問・図鑑539ページ。生命・地球・物質・エネルギー。
+- [中学受験 社会アプリ](https://trailfusionai.com/quest/juken/social/)：53単元・5,327問・図鑑630ページ。地理・歴史・公民。
+- [中学受験 国語アプリ](https://trailfusionai.com/quest/juken/kokugo/)：94単元・4,550問・図鑑500ページ。語彙・ことわざ慣用句・漢字・ことばのきまり・読解。
+- [中学受験 算数アプリ](https://trailfusionai.com/quest/juken/math/)：55単元・6,600問・図鑑540ページ。数と計算・変化と関係・データの活用・図形・文章題。
+- [中学受験 暗記アプリ](https://trailfusionai.com/quest/juken/anki/)：図鑑で理解、4択で思い出し、まちがい直しで定着。
+- [よくある質問](https://trailfusionai.com/quest/faq/)、[料金・購入ガイド](https://trailfusionai.com/quest/plans/)、[中学受験4科](https://trailfusionai.com/quest/school4/)
+数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。各問題は偏差値の目安で40・50・60・70の4段階（難易度区分であり模試の偏差値とは別）。
+
+### 単体アプリとの関係
+- 合格理科クエスト（理科だけの単体アプリ）: https://apps.apple.com/jp/app/id6772644144
+- 合格！国語クエスト（国語だけの単体アプリ）: https://apps.apple.com/jp/app/id6780125916
+- 合格！クエスト（統合版・4科まとめて）: https://apps.apple.com/jp/app/id6775411516 / Google Play: com.gokakushakaiquest.app
+- 以前の「合格！社会クエスト」のストア掲載ページは、現在は統合版です。
+- 単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。
+
+### 無料とPro
+無料: 偏差値40・50の問題、まちがい直し、王国マップ、最初の5単元の読み上げ。Pro（1科目・中学受験4科・全科目）: 偏差値60・70、全対象の読み上げ、図鑑の全ページ、広告なし。価格はアプリ内の購入画面の表示が正です。
+
+### 資格・語学（別セクション）
+合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [12教材の一覧](https://trailfusionai.com/quest/#courses)
