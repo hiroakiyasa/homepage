@@ -259,6 +259,7 @@ body.detail-open .dock-open-fab {
   pointer-events: none;
 }
 .filter-title {
+  margin: 0;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.14em;

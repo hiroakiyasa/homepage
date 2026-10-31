@@ -3,7 +3,7 @@
 - every new page exists, has one h1, the brand header/footer and valid JSON-LD
 - every internal link and asset on the new pages and in the shared chrome resolves to a file
 - retired locales only redirect, and nothing links to them
-- every sitemap URL resolves to a file
+- every sitemap URL resolves to a file with title, description, canonical and index permission
 Exit code 1 with a list of problems if anything fails.
 """
 import json, re, sys
@@ -22,11 +22,18 @@ class Links(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.refs, self.h1, self.ld, self._ld = [], 0, [], None
+        self.titles, self.metas, self.canonicals = 0, {}, []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == 'h1':
             self.h1 += 1
+        if tag == 'title':
+            self.titles += 1
+        if tag == 'meta' and a.get('name'):
+            self.metas[a['name'].lower()] = a.get('content', '')
+        if tag == 'link' and a.get('rel') == 'canonical':
+            self.canonicals.append(a.get('href', ''))
         for key in ('href', 'src', 'srcset'):
             value = a.get(key)
             if value and not (tag == 'link' and a.get('rel') in ('preconnect', 'canonical', 'alternate')):
@@ -84,9 +91,27 @@ for d in RETIRED:
     for f in (ROOT / d).rglob('*.html'):
         if 'http-equiv="refresh"' not in f.read_text():
             problems.append(f'{f.relative_to(ROOT)}: retired locale is not a redirect')
-for url in re.findall(r'<loc>(.*?)</loc>', (ROOT / 'sitemap.xml').read_text()):
-    if not target(urlsplit(url).path or '/').is_file():
+sitemap_urls = re.findall(r'<loc>(.*?)</loc>', (ROOT / 'sitemap.xml').read_text())
+if len(sitemap_urls) != len(set(sitemap_urls)):
+    problems.append('sitemap: duplicate URLs')
+for url in sitemap_urls:
+    if not url.startswith(BASE + '/'):
+        problems.append(f'sitemap: unexpected domain or scheme {url}')
+        continue
+    file = target(urlsplit(url).path or '/')
+    if not file.is_file():
         problems.append(f'sitemap: missing {url}')
+        continue
+    parser = Links()
+    parser.feed(file.read_text(encoding='utf-8', errors='replace'))
+    if parser.titles != 1:
+        problems.append(f'sitemap: {url} has {parser.titles} title elements')
+    if not parser.metas.get('description'):
+        problems.append(f'sitemap: {url} has no meta description')
+    if parser.canonicals != [url]:
+        problems.append(f'sitemap: {url} canonical is {parser.canonicals}')
+    if 'noindex' in parser.metas.get('robots', '').lower():
+        problems.append(f'sitemap: {url} is marked noindex')
 home = (ROOT / 'index.html').read_text()
 for marker in ('毎日に、', 'href="/quest/"', 'href="/garage/"', 'もちのへや', '車旅コンシェルジュ', 'Reel Make', 'VoiceLink'):
     if marker not in home:
@@ -98,4 +123,4 @@ if 'ハイエース' in hero or 'DIY' in hero:
 if problems:
     print('\n'.join(problems))
     sys.exit(1)
-print(f'brand static checks passed ({len(NEW)} pages, sitemap, retired locales)')
+print(f'brand static checks passed ({len(NEW)} brand pages, {len(sitemap_urls)} indexable sitemap pages, retired locales)')
