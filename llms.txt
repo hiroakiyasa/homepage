@@ -18,12 +18,23 @@ App Store publisher name: hiroaki yuasa
 - [Car Concierge](https://trailfusionai.com/car-concierge.html) — Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan. App Store: https://apps.apple.com/app/id6751795223
 - [Reel Make](https://trailfusionai.com/reelmake.html) — Pick photos and clips. AI builds a vertical video with narration and captions. App Store: https://apps.apple.com/app/id6779420680
 - [VoiceLink AI Translator](https://trailfusionai.com/voicelink.html) — Speech recognition, translation and summaries run entirely on the device. Nothing you say is sent to a server. App Store: https://apps.apple.com/app/id6746684736
-- [BuddyTalk](https://trailfusionai.com/buddytalk.html) — Talk with AI until English comes out naturally. An English app focused on speaking practice. App Store: https://apps.apple.com/app/id6744263274
+- [BuddyTalk](https://trailfusionai.com/buddytalk.html) — English practice with AI characters. Public version: 1.4.6. Version 2.0.0 is being prepared for App Review, with on-device learning after initial setup, 500 free beginner Community Talk scenes and 1,500 two-/three-person scenarios. App Store: https://apps.apple.com/app/id6744263274
 - [English Quest](https://trailfusionai.com/eigo-quest.html) — Grammar, vocabulary and English exams, learned through quizzes and explanations. App Store: https://apps.apple.com/app/id6782028599
 - [Gokaku! FP Quest](https://trailfusionai.com/fp-quest.html) — The six areas of the Japanese financial planner exam, with illustrated guides and questions. App Store: https://apps.apple.com/app/id6812542387
 - [Word Blaster](https://trailfusionai.com/word-blaster.html) — Words fly at you as enemies. A vocabulary shooter for 10 languages. App Store: https://apps.apple.com/app/id6745741796
 - [Wood Golem](https://trailfusionai.com/wood-golem.html) — A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win. App Store: https://apps.apple.com/app/id6739466549
 - [Hacking Timer](https://trailfusionai.com/hacking-timer.html) — An interval timer for Apple Watch that keeps a rhythm of focus and rest. App Store: https://apps.apple.com/app/id6746063846
+
+## BuddyTalk — 2.0.0 preview (updated 2026-10-31)
+As of 2026-10-31, BuddyTalk 1.4.6 is the public App Store version. Version 2.0.0 is being prepared for App Review. The following features and new purchase options describe that planned update; a public release date is not confirmed.
+
+- English practice: 1,500 Community Talk scenarios at levels 1–10, with 750 for the learner and one AI character and 750 for the learner and two AI characters. The 500 beginner scenes at levels 1–5 are free. Stories, lessons and grammar activities also support English practice.
+- Language support: English remains the practice language. Guidance uses 10 languages in 11 settings: English, Japanese, Simplified Chinese, French (France or Canada), German, Spanish, Korean, Hindi, Brazilian Portuguese and Russian.
+- Offline conditions: after required AI/voice downloads, supported AI conversations, translation and reply assistance run on the device. Voice input also needs compatible on-device speech resources. Initial downloads, purchases/restoration, advertising/privacy services and optional external web actions need a connection. Offline ads are skipped.
+- Device guidance: iOS/iPadOS 17.6 or later and compatible hardware; at least 8 GB RAM is recommended. Initial downloads are about 1.6–5.7 GB. Wi-Fi and at least 10 GB free storage for setup are recommended, not a fixed minimum storage requirement. Speed varies with the device, battery and operating conditions.
+- Planned one-time prices in Japan: Remove Ads JPY 500; Premium JPY 1,500; an eligible Premium upgrade for verified Remove Ads buyers JPY 1,000. Premium includes advanced materials, translations/corrections/vocabulary/reply suggestions below the conversation, and ad removal. Actual regional prices come from the App Store. Earlier active monthly/yearly subscriptions remain separate contracts with verified access.
+
+Sources: [Japanese product page](https://trailfusionai.com/buddytalk.html), [English product page](https://trailfusionai.com/en/buddytalk.html), [Privacy Policy](https://trailfusionai.com/buddytalk-privacy.html#en), [Terms of Use](https://trailfusionai.com/buddytalk-terms.html#en), [11-language legal hub](https://trailfusionai.com/buddytalk-legal.html#en).
 
 ## Pages
 - [Apps catalog](https://trailfusionai.com/apps.html) / [English](https://trailfusionai.com/en/apps.html)

@@ -1,591 +1,471 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-
-
-
-<link href="assets/images/b295aa9fa2c904bc29a0e5e438249d00.jpg" rel="icon" type="image/jpeg"/>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S57KSMSB8Y');
-</script>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&amp;family=Fredoka:wght@500;600;700&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
-<!-- Tailwind 3 -->
-<link href="assets/css/tailwind-compiled.css" rel="stylesheet"/>
-<link href="assets/css/trailfusion.css" rel="stylesheet"/>
-<style>
-.language-content { display: none; }
-.language-content.active { display: block; }
-
-/* Retroactively map old legal page boxes to chunky look */
-.language-content .bg-white.rounded-2xl.shadow-lg,
-.language-content .bg-white.rounded-xl.shadow-lg,
-.language-content .bg-white.rounded-lg.shadow-md {
-  background: #fff !important;
-  border: 3px solid #1F2E4D !important;
-  border-radius: 28px !important;
-  box-shadow: 8px 8px 0 #1F2E4D !important;
-  padding: 2rem !important;
-}
-.language-content h2 { color: #1F2E4D !important; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 900; letter-spacing: -0.01em; }
-.language-content h3 { color: #1F2E4D !important; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; }
-.language-content .text-blue-600 { color: #FF6B5B !important; }
-.language-content .text-gray-700, .language-content .text-gray-800 { color: #1F2E4D !important; }
-.language-content .text-gray-600 { color: rgba(31,46,77,0.7) !important; }
-.language-content a { color: #FF6B5B; text-decoration: underline; text-underline-offset: 3px; }
-.language-content a.btn-chunky, .language-content a.btn-chunky-coral, .language-content a.btn-chunky-ocean { text-decoration: none; }
-/* Color info blocks become rounded chunky alerts */
-.language-content [class*="border-l-4"] {
-  border-left-width: 6px !important;
-  border-radius: 16px;
-  border: 2px solid #1F2E4D;
-}
-.language-content .bg-blue-50 { background: #EAF6FA !important; }
-.language-content .bg-yellow-50 { background: #FFF8DC !important; }
-.language-content .bg-green-50 { background: #E8F8E5 !important; }
-.language-content .bg-red-50 { background: #FFE5E2 !important; }
-.language-content .bg-purple-50 { background: #F2E8FA !important; }
-
-/* Language selector chunky pill */
-#languageSelector {
-  appearance: none;
-  background: #fff;
-  color: #1F2E4D;
-  border: 2.5px solid #1F2E4D;
-  border-radius: 999px;
-  padding: 0.5rem 2.25rem 0.5rem 1rem;
-  font-weight: 700;
-  font-family: inherit;
-  box-shadow: 4px 4px 0 #FFD84D;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231F2E4D'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 011.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1.25rem;
-}
-#languageSelector:focus { outline: none; transform: translate(-1px,-1px); box-shadow: 6px 6px 0 #FFD84D; }
-</style>
-<link href="/assets/css/site-v2.css" rel="stylesheet"/><script defer="" src="/assets/js/site-v2.js"></script><title>BuddyTalk - プライバシーポリシー / Privacy Policy | TrailFusion AI</title><meta content="BuddyTalk アプリのプライバシーポリシー - Privacy Policy for BuddyTalk App" name="description"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="#172b3a" name="theme-color"/><meta content="summary_large_image" name="twitter:card"/><link href="https://trailfusionai.com/buddytalk-privacy.html" rel="canonical"/><meta content="BuddyTalk - プライバシーポリシー / Privacy Policy | TrailFusion AI" property="og:title"/><meta content="BuddyTalk アプリのプライバシーポリシー - Privacy Policy for BuddyTalk App" property="og:description"/><meta content="website" property="og:type"/><meta content="TrailFusion AI" property="og:site_name"/><meta content="ja_JP" property="og:locale"/><meta content="https://trailfusionai.com/buddytalk-privacy.html" property="og:url"/><meta content="https://trailfusionai.com/assets/og/site-v2-learn.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://trailfusionai.com/#organization", "name": "TrailFusion AI", "url": "https://trailfusionai.com/", "email": "trailfusionai@gmail.com"}, {"@type": "WebSite", "@id": "https://trailfusionai.com/#website", "url": "https://trailfusionai.com/", "name": "TrailFusion AI", "inLanguage": "ja", "publisher": {"@id": "https://trailfusionai.com/#organization"}}, {"@type": "WebPage", "@id": "https://trailfusionai.com/buddytalk-privacy.html#webpage", "url": "https://trailfusionai.com/buddytalk-privacy.html", "name": "BuddyTalk - プライバシーポリシー / Privacy Policy | TrailFusion AI", "description": "BuddyTalk アプリのプライバシーポリシー - Privacy Policy for BuddyTalk App", "inLanguage": "ja", "isPartOf": {"@id": "https://trailfusionai.com/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://trailfusionai.com/"}, {"@type": "ListItem", "position": 2, "name": "BuddyTalk - プライバシーポリシー / Privacy Policy", "item": "https://trailfusionai.com/buddytalk-privacy.html"}]}]}</script><!-- br-head --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/brand.css?v=20261025-2"><script defer src="/assets/js/brand.js?v=20261025-2"></script><!-- /br-head --></head>
-<body class="bg-cream tf-legal"><a class="tf-skip" href="#tf-main">本文へ移動</a><header class="br-header"><div class="br-wrap br-header-inner"><a class="br-logo" href="/" aria-label="TrailFusion AI ホーム"><img src="/assets/icons/trailfusion-lockup.webp" alt="TrailFusion" width="104" height="64"></a><nav class="br-nav" aria-label="メインメニュー"><a href="/apps.html">アプリ</a><a href="/quest/">合格！クエスト</a><a href="/about/">つくり手</a><a href="/support/">サポート</a></nav><div class="tf-extra"><select aria-label="Language" id="languageSelector">
-<option value="ja">🇯🇵 日本語</option>
-<option value="en">🇺🇸 English</option>
-<option value="zh-Hans">🇨🇳 简体中文</option>
-<option value="fr">🇫🇷 Français</option>
-<option value="de">🇩🇪 Deutsch</option>
-<option value="es">🇪🇸 Español</option>
-<option value="ko">🇰🇷 한국어</option>
-<option value="hi">🇮🇳 हिन्दी</option>
-<option value="pt-BR">🇧🇷 Português</option>
-<option value="ru">🇷🇺 Русский</option>
-</select></div><a class="lang" href="/en/" hreflang="en" lang="en">English</a><details class="br-menu"><summary aria-label="メニューを開く"><span></span><span></span><span></span></summary><nav aria-label="モバイルメニュー"><a href="/apps.html">アプリ</a><a href="/quest/">合格！クエスト</a><a href="/about/">つくり手</a><a href="/support/">サポート</a><a class="lang" href="/en/" hreflang="en" lang="en">English</a></nav></details></div></header><div class="tf-legal-content" id="tf-main">
-<!-- ============================== -->
-<!-- HEADER -->
-<!-- ============================== -->
-
-<!-- ============================== -->
-<!-- HERO BAND -->
-<!-- ============================== -->
-<section class="relative overflow-hidden border-b-[3px] border-navy" style="background: radial-gradient(circle at 80% 20%, #FFE57A 0%, #FFD84D 50%, #FFC93D 100%);">
-<div class="absolute inset-0 dot-pattern opacity-30"></div>
-<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: url('assets/images/ai/hero-pattern-sun.jpg'); background-size: 460px; background-repeat: repeat; mix-blend-mode: multiply;"></div>
-<div class="container mx-auto px-4 py-10 md:py-14 relative z-10">
-<span class="sticker sticker-coral mb-4">PRIVACY POLICY</span>
-<h1 class="display-xl text-3xl md:text-5xl text-navy mt-4">
-<a class="hover:opacity-80 transition" href="apps.html#buddytalk">BuddyTalk</a>
-<span class="block text-lg md:text-2xl text-navy/70 font-bold mt-2" id="headerSubtitle">プライバシーポリシー</span>
-</h1>
-</div>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BuddyTalk — プライバシーポリシー</title><meta name="description" content="BuddyTalk 2.0.0に適用。最終更新：2026年10月31日。"><link rel="canonical" href="https://trailfusionai.com/buddytalk-privacy.html"><meta name="robots" content="index,follow"><link rel="icon" href="/assets/icons/trailfusion.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/quest/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/brand.css?v=20261025-2"><script defer src="/assets/js/brand.js?v=20261025-2"></script><style>
+.bt-legal{font:17px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","Hiragino Sans","PingFang SC","Apple SD Gothic Neo","Kohinoor Devanagari",sans-serif;color:#243730}.bt-legal .paper{padding:clamp(22px,4vw,44px)}.bt-legal h1{font-size:34px;color:#126a64;margin:0 0 12px}.bt-language-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:20px 0 32px;padding-bottom:22px;border-bottom:3px solid #e98d55}.bt-language-nav a{font-size:15px}.bt-legal a{color:#126a64;text-underline-offset:3px}.bt-legal article{border-bottom:1px solid #d9e1d9;padding:10px 0 38px;margin-bottom:38px;scroll-margin-top:100px}.bt-legal h2{color:#126a64;font-size:28px;line-height:1.45;margin:10px 0}.bt-legal h3{color:#126a64;font-size:21px;line-height:1.5;margin:28px 0 8px}.bt-legal p{margin:0 0 16px;overflow-wrap:anywhere}.bt-legal .version{font-size:14px;color:#52665d}.bt-legal .links,.bt-legal footer{font-size:14px}.bt-legal footer{margin-top:26px}@media(max-width:540px){.bt-legal{font-size:16px}.bt-legal h1{font-size:29px}.bt-legal h2{font-size:25px}.bt-legal h3{font-size:20px}}@media print{.br-header,.br-footer,.bt-language-nav,.bt-legal footer{display:none}.bt-legal article{break-after:page}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://trailfusionai.com/buddytalk-privacy.html", "name": "BuddyTalk — プライバシーポリシー", "dateModified": "2026-10-31", "inLanguage": ["ja", "en", "zh-Hans", "fr", "fr-CA", "de", "es", "ko", "hi", "pt-BR", "ru"], "publisher": {"@type": "Organization", "name": "TrailFusion AI", "url": "https://trailfusionai.com/"}}</script></head>
+<body class="br"><a class="skip" href="#main">本文へ移動</a><header class="br-header"><div class="br-wrap br-header-inner"><a class="br-logo" href="/" aria-label="TrailFusion AI ホーム"><img src="/assets/icons/trailfusion-lockup.webp" alt="TrailFusion" width="104" height="64"></a><nav class="br-nav" aria-label="メインメニュー"><a href="/apps.html">アプリ</a><a href="/quest/">合格！クエスト</a><a href="/about/">つくり手</a><a href="/support/">サポート</a></nav><a class="lang" href="https://trailfusionai.com/buddytalk-privacy.html#en" hreflang="en" lang="en">English</a><details class="br-menu"><summary aria-label="メニューを開く"><span></span><span></span><span></span></summary><nav aria-label="モバイルメニュー"><a href="/apps.html">アプリ</a><a href="/quest/">合格！クエスト</a><a href="/about/">つくり手</a><a href="/support/">サポート</a><a class="lang" href="https://trailfusionai.com/buddytalk-privacy.html#en" hreflang="en" lang="en">English</a></nav></details></div></header><main id="main" class="bt-legal"><section class="sec"><div class="br-wrap narrow"><div class="paper"><h1>BuddyTalk — プライバシーポリシー</h1><nav id="languages" class="bt-language-nav"><a href="#en" lang="en">English</a>
+<a href="#ja" lang="ja">日本語</a>
+<a href="#zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="#fr" lang="fr">Français</a>
+<a href="#fr-CA" lang="fr-CA">Français (Canada)</a>
+<a href="#de" lang="de">Deutsch</a>
+<a href="#es" lang="es">Español</a>
+<a href="#ko" lang="ko">한국어</a>
+<a href="#hi" lang="hi">हिन्दी</a>
+<a href="#pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="#ru" lang="ru">Русский</a></nav><article id="ja" lang="ja">
+<h2>プライバシーポリシー</h2>
+<p class="version">BuddyTalk 2.0.0に適用。最終更新：2026年10月31日。</p>
+<section id="ja-scope"><h3>1. 適用範囲と運営者</h3>
+<p>BuddyTalkはTrailFusion AIが提供します。本ポリシーは、バージョン2.0.0の端末内学習、ダウンロード、購入、広告などの処理を説明します。旧クラウド版については後の節で区別して説明します。「オフライン学習」は、アプリのすべての機能が通信なしで動くという意味ではありません。</p>
 </section>
-<!-- Main Content -->
-<main class="container mx-auto px-4 py-12 max-w-5xl">
-<div class="language-content active" id="content-ja">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">プライバシーポリシー</h2>
-<p class="text-gray-600 mb-4">最終更新日: 2026年3月</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 収集する情報</h3>
-<p class="text-gray-700 mb-3">BuddyTalkアプリは、以下の情報を収集します：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>音声データ：</strong>発音練習と評価のために音声を録音します。音声データは処理後、デバイスから削除されます。</li>
-<li><strong>学習進捗：</strong>学習履歴、完了したレッスン、単語の進捗状況を保存します。</li>
-<li><strong>サブスクリプション情報：</strong>App Storeを通じて処理される購入とサブスクリプションのステータス。</li>
-<li><strong>デバイス情報：</strong>アプリのパフォーマンス向上とバグ修正のための技術データ。</li>
-</ul>
+<section id="ja-local_learning"><h3>2. 端末に保存する学習・プロフィール情報</h3>
+<p>学習の進み具合、設定、入力したプロフィールはアプリの端末内ストレージに保存します。プロフィールには名前、誕生日、家族構成、趣味の項目があります。入力を完了したプロフィールは、端末内AIの会話の文脈に使うことがあります。必要なモデルのダウンロード後、AI会話・翻訳・修正・返答支援は端末内で処理し、その処理のために学習内容をクラウドAIへ送信しません。</p>
+<p>コミュニティートークでは、シナリオごとに直近最大200件の発話テキスト、達成した課題、クリア状況も端末内に保存します。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 情報の使用方法</h3>
-<p class="text-gray-700 mb-3">収集した情報は以下の目的で使用されます：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>発音評価とフィードバックの提供</li>
-<li>パーソナライズされた学習体験の提供</li>
-<li>アプリの機能改善とバグ修正</li>
-<li>カスタマーサポートの提供</li>
-</ul>
+<section id="ja-voice_permissions"><h3>3. 音声とアクセス許可</h3>
+<p>音声練習では、許可を得てマイクを使用します。端末が対応し、必要な音声資源が利用できる場合に、Appleの端末内音声認識で発話を文字に変換します。読み上げは端末内で合成します。マイクと音声認識の許可はiOS/iPadOSの設定で変更できます。任意の学習リマインダーには通知の許可を使い、アプリの設定で変更できます。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. 第三者サービス</h3>
-<p class="text-gray-700 mb-3">BuddyTalkは以下の第三者サービスを使用します：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Google Gemini AI：</strong>会話生成と発音評価</li>
-<li><strong>Apple Speech Recognition：</strong>音声からテキストへの変換</li>
-<li><strong>Supabase：</strong>セキュアなデータストレージ</li>
-<li><strong>Firebase Analytics：</strong>アプリ使用状況の分析</li>
-</ul>
+<section id="ja-downloads"><h3>4. モデルと音声のダウンロード</h3>
+<p>AIモデルと音声ファイルの初回ダウンロードでは、Hugging Faceとその配信サービスに接続します。配信側は、IPアドレスやファイルの取得要求など、配信に必要な通信情報を受け取ります。取得したファイルは端末に保存します。これらのダウンロードのために、会話・録音音声・プロフィールの内容を送信する必要はありません。</p>
+<p class="links">関連情報: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 Google Gemini AIへのデータ送信</h3>
-<p class="text-gray-700 mb-3">本アプリでは、AI会話機能を提供するために以下のデータをGoogle Gemini APIに送信します：</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>音声テキスト：</strong>音声認識で変換されたテキストデータがAI応答生成のために送信されます。</li>
-<li><strong>プロフィール情報：</strong>お名前、趣味、興味など（設定された場合）が会話のパーソナライズに使用されます。</li>
-<li><strong>会話履歴：</strong>自然な対話を維持するために、セッション中の会話コンテキストが送信されます。</li>
-</ul>
-</div>
-<p class="text-gray-700 mb-2">データの取り扱いはGoogleのAPI利用規約に準じます。アプリ初回使用時または更新時に、ユーザーの同意を取得します。</p>
-<p class="text-gray-700">詳細は<a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API利用規約</a>をご確認ください。</p>
+<section id="ja-advertising"><h3>5. 広告とプライバシー設定</h3>
+<p>広告とプライバシーの選択にはGoogle AdMobとUser Messaging Platform（UMP）を使います。広告はコンテキスト型・非パーソナライズ設定です。AppleのApp Tracking Transparency（ATT）画面で許可した場合、他社のアプリやWebサイトをまたぐ広告効果の測定に、端末の識別子が使われる場合があります。まだ選択していない場合は、レッスンを3回開始した後、ホーム画面で広告を準備する際に許可を求めます。以前の選択を尊重し、許可しない場合や制限されている場合も学習を続けられます。</p>
+<p>SDKは通信・端末の情報、IPアドレスから推定されるおおよその位置、端末設定で許容される識別子、広告の表示・操作、診断データを処理する場合があります。会話本文・プロフィールの内容・音声は広告SDKへ渡しません。英会話練習のAI処理は端末内で行います。</p>
+<p>トラッキングの許可はiOS/iPadOSの設定で変更でき、その他の選択肢はアプリの「広告のプライバシー設定」で確認できます。広告処理はUMPとATTの許可確認が終わってから開始します。オフラインでは広告を省略し、広告削除またはPremiumの利用権がある場合はアプリ内広告を表示しません。</p>
+<p class="links">関連情報: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. データセキュリティ</h3>
-<p class="text-gray-700">お客様の情報を保護するため、業界標準のセキュリティ対策を実施しています。音声データは処理後すぐに削除され、個人情報は暗号化されて保存されます。</p>
+<section id="ja-purchases"><h3>6. 購入と復元</h3>
+<p>App Storeの決済はAppleが処理します。BuddyTalkはStoreKitの購入・利用権情報を使い、機能の解放、以前の有効な購読の確認、購入の復元を行います。購入と復元には通信が必要です。BuddyTalkは決済カードの情報を受け取りません。Appleの取引記録は、アプリが端末内に保存するデータとは別に管理されます。</p>
+<p class="links">関連情報: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. お客様の権利</h3>
-<p class="text-gray-700 mb-3">お客様には以下の権利があります：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>個人データへのアクセス</li>
-<li>データの訂正</li>
-<li>データの削除</li>
-<li>データ処理の制限</li>
-</ul>
+<section id="ja-optional_external"><h3>7. 任意の外部検索・共有・お問い合わせ</h3>
+<p>会話メッセージの「Web検索」を選ぶと、そのメッセージの全文をGoogleの検索語としてブラウザーで送信します。「共有」を選ぶと、選択した文章が共有先のサービスに渡ります。外部リンクを開くとリンク先に接続します。これらの利用には各サービスのポリシーが適用されます。サポートにメールを送る場合は、メールアドレスと記載した内容を受け取り、対応のために使います。</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. お問い合わせ</h3>
-<p class="text-gray-700">プライバシーポリシーに関するご質問は、<a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a>までお問い合わせください。</p>
+<section id="ja-control_retention"><h3>8. 設定の管理とデータの削除</h3>
+<p>プロフィールの編集、権限や広告設定の変更、設定からのAIモデル削除ができます。モデルを削除しても学習記録やプロフィールは削除されません。端末内の学習記録は更新・削除されるまで保存され、アプリを削除するとそのアプリのローカルデータが削除されます。この操作でAppleの購読が解約されたり、Appleの取引記録や外部サービスが保有するデータが消えたりすることはありません。それらは各サービスの設定や窓口で管理してください。当方に送った情報の確認・訂正・削除などのご相談は、連絡先までお知らせください。</p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-en">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Privacy Policy</h2>
-<p class="text-gray-600 mb-4">Last Updated: March 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Information We Collect</h3>
-<p class="text-gray-700 mb-3">BuddyTalk app collects the following information:</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Voice Data:</strong> We record audio for pronunciation practice and evaluation. Voice data is deleted from the device after processing.</li>
-<li><strong>Learning Progress:</strong> We save your learning history, completed lessons, and word progress.</li>
-<li><strong>Subscription Information:</strong> Purchase and subscription status processed through the App Store.</li>
-<li><strong>Device Information:</strong> Technical data for improving app performance and fixing bugs.</li>
-</ul>
+<section id="ja-earlier_cloud_versions"><h3>9. 旧クラウド版について</h3>
+<p>以前のポリシーでは、会話テキスト・プロフィール・会話の文脈をGoogle Geminiへ送る処理、Supabaseのストレージ、Firebase Analyticsを説明していました。これは旧クラウド実装についての説明であり、2.0.0の端末内学習処理を指すものではありません。アプリを更新しただけで、過去にクラウド側が保有したデータの削除が完了したとは限りません。旧版の情報については連絡先へお問い合わせください。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. How We Use Information</h3>
-<p class="text-gray-700 mb-3">We use collected information for:</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>Providing pronunciation evaluation and feedback</li>
-<li>Offering personalized learning experiences</li>
-<li>Improving app features and fixing bugs</li>
-<li>Providing customer support</li>
-</ul>
+<section id="ja-contact"><h3>10. お問い合わせと改訂</h3>
+<p>プライバシーに関するご質問・ご相談は、TrailFusion AI（trailfusionai@gmail.com）までご連絡ください。サポートのやり取りはこのメールサービスを通じて取り扱います。アプリの処理を変更する場合は、対象バージョンと更新日を示して本ポリシーに反映します。</p>
+<p class="links">関連情報: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Third-Party Services</h3>
-<p class="text-gray-700 mb-3">BuddyTalk uses the following third-party services:</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Google Gemini AI:</strong> Conversation generation and pronunciation evaluation</li>
-<li><strong>Apple Speech Recognition:</strong> Voice-to-text conversion</li>
-<li><strong>Supabase:</strong> Secure data storage</li>
-<li><strong>Firebase Analytics:</strong> App usage analysis</li>
-</ul>
+<footer><a href="#languages">言語選択に戻る</a></footer></article>
+<article id="en" lang="en">
+<h2>Privacy Policy</h2>
+<p class="version">Applies to BuddyTalk 2.0.0. Updated: 31 October 2026.</p>
+<section id="en-scope"><h3>1. Scope and operator</h3>
+<p>TrailFusion AI provides BuddyTalk. This policy describes the version 2.0.0 app, including on-device learning, downloads, purchases and advertising. The older cloud-based version is described separately below. “Offline learning” does not mean that every app function operates without network access.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 Data Sent to Google Gemini AI</h3>
-<p class="text-gray-700 mb-3">To provide AI conversation features, the following data is sent to the Google Gemini API:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Speech Text:</strong> Text converted from speech recognition is sent to generate AI responses.</li>
-<li><strong>Profile Information:</strong> Your name, hobbies, and interests (if provided) are used to personalize conversations.</li>
-<li><strong>Conversation History:</strong> Session conversation context is sent to maintain natural dialogue flow.</li>
-</ul>
-</div>
-<p class="text-gray-700 mb-2">Data handling is subject to Google's API Terms of Service. User consent is obtained during initial app setup or upon update.</p>
-<p class="text-gray-700">For details, see the <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms of Service</a>.</p>
+<section id="en-local_learning"><h3>2. Learning and profile information on your device</h3>
+<p>Learning progress, settings and the profile you enter are stored in the app’s local storage. Profile fields include your name, birthday, family information and hobbies. Completed profile information can provide context for local AI conversations. After the required models are downloaded, AI conversation, translations, corrections and reply assistance are processed on your device. These learning inputs are not sent to a cloud AI service for that processing.</p>
+<p>Community Talk can also keep up to 200 recent text turns per scenario, together with completed tasks and completion status, in local app storage.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Data Security</h3>
-<p class="text-gray-700">We implement industry-standard security measures to protect your information. Voice data is deleted immediately after processing, and personal information is encrypted for storage.</p>
+<section id="en-voice_permissions"><h3>3. Voice and permissions</h3>
+<p>Voice practice uses the microphone with your permission. Speech is transcribed using Apple’s on-device speech recognition when the device supports it and the required speech resources are available. Speech playback uses local synthesis. You can change microphone and speech-recognition permissions in iOS/iPadOS Settings. Optional learning reminders use the notification permission and can be changed in the app’s Settings.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. Your Rights</h3>
-<p class="text-gray-700 mb-3">You have the right to:</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>Access your personal data</li>
-<li>Correct your data</li>
-<li>Delete your data</li>
-<li>Restrict data processing</li>
-</ul>
+<section id="en-downloads"><h3>4. Model and voice downloads</h3>
+<p>Initial AI model and voice-file downloads connect to Hugging Face and its delivery services. They receive the network information needed to deliver the requested files, such as your IP address and file request. Downloaded files are stored on the device. Their download does not require sending your conversation, voice recording or profile contents.</p>
+<p class="links">Related information: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. Contact Us</h3>
-<p class="text-gray-700">For questions about our privacy policy, contact us at <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="en-advertising"><h3>5. Advertising and privacy choices</h3>
+<p>BuddyTalk uses Google AdMob and the User Messaging Platform (UMP) for ads and privacy choices. Ads are configured as contextual/non-personalized. With your permission through Apple’s App Tracking Transparency (ATT) prompt, device identifiers may be used to measure ads across other companies’ apps and websites. If no choice has been made, the app requests permission on Home when preparing ads after the first three lesson starts. Existing choices are respected, and declining or restricted permission does not block learning.</p>
+<p>The SDKs may process network and device information, approximate location inferred from IP addresses, identifiers permitted by device settings, ad views/interactions and diagnostic data. Conversation text, profile contents and voice audio are not provided to the advertising SDKs. AI processing for English practice takes place on the device.</p>
+<p>You can change tracking permission in iOS/iPadOS Settings and review available Ad privacy choices in the app’s Settings. Advertising starts only after the UMP and ATT permission flows finish. Ads are skipped offline; Remove Ads and Premium remove in-app ads.</p>
+<p class="links">Related information: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-zh-Hans">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">隐私政策</h2>
-<p class="text-gray-600 mb-4">最后更新: 2026年3月</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 我们收集的信息</h3>
-<p class="text-gray-700 mb-3">BuddyTalk应用程序收集以下信息：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>语音数据：</strong>我们录制音频用于发音练习和评估。处理后语音数据将从设备中删除。</li>
-<li><strong>学习进度：</strong>我们保存您的学习历史、已完成的课程和单词进度。</li>
-<li><strong>订阅信息：</strong>通过App Store处理的购买和订阅状态。</li>
-<li><strong>设备信息：</strong>用于改善应用程序性能和修复错误的技术数据。</li>
-</ul>
+<section id="en-purchases"><h3>6. Purchases and restoration</h3>
+<p>Apple processes App Store payments. BuddyTalk uses StoreKit purchase and entitlement information to unlock features, verify active earlier subscriptions and restore purchases. Purchases and restoration require a connection. BuddyTalk does not receive your payment-card details. Apple’s transaction records are separate from data stored locally by the app.</p>
+<p class="links">Related information: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 我们如何使用信息</h3>
-<p class="text-gray-700 mb-3">我们使用收集的信息用于：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>提供发音评估和反馈</li>
-<li>提供个性化的学习体验</li>
-<li>改进应用功能和修复错误</li>
-<li>提供客户支持</li>
-</ul>
+<section id="en-optional_external"><h3>7. Optional searches, sharing and support</h3>
+<p>If you choose Web search on a conversation message, the full text of that message is sent as a Google search query in your browser. If you choose Share, the selected text is passed to the service you select. Opening external links connects to those sites. Their policies apply to that use. If you email support, we receive your email address and the information you choose to include and use them to respond.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. 第三方服务</h3>
-<p class="text-gray-700 mb-3">BuddyTalk使用以下第三方服务：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Google Gemini AI：</strong>对话生成和发音评估</li>
-<li><strong>Apple Speech Recognition：</strong>语音转文本</li>
-<li><strong>Supabase：</strong>安全数据存储</li>
-<li><strong>Firebase Analytics：</strong>应用使用分析</li>
-</ul>
+<section id="en-control_retention"><h3>8. Your controls and data removal</h3>
+<p>You can edit your profile, change permissions and advertising choices, and delete the downloaded AI model from Settings. Model deletion does not delete learning progress or the profile. Local learning records remain on the device until replaced or removed; deleting the app removes its local app data. This does not cancel an Apple subscription or erase Apple’s transaction records or data already held by external services. For those records, use the provider’s controls or contact options. Contact us for questions or requests about access, correction or deletion of information you have sent to us.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3.1 发送至Google Gemini AI的数据</h3>
-<p class="text-gray-700 mb-3">为提供AI对话功能，以下数据将发送至Google Gemini API：</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>语音文本：</strong>语音识别转换的文本将用于生成AI回复。</li>
-<li><strong>个人信息：</strong>您的姓名、爱好和兴趣（如已提供）将用于个性化对话。</li>
-<li><strong>对话历史：</strong>会话中的对话上下文将被发送以维持自然的对话流程。</li>
-</ul>
-</div>
-<p class="text-gray-700 mb-2">数据处理受Google API服务条款约束。在首次使用或更新时将获取用户同意。</p>
-<p class="text-gray-700">详情请参阅<a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API服务条款</a>。</p>
+<section id="en-earlier_cloud_versions"><h3>9. Earlier cloud versions</h3>
+<p>The earlier version’s policy described Google Gemini processing conversation text, profile information and conversation context, as well as Supabase storage and Firebase Analytics. Those statements describe that earlier cloud implementation, not the local learning processing in version 2.0.0. Updating the app does not by itself establish that data previously held by a cloud provider has been deleted. Contact us about information from an earlier version.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. 数据安全</h3>
-<p class="text-gray-700">我们采用行业标准安全措施保护您的信息。语音数据在处理后立即删除，个人信息经过加密存储。</p>
+<section id="en-contact"><h3>10. Contact and policy updates</h3>
+<p>For privacy questions or requests, contact TrailFusion AI at trailfusionai@gmail.com. Support correspondence is handled through that email service. Changes to the app’s processing will be reflected in this policy with an updated date and applicable version.</p>
+<p class="links">Related information: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">5. 您的权利</h3>
-<p class="text-gray-700 mb-3">您有权：</p>
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li>访问您的个人数据</li>
-<li>更正您的数据</li>
-<li>删除您的数据</li>
-<li>限制数据处理</li>
-</ul>
+<footer><a href="#languages">Back to language selection</a></footer></article>
+<article id="zh-Hans" lang="zh-Hans">
+<h2>隐私政策</h2>
+<p class="version">适用于BuddyTalk 2.0.0。更新日期：2026年10月31日。</p>
+<section id="zh-Hans-scope"><h3>1. 适用范围与运营方</h3>
+<p>BuddyTalk由TrailFusion AI提供。本政策说明2.0.0版应用的设备端学习、下载、购买和广告等处理。旧云端版本在下文单独说明。“离线学习”不代表应用的所有功能都无需网络。</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">6. 联系我们</h3>
-<p class="text-gray-700">如有关于隐私政策的问题，请联系 <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="zh-Hans-local_learning"><h3>2. 设备上的学习与个人资料</h3>
+<p>学习进度、设置及你填写的个人资料保存在应用的本地存储中。个人资料字段包括姓名、生日、家庭信息和爱好。已完成的资料可为本地AI对话提供背景。下载所需模型后，AI对话、翻译、纠正和回复辅助均在设备上处理，不会为这些处理将学习输入发送至云端AI服务。</p>
+<p>社区对话还会在本地保存每个场景最近最多200条对话文本，以及已完成任务和完成状态。</p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-fr">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Politique de confidentialité</h2>
-<p class="text-gray-600 mb-4">Dernière mise à jour: Mars 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Informations collectées</h3>
-<p class="text-gray-700">L'application BuddyTalk collecte des données vocales, des progrès d'apprentissage, des informations d'abonnement et des données de l'appareil pour améliorer votre expérience.</p>
+<section id="zh-Hans-voice_permissions"><h3>3. 语音与权限</h3>
+<p>语音练习会在获得许可后使用麦克风。设备支持且具备所需语音资源时，使用Apple设备端语音识别将语音转成文字。朗读使用本地语音合成。你可在iOS/iPadOS设置中更改麦克风和语音识别权限。可选的学习提醒使用通知权限，并可在应用设置中更改。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Utilisation des informations</h3>
-<p class="text-gray-700">Nous utilisons les informations pour l'évaluation de prononciation, les expériences d'apprentissage personnalisées et l'amélioration de l'application.</p>
+<section id="zh-Hans-downloads"><h3>4. 模型与语音下载</h3>
+<p>首次下载AI模型和语音文件会连接Hugging Face及其分发服务。它们会收到交付所请求文件所需的网络信息，例如IP地址和文件请求。下载的文件存储在设备上。下载这些文件不需要发送对话、录音或个人资料内容。</p>
+<p class="links">相关信息: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Données envoyées à Google Gemini AI</h3>
-<p class="text-gray-700 mb-3">Pour fournir les fonctionnalités de conversation IA, les données suivantes sont envoyées à l'API Google Gemini :</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Texte vocal :</strong> Le texte converti par la reconnaissance vocale est envoyé pour générer des réponses IA.</li>
-<li><strong>Informations de profil :</strong> Votre nom, loisirs et intérêts (si fournis) sont utilisés pour personnaliser les conversations.</li>
-<li><strong>Historique des conversations :</strong> Le contexte de la session est envoyé pour maintenir un dialogue naturel.</li>
-</ul>
-</div>
-<p class="text-gray-700">Le traitement des données est soumis aux <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">conditions d'utilisation de l'API Google Gemini</a>.</p>
+<section id="zh-Hans-advertising"><h3>5. 广告与隐私选择</h3>
+<p>BuddyTalk使用Google AdMob和User Messaging Platform（UMP）提供广告与隐私选择。广告采用情境式、非个性化设置。经你在Apple的App Tracking Transparency（ATT）提示中允许，设备标识符可能用于衡量跨其他公司应用和网站的广告效果。如果你尚未作出选择，应用会在你开始过三次课程后，于首页准备广告时请求许可。我们尊重已有选择，拒绝许可或权限受限都不会妨碍学习。</p>
+<p>SDK可能处理网络和设备信息、通过IP地址推断的大致位置、设备设置允许的标识符、广告展示与互动以及诊断数据。对话文本、个人资料内容和音频不会提供给广告SDK。英语练习的AI处理在设备上进行。</p>
+<p>你可在iOS/iPadOS设置中更改追踪权限，并在应用设置中的广告隐私选项查看其他可用选择。广告处理只会在UMP和ATT权限流程完成后开始。离线时跳过广告；去广告和Premium均会移除应用内广告。</p>
+<p class="links">相关信息: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contact</h3>
-<p class="text-gray-700">Contactez-nous à <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="zh-Hans-purchases"><h3>6. 购买与恢复</h3>
+<p>App Store付款由Apple处理。BuddyTalk使用StoreKit购买和权益信息解锁功能、验证仍有效的原有订阅及恢复购买。购买和恢复需要网络。BuddyTalk不会收到你的支付卡信息。Apple的交易记录与应用的本地存储数据分开管理。</p>
+<p class="links">相关信息: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-de">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Datenschutzrichtlinie</h2>
-<p class="text-gray-600 mb-4">Letzte Aktualisierung: März 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Gesammelte Informationen</h3>
-<p class="text-gray-700">Die BuddyTalk App sammelt Sprachdaten, Lernfortschritte, Abonnementinformationen und Gerätedaten zur Verbesserung Ihrer Erfahrung.</p>
+<section id="zh-Hans-optional_external"><h3>7. 可选的外部搜索、分享与支持</h3>
+<p>如果对对话消息选择“网页搜索”，该消息的全文会作为Google搜索词通过浏览器发送。如果选择“分享”，所选文本会传给你选择的服务。打开外部链接会连接相应网站，这些使用适用各服务的政策。发送支持邮件时，我们会收到你的邮箱地址及自行提供的信息，并用于回复。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Verwendung der Informationen</h3>
-<p class="text-gray-700">Wir verwenden die Informationen für Aussprachebewertung, personalisierte Lernerfahrungen und App-Verbesserungen.</p>
+<section id="zh-Hans-control_retention"><h3>8. 设置管理与数据删除</h3>
+<p>你可以编辑资料、更改权限和广告隐私选项，并在设置中删除已下载的AI模型。删除模型不会删除学习进度或资料。本地学习记录会保留到被替换或删除；删除应用会移除其本地应用数据。这不会取消Apple订阅，也不会清除Apple交易记录或外部服务已持有的数据。此类记录请通过相关服务的设置或联系渠道管理。如需咨询或请求访问、更正、删除曾发送给我们的信息，请联系我们。</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. An Google Gemini AI gesendete Daten</h3>
-<p class="text-gray-700 mb-3">Für KI-Konversationsfunktionen werden folgende Daten an die Google Gemini API gesendet:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Sprachtext:</strong> Der durch Spracherkennung konvertierte Text wird zur Generierung von KI-Antworten gesendet.</li>
-<li><strong>Profilinformationen:</strong> Ihr Name, Hobbys und Interessen (falls angegeben) werden zur Personalisierung von Gesprächen verwendet.</li>
-<li><strong>Gesprächsverlauf:</strong> Der Sitzungskontext wird gesendet, um einen natürlichen Dialog aufrechtzuerhalten.</li>
-</ul>
-</div>
-<p class="text-gray-700">Die Datenverarbeitung unterliegt den <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">API-Nutzungsbedingungen von Google Gemini</a>.</p>
+<section id="zh-Hans-earlier_cloud_versions"><h3>9. 旧云端版本</h3>
+<p>旧版政策曾说明将对话文本、个人资料和对话上下文交由Google Gemini处理，以及使用Supabase存储和Firebase Analytics。这些内容描述的是旧云端实现，不是2.0.0的本地学习处理。仅更新应用并不能证明云端服务过去持有的数据已经删除。关于旧版本的信息，请联系我们。</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Kontakt</h3>
-<p class="text-gray-700">Kontaktieren Sie uns unter <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="zh-Hans-contact"><h3>10. 联系与政策更新</h3>
+<p>如有隐私问题或请求，请通过trailfusionai@gmail.com联系TrailFusion AI。支持邮件通过该邮件服务处理。应用处理方式如有变化，会在本政策中更新并注明日期和适用版本。</p>
+<p class="links">相关信息: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-es">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Política de privacidad</h2>
-<p class="text-gray-600 mb-4">Última actualización: Marzo 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Información recopilada</h3>
-<p class="text-gray-700">La aplicación BuddyTalk recopila datos de voz, progreso de aprendizaje, información de suscripción y datos del dispositivo para mejorar su experiencia.</p>
+<footer><a href="#languages">返回语言选择</a></footer></article>
+<article id="fr" lang="fr">
+<h2>Politique de confidentialité</h2>
+<p class="version">Applicable à BuddyTalk 2.0.0. Mise à jour : 31 octobre 2026.</p>
+<section id="fr-scope"><h3>1. Champ d’application et éditeur</h3>
+<p>BuddyTalk est proposé par TrailFusion AI. Cette politique décrit la version 2.0.0 : apprentissage sur l’appareil, téléchargements, achats et publicité. L’ancienne version utilisant le cloud est présentée séparément ci-dessous. L’apprentissage hors ligne ne signifie pas que toutes les fonctions sont accessibles sans réseau.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Uso de la información</h3>
-<p class="text-gray-700">Utilizamos la información para evaluación de pronunciación, experiencias de aprendizaje personalizadas y mejoras de la aplicación.</p>
+<section id="fr-local_learning"><h3>2. Apprentissage et profil sur votre appareil</h3>
+<p>La progression, les réglages et le profil saisi sont enregistrés dans le stockage local de l’app. Le profil comprend le nom, la date de naissance, la situation familiale et les loisirs. Un profil complété peut servir de contexte aux conversations avec l’IA locale. Après le téléchargement des modèles requis, les conversations IA, traductions, corrections et aides à la réponse sont traitées sur l’appareil, sans envoyer ces contenus à un service d’IA dans le cloud pour ce traitement.</p>
+<p>Community Talk peut aussi conserver localement jusqu’à 200 messages récents par scénario, avec les tâches validées et l’état d’achèvement.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Datos enviados a Google Gemini AI</h3>
-<p class="text-gray-700 mb-3">Para proporcionar funciones de conversación con IA, los siguientes datos se envían a la API de Google Gemini:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Texto de voz:</strong> El texto convertido por reconocimiento de voz se envía para generar respuestas de IA.</li>
-<li><strong>Información del perfil:</strong> Tu nombre, pasatiempos e intereses (si se proporcionan) se usan para personalizar las conversaciones.</li>
-<li><strong>Historial de conversación:</strong> El contexto de la sesión se envía para mantener un diálogo natural.</li>
-</ul>
-</div>
-<p class="text-gray-700">El manejo de datos está sujeto a los <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Términos de Servicio de la API de Google Gemini</a>.</p>
+<section id="fr-voice_permissions"><h3>3. Voix et autorisations</h3>
+<p>Les exercices vocaux utilisent le microphone avec votre autorisation. La transcription utilise la reconnaissance vocale Apple sur l’appareil lorsque celui-ci la prend en charge et dispose des ressources vocales requises. La lecture utilise une synthèse locale. Vous pouvez modifier les autorisations du microphone et de reconnaissance vocale dans les Réglages iOS/iPadOS. Les rappels d’apprentissage facultatifs utilisent l’autorisation de notification et se règlent dans l’app.</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contacto</h3>
-<p class="text-gray-700">Contáctenos en <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="fr-downloads"><h3>4. Téléchargement des modèles et voix</h3>
+<p>Les premiers téléchargements de modèles IA et de fichiers vocaux se connectent à Hugging Face et à ses services de distribution. Ceux-ci reçoivent les informations réseau nécessaires à la livraison des fichiers, comme l’adresse IP et la requête de fichier. Les fichiers téléchargés sont stockés sur l’appareil. Leur téléchargement ne nécessite pas l’envoi du contenu de vos conversations, enregistrements vocaux ou profils.</p>
+<p class="links">Informations complémentaires: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-ko">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">개인정보 처리방침</h2>
-<p class="text-gray-600 mb-4">최종 업데이트: 2026년 3월</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. 수집하는 정보</h3>
-<p class="text-gray-700">BuddyTalk 앱은 음성 데이터, 학습 진도, 구독 정보 및 기기 데이터를 수집하여 사용자 경험을 개선합니다.</p>
+<section id="fr-advertising"><h3>5. Publicité et choix de confidentialité</h3>
+<p>BuddyTalk utilise Google AdMob et User Messaging Platform (UMP) pour les publicités et les choix de confidentialité. Les publicités sont configurées comme contextuelles et non personnalisées. Avec votre autorisation dans la demande App Tracking Transparency (ATT) d’Apple, des identifiants de l’appareil peuvent servir à mesurer l’efficacité des publicités dans les apps et sur les sites d’autres entreprises. Si vous n’avez pas encore fait de choix, cette autorisation est demandée sur l’accueil, lors de la préparation des publicités, après les trois premiers démarrages de leçon. Les choix existants sont respectés. Un refus ou une restriction n’empêche pas d’apprendre.</p>
+<p>Les SDK peuvent traiter des informations réseau et appareil, une localisation approximative déduite de l’adresse IP, des identifiants autorisés par les réglages, les vues et interactions publicitaires et des données de diagnostic. Le contenu des conversations, des profils et des enregistrements vocaux n’est pas transmis aux SDK publicitaires. Le traitement IA des exercices d’anglais s’effectue sur l’appareil.</p>
+<p>Vous pouvez modifier l’autorisation de suivi dans les Réglages iOS/iPadOS et consulter les autres choix de confidentialité publicitaire dans les réglages de l’app. Le traitement publicitaire commence uniquement lorsque les procédures d’autorisation UMP et ATT sont terminées. Les publicités sont ignorées hors ligne et supprimées avec Remove Ads ou Premium.</p>
+<p class="links">Informations complémentaires: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. 정보 사용 방법</h3>
-<p class="text-gray-700">발음 평가, 개인화된 학습 경험 및 앱 개선을 위해 정보를 사용합니다.</p>
+<section id="fr-purchases"><h3>6. Achats et restauration</h3>
+<p>Apple traite les paiements App Store. BuddyTalk utilise les informations d’achat et de droits StoreKit pour débloquer les fonctions, vérifier les anciens abonnements actifs et restaurer les achats. Les achats et leur restauration nécessitent une connexion. BuddyTalk ne reçoit pas les coordonnées de votre carte de paiement. Les transactions Apple sont distinctes des données locales de l’app.</p>
+<p class="links">Informations complémentaires: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Google Gemini AI에 전송되는 데이터</h3>
-<p class="text-gray-700 mb-3">AI 대화 기능을 제공하기 위해 다음 데이터가 Google Gemini API로 전송됩니다:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>음성 텍스트:</strong> 음성 인식으로 변환된 텍스트가 AI 응답 생성을 위해 전송됩니다.</li>
-<li><strong>프로필 정보:</strong> 이름, 취미, 관심사(제공된 경우)가 대화 개인화를 위해 사용됩니다.</li>
-<li><strong>대화 기록:</strong> 자연스러운 대화 흐름을 유지하기 위해 세션 컨텍스트가 전송됩니다.</li>
-</ul>
-</div>
-<p class="text-gray-700">데이터 처리는 <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API 서비스 약관</a>에 따릅니다.</p>
+<section id="fr-optional_external"><h3>7. Recherches, partage et assistance facultatifs</h3>
+<p>Si vous choisissez la recherche Web sur un message, son texte intégral est envoyé comme requête Google dans votre navigateur. Si vous choisissez Partager, le texte sélectionné est transmis au service choisi. Les liens externes se connectent aux sites concernés ; leurs politiques s’appliquent à cet usage. Si vous contactez l’assistance par e-mail, nous recevons votre adresse et les informations incluses afin de vous répondre.</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. 문의하기</h3>
-<p class="text-gray-700"><a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a>으로 문의해주세요</p>
+<section id="fr-control_retention"><h3>8. Vos réglages et la suppression des données</h3>
+<p>Vous pouvez modifier votre profil, les autorisations et les choix publicitaires, et supprimer le modèle IA téléchargé dans les réglages. Supprimer le modèle ne supprime pas la progression ni le profil. Les données d’apprentissage locales restent sur l’appareil jusqu’à leur remplacement ou suppression ; supprimer l’app efface ses données locales. Cela n’annule pas un abonnement Apple et n’efface ni les transactions Apple ni les données déjà détenues par des services externes. Utilisez leurs réglages ou contacts pour ces données. Contactez-nous pour consulter, corriger ou demander la suppression des informations que vous nous avez envoyées.</p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-hi">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">गोपनीयता नीति</h2>
-<p class="text-gray-600 mb-4">अंतिम अपडेट: मार्च 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. एकत्रित जानकारी</h3>
-<p class="text-gray-700">BuddyTalk ऐप आपके अनुभव को बेहतर बनाने के लिए वॉयस डेटा, सीखने की प्रगति, सदस्यता जानकारी और डिवाइस डेटा एकत्र करता है।</p>
+<section id="fr-earlier_cloud_versions"><h3>9. Anciennes versions utilisant le cloud</h3>
+<p>La politique de l’ancienne version décrivait le traitement par Google Gemini du texte des conversations, des profils et du contexte, ainsi que le stockage Supabase et Firebase Analytics. Cela concerne l’ancienne mise en œuvre cloud, pas le traitement local de l’apprentissage dans la version 2.0.0. Une mise à jour ne signifie pas, à elle seule, que les données précédemment détenues par un prestataire cloud ont été supprimées. Contactez-nous au sujet des informations d’une ancienne version.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. जानकारी का उपयोग</h3>
-<p class="text-gray-700">हम उच्चारण मूल्यांकन, व्यक्तिगत सीखने के अनुभव और ऐप सुधार के लिए जानकारी का उपयोग करते हैं।</p>
+<section id="fr-contact"><h3>10. Contact et mises à jour</h3>
+<p>Pour toute question ou demande relative à la confidentialité, contactez TrailFusion AI à trailfusionai@gmail.com. Les échanges d’assistance passent par ce service de messagerie. Les changements de traitement seront reflétés dans cette politique, avec une date et une version mises à jour.</p>
+<p class="links">Informations complémentaires: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Google Gemini AI को भेजा जाने वाला डेटा</h3>
-<p class="text-gray-700 mb-3">AI बातचीत सुविधाएं प्रदान करने के लिए, निम्नलिखित डेटा Google Gemini API को भेजा जाता है:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>वाक् पाठ:</strong> वॉयस रिकग्निशन द्वारा बदला गया टेक्स्ट AI प्रतिक्रिया उत्पन्न करने के लिए भेजा जाता है।</li>
-<li><strong>प्रोफ़ाइल जानकारी:</strong> आपका नाम, शौक और रुचियां (यदि प्रदान की गई हों) बातचीत को व्यक्तिगत बनाने के लिए उपयोग की जाती हैं।</li>
-<li><strong>बातचीत इतिहास:</strong> स्वाभाविक संवाद बनाए रखने के लिए सत्र संदर्भ भेजा जाता है।</li>
-</ul>
-</div>
-<p class="text-gray-700">डेटा प्रबंधन <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API सेवा शर्तों</a> के अधीन है।</p>
+<footer><a href="#languages">Retour au choix de langue</a></footer></article>
+<article id="fr-CA" lang="fr-CA">
+<h2>Politique de confidentialité</h2>
+<p class="version">Applicable à BuddyTalk 2.0.0. Mise à jour : 31 octobre 2026.</p>
+<section id="fr-CA-scope"><h3>1. Champ d’application et éditeur</h3>
+<p>BuddyTalk est proposé par TrailFusion AI. Cette politique décrit la version 2.0.0 : apprentissage sur l’appareil, téléchargements, achats et publicité. L’ancienne version utilisant le cloud est présentée séparément ci-dessous. L’apprentissage hors ligne ne signifie pas que toutes les fonctions sont accessibles sans réseau.</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. संपर्क करें</h3>
-<p class="text-gray-700"><a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a> पर हमसे संपर्क करें</p>
+<section id="fr-CA-local_learning"><h3>2. Apprentissage et profil sur votre appareil</h3>
+<p>La progression, les réglages et le profil saisi sont enregistrés dans le stockage local de l’app. Le profil comprend le nom, la date de naissance, la situation familiale et les loisirs. Un profil complété peut servir de contexte aux conversations avec l’IA locale. Après le téléchargement des modèles requis, les conversations IA, traductions, corrections et aides à la réponse sont traitées sur l’appareil, sans envoyer ces contenus à un service d’IA dans le cloud pour ce traitement.</p>
+<p>Community Talk peut aussi conserver localement jusqu’à 200 messages récents par scénario, avec les tâches validées et l’état d’achèvement.</p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-pt-BR">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Política de Privacidade</h2>
-<p class="text-gray-600 mb-4">Última atualização: Março de 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Informações coletadas</h3>
-<p class="text-gray-700">O aplicativo BuddyTalk coleta dados de voz, progresso de aprendizado, informações de assinatura e dados do dispositivo para melhorar sua experiência.</p>
+<section id="fr-CA-voice_permissions"><h3>3. Voix et autorisations</h3>
+<p>Les exercices vocaux utilisent le microphone avec votre autorisation. La transcription utilise la reconnaissance vocale Apple sur l’appareil lorsque celui-ci la prend en charge et dispose des ressources vocales requises. La lecture utilise une synthèse locale. Vous pouvez modifier les autorisations du microphone et de reconnaissance vocale dans les Réglages iOS/iPadOS. Les rappels d’apprentissage facultatifs utilisent l’autorisation de notification et se règlent dans l’app.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Uso das informações</h3>
-<p class="text-gray-700">Usamos as informações para avaliação de pronúncia, experiências de aprendizado personalizadas e melhorias no aplicativo.</p>
+<section id="fr-CA-downloads"><h3>4. Téléchargement des modèles et voix</h3>
+<p>Les premiers téléchargements de modèles IA et de fichiers vocaux se connectent à Hugging Face et à ses services de distribution. Ceux-ci reçoivent les informations réseau nécessaires à la livraison des fichiers, comme l’adresse IP et la requête de fichier. Les fichiers téléchargés sont stockés sur l’appareil. Leur téléchargement ne nécessite pas l’envoi du contenu de vos conversations, enregistrements vocaux ou profils.</p>
+<p class="links">Informations complémentaires: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Dados enviados ao Google Gemini AI</h3>
-<p class="text-gray-700 mb-3">Para fornecer recursos de conversação com IA, os seguintes dados são enviados à API do Google Gemini:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Texto de fala:</strong> O texto convertido pelo reconhecimento de voz é enviado para gerar respostas de IA.</li>
-<li><strong>Informações do perfil:</strong> Seu nome, hobbies e interesses (se fornecidos) são usados para personalizar conversas.</li>
-<li><strong>Histórico de conversa:</strong> O contexto da sessão é enviado para manter um fluxo de diálogo natural.</li>
-</ul>
-</div>
-<p class="text-gray-700">O tratamento de dados está sujeito aos <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Termos de Serviço da API do Google Gemini</a>.</p>
+<section id="fr-CA-advertising"><h3>5. Publicité et choix de confidentialité</h3>
+<p>BuddyTalk utilise Google AdMob et User Messaging Platform (UMP) pour les publicités et les choix de confidentialité. Les publicités sont configurées comme contextuelles et non personnalisées. Avec votre autorisation dans la demande App Tracking Transparency (ATT) d’Apple, des identifiants de l’appareil peuvent servir à mesurer l’efficacité des publicités dans les apps et sur les sites d’autres entreprises. Si vous n’avez pas encore fait de choix, cette autorisation est demandée sur l’accueil, lors de la préparation des publicités, après les trois premiers démarrages de leçon. Les choix existants sont respectés. Un refus ou une restriction n’empêche pas d’apprendre.</p>
+<p>Les SDK peuvent traiter des informations réseau et appareil, une localisation approximative déduite de l’adresse IP, des identifiants autorisés par les réglages, les vues et interactions publicitaires et des données de diagnostic. Le contenu des conversations, des profils et des enregistrements vocaux n’est pas transmis aux SDK publicitaires. Le traitement IA des exercices d’anglais s’effectue sur l’appareil.</p>
+<p>Vous pouvez modifier l’autorisation de suivi dans les Réglages iOS/iPadOS et consulter les autres choix de confidentialité publicitaire dans les réglages de l’app. Le traitement publicitaire commence uniquement lorsque les procédures d’autorisation UMP et ATT sont terminées. Les publicités sont ignorées hors ligne et supprimées avec Remove Ads ou Premium.</p>
+<p class="links">Informations complémentaires: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Contato</h3>
-<p class="text-gray-700">Entre em contato conosco em <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="fr-CA-purchases"><h3>6. Achats et restauration</h3>
+<p>Apple traite les paiements App Store. BuddyTalk utilise les informations d’achat et de droits StoreKit pour débloquer les fonctions, vérifier les anciens abonnements actifs et restaurer les achats. Les achats et leur restauration nécessitent une connexion. BuddyTalk ne reçoit pas les coordonnées de votre carte de paiement. Les transactions Apple sont distinctes des données locales de l’app.</p>
+<p class="links">Informations complémentaires: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
 </section>
-</div>
-</div>
-<div class="language-content" id="content-ru">
-<div class="bg-white rounded-2xl shadow-lg p-8">
-<h2 class="text-3xl font-bold text-blue-600 mb-6">Политика конфиденциальности</h2>
-<p class="text-gray-600 mb-4">Последнее обновление: Март 2026</p>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">1. Собираемая информация</h3>
-<p class="text-gray-700">Приложение BuddyTalk собирает голосовые данные, прогресс обучения, информацию о подписке и данные устройства для улучшения вашего опыта.</p>
+<section id="fr-CA-optional_external"><h3>7. Recherches, partage et assistance facultatifs</h3>
+<p>Si vous choisissez la recherche Web sur un message, son texte intégral est envoyé comme requête Google dans votre navigateur. Si vous choisissez Partager, le texte sélectionné est transmis au service choisi. Les liens externes se connectent aux sites concernés ; leurs politiques s’appliquent à cet usage. Si vous contactez l’assistance par e-mail, nous recevons votre adresse et les informations incluses afin de vous répondre.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">2. Использование информации</h3>
-<p class="text-gray-700">Мы используем информацию для оценки произношения, персонализированного обучения и улучшения приложения.</p>
+<section id="fr-CA-control_retention"><h3>8. Vos réglages et la suppression des données</h3>
+<p>Vous pouvez modifier votre profil, les autorisations et les choix publicitaires, et supprimer le modèle IA téléchargé dans les réglages. Supprimer le modèle ne supprime pas la progression ni le profil. Les données d’apprentissage locales restent sur l’appareil jusqu’à leur remplacement ou suppression ; supprimer l’app efface ses données locales. Cela n’annule pas un abonnement Apple et n’efface ni les transactions Apple ni les données déjà détenues par des services externes. Utilisez leurs réglages ou contacts pour ces données. Contactez-nous pour consulter, corriger ou demander la suppression des informations que vous nous avez envoyées.</p>
 </section>
-<section class="mb-8">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">3. Данные, отправляемые в Google Gemini AI</h3>
-<p class="text-gray-700 mb-3">Для обеспечения функций ИИ-разговоров следующие данные отправляются в API Google Gemini:</p>
-<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-<ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-<li><strong>Текст речи:</strong> Текст, преобразованный распознаванием речи, отправляется для генерации ответов ИИ.</li>
-<li><strong>Информация профиля:</strong> Ваше имя, хобби и интересы (при наличии) используются для персонализации разговоров.</li>
-<li><strong>История разговоров:</strong> Контекст сессии отправляется для поддержания естественного диалога.</li>
-</ul>
-</div>
-<p class="text-gray-700">Обработка данных регулируется <a class="text-blue-600 hover:underline" href="https://ai.google.dev/gemini-api/terms" target="_blank">Условиями использования API Google Gemini</a>.</p>
+<section id="fr-CA-earlier_cloud_versions"><h3>9. Anciennes versions utilisant le cloud</h3>
+<p>La politique de l’ancienne version décrivait le traitement par Google Gemini du texte des conversations, des profils et du contexte, ainsi que le stockage Supabase et Firebase Analytics. Cela concerne l’ancienne mise en œuvre cloud, pas le traitement local de l’apprentissage dans la version 2.0.0. Une mise à jour ne signifie pas, à elle seule, que les données précédemment détenues par un prestataire cloud ont été supprimées. Contactez-nous au sujet des informations d’une ancienne version.</p>
 </section>
-<section>
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">4. Контакты</h3>
-<p class="text-gray-700">Свяжитесь с нами по адресу <a class="text-blue-600 hover:underline" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></p>
+<section id="fr-CA-contact"><h3>10. Contact et mises à jour</h3>
+<p>Pour toute question ou demande relative à la confidentialité, contactez TrailFusion AI à trailfusionai@gmail.com. Les échanges d’assistance passent par ce service de messagerie. Les changements de traitement seront reflétés dans cette politique, avec une date et une version mises à jour.</p>
+<p class="links">Informations complémentaires: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
 </section>
-</div>
-</div>
-<!-- App Info Card -->
-<div class="mt-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 md:p-8 text-white text-center">
-<h3 class="text-xl md:text-2xl font-bold mb-2" id="appCardTitle">BuddyTalk で英語を楽しく学ぼう</h3>
-<p class="opacity-90 mb-5 text-sm md:text-base" id="appCardDesc">AI 英語パートナーとリアルな会話練習ができる学習アプリ</p>
-<div class="flex flex-wrap justify-center gap-3">
-<a class="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-5 py-2.5 rounded-xl font-semibold text-sm transition" href="https://apps.apple.com/jp/app/gp-teachers-ai%E8%8B%B1%E4%BC%9A%E8%A9%B1-%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%B2%E3%83%BC%E3%83%A0/id6744263274" target="_blank">
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg>
-<span id="appStoreBtn">App Store でダウンロード</span>
-</a>
-<a class="inline-flex items-center gap-2 bg-white bg-opacity-20 hover:bg-white bg-opacity-30 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition" href="apps.html#buddytalk" id="appInfoLink">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<span id="appInfoBtn">アプリの詳細を見る</span>
-</a>
-</div>
-</div>
-<p class="text-center mt-8"><a class="text-blue-600 hover:underline font-medium" href="buddytalk-terms.html" id="crossLink">利用規約はこちら →</a></p>
-</main>
-<!-- ============================== -->
-<!-- FOOTER -->
-<!-- ============================== -->
-
-<button aria-label="ページトップへ" id="scrollToTop"><i class="ri-arrow-up-line"></i></button>
-<script src="assets/js/trailfusion-ui.js"></script>
-<!-- Language Switcher Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const languageSelector = document.getElementById('languageSelector');
-const allContent = document.querySelectorAll('.language-content');
-const subtitles = {"ja": "プライバシーポリシー", "en": "Privacy Policy", "zh-Hans": "隐私政策", "fr": "Politique de confidentialité", "de": "Datenschutzrichtlinie", "es": "Política de privacidad", "ko": "개인정보 보호정책", "hi": "गोपनीयता नीति", "pt-BR": "Política de Privacidade", "ru": "Политика конфиденциальности"};
-const crossTexts = {"ja": "利用規約はこちら →", "en": "View Terms of Service →", "zh-Hans": "查看服务条款 →", "fr": "Voir les conditions d'utilisation →", "de": "Nutzungsbedingungen ansehen →", "es": "Ver términos de servicio →", "ko": "이용약관 보기 →", "hi": "सेवा की शर्तें देखें →", "pt-BR": "Ver Termos de Serviço →", "ru": "Условия использования →"};
-const appCardTitles = {"ja": "BuddyTalk で英語を楽しく学ぼう", "en": "Learn English with BuddyTalk", "zh-Hans": "用 BuddyTalk 轻松学英语", "fr": "Apprenez l'anglais avec BuddyTalk", "de": "Englisch lernen mit BuddyTalk", "es": "Aprende inglés con BuddyTalk", "ko": "BuddyTalk으로 영어를 즐겁게 배우세요", "hi": "BuddyTalk से अंग्रेज़ी सीखें", "pt-BR": "Aprenda inglês com o BuddyTalk", "ru": "Учите английский с BuddyTalk"};
-const appCardDescs = {"ja": "AI 英語パートナーとリアルな会話練習ができる学習アプリ", "en": "Practice real conversations with your AI English partner", "zh-Hans": "与 AI 英语伙伴进行真实对话练习", "fr": "Pratiquez des conversations réelles avec votre partenaire IA", "de": "Üben Sie echte Gespräche mit Ihrem KI-Englischpartner", "es": "Practica conversaciones reales con tu compañero de IA", "ko": "AI 영어 파트너와 실전 회화 연습", "hi": "AI अंग्रेज़ी पार्टनर के साथ वास्तविक बातचीत का अभ्यास करें", "pt-BR": "Pratique conversas reais com seu parceiro de IA", "ru": "Практикуйте реальные разговоры с вашим ИИ-партнёром"};
-const appStoreBtns = {"ja": "App Store でダウンロード", "en": "Download on App Store", "zh-Hans": "在 App Store 下载", "fr": "Télécharger sur l'App Store", "de": "Im App Store laden", "es": "Descargar en App Store", "ko": "App Store에서 다운로드", "hi": "App Store से डाउनलोड करें", "pt-BR": "Baixar na App Store", "ru": "Загрузить в App Store"};
-const appInfoBtns = {"ja": "アプリの詳細を見る", "en": "Learn more about the app", "zh-Hans": "了解应用详情", "fr": "En savoir plus sur l'app", "de": "Mehr über die App erfahren", "es": "Más información de la app", "ko": "앱 상세 정보 보기", "hi": "ऐप के बारे में और जानें", "pt-BR": "Saiba mais sobre o app", "ru": "Подробнее о приложении"};
-
-// Get saved language or default to Japanese
-const savedLanguage = localStorage.getItem('buddytalk-language') || 'ja';
-languageSelector.value = savedLanguage;
-showLanguage(savedLanguage);
-
-languageSelector.addEventListener('change', function() {
-const selectedLang = this.value;
-localStorage.setItem('buddytalk-language', selectedLang);
-showLanguage(selectedLang);
-});
-
-function showLanguage(lang) {
-allContent.forEach(content => {
-content.classList.remove('active');
-});
-const activeContent = document.getElementById('content-' + lang);
-if (activeContent) {
-activeContent.classList.add('active');
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-document.getElementById('headerSubtitle').textContent = subtitles[lang] || subtitles['ja'];
-const crossLink = document.getElementById('crossLink');
-if (crossLink) crossLink.textContent = crossTexts[lang] || crossTexts['ja'];
-document.getElementById('appCardTitle').textContent = appCardTitles[lang] || appCardTitles['ja'];
-document.getElementById('appCardDesc').textContent = appCardDescs[lang] || appCardDescs['ja'];
-document.getElementById('appStoreBtn').textContent = appStoreBtns[lang] || appStoreBtns['ja'];
-document.getElementById('appInfoBtn').textContent = appInfoBtns[lang] || appInfoBtns['ja'];
-}
-});
-</script>
-</div><footer class="br-footer"><div class="br-wrap"><div class="br-footer-grid"><div class="br-footer-brand"><img src="/assets/icons/trailfusion-lockup.webp" alt="TrailFusion" width="104" height="64" loading="lazy"><p>毎日に、ちいさな冒険を。<br>学ぶ・話す・旅する・つくるを、続けたくなるアプリに。</p><a class="mail" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></div><div><h2>アプリ</h2><ul><li><a href="/quest/">合格！クエスト</a></li><li><a href="/mochi.html">もちのへや</a></li><li><a href="/car-concierge.html">車旅コンシェルジュ</a></li><li><a href="/reelmake.html">Reel Make</a></li><li><a href="/voicelink.html">VoiceLink AI通訳</a></li><li><a href="/apps.html">すべてのアプリ</a></li></ul></div><div><h2>TrailFusion</h2><ul><li><a href="/about/">つくり手について</a></li><li><a href="/partners/">協業・パートナー</a></li><li><a href="/support/">お問い合わせ・サポート</a></li><li><a href="/support/#policies">アプリ別の規約・プライバシー</a></li><li><a href="/privacy-policy.html">サイトのプライバシーポリシー</a></li><li><a href="/terms-of-service.html">サイトの利用規約</a></li></ul></div><div><h2>つくり手のガレージ</h2><ul><li><a href="/garage/">つくり手のガレージ</a></li><li><a href="/travel/story.html">車旅の記録</a></li><li><a href="/drive-routes/">絶景ロード図鑑</a></li><li><a href="/diy/">キャンピングカーDIY</a></li><li><a href="/maintenance/">ハイエース整備</a></li></ul></div></div><div class="br-footer-bottom"><span>© 2026 TrailFusion AI</span><span>アプリの提供者名（App Store）：hiroaki yuasa</span></div></div></footer></body>
-</html>
+<footer><a href="#languages">Retour au choix de langue</a></footer></article>
+<article id="de" lang="de">
+<h2>Datenschutzerklärung</h2>
+<p class="version">Gilt für BuddyTalk 2.0.0. Aktualisiert: 31. Oktober 2026.</p>
+<section id="de-scope"><h3>1. Geltungsbereich und Anbieter</h3>
+<p>BuddyTalk wird von TrailFusion AI angeboten. Diese Erklärung beschreibt Version 2.0.0 mit Lernen auf dem Gerät, Downloads, Käufen und Werbung. Die frühere Cloud-Version wird unten gesondert erläutert. Offline-Lernen bedeutet nicht, dass jede App-Funktion ohne Netzwerkzugriff funktioniert.</p>
+</section>
+<section id="de-local_learning"><h3>2. Lern- und Profildaten auf deinem Gerät</h3>
+<p>Lernfortschritt, Einstellungen und das eingegebene Profil werden lokal in der App gespeichert. Das Profil umfasst Name, Geburtstag, Familienangaben und Hobbys. Ein ausgefülltes Profil kann den lokalen KI-Gesprächen Kontext geben. Nach dem Download der benötigten Modelle werden KI-Gespräche, Übersetzungen, Korrekturen und Antworthilfen auf deinem Gerät verarbeitet. Für diese Verarbeitung werden die Lerninhalte nicht an einen Cloud-KI-Dienst gesendet.</p>
+<p>Community Talk kann außerdem je Szenario bis zu 200 aktuelle Textbeiträge sowie erledigte Aufgaben und den Abschlussstatus lokal speichern.</p>
+</section>
+<section id="de-voice_permissions"><h3>3. Sprache und Berechtigungen</h3>
+<p>Für Sprachübungen wird mit deiner Erlaubnis das Mikrofon genutzt. Sprache wird mit Apples Spracherkennung auf dem Gerät in Text umgewandelt, wenn das Gerät diese unterstützt und die erforderlichen Sprachressourcen verfügbar sind. Die Sprachausgabe wird lokal erzeugt. Mikrofon- und Spracherkennungsberechtigungen lassen sich in den iOS/iPadOS-Einstellungen ändern. Optionale Lernerinnerungen benötigen die Mitteilungsberechtigung und können in den App-Einstellungen geändert werden.</p>
+</section>
+<section id="de-downloads"><h3>4. Modell- und Sprachdownloads</h3>
+<p>Beim ersten Download von KI-Modellen und Sprachdateien wird eine Verbindung zu Hugging Face und dessen Auslieferungsdiensten hergestellt. Diese erhalten die zur Bereitstellung der Dateien benötigten Netzwerkdaten, etwa IP-Adresse und Dateianfrage. Die Dateien werden auf dem Gerät gespeichert. Dafür müssen keine Gesprächsinhalte, Sprachaufnahmen oder Profildaten gesendet werden.</p>
+<p class="links">Weitere Informationen: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="de-advertising"><h3>5. Werbung und Datenschutzauswahl</h3>
+<p>BuddyTalk nutzt Google AdMob und die User Messaging Platform (UMP) für Werbung und Datenschutzauswahl. Werbung ist kontextbezogen und nicht personalisiert eingestellt. Mit deiner Erlaubnis über Apples App Tracking Transparency (ATT) können Gerätekennungen verwendet werden, um die Wirkung von Werbung über Apps und Websites anderer Unternehmen hinweg zu messen. Wenn du noch keine Auswahl getroffen hast, fragt die App auf der Startseite bei der Vorbereitung von Werbung nach dieser Erlaubnis, nachdem du drei Lektionen gestartet hast. Bestehende Entscheidungen werden respektiert. Auch bei Ablehnung oder eingeschränkter Berechtigung kannst du weiterlernen.</p>
+<p>Die SDKs können Netzwerk- und Geräteinformationen, aus der IP-Adresse abgeleitete ungefähre Standortdaten, durch Geräteeinstellungen erlaubte Kennungen, Werbeaufrufe und Interaktionen sowie Diagnosedaten verarbeiten. Gesprächsinhalte, Profildaten und Sprachaufnahmen werden nicht an die Werbe-SDKs übergeben. Die KI-Verarbeitung für Englischübungen erfolgt auf dem Gerät.</p>
+<p>Die Tracking-Erlaubnis kannst du in den iOS/iPadOS-Einstellungen ändern. Weitere Optionen findest du in den Werbe-Datenschutzeinstellungen der App. Die Werbeverarbeitung beginnt erst nach Abschluss der UMP- und ATT-Berechtigungsabläufe. Offline wird Werbung übersprungen; Remove Ads und Premium entfernen App-Werbung.</p>
+<p class="links">Weitere Informationen: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="de-purchases"><h3>6. Käufe und Wiederherstellung</h3>
+<p>Apple verarbeitet App-Store-Zahlungen. BuddyTalk verwendet Kauf- und Berechtigungsinformationen von StoreKit, um Funktionen freizuschalten, aktive frühere Abonnements zu prüfen und Käufe wiederherzustellen. Käufe und Wiederherstellung erfordern eine Verbindung. BuddyTalk erhält keine Zahlungskartendaten. Apples Transaktionsdaten sind von den lokal gespeicherten App-Daten getrennt.</p>
+<p class="links">Weitere Informationen: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="de-optional_external"><h3>7. Optionale Suche, Teilen und Support</h3>
+<p>Wenn du bei einer Nachricht die Websuche auswählst, wird deren vollständiger Text im Browser als Google-Suchanfrage gesendet. Beim Teilen wird der ausgewählte Text an den von dir gewählten Dienst übergeben. Externe Links verbinden mit den jeweiligen Websites. Dabei gelten deren Richtlinien. Bei einer Support-E-Mail erhalten wir deine E-Mail-Adresse und die von dir mitgeteilten Angaben, um deine Anfrage zu beantworten.</p>
+</section>
+<section id="de-control_retention"><h3>8. Einstellungen und Datenlöschung</h3>
+<p>Du kannst dein Profil bearbeiten, Berechtigungen und Werbeoptionen ändern und das heruntergeladene KI-Modell in den Einstellungen löschen. Das Löschen des Modells entfernt weder Lernfortschritt noch Profil. Lokale Lernaufzeichnungen bleiben bis zur Ersetzung oder Löschung auf dem Gerät; beim Löschen der App werden ihre lokalen Daten entfernt. Dadurch wird kein Apple-Abonnement gekündigt und es werden keine Apple-Transaktionen oder bereits bei externen Diensten vorhandenen Daten gelöscht. Nutze dafür die Optionen oder Kontaktwege des jeweiligen Anbieters. Bei Fragen zu Auskunft, Berichtigung oder Löschung von Informationen, die du uns gesendet hast, kontaktiere uns.</p>
+</section>
+<section id="de-earlier_cloud_versions"><h3>9. Frühere Cloud-Versionen</h3>
+<p>Die frühere Richtlinie beschrieb die Verarbeitung von Gesprächstext, Profilinformationen und Gesprächskontext durch Google Gemini sowie Supabase-Speicher und Firebase Analytics. Das betrifft die frühere Cloud-Implementierung und nicht die lokale Lernverarbeitung in Version 2.0.0. Ein App-Update allein belegt nicht, dass zuvor bei einem Cloud-Anbieter gespeicherte Daten gelöscht wurden. Kontaktiere uns zu Informationen aus einer früheren Version.</p>
+</section>
+<section id="de-contact"><h3>10. Kontakt und Aktualisierungen</h3>
+<p>Bei Datenschutzfragen oder Anfragen wende dich an TrailFusion AI unter trailfusionai@gmail.com. Support-Nachrichten werden über diesen E-Mail-Dienst bearbeitet. Änderungen der Datenverarbeitung werden mit aktualisiertem Datum und Versionsangabe in dieser Erklärung dargestellt.</p>
+<p class="links">Weitere Informationen: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">Zur Sprachauswahl</a></footer></article>
+<article id="es" lang="es">
+<h2>Política de privacidad</h2>
+<p class="version">Se aplica a BuddyTalk 2.0.0. Actualización: 31 de octubre de 2026.</p>
+<section id="es-scope"><h3>1. Ámbito y responsable</h3>
+<p>TrailFusion AI ofrece BuddyTalk. Esta política describe la versión 2.0.0: aprendizaje en el dispositivo, descargas, compras y publicidad. La versión anterior basada en la nube se explica por separado más abajo. Aprender sin conexión no significa que todas las funciones puedan usarse sin internet.</p>
+</section>
+<section id="es-local_learning"><h3>2. Aprendizaje y perfil en tu dispositivo</h3>
+<p>El progreso, los ajustes y el perfil que introduces se guardan en el almacenamiento local de la app. El perfil incluye nombre, fecha de nacimiento, información familiar y aficiones. Un perfil completado puede aportar contexto a las conversaciones con la IA local. Tras descargar los modelos necesarios, las conversaciones de IA, traducciones, correcciones y ayudas para responder se procesan en tu dispositivo, sin enviar esos contenidos a un servicio de IA en la nube para ese procesamiento.</p>
+<p>Community Talk también puede guardar localmente hasta 200 intervenciones de texto recientes por escenario, junto con las tareas completadas y el estado de finalización.</p>
+</section>
+<section id="es-voice_permissions"><h3>3. Voz y permisos</h3>
+<p>La práctica por voz usa el micrófono con tu permiso. El habla se convierte en texto con el reconocimiento de voz de Apple en el dispositivo cuando este lo admite y dispone de los recursos necesarios. La reproducción usa síntesis local. Puedes cambiar los permisos de micrófono y reconocimiento de voz en Ajustes de iOS/iPadOS. Los recordatorios de aprendizaje opcionales usan el permiso de notificaciones y se configuran en la app.</p>
+</section>
+<section id="es-downloads"><h3>4. Descargas de modelos y voz</h3>
+<p>Las primeras descargas de modelos de IA y archivos de voz se conectan a Hugging Face y sus servicios de distribución. Estos reciben la información de red necesaria para entregar los archivos solicitados, como la dirección IP y la solicitud del archivo. Los archivos se guardan en el dispositivo. Su descarga no requiere enviar el contenido de conversaciones, grabaciones o perfiles.</p>
+<p class="links">Información relacionada: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="es-advertising"><h3>5. Publicidad y opciones de privacidad</h3>
+<p>BuddyTalk usa Google AdMob y User Messaging Platform (UMP) para los anuncios y las opciones de privacidad. Los anuncios están configurados como contextuales y no personalizados. Con tu permiso en el aviso de App Tracking Transparency (ATT) de Apple, los identificadores del dispositivo pueden usarse para medir la eficacia de los anuncios entre apps y sitios de otras empresas. Si aún no has elegido, la app solicita permiso en Inicio al preparar anuncios, tras los tres primeros inicios de lección. Se respetan las decisiones existentes. Rechazar el permiso o tenerlo restringido no impide seguir aprendiendo.</p>
+<p>Los SDK pueden procesar información de red y del dispositivo, ubicación aproximada inferida de la dirección IP, identificadores permitidos por los ajustes, visualizaciones e interacciones con anuncios y datos de diagnóstico. No se facilita a los SDK publicitarios el texto de las conversaciones, el contenido del perfil ni el audio. El procesamiento de IA para practicar inglés se realiza en el dispositivo.</p>
+<p>Puedes cambiar el permiso de rastreo en los ajustes de iOS/iPadOS y consultar otras opciones de privacidad publicitaria en Ajustes de la app. La actividad publicitaria comienza cuando finalizan los procesos de permiso de UMP y ATT. Sin conexión se omiten los anuncios; Quitar anuncios y Premium eliminan la publicidad de la app.</p>
+<p class="links">Información relacionada: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="es-purchases"><h3>6. Compras y restauración</h3>
+<p>Apple procesa los pagos del App Store. BuddyTalk usa la información de compras y derechos de StoreKit para desbloquear funciones, verificar suscripciones anteriores activas y restaurar compras. Comprar y restaurar requiere conexión. BuddyTalk no recibe los datos de tu tarjeta de pago. Los registros de transacciones de Apple están separados de los datos locales de la app.</p>
+<p class="links">Información relacionada: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="es-optional_external"><h3>7. Búsquedas, compartir y asistencia opcionales</h3>
+<p>Si eliges Buscar en la web en un mensaje, su texto completo se envía como consulta a Google en el navegador. Si eliges Compartir, el texto seleccionado se entrega al servicio que escojas. Abrir enlaces externos conecta con esos sitios y se aplican sus políticas. Al escribir al soporte, recibimos tu dirección de correo y la información que decidas incluir para responderte.</p>
+</section>
+<section id="es-control_retention"><h3>8. Tus controles y eliminación de datos</h3>
+<p>Puedes editar el perfil, cambiar permisos y opciones publicitarias, y borrar el modelo de IA descargado desde Ajustes. Borrar el modelo no elimina el progreso ni el perfil. Los registros locales permanecen hasta que se sustituyen o eliminan; al borrar la app se eliminan sus datos locales. Esto no cancela suscripciones de Apple ni borra sus transacciones o los datos ya conservados por servicios externos. Para esos registros, usa los controles o contactos del proveedor. Escríbenos para consultas o solicitudes de acceso, corrección o eliminación de información que nos hayas enviado.</p>
+</section>
+<section id="es-earlier_cloud_versions"><h3>9. Versiones anteriores en la nube</h3>
+<p>La política anterior describía el procesamiento de textos, perfiles y contexto de conversación por Google Gemini, además de almacenamiento en Supabase y Firebase Analytics. Esas declaraciones corresponden a la implementación anterior en la nube, no al procesamiento local de aprendizaje de la versión 2.0.0. Actualizar la app no demuestra por sí solo que se hayan borrado datos conservados antes por un proveedor en la nube. Contáctanos sobre información de una versión anterior.</p>
+</section>
+<section id="es-contact"><h3>10. Contacto y actualizaciones</h3>
+<p>Para consultas o solicitudes de privacidad, escribe a TrailFusion AI a trailfusionai@gmail.com. La correspondencia de soporte se gestiona mediante ese servicio de correo. Los cambios en el tratamiento se reflejarán en esta política con una fecha actualizada y la versión aplicable.</p>
+<p class="links">Información relacionada: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">Volver a idiomas</a></footer></article>
+<article id="ko" lang="ko">
+<h2>개인정보 처리방침</h2>
+<p class="version">BuddyTalk 2.0.0에 적용됩니다. 업데이트: 2026년 10월 31일.</p>
+<section id="ko-scope"><h3>1. 적용 범위와 운영자</h3>
+<p>BuddyTalk은 TrailFusion AI가 제공합니다. 이 방침은 2.0.0 버전의 기기 내 학습, 다운로드, 구매, 광고 등의 처리를 설명합니다. 이전 클라우드 버전은 아래에서 별도로 설명합니다. 오프라인 학습은 앱의 모든 기능이 네트워크 없이 작동한다는 뜻은 아닙니다.</p>
+</section>
+<section id="ko-local_learning"><h3>2. 기기에 저장되는 학습 및 프로필 정보</h3>
+<p>학습 진행 상황, 설정, 입력한 프로필은 앱의 기기 내 저장소에 보관됩니다. 프로필에는 이름, 생일, 가족 정보, 취미 항목이 있습니다. 작성이 완료된 프로필은 기기 내 AI 대화의 맥락에 사용될 수 있습니다. 필요한 모델을 다운로드하면 AI 대화·번역·교정·답변 지원은 기기에서 처리하며, 해당 처리를 위해 학습 입력을 클라우드 AI 서비스로 보내지 않습니다.</p>
+<p>커뮤니티 대화는 시나리오별 최근 발화 텍스트 최대 200개, 완료한 과제와 완료 상태도 기기에 저장합니다.</p>
+</section>
+<section id="ko-voice_permissions"><h3>3. 음성과 권한</h3>
+<p>음성 연습은 사용자의 허가를 받아 마이크를 사용합니다. 기기가 지원하고 필요한 음성 리소스가 있을 때 Apple의 기기 내 음성 인식으로 말을 텍스트로 변환합니다. 읽어주기에는 로컬 음성 합성을 사용합니다. 마이크와 음성 인식 권한은 iOS/iPadOS 설정에서 변경할 수 있습니다. 선택 사항인 학습 알림은 알림 권한을 사용하며 앱 설정에서 변경할 수 있습니다.</p>
+</section>
+<section id="ko-downloads"><h3>4. 모델 및 음성 다운로드</h3>
+<p>AI 모델과 음성 파일을 처음 다운로드할 때 Hugging Face 및 배포 서비스에 연결합니다. 해당 서비스는 IP 주소와 파일 요청 등 요청한 파일을 전송하는 데 필요한 네트워크 정보를 받습니다. 다운로드한 파일은 기기에 저장됩니다. 이 다운로드를 위해 대화, 음성 녹음 또는 프로필 내용을 보낼 필요는 없습니다.</p>
+<p class="links">관련 정보: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="ko-advertising"><h3>5. 광고 및 개인정보 선택</h3>
+<p>BuddyTalk은 광고와 개인정보 선택에 Google AdMob 및 User Messaging Platform(UMP)을 사용합니다. 광고는 문맥 기반·비개인 맞춤형으로 설정됩니다. Apple의 App Tracking Transparency(ATT) 안내에서 허용하면 다른 회사의 앱과 웹사이트 전반에서 광고 효과를 측정하는 데 기기 식별자가 사용될 수 있습니다. 아직 선택하지 않은 경우 레슨을 세 번 시작한 뒤 홈 화면에서 광고를 준비할 때 권한을 요청합니다. 기존 선택을 존중하며, 허용하지 않거나 권한이 제한되어 있어도 학습을 계속할 수 있습니다.</p>
+<p>SDK는 네트워크·기기 정보, IP 주소에서 추정한 대략적인 위치, 기기 설정이 허용하는 식별자, 광고 표시·상호작용과 진단 데이터를 처리할 수 있습니다. 대화 본문, 프로필 내용, 음성은 광고 SDK에 제공하지 않습니다. 영어 연습의 AI 처리는 기기 내에서 이루어집니다.</p>
+<p>추적 권한은 iOS/iPadOS 설정에서 변경할 수 있으며, 다른 선택 사항은 앱 설정의 광고 개인정보 항목에서 확인할 수 있습니다. 광고 처리는 UMP와 ATT 권한 확인 절차가 끝난 뒤 시작됩니다. 오프라인에서는 광고를 건너뛰며, 광고 제거 또는 Premium 이용 권한이 있으면 앱 내 광고를 표시하지 않습니다.</p>
+<p class="links">관련 정보: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="ko-purchases"><h3>6. 구매 및 복원</h3>
+<p>App Store 결제는 Apple이 처리합니다. BuddyTalk은 StoreKit 구매·이용 권한 정보로 기능을 잠금 해제하고 기존의 유효한 구독을 확인하며 구매를 복원합니다. 구매와 복원에는 네트워크가 필요합니다. BuddyTalk은 결제 카드 정보를 받지 않습니다. Apple의 거래 기록은 앱이 기기에 저장하는 데이터와 별도로 관리됩니다.</p>
+<p class="links">관련 정보: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="ko-optional_external"><h3>7. 선택적인 외부 검색·공유·문의</h3>
+<p>대화 메시지에서 웹 검색을 선택하면 해당 메시지의 전체 텍스트가 브라우저를 통해 Google 검색어로 전송됩니다. 공유를 선택하면 선택한 텍스트가 지정한 서비스에 전달됩니다. 외부 링크를 열면 해당 사이트에 연결되며 그 서비스의 정책이 적용됩니다. 문의 이메일을 보내면 이메일 주소와 직접 적은 내용을 받아 답변에 사용합니다.</p>
+</section>
+<section id="ko-control_retention"><h3>8. 설정 관리 및 데이터 삭제</h3>
+<p>프로필 수정, 권한·광고 설정 변경, 설정에서 다운로드한 AI 모델 삭제가 가능합니다. 모델을 삭제해도 학습 기록이나 프로필은 삭제되지 않습니다. 기기 내 학습 기록은 대체되거나 삭제될 때까지 남아 있으며, 앱을 삭제하면 앱의 로컬 데이터가 제거됩니다. 이 작업으로 Apple 구독이 해지되거나 Apple 거래 기록 및 외부 서비스가 이미 보유한 데이터가 지워지지는 않습니다. 해당 기록은 각 서비스의 설정이나 문의 창구에서 관리해 주세요. 당사에 보낸 정보의 열람·정정·삭제와 관련한 문의나 요청은 아래 연락처로 보내 주세요.</p>
+</section>
+<section id="ko-earlier_cloud_versions"><h3>9. 이전 클라우드 버전</h3>
+<p>이전 방침에는 대화 텍스트·프로필·대화 맥락을 Google Gemini에서 처리하고 Supabase 저장소와 Firebase Analytics를 사용한다고 안내되어 있었습니다. 이는 이전 클라우드 구현에 관한 설명이며 2.0.0의 기기 내 학습 처리를 가리키지 않습니다. 앱을 업데이트했다는 사실만으로 과거 클라우드 서비스가 보유한 데이터가 삭제되었다고 볼 수는 없습니다. 이전 버전의 정보는 아래 연락처로 문의해 주세요.</p>
+</section>
+<section id="ko-contact"><h3>10. 문의 및 방침 업데이트</h3>
+<p>개인정보 관련 문의나 요청은 TrailFusion AI의 trailfusionai@gmail.com으로 보내 주세요. 지원 문의는 해당 이메일 서비스를 통해 처리됩니다. 앱의 처리 방식이 바뀌면 적용 버전과 업데이트 날짜를 표시해 이 방침에 반영합니다.</p>
+<p class="links">관련 정보: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">언어 선택으로 돌아가기</a></footer></article>
+<article id="hi" lang="hi">
+<h2>गोपनीयता नीति</h2>
+<p class="version">BuddyTalk 2.0.0 पर लागू। अपडेट: 31 अक्टूबर 2026।</p>
+<section id="hi-scope"><h3>1. दायरा और संचालक</h3>
+<p>BuddyTalk, TrailFusion AI द्वारा उपलब्ध कराया जाता है। यह नीति संस्करण 2.0.0 में डिवाइस पर सीखने, डाउनलोड, खरीद और विज्ञापनों से जुड़े डेटा के उपयोग को बताती है। पुराने क्लाउड संस्करण की जानकारी नीचे अलग दी गई है। ऑफ़लाइन सीखने का मतलब यह नहीं कि ऐप की हर सुविधा बिना इंटरनेट चलती है।</p>
+</section>
+<section id="hi-local_learning"><h3>2. डिवाइस पर सीखने और प्रोफ़ाइल की जानकारी</h3>
+<p>सीखने की प्रगति, सेटिंग और भरी हुई प्रोफ़ाइल ऐप के स्थानीय स्टोरेज में रखी जाती हैं। प्रोफ़ाइल में नाम, जन्मदिन, परिवार की जानकारी और रुचियाँ शामिल हैं। पूरी की गई प्रोफ़ाइल स्थानीय AI बातचीत को संदर्भ दे सकती है। ज़रूरी मॉडल डाउनलोड होने के बाद AI बातचीत, अनुवाद, सुधार और जवाब की सहायता आपके डिवाइस पर संसाधित होती है। इस काम के लिए सीखने की सामग्री क्लाउड AI सेवा को नहीं भेजी जाती।</p>
+<p>Community Talk हर दृश्य में हाल की अधिकतम 200 लिखित बारी, पूरे किए गए कार्य और पूरा होने की स्थिति भी स्थानीय रूप से रख सकता है।</p>
+</section>
+<section id="hi-voice_permissions"><h3>3. आवाज़ और अनुमतियाँ</h3>
+<p>आवाज़ से अभ्यास के लिए आपकी अनुमति से माइक्रोफ़ोन इस्तेमाल होता है। डिवाइस में समर्थन और ज़रूरी भाषण संसाधन होने पर Apple की डिवाइस पर चलने वाली वाक् पहचान से आवाज़ को पाठ में बदला जाता है। बोलकर सुनाने के लिए स्थानीय वाक् संश्लेषण इस्तेमाल होता है। माइक्रोफ़ोन और वाक् पहचान की अनुमतियाँ iOS/iPadOS सेटिंग में बदल सकते हैं। वैकल्पिक अध्ययन रिमाइंडर सूचनाओं की अनुमति इस्तेमाल करते हैं और ऐप की सेटिंग से बदले जा सकते हैं।</p>
+</section>
+<section id="hi-downloads"><h3>4. मॉडल और आवाज़ के डाउनलोड</h3>
+<p>AI मॉडल और आवाज़ की फ़ाइलों को पहली बार डाउनलोड करते समय Hugging Face और उसकी वितरण सेवाओं से संपर्क होता है। फ़ाइलें भेजने के लिए उन्हें IP पता और फ़ाइल अनुरोध जैसी नेटवर्क जानकारी मिलती है। डाउनलोड की गई फ़ाइलें डिवाइस पर रहती हैं। इन्हें डाउनलोड करने के लिए आपकी बातचीत, आवाज़ की रिकॉर्डिंग या प्रोफ़ाइल की सामग्री भेजने की ज़रूरत नहीं होती।</p>
+<p class="links">संबंधित जानकारी: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="hi-advertising"><h3>5. विज्ञापन और गोपनीयता विकल्प</h3>
+<p>BuddyTalk विज्ञापनों और गोपनीयता विकल्पों के लिए Google AdMob और User Messaging Platform (UMP) इस्तेमाल करता है। विज्ञापन संदर्भ के आधार पर, बिना वैयक्तिकरण के सेट हैं। Apple के App Tracking Transparency (ATT) अनुरोध में आपकी अनुमति मिलने पर, दूसरी कंपनियों के ऐप और वेबसाइटों पर विज्ञापनों की प्रभावशीलता मापने के लिए डिवाइस पहचानकर्ताओं का उपयोग किया जा सकता है। अगर आपने अभी तक कोई विकल्प नहीं चुना है, तो पहली तीन बार पाठ शुरू करने के बाद, होम स्क्रीन पर विज्ञापनों की तैयारी के समय ऐप अनुमति माँगता है। पहले से चुने विकल्पों का सम्मान किया जाता है। अनुमति न देने या उस पर प्रतिबंध होने से सीखना नहीं रुकता।</p>
+<p>SDK नेटवर्क और डिवाइस की जानकारी, IP पते से अनुमानित सामान्य स्थान, डिवाइस सेटिंग द्वारा अनुमत पहचानकर्ता, विज्ञापन देखने व इस्तेमाल करने की जानकारी और निदान डेटा संसाधित कर सकते हैं। बातचीत का पाठ, प्रोफ़ाइल की सामग्री और आवाज़ विज्ञापन SDK को नहीं दिए जाते। अंग्रेज़ी अभ्यास का AI प्रसंस्करण डिवाइस पर होता है।</p>
+<p>ट्रैकिंग की अनुमति iOS/iPadOS सेटिंग में बदली जा सकती है। दूसरे उपलब्ध विकल्प ऐप की सेटिंग में विज्ञापन गोपनीयता के अंतर्गत देखें। UMP और ATT की अनुमति प्रक्रियाएँ पूरी होने के बाद ही विज्ञापन संबंधी काम शुरू होता है। ऑफ़लाइन विज्ञापन छोड़ दिए जाते हैं; विज्ञापन हटाने की खरीद और Premium ऐप के विज्ञापन हटाते हैं।</p>
+<p class="links">संबंधित जानकारी: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="hi-purchases"><h3>6. खरीद और बहाली</h3>
+<p>App Store के भुगतान Apple संसाधित करता है। BuddyTalk सुविधाएँ खोलने, पुरानी सक्रिय सदस्यताएँ जाँचने और खरीद बहाल करने के लिए StoreKit की खरीद और उपयोग-अधिकार की जानकारी इस्तेमाल करता है। खरीद और बहाली के लिए इंटरनेट चाहिए। BuddyTalk को आपके भुगतान कार्ड की जानकारी नहीं मिलती। Apple के लेन-देन रिकॉर्ड ऐप के स्थानीय डेटा से अलग हैं।</p>
+<p class="links">संबंधित जानकारी: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="hi-optional_external"><h3>7. वैकल्पिक खोज, साझा करना और सहायता</h3>
+<p>बातचीत के किसी संदेश पर वेब खोज चुनने से उस संदेश का पूरा पाठ ब्राउज़र में Google खोज के रूप में भेजा जाता है। साझा करना चुनने पर चुना हुआ पाठ आपके चुने सेवा प्रदाता को दिया जाता है। बाहरी लिंक खोलने पर संबंधित वेबसाइट से संपर्क होता है और उसकी नीति लागू होती है। सहायता के लिए ईमेल भेजने पर हमें आपका ईमेल पता और दी गई जानकारी मिलती है, जिनका उपयोग जवाब देने में किया जाता है।</p>
+</section>
+<section id="hi-control_retention"><h3>8. आपके विकल्प और डेटा हटाना</h3>
+<p>आप प्रोफ़ाइल संपादित कर सकते हैं, अनुमतियाँ और विज्ञापन विकल्प बदल सकते हैं, और सेटिंग से डाउनलोड किया AI मॉडल हटा सकते हैं। मॉडल हटाने से प्रगति या प्रोफ़ाइल नहीं हटती। स्थानीय सीखने के रिकॉर्ड बदले या हटाए जाने तक डिवाइस पर रहते हैं; ऐप हटाने से उसका स्थानीय डेटा हट जाता है। इससे Apple सदस्यता रद्द नहीं होती और Apple के लेन-देन रिकॉर्ड या बाहरी सेवाओं के पास मौजूद डेटा नहीं मिटता। उनके लिए संबंधित सेवा के विकल्प या संपर्क का उपयोग करें। हमें भेजी गई जानकारी को देखने, सुधारने या हटाने से जुड़े सवालों और अनुरोधों के लिए हमसे संपर्क करें।</p>
+</section>
+<section id="hi-earlier_cloud_versions"><h3>9. पुराने क्लाउड संस्करण</h3>
+<p>पुराने संस्करण की नीति में Google Gemini द्वारा बातचीत के पाठ, प्रोफ़ाइल और बातचीत के संदर्भ का उपयोग, साथ ही Supabase स्टोरेज और Firebase Analytics का वर्णन था। वह पुराने क्लाउड कार्यान्वयन की जानकारी है, संस्करण 2.0.0 में डिवाइस पर सीखने की प्रक्रिया की नहीं। केवल ऐप अपडेट होने से यह साबित नहीं होता कि पहले क्लाउड सेवा के पास रखा डेटा हट गया है। पुराने संस्करण की जानकारी के बारे में हमसे संपर्क करें।</p>
+</section>
+<section id="hi-contact"><h3>10. संपर्क और नीति के अपडेट</h3>
+<p>गोपनीयता के सवाल या अनुरोध के लिए TrailFusion AI से trailfusionai@gmail.com पर संपर्क करें। सहायता का पत्राचार इसी ईमेल सेवा से संभाला जाता है। ऐप में डेटा के उपयोग में बदलाव होने पर इस नीति में नई तारीख और लागू संस्करण के साथ जानकारी दी जाएगी।</p>
+<p class="links">संबंधित जानकारी: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">भाषा चयन पर वापस जाएँ</a></footer></article>
+<article id="pt-BR" lang="pt-BR">
+<h2>Política de Privacidade</h2>
+<p class="version">Aplica-se ao BuddyTalk 2.0.0. Atualização: 31 de outubro de 2026.</p>
+<section id="pt-BR-scope"><h3>1. Escopo e responsável</h3>
+<p>O BuddyTalk é oferecido pela TrailFusion AI. Esta política descreve a versão 2.0.0, incluindo estudo no dispositivo, downloads, compras e publicidade. A versão anterior baseada em nuvem é explicada separadamente abaixo. Estudar offline não significa que todas as funções do app operem sem internet.</p>
+</section>
+<section id="pt-BR-local_learning"><h3>2. Informações de estudo e perfil no dispositivo</h3>
+<p>O progresso, as configurações e o perfil preenchido ficam no armazenamento local do app. O perfil inclui nome, data de nascimento, informações familiares e hobbies. Um perfil concluído pode fornecer contexto às conversas com a IA local. Após baixar os modelos necessários, as conversas de IA, traduções, correções e ajudas para responder são processadas no dispositivo. Esses conteúdos não são enviados a um serviço de IA em nuvem para esse processamento.</p>
+<p>O Community Talk também pode guardar localmente até 200 falas recentes em texto por cenário, junto com as tarefas cumpridas e o status de conclusão.</p>
+</section>
+<section id="pt-BR-voice_permissions"><h3>3. Voz e permissões</h3>
+<p>A prática por voz usa o microfone com sua permissão. A fala é transcrita pelo reconhecimento de voz da Apple no dispositivo quando ele oferece suporte e possui os recursos de voz necessários. A leitura em voz alta usa síntese local. As permissões de microfone e reconhecimento de voz podem ser alteradas nos Ajustes do iOS/iPadOS. Os lembretes opcionais de estudo usam a permissão de notificações e podem ser alterados nas configurações do app.</p>
+</section>
+<section id="pt-BR-downloads"><h3>4. Downloads de modelos e voz</h3>
+<p>Os downloads iniciais de modelos de IA e arquivos de voz se conectam ao Hugging Face e aos seus serviços de distribuição. Eles recebem as informações de rede necessárias para entregar os arquivos, como endereço IP e solicitação do arquivo. Os arquivos baixados ficam no dispositivo. O download não exige o envio do conteúdo de conversas, gravações de voz ou perfis.</p>
+<p class="links">Informações relacionadas: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="pt-BR-advertising"><h3>5. Publicidade e opções de privacidade</h3>
+<p>O BuddyTalk usa o Google AdMob e a User Messaging Platform (UMP) para anúncios e opções de privacidade. Os anúncios são configurados como contextuais e não personalizados. Com sua permissão no aviso de App Tracking Transparency (ATT) da Apple, identificadores do dispositivo podem ser usados para medir a eficácia de anúncios em apps e sites de outras empresas. Se você ainda não fez uma escolha, o app pede permissão na tela inicial ao preparar anúncios, depois de você iniciar três aulas. As escolhas existentes são respeitadas. Negar a permissão ou ter uma restrição não impede o aprendizado.</p>
+<p>Os SDKs podem processar informações de rede e dispositivo, localização aproximada inferida do endereço IP, identificadores permitidos pelos ajustes, visualizações e interações com anúncios e dados de diagnóstico. Textos de conversas, conteúdo do perfil e áudio não são fornecidos aos SDKs de anúncios. O processamento de IA para a prática de inglês ocorre no dispositivo.</p>
+<p>Você pode alterar a permissão de rastreamento nos Ajustes do iOS/iPadOS e consultar outras opções de privacidade dos anúncios nas configurações do app. A atividade publicitária começa somente após a conclusão dos processos de permissão do UMP e do ATT. Offline, os anúncios são ignorados; Remover anúncios e Premium eliminam os anúncios do app.</p>
+<p class="links">Informações relacionadas: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="pt-BR-purchases"><h3>6. Compras e restauração</h3>
+<p>A Apple processa os pagamentos da App Store. O BuddyTalk usa as informações de compra e direitos do StoreKit para liberar recursos, verificar assinaturas anteriores ativas e restaurar compras. Compras e restauração exigem conexão. O BuddyTalk não recebe dados do cartão de pagamento. Os registros de transações da Apple são separados dos dados locais do app.</p>
+<p class="links">Informações relacionadas: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="pt-BR-optional_external"><h3>7. Busca, compartilhamento e suporte opcionais</h3>
+<p>Se você escolher a busca na web em uma mensagem, o texto completo dela será enviado como consulta ao Google no navegador. Ao escolher Compartilhar, o texto selecionado é passado ao serviço escolhido. Links externos conectam aos respectivos sites, cujas políticas se aplicam a esse uso. Se enviar um e-mail ao suporte, receberemos seu endereço e as informações incluídas para responder à solicitação.</p>
+</section>
+<section id="pt-BR-control_retention"><h3>8. Seus controles e remoção de dados</h3>
+<p>Você pode editar o perfil, alterar permissões e opções de anúncios e excluir o modelo de IA baixado nas configurações. Excluir o modelo não apaga o progresso nem o perfil. Os registros locais ficam no dispositivo até serem substituídos ou removidos; excluir o app remove seus dados locais. Isso não cancela uma assinatura Apple nem apaga transações da Apple ou dados já mantidos por serviços externos. Para esses registros, use os controles ou contatos do provedor. Entre em contato para dúvidas ou pedidos de acesso, correção ou exclusão de informações que nos enviou.</p>
+</section>
+<section id="pt-BR-earlier_cloud_versions"><h3>9. Versões anteriores em nuvem</h3>
+<p>A política da versão anterior descrevia o processamento de textos, perfis e contexto de conversa pelo Google Gemini, além de armazenamento no Supabase e Firebase Analytics. Essas informações se referem à implementação anterior em nuvem, não ao processamento local de estudo na versão 2.0.0. Atualizar o app, por si só, não comprova que dados antes mantidos por um provedor de nuvem foram excluídos. Entre em contato sobre informações de versões anteriores.</p>
+</section>
+<section id="pt-BR-contact"><h3>10. Contato e atualizações</h3>
+<p>Para dúvidas ou solicitações de privacidade, entre em contato com a TrailFusion AI em trailfusionai@gmail.com. As mensagens de suporte são tratadas por esse serviço de e-mail. Mudanças no processamento serão refletidas nesta política com a data atualizada e a versão aplicável.</p>
+<p class="links">Informações relacionadas: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">Voltar aos idiomas</a></footer></article>
+<article id="ru" lang="ru">
+<h2>Политика конфиденциальности</h2>
+<p class="version">Применяется к BuddyTalk 2.0.0. Обновлено: 31 октября 2026 г.</p>
+<section id="ru-scope"><h3>1. Область применения и оператор</h3>
+<p>BuddyTalk предоставляется TrailFusion AI. Эта политика описывает версию 2.0.0: обучение на устройстве, загрузки, покупки и рекламу. Прежняя облачная версия описана отдельно ниже. Обучение офлайн не означает, что все функции приложения работают без сети.</p>
+</section>
+<section id="ru-local_learning"><h3>2. Учебные данные и профиль на устройстве</h3>
+<p>Прогресс, настройки и заполненный профиль хранятся локально в приложении. Поля профиля включают имя, дату рождения, сведения о семье и увлечения. Заполненный профиль может использоваться как контекст для локальных разговоров с ИИ. После загрузки нужных моделей разговоры с ИИ, переводы, исправления и подсказки обрабатываются на устройстве. Для этой обработки учебные данные не отправляются в облачный сервис ИИ.</p>
+<p>Community Talk также может хранить локально до 200 последних текстовых реплик на сценарий, выполненные задания и статус завершения.</p>
+</section>
+<section id="ru-voice_permissions"><h3>3. Голос и разрешения</h3>
+<p>Голосовая практика использует микрофон с вашего разрешения. Речь преобразуется в текст средствами Apple на устройстве, если оно поддерживает эту функцию и необходимые речевые ресурсы доступны. Озвучивание выполняется локально. Разрешения микрофона и распознавания речи можно изменить в настройках iOS/iPadOS. Необязательные учебные напоминания используют разрешение на уведомления и настраиваются в приложении.</p>
+</section>
+<section id="ru-downloads"><h3>4. Загрузка моделей и голосовых ресурсов</h3>
+<p>Первичная загрузка моделей ИИ и голосовых файлов выполняется через Hugging Face и его службы доставки. Они получают сетевые сведения, необходимые для передачи файлов, например IP-адрес и запрос файла. Загруженные файлы хранятся на устройстве. Для их загрузки не требуется передавать содержание разговоров, голосовых записей или профиля.</p>
+<p class="links">Дополнительная информация: <a href="https://huggingface.co/privacy" rel="noopener noreferrer">Hugging Face</a></p>
+</section>
+<section id="ru-advertising"><h3>5. Реклама и настройки приватности</h3>
+<p>BuddyTalk использует Google AdMob и User Messaging Platform (UMP) для рекламы и настроек приватности. Реклама настроена как контекстная и неперсонализированная. С вашего разрешения в системном запросе App Tracking Transparency (ATT) от Apple идентификаторы устройства могут использоваться для оценки эффективности рекламы в приложениях и на сайтах других компаний. Если вы ещё не сделали выбор, приложение запрашивает разрешение на главном экране при подготовке рекламы после первых трёх запусков урока. Прежние решения учитываются. Отказ или ограничение разрешения не мешает продолжать обучение.</p>
+<p>SDK могут обрабатывать сетевые сведения, данные устройства, приблизительное местоположение по IP-адресу, разрешённые настройками идентификаторы, показы и взаимодействия с рекламой, диагностические данные. Тексты разговоров, содержимое профиля и голосовые записи не передаются рекламным SDK. Обработка ИИ для практики английского выполняется на устройстве.</p>
+<p>Разрешение на отслеживание можно изменить в настройках iOS/iPadOS, а другие доступные варианты — в настройках приватности рекламы в приложении. Работа рекламы начинается только после завершения процедур разрешения UMP и ATT. Офлайн реклама пропускается; Remove Ads и Premium отключают рекламу в приложении.</p>
+<p class="links">Дополнительная информация: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google</a> · <a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener noreferrer">AdMob</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" rel="noopener noreferrer">Apple ATT</a></p>
+</section>
+<section id="ru-purchases"><h3>6. Покупки и восстановление</h3>
+<p>Apple обрабатывает платежи App Store. BuddyTalk использует данные покупок и прав доступа StoreKit для открытия функций, проверки активных прежних подписок и восстановления покупок. Покупки и восстановление требуют сети. BuddyTalk не получает реквизиты платёжной карты. Записи транзакций Apple хранятся отдельно от локальных данных приложения.</p>
+<p class="links">Дополнительная информация: <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple</a></p>
+</section>
+<section id="ru-optional_external"><h3>7. Необязательный поиск, отправка и поддержка</h3>
+<p>Если выбрать веб-поиск для сообщения, весь его текст отправляется в Google как поисковый запрос через браузер. При выборе отправки выбранный текст передаётся указанному вами сервису. Внешние ссылки открывают соответствующие сайты; к их использованию применяются их правила. При обращении по электронной почте мы получаем ваш адрес и предоставленные сведения и используем их для ответа.</p>
+</section>
+<section id="ru-control_retention"><h3>8. Управление настройками и удаление данных</h3>
+<p>Вы можете редактировать профиль, менять разрешения и рекламные настройки, удалять загруженную модель ИИ в настройках. Удаление модели не удаляет прогресс или профиль. Локальные учебные записи остаются на устройстве до замены или удаления; удаление приложения удаляет его локальные данные. Это не отменяет подписку Apple и не удаляет транзакции Apple либо данные, уже имеющиеся у внешних сервисов. Для них используйте настройки или контакты соответствующего сервиса. По вопросам доступа, исправления или удаления сведений, которые вы отправили нам, обращайтесь по указанному адресу.</p>
+</section>
+<section id="ru-earlier_cloud_versions"><h3>9. Прежние облачные версии</h3>
+<p>Прежняя политика описывала обработку текстов разговоров, профиля и контекста сервисом Google Gemini, а также использование хранилища Supabase и Firebase Analytics. Это описание прежней облачной реализации, а не локальной обработки обучения в версии 2.0.0. Само обновление приложения не подтверждает удаление данных, которые ранее хранились у облачного провайдера. По вопросам сведений из прежней версии обращайтесь к нам.</p>
+</section>
+<section id="ru-contact"><h3>10. Контакты и обновления политики</h3>
+<p>По вопросам приватности и запросам обращайтесь в TrailFusion AI: trailfusionai@gmail.com. Переписка поддержки обрабатывается через этот почтовый сервис. Изменения обработки данных будут отражены в политике с обновлённой датой и указанием версии.</p>
+<p class="links">Дополнительная информация: <a href="mailto:trailfusionai@gmail.com" rel="noopener noreferrer">trailfusionai@gmail.com</a></p>
+</section>
+<footer><a href="#languages">К выбору языка</a></footer></article></div></div></section></main><footer class="br-footer"><div class="br-wrap"><div class="br-footer-grid"><div class="br-footer-brand"><img src="/assets/icons/trailfusion-lockup.webp" alt="TrailFusion" width="104" height="64" loading="lazy"><p>毎日に、ちいさな冒険を。<br>学ぶ・話す・旅する・つくるを、続けたくなるアプリに。</p><a class="mail" href="mailto:trailfusionai@gmail.com">trailfusionai@gmail.com</a></div><div><h2>アプリ</h2><ul><li><a href="/quest/">合格！クエスト</a></li><li><a href="/mochi.html">もちのへや</a></li><li><a href="/car-concierge.html">車旅コンシェルジュ</a></li><li><a href="/reelmake.html">Reel Make</a></li><li><a href="/voicelink.html">VoiceLink AI通訳</a></li><li><a href="/apps.html">すべてのアプリ</a></li></ul></div><div><h2>TrailFusion</h2><ul><li><a href="/about/">つくり手について</a></li><li><a href="/partners/">協業・パートナー</a></li><li><a href="/support/">お問い合わせ・サポート</a></li><li><a href="/support/#policies">アプリ別の規約・プライバシー</a></li><li><a href="/privacy-policy.html">サイトのプライバシーポリシー</a></li><li><a href="/terms-of-service.html">サイトの利用規約</a></li></ul></div><div><h2>つくり手のガレージ</h2><ul><li><a href="/garage/">つくり手のガレージ</a></li><li><a href="/travel/story.html">車旅の記録</a></li><li><a href="/drive-routes/">絶景ロード図鑑</a></li><li><a href="/diy/">キャンピングカーDIY</a></li><li><a href="/maintenance/">ハイエース整備</a></li></ul></div></div><div class="br-footer-bottom"><span>© 2026 TrailFusion AI</span><span>アプリの提供者名（App Store）：hiroaki yuasa</span></div></div></footer></body></html>

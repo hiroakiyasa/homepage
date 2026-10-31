@@ -18,12 +18,39 @@ App Store publisher name: hiroaki yuasa
 - [Car Concierge](https://trailfusionai.com/car-concierge.html) — Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan. App Store: https://apps.apple.com/app/id6751795223
 - [Reel Make](https://trailfusionai.com/reelmake.html) — Pick photos and clips. AI builds a vertical video with narration and captions. App Store: https://apps.apple.com/app/id6779420680
 - [VoiceLink AI Translator](https://trailfusionai.com/voicelink.html) — Speech recognition, translation and summaries run entirely on the device. Nothing you say is sent to a server. App Store: https://apps.apple.com/app/id6746684736
-- [BuddyTalk](https://trailfusionai.com/buddytalk.html) — Talk with AI until English comes out naturally. An English app focused on speaking practice. App Store: https://apps.apple.com/app/id6744263274
+- [BuddyTalk](https://trailfusionai.com/buddytalk.html) — English practice with AI characters. Public version: 1.4.6. Version 2.0.0 is being prepared for App Review, with on-device learning after initial setup, 500 free beginner Community Talk scenes and 1,500 two-/three-person scenarios. App Store: https://apps.apple.com/app/id6744263274
 - [English Quest](https://trailfusionai.com/eigo-quest.html) — Grammar, vocabulary and English exams, learned through quizzes and explanations. App Store: https://apps.apple.com/app/id6782028599
 - [Gokaku! FP Quest](https://trailfusionai.com/fp-quest.html) — The six areas of the Japanese financial planner exam, with illustrated guides and questions. App Store: https://apps.apple.com/app/id6812542387
 - [Word Blaster](https://trailfusionai.com/word-blaster.html) — Words fly at you as enemies. A vocabulary shooter for 10 languages. App Store: https://apps.apple.com/app/id6745741796
 - [Wood Golem](https://trailfusionai.com/wood-golem.html) — A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win. App Store: https://apps.apple.com/app/id6739466549
 - [Hacking Timer](https://trailfusionai.com/hacking-timer.html) — An interval timer for Apple Watch that keeps a rhythm of focus and rest. App Store: https://apps.apple.com/app/id6746063846
+
+## BuddyTalk — 2.0.0 preview (updated 2026-10-31)
+BuddyTalk is an English-learning app from TrailFusion AI. As of 2026-10-31, the public App Store version is 1.4.6. Version 2.0.0 is being prepared for App Review; the features and new purchase options below belong to that planned update. Its public release date is not confirmed. App Store: https://apps.apple.com/app/id6744263274
+
+### English practice and beginner progression
+Version 2.0.0 includes 1,500 Community Talk scenarios arranged in levels 1–10. There are 750 two-person scenarios with the learner and one AI character, and 750 three-person scenarios with the learner and two AI characters. The 500 free beginner scenarios at levels 1–5 start with short greetings such as Hi, Good morning and Thanks, then progress to short exchanges and everyday conversations. Stories, lessons and grammar activities provide additional English practice. There are no four-person Community Talk scenarios.
+
+English remains the learning language. Interface and task guidance are available in 10 languages across 11 locale settings: English (en), Japanese (ja), Simplified Chinese (zh-Hans), French for France (fr) and Canada (fr-CA), German (de), Spanish (es), Korean (ko), Hindi (hi), Brazilian Portuguese (pt-BR) and Russian (ru). Some supplemental translations are generated on the device when requested.
+
+### Offline learning and device preparation
+After required AI model and voice-file downloads, supported AI conversations, translation, corrections and reply assistance are processed on the device. Speech input uses compatible Apple on-device speech resources when available, and speech playback uses local synthesis. Initial downloads, App Store purchases and restoration, advertising/privacy-choice services and user-selected external web searches or links require a connection. Offline advertisements are skipped. English conversation text, profile contents and voice audio are not passed to advertising SDKs; an optional external search or share action can send the selected content to the destination chosen by the user.
+
+Version 2.0.0 requires iOS/iPadOS 17.6 or later and compatible hardware. A device with at least 8 GB RAM is recommended. Initial AI and voice downloads total about 1.6–5.7 GB, depending on the model selected for the device. Wi-Fi and at least 10 GB free storage during setup are recommended; 10 GB is a preparation recommendation, not a fixed minimum requirement. Response speed varies with the device, battery and operating conditions.
+
+### Free access and planned one-time purchases
+The 500 beginner Community Talk scenes at levels 1–5, the basic interface, catalog titles and task instructions in the chosen support language are free. Premium includes conversation stages 6–10, grammar stages 4–6, Community Talk levels 6–10, Premium stories and the lower conversation panel’s translations, corrections, vocabulary and reply suggestions. Ad removal is included.
+
+Planned Japanese one-time prices for the 2.0.0 offering are JPY 500 for Remove Ads, JPY 1,500 for Premium, and JPY 1,000 for the eligible Premium upgrade for verified Remove Ads buyers. The app displays actual App Store prices for the user’s region; the purchase screen and Apple confirmation show the applicable product and price. The new products are non-consumable one-time purchases and do not automatically renew.
+
+Earlier active monthly/yearly subscriptions retain verified access as separate contracts. An update or a new one-time purchase does not automatically cancel or convert an existing subscription. Apple’s subscription management controls renewal and cancellation. Purchases can be restored while online with the Apple Account used for the original purchase, and saved learning progress is preserved.
+
+### Official product and legal pages
+- Japanese product page: https://trailfusionai.com/buddytalk.html
+- English product page: https://trailfusionai.com/en/buddytalk.html
+- Privacy Policy, including the distinction between 2.0.0 and earlier versions: https://trailfusionai.com/buddytalk-privacy.html#en
+- Terms of Use, including existing subscriptions: https://trailfusionai.com/buddytalk-terms.html#en
+- Legal hub with all 11 language settings: https://trailfusionai.com/buddytalk-legal.html#en
 
 ## Pages
 - [Apps catalog](https://trailfusionai.com/apps.html) / [English](https://trailfusionai.com/en/apps.html)
