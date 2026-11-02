@@ -1,7 +1,7 @@
 """Copy for every app detail page, in Japanese and English.
 
 Sources: each app's App Store description (Japan / US store, fetched 2026-10-25) and, for もちのへや,
-the description submitted for review. Pricing lines repeat only what the store text says.
+the description submitted for review (build 9, 2026-11-02). Pricing lines repeat only what the store text says.
 Each entry: hero bg, catch, lead, features [(title, text)], steps, for_whom, pricing, notes, links.
 """
 
@@ -225,27 +225,31 @@ C['mochi'] = dict(
     page='mochi.html', bg='room', section_bg='room',
     ja=dict(catch='話すと、気持ちが<br><mark>ことば</mark>になる。',
             lead='もちもちの小さな相棒「もち」が、あなたのおへやで待っています。今日あったこと、うれしかったこと、モヤモヤしたこと。声で話しかけると、表情と動きでいっしょに喜んだり、うなずいたりしながら聞いてくれます。',
-            features=[('端末だけで、リアルタイムの会話', '日本語の音声認識・返事の生成・読み上げを端末内で処理します。会話用のアカウントや外部のAIサービスは不要です。'),
-                      ('気持ちに寄りそう表情と動き', '19種類の表情と28種類の動きで、話の気持ちに合わせて反応します。'),
-                      ('ことばの引き出し', 'モヤモヤを、昔の人の考え方を借りてことばにする手引き。心を軽くする考え方のカードがあります。'),
+            features=[('どのiPhoneでも、サクサク声で会話', '返事はクラウドAI（Qwen3.7 Flash・Alibaba Cloud 東京）が作るので、どのiPhoneでも速く自然に話せます。大きなダウンロードやアカウント登録は不要です。'),
+                      ('声の録音は送りません', '声はAppleの音声認識で端末の中で文字にします。もちのへやのサーバー経由で送るのは、返事を作るのに必要な文字だけ。初めて話す前に送る内容をお見せして同意をおたずねし、サーバーは会話の内容を保存しません。'),
+                      ('対応端末なら、オフラインでもおはなし', 'iPhone 15 Pro／15 Pro Max以降（iPhone 16シリーズ・16e、iPhone 17シリーズなど）、A17 Pro・M3以降のチップでメモリ8GB以上のiPad、メモリ16GBのM1／M2 iPad Proでは、会話をすべて端末の中で処理するオフラインモードも選べます。初回に約5.2〜5.5GBを一度だけダウンロードします（Wi-Fi推奨）。'),
+                      ('気持ちに寄りそう表情と動き', '19種類の表情と100種類のしぐさで、話の気持ちに合わせて反応します。'),
+                      ('ことばのカードと「今日のひとこと」', '哲学者や偉人の考え方、心理学をもとにした1,000枚の「ことばのカード」。悩みを話すと、今の話に合うことばを会話の中で紹介します。'),
                       ('思い出と気分カレンダー', '日記、気分の記録、季節の手紙や一年のまとめ。'),
                       ('育てて、着せかえて、模様がえ', 'なでる・おやつ・あそぶ・深呼吸。はっぱを集めて帽子や家具を選び、3Dのおへやで近くから見られます。'),
                       ('こどもからおとなまで', 'こどもモードでは、ことばがやさしくなり、課金の売り場は表示されません。')],
             steps=[], for_whom=['今日の気持ちをだれかに話したい', 'モヤモヤをことばにして整理したい', 'かわいい相棒と毎日を過ごしたい'],
             pricing='お世話・おはなし・日記・はっぱのお買い物はすべて無料。有料は、一度買えばずっと使える模様がえテーマ「さくらのおへや」「星あかりのおへや」だけです。',
-            notes=['現在 App Store の審査中です。公開までお待ちください。', 'アカウント登録なし、広告なし、トラッキングなし。日記や思い出は端末の中だけに保存します。', '会話には対応端末と、端末内の日本語音声認識データが必要です。', 'つらい気持ちが強いときは相談先をお知らせします（医療の代わりにはなりません）。'],
+            notes=['現在 App Store の審査中です。公開までお待ちください。', 'アカウント登録なし、広告なし、トラッキングなし。日記や思い出は端末の中だけに保存します。', '会話は、はじめはクラウドAIを使います（同意してから。同意は設定の「会話AI」からいつでも取り消せます）。オフラインモードは対応端末だけです。', '読み上げの声は端末の中で作ります。', 'つらい気持ちが強いときは相談先をお知らせします（医療の代わりにはなりません）。'],
             links=[('/mochi-support.html', 'サポート')]),
     en=dict(catch='Talk, and your feelings<br>turn into <mark>words</mark>.',
             lead='Mochi, a soft little companion, is waiting in your room. Tell it about your day, the good parts and the cloudy ones. Mochi listens, nods and reacts with its face and body.',
-            features=[('Real-time talk, on the device', 'Japanese speech recognition, replies and speech run on the device. No account or external AI service is needed.'),
-                      ('Faces and moves that match the mood', '19 expressions and 28 movements respond to the feeling in what you say.'),
-                      ('A drawer of words', 'Cards that borrow ideas from old thinkers to put cloudy feelings into words.'),
+            features=[('Fast voice talk on any iPhone', 'Replies are written by a cloud AI (Qwen3.7 Flash, Alibaba Cloud Tokyo), so conversation is fast and natural on any iPhone, with no large download and no account.'),
+                      ('Audio is never sent', "Your voice is turned into text on your device by Apple's speech recognition. Only the text needed for a reply goes through MochiPet's server. The app asks for your consent before the first conversation, and our server does not store your conversations."),
+                      ('Offline talk on supported devices', 'On iPhone 15 Pro / 15 Pro Max and newer (iPhone 16 series incl. 16e, iPhone 17 series and later), iPads with an A17 Pro, M3 or newer chip and 8 GB+ memory, and 16 GB M1/M2 iPad Pro, you can choose offline mode: the whole conversation runs on your device. It is a one-time download of about 5.2–5.5 GB (Wi-Fi recommended).'),
+                      ('Faces and moves that match the mood', '19 expressions and 100 gestures respond to the feeling in what you say.'),
+                      ("Word cards and Today's word", '1,000 word cards drawn from philosophers, great thinkers and psychology. Talk about a worry and Mochi shares one that fits, right in the conversation.'),
                       ('Memories and a mood calendar', 'A diary, mood records, seasonal letters and a year in review.'),
                       ('Care, dress-up and decorating', 'Pet, feed, play and breathe together; collect leaves for hats and furniture in a 3D room.'),
                       ('For children and adults', 'Child mode uses simpler words and hides the shop.')],
             steps=[], for_whom=['Someone to tell about your day', 'Sorting out how you feel', 'A cute companion for every day'],
             pricing='Care, conversation, the diary and the leaf shop are free. The only purchases are two one-time room themes, Sakura Room and Starlight Room.',
-            notes=['Currently in App Store review.', 'No account, no ads, no tracking. Your diary stays on your device.', 'Conversation is in Japanese and needs a supported device.', 'Not a medical service; support contacts are shown when feelings are very hard.'],
+            notes=['Currently in App Store review.', 'No account, no ads, no tracking. Your diary stays on your device.', 'Conversation is in Japanese and uses a cloud AI by default, only after your consent (withdraw it anytime in Settings > Conversation AI). Offline mode is for supported devices only.', "Mochi's voice is made on your device.", 'Not a medical service; support contacts are shown when feelings are very hard.'],
             links=[('/mochi-support.html', 'Support')]),
 )
 
