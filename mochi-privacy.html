@@ -24,4 +24,4 @@ let pick=new URLSearchParams(location.search).get("lang")||(nav.startsWith("zh")
 if(!langs.includes(pick))pick="ja";
 function show(l){document.querySelectorAll(".lang").forEach(e=>e.classList.toggle("on",e.dataset.lang===l));document.documentElement.lang=l;document.getElementById("sel").value=l}
 document.getElementById("sel").onchange=e=>show(e.target.value);show(pick);
-</script></body></html>
+</script><script defer src="/assets/js/visitor-counter.js"></script></body></html>

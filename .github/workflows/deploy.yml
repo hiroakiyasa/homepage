@@ -28,6 +28,11 @@ jobs:
       - name: Check brand pages, links, sitemap and retired locales
         run: python scripts/brand/check-static.py
 
+      - name: Check per-page view counters
+        run: |
+          node scripts/add-visitor-counters.mjs --check
+          node --test tests/visitor-counter.test.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload static site

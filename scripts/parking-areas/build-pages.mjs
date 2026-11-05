@@ -59,7 +59,7 @@ const FOOTER = slice(travelHtml, '<footer class="tf-footer">', '</footer>');
 function page({ path, title, description, jsonLd, body }) {
   const url = DOMAIN + path;
   return `<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="/assets/icons/trailfusion.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/site-v2.css" rel="stylesheet"/><link href="/assets/css/parking-area.css" rel="stylesheet"/><script defer="" src="/assets/js/site-v2.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S57KSMSB8Y");</script>
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="/assets/icons/trailfusion.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/site-v2.css" rel="stylesheet"/><link href="/assets/css/parking-area.css" rel="stylesheet"/><script defer="" src="/assets/js/site-v2.js"></script><script defer src="/assets/js/visitor-counter.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S57KSMSB8Y"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S57KSMSB8Y");</script>
 <title>${esc(title)}</title>
 <meta content="${esc(description)}" name="description"/>
 <meta content="index, follow, max-image-preview:large" name="robots"/>

@@ -31,6 +31,13 @@ python3 scripts/brand/validate.py     # Chrome/WebKit・320/390/768/1440px・操
 - スタイル: `assets/css/brand.css`（新ページ用＋既存ページの再配色）、`assets/js/brand.js`（メニュー・絞り込み・ストアのクリック計測）。
 - 公開処理（`.github/workflows/deploy.yml`）はコミット済みのHTMLを検査するだけで書き換えない。旧来のデプロイ時CSS注入と15言語の再生成は削除した。
 
+## 各ページの累計PVカウンター
+
+- 通常の公開HTMLページには `/assets/js/visitor-counter.js` を読み込み、小さな `👁 PV` バッジをフッター直前（ドライブルート地図だけ上部）に表示する。クリックするとそのページの公開統計を表示する。
+- `hits.sh` のページ別キーはURLのパスで決め、クエリ・ハッシュは区別しない。`/foo/` と `/foo/index.html` は同じキー。既存の `home` / `apps` / `maintenance` / `drive-routes` / `camping` カウンターは値を維持。既設のキャンピングDIYバッジは重複表示しない。
+- 新しいページは導入後のアクセスから計測する。表示値はページ表示回数（PV）の参考値で、ユニーク訪問者数やGoogle Analytics 4の過去データではない。ブラウザによるブロックやボットにより誤差がある。バッジ画像は外部の `hits.sh` から読み込まれる。
+- 再生成後は `node scripts/add-visitor-counters.mjs --write` で新規HTMLも含めて補完し、`node scripts/add-visitor-counters.mjs --check` で全ページを検査する。GitHub Pagesのデプロイもカウンター未設置のコンテンツページがあれば失敗させる。404と即時リダイレクトページは対象外。
+
 ## 数字と表現の根拠
 
 - アプリの名前・版・更新日・評価: `docs/brand/store-snapshot.json`（iTunes lookup、App Store 日本、2026-10-25 取得）。公開中は同じ開発者アカウントの12本。

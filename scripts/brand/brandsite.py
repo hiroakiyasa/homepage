@@ -197,7 +197,7 @@ def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand
 <link rel="icon" href="/assets/icons/trailfusion.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/quest/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/brand.css?v={CSS_VERSION}"><script defer src="/assets/js/brand.js?v={CSS_VERSION}"></script>
+<link rel="stylesheet" href="/assets/css/brand.css?v={CSS_VERSION}"><script defer src="/assets/js/brand.js?v={CSS_VERSION}"></script><script defer src="/assets/js/visitor-counter.js"></script>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA}");</script>
 </head><body class="br"><a class="skip" href="#main">{"本文へスキップ" if lang == "ja" else "Skip to content"}</a>{header(lang, alt_path)}<main id="main">{body}</main>{footer(lang)}</body></html>
