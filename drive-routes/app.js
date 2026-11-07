@@ -31,10 +31,12 @@ const map = L.map('map', {
 
 L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+// CARTO raster tiles require an API key since September 2026.
+// The OpenStreetMap standard layer works without a key for normal interactive use.
+const BASEMAP_TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+L.tileLayer(BASEMAP_TILE_URL, {
   attribution:
-    '&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; <a href="https://carto.com/">Carto</a>',
-  subdomains: 'abcd',
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
   maxZoom: 19,
 }).addTo(map);
 
