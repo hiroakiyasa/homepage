@@ -27,12 +27,14 @@
       if (!chip) return;
       const filter = chip.dataset.filter;
       chips.querySelectorAll('[data-filter]').forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
-      let visible = 0;
+      const products = new Set();
       document.querySelectorAll('.catalog .app-grid:not(.two) .app-card').forEach(card => {
         card.hidden = filter !== 'all' && card.dataset.cat !== filter;
-        if (!card.hidden) visible += 1;
+        if (!card.hidden) products.add(card.dataset.product || card.id);
       });
-      if (count) count.textContent = ja ? `${visible}本のアプリを表示しています` : `Showing ${visible} apps`;
+      const visible = products.size;
+      if (count && count.dataset.format) count.textContent = count.dataset.format.replace("{count}", new Intl.NumberFormat(document.documentElement.lang).format(visible));
+      else if (count) count.textContent = ja ? `${visible}本のアプリを表示しています` : `Showing ${visible} apps`;
       if (typeof window.gtag === 'function') window.gtag('event', 'brand_app_filter', { category: filter });
     });
   }

@@ -4,7 +4,7 @@
 
 Checks at 320/390/768/1440 px in Chromium and 390/1440 in WebKit: HTTP 200, no horizontal overflow,
 images decode, one h1, no JavaScript errors. Then the interactions: mobile menu, app filters, FAQ,
-store-click analytics payload, retired-locale redirect, and the app catalog without JavaScript.
+store-click analytics payload, localized direct URLs, and the app catalog without JavaScript.
 """
 import http.server, json, socketserver, threading
 from pathlib import Path
@@ -98,8 +98,7 @@ try:
             page.get_by_role('button', name='すべて', exact=False).first.click()
             check(page.locator('.catalog .app-grid:not(.two) .app-card:visible').count() == total, engine + ' filter resets')
             page.goto(origin + '/ko/', wait_until='load')
-            page.wait_for_url('**/en/')
-            check(True, engine + ' retired locale redirects to English')
+            check(page.url.endswith('/ko/') and page.locator('html').get_attribute('lang') == 'ko', engine + ' explicit Korean URL remains localized')
             page.goto(origin + '/', wait_until='load')
             sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
             check(all(has for _, has in sections), engine + ' every top-page section has a background ' + str([c for c, h in sections if not h]))

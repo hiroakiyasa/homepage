@@ -1,0 +1,19 @@
+/* Language navigation is usable without JavaScript. */
+.global-languages{position:relative;flex:0 1 auto;min-width:0;font-family:system-ui,-apple-system,sans-serif}
+.global-languages>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;border:2px solid #cfe2fa;border-radius:999px;padding:6px 10px;color:#1767ba;font-size:13px;font-weight:700;max-width:170px;min-height:36px;background:#fff}
+.global-languages>summary::-webkit-details-marker{display:none}
+.global-languages>summary span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.global-languages>nav{position:absolute;inset-inline-end:0;top:calc(100% + 10px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;width:min(440px,calc(100vw - 28px));max-height:min(65vh,520px);overflow-y:auto;overscroll-behavior:contain;padding:12px;border:1px solid #cfe2fa;border-radius:18px;background:#fff;box-shadow:0 16px 40px #1d315033;z-index:60}
+.global-languages>nav a{padding:10px 12px;text-decoration:none;font-size:14px;font-weight:600;border-radius:10px;line-height:1.5;color:#203e59}
+.global-languages>nav a:first-child{grid-column:1/-1;border-bottom:1px solid #e5edf5}
+.global-languages>nav a:hover,.global-languages>nav a[aria-current=true]{background:#e8f4ff;color:#1767ba}
+.global-i18n .global-whole{color:#1767ba;overflow-wrap:anywhere}
+.global-i18n .lead,.global-i18n p,.global-i18n h1,.global-i18n h2,.global-i18n h3{overflow-wrap:break-word}
+.global-i18n[dir=rtl] .br-nav{margin-left:0;margin-inline-start:auto}
+.global-i18n[dir=rtl] .br-menu{margin-left:0;margin-inline-start:auto}
+.global-i18n[dir=rtl] .br-menu nav{right:auto;left:0}
+.global-i18n[dir=rtl] .d-copy,.global-i18n[dir=rtl] .spot-copy,.global-i18n[dir=rtl] .paper,.global-i18n[dir=rtl] .app-card{text-align:start}
+.global-i18n[dir=rtl] .crumbs{direction:rtl}
+.global-i18n .store{direction:ltr}
+@media(max-width:1050px){.br-header-inner .global-languages{margin-inline-start:auto}.br-header-inner:has(.global-languages){gap:12px}.br-header-inner:has(.global-languages) .br-menu{margin-left:0;margin-inline-start:0}}
+@media(max-width:560px){.global-languages>summary{max-width:128px;font-size:12px;padding:5px 8px}.global-languages>nav{position:fixed;top:calc(var(--tf-site-header-height,76px) + 6px);inset-inline:14px;width:auto}.br-header-inner:has(.global-languages){gap:9px}.global-i18n .global-whole{hyphens:auto}}

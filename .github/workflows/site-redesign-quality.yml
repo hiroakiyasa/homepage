@@ -27,11 +27,13 @@ jobs:
       - name: Install Chromium, WebKit and Japanese rendering support
         run: |
           python -m playwright install --with-deps chromium webkit
-          sudo apt-get install -y fonts-noto-cjk
-      - name: Static checks (links, sitemap, retired locales)
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-core
+      - name: Static checks (links, sitemap, complete translations)
         run: python scripts/brand/check-static.py
       - name: Browser checks in Chromium and WebKit at four widths
-        run: python scripts/brand/validate.py
+        run: |
+          python scripts/brand/validate.py
+          python scripts/brand/validate-global.py
       - name: Ensure validation did not modify tracked files
         run: git diff --exit-code
       - name: Save validation report and screenshots
@@ -39,5 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: site-quality-${{ github.sha }}
-          path: /tmp/brand-site-results
+          path: |
+            /tmp/brand-site-results
+            /tmp/trailfusion-global-locale-review
           retention-days: 14

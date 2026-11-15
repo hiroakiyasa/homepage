@@ -38,7 +38,7 @@ function descendants(node) {
   return [node, ...node.children.flatMap(descendants)];
 }
 
-function execute(path, { lang = 'ja', footer = true, topbar = false, preserved = false, manual = false } = {}) {
+function execute(path, { lang = 'ja', footer = true, topbar = false, preserved = false, manual = false, labels = null } = {}) {
   const head = el('head');
   const body = el('body');
   const pageFooter = footer ? el('footer') : null;
@@ -51,7 +51,7 @@ function execute(path, { lang = 'ja', footer = true, topbar = false, preserved =
     readyState: 'complete',
     documentElement: { lang },
     createElement: el,
-    getElementById(id) { return descendants(head).find((node) => node.id === id) ?? null; },
+    getElementById(id) { if (id === 'tf-global-locale' && labels) return { textContent: JSON.stringify({ counter: labels }) }; return descendants(head).find((node) => node.id === id) ?? null; },
     querySelector(selector) {
       if (selector === '[data-tf-page-views]') {
         return descendants(body).find((node) => node.attributes['data-tf-page-views']) ?? null;
@@ -128,4 +128,15 @@ test('English accessibility and a graceful image error', () => {
   assert.equal(link.children[1].textContent, 'Views unavailable');
   runInNewContext(source, page.context);
   assert.equal(descendants(page.body).filter((node) => node.attributes['data-tf-page-views']).length, 1);
+});
+
+
+test('localized pages use their own accessible counter labels', () => {
+  const labels = { title: 'Gesamtaufrufe dieser Seite', alt: 'Seitenaufrufe', unavailable: 'Aufrufe nicht verfügbar' };
+  const page = execute('/de/', { lang: 'de', labels });
+  const {link,img}=badge(page);
+  assert.equal(link.attributes['aria-label'],labels.title);
+  assert.equal(img.alt,labels.alt);
+  img.events.error();
+  assert.equal(link.children[1].textContent,labels.unavailable);
 });

@@ -53,7 +53,12 @@
 
     const key = pageKey(window.location.pathname);
     const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
-    const title = isEnglish ? 'Total page views (opens statistics)' : 'このページの累計閲覧数（統計を開く）';
+    let labels = {};
+    try {
+      const localeConfig = document.getElementById('tf-global-locale');
+      if (localeConfig) labels = JSON.parse(localeConfig.textContent).counter || {};
+    } catch (_) {}
+    const title = labels.title || (isEnglish ? 'Total page views (opens statistics)' : 'このページの累計閲覧数（統計を開く）');
     const slot = document.createElement('div');
     slot.className = 'tf-page-views-slot';
     slot.setAttribute('data-tf-page-views', key);
@@ -74,7 +79,7 @@
 
     const img = document.createElement('img');
     img.src = counterBase(key) + '.svg?style=flat-square&label=PV&color=2476bb&labelColor=334155';
-    img.alt = isEnglish ? 'Page views' : '閲覧数';
+    img.alt = labels.alt || (isEnglish ? 'Page views' : '閲覧数');
     // An off-screen footer must still count the page view.
     img.loading = 'eager';
     img.decoding = 'async';
@@ -82,7 +87,7 @@
     img.addEventListener('error', function () {
       const fallback = document.createElement('span');
       fallback.className = 'tf-page-views-fallback';
-      fallback.textContent = isEnglish ? 'Views unavailable' : '閲覧数を取得できません';
+      fallback.textContent = labels.unavailable || (isEnglish ? 'Views unavailable' : '閲覧数を取得できません');
       img.replaceWith(fallback);
       link.removeAttribute('href');
       link.removeAttribute('target');

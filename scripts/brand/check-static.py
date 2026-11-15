@@ -2,7 +2,7 @@
 
 - every new page exists, has one h1, the brand header/footer and valid JSON-LD
 - every internal link and asset on the new pages and in the shared chrome resolves to a file
-- retired locales only redirect, and nothing links to them
+- active language pages are complete; old hobby locale redirects remain valid
 - every sitemap URL resolves to a file with title, description, canonical and index permission
 Exit code 1 with a list of problems if anything fails.
 """
@@ -15,6 +15,9 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://trailfusionai.com'
 NEW = ['index.html', 'en/index.html', 'apps.html', 'en/apps.html', 'about/index.html', 'garage/index.html'] + sorted(p.relative_to(ROOT).as_posix() for p in [*ROOT.glob('*.html'), *(ROOT / 'en').glob('*.html')] if 'class="d-hero"' in p.read_text(errors='ignore'))
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
+GLOBAL = json.loads((ROOT / 'docs/brand/global-locales.json').read_text())
+ACTIVE = set(GLOBAL['generated'])
+NEW = list(dict.fromkeys(NEW + [p.lstrip('/') + ('index.html' if p.endswith('/') else '') for p in ACTIVE]))
 problems = []
 
 
@@ -75,7 +78,7 @@ def check_page(rel):
             continue
         if u.netloc and u.netloc != 'trailfusionai.com':
             continue
-        if any(u.path.startswith(f'/{r}/') for r in RETIRED):
+        if any(u.path.startswith(f'/{r}/') for r in RETIRED) and u.path not in ACTIVE:
             problems.append(f'{rel}: links to retired locale {ref}')
         if not target(u.path or '/').is_file():
             problems.append(f'{rel}: missing target {ref}')
@@ -98,7 +101,7 @@ for rel, dest in {'diy/index.html': '/camping.html', 'maintenance/index.html': '
 
 for d in RETIRED:
     for f in (ROOT / d).rglob('*.html'):
-        if 'http-equiv="refresh"' not in f.read_text():
+        if ('/' + f.relative_to(ROOT).as_posix().removesuffix('index.html')) not in ACTIVE and 'http-equiv="refresh"' not in f.read_text():
             problems.append(f'{f.relative_to(ROOT)}: retired locale is not a redirect')
 sitemap_urls = re.findall(r'<loc>(.*?)</loc>', (ROOT / 'sitemap.xml').read_text())
 if len(sitemap_urls) != len(set(sitemap_urls)):
@@ -132,4 +135,6 @@ if 'ハイエース' in hero or 'DIY' in hero:
 if problems:
     print('\n'.join(problems))
     sys.exit(1)
-print(f'brand static checks passed ({len(NEW)} brand pages, {len(sitemap_urls)} indexable sitemap pages, retired locales)')
+import subprocess
+subprocess.run([sys.executable, str(ROOT / 'scripts/brand/check-global.py')], check=True)
+print(f'brand static checks passed ({len(NEW)} brand pages, {len(sitemap_urls)} indexable sitemap pages, language pages and hobby redirects)')

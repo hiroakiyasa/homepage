@@ -74,7 +74,10 @@ APPS = [
         '/kokugo-quest.html', 'com.gokakukokugoquest.app', group='legacy', legal={'privacy': '/kokugo-quest-privacy.html', 'support': '/kokugo-quest-support.html'}),
 ]
 BY = {a['slug']: a for a in APPS}
-LIVE = [a for a in APPS if a['status'] == 'live']
+# English Quest is already a course in Gokaku Quest, not a separate acquisition target.
+BY['english-quest'].update(parent='quest', group='course', detail='/quest/courses/english/',
+    tag_ja='合格！クエスト内の英語教材。語彙・文法・実用英会話を、問題と図鑑で学べます。', legal=BY['quest']['legal'])
+LIVE = [a for a in APPS if a['status'] == 'live' and not a.get('parent')]
 RATINGS = sum(STORE[a['slug']]['ratings'] for a in LIVE)
 
 
@@ -94,6 +97,7 @@ def img(path, alt, cls='', eager=False):
 
 
 def icon(slug, lang, cls='app-icon', eager=False):
+    slug = BY[slug].get('parent', slug)
     a = BY[slug]
     return img(f'{slug}/icon.webp', (a['ja'] if lang == 'ja' else a['en']) + (' のアイコン' if lang == 'ja' else ' icon'), cls, eager)
 
@@ -115,6 +119,7 @@ PLAY = '<svg viewBox="0 0 25 28" aria-hidden="true"><path fill="#a5d4a0" d="M1 1
 
 
 def stores(slug, lang, place, small=False):
+    slug = BY[slug].get('parent', slug)
     a, t = BY[slug], tx(lang)
     if a['status'] != 'live':
         return f'<p class="status-pill">{t("App Store 審査中・まもなく公開", "In App Store review, coming soon")}</p>'
@@ -129,6 +134,8 @@ def stores(slug, lang, place, small=False):
 
 
 def rating(slug, lang):
+    if BY[slug].get('parent'):
+        return ''
     s, t = STORE[slug], tx(lang)
     if not s['ratings']:
         return ''

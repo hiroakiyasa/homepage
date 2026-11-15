@@ -6,14 +6,16 @@ from home import head
 def app_card(a, lang):
     t = tx(lang)
     cat = CATS[a['cat']]
-    s = STORE.get(a['slug'])
+    s = None if a.get('parent') else STORE.get(a['slug'])
     meta = (t(f'バージョン {s["version"]}・{s["updated"].replace("-", ".")} 更新', f'Version {s["version"]}, updated {s["updated"]}')
             if s else '')
     meta_html = f'<p class="meta">{meta}</p>' if meta else ''
+    if a.get('parent'):
+        meta_html = '<p class="meta">合格！クエストを開き、アプリ内で「英語」を選びます。</p>'
     labels = {'privacy': t('プライバシー', 'Privacy'), 'terms': t('利用規約', 'Terms'), 'support': t('サポート', 'Support')}
     legal = ''.join(f'<a href="{h}">{labels[k]}</a>' for k, h in a['legal'].items())
     detail = f'<a class="text-link" href="{a["detail"]}">{t("くわしく見る", "Details")} →</a>' if a['detail'] else ''
-    return (f'<article class="app-card" id="{a["slug"]}" data-cat="{a["cat"]}" style="--c:{cat[2]}">'
+    return (f'<article class="app-card" id="{a["slug"]}" data-cat="{a["cat"]}" data-product="{a.get("parent", a["slug"])}" style="--c:{cat[2]}">'
             f'<div class="app-card-top">{icon(a["slug"], lang, "card-icon")}<div><small>{cat[0] if lang == "ja" else cat[1]}</small>'
             f'<h3>{a["ja"] if lang == "ja" else a["en"]}</h3>{rating(a["slug"], lang) if s else ""}</div></div>'
             f'<p>{a["tag_ja"] if lang == "ja" else a["tag_en"]}</p>{meta_html}'
@@ -25,12 +27,12 @@ def apps_body(lang):
         from global_content import catalog_body
         return catalog_body()
     t = tx(lang)
-    main = [a for a in APPS if a['group'] == 'main']
+    main = [a for a in APPS if a['group'] in ('main', 'course')]
     legacy = [a for a in APPS if a['group'] == 'legacy']
     used = [k for k in CATS if any(a['cat'] == k for a in main)]
-    chips = (f'<button type="button" class="chip" data-filter="all" aria-pressed="true">{t("すべて", "All")}<small>{len(main)}</small></button>' +
+    chips = (f'<button type="button" class="chip" data-filter="all" aria-pressed="true">{t("すべて", "All")}<small>{len({a.get("parent", a["slug"]) for a in main})}</small></button>' +
              ''.join(f'<button type="button" class="chip" data-filter="{k}" aria-pressed="false" style="--c:{CATS[k][2]}">{CATS[k][0] if lang == "ja" else CATS[k][1]}'
-                     f'<small>{sum(1 for a in main if a["cat"] == k)}</small></button>' for k in used))
+                     f'<small>{len({a.get("parent", a["slug"]) for a in main if a["cat"] == k})}</small></button>' for k in used))
     return f'''<section class="page-hero">{bg("shelf", True)}<div class="br-wrap"><span class="tag">{t("アプリ一覧", "All apps")}</span>
 <h1>{t("TrailFusion の<br>アプリ。", "Apps by<br>TrailFusion.")}</h1>
 <p class="lead">{t(f"App Store で公開中の{len(LIVE)}本と、審査中の1本。どれも無料でダウンロードでき、規約・プライバシー・サポートへここから進めます。",

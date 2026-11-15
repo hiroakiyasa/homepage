@@ -5,7 +5,7 @@
 1. Writes the new pages: top, apps, about, garage (ja) and top, apps (en).
 2. Swaps the old header/footer of every other Japanese page (and the English hobby pages) for the brand
    chrome, keeping each page's own language selector (div.tf-extra) and content untouched.
-3. Retires the 13 other locales: their files become redirects to the English page.
+3. Generates complete static marketing pages in every supported web language; older hobby locale URLs remain redirects.
 4. Rewrites sitemap.xml and llms.txt for the new structure. Stdlib + BeautifulSoup only.
 """
 import re, sys, json, datetime
@@ -16,11 +16,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from brandsite import ROOT, BASE, CSS_VERSION, APPS, BY, LIVE, STORE, header, footer, page, app_schema  # noqa: E402
 import home, pages, detail  # noqa: E402
 from apps_content import C  # noqa: E402
+from global_i18n import LANGUAGES, render as render_global  # noqa: E402
 
 TODAY = datetime.date(2026, 10, 25).isoformat()
 QUEST_TODAY = datetime.date(2026, 10, 27).isoformat()  # /quest/ subject guides and FAQ added
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
-SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(d + '/' for d in RETIRED)
+SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(slug + '/' for code, _, slug in LANGUAGES if code not in ('ja', 'en'))
 DIRECT_3D_REDIRECTS = {'diy/index.html': '/camping.html', 'maintenance/index.html': '/maintenance.html'}
 EN_HOBBY = {'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
 EN_HOBBY.update({dest.lstrip('/'): EN_HOBBY[src] for src, dest in DIRECT_3D_REDIRECTS.items()})
@@ -55,18 +56,27 @@ def new_pages(languages=('ja', 'en')):
         for lang in (('ja', 'en') if has_en else ('ja',)):
             if lang not in languages:
                 continue
+            if lang == 'ja' and slug == 'english-quest':
+                from japanese_courses import legacy_redirect
+                legacy_redirect()
+                continue
             if lang == 'en' and slug == 'fp-quest':
                 (ROOT / 'en/fp-quest.html').write_text('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Gokaku FP Quest | Japanese app</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://trailfusionai.com/fp-quest.html"><meta http-equiv="refresh" content="0; url=/fp-quest.html"></head><body><p>This app is for the Japanese FP exam. <a href="/fp-quest.html">Visit the Japanese app page</a>.</p></body></html>\n')
+                continue
+            if lang == 'en' and slug == 'english-quest':
                 continue
             title, desc = detail.meta(slug, lang)
             other = ('/en/' + c['page'] if lang == 'ja' else '/' + c['page']) if has_en else '/en/apps.html'
             schema = [s for s in app_schema(lang) if s['name'] == (BY[slug]['ja'] if lang == 'ja' else BY[slug]['en'])]
             written.append(page(detail.path_of(slug, lang), lang, title, desc, detail.body(slug, lang), other, schema))
     if 'en' in languages:
-        from global_content import japanese_body
+        from global_content import japanese_body, english_body
         written.append(page('en/japanese-quest.html', 'en', 'Japanese Quest | Learn Japanese with Gokaku Quest | TrailFusion AI',
                             'Learn everyday Japanese and practise for JLPT and JFT-Basic with quizzes and illustrated guides. Japanese Quest is the Japanese-learning course in Gokaku Quest.',
-                            japanese_body(), '/quest/courses/japanese/', [s for s in app_schema('en') if s['name'] == 'Gokaku Quest — Japanese learning']))
+                            japanese_body(), '/quest/courses/japanese/', [s for s in app_schema('en') if s['name'] == 'Gokaku Quest']))
+        written.append(page('en/eigo-quest.html', 'en', 'English Quest | Learn English with Gokaku Quest | TrailFusion AI',
+                            'Build English vocabulary, grammar and practical conversation skills with quizzes and illustrated guides. English Quest is the English-learning course in Gokaku Quest.',
+                            english_body(), '/quest/courses/english/', [s for s in app_schema('en') if s['name'] == 'Gokaku Quest']))
     if 'ja' not in languages:
         return written
     written.append(page('about/index.html', 'ja', 'つくり手について｜TrailFusion AI',
@@ -143,7 +153,7 @@ def retire_hobby_hubs():
 
 
 def retire_locales():
-    targets = {'index.html': '/en/', 'apps.html': '/en/apps.html', 'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
+    targets = {'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
     count = 0
     for d in RETIRED:
         for src, dest in targets.items():
@@ -161,7 +171,7 @@ def retire_locales():
 
 def sitemap(changed):
     old = re.findall(r'<url><loc>(.*?)</loc><lastmod>(.*?)</lastmod></url>', (ROOT / 'sitemap.xml').read_text())
-    redirect_urls = {BASE + '/' + rel.removesuffix('index.html') for rel in DIRECT_3D_REDIRECTS} | {BASE + '/en/fp-quest.html'}
+    redirect_urls = {BASE + '/' + rel.removesuffix('index.html') for rel in DIRECT_3D_REDIRECTS} | {BASE + '/en/fp-quest.html', BASE + '/eigo-quest.html'}
     keep = {u: d for u, d in old if u not in redirect_urls and not any(u.startswith(f'{BASE}/{x}/') for x in RETIRED)}
     quest_pages = json.loads((ROOT / 'docs/quest/pages.json').read_text())
     for rel in quest_pages:
@@ -255,7 +265,7 @@ App Store publisher name: hiroaki yuasa
 
 
 def main():
-    if '--english-only' in sys.argv:
+    if '--english-only' in sys.argv or '--global-only' in sys.argv:
         generated = new_pages(('en',))
         path = ROOT / 'sitemap.xml'
         text = path.read_text()
@@ -269,12 +279,17 @@ def main():
             else:
                 text = text.replace('</urlset>', '  ' + entry + '\n</urlset>')
         path.write_text(text)
-        print(json.dumps({'english_pages': generated, 'japanese_and_hobby_pages': 'unchanged'}, indent=2))
+        chosen = sys.argv[sys.argv.index('--locales')+1].split(',') if '--locales' in sys.argv else None
+        from japanese_courses import refresh as refresh_japanese_courses
+        refresh_japanese_courses()
+        localized = render_global(chosen)
+        print(json.dumps({'english_pages': generated, 'global_pages': len(localized), 'japanese_and_hobby_content': 'English course links and language metadata aligned; other content preserved'}, indent=2))
         return
     generated = new_pages()
     legacy = legacy_pages(generated)
     hobby_redirects = retire_hobby_hubs()
     retired = retire_locales()
+    generated += render_global()
     urls = sitemap(generated + legacy)
     llms()
     js = ROOT / 'assets/js/site-v2.js'
