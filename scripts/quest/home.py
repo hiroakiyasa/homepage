@@ -121,7 +121,7 @@ def learning():
 
 
 def levels():
-    steps = [('40', '基礎', 'まずは知識の土台', '無料'), ('50', '標準', '理解を問題で確かめる', '無料'),
+    steps = [('40', '基礎', 'まずは知識の土台', '無料'), ('50', '標準', '理解を問題で確かめる', 'Pro'),
              ('60', '応用', '知識をつなげて考える', 'Pro'), ('70', '発展', '手ごたえのある問題へ', 'Pro')]
     cells = ''.join(f'<li class="lv{i}"><span class="lv-num">{n}</span><b>{t}</b><small>{d}</small><em class="{"free" if p == "無料" else "pro"}">{p}</em></li>' for i, (n, t, d, p) in enumerate(steps))
     return f'''<section class="v-sec v-levels" id="learning-depth"><div class="wrap v-levels-grid">
