@@ -209,6 +209,21 @@ def other_links(current):
             '<a class="text-link" href="/quest/juken/anki/">暗記アプリとしての使い方 ↗</a> <a class="text-link" href="/quest/school4/">中学受験4科 ↗</a> <a class="text-link" href="/quest/faq/">よくある質問 ↗</a></p></div></section>')
 
 
+EXAM_LINKS = {
+    'science': [('/quest/juken/science-plants/', '理科 植物のまとめ'), ('/quest/juken/science-animals/', '理科 動物・人体のまとめ'), ('/quest/juken/last-2-months/', '直前2か月の暗記の進め方')],
+    'social': [('/quest/juken/social-anki/', '社会 暗記の直前ガイド'), ('/quest/juken/last-2-months/', '直前2か月の暗記の進め方')],
+}
+
+
+def exam_links(sub):
+    items = EXAM_LINKS.get(sub['slug'])
+    if not items:
+        return ''
+    links = ' '.join(f'<a class="text-link" href="{u}">{n} ↗</a>' for u, n in items)
+    return ('<section class="section"><div class="wrap"><div class="section-head"><div><span class="kicker">入試直前</span><h2>入試直前の、要点まとめ。</h2></div>'
+            f'<p>入試まで約2か月。{sub["name"]}の暗記を仕上げるための整理ページです。</p></div><p>{links}</p></div></section>')
+
+
 def subject_page(sub, ctx):
     stores, faq, unit_section, preview, image = ctx['stores'], ctx['faq'], ctx['unit_section'], ctx['preview'], ctx['image']
     cid, name = sub['cid'], sub['name']
@@ -223,7 +238,7 @@ def subject_page(sub, ctx):
     shots = ('<section class="section" id="samples"><div class="wrap"><div class="section-head"><div><span class="kicker">教材の中身</span><h2>図鑑と問題の画面。</h2></div>'
              '<p>タップすると大きく読めます。画面は更新により変わります。</p></div>'
              f'<div class="gallery two">{figures}</div></div></section>')
-    body = (crumbs(trail) + hero + scope_section(sub) + unit_section(cid, name) + steps_section(sub) + shots + parents(sub) + free_pro() + single_note(sub)
+    body = (crumbs(trail) + hero + scope_section(sub) + unit_section(cid, name) + steps_section(sub) + shots + exam_links(sub) + parents(sub) + free_pro() + single_note(sub)
             + f'<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">よくある質問</span><h2>{name}アプリのよくある質問。</h2></div></div>{faq(sub["faqs"])}</div></section>'
             + other_links(sub['slug']))
     extra = [breadcrumb([(n, u) for n, u in trail])] + app_schema(sub)
@@ -250,7 +265,7 @@ def hub_page(ctx):
            '<article class="topic"><h3>続けられるか</h3><p>1問1画面・タップで即判定。まちがい直しや、学ぶほど育つ王国マップで、毎日続ける動機づけを助けます。</p></article></div></div></section>')
     subjects = ('<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">科目別ガイド</span><h2>教科から選ぶ。</h2></div><p>各教科の出題範囲・学び方・保護者向けの使い方をまとめています。</p></div>'
                 f'{table}<div class="ccard-grid" style="margin-top:24px">{cards}</div>'
-                '<p style="margin-top:20px"><a class="text-link" href="/quest/juken/anki/">暗記アプリとしての使い方 ↗</a> <a class="text-link" href="/quest/school4/">中学受験4科 ↗</a> <a class="text-link" href="/quest/faq/">よくある質問 ↗</a></p></div></section>')
+                '<p style="margin-top:20px"><a class="text-link" href="/quest/juken/anki/">暗記アプリとしての使い方 ↗</a> <a class="text-link" href="/quest/juken/last-2-months/">入試直前2か月の暗記の進め方 ↗</a> <a class="text-link" href="/quest/school4/">中学受験4科 ↗</a> <a class="text-link" href="/quest/faq/">よくある質問 ↗</a></p></div></section>')
     body = (crumbs(trail) + hero + why + subjects + free_pro()
             + f'<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">よくある質問</span><h2>中学受験アプリのよくある質問。</h2></div></div>{faq(HUB_FAQ)}</div></section>')
     return dict(path='/quest/juken/', title='中学受験 理科・社会・国語・算数アプリ｜4科を図鑑とクイズで復習｜合格！クエスト',

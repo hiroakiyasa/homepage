@@ -89,5 +89,8 @@ PAGES.append(render('/quest/invite/','友だち招待で Pro が7日間無料｜
 import juken
 for p in juken.build(dict(stores=stores,faq=faq,unit_section=unit_section,preview=preview,image=image,card=card,COURSES=COURSES,STATS=STATS,FAQ=FAQ)):
  PAGES.append(render(p['path'],p['title'],p['desc'],p['body'],faqs=p['faqs'],extra=p['extra']))
+import exam60
+for p in exam60.build(dict(stores=stores,faq=faq)):
+ PAGES.append(render(p['path'],p['title'],p['desc'],p['body'],faqs=p['faqs'],extra=p['extra']))
 (ROOT/'docs/quest/pages.json').write_text(json.dumps(PAGES,ensure_ascii=False,indent=2)+'\n')
 print(f'Rendered {len(PAGES)} Quest pages')

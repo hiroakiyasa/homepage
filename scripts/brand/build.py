@@ -19,7 +19,7 @@ from apps_content import C  # noqa: E402
 from global_i18n import LANGUAGES, render as render_global  # noqa: E402
 
 TODAY = datetime.date(2026, 10, 25).isoformat()
-QUEST_TODAY = datetime.date(2026, 10, 27).isoformat()  # /quest/ subject guides and FAQ added
+QUEST_TODAY = datetime.date(2026, 11, 15).isoformat()  # pre-exam guides added
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
 SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(slug + '/' for code, _, slug in LANGUAGES if code not in ('ja', 'en'))
 DIRECT_3D_REDIRECTS = {'diy/index.html': '/camping.html', 'maintenance/index.html': '/maintenance.html'}
@@ -187,17 +187,23 @@ def sitemap(changed):
 
 
 LLMS_JA = """## 日本語の要約（{today}）
-合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、イラスト図鑑と4択クイズで復習する学習アプリです。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
+合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、過去の入試の出題傾向を分析して作ったオリジナルの一問一答（4択・偏差値の目安で40・50・60・70の4段階）で復習する学習アプリです。まちがえた問題をためて解き直せるので、入試直前の暗記の仕上げに向いています。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
 
 ### 中学受験の科目別ガイド
 - [中学受験 理科・社会・国語・算数アプリ（総合）]({base}/quest/juken/)
-- [中学受験 理科アプリ]({base}/quest/juken/science/)：36単元・7,742問・図鑑539ページ。生命・地球・物質・エネルギー。
-- [中学受験 社会アプリ]({base}/quest/juken/social/)：53単元・5,327問・図鑑630ページ。地理・歴史・公民。
-- [中学受験 国語アプリ]({base}/quest/juken/kokugo/)：94単元・4,550問・図鑑500ページ。語彙・ことわざ慣用句・漢字・ことばのきまり・読解。
-- [中学受験 算数アプリ]({base}/quest/juken/math/)：55単元・6,600問・図鑑540ページ。数と計算・変化と関係・データの活用・図形・文章題。
-- [中学受験 暗記アプリ]({base}/quest/juken/anki/)：図鑑で理解、4択で思い出し、まちがい直しで定着。
+- [中学受験 理科アプリ]({base}/quest/juken/science/)：36単元・7,742問。生命・地球・物質・エネルギー。
+- [中学受験 社会アプリ]({base}/quest/juken/social/)：53単元・5,327問。地理・歴史・公民。
+- [中学受験 国語アプリ]({base}/quest/juken/kokugo/)：94単元・4,550問。語彙・ことわざ慣用句・漢字・ことばのきまり・読解。
+- [中学受験 算数アプリ]({base}/quest/juken/math/)：55単元・6,600問。数と計算・変化と関係・データの活用・図形・文章題。
+- [中学受験 暗記アプリ]({base}/quest/juken/anki/)：4択で思い出し、まちがい直しで定着。
 - [よくある質問]({base}/quest/faq/)、[料金・購入ガイド]({base}/quest/plans/)、[中学受験4科]({base}/quest/school4/)
 数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。各問題は偏差値の目安で40・50・60・70の4段階（難易度区分であり模試の偏差値とは別）。
+
+### 入試直前の要点ガイド（2026-11-15）
+- [中学受験 理科 植物のまとめ]({base}/quest/juken/science-plants/)：花のつくり・種子と発芽・光合成と蒸散・道管と師管。
+- [中学受験 理科 動物・人体のまとめ]({base}/quest/juken/science-animals/)：こん虫・セキツイ動物・消化・血液と呼吸。
+- [中学受験 社会 暗記の直前ガイド]({base}/quest/juken/social-anki/)：地理・歴史・公民のよく問われる型。
+- [中学受験 直前2か月の理科・社会 暗記の進め方]({base}/quest/juken/last-2-months/)：時期ごとの計画・1日15〜20分の量の目安・まちがい直し。
 
 ### 単体アプリとの関係
 - 合格理科クエスト（理科だけの単体アプリ）: https://apps.apple.com/jp/app/id6772644144
@@ -207,7 +213,7 @@ LLMS_JA = """## 日本語の要約（{today}）
 - 単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。
 
 ### 無料とPro
-無料: 偏差値40・50の問題、まちがい直し、王国マップ、最初の5単元の読み上げ。Pro（1科目・中学受験4科・全科目）: 偏差値60・70、全対象の読み上げ、図鑑の全ページ、広告なし。価格はアプリ内の購入画面の表示が正です。
+無料で始められる問題があります（基礎の段階の問題、まちがい直し、王国マップなど）。Pro（1科目・中学受験4科・全科目）では、応用の段階の問題や全対象の読み上げ、広告なしなどが使えます。無料の範囲と価格はアプリ内の購入画面の表示が正です。
 
 ### 資格・語学（別セクション）
 合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [12教材の一覧]({base}/quest/#courses)
@@ -215,12 +221,13 @@ LLMS_JA = """## 日本語の要約（{today}）
 
 LLMS_FULL = """
 ## Gokaku! Quest for Japanese junior-high entrance exams (chugaku juken), in English
-Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with an illustrated atlas, one-question-per-screen four-choice quizzes, a mistakes review and a kingdom-building map that grows as you study.
-- Science: 36 units, 7,742 questions, 539 atlas pages. {base}/quest/juken/science/
-- Social studies: 53 units, 5,327 questions, 630 atlas pages. {base}/quest/juken/social/
-- Japanese language: 94 units, 4,550 questions, 500 atlas pages. {base}/quest/juken/kokugo/
-- Math: 55 units, 6,600 questions, 540 atlas pages. {base}/quest/juken/math/
-- Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). 40 and 50 are free; 60 and 70 are Pro.
+Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with original one-question-per-screen four-choice quizzes built from an analysis of past exam trends, a mistakes review and a kingdom-building map that grows as you study.
+- Science: 36 units, 7,742 questions. {base}/quest/juken/science/
+- Social studies: 53 units, 5,327 questions. {base}/quest/juken/social/
+- Japanese language: 94 units, 4,550 questions. {base}/quest/juken/kokugo/
+- Math: 55 units, 6,600 questions. {base}/quest/juken/math/
+- Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). You can start with free questions; the Pro plans unlock more, and the scope and prices are shown on the app's purchase screen.
+- Pre-exam guides for the last two months before the exams (Japanese): plants {base}/quest/juken/science-plants/ , animals and the human body {base}/quest/juken/science-animals/ , social studies memorization {base}/quest/juken/social-anki/ , and a two-month study plan {base}/quest/juken/last-2-months/
 - It is a review aid, not a replacement for cram school or past-paper practice, and it does not guarantee admission.
 - Single-subject predecessors: Gokaku Rika Quest (science) and Gokaku! Kokugo Quest (Japanese language). Their purchases and progress can move to Gokaku! Quest from inside the app.
 - Figures as of 2026-10-25 (release manifest). App Store Japan rating 4.37 from 114 ratings (2026-10-27).
@@ -243,7 +250,7 @@ App Store publisher name: hiroaki yuasa
 ## Key facts (App Store Japan, {TODAY})
 - Apps on the App Store: {len(LIVE)}; one more (Mochi) is in review.
 - App Store ratings across all apps: {sum(STORE[a["slug"]]["ratings"] for a in LIVE)}.
-- Gokaku! Quest: 12 courses, {q:,} questions, illustrated atlases for every course; levels 40 and 50 are free, 60 and 70 are Pro.
+- Gokaku! Quest: 12 courses, {q:,} questions, difficulty bands 40 to 70, with free questions to start and Pro for more.
 
 ## Apps
 {apps}
