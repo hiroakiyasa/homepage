@@ -83,10 +83,19 @@ def check_page(rel):
 
 for rel in NEW:
     check_page(rel)
-for rel in ['support/index.html', '404.html', 'diy/index.html', 'en/diy/index.html', 'car-concierge.html']:
+for rel in ['support/index.html', '404.html', 'en/diy/index.html', 'car-concierge.html']:
     text = (ROOT / rel).read_text(encoding='utf-8')
     if 'class="br-header"' not in text or 'tf-header' in text:
         problems.append(f'{rel}: older page still has the old header')
+for rel, dest in {'diy/index.html': '/camping.html', 'maintenance/index.html': '/maintenance.html'}.items():
+    text = (ROOT / rel).read_text(encoding='utf-8')
+    parser = Links()
+    parser.feed(text)
+    if parser.canonicals != [BASE + dest] or 'noindex' not in parser.metas.get('robots', ''):
+        problems.append(f'{rel}: retired hub needs a noindex redirect and destination canonical')
+    if f'http-equiv="refresh" content="0; url={dest}"' not in text or not target(dest).is_file():
+        problems.append(f'{rel}: direct 3D redirect target is missing or invalid')
+
 for d in RETIRED:
     for f in (ROOT / d).rglob('*.html'):
         if 'http-equiv="refresh"' not in f.read_text():

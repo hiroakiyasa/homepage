@@ -21,7 +21,9 @@ TODAY = datetime.date(2026, 10, 25).isoformat()
 QUEST_TODAY = datetime.date(2026, 10, 27).isoformat()  # /quest/ subject guides and FAQ added
 RETIRED = ['zh-hans', 'ko', 'es', 'pt-br', 'fr', 'de', 'it', 'ru', 'tr', 'vi', 'th', 'hi', 'ar']
 SKIP_DIRS = ('quest/', 'output/', 'archive/', 'node_modules/', 'data/') + tuple(d + '/' for d in RETIRED)
+DIRECT_3D_REDIRECTS = {'diy/index.html': '/camping.html', 'maintenance/index.html': '/maintenance.html'}
 EN_HOBBY = {'diy/index.html': '/en/diy/', 'maintenance/index.html': '/en/maintenance/', 'travel/index.html': '/en/travel/'}
+EN_HOBBY.update({dest.lstrip('/'): EN_HOBBY[src] for src, dest in DIRECT_3D_REDIRECTS.items()})
 HEADER_RE = re.compile(r'<header class="(?:tf-header|br-header)".*?</header>', re.S)
 FOOTER_RE = re.compile(r'<footer class="(?:tf-footer|br-footer)".*?</footer>', re.S)
 BLOCKS = [re.compile(p, re.S) for p in (r'<!-- tf-localized:start -->.*?<!-- tf-localized:end -->', r'<!-- home-i18n:start -->.*?<!-- home-i18n:end -->',
@@ -93,7 +95,7 @@ def legacy_pages(generated):
     done = []
     for path in sorted(ROOT.rglob('*.html')):
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith(SKIP_DIRS) or '/' + rel.removesuffix('index.html') in generated:
+        if rel in DIRECT_3D_REDIRECTS or rel.startswith(SKIP_DIRS) or '/' + rel.removesuffix('index.html') in generated:
             continue
         if rel.startswith('en/'):
             src = rel.removeprefix('en/')
@@ -101,12 +103,29 @@ def legacy_pages(generated):
                 continue
             if src not in EN_HOBBY:
                 continue
-            ok = swap_chrome(path, 'en', '/' + src.removesuffix('index.html'))
+            ok = swap_chrome(path, 'en', DIRECT_3D_REDIRECTS.get(src, '/' + src.removesuffix('index.html')))
         else:
             ok = swap_chrome(path, 'ja', EN_HOBBY.get(rel, '/en/'))
         if ok:
             done.append(rel)
     return done
+
+
+def retire_hobby_hubs():
+    """Keep old bookmarks working without an intermediate landing page."""
+    labels = {'/camping.html': 'キャンピングカーDIY', '/maintenance.html': '整備'}
+    for rel, dest in DIRECT_3D_REDIRECTS.items():
+        label = labels[dest]
+        path = ROOT / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(f"""<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{label} | TrailFusion AI</title><meta name="robots" content="noindex,follow">
+<link rel="canonical" href="{BASE + dest}"><meta http-equiv="refresh" content="0; url={dest}">
+<script>location.replace({json.dumps(dest)} + location.search + location.hash);</script></head>
+<body><p><a href="{dest}">{label}の3Dページへ移動する</a></p></body></html>
+""", encoding='utf-8')
+    return len(DIRECT_3D_REDIRECTS)
 
 
 def retire_locales():
@@ -128,13 +147,14 @@ def retire_locales():
 
 def sitemap(changed):
     old = re.findall(r'<url><loc>(.*?)</loc><lastmod>(.*?)</lastmod></url>', (ROOT / 'sitemap.xml').read_text())
-    keep = {u: d for u, d in old if not any(u.startswith(f'{BASE}/{x}/') for x in RETIRED)}
+    redirect_urls = {BASE + '/' + rel.removesuffix('index.html') for rel in DIRECT_3D_REDIRECTS}
+    keep = {u: d for u, d in old if u not in redirect_urls and not any(u.startswith(f'{BASE}/{x}/') for x in RETIRED)}
     quest_pages = json.loads((ROOT / 'docs/quest/pages.json').read_text())
     for rel in quest_pages:
         keep[BASE + rel] = QUEST_TODAY
     for rel in changed:
         url = BASE + rel if rel.startswith('/') else BASE + '/' + rel.removesuffix('index.html')
-        if url.endswith('404.html'):
+        if url.endswith('404.html') or url in redirect_urls:
             continue
         keep[url] = TODAY
     rows = ''.join(f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n' for u, d in sorted(keep.items(), key=lambda x: (x[0] != BASE + '/', x[0])))
@@ -211,6 +231,8 @@ App Store publisher name: hiroaki yuasa
 - [About the maker]({BASE}/about/)
 - [Support, app terms and privacy]({BASE}/support/)
 - [The maker's garage]({BASE}/garage/): personal notes on road trips, a camper-van DIY build and Hiace maintenance. These are hobby records, not apps.
+- [Camper van DIY: interactive 3D floor plan]({BASE}/camping.html) (Japanese)
+- [Maintenance: understand your van in 3D]({BASE}/maintenance.html) (Japanese)
 '''
     ja = LLMS_JA.format(base=BASE, today=QUEST_TODAY)
     full = text + '\n' + ja + LLMS_FULL.format(base=BASE)
@@ -221,6 +243,7 @@ App Store publisher name: hiroaki yuasa
 def main():
     generated = new_pages()
     legacy = legacy_pages(generated)
+    hobby_redirects = retire_hobby_hubs()
     retired = retire_locales()
     urls = sitemap(generated + legacy)
     llms()
@@ -228,7 +251,7 @@ def main():
     s = js.read_text()
     s = re.sub(r"\n  /\* The standalone Quest hub is retired\..*?\n  }\n", '\n', s, flags=re.S)
     js.write_text(s)
-    print(json.dumps({'new_pages': generated, 'chrome_swapped': len(legacy), 'retired_locale_files': retired, 'sitemap_urls': urls}, ensure_ascii=False, indent=1))
+    print(json.dumps({'new_pages': generated, 'chrome_swapped': len(legacy), 'direct_3d_redirects': hobby_redirects, 'retired_locale_files': retired, 'sitemap_urls': urls}, ensure_ascii=False, indent=1))
 
 
 if __name__ == '__main__':

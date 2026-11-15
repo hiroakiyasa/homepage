@@ -16,7 +16,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 PAGES = ['/', '/en/', '/apps.html', '/en/apps.html', '/about/', '/garage/', '/support/', '/car-concierge.html', '/mochi.html',
          '/reelmake.html', '/en/voicelink.html', '/buddytalk.html', '/fp-quest.html', '/en/word-blaster.html', '/wood-golem.html',
          '/hacking-timer.html', '/eigo-quest.html', '/rika-quest.html', '/kokugo-quest.html',
-         '/diy/', '/en/diy/', '/reelmake-privacy.html', '/maintenance/', '/404.html']
+         '/camping.html', '/en/diy/', '/reelmake-privacy.html', '/maintenance.html', '/404.html']
 passed, errors = [], []
 
 

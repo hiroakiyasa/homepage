@@ -161,7 +161,7 @@ def footer(lang):
     p = '' if lang == 'ja' else '/en'
     apps = ''.join(f'<li><a href="{a["detail"] or p + "/apps.html#" + a["slug"]}">{a["ja"] if lang == "ja" else a["en"]}</a></li>'
                    for a in APPS[:5])
-    garage = ([('/garage/', 'つくり手のガレージ'), ('/travel/story.html', '車旅の記録'), ('/drive-routes/', '絶景ロード図鑑'), ('/diy/', 'キャンピングカーDIY'), ('/maintenance/', 'ハイエース整備')]
+    garage = ([('/garage/', 'つくり手のガレージ'), ('/travel/story.html', '車旅の記録'), ('/drive-routes/', '絶景ロード図鑑'), ('/camping.html', 'キャンピングカーDIY'), ('/maintenance.html', '整備')]
               if lang == 'ja' else
               [('/en/travel/', 'Road trips'), ('/drive-routes/', 'Scenic road map (Japanese)'), ('/en/diy/', 'Camper van DIY'), ('/en/maintenance/', 'Van maintenance')])
     brand = ([('/about/', 'つくり手について'), ('/partners/', '協業・パートナー'), ('/support/', 'お問い合わせ・サポート'), ('/support/#policies', 'アプリ別の規約・プライバシー'), ('/privacy-policy.html', 'サイトのプライバシーポリシー'), ('/terms-of-service.html', 'サイトの利用規約')]

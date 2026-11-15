@@ -160,8 +160,8 @@ def trust(lang):
 def maker(lang):
     t = tx(lang)
     garage_cards = [('/travel/story.html' if lang == 'ja' else '/en/travel/', t('車旅の記録', 'Road trips'), t('47都道府県、約5万kmを走った旅のこと。', 'Notes from about 50,000 km across all 47 prefectures.')),
-                    ('/diy/' if lang == 'ja' else '/en/diy/', t('キャンピングカーDIY', 'Camper van DIY'), t('床・断熱・家具・電装まで自分で作った記録。', 'Building the floor, insulation, furniture and wiring ourselves.')),
-                    ('/maintenance/' if lang == 'ja' else '/en/maintenance/', t('ハイエース整備ノート', 'Van maintenance notes'), t('愛車の仕組みと整備の記録を3Dで。', 'How the van works, with 3D models and service notes.'))]
+                    ('/camping.html' if lang == 'ja' else '/en/diy/', t('キャンピングカーDIY', 'Camper van DIY'), t('3Dの間取りを見る。内装やレイアウト、作る順番を体験。', 'Building the floor, insulation, furniture and wiring ourselves.')),
+                    ('/maintenance.html' if lang == 'ja' else '/en/maintenance/', t('整備', 'Van maintenance notes'), t('3Dで愛車の仕組みを知る。部品と動力のつながり、整備の記録まで。', 'How the van works, with 3D models and service notes.'))]
     gc = ''.join(f'<a class="g-card" href="{h}"><strong>{a}</strong><span>{b}</span></a>' for h, a, b in garage_cards)
     about = '/about/' if lang == 'ja' else '/about/'
     return f'''<section class="sec maker veil" id="maker">{bg("desk")}<div class="br-wrap maker-grid">
@@ -180,7 +180,7 @@ FAQ = {
     'ja': [('TrailFusion AI はだれが運営していますか？', '湯浅 浩章による個人開発スタジオです。App Store に表示されるアプリの提供者名は「hiroaki yuasa」です。'),
            ('アプリは無料ですか？', 'すべて無料でダウンロードできます。一部の機能や教材はアプリ内課金です。内容と価格は各アプリの購入画面でご確認ください。'),
            ('問い合わせはどこからできますか？', 'サポートページ、またはメール（trailfusionai@gmail.com）からお問い合わせください。アプリ別の利用規約とプライバシーポリシーもサポートページにまとめています。'),
-           ('ハイエース整備やキャンピングカーDIYのページはどこにありますか？', 'アプリとは分けて「つくり手のガレージ」にまとめました。車旅の記録、絶景ロード図鑑、キャンピングカーDIY、ハイエース整備のページはすべてそのまま見られます。'),
+           ('ハイエース整備やキャンピングカーDIYのページはどこにありますか？', 'このページの「つくり手のガレージ」にある「キャンピングカーDIY」から3Dの間取り、「整備」から3Dで愛車の仕組みを直接開けます。制作ガイドや整備記録も、それぞれのページから使えます。'),
            ('以前の理科・国語のアプリを使っています。', '学習記録と購入は、合格！クエストへ引き継げます。引き継ぎ方は合格！クエストの料金・購入ガイドをご覧ください。')],
     'en': [('Who is TrailFusion AI?', 'An indie studio run by Hiroaki Yuasa. On the App Store, the publisher name is "hiroaki yuasa".'),
            ('Are the apps free?', 'All apps are free to download. Some features and courses are in-app purchases; check the purchase screen in each app for details and prices.'),

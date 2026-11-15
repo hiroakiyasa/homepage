@@ -59,6 +59,8 @@ Earlier active monthly/yearly subscriptions retain verified access as separate c
 - [About the maker](https://trailfusionai.com/about/)
 - [Support, app terms and privacy](https://trailfusionai.com/support/)
 - [The maker's garage](https://trailfusionai.com/garage/): personal notes on road trips, a camper-van DIY build and Hiace maintenance. These are hobby records, not apps.
+- [Camper van DIY: interactive 3D floor plan](https://trailfusionai.com/camping.html) (Japanese)
+- [Maintenance: understand your van in 3D](https://trailfusionai.com/maintenance.html) (Japanese)
 
 ## 日本語の要約（2026-10-27）
 合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、イラスト図鑑と4択クイズで復習する学習アプリです。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
