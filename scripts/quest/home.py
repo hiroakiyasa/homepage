@@ -63,7 +63,7 @@ def hero():
 <p class="banner"><span>12教材が、ひとつのアプリに！</span></p>
 <ul class="checks"><li>{CHECK}全12教材に<b>イラスト図鑑</b>（{pages:,}ページ）</li><li>{CHECK}<b>問題の絵</b>と<b>イラスト解説</b>で、理由までわかる</li><li>{CHECK}問題の<b>読み上げ</b>で、耳からも確かめられる</li></ul>
 {H["stores"]("hero")}
-<p class="fine">ダウンロード無料。難易度40・50の問題、図鑑のプレビュー、最初の5単元の読み上げは無料。60・70の問題、図鑑の全ページ、読み上げの全対象などはPro。<br>iPhone・iPad / Android　アプリ内課金・広告あり</p>
+<p class="fine">ダウンロード無料。難易度40の問題、図鑑のプレビュー、最初の5単元の読み上げは無料。50・60・70の問題、図鑑の全ページ、読み上げの全対象などはPro。<br>iPhone・iPad / Android　アプリ内課金・広告あり</p>
 </div>
 <div class="v-hero-art" role="group" aria-label="中学受験4科の実際のイラスト図鑑">
 <div class="shelf">{books}</div>
@@ -125,7 +125,7 @@ def levels():
              ('60', '応用', '知識をつなげて考える', 'Pro'), ('70', '発展', '手ごたえのある問題へ', 'Pro')]
     cells = ''.join(f'<li class="lv{i}"><span class="lv-num">{n}</span><b>{t}</b><small>{d}</small><em class="{"free" if p == "無料" else "pro"}">{p}</em></li>' for i, (n, t, d, p) in enumerate(steps))
     return f'''<section class="v-sec v-levels" id="learning-depth"><div class="wrap v-levels-grid">
-<div>{head("難易度は4段階", '40から70まで、<br><mark>自分の段から。</mark>', '同じ単元でも、基礎から応用まで段階があります。まずは40・50で土台を固めて、慣れたら60・70へ。')}
+<div>{head("難易度は4段階", '40から70まで、<br><mark>自分の段から。</mark>', '同じ単元でも、基礎から応用まで段階があります。まずは40で土台を固めて、慣れたら50〜70へ。')}
 <p class="fine">40・50・60・70は教材内の難易度の目安です。模試の実測偏差値や、成績の向上を保証する数値ではありません。収録範囲は教材・単元により異なります。</p></div>
 <ol class="stairs">{cells}</ol>
 </div></section>'''
@@ -170,7 +170,7 @@ def kingdom():
 
 
 def free():
-    rows = [('問題', '難易度40・50', '60・70も'), ('読み上げ', '最初の5単元', '全対象範囲'),
+    rows = [('問題', '難易度40', '50〜70も'), ('読み上げ', '最初の5単元', '全対象範囲'),
             ('イラスト図鑑', 'プレビューページ', '全ページ'), ('王国マップ', '遊べる', '遊べる'), ('広告', 'あり', 'なし')]
     # the free "ads" cell is the only one without a check mark
     tr = ''.join(f'<tr><th scope="row">{a}</th><td>{"" if b == "あり" else CHECK}{b}</td><td>{CHECK}{c}</td></tr>' for a, b, c in rows)

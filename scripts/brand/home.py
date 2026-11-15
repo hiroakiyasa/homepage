@@ -75,7 +75,7 @@ def flagship(lang):
            t("家族の中学受験から生まれた学習アプリです。理科・社会・国語・算数に、宅建士・FP・簿記・ITパスポート・SPI3・日本語・英語・運転免許を加えた12教材を、ひとつのアプリで学べます。",
              "A study app born from our own family's entrance-exam years. Science, social studies, Japanese and math, plus real-estate, financial planning, bookkeeping, IT Passport, SPI3, Japanese, English and driving theory, in one app."))}
 {checks(items)}
-<p class="fine">{t("難易度40・50の問題は無料、60・70や図鑑の全ページなどは Pro。アプリ内課金・広告あり。", "Level 40 and 50 questions are free; levels 60 and 70 and the full atlases are Pro. In-app purchases and ads.")}</p>
+<p class="fine">{t("難易度40の問題は無料、50・60・70や図鑑の全ページなどは Pro。アプリ内課金・広告あり。", "Level 40 questions are free; levels 50, 60 and 70 and the full atlases are Pro. In-app purchases and ads.")}</p>
 <p class="fine">{t("中学受験の教科別ガイド：", "Entrance-exam guides (Japanese): ")}<a href="/quest/juken/science/">{t("理科", "Science")}</a>・<a href="/quest/juken/social/">{t("社会", "Social studies")}</a>・<a href="/quest/juken/kokugo/">{t("国語", "Japanese")}</a>・<a href="/quest/juken/math/">{t("算数", "Math")}</a>・<a href="/quest/juken/anki/">{t("暗記アプリ", "Memorization")}</a>・<a href="/quest/faq/">{t("よくある質問", "FAQ")}</a></p>
 <div class="actions"><a class="btn btn-main" href="/quest/">{t("合格！クエストのページへ", "Visit the Gokaku! Quest site")} <b aria-hidden="true">→</b></a></div>{stores("quest", lang, "home-flagship")}</div>
 <div class="phones">{phones}<figure class="kingdom-chip">{qimg("kingdom", t("王国マップの画面", "Kingdom map screen"))}<figcaption>{t("学ぶほど育つ王国マップ", "Your kingdom grows as you learn")}</figcaption></figure></div>

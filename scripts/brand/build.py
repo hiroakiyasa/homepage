@@ -213,7 +213,7 @@ LLMS_JA = """## 日本語の要約（{today}）
 - 単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。
 
 ### 無料とPro
-無料で始められる問題があります（基礎の段階の問題、まちがい直し、王国マップなど）。Pro（1科目・中学受験4科・全科目）では、応用の段階の問題や全対象の読み上げ、広告なしなどが使えます。無料の範囲と価格はアプリ内の購入画面の表示が正です。
+無料: 各単元のいちばんやさしい段（偏差値40）の問題、まちがい直し、王国マップ、最初の5単元の読み上げ。Pro（1科目・中学受験4科・全科目）: 偏差値50・60・70の問題、全対象の読み上げ、広告なし。運転免許の教材は教材ごと無料。価格はアプリ内の購入画面の表示が正です。
 
 ### 資格・語学（別セクション）
 合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [12教材の一覧]({base}/quest/#courses)
@@ -226,7 +226,7 @@ Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance 
 - Social studies: 53 units, 5,327 questions. {base}/quest/juken/social/
 - Japanese language: 94 units, 4,550 questions. {base}/quest/juken/kokugo/
 - Math: 55 units, 6,600 questions. {base}/quest/juken/math/
-- Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). You can start with free questions; the Pro plans unlock more, and the scope and prices are shown on the app's purchase screen.
+- Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). Band 40 (the easiest band of each unit) is free; 50, 60 and 70 are Pro. Prices are shown on the app's purchase screen.
 - Pre-exam guides for the last two months before the exams (Japanese): plants {base}/quest/juken/science-plants/ , animals and the human body {base}/quest/juken/science-animals/ , social studies memorization {base}/quest/juken/social-anki/ , and a two-month study plan {base}/quest/juken/last-2-months/
 - It is a review aid, not a replacement for cram school or past-paper practice, and it does not guarantee admission.
 - Single-subject predecessors: Gokaku Rika Quest (science) and Gokaku! Kokugo Quest (Japanese language). Their purchases and progress can move to Gokaku! Quest from inside the app.
