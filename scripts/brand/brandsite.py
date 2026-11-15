@@ -47,7 +47,7 @@ APPS = [
         '/car-concierge.html', legal={'privacy': '/car-concierge-privacy.html', 'terms': '/car-concierge-terms.html'}),
     app('reelmake', 'create', 'Reel Make', 'Reel Make', '写真と動画を選ぶだけ。ナレーションと字幕つきの縦型動画をAIが仕上げる。',
         'Pick photos and clips. AI builds a vertical video with narration and captions.',
-        '/reelmake.html', 'com.reelapp.maker', legal={'privacy': '/reelmake-privacy.html', 'terms': '/reelmake-terms.html', 'support': '/reelmake-support.html'}),
+        '/reelmake.html', legal={'privacy': '/reelmake-privacy.html', 'terms': '/reelmake-terms.html', 'support': '/reelmake-support.html'}),
     app('voicelink', 'connect', 'VoiceLink AI通訳', 'VoiceLink AI Translator', '音声認識・翻訳・要約をすべて端末内で。話した内容をサーバーに送らない通訳アプリ。',
         'Speech recognition, translation and summaries run entirely on the device. Nothing you say is sent to a server.',
         '/voicelink.html', legal={'privacy': '/voicelink-privacy.html', 'support': '/voicelink-support.html'}),
@@ -126,8 +126,8 @@ def stores(slug, lang, place, small=False):
     region = 'jp/' if lang == 'ja' or slug in JP_ONLY else ''
     out = (f'<a class="store{" small" if small else ""}" href="https://apps.apple.com/{region}app/id{a["ios"]}" data-store="apple" data-app="{slug}" data-placement="{place}">'
            f'{APPLE}<span><small>{t("iPhone・iPad", "iPhone & iPad")}</small><strong>App Store</strong></span></a>')
-    # Reel Make's listed Android URL returned 404 in US and Japan on 2026-11-15.
-    if a['android'] and not (lang == 'en' and slug == 'reelmake'):
+    # Android buttons require a verified published listing in APPS.
+    if a['android']:
         out += (f'<a class="store{" small" if small else ""}" href="https://play.google.com/store/apps/details?id={a["android"]}" data-store="google" data-app="{slug}" data-placement="{place}">'
                 f'{PLAY}<span><small>Android</small><strong>Google Play</strong></span></a>')
     return f'<div class="stores">{out}</div>'

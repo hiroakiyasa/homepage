@@ -134,6 +134,9 @@ for relative in ('index.html','apps.html','eigo-quest.html'):
 legacy=(ROOT/'eigo-quest.html').read_text()
 check('noindex' in legacy and 'url=/quest/courses/english/' in legacy,'legacy English URL must preserve its integrated course destination')
 
+for relative in ('index.html','apps.html','reelmake.html'):
+    check('com.reelapp.maker' not in (ROOT/relative).read_text(),relative+' still has unavailable Reel Make Android link')
+
 if errors:
     print('\n'.join(errors));sys.exit(1)
 print(f'global static checks passed (35 website languages, 340 complete pages, {len(source)} body + {len(headings)} whole-heading keys per translation)')
