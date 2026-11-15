@@ -21,6 +21,9 @@ def app_card(a, lang):
 
 
 def apps_body(lang):
+    if lang == 'en':
+        from global_content import catalog_body
+        return catalog_body()
     t = tx(lang)
     main = [a for a in APPS if a['group'] == 'main']
     legacy = [a for a in APPS if a['group'] == 'legacy']

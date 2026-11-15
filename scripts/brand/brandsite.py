@@ -121,7 +121,8 @@ def stores(slug, lang, place, small=False):
     region = 'jp/' if lang == 'ja' or slug in JP_ONLY else ''
     out = (f'<a class="store{" small" if small else ""}" href="https://apps.apple.com/{region}app/id{a["ios"]}" data-store="apple" data-app="{slug}" data-placement="{place}">'
            f'{APPLE}<span><small>{t("iPhone・iPad", "iPhone & iPad")}</small><strong>App Store</strong></span></a>')
-    if a['android']:
+    # Reel Make's listed Android URL returned 404 in US and Japan on 2026-11-15.
+    if a['android'] and not (lang == 'en' and slug == 'reelmake'):
         out += (f'<a class="store{" small" if small else ""}" href="https://play.google.com/store/apps/details?id={a["android"]}" data-store="google" data-app="{slug}" data-placement="{place}">'
                 f'{PLAY}<span><small>Android</small><strong>Google Play</strong></span></a>')
     return f'<div class="stores">{out}</div>'
@@ -137,6 +138,9 @@ def rating(slug, lang):
 
 
 def nav(lang):
+    if lang == 'en':
+        from global_content import nav as global_nav
+        return global_nav()
     t = tx(lang)
     p = '' if lang == 'ja' else '/en'
     items = [(f'{p}/apps.html', t('アプリ', 'Apps')), ('/quest/', t('合格！クエスト', 'Gokaku! Quest')),
@@ -161,6 +165,9 @@ def footer(lang):
     p = '' if lang == 'ja' else '/en'
     apps = ''.join(f'<li><a href="{a["detail"] or p + "/apps.html#" + a["slug"]}">{a["ja"] if lang == "ja" else a["en"]}</a></li>'
                    for a in APPS[:5])
+    if lang == 'en':
+        from global_content import footer_apps
+        apps = footer_apps()
     garage = ([('/garage/', 'つくり手のガレージ'), ('/travel/story.html', '車旅の記録'), ('/drive-routes/', '絶景ロード図鑑'), ('/camping.html', 'キャンピングカーDIY'), ('/maintenance.html', '整備')]
               if lang == 'ja' else
               [('/en/travel/', 'Road trips'), ('/drive-routes/', 'Scenic road map (Japanese)'), ('/en/diy/', 'Camper van DIY'), ('/en/maintenance/', 'Van maintenance')])
@@ -180,6 +187,10 @@ def footer(lang):
 def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand/og.jpg', noindex=False):
     url = BASE + ('/' + path.removesuffix('index.html') if path != 'index.html' else '/')
     alt_url = BASE + alt_path
+    if lang == 'en' and og == '/assets/brand/og.jpg':
+        og = '/assets/brand/og-global.jpg'
+    extra_css = '<link rel="stylesheet" href="/assets/css/global-apps.css?v=20261115">' if lang == 'en' else ''
+    touch_icon = '/assets/icons/trailfusion-touch.png' if lang == 'en' else '/assets/quest/apple-touch-icon.png'
     graph = [{'@type': 'Organization', '@id': BASE + '/#org', 'name': 'TrailFusion AI', 'url': BASE + '/',
               'logo': BASE + '/assets/icons/trailfusion-lockup.webp', 'email': 'trailfusionai@gmail.com'},
              {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title, 'description': desc, 'inLanguage': lang,
@@ -194,10 +205,10 @@ def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand
 <meta property="og:type" content="website"><meta property="og:site_name" content="TrailFusion AI"><meta property="og:locale" content="{"ja_JP" if lang == "ja" else "en_US"}">
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{BASE + og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/icons/trailfusion.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/quest/apple-touch-icon.png">
+<link rel="icon" href="/assets/icons/trailfusion.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="{touch_icon}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/brand.css?v={CSS_VERSION}"><script defer src="/assets/js/brand.js?v={CSS_VERSION}"></script><script defer src="/assets/js/visitor-counter.js"></script>
+<link rel="stylesheet" href="/assets/css/brand.css?v={CSS_VERSION}">{extra_css}<script defer src="/assets/js/brand.js?v={CSS_VERSION}"></script><script defer src="/assets/js/visitor-counter.js"></script>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA}");</script>
 </head><body class="br"><a class="skip" href="#main">{"本文へスキップ" if lang == "ja" else "Skip to content"}</a>{header(lang, alt_path)}<main id="main">{body}</main>{footer(lang)}</body></html>
@@ -209,6 +220,9 @@ def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand
 
 
 def app_schema(lang):
+    if lang == 'en':
+        from global_content import schema
+        return schema()
     out = []
     for a in LIVE:
         s = STORE[a['slug']]

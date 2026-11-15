@@ -203,8 +203,14 @@ def closing(lang):
 
 
 def faq_schema(lang):
+    if lang == 'en':
+        from global_content import faq_schema as global_faq_schema
+        return global_faq_schema()
     return [{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in FAQ[lang]]}]
 
 
 def body(lang):
+    if lang == 'en':
+        from global_content import home_body
+        return home_body()
     return hero(lang) + proof(lang) + flagship(lang) + spotlights(lang) + more_apps(lang) + trust(lang) + maker(lang) + faq(lang) + closing(lang)

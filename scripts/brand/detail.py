@@ -25,13 +25,15 @@ def hero(slug, lang, c):
     cat = CATS[a['cat']]
     s = STORE.get(slug)
     meta = (t(f'バージョン {s["version"]}・{s["updated"].replace("-", ".")} 更新・App Store（日本）', f'Version {s["version"]}, updated {s["updated"]} (App Store Japan)') if s else '')
+    if lang == 'en':
+        meta = 'See the App Store for current version, devices and availability.'
     fan = ''.join(f'<figure class="d-phone f{i}">{img(k + ".webp", t(f"{name(slug, lang)}の画面", f"{name(slug, lang)} screen"), eager=True)}</figure>'
                   for i, k in enumerate(shots(slug, lang)[:3]))
     home = '/' if lang == 'ja' else '/en/'
     apps = '/apps.html' if lang == 'ja' else '/en/apps.html'
     return f'''<section class="d-hero" style="--c:{cat[2]}">{bg(c["bg"], True)}<div class="br-wrap d-hero-grid">
 <div class="d-copy"><nav class="crumbs" aria-label="{t("パンくず", "Breadcrumb")}"><a href="{home}">{t("ホーム", "Home")}</a> / <a href="{apps}">{t("アプリ", "Apps")}</a> / <span>{name(slug, lang)}</span></nav>
-<div class="d-id">{icon(slug, lang, "d-icon", True)}<div><small style="color:{cat[2]}">{cat[0] if lang == "ja" else cat[1]}</small><h1>{name(slug, lang)}</h1>{rating(slug, lang) if s else ""}</div></div>
+<div class="d-id">{icon(slug, lang, "d-icon", True)}<div><small style="color:{cat[2]}">{cat[0] if lang == "ja" else cat[1]}</small><h1>{name(slug, lang)}</h1>{rating(slug, lang) if s and lang == "ja" else ""}</div></div>
 <p class="d-catch">{c[lang]["catch"]}</p><p class="lead">{c[lang]["lead"]}</p>{stores(slug, lang, "detail-hero")}<p class="fine">{meta}</p></div>
 <div class="d-fan">{fan}</div></div></section>'''
 
@@ -81,6 +83,9 @@ def info(slug, lang, c):
 
 
 def others(slug, lang):
+    if lang == 'en':
+        from global_content import related
+        return related(slug)
     t = tx(lang)
     pool = [s for s in ['quest', 'mochi', 'car-concierge', 'reelmake', 'voicelink', 'buddytalk'] if s != slug][:3]
     cards = ''
@@ -108,6 +113,6 @@ def body(slug, lang):
 
 def meta(slug, lang):
     c = C[slug][lang]
-    plain = c['catch'].replace('<br>', '').replace('<mark>', '').replace('</mark>', '')
+    plain = c['catch'].replace('<br>', ' ' if lang == 'en' else '').replace('<mark>', '').replace('</mark>', '')
     title = f'{name(slug, lang)}｜{plain}｜TrailFusion AI' if lang == 'ja' else f'{name(slug, lang)} | {plain} | TrailFusion AI'
     return title, c['lead']

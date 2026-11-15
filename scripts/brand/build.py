@@ -33,28 +33,42 @@ HEAD = ('<!-- br-head --><link rel="preconnect" href="https://fonts.googleapis.c
         f'<link rel="stylesheet" href="/assets/css/brand.css?v={CSS_VERSION}"><script defer src="/assets/js/brand.js?v={CSS_VERSION}"></script>{{alt}}<!-- /br-head -->')
 
 
-def new_pages():
+def new_pages(languages=('ja', 'en')):
     written = []
     for lang, prefix in (('ja', ''), ('en', 'en/')):
+        if lang not in languages:
+            continue
         t = (lambda ja, en: ja if lang == 'ja' else en)
         other = '/en/' if lang == 'ja' else '/'
         written.append(page(prefix + 'index.html', lang,
-                            t('TrailFusion AI｜合格！クエストほか、毎日をちょっと楽しくするアプリ', 'TrailFusion AI | Gokaku! Quest and apps for everyday life'),
+                            t('TrailFusion AI｜合格！クエストほか、毎日をちょっと楽しくするアプリ', 'TrailFusion AI | Create videos, translate and learn languages'),
                             t('TrailFusion AI は、学ぶ・話す・旅する・つくるを続けたくなるアプリをつくる個人開発スタジオ。12教材の学習アプリ「合格！クエスト」を中心に、もちのへや、車旅コンシェルジュ、Reel Make、VoiceLink などを公開しています。',
-                              'TrailFusion AI is an indie studio making apps for learning, talking, travelling and creating. Home of Gokaku! Quest, a 12-course study app, plus Mochi, Car Concierge, Reel Make, VoiceLink and more.'),
+                              'Create with Reel Make, translate with VoiceLink AI Translator, and learn Japanese or English with Japanese Quest, English Quest and BuddyTalk. Apps by TrailFusion AI.'),
                             home.body(lang), other, app_schema(lang) + home.faq_schema(lang)))
         written.append(page(prefix + 'apps.html', lang,
                             t('アプリ一覧｜TrailFusion AI', 'All apps | TrailFusion AI'),
                             t(f'TrailFusion AI のアプリ一覧。合格！クエスト、もちのへや、車旅コンシェルジュ、Reel Make、VoiceLink AI通訳など、App Store 公開中の{len(LIVE)}本と規約・サポート。',
-                              f'All apps by TrailFusion AI: Gokaku! Quest, Mochi, Car Concierge, Reel Make, VoiceLink and more. {len(LIVE)} apps on the App Store, with terms and support.'),
+                              'Apps for creating, translating and learning: Reel Make, VoiceLink AI Translator, Japanese Quest, English Quest and BuddyTalk, with download links, privacy and support.'),
                             pages.apps_body(lang), '/en/apps.html' if lang == 'ja' else '/apps.html', app_schema(lang)))
     for slug, c in C.items():
         has_en = 'en' in c
         for lang in (('ja', 'en') if has_en else ('ja',)):
+            if lang not in languages:
+                continue
+            if lang == 'en' and slug == 'fp-quest':
+                (ROOT / 'en/fp-quest.html').write_text('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Gokaku FP Quest | Japanese app</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://trailfusionai.com/fp-quest.html"><meta http-equiv="refresh" content="0; url=/fp-quest.html"></head><body><p>This app is for the Japanese FP exam. <a href="/fp-quest.html">Visit the Japanese app page</a>.</p></body></html>\n')
+                continue
             title, desc = detail.meta(slug, lang)
             other = ('/en/' + c['page'] if lang == 'ja' else '/' + c['page']) if has_en else '/en/apps.html'
             schema = [s for s in app_schema(lang) if s['name'] == (BY[slug]['ja'] if lang == 'ja' else BY[slug]['en'])]
             written.append(page(detail.path_of(slug, lang), lang, title, desc, detail.body(slug, lang), other, schema))
+    if 'en' in languages:
+        from global_content import japanese_body
+        written.append(page('en/japanese-quest.html', 'en', 'Japanese Quest | Learn Japanese with Gokaku Quest | TrailFusion AI',
+                            'Learn everyday Japanese and practise for JLPT and JFT-Basic with quizzes and illustrated guides. Japanese Quest is the Japanese-learning course in Gokaku Quest.',
+                            japanese_body(), '/quest/courses/japanese/', [s for s in app_schema('en') if s['name'] == 'Gokaku Quest — Japanese learning']))
+    if 'ja' not in languages:
+        return written
     written.append(page('about/index.html', 'ja', 'つくり手について｜TrailFusion AI',
                         'TrailFusion AI は湯浅 浩章（Hiro）の個人開発スタジオ。家族の中学受験、親子の車旅、キャンピングカーの自作から生まれたアプリづくりの考え方と原則。',
                         pages.about_body(), '/en/'))
@@ -147,7 +161,7 @@ def retire_locales():
 
 def sitemap(changed):
     old = re.findall(r'<url><loc>(.*?)</loc><lastmod>(.*?)</lastmod></url>', (ROOT / 'sitemap.xml').read_text())
-    redirect_urls = {BASE + '/' + rel.removesuffix('index.html') for rel in DIRECT_3D_REDIRECTS}
+    redirect_urls = {BASE + '/' + rel.removesuffix('index.html') for rel in DIRECT_3D_REDIRECTS} | {BASE + '/en/fp-quest.html'}
     keep = {u: d for u, d in old if u not in redirect_urls and not any(u.startswith(f'{BASE}/{x}/') for x in RETIRED)}
     quest_pages = json.loads((ROOT / 'docs/quest/pages.json').read_text())
     for rel in quest_pages:
@@ -241,6 +255,22 @@ App Store publisher name: hiroaki yuasa
 
 
 def main():
+    if '--english-only' in sys.argv:
+        generated = new_pages(('en',))
+        path = ROOT / 'sitemap.xml'
+        text = path.read_text()
+        text = re.sub(r'\s*<url><loc>https://trailfusionai.com/en/fp-quest.html</loc><lastmod>.*?</lastmod></url>', '', text)
+        for rel in generated:
+            url = BASE + rel
+            entry = f'<url><loc>{url}</loc><lastmod>2026-11-15</lastmod></url>'
+            pattern = r'<url><loc>' + re.escape(url) + r'</loc><lastmod>.*?</lastmod></url>'
+            if re.search(pattern, text):
+                text = re.sub(pattern, lambda _: entry, text)
+            else:
+                text = text.replace('</urlset>', '  ' + entry + '\n</urlset>')
+        path.write_text(text)
+        print(json.dumps({'english_pages': generated, 'japanese_and_hobby_pages': 'unchanged'}, indent=2))
+        return
     generated = new_pages()
     legacy = legacy_pages(generated)
     hobby_redirects = retire_hobby_hubs()
