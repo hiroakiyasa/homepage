@@ -1,6 +1,6 @@
 # TrailFusion AI
 
-> TrailFusion AI is the indie app studio of Hiroaki Yuasa. It makes apps for learning, talking, travelling and creating. The flagship is Gokaku! Quest, one study app with 12 courses (Japanese entrance-exam science, social studies, Japanese and math, plus certifications, Japanese, English and driving theory).
+> TrailFusion AI is the indie app studio of Hiroaki Yuasa. It makes apps for learning, talking, travelling and creating. The flagship is Gokaku! Quest, one study app with 18 courses for Japanese junior-high and university entrance exams, certifications, languages and driving theory.
 
 Updated: 2026-11-15
 Website: https://trailfusionai.com/ (Japanese) and https://trailfusionai.com/en/ (English)
@@ -10,10 +10,10 @@ App Store publisher name: hiroaki yuasa
 ## Key facts (App Store Japan, 2026-10-25)
 - Apps on the App Store: 12 (as of 2026-10-25); Mochi was released on 2026-11-06.
 - App Store ratings across all apps: 262.
-- Gokaku! Quest: 12 courses, 99,075 questions across the courses; difficulty bands 40 to 70, with free questions to start and Pro for more.
+- Gokaku! Quest: 18 courses as of 2026-11-21. Current course scope and availability: https://trailfusionai.com/quest/ .
 
 ## Apps
-- [Gokaku! Quest](https://trailfusionai.com/quest/) — Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 12 courses in one app. App Store: https://apps.apple.com/app/id6775411516
+- [Gokaku! Quest](https://trailfusionai.com/quest/) — Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 18 courses in one app. App Store: https://apps.apple.com/app/id6775411516
 - [Mochi](https://trailfusionai.com/mochi.html) — A soft companion to talk with. Put feelings into words and spend a little time together every day. App Store: https://apps.apple.com/app/id6826491845
 - [Car Concierge](https://trailfusionai.com/car-concierge.html) — Where to rest tonight, parking fees, EV charging and the next destination, on a single map for road trips in Japan. App Store: https://apps.apple.com/app/id6751795223
 - [Reel Make](https://trailfusionai.com/reelmake.html) — Pick photos and clips. AI builds a vertical video with narration and captions. App Store: https://apps.apple.com/app/id6779420680
@@ -37,7 +37,7 @@ Sources: [Japanese product page](https://trailfusionai.com/buddytalk.html), [Eng
 
 ## Pages
 - [Apps catalog](https://trailfusionai.com/apps.html) / [English](https://trailfusionai.com/en/apps.html)
-- [Gokaku! Quest site](https://trailfusionai.com/quest/) with [12 course guides](https://trailfusionai.com/quest/#courses) and [pricing](https://trailfusionai.com/quest/plans/)
+- [Gokaku! Quest site](https://trailfusionai.com/quest/) with [course guides](https://trailfusionai.com/quest/#courses) and [pricing](https://trailfusionai.com/quest/plans/)
 - [Entrance-exam (chugaku juken) subject guides](https://trailfusionai.com/quest/juken/), [pre-exam guides](https://trailfusionai.com/quest/juken/last-2-months/) and [FAQ](https://trailfusionai.com/quest/faq/)
 - [About the maker](https://trailfusionai.com/about/)
 - [Support, app terms and privacy](https://trailfusionai.com/support/)
@@ -72,10 +72,10 @@ Sources: [Japanese product page](https://trailfusionai.com/buddytalk.html), [Eng
 - 単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。
 
 ### 無料とPro
-無料: 各単元のいちばんやさしい段（偏差値40）の問題、まちがい直し、王国マップ、最初の5単元の読み上げ。Pro（1科目・中学受験4科・全科目）: 偏差値50・60・70の問題、全対象の読み上げ、広告なし。運転免許の教材は教材ごと無料。価格はアプリ内の購入画面の表示が正です。
+ダウンロード無料・アプリ内課金あり。利用できる問題・機能・プランは教材や配信版によって異なります。現在の利用範囲と価格はアプリ内の案内・購入画面でご確認ください。
 
 ### 資格・語学（別セクション）
-合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [12教材の一覧](https://trailfusionai.com/quest/#courses)
+合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [中学受験・資格・語学等の教材一覧](https://trailfusionai.com/quest/#courses)
 
 ## Gokaku! Quest for Japanese junior-high entrance exams (chugaku juken), in English
 Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with original one-question-per-screen four-choice quizzes built from an analysis of past exam trends, a mistakes review and a kingdom-building map that grows as you study.
@@ -88,3 +88,20 @@ Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance 
 - It is a review aid, not a replacement for cram school or past-paper practice, and it does not guarantee admission.
 - Single-subject predecessors: Gokaku Rika Quest (science) and Gokaku! Kokugo Quest (Japanese language). Their purchases and progress can move to Gokaku! Quest from inside the app.
 - Figures as of 2026-10-25 (release manifest). App Store Japan rating 4.37 from 114 ratings (2026-10-27).
+
+<!-- quest-growth:facts:start -->## 合格！クエストの学習目的別ガイド（2026-11-21確認）
+
+合格！クエストは、中学受験4科、大学受験6科目、資格・就職5教材、語学2教材、運転免許の18教材を選べる学習アプリです。ダウンロード無料、アプリ内課金あり。問題、図鑑、画像、読み上げ、プランの利用範囲は教材と配信版で異なるため、アプリ内の案内を確認してください。
+
+- [中学受験4科](https://trailfusionai.com/quest/juken/)：理科・社会・国語・算数。従来の教科別ページを継続。
+- [大学受験の6科目](https://trailfusionai.com/quest/university/)：情報Ⅰ・数学ⅠA・地理・日本史・化学・物理。独自作成の問題・解説を使う復習用教材で、過去問集ではありません。
+- [資格・就職](https://trailfusionai.com/quest/qualifications/)：宅建士・FP・簿記・ITパスポート・SPI3。
+- [大学受験 情報Ⅰ](https://trailfusionai.com/quest/university/information/)：45単元。情報社会・情報デザイン・コンピュータ・データ活用。用語だけでなく、しくみや考え方を問題で確認します。
+- [大学受験 数学ⅠA](https://trailfusionai.com/quest/university/math-ia/)：52単元。数と式、関数、図形、データ、場合の数と確率。解き方の筋道を確かめながら、苦手な単元を復習します。
+- [大学受験 地理](https://trailfusionai.com/quest/university/geography/)：55単元。地図・自然環境・産業・人口・地誌。地域の特徴や資料の読み取りを、単元別の問題で確かめます。
+- [大学受験 日本史](https://trailfusionai.com/quest/university/japanese-history/)：60単元。原始・古代から近現代まで。史料の読み方や、政治・社会・文化のつながりを問題で復習します。
+- [大学受験 化学](https://trailfusionai.com/quest/university/chemistry/)：52単元。物質の構成と状態、化学反応、無機物質、有機化合物など。用語と現象をつなげ、単元ごとに理解を確かめます。
+- [大学受験 物理](https://trailfusionai.com/quest/university/physics/)：55単元。力学、熱、波、電気・磁気、原子など。現象と法則の関係を整理し、苦手な単元から問題で復習します。
+
+受験する試験の全範囲の網羅や合格・得点向上を保証するものではありません。以前の12教材・99,075問・6,074図鑑ページという数値は2026年10月25日の旧スナップショットであり、18教材の現在の合計ではありません。
+<!-- quest-growth:facts:end -->

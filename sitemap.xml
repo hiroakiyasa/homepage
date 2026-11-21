@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://trailfusionai.com/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://trailfusionai.com/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://trailfusionai.com/about/</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://trailfusionai.com/apps.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://trailfusionai.com/buddytalk-legal.html</loc><lastmod>2026-10-31</lastmod></url>
@@ -318,19 +318,19 @@
   <url><loc>https://trailfusionai.com/parents/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://trailfusionai.com/partners/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://trailfusionai.com/privacy-policy.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/courses/bookkeeping/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/courses/bookkeeping/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/driver-license/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/english/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/courses/fp/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/courses/it-passport/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/courses/fp/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/courses/it-passport/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/japanese-language/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/japanese/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/math/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/science/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/courses/social/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/courses/spi3/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://trailfusionai.com/quest/courses/takken/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/courses/spi3/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/courses/takken/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/faq/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/juken/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://trailfusionai.com/quest/juken/anki/</loc><lastmod>2026-10-27</lastmod></url>
@@ -704,4 +704,12 @@
   <url><loc>https://trailfusionai.com/vi/word-blaster.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://trailfusionai.com/vi/wood-golem.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://trailfusionai.com/vi/hacking-timer.html</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/qualifications/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/information/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/math-ia/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/geography/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/japanese-history/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/chemistry/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://trailfusionai.com/quest/university/physics/</loc><lastmod>2026-11-21</lastmod></url>
 </urlset>

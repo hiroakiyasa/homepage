@@ -102,3 +102,7 @@ python3 scripts/quest/validate.py
 - 背景7枚はCodexの画像生成（文字・人物なし）。保存処理がこのMacのフックで止まるため、Codexの保管フォルダ（`~/.codex/generated_images/<session>/`）から取り出す。出典とSHAは `backgrounds-v3.json`、変換は `python3 scripts/quest/prepare-v3-assets.py --jyuken /Users/user/jyuken_sience`。
 - OG画像は検証（外部通信を遮断）とは別に `python3 scripts/quest/make-og.py` で、Webフォントを読み込んだヒーローから作る。
 - 数字・無料/Proの表現・注記は従来どおり。単元数（合計）は各教材の単元数を足した値。
+
+## 2026-11-21 大学受験・資格の目的別入口
+
+大学受験6科目と資格・就職のハブを追加。既存中学受験のURL・本文を保全し、配信スコープ・実画像・ストア導線・計測を整合させる。仕様、根拠、再生成、検証の範囲は [growth-20261121.md](growth-20261121.md) を参照。生成処理は `scripts/quest/growth.py`、確認済み単元は `growth-release.json`。

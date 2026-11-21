@@ -53,3 +53,6 @@ output/imagegen/quest-backgrounds-v2/
 output/imagegen/quest-backgrounds-v3/
 output/imagegen/brand-v1/
 scripts/brand/__pycache__/
+
+# Quest audience growth browser verification artifacts
+output/quest-growth/

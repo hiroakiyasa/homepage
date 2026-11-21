@@ -303,6 +303,9 @@ def main():
     s = js.read_text()
     s = re.sub(r"\n  /\* The standalone Quest hub is retired\..*?\n  }\n", '\n', s, flags=re.S)
     js.write_text(s)
+    # Reapply reviewed Japanese Quest audience routes after generic generation.
+    import subprocess
+    subprocess.run([sys.executable, str(ROOT / 'scripts/quest/growth.py')], check=True)
     print(json.dumps({'new_pages': generated, 'chrome_swapped': len(legacy), 'direct_3d_redirects': hobby_redirects, 'retired_locale_files': retired, 'sitemap_urls': urls}, ensure_ascii=False, indent=1))
 
 

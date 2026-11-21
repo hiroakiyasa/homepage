@@ -94,3 +94,5 @@ for p in exam60.build(dict(stores=stores,faq=faq)):
  PAGES.append(render(p['path'],p['title'],p['desc'],p['body'],faqs=p['faqs'],extra=p['extra']))
 (ROOT/'docs/quest/pages.json').write_text(json.dumps(PAGES,ensure_ascii=False,indent=2)+'\n')
 print(f'Rendered {len(PAGES)} Quest pages')
+import growth
+growth.apply()

@@ -1,0 +1,1526 @@
+{
+  "asOf": "2026-11-21",
+  "appStoreId": "6775411516",
+  "androidPackage": "com.gokakushakaiquest.app",
+  "qualificationCpp": {
+    "business": "f28f9c46-fbd0-4039-8404-689eca4b5980",
+    "technology": "1b9296f8-8920-4e78-8f68-47967c88605e"
+  },
+  "universityCpp": null,
+  "universityCourses": [
+    {
+      "id": "joho1-kyotsu-japan",
+      "slug": "information",
+      "name": "情報Ⅰ",
+      "headline": "情報Ⅰを、意味から理解する。",
+      "lead": "情報社会・情報デザイン・コンピュータ・データ活用。用語だけでなく、しくみや考え方を問題で確認します。",
+      "unitCount": 45,
+      "questions": 6512,
+      "domains": [
+        {
+          "name": "情報社会の問題解決",
+          "units": [
+            {
+              "id": "joho-d1-information",
+              "title": "情報の特性と信頼性の判断"
+            },
+            {
+              "id": "joho-d1-problem-solving",
+              "title": "問題発見から評価・改善までの手法"
+            },
+            {
+              "id": "joho-d1-intellectual-property",
+              "title": "知的財産権と作品の適切な利用"
+            },
+            {
+              "id": "joho-d1-personal-data",
+              "title": "個人情報とプライバシーの保護"
+            },
+            {
+              "id": "joho-d1-morals",
+              "title": "情報発信の責任と情報モラル"
+            },
+            {
+              "id": "joho-d1-security-risk",
+              "title": "脅威・脆弱性とセキュリティ対策"
+            },
+            {
+              "id": "joho-d1-systems",
+              "title": "情報システムの構成とサービス改善"
+            },
+            {
+              "id": "joho-d1-ai-society",
+              "title": "AIを含む情報技術と社会への影響"
+            }
+          ]
+        },
+        {
+          "name": "コミュニケーションと情報デザイン",
+          "units": [
+            {
+              "id": "joho-d2-communication",
+              "title": "メディアとコミュニケーション手段の選択"
+            },
+            {
+              "id": "joho-d2-characters",
+              "title": "情報量と文字・記号の符号化"
+            },
+            {
+              "id": "joho-d2-images",
+              "title": "画像のデジタル表現とデータ量"
+            },
+            {
+              "id": "joho-d2-audio",
+              "title": "音のデジタル化とデータ量"
+            },
+            {
+              "id": "joho-d2-video",
+              "title": "動画の表現と配信条件"
+            },
+            {
+              "id": "joho-d2-compression",
+              "title": "データ圧縮の仕組みと効率"
+            },
+            {
+              "id": "joho-d2-error-control",
+              "title": "誤り検出・訂正とチェック情報"
+            },
+            {
+              "id": "joho-d2-structure-design",
+              "title": "情報の抽象化・可視化・構造化"
+            },
+            {
+              "id": "joho-d2-ux-accessibility",
+              "title": "使いやすく伝わるインタフェース"
+            },
+            {
+              "id": "joho-d2-web-expression",
+              "title": "文書・Web・発表資料の設計と評価"
+            }
+          ]
+        },
+        {
+          "name": "コンピュータとプログラミング",
+          "units": [
+            {
+              "id": "joho-d3-architecture",
+              "title": "コンピュータの構成と処理の仕組み"
+            },
+            {
+              "id": "joho-d3-numbers",
+              "title": "数値の内部表現と計算の限界"
+            },
+            {
+              "id": "joho-d3-logic",
+              "title": "論理演算・論理回路・ビット処理"
+            },
+            {
+              "id": "joho-d3-algorithm-state",
+              "title": "手順・状態・データ構造の表現"
+            },
+            {
+              "id": "joho-d3-notation",
+              "title": "共通テスト用プログラム表記の基本読解"
+            },
+            {
+              "id": "joho-d3-control",
+              "title": "条件分岐と反復のトレース"
+            },
+            {
+              "id": "joho-d3-arrays",
+              "title": "配列と添字の操作"
+            },
+            {
+              "id": "joho-d3-functions",
+              "title": "関数の定義・呼出しと処理の分割"
+            },
+            {
+              "id": "joho-d3-aggregation",
+              "title": "集計・分類・最適値を求める処理"
+            },
+            {
+              "id": "joho-d3-search-sort",
+              "title": "探索・整列と処理効率"
+            },
+            {
+              "id": "joho-d3-deterministic-models",
+              "title": "確定的モデルによるシミュレーション"
+            },
+            {
+              "id": "joho-d3-stochastic-models",
+              "title": "乱数とモンテカルロシミュレーション"
+            },
+            {
+              "id": "joho-d3-verification",
+              "title": "プログラムの検証・修正・一般化"
+            }
+          ]
+        },
+        {
+          "name": "情報通信ネットワークとデータの活用",
+          "units": [
+            {
+              "id": "joho-d4-network",
+              "title": "ネットワーク構成と階層化"
+            },
+            {
+              "id": "joho-d4-ip-address",
+              "title": "IPアドレスとサブネットの基本"
+            },
+            {
+              "id": "joho-d4-internet-services",
+              "title": "DNS・Web・電子メールの仕組み"
+            },
+            {
+              "id": "joho-d4-transmission",
+              "title": "通信速度・転送時間と実効効率"
+            },
+            {
+              "id": "joho-d4-cryptography",
+              "title": "暗号・認証・電子署名の役割"
+            },
+            {
+              "id": "joho-d4-database",
+              "title": "関係データベースと表の操作"
+            },
+            {
+              "id": "joho-d4-collection",
+              "title": "データの種類・収集・前処理"
+            },
+            {
+              "id": "joho-d4-spreadsheet",
+              "title": "表計算の参照・関数・集計"
+            },
+            {
+              "id": "joho-d4-statistics",
+              "title": "代表値・散らばりと指標の変換"
+            },
+            {
+              "id": "joho-d4-visualization",
+              "title": "分布・箱ひげ図・グラフの読解"
+            },
+            {
+              "id": "joho-d4-correlation-regression",
+              "title": "相関・回帰と予測誤差"
+            },
+            {
+              "id": "joho-d4-cross-tabulation",
+              "title": "クロス集計・群別比較と見かけの関係"
+            },
+            {
+              "id": "joho-d4-inference",
+              "title": "標本のばらつきと仮説検定の考え方"
+            },
+            {
+              "id": "joho-d4-data-investigation",
+              "title": "データによる探究と分析結果の評価"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-ia-kyotsu-japan",
+      "slug": "math-ia",
+      "name": "数学ⅠA",
+      "headline": "数学ⅠAの考え方を、単元ごとに。",
+      "lead": "数と式、関数、図形、データ、場合の数と確率。解き方の筋道を確かめながら、苦手な単元を復習します。",
+      "unitCount": 52,
+      "questions": 2000,
+      "domains": [
+        {
+          "name": "数と式",
+          "units": [
+            {
+              "id": "I01",
+              "title": "実数・絶対値・数の大小"
+            },
+            {
+              "id": "I02",
+              "title": "整式の展開と因数分解"
+            },
+            {
+              "id": "I03",
+              "title": "根号を含む式の計算"
+            },
+            {
+              "id": "I04",
+              "title": "一次不等式"
+            },
+            {
+              "id": "I05",
+              "title": "連立不等式と条件整理"
+            },
+            {
+              "id": "I06",
+              "title": "集合・共通部分・補集合"
+            },
+            {
+              "id": "I07",
+              "title": "命題・必要条件・十分条件"
+            },
+            {
+              "id": "I08",
+              "title": "逆・裏・対偶と数と式の総合問題"
+            }
+          ]
+        },
+        {
+          "name": "二次関数",
+          "units": [
+            {
+              "id": "I09",
+              "title": "二次関数とグラフの基本"
+            },
+            {
+              "id": "I10",
+              "title": "平方完成・頂点・軸・平行移動"
+            },
+            {
+              "id": "I11",
+              "title": "二次関数の最大値・最小値"
+            },
+            {
+              "id": "I12",
+              "title": "定義域・値域と場合分け"
+            },
+            {
+              "id": "I13",
+              "title": "二次方程式・判別式・解の個数"
+            },
+            {
+              "id": "I14",
+              "title": "二次不等式とグラフ"
+            },
+            {
+              "id": "I15",
+              "title": "係数に文字を含む二次関数"
+            },
+            {
+              "id": "I16",
+              "title": "日常的な場面と二次関数の総合問題"
+            }
+          ]
+        },
+        {
+          "name": "図形と計量",
+          "units": [
+            {
+              "id": "I17",
+              "title": "三角比の定義"
+            },
+            {
+              "id": "I18",
+              "title": "鋭角・鈍角の三角比"
+            },
+            {
+              "id": "I19",
+              "title": "三角比の相互関係"
+            },
+            {
+              "id": "I20",
+              "title": "正弦定理"
+            },
+            {
+              "id": "I21",
+              "title": "余弦定理"
+            },
+            {
+              "id": "I22",
+              "title": "三角形の面積・高さ・距離"
+            },
+            {
+              "id": "I23",
+              "title": "測量・建物・地形などの応用"
+            },
+            {
+              "id": "I24",
+              "title": "複数条件を利用する図形と計量の総合問題"
+            }
+          ]
+        },
+        {
+          "name": "データの分析",
+          "units": [
+            {
+              "id": "I25",
+              "title": "平均値・中央値・最頻値"
+            },
+            {
+              "id": "I26",
+              "title": "分散・標準偏差"
+            },
+            {
+              "id": "I27",
+              "title": "四分位数・箱ひげ図"
+            },
+            {
+              "id": "I28",
+              "title": "散布図・相関係数"
+            },
+            {
+              "id": "I29",
+              "title": "データの変換と統計量の変化"
+            },
+            {
+              "id": "I30",
+              "title": "複数集団のデータ比較"
+            },
+            {
+              "id": "I31",
+              "title": "仮説検定の考え方"
+            },
+            {
+              "id": "I32",
+              "title": "表・グラフ・統計資料を用いた総合問題"
+            }
+          ]
+        },
+        {
+          "name": "場合の数と確率",
+          "units": [
+            {
+              "id": "A01",
+              "title": "場合の数・和の法則・積の法則"
+            },
+            {
+              "id": "A02",
+              "title": "順列と並べ方"
+            },
+            {
+              "id": "A03",
+              "title": "円順列・重複を含む並べ方"
+            },
+            {
+              "id": "A04",
+              "title": "組合せ"
+            },
+            {
+              "id": "A05",
+              "title": "条件付きの数え上げ・場合分け"
+            },
+            {
+              "id": "A06",
+              "title": "確率の基本"
+            },
+            {
+              "id": "A07",
+              "title": "余事象・排反事象"
+            },
+            {
+              "id": "A08",
+              "title": "条件付き確率"
+            },
+            {
+              "id": "A09",
+              "title": "独立な試行・反復試行"
+            },
+            {
+              "id": "A10",
+              "title": "期待値・複数条件の確率総合問題"
+            }
+          ]
+        },
+        {
+          "name": "図形の性質",
+          "units": [
+            {
+              "id": "A11",
+              "title": "三角形と線分の比"
+            },
+            {
+              "id": "A12",
+              "title": "三角形の五心・基本定理"
+            },
+            {
+              "id": "A13",
+              "title": "円周角・接線・円の性質"
+            },
+            {
+              "id": "A14",
+              "title": "方べきの定理と複合図形"
+            },
+            {
+              "id": "A15",
+              "title": "平面図形の性質・作図・総合問題"
+            },
+            {
+              "id": "A16",
+              "title": "空間図形・多面体・立体の性質"
+            }
+          ]
+        },
+        {
+          "name": "オリジナル模試",
+          "units": [
+            {
+              "id": "MOCK01",
+              "title": "オリジナル模試 第1回"
+            },
+            {
+              "id": "MOCK02",
+              "title": "オリジナル模試 第2回"
+            },
+            {
+              "id": "MOCK03",
+              "title": "オリジナル模試 第3回"
+            },
+            {
+              "id": "MOCK04",
+              "title": "オリジナル模試 第4回"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chiri-kyotsu-japan",
+      "slug": "geography",
+      "name": "地理",
+      "headline": "地理を、場所と理由でつなぐ。",
+      "lead": "地図・自然環境・産業・人口・地誌。地域の特徴や資料の読み取りを、単元別の問題で確かめます。",
+      "unitCount": 55,
+      "questions": 7800,
+      "domains": [
+        {
+          "name": "地図・自然環境と防災",
+          "units": [
+            {
+              "id": "chiri-d1-globe",
+              "title": "地球上の位置と時差"
+            },
+            {
+              "id": "chiri-d1-projection",
+              "title": "地図投影法と地図の種類"
+            },
+            {
+              "id": "chiri-d1-gis",
+              "title": "統計地図・GISと地理情報"
+            },
+            {
+              "id": "chiri-d1-topomap",
+              "title": "地形図の読図"
+            },
+            {
+              "id": "chiri-d1-fieldwork",
+              "title": "新旧地形図の比較と地域調査"
+            },
+            {
+              "id": "chiri-d1-tectonics",
+              "title": "大地形とプレートテクトニクス"
+            },
+            {
+              "id": "chiri-d1-fluvial",
+              "title": "河川がつくる地形と平野"
+            },
+            {
+              "id": "chiri-d1-coastal",
+              "title": "海岸・氷河・乾燥・カルスト地形"
+            },
+            {
+              "id": "chiri-d1-climate-system",
+              "title": "気候要素と大気大循環・海流"
+            },
+            {
+              "id": "chiri-d1-koppen",
+              "title": "ケッペン気候区分と雨温図判定"
+            },
+            {
+              "id": "chiri-d1-climate-local",
+              "title": "モンスーン・局地風と日本の気候"
+            },
+            {
+              "id": "chiri-d1-vegetation-soil",
+              "title": "植生・土壌・陸水と海洋"
+            },
+            {
+              "id": "chiri-d1-hazard-geo",
+              "title": "地震・津波・火山災害と防災"
+            },
+            {
+              "id": "chiri-d1-hazard-weather",
+              "title": "気象災害・土砂災害とハザードマップ"
+            },
+            {
+              "id": "chiri-d1-environment",
+              "title": "地球環境問題と持続可能な開発"
+            }
+          ]
+        },
+        {
+          "name": "資源・産業・交通と貿易",
+          "units": [
+            {
+              "id": "chiri-d2-agri-base",
+              "title": "農業の成立条件と世界の農業地域"
+            },
+            {
+              "id": "chiri-d2-agri-grain",
+              "title": "穀物の生産と貿易"
+            },
+            {
+              "id": "chiri-d2-agri-cash",
+              "title": "嗜好作物・工芸作物と畜産"
+            },
+            {
+              "id": "chiri-d2-agri-issues",
+              "title": "食料問題と農業の現代的課題"
+            },
+            {
+              "id": "chiri-d2-forestry-fishery",
+              "title": "林業と水産業"
+            },
+            {
+              "id": "chiri-d2-energy",
+              "title": "エネルギー資源と電力"
+            },
+            {
+              "id": "chiri-d2-minerals",
+              "title": "鉱産資源とレアメタル"
+            },
+            {
+              "id": "chiri-d2-industry-theory",
+              "title": "工業立地と工業の発達"
+            },
+            {
+              "id": "chiri-d2-industry-world",
+              "title": "世界の工業地域と各国の工業化"
+            },
+            {
+              "id": "chiri-d2-tertiary",
+              "title": "第3次産業・観光と情報通信"
+            },
+            {
+              "id": "chiri-d2-transport",
+              "title": "交通の発達と特徴"
+            },
+            {
+              "id": "chiri-d2-trade",
+              "title": "貿易と経済のグローバル化"
+            }
+          ]
+        },
+        {
+          "name": "人口・都市・生活文化と国家",
+          "units": [
+            {
+              "id": "chiri-d3-population-growth",
+              "title": "人口分布と人口転換"
+            },
+            {
+              "id": "chiri-d3-population-structure",
+              "title": "人口構成と少子高齢化"
+            },
+            {
+              "id": "chiri-d3-migration",
+              "title": "人口移動・移民と難民"
+            },
+            {
+              "id": "chiri-d3-village",
+              "title": "村落の立地と形態"
+            },
+            {
+              "id": "chiri-d3-urban-system",
+              "title": "都市の発達と機能・都市圏"
+            },
+            {
+              "id": "chiri-d3-urban-structure",
+              "title": "都市構造と都市問題"
+            },
+            {
+              "id": "chiri-d3-japan-population",
+              "title": "日本の人口と都市・地域の変容"
+            },
+            {
+              "id": "chiri-d3-lifestyle",
+              "title": "衣食住と生活文化"
+            },
+            {
+              "id": "chiri-d3-language-religion",
+              "title": "言語と宗教"
+            },
+            {
+              "id": "chiri-d3-ethnicity",
+              "title": "民族と民族問題・紛争"
+            },
+            {
+              "id": "chiri-d3-state",
+              "title": "国家と領域・日本の領土"
+            },
+            {
+              "id": "chiri-d3-cooperation",
+              "title": "国家群と国際協力・地球的課題"
+            }
+          ]
+        },
+        {
+          "name": "世界の諸地域と日本（地誌）",
+          "units": [
+            {
+              "id": "chiri-d4-china",
+              "title": "中国"
+            },
+            {
+              "id": "chiri-d4-korea-mongolia",
+              "title": "朝鮮半島・台湾・モンゴル"
+            },
+            {
+              "id": "chiri-d4-southeast-asia",
+              "title": "東南アジア"
+            },
+            {
+              "id": "chiri-d4-south-asia",
+              "title": "南アジア"
+            },
+            {
+              "id": "chiri-d4-west-asia-africa-north",
+              "title": "西アジア・中央アジア・北アフリカ"
+            },
+            {
+              "id": "chiri-d4-africa",
+              "title": "サハラ以南のアフリカ"
+            },
+            {
+              "id": "chiri-d4-europe-society",
+              "title": "ヨーロッパの自然・社会とEU"
+            },
+            {
+              "id": "chiri-d4-europe-industry",
+              "title": "ヨーロッパの農業と工業"
+            },
+            {
+              "id": "chiri-d4-russia",
+              "title": "ロシアと周辺諸国"
+            },
+            {
+              "id": "chiri-d4-anglo-nature-agri",
+              "title": "アングロアメリカの自然と農業"
+            },
+            {
+              "id": "chiri-d4-anglo-industry-society",
+              "title": "アングロアメリカの工業と社会"
+            },
+            {
+              "id": "chiri-d4-latin-america",
+              "title": "ラテンアメリカ"
+            },
+            {
+              "id": "chiri-d4-oceania",
+              "title": "オセアニア"
+            },
+            {
+              "id": "chiri-d4-japan-nature-industry",
+              "title": "日本の自然と産業"
+            },
+            {
+              "id": "chiri-d4-japan-regions",
+              "title": "日本の諸地域と国土像"
+            },
+            {
+              "id": "chiri-d4-comparative",
+              "title": "広域地誌と地域比較"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japanhistory-kyotsu-japan",
+      "slug": "japanese-history",
+      "name": "日本史",
+      "headline": "日本史の流れを、理由と一緒に。",
+      "lead": "原始・古代から近現代まで。史料の読み方や、政治・社会・文化のつながりを問題で復習します。",
+      "unitCount": 60,
+      "questions": 8400,
+      "domains": [
+        {
+          "name": "原始・古代と史料の読み方",
+          "units": [
+            {
+              "id": "jh-sources-inquiry",
+              "title": "史料の読み方と歴史探究"
+            },
+            {
+              "id": "jh-paleolithic-jomon",
+              "title": "列島の環境と旧石器・縄文社会"
+            },
+            {
+              "id": "jh-yayoi-early-polities",
+              "title": "弥生社会と小国の形成"
+            },
+            {
+              "id": "jh-kofun-yamato",
+              "title": "古墳とヤマト政権"
+            },
+            {
+              "id": "jh-asuka-east-asia",
+              "title": "飛鳥の政治改革と東アジア"
+            },
+            {
+              "id": "jh-ritsuryo-nara",
+              "title": "律令国家の成立と奈良の政治"
+            },
+            {
+              "id": "jh-ancient-land-tax",
+              "title": "古代の土地・税制・社会経済"
+            },
+            {
+              "id": "jh-heian-regency",
+              "title": "平安国家と摂関政治"
+            },
+            {
+              "id": "jh-continental-buddhist-culture",
+              "title": "古代仏教と大陸文化の受容"
+            },
+            {
+              "id": "jh-kokufu-culture",
+              "title": "国風文化と古代の信仰・生活"
+            }
+          ]
+        },
+        {
+          "name": "中世",
+          "units": [
+            {
+              "id": "jh-cloistered-warrior-rise",
+              "title": "院政と武士の台頭"
+            },
+            {
+              "id": "jh-kamakura-government",
+              "title": "鎌倉幕府の成立と武家政治"
+            },
+            {
+              "id": "jh-shoen-medieval-society",
+              "title": "荘園公領制と中世社会"
+            },
+            {
+              "id": "jh-mongol-kamakura-crisis",
+              "title": "蒙古襲来と鎌倉幕府の変容"
+            },
+            {
+              "id": "jh-kamakura-culture",
+              "title": "鎌倉の仏教・文学・美術"
+            },
+            {
+              "id": "jh-nanbokucho-muromachi",
+              "title": "南北朝の動乱と室町幕府"
+            },
+            {
+              "id": "jh-medieval-economy",
+              "title": "中世の生産・流通と村・都市"
+            },
+            {
+              "id": "jh-muromachi-culture-exchange",
+              "title": "室町文化と東アジア交流"
+            },
+            {
+              "id": "jh-sengoku-regional-powers",
+              "title": "戦国大名と地域社会"
+            }
+          ]
+        },
+        {
+          "name": "近世",
+          "units": [
+            {
+              "id": "jh-unification-oda-toyotomi",
+              "title": "織豊政権と天下統一"
+            },
+            {
+              "id": "jh-bakuhan-government",
+              "title": "幕藩体制と支配の仕組み"
+            },
+            {
+              "id": "jh-edo-foreign-relations",
+              "title": "近世外交と四つの口"
+            },
+            {
+              "id": "jh-edo-agriculture-status",
+              "title": "近世の農業・村落と身分"
+            },
+            {
+              "id": "jh-edo-commerce-transport",
+              "title": "近世の商工業・交通・貨幣"
+            },
+            {
+              "id": "jh-genroku-kyoho-politics",
+              "title": "文治政治と享保の改革"
+            },
+            {
+              "id": "jh-edo-reforms-crises",
+              "title": "田沼政治と寛政・天保の改革"
+            },
+            {
+              "id": "jh-edo-thought-education",
+              "title": "近世の思想・学問・教育"
+            },
+            {
+              "id": "jh-edo-arts-popular-culture",
+              "title": "桃山・元禄・化政文化"
+            }
+          ]
+        },
+        {
+          "name": "近代",
+          "units": [
+            {
+              "id": "jh-opening-bakumatsu",
+              "title": "開国・幕末外交と幕府の崩壊"
+            },
+            {
+              "id": "jh-meiji-state-building",
+              "title": "明治維新と近代国家の形成"
+            },
+            {
+              "id": "jh-rights-constitution",
+              "title": "自由民権・憲法と議会政治"
+            },
+            {
+              "id": "jh-treaties-imperial-expansion",
+              "title": "条約改正と日清・日露戦争"
+            },
+            {
+              "id": "jh-japan-industrialization",
+              "title": "日本の産業革命と資本主義"
+            },
+            {
+              "id": "jh-modern-education-culture",
+              "title": "近代の教育・思想・文化"
+            },
+            {
+              "id": "jh-wwi-japan-diplomacy",
+              "title": "第一次世界大戦と日本外交"
+            },
+            {
+              "id": "jh-taisho-democracy",
+              "title": "大正デモクラシーと社会運動"
+            },
+            {
+              "id": "jh-showa-economic-crises",
+              "title": "昭和初期の恐慌と経済政策"
+            },
+            {
+              "id": "jh-military-political-crisis",
+              "title": "政党政治の危機と軍部の台頭"
+            },
+            {
+              "id": "jh-asia-pacific-war",
+              "title": "日中戦争とアジア太平洋戦争"
+            },
+            {
+              "id": "jh-wartime-mobilization",
+              "title": "戦時体制と植民地・国民生活"
+            }
+          ]
+        },
+        {
+          "name": "現代",
+          "units": [
+            {
+              "id": "jh-occupation-democratization",
+              "title": "占領政策と戦後民主化"
+            },
+            {
+              "id": "jh-peace-independence",
+              "title": "講和・独立と冷戦下の日本"
+            },
+            {
+              "id": "jh-postwar-party-politics",
+              "title": "五五年体制と戦後政治"
+            },
+            {
+              "id": "jh-high-growth-society",
+              "title": "高度経済成長と社会の変化"
+            },
+            {
+              "id": "jh-oil-shocks-restructuring",
+              "title": "石油危機と産業構造の転換"
+            },
+            {
+              "id": "jh-bubble-heisei-economy",
+              "title": "バブル経済と平成以降の改革"
+            },
+            {
+              "id": "jh-postwar-diplomacy-security",
+              "title": "戦後外交と安全保障の変化"
+            },
+            {
+              "id": "jh-postwar-culture-challenges",
+              "title": "戦後文化・生活と現代日本の課題"
+            }
+          ]
+        },
+        {
+          "name": "歴史総合",
+          "units": [
+            {
+              "id": "jh-asian-global-trade",
+              "title": "十八世紀のアジアと世界交易"
+            },
+            {
+              "id": "jh-industrial-global-market",
+              "title": "産業革命と世界市場の形成"
+            },
+            {
+              "id": "jh-revolutions-nation-states",
+              "title": "市民革命と国民国家の形成"
+            },
+            {
+              "id": "jh-imperialism-asian-change",
+              "title": "帝国主義とアジアの変容"
+            },
+            {
+              "id": "jh-world-war-international-order",
+              "title": "第一次世界大戦と国際協調"
+            },
+            {
+              "id": "jh-mass-society-rights",
+              "title": "大衆社会・社会主義と権利の拡大"
+            },
+            {
+              "id": "jh-depression-fascism-war",
+              "title": "世界恐慌・ファシズムと第二次世界大戦"
+            },
+            {
+              "id": "jh-postwar-order-cold-war",
+              "title": "戦後国際秩序と冷戦の形成"
+            },
+            {
+              "id": "jh-decolonization-third-world",
+              "title": "脱植民地化とアジア・アフリカ"
+            },
+            {
+              "id": "jh-cold-war-regional-integration",
+              "title": "冷戦の変容と地域統合"
+            },
+            {
+              "id": "jh-globalization-information",
+              "title": "グローバル化・情報化と経済再編"
+            },
+            {
+              "id": "jh-global-challenges-inquiry",
+              "title": "地球規模の課題と歴史的探究"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chemistry-kyotsu-japan",
+      "slug": "chemistry",
+      "name": "化学",
+      "headline": "化学のしくみを、ひとつずつ。",
+      "lead": "物質の構成と状態、化学反応、無機物質、有機化合物など。用語と現象をつなげ、単元ごとに理解を確かめます。",
+      "unitCount": 52,
+      "questions": 6240,
+      "domains": [
+        {
+          "name": "物質の構成と状態",
+          "units": [
+            {
+              "id": "ch-measurement-inquiry",
+              "title": "実験操作・データと安全"
+            },
+            {
+              "id": "ch-atomic-periodic",
+              "title": "原子・電子配置と周期表"
+            },
+            {
+              "id": "ch-bonding-molecules",
+              "title": "化学結合・分子の形と極性"
+            },
+            {
+              "id": "ch-mole-stoichiometry",
+              "title": "物質量・濃度と化学量論"
+            },
+            {
+              "id": "ch-acid-base-stoichiometry",
+              "title": "酸塩基と中和の量的関係"
+            },
+            {
+              "id": "ch-redox-stoichiometry",
+              "title": "酸化還元と電子収支"
+            },
+            {
+              "id": "ch-crystal-lattices",
+              "title": "結晶格子と構造"
+            },
+            {
+              "id": "ch-phase-interactions",
+              "title": "状態変化と分子間力"
+            },
+            {
+              "id": "ch-gas-laws",
+              "title": "気体の法則と理想・実在気体"
+            },
+            {
+              "id": "ch-gas-mixtures",
+              "title": "混合気体と分圧"
+            },
+            {
+              "id": "ch-vapor-equilibrium",
+              "title": "気液平衡・蒸気圧と沸騰"
+            },
+            {
+              "id": "ch-solid-solubility",
+              "title": "固体の溶解度と再結晶"
+            },
+            {
+              "id": "ch-gas-solubility",
+              "title": "気体の溶解とヘンリーの法則"
+            },
+            {
+              "id": "ch-colligative",
+              "title": "希薄溶液の沸点上昇と凝固点降下"
+            },
+            {
+              "id": "ch-osmotic-pressure",
+              "title": "浸透圧と分子量"
+            },
+            {
+              "id": "ch-colloids",
+              "title": "コロイドの性質と分離"
+            }
+          ]
+        },
+        {
+          "name": "反応とエネルギー・平衡",
+          "units": [
+            {
+              "id": "ch-enthalpy-calorimetry",
+              "title": "反応エンタルピーと熱量測定"
+            },
+            {
+              "id": "ch-hess-bond-energy",
+              "title": "ヘスの法則と結合エネルギー"
+            },
+            {
+              "id": "ch-batteries",
+              "title": "電池の反応と電気エネルギー"
+            },
+            {
+              "id": "ch-electrolysis",
+              "title": "電気分解と量的関係"
+            },
+            {
+              "id": "ch-reaction-rates",
+              "title": "反応速度と触媒"
+            },
+            {
+              "id": "ch-equilibrium-constants",
+              "title": "化学平衡と平衡定数"
+            },
+            {
+              "id": "ch-equilibrium-shifts",
+              "title": "平衡移動と反応条件"
+            },
+            {
+              "id": "ch-aqueous-equilibria",
+              "title": "弱酸・弱塩基と塩の加水分解"
+            },
+            {
+              "id": "ch-buffer-titration",
+              "title": "緩衝液と滴定曲線"
+            },
+            {
+              "id": "ch-precipitation-equilibria",
+              "title": "溶解度積と沈殿平衡"
+            }
+          ]
+        },
+        {
+          "name": "無機物質",
+          "units": [
+            {
+              "id": "ch-hydrogen-noble-gases",
+              "title": "水素・貴ガスと非金属の基礎"
+            },
+            {
+              "id": "ch-halogens",
+              "title": "ハロゲンとその化合物"
+            },
+            {
+              "id": "ch-oxygen-sulfur",
+              "title": "酸素・硫黄とその化合物"
+            },
+            {
+              "id": "ch-nitrogen-phosphorus",
+              "title": "窒素・リンとその化合物"
+            },
+            {
+              "id": "ch-carbon-silicon",
+              "title": "炭素・ケイ素と無機材料"
+            },
+            {
+              "id": "ch-alkali-earth-metals",
+              "title": "アルカリ金属・アルカリ土類金属"
+            },
+            {
+              "id": "ch-amphoteric-metals",
+              "title": "アルミニウム・亜鉛と両性"
+            },
+            {
+              "id": "ch-transition-metals",
+              "title": "遷移元素と錯イオン"
+            },
+            {
+              "id": "ch-inorganic-analysis",
+              "title": "無機物質の検出と分離"
+            }
+          ]
+        },
+        {
+          "name": "有機化合物",
+          "units": [
+            {
+              "id": "ch-organic-formulas",
+              "title": "有機化合物の組成・構造と異性体"
+            },
+            {
+              "id": "ch-saturated-hydrocarbons",
+              "title": "飽和炭化水素と置換反応"
+            },
+            {
+              "id": "ch-unsaturated-hydrocarbons",
+              "title": "不飽和炭化水素と付加反応"
+            },
+            {
+              "id": "ch-alcohols-ethers",
+              "title": "アルコールとエーテル"
+            },
+            {
+              "id": "ch-carbonyl-compounds",
+              "title": "アルデヒド・ケトンと検出反応"
+            },
+            {
+              "id": "ch-carboxylic-esters",
+              "title": "カルボン酸とエステル"
+            },
+            {
+              "id": "ch-lipids-soaps",
+              "title": "油脂・セッケンと界面活性剤"
+            },
+            {
+              "id": "ch-aromatic-hydrocarbons",
+              "title": "芳香族炭化水素と反応"
+            },
+            {
+              "id": "ch-aromatic-functional",
+              "title": "フェノール・芳香族酸・アミン"
+            },
+            {
+              "id": "ch-organic-analysis",
+              "title": "有機化合物の分離と構造決定"
+            }
+          ]
+        },
+        {
+          "name": "高分子化合物",
+          "units": [
+            {
+              "id": "ch-carbohydrates",
+              "title": "糖類の構造と性質"
+            },
+            {
+              "id": "ch-amino-proteins",
+              "title": "アミノ酸・タンパク質と核酸"
+            },
+            {
+              "id": "ch-polymer-rubber",
+              "title": "高分子の構造とゴム"
+            },
+            {
+              "id": "ch-addition-polymers",
+              "title": "付加重合と合成樹脂"
+            },
+            {
+              "id": "ch-condensation-polymers",
+              "title": "縮合重合と合成繊維"
+            }
+          ]
+        },
+        {
+          "name": "化学と人間生活",
+          "units": [
+            {
+              "id": "ch-materials-life",
+              "title": "化学と生活を支える材料"
+            },
+            {
+              "id": "ch-sustainable-inquiry",
+              "title": "資源循環と化学の探究"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physics-kyotsu-japan",
+      "slug": "physics",
+      "name": "物理",
+      "headline": "物理の法則を、使える理解へ。",
+      "lead": "力学、熱、波、電気・磁気、原子など。現象と法則の関係を整理し、苦手な単元から問題で復習します。",
+      "unitCount": 55,
+      "questions": 6600,
+      "domains": [
+        {
+          "name": "力学",
+          "units": [
+            {
+              "id": "ph-measurement-inquiry",
+              "title": "物理量・測定・グラフと探究"
+            },
+            {
+              "id": "ph-linear-motion",
+              "title": "直線運動・加速度と自由落下"
+            },
+            {
+              "id": "ph-vectors-relative-motion",
+              "title": "平面運動のベクトルと相対速度"
+            },
+            {
+              "id": "ph-newton-forces",
+              "title": "運動の法則・摩擦・圧力と浮力"
+            },
+            {
+              "id": "ph-projectile-drag",
+              "title": "放物運動と抵抗を受ける落下"
+            },
+            {
+              "id": "ph-work-energy-power",
+              "title": "仕事・力学的エネルギー・仕事率"
+            },
+            {
+              "id": "ph-rigid-torque",
+              "title": "剛体の合力・力のモーメント"
+            },
+            {
+              "id": "ph-center-gravity-stability",
+              "title": "重心・支持と転倒条件"
+            },
+            {
+              "id": "ph-impulse-momentum",
+              "title": "運動量・力積と衝突時の力"
+            },
+            {
+              "id": "ph-collision-conservation",
+              "title": "運動量保存・反発係数・衝突"
+            },
+            {
+              "id": "ph-circular-motion",
+              "title": "円運動の速度・加速度と向心力"
+            },
+            {
+              "id": "ph-inertial-frames",
+              "title": "加速する座標・慣性力と遠心力"
+            },
+            {
+              "id": "ph-shm-graphs",
+              "title": "単振動の式・位相・エネルギー"
+            },
+            {
+              "id": "ph-spring-oscillation",
+              "title": "ばね振り子・つり合い位置と周期"
+            },
+            {
+              "id": "ph-pendulum-measurement",
+              "title": "単振り子・周期測定と重力"
+            },
+            {
+              "id": "ph-kepler-gravitation",
+              "title": "惑星の運動・ケプラーの法則と万有引力"
+            },
+            {
+              "id": "ph-orbit-energy",
+              "title": "人工衛星・万有引力の位置エネルギー"
+            }
+          ]
+        },
+        {
+          "name": "熱",
+          "units": [
+            {
+              "id": "ph-thermal-heat",
+              "title": "熱・温度・比熱と熱量保存"
+            },
+            {
+              "id": "ph-ideal-gas-state",
+              "title": "理想気体の状態方程式と状態図"
+            },
+            {
+              "id": "ph-kinetic-theory",
+              "title": "気体分子運動・圧力と平均運動エネルギー"
+            },
+            {
+              "id": "ph-first-law",
+              "title": "熱力学第一法則・熱と仕事の収支"
+            },
+            {
+              "id": "ph-gas-process-engine",
+              "title": "気体の状態変化・熱機関と熱効率"
+            }
+          ]
+        },
+        {
+          "name": "波動",
+          "units": [
+            {
+              "id": "ph-wave-description",
+              "title": "波の表し方と正弦波"
+            },
+            {
+              "id": "ph-superposition-standing-waves",
+              "title": "波の重ね合わせ・反射・定常波"
+            },
+            {
+              "id": "ph-wavefronts-refraction-diffraction",
+              "title": "ホイヘンスの原理と水面波の反射・屈折・回折"
+            },
+            {
+              "id": "ph-two-source-interference",
+              "title": "水面波と音の干渉・波面の重なり"
+            },
+            {
+              "id": "ph-string-air-column-resonance",
+              "title": "弦・気柱の共鳴とうなり"
+            },
+            {
+              "id": "ph-sound-doppler",
+              "title": "音のドップラー効果"
+            },
+            {
+              "id": "ph-light-reflection-refraction",
+              "title": "光の反射・屈折・全反射"
+            },
+            {
+              "id": "ph-mirrors-lenses",
+              "title": "鏡とレンズの像"
+            },
+            {
+              "id": "ph-young-diffraction-grating",
+              "title": "ヤングの実験と回折格子"
+            },
+            {
+              "id": "ph-thin-films-wedges-rings",
+              "title": "薄膜・くさび形空気層・ニュートンリング"
+            },
+            {
+              "id": "ph-dispersion-polarization-spectra",
+              "title": "光の分散・偏光・スペクトル"
+            }
+          ]
+        },
+        {
+          "name": "電磁気",
+          "units": [
+            {
+              "id": "ph-charge-electric-field",
+              "title": "電荷・クーロン力と電場"
+            },
+            {
+              "id": "ph-electric-potential-work",
+              "title": "電位と静電気力の仕事"
+            },
+            {
+              "id": "ph-conductors-dielectrics-capacitance",
+              "title": "導体・誘電体と平行板コンデンサー"
+            },
+            {
+              "id": "ph-capacitor-networks-energy",
+              "title": "コンデンサーの接続とエネルギー"
+            },
+            {
+              "id": "ph-current-resistivity-semiconductors",
+              "title": "電流・抵抗率と半導体"
+            },
+            {
+              "id": "ph-emf-internal-resistance-circuits",
+              "title": "起電力・内部抵抗とキルヒホッフ"
+            },
+            {
+              "id": "ph-electrical-measurement-bridge",
+              "title": "電気計器とブリッジ測定"
+            },
+            {
+              "id": "ph-current-magnetic-fields",
+              "title": "電流のつくる磁場"
+            },
+            {
+              "id": "ph-magnetic-force-current",
+              "title": "電流が磁場から受ける力"
+            },
+            {
+              "id": "ph-charged-particle-motion",
+              "title": "荷電粒子の電磁場中の運動"
+            },
+            {
+              "id": "ph-induction-moving-conductor",
+              "title": "電磁誘導と動く導体"
+            },
+            {
+              "id": "ph-self-mutual-induction-transformers",
+              "title": "自己・相互誘導と変圧器"
+            },
+            {
+              "id": "ph-alternating-current-rlc",
+              "title": "交流とRLC回路"
+            },
+            {
+              "id": "ph-electromagnetic-oscillation-waves",
+              "title": "電気振動と電磁波"
+            }
+          ]
+        },
+        {
+          "name": "原子",
+          "units": [
+            {
+              "id": "ph-electron-specific-charge",
+              "title": "電子と比電荷・電気素量の測定"
+            },
+            {
+              "id": "ph-photoelectric-effect-photons",
+              "title": "光電効果と光子"
+            },
+            {
+              "id": "ph-xray-matter-waves",
+              "title": "X線・物質波と粒子波動性"
+            },
+            {
+              "id": "ph-atomic-structure-spectra",
+              "title": "原子の構造とスペクトル"
+            },
+            {
+              "id": "ph-nuclei-radioactive-decay",
+              "title": "原子核・放射性崩壊と半減期"
+            },
+            {
+              "id": "ph-nuclear-reactions-binding-energy",
+              "title": "核反応と結合エネルギー"
+            },
+            {
+              "id": "ph-elementary-particles-interactions",
+              "title": "素粒子と基本相互作用"
+            }
+          ]
+        },
+        {
+          "name": "物理と社会",
+          "units": [
+            {
+              "id": "ph-physics-future",
+              "title": "物理学が築く未来・技術と探究"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "releaseEvidence": {
+    "releaseManifestSha256": "3bd30cb49707a2cd0cbd6105ad49888b51a41c66049727018a2d08a1571c4166",
+    "sourceCommit": "fb3473df88d2431a1b35b46f0f818ffdc0647693",
+    "delivery": "production OTA for iOS and Android confirmed by the lead reviewer on 2026-11-21",
+    "qualificationCppStatus": "APPROVED and visible, confirmed in App Store Connect on 2026-11-21",
+    "pricing": "No price or full-course free claim; availability must be checked in the app."
+  }
+}

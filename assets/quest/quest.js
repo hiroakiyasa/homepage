@@ -20,7 +20,7 @@ document.querySelectorAll('[data-filter]').forEach(button => {
   });
 });
 document.querySelectorAll('[data-store]').forEach(link => link.addEventListener('click', () => {
-  emit('quest_store_click', {store: link.dataset.store, placement: link.dataset.placement, course: document.body.dataset.course || 'all', page_path: location.pathname});
+  emit('quest_store_click', {store: link.dataset.store, placement: link.dataset.placement, course: link.dataset.course || document.body.dataset.course || 'all', audience: link.dataset.audience || 'general', product_page: new URL(link.href).searchParams.get('ppid') || 'default', page_path: location.pathname});
 }));
 document.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
   const correct = button.dataset.answer === '2';
