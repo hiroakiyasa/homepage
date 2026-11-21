@@ -101,21 +101,27 @@ def launch(pw, engine):
         return pw.chromium.launch()
 
 
+def tracked_page(ctx, js_errors):
+    page = ctx.new_page()
+    pending = set()
+    page.on('request', lambda r: pending.add(r))
+    page.on('requestfinished', lambda r: pending.discard(r))
+    page.on('requestfailed', lambda r: pending.discard(r))
+    page.on('pageerror', lambda e: js_errors.append(str(e)))
+    return page, pending
+
+
 try:
     with sync_playwright() as pw:
         for engine in (['webkit'] if CAMPING_PROBE else ['chromium', 'webkit']):
             browser = launch(pw, engine)
             ctx = browser.new_context(locale='ja-JP', reduced_motion='reduce')
             ctx.route('**/*', lambda r: r.continue_() if r.request.url.startswith(origin) else r.abort())
-            page = ctx.new_page()
             js = []
-            pending_requests = set()
-            page.on('request', lambda r: pending_requests.add(r))
-            page.on('requestfinished', lambda r: pending_requests.discard(r))
-            page.on('requestfailed', lambda r: pending_requests.discard(r))
-            page.on('pageerror', lambda e: js.append(str(e)))
             for route in PAGES:
                 for width in ([390] if CAMPING_PROBE else [320, 390, 768, 1440] if engine == 'chromium' else [390, 1440]):
+                    # Layout cases are independent; keep WebKit navigation state isolated.
+                    page, pending_requests = tracked_page(ctx, js)
                     page.set_viewport_size({'width': width, 'height': 900})
                     label = f'{engine} {route} {width}px'
                     try:
@@ -199,9 +205,12 @@ try:
                     check(st['h'] >= 1, label + ' has an h1')
                     if width in (390, 1440) and route in ('/', '/en/', '/apps.html', '/garage/'):
                         page.screenshot(path=str(OUT / f'{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
+                    page.close()
             if CAMPING_PROBE:
                 browser.close()
                 continue
+            # Preserve the continuous user journey in a separate, tracked page.
+            page, _ = tracked_page(ctx, js)
             page.set_viewport_size({'width': 390, 'height': 844})
             page.goto(origin + '/', wait_until='load')
             page.locator('.br-menu summary').click()
