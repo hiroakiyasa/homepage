@@ -6,7 +6,7 @@ Checks at 320/390/768/1440 px in Chromium and 390/1440 in WebKit: HTTP 200, no h
 images decode, one h1, no JavaScript errors. Then the interactions: mobile menu, app filters, FAQ,
 store-click analytics payload, localized direct URLs, and the app catalog without JavaScript.
 """
-import http.server, json, socketserver, threading
+import http.server, json, socketserver, sys, threading
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -17,6 +17,9 @@ PAGES = ['/', '/en/', '/apps.html', '/en/apps.html', '/about/', '/garage/', '/su
          '/reelmake.html', '/en/voicelink.html', '/buddytalk.html', '/fp-quest.html', '/en/word-blaster.html', '/wood-golem.html',
          '/hacking-timer.html', '/eigo-quest.html', '/rika-quest.html', '/kokugo-quest.html',
          '/camping.html', '/en/diy/', '/reelmake-privacy.html', '/maintenance.html', '/404.html']
+CAMPING_PROBE = '--camping-probe' in sys.argv
+if CAMPING_PROBE:
+    PAGES = ['/camping.html']
 passed, errors = [], []
 
 
@@ -100,18 +103,33 @@ def launch(pw, engine):
 
 try:
     with sync_playwright() as pw:
-        for engine in ['chromium', 'webkit']:
+        for engine in (['webkit'] if CAMPING_PROBE else ['chromium', 'webkit']):
             browser = launch(pw, engine)
             ctx = browser.new_context(locale='ja-JP', reduced_motion='reduce')
             ctx.route('**/*', lambda r: r.continue_() if r.request.url.startswith(origin) else r.abort())
             page = ctx.new_page()
             js = []
+            pending_requests = set()
+            page.on('request', lambda r: pending_requests.add(r))
+            page.on('requestfinished', lambda r: pending_requests.discard(r))
+            page.on('requestfailed', lambda r: pending_requests.discard(r))
             page.on('pageerror', lambda e: js.append(str(e)))
             for route in PAGES:
-                for width in ([320, 390, 768, 1440] if engine == 'chromium' else [390, 1440]):
+                for width in ([390] if CAMPING_PROBE else [320, 390, 768, 1440] if engine == 'chromium' else [390, 1440]):
                     page.set_viewport_size({'width': width, 'height': 900})
-                    res = page.goto(origin + route, wait_until='load')
                     label = f'{engine} {route} {width}px'
+                    try:
+                        res = page.goto(origin + route, wait_until='load')
+                    except Exception:
+                        try:
+                            state = page.evaluate('''()=>({readyState:document.readyState,
+                                fontStatus:document.fonts.status,location:location.href})''')
+                        except Exception:
+                            state = {'readyState': 'unavailable'}
+                        print(json.dumps({'navigation_failure': label, 'state': state,
+                              'pending_requests': sorted({r.url[:240] for r in pending_requests})[:20]},
+                              ensure_ascii=False), flush=True)
+                        raise
                     check(res.status == 200, label + ' HTTP 200')
                     check_page_header(page, route, label, origin)
                     page.locator('img').evaluate_all('(i)=>i.forEach(x=>x.loading="eager")')
@@ -146,6 +164,9 @@ try:
                     check(st['h'] >= 1, label + ' has an h1')
                     if width in (390, 1440) and route in ('/', '/en/', '/apps.html', '/garage/'):
                         page.screenshot(path=str(OUT / f'{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
+            if CAMPING_PROBE:
+                browser.close()
+                continue
             page.set_viewport_size({'width': 390, 'height': 844})
             page.goto(origin + '/', wait_until='load')
             page.locator('.br-menu summary').click()
@@ -184,7 +205,8 @@ try:
 finally:
     server.shutdown()
 
-result = {'passed': len(passed), 'errors': errors, 'pages': PAGES}
+result = {'passed': len(passed), 'errors': errors, 'pages': PAGES,
+          'mode': 'camping_probe' if CAMPING_PROBE else 'full'}
 (OUT / 'results.json').write_text(json.dumps(result, ensure_ascii=False, indent=2))
 print(json.dumps(result, ensure_ascii=False, indent=2))
 raise SystemExit(bool(errors))
