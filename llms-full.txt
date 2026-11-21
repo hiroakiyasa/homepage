@@ -77,7 +77,7 @@ Sources: [Japanese product page](https://trailfusionai.com/buddytalk.html), [Eng
 ### 資格・語学（別セクション）
 合格！クエストでは宅建士・FP・日商簿記・ITパスポート・SPI3・日本語（JLPT・JFT-Basic対策）・英語（TOEIC・TOEFLなど）・運転免許（学科）も学べます。 [中学受験・資格・語学等の教材一覧](https://trailfusionai.com/quest/#courses)
 
-## Gokaku! Quest for Japanese junior-high entrance exams (chugaku juken), in English
+## English summary of the Japanese-language entrance-exam courses
 Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with original one-question-per-screen four-choice quizzes built from an analysis of past exam trends, a mistakes review and a kingdom-building map that grows as you study.
 - Science: 36 units, 7,742 questions. https://trailfusionai.com/quest/juken/science/
 - Social studies: 53 units, 5,327 questions. https://trailfusionai.com/quest/juken/social/
@@ -105,3 +105,17 @@ Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance 
 
 受験する試験の全範囲の網羅や合格・得点向上を保証するものではありません。以前の12教材・99,075問・6,074図鑑ページという数値は2026年10月25日の旧スナップショットであり、18教材の現在の合計ではありません。
 <!-- quest-growth:facts:end -->
+
+<!-- quest-expansion:language-facts:start -->## Global language-learning scope (2026-11-21)
+
+Japanese Quest (japanese-everyday) and English Quest (english-travel) are the two Gokaku Quest courses for international learners. They are courses in the same app, not separate downloads. English explanations are supported; lessons, images, audio, explanation languages and purchase options vary by content, OS and version. Japanese entrance-exam and qualification courses use Japanese. Do not describe all 18 courses as available in English.
+
+- [Compare the two language courses](https://trailfusionai.com/en/quest/)
+- [Japanese Quest](https://trailfusionai.com/en/japanese-quest.html): everyday Japanese A1–B1, JLPT N5–N1 study tracks and JFT-Basic study track. Learning language: Japanese.
+- [English Quest](https://trailfusionai.com/en/eigo-quest.html): phonics, vocabulary, grammar, conversation expressions, idioms, reading and writing topics. Learning language: English.
+- [日本語の語学教材ガイド](https://trailfusionai.com/quest/languages/)
+
+The Japanese university-entrance section lists the six released courses: Information I, Math IA, Geography, Japanese History, Chemistry and Physics. Its 319 listed entries consist of 315 learning units and four original Math IA mock tests. These are Japanese-language supplementary study materials, not a claim of complete exam coverage. Public Affairs / Politics and Economics is not advertised as released.
+
+Free download with in-app purchases. Do not infer that every feature or lesson is free or included in one plan. A website translation does not mean every course is translated. This file is supplementary; the public HTML pages are the primary source.
+<!-- quest-expansion:language-facts:end -->

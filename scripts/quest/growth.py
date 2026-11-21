@@ -273,6 +273,8 @@ def apply():
     routes = [qualifications(config), *university(config)]
     changed = update_qualification_links(config) + update_entry_pages(config)
     update_indexes(routes, changed, config)
+    from growth_enrichment import apply as enrich
+    enrich(config)
     print(json.dumps({'growthPages': routes, 'updatedEntryPages': changed, 'protectedEntranceExamPages': 'not modified', 'asOf': DAY}, ensure_ascii=False))
 
 

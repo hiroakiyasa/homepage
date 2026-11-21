@@ -290,6 +290,8 @@ def main():
         from japanese_courses import refresh as refresh_japanese_courses
         refresh_japanese_courses()
         localized = render_global(chosen)
+        import subprocess
+        subprocess.run([sys.executable, str(ROOT / "scripts/quest/growth_enrichment.py")], check=True)
         print(json.dumps({'english_pages': generated, 'global_pages': len(localized), 'japanese_and_hobby_content': 'English course links and language metadata aligned; other content preserved'}, indent=2))
         return
     generated = new_pages()

@@ -1,0 +1,124 @@
+{
+  "asOf": "2026-11-21",
+  "sourceCommit": "fb3473df88d2431a1b35b46f0f818ffdc0647693",
+  "facts": {
+    "global": {
+      "japanese": {
+        "courseId": "japanese-everyday",
+        "brand": "Japanese Quest",
+        "learningLocale": "ja",
+        "confirmedExplanationLocale": "en",
+        "tracks": [
+          "Everyday Japanese A1–B1",
+          "JLPT N5–N1",
+          "JFT-Basic"
+        ],
+        "representativeUnitId": "a1-l01"
+      },
+      "english": {
+        "courseId": "english-travel",
+        "brand": "English Quest",
+        "catalogLegacyTitle": "Practical English",
+        "learningLocale": "en",
+        "confirmedExplanationLocales": [
+          "en",
+          "ja"
+        ],
+        "domainsUsedInCopy": [
+          "vocabulary",
+          "grammar",
+          "conversation",
+          "reading"
+        ],
+        "representativeUnitId": "conv-directions"
+      },
+      "onboarding": "Select English through onboarding-language-picker / onboarding-language-en; language-goal selection filters new learners to these two released courses. Existing enrolled Japanese-only courses remain visible."
+    },
+    "university": {
+      "language": "ja",
+      "publishedGateCourseIds": [
+        "joho1-kyotsu-japan",
+        "math-ia-kyotsu-japan",
+        "chiri-kyotsu-japan",
+        "japanhistory-kyotsu-japan",
+        "chemistry-kyotsu-japan",
+        "physics-kyotsu-japan"
+      ],
+      "unitCounts": [
+        45,
+        52,
+        55,
+        60,
+        52,
+        55
+      ],
+      "totalManifestUnits": 319,
+      "mathNote": "48 curriculum units plus 4 mock-exam units",
+      "civicsPublicGate": false
+    },
+    "access": {
+      "freeQuestionLevels": [
+        40
+      ],
+      "paidQuestionLevels": [
+        50,
+        60,
+        70
+      ],
+      "paidFeatures": [
+        "full library access",
+        "question imagery",
+        "voice"
+      ],
+      "freeLibraryPreviewsMayExist": true,
+      "livePurchaseFlowTested": false
+    },
+    "limitations": [
+      "Source facts are from the current Mac working tree; source flags alone are not proof of a newly deployed binary.",
+      "Current CDN latest catalog read returned HTTP 403; no release flags or publication state were changed.",
+      "UI has 13 locales, but content coverage differs by course and cannot be advertised as fully translated into all 13.",
+      "Japanese release-lock English explanation was inspected; English representative pack English explanation was inspected.",
+      "AI conversation is present in code and content manifests but native voice availability, service access and audible output were not verified.",
+      "English grammar-book pages contain Japanese text in metadata; translated English encyclopedia is not claimed."
+    ]
+  },
+  "evidence": [
+    {
+      "path": "content/generated/release-policy.json",
+      "sha256": "9a835a7bb96534b55fe2fb280d4ddc94ccd1fb012bac7f8d553958f56e9af527"
+    },
+    {
+      "path": "config/remote-release.v1.json",
+      "sha256": "277a94f8baa1ca1e614195606c219eaa014eb309cba67c827897c0482087c869"
+    },
+    {
+      "path": "content/generated/release-specs.json",
+      "sha256": "871e9c107d97750cd79862589ccfcf507c3b00f9c56f0732ce63c4b1fcde5ae4"
+    },
+    {
+      "path": "content/generated/release-manifest.json",
+      "sha256": "3bd30cb49707a2cd0cbd6105ad49888b51a41c66049727018a2d08a1571c4166"
+    },
+    {
+      "path": "content/generated/release-structure.json",
+      "sha256": "549bf0bca413b68c6797e3dcde489601d9316e3340f95a473993a27fb67b8b14"
+    },
+    {
+      "path": "apps/mobile/src/lib/discovery.ts",
+      "sha256": "73bdcbc6aed572a7e0a06056670d312bfe59a300c43997bf9e29c214ea02b638"
+    },
+    {
+      "path": "apps/mobile/app/onboarding.tsx",
+      "sha256": "bd88bf22c8d6709be52acf6a34dd36a0d93f7e007fad34577027aacd29bda3af"
+    },
+    {
+      "path": "packages/monetization/free-level.cjs",
+      "sha256": "5fe57a7f5a43b6027e21046a66918a769e9ac54cff71b810a23c6c185b6188d7"
+    },
+    {
+      "path": "packages/monetization/course-feature-access.cjs",
+      "sha256": "7cc689f1e864eb02d3acce26c1dce718b9636f7ebbfc2a8c3779be0affe4e3d9"
+    }
+  ],
+  "uiObservation": "Some Japanese UI labels remain in the English UI; this release does not claim a fully English UI or translated illustrated guides."
+}
