@@ -141,21 +141,56 @@ try:
                         layout = page.evaluate('''()=>{
                             const name = e=>e.tagName.toLowerCase()+(e.id?'#'+e.id:'')
                                 +(typeof e.className==='string'&&e.className?'.'+e.className.trim().replace(/\\s+/g,'.'):'');
+                            const documentWidth = document.documentElement.scrollWidth;
+                            const clips = e=>{
+                                const parents=[];
+                                for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){
+                                    if(['hidden','auto','scroll','clip'].includes(getComputedStyle(p).overflowX)) parents.push(name(p));
+                                }
+                                return parents;
+                            };
                             const candidates = [...document.querySelectorAll('body *')].filter(e=>
                                 !['SCRIPT','STYLE','LINK','META'].includes(e.tagName)).map(e=>{
                                 const r=e.getBoundingClientRect(), s=getComputedStyle(e);
                                 if(r.width<=0||r.right<=innerWidth+1) return null;
-                                const clippedBy=[];
-                                for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){
-                                    if(['hidden','auto','scroll','clip'].includes(getComputedStyle(p).overflowX)) clippedBy.push(name(p));
-                                }
                                 return {element:name(e),text:(e.innerText||'').slice(0,80),left:r.left,right:r.right,
                                     width:r.width,scrollWidth:e.scrollWidth,display:s.display,position:s.position,
-                                    minWidth:s.minWidth,overflowX:s.overflowX,font:s.fontFamily,clippedBy};
+                                    minWidth:s.minWidth,overflowX:s.overflowX,font:s.fontFamily,clippedBy:clips(e)};
                             }).filter(Boolean);
-                            return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,
+                            const textRanges=[], walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+                            for(let node=walker.nextNode();node;node=walker.nextNode()){
+                                if(!node.textContent.trim()||['SCRIPT','STYLE'].includes(node.parentElement.tagName)) continue;
+                                const range=document.createRange(); range.selectNodeContents(node);
+                                const right=Math.max(0,...[...range.getClientRects()].map(r=>r.right));
+                                if(right>innerWidth+1) textRanges.push({parent:name(node.parentElement),
+                                    text:node.textContent.trim().slice(0,80),right,clippedBy:clips(node.parentElement)});
+                            }
+                            const controls=[...document.querySelectorAll('input,select,button,summary')].filter(e=>
+                                e.clientWidth>0&&e.scrollWidth>e.clientWidth+1).map(e=>({element:name(e),
+                                    text:(e.innerText||'').slice(0,80),clientWidth:e.clientWidth,scrollWidth:e.scrollWidth,
+                                    right:e.getBoundingClientRect().right,overflowX:getComputedStyle(e).overflowX,clippedBy:clips(e)}));
+                            const isolation=[], queue=[...new Set([...document.body.children,
+                                ...document.querySelectorAll('main > section')])], seen=new Set();
+                            while(queue.length&&seen.size<200){
+                                const e=queue.shift(); if(seen.has(e)) continue; seen.add(e);
+                                if(['SCRIPT','STYLE','LINK','META'].includes(e.tagName)||!e.getBoundingClientRect().width) continue;
+                                const saved=e.getAttribute('style'), before=document.documentElement.scrollWidth;
+                                e.style.setProperty('display','none','important');
+                                const hidden=document.documentElement.scrollWidth;
+                                if(saved===null) e.removeAttribute('style'); else e.setAttribute('style',saved);
+                                const restored=document.documentElement.scrollWidth;
+                                if(hidden<before&&restored>=before-1){
+                                    isolation.push({element:name(e),before,hidden,restored,
+                                        beforeContent:getComputedStyle(e,'::before').content,
+                                        afterContent:getComputedStyle(e,'::after').content});
+                                    queue.push(...e.children);
+                                }
+                            }
+                            return {viewport:innerWidth,documentWidth,clientWidth:document.documentElement.clientWidth,
+                                bodyClientWidth:document.body.clientWidth,afterIsolation:document.documentElement.scrollWidth,
                                 unclipped:candidates.filter(e=>!e.clippedBy.length).slice(0,25),
-                                clipped:candidates.filter(e=>e.clippedBy.length).slice(0,10)};
+                                clipped:candidates.filter(e=>e.clippedBy.length).slice(0,10),
+                                textRanges:textRanges.filter(e=>!e.clippedBy.length).slice(0,25),controls,isolation};
                         }''')
                         print(json.dumps({'overflow': label, 'layout': layout}, ensure_ascii=False), flush=True)
                         page.screenshot(path=str(OUT / f'overflow-{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
