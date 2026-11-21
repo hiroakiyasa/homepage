@@ -406,7 +406,7 @@ mark { background: linear-gradient(transparent 60%, #ffe27a 60%, #ffe27a 92%, tr
   .room:before { background: rgba(255,253,247,.86); }
 }
 
-/* Keep native selected text inside the compact mobile camera control. */
+/* Let the native camera control keep its intrinsic width on mobile. */
 @media (max-width: 767px) {
-  #hiace-atelier .scene-ribbon select#more-camera { overflow: hidden; }
+  #hiace-atelier .scene-ribbon select#more-camera { max-width: none; }
 }
