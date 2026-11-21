@@ -405,3 +405,8 @@ mark { background: linear-gradient(transparent 60%, #ffe27a 60%, #ffe27a 92%, tr
   .legacy, .room { padding: 24px 16px; border-radius: 22px; }
   .room:before { background: rgba(255,253,247,.86); }
 }
+
+/* Keep native selected text inside the compact mobile camera control. */
+@media (max-width: 767px) {
+  #hiace-atelier .scene-ribbon select#more-camera { overflow: hidden; }
+}
