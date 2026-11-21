@@ -119,6 +119,28 @@ try:
                     st = page.evaluate('''()=>({o:document.documentElement.scrollWidth>innerWidth+1,
                         b:[...document.images].filter(i=>!i.naturalWidth&&i.src.startsWith(location.origin)).map(i=>i.getAttribute('src')),
                         h:document.querySelectorAll('h1').length})''')
+                    if st['o']:
+                        layout = page.evaluate('''()=>{
+                            const name = e=>e.tagName.toLowerCase()+(e.id?'#'+e.id:'')
+                                +(typeof e.className==='string'&&e.className?'.'+e.className.trim().replace(/\\s+/g,'.'):'');
+                            const candidates = [...document.querySelectorAll('body *')].filter(e=>
+                                !['SCRIPT','STYLE','LINK','META'].includes(e.tagName)).map(e=>{
+                                const r=e.getBoundingClientRect(), s=getComputedStyle(e);
+                                if(r.width<=0||r.right<=innerWidth+1) return null;
+                                const clippedBy=[];
+                                for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){
+                                    if(['hidden','auto','scroll','clip'].includes(getComputedStyle(p).overflowX)) clippedBy.push(name(p));
+                                }
+                                return {element:name(e),text:(e.innerText||'').slice(0,80),left:r.left,right:r.right,
+                                    width:r.width,scrollWidth:e.scrollWidth,display:s.display,position:s.position,
+                                    minWidth:s.minWidth,overflowX:s.overflowX,font:s.fontFamily,clippedBy};
+                            }).filter(Boolean);
+                            return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,
+                                unclipped:candidates.filter(e=>!e.clippedBy.length).slice(0,25),
+                                clipped:candidates.filter(e=>e.clippedBy.length).slice(0,10)};
+                        }''')
+                        print(json.dumps({'overflow': label, 'layout': layout}, ensure_ascii=False), flush=True)
+                        page.screenshot(path=str(OUT / f'overflow-{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
                     check(not st['o'], label + ' no horizontal overflow')
                     check(not st['b'], label + ' images load ' + str(st['b'][:3]))
                     check(st['h'] >= 1, label + ' has an h1')
