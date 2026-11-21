@@ -224,6 +224,9 @@ def minimal_factual_corrections():
         path = ROOT / rel
         text = path.read_text().replace(old_answer, new_answer)
         text = text.replace('12教材のどれからでも。', '18教材のどれからでも。').replace('12教材を見る', '18教材を見る')
+        if rel == 'quest/faq/index.html':
+            text = text.replace('そのほか、資格試験・語学・運転免許の学習者も', 'そのほか、大学受験に取り組む高校生や、資格試験・語学・運転免許の学習者も')
+            text = text.replace('理科（36単元7,742問）', '理科（38単元7,964問）')
         path.write_text(text)
 
 

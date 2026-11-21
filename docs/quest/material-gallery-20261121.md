@@ -25,7 +25,7 @@ English explanations are advertised only for Japanese Quest and English Quest. S
 
 The original 18 protected pages comprise 16 dedicated middle-school pages plus FAQ and plans. The 16 dedicated pages remain byte-identical. Two explicit, root-approved factual exceptions apply:
 
-- FAQ: replace the obsolete 12-course answer with 18 courses and the six university subjects, keep visible text and JSON-LD aligned, and qualify image/atlas availability by content.
+- FAQ: replace the obsolete 12-course answer with 18 courses and the six university subjects, keep visible text and JSON-LD aligned, and qualify image/atlas availability by content. Preserve the original middle-school-first audience sentence and add university applicants to the following sentence. Correct the science example from 36 units/7,742 questions to 38/7,964 in both visible text and JSON-LD.
 - Plans and FAQ: change two obsolete 12-course calls to action to 18 courses.
 
 Their existing URL/title/H1/canonical and middle-school terminology remain unchanged. The Quest hub now contains 18 real cards, including six new university cards and a working university filter. The existing science card updates 36 units/7,742 questions to 38/7,964; other counts are checked against distinct question IDs or publisher unique counts, not duplicated unit totals. A broad free-driving claim is replaced with a neutral study description. All 714 previous sitemap URLs remain, with exactly four useful pages added (718 total).
