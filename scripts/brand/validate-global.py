@@ -32,6 +32,16 @@ def tracked_page(context,js_errors):
     page.on('pageerror',lambda e:js_errors.append(str(e)))
     return page
 
+def check_course_downloads(page,label):
+    # Attribution parameters may follow the destination; validate the app itself.
+    apple=urlsplit(page.locator('a[data-store="apple"]').first.get_attribute('href') or '')
+    google=urlsplit(page.locator('a[data-store="google"]').first.get_attribute('href') or '')
+    check((apple.scheme,apple.netloc,apple.path)==('https','apps.apple.com','/app/id6775411516'),
+          label+' integrated iOS download')
+    check((google.scheme,google.netloc,google.path)==('https','play.google.com','/store/apps/details')
+          and parse_qs(google.query).get('id')==['com.gokakushakaiquest.app'],
+          label+' integrated Android download')
+
 try:
     with sync_playwright() as pw:
         for engine in (['chromium'] if '--quick' in sys.argv else ['chromium','webkit']):
@@ -88,8 +98,7 @@ try:
             check(p.locator('[data-count]').inner_text()=='Apps: 1',engine+' singular count uses neutral label')
             for course in ('japanese-quest.html','eigo-quest.html'):
                 p.goto(origin+'/en/'+course)
-                check(p.locator('a[data-store="apple"]').first.get_attribute('href')=='https://apps.apple.com/app/id6775411516',engine+' '+course+' integrated iOS download')
-                check(p.locator('a[data-store="google"]').first.get_attribute('href').endswith('id=com.gokakushakaiquest.app'),engine+' '+course+' integrated Android download')
+                check_course_downloads(p,engine+' '+course)
             context.close()
 
             auto=browser.new_context(locale='fr-CA');blocked(auto);p=auto.new_page()
