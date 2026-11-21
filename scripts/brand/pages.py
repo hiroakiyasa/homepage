@@ -35,14 +35,14 @@ def apps_body(lang):
                      f'<small>{len({a.get("parent", a["slug"]) for a in main if a["cat"] == k})}</small></button>' for k in used))
     return f'''<section class="page-hero">{bg("shelf", True)}<div class="br-wrap"><span class="tag">{t("アプリ一覧", "All apps")}</span>
 <h1>{t("TrailFusion の<br>アプリ。", "Apps by<br>TrailFusion.")}</h1>
-<p class="lead">{t(f"App Store で公開中の{len(LIVE)}本と、審査中の1本。どれも無料でダウンロードでき、規約・プライバシー・サポートへここから進めます。",
-                   f"{len(LIVE)} apps on the App Store and one in review. All free to download, with terms, privacy and support linked from here.")}</p>
+<p class="lead">{t("App Storeで公開中のアプリと、審査中のアプリ。どれも無料でダウンロードでき、規約・プライバシー・サポートへここから進めます。",
+                   "Apps on the App Store and apps in review. All free to download, with terms, privacy and support linked from here.")}</p>
 <div class="chips" role="group" aria-label="{t("分類で絞り込む", "Filter by category")}" hidden>{chips}</div></div></section>
 <section class="sec catalog veil">{bg("dawn")}<div class="br-wrap"><div class="app-grid">{"".join(app_card(a, lang) for a in main)}</div>
 <p class="note" data-count aria-live="polite"></p>
 <div class="legacy">{bg("science", cls="bg legacy-bg")}{head(t("以前の単科アプリ", "Earlier single-subject apps"), t("合格！クエストに、<mark>ひとつにまとめました</mark>。", "Now <mark>combined</mark> in Gokaku! Quest."),
-                           t("理科・国語の単科アプリは、学習記録と購入を合格！クエストへ引き継げます。お使いの方はアプリ内の案内か、料金・購入ガイドをご覧ください。",
-                             "The science and Japanese-language apps can hand over progress and purchases to Gokaku! Quest."))}
+                           t("購入・学習記録の扱いはアプリや購入商品によって異なります。アプリ内の案内と料金・購入ガイドをご確認ください。",
+                             "Purchase and learning-record handling depends on the app and product. Check the in-app instructions and purchase guide."))}
 <div class="app-grid two">{"".join(app_card(a, lang) for a in legacy)}</div><p><a class="text-link" href="/quest/plans/">{t("料金・購入・引き継ぎのご案内", "Pricing, purchases and handover (Japanese)")} →</a></p></div>
 <p class="note">{t(f"バージョン・更新日・評価は{SNAPSHOT_DATE[0]}時点の App Store（日本）の公開情報です。", f"Versions, dates and ratings are App Store (Japan) public data as of {SNAPSHOT_DATE[1]}.")}</p></div></section>'''
 
@@ -68,7 +68,7 @@ def about_body():
 <section class="sec founder veil">{bg("camper")}<div class="br-wrap maker-grid">
 <div>{head("創業者", "湯浅 浩章（Hiro）", "子どもの頃から算数、機械、ゲーム、PC、プログラミングが好きで、「仕組みを理解して、自分で動くものを作る」ことに強く惹かれてきました。教育、旅、DIY、AIという一見異なるテーマを、「実際に自分で試し、役立つ形へ変える」という一本の軸でつないでいます。")}
 <p class="builder">Builder × Explorer × Integrator</p></div>
-<dl class="maker-nums vertical"><div><dt>公開中のアプリ</dt><dd>{len(LIVE)}</dd></div><div><dt>車で旅した都道府県</dt><dd>47</dd></div><div><dt>走った距離</dt><dd>約5万km</dd></div></dl></div></section>
+<dl class="maker-nums vertical"><div><dt>App Store掲載数<br><small>2026/10/25時点・日本</small></dt><dd>{len(STORE)}</dd></div><div><dt>車で旅した都道府県</dt><dd>47</dd></div><div><dt>走った距離</dt><dd>約5万km</dd></div></dl></div></section>
 <section class="sec why">{bg("garage")}<div class="br-wrap narrow"><div class="paper">{head("いま、つくる理由", "「いつか」ではなく、<mark>元気な今</mark>やる。")}
 <div class="prose"><p>『LIFE SHIFT』を読み、人生が長くなる時代に、これまで身につけたことだけに頼るのではなく、AI・ソフトウェア・BtoC という新しい専門性を自分の手で育てたいと考えるようになりました。</p>
 <p>同じ頃、大きなDIYをゼロから完成させたことで、未知の領域でも調べ、設計し、手を動かし、最後まで完成させられるという自信を得ました。「やりたいことを老後まで先送りしない」。TrailFusion AI は、その価値観を毎日の行動に変える場所です。</p></div></div></div></section>

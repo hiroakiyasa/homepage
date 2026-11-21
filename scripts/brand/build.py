@@ -68,7 +68,8 @@ def new_pages(languages=('ja', 'en')):
             title, desc = detail.meta(slug, lang)
             other = ('/en/' + c['page'] if lang == 'ja' else '/' + c['page']) if has_en else '/en/apps.html'
             schema = [s for s in app_schema(lang) if s['name'] == (BY[slug]['ja'] if lang == 'ja' else BY[slug]['en'])]
-            written.append(page(detail.path_of(slug, lang), lang, title, desc, detail.body(slug, lang), other, schema))
+            written.append(page(detail.path_of(slug, lang), lang, title, desc, detail.body(slug, lang), other, schema,
+                                has_translation=has_en and slug != 'fp-quest'))
     if 'en' in languages:
         from global_content import japanese_body, english_body
         written.append(page('en/japanese-quest.html', 'en', 'Japanese Quest | Learn Japanese with Gokaku Quest | TrailFusion AI',
@@ -81,10 +82,10 @@ def new_pages(languages=('ja', 'en')):
         return written
     written.append(page('about/index.html', 'ja', 'つくり手について｜TrailFusion AI',
                         'TrailFusion AI は湯浅 浩章（Hiro）の個人開発スタジオ。家族の中学受験、親子の車旅、キャンピングカーの自作から生まれたアプリづくりの考え方と原則。',
-                        pages.about_body(), '/en/'))
+                        pages.about_body(), '/en/', has_translation=False))
     written.append(page('garage/index.html', 'ja', 'つくり手のガレージ｜車旅・キャンピングカーDIY・ハイエース整備｜TrailFusion AI',
                         'アプリづくりの原点になった、つくり手の趣味と記録。車旅の記録と絶景ロード図鑑、キャンピングカーDIY、ハイエース整備のページをまとめています。',
-                        pages.garage_body(), '/en/travel/'))
+                        pages.garage_body(), '/en/travel/', has_translation=False))
     return written
 
 

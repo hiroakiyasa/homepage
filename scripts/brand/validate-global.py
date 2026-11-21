@@ -27,6 +27,21 @@ def check(ok,message):
 def blocked(context):
     context.route('**/*',lambda r:r.continue_() if r.request.url.startswith(origin) else r.abort())
 
+def tracked_page(context,js_errors):
+    page=context.new_page()
+    page.on('pageerror',lambda e:js_errors.append(str(e)))
+    return page
+
+def check_course_downloads(page,label):
+    # Attribution parameters may follow the destination; validate the app itself.
+    apple=urlsplit(page.locator('a[data-store="apple"]').first.get_attribute('href') or '')
+    google=urlsplit(page.locator('a[data-store="google"]').first.get_attribute('href') or '')
+    check((apple.scheme,apple.netloc,apple.path)==('https','apps.apple.com','/app/id6775411516'),
+          label+' integrated iOS download')
+    check((google.scheme,google.netloc,google.path)==('https','play.google.com','/store/apps/details')
+          and parse_qs(google.query).get('id')==['com.gokakushakaiquest.app'],
+          label+' integrated Android download')
+
 try:
     with sync_playwright() as pw:
         for engine in (['chromium'] if '--quick' in sys.argv else ['chromium','webkit']):
@@ -36,14 +51,16 @@ try:
                 try:browser=pw.chromium.launch(channel='chrome')
                 except Exception:browser=pw.chromium.launch()
             context=browser.new_context(locale='en-US',reduced_motion='reduce')
-            blocked(context);p=context.new_page()
-            js=[];p.on('pageerror',lambda e:js.append(str(e)))
+            blocked(context)
+            js=[]
             for locale in LOCALES:
                 for route in PAGES:
                     widths=[320] if engine=='chromium' else [390]
                     if engine=='chromium' and route in ('','apps.html','buddytalk.html'):
                         widths+=[390,1440]
                     for width in widths:
+                        # Keep independent layout cases out of prior navigation state.
+                        p=tracked_page(context,js)
                         p.set_viewport_size({'width':width,'height':844})
                         url=origin+'/'+locale+'/'+route
                         response=p.goto(url,wait_until='load')
@@ -66,7 +83,11 @@ try:
                             p.locator('#learn').scroll_into_view_if_needed()
                             p.evaluate('()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
                             p.screenshot(path=str(OUT/(locale+'-learn-390.png')))
+                        p.close()
             check(not js,engine+' JS errors '+str(js))
+            # The interaction scenario still runs continuously at its original width.
+            p=tracked_page(context,js)
+            p.set_viewport_size({'width':320 if engine=='chromium' else 390,'height':844})
             p.goto(origin+'/en/apps.html')
             p.locator('[data-filter="learn"]').click()
             check(p.locator('.app-card:visible').count()==4,engine+' two course cards, BuddyTalk and Word Blaster visible')
@@ -77,8 +98,7 @@ try:
             check(p.locator('[data-count]').inner_text()=='Apps: 1',engine+' singular count uses neutral label')
             for course in ('japanese-quest.html','eigo-quest.html'):
                 p.goto(origin+'/en/'+course)
-                check(p.locator('a[data-store="apple"]').first.get_attribute('href')=='https://apps.apple.com/app/id6775411516',engine+' '+course+' integrated iOS download')
-                check(p.locator('a[data-store="google"]').first.get_attribute('href').endswith('id=com.gokakushakaiquest.app'),engine+' '+course+' integrated Android download')
+                check_course_downloads(p,engine+' '+course)
             context.close()
 
             auto=browser.new_context(locale='fr-CA');blocked(auto);p=auto.new_page()

@@ -28,6 +28,11 @@ jobs:
       - name: Check brand pages, links, sitemap and retired locales
         run: python scripts/brand/check-static.py
 
+      - name: Check SEO metadata, language pairs and sourced product facts
+        run: |
+          python scripts/seo/audit.py
+          python scripts/quest/content_consistency.py --check
+
       - name: Check per-page view counters
         run: |
           node scripts/add-visitor-counters.mjs --check

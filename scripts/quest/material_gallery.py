@@ -278,6 +278,9 @@ def apply():
     gallery(data, copy)
     routes = ['/quest/materials/', *study_pages(copy, samples, data)]
     indexes(routes)
+    # The old templates retain historical unit lists; sync only reviewed current copy.
+    from content_consistency import apply as sync_content
+    sync_content()
     return routes
 
 

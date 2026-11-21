@@ -6,7 +6,7 @@ Checks at 320/390/768/1440 px in Chromium and 390/1440 in WebKit: HTTP 200, no h
 images decode, one h1, no JavaScript errors. Then the interactions: mobile menu, app filters, FAQ,
 store-click analytics payload, localized direct URLs, and the app catalog without JavaScript.
 """
-import http.server, json, socketserver, threading
+import http.server, json, socketserver, sys, threading
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -17,11 +17,60 @@ PAGES = ['/', '/en/', '/apps.html', '/en/apps.html', '/about/', '/garage/', '/su
          '/reelmake.html', '/en/voicelink.html', '/buddytalk.html', '/fp-quest.html', '/en/word-blaster.html', '/wood-golem.html',
          '/hacking-timer.html', '/eigo-quest.html', '/rika-quest.html', '/kokugo-quest.html',
          '/camping.html', '/en/diy/', '/reelmake-privacy.html', '/maintenance.html', '/404.html']
+CAMPING_PROBE = '--camping-probe' in sys.argv
+if CAMPING_PROBE:
+    PAGES = ['/camping.html']
 passed, errors = [], []
 
 
 def check(ok, label):
     (passed if ok else errors).append(label)
+
+
+def check_page_header(page, route, label, origin):
+    if route == '/eigo-quest.html':
+        # This legacy URL intentionally redirects to the integrated Quest course.
+        destination = origin + '/quest/courses/english/'
+        page.wait_for_url(destination, wait_until='load')
+        header = page.locator('body > header.header')
+        brand = header.locator('a.brand[href="/quest/"]')
+        check(page.url == destination and header.count() == 1 and header.is_visible()
+              and brand.count() == 1 and brand.is_visible()
+              and brand.locator('strong').all_text_contents() == ['合格！Quest'],
+              label + ' redirects to the English course with its Quest header')
+    else:
+        check(page.locator('header.br-header').count() == 1, label + ' brand header')
+
+
+def check_home_sections(page, engine):
+    # Material cards have their own layout and background, not a brand picture.bg.
+    images = page.locator('main > section.material-entry img')
+    images.evaluate_all('(images)=>images.forEach(image=>image.loading="eager")')
+    images.evaluate_all('(images)=>Promise.all(images.map(image=>image.decode().catch(()=>{})))')
+    sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(section=>{
+        const material = section.classList.contains('material-entry');
+        if (!material) return {name:section.className, material, ok:!!section.querySelector(':scope > picture.bg img')};
+        const visible = element => {
+            if (!element) return false;
+            const rect = element.getBoundingClientRect(), style = getComputedStyle(element);
+            return rect.width > 0 && rect.height > 0 && style.display !== 'none'
+                && style.visibility !== 'hidden' && Number(style.opacity) > 0;
+        };
+        const heading = section.querySelector(':scope > .material-wrap > h2');
+        const cards = [...section.querySelectorAll('.material-art-card')];
+        const routes = ['/quest/juken/', '/quest/university/', '/quest/qualifications/'];
+        const cardsOK = cards.length === routes.length && cards.every((card, index)=>{
+            const title = card.querySelector('h3'), image = card.querySelector('picture img');
+            const link = card.querySelector(`a[href="${routes[index]}"]`);
+            return visible(title) && !!title.textContent.trim() && visible(image)
+                && image.complete && image.naturalWidth > 0 && visible(link);
+        });
+        return {name:section.className, material,
+            ok:visible(heading) && !!heading.textContent.trim() && cardsOK};
+    })''')
+    check(sum(row['material'] for row in sections) == 1 and all(row['ok'] for row in sections),
+          engine + ' top-page sections show backgrounds or visible material cards '
+          + str([row['name'] for row in sections if not row['ok']]))
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -52,32 +101,116 @@ def launch(pw, engine):
         return pw.chromium.launch()
 
 
+def tracked_page(ctx, js_errors):
+    page = ctx.new_page()
+    pending = set()
+    page.on('request', lambda r: pending.add(r))
+    page.on('requestfinished', lambda r: pending.discard(r))
+    page.on('requestfailed', lambda r: pending.discard(r))
+    page.on('pageerror', lambda e: js_errors.append(str(e)))
+    return page, pending
+
+
 try:
     with sync_playwright() as pw:
-        for engine in ['chromium', 'webkit']:
+        for engine in (['webkit'] if CAMPING_PROBE else ['chromium', 'webkit']):
             browser = launch(pw, engine)
             ctx = browser.new_context(locale='ja-JP', reduced_motion='reduce')
             ctx.route('**/*', lambda r: r.continue_() if r.request.url.startswith(origin) else r.abort())
-            page = ctx.new_page()
             js = []
-            page.on('pageerror', lambda e: js.append(str(e)))
             for route in PAGES:
-                for width in ([320, 390, 768, 1440] if engine == 'chromium' else [390, 1440]):
+                for width in ([390] if CAMPING_PROBE else [320, 390, 768, 1440] if engine == 'chromium' else [390, 1440]):
+                    # Layout cases are independent; keep WebKit navigation state isolated.
+                    page, pending_requests = tracked_page(ctx, js)
                     page.set_viewport_size({'width': width, 'height': 900})
-                    res = page.goto(origin + route, wait_until='load')
                     label = f'{engine} {route} {width}px'
+                    try:
+                        res = page.goto(origin + route, wait_until='load')
+                    except Exception:
+                        try:
+                            state = page.evaluate('''()=>({readyState:document.readyState,
+                                fontStatus:document.fonts.status,location:location.href})''')
+                        except Exception:
+                            state = {'readyState': 'unavailable'}
+                        print(json.dumps({'navigation_failure': label, 'state': state,
+                              'pending_requests': sorted({r.url[:240] for r in pending_requests})[:20]},
+                              ensure_ascii=False), flush=True)
+                        raise
                     check(res.status == 200, label + ' HTTP 200')
+                    check_page_header(page, route, label, origin)
                     page.locator('img').evaluate_all('(i)=>i.forEach(x=>x.loading="eager")')
                     page.evaluate('Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))')
                     st = page.evaluate('''()=>({o:document.documentElement.scrollWidth>innerWidth+1,
                         b:[...document.images].filter(i=>!i.naturalWidth&&i.src.startsWith(location.origin)).map(i=>i.getAttribute('src')),
-                        h:document.querySelectorAll('h1').length, hd:document.querySelectorAll('header.br-header').length})''')
+                        h:document.querySelectorAll('h1').length})''')
+                    if st['o']:
+                        layout = page.evaluate('''()=>{
+                            const name = e=>e.tagName.toLowerCase()+(e.id?'#'+e.id:'')
+                                +(typeof e.className==='string'&&e.className?'.'+e.className.trim().replace(/\\s+/g,'.'):'');
+                            const documentWidth = document.documentElement.scrollWidth;
+                            const clips = e=>{
+                                const parents=[];
+                                for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){
+                                    if(['hidden','auto','scroll','clip'].includes(getComputedStyle(p).overflowX)) parents.push(name(p));
+                                }
+                                return parents;
+                            };
+                            const candidates = [...document.querySelectorAll('body *')].filter(e=>
+                                !['SCRIPT','STYLE','LINK','META'].includes(e.tagName)).map(e=>{
+                                const r=e.getBoundingClientRect(), s=getComputedStyle(e);
+                                if(r.width<=0||r.right<=innerWidth+1) return null;
+                                return {element:name(e),text:(e.innerText||'').slice(0,80),left:r.left,right:r.right,
+                                    width:r.width,scrollWidth:e.scrollWidth,display:s.display,position:s.position,
+                                    minWidth:s.minWidth,overflowX:s.overflowX,font:s.fontFamily,clippedBy:clips(e)};
+                            }).filter(Boolean);
+                            const textRanges=[], walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+                            for(let node=walker.nextNode();node;node=walker.nextNode()){
+                                if(!node.textContent.trim()||['SCRIPT','STYLE'].includes(node.parentElement.tagName)) continue;
+                                const range=document.createRange(); range.selectNodeContents(node);
+                                const right=Math.max(0,...[...range.getClientRects()].map(r=>r.right));
+                                if(right>innerWidth+1) textRanges.push({parent:name(node.parentElement),
+                                    text:node.textContent.trim().slice(0,80),right,clippedBy:clips(node.parentElement)});
+                            }
+                            const controls=[...document.querySelectorAll('input,select,button,summary')].filter(e=>
+                                e.clientWidth>0&&e.scrollWidth>e.clientWidth+1).map(e=>({element:name(e),
+                                    text:(e.innerText||'').slice(0,80),clientWidth:e.clientWidth,scrollWidth:e.scrollWidth,
+                                    right:e.getBoundingClientRect().right,overflowX:getComputedStyle(e).overflowX,clippedBy:clips(e)}));
+                            const isolation=[], queue=[...new Set([...document.body.children,
+                                ...document.querySelectorAll('main > section')])], seen=new Set();
+                            while(queue.length&&seen.size<200){
+                                const e=queue.shift(); if(seen.has(e)) continue; seen.add(e);
+                                if(['SCRIPT','STYLE','LINK','META'].includes(e.tagName)||!e.getBoundingClientRect().width) continue;
+                                const saved=e.getAttribute('style'), before=document.documentElement.scrollWidth;
+                                e.style.setProperty('display','none','important');
+                                const hidden=document.documentElement.scrollWidth;
+                                if(saved===null) e.removeAttribute('style'); else e.setAttribute('style',saved);
+                                const restored=document.documentElement.scrollWidth;
+                                if(hidden<before&&restored>=before-1){
+                                    isolation.push({element:name(e),before,hidden,restored,
+                                        beforeContent:getComputedStyle(e,'::before').content,
+                                        afterContent:getComputedStyle(e,'::after').content});
+                                    queue.push(...e.children);
+                                }
+                            }
+                            return {viewport:innerWidth,documentWidth,clientWidth:document.documentElement.clientWidth,
+                                bodyClientWidth:document.body.clientWidth,afterIsolation:document.documentElement.scrollWidth,
+                                unclipped:candidates.filter(e=>!e.clippedBy.length).slice(0,25),
+                                clipped:candidates.filter(e=>e.clippedBy.length).slice(0,10),
+                                textRanges:textRanges.filter(e=>!e.clippedBy.length).slice(0,25),controls,isolation};
+                        }''')
+                        print(json.dumps({'overflow': label, 'layout': layout}, ensure_ascii=False), flush=True)
+                        page.screenshot(path=str(OUT / f'overflow-{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
                     check(not st['o'], label + ' no horizontal overflow')
                     check(not st['b'], label + ' images load ' + str(st['b'][:3]))
                     check(st['h'] >= 1, label + ' has an h1')
-                    check(st['hd'] == 1, label + ' brand header')
                     if width in (390, 1440) and route in ('/', '/en/', '/apps.html', '/garage/'):
                         page.screenshot(path=str(OUT / f'{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
+                    page.close()
+            if CAMPING_PROBE:
+                browser.close()
+                continue
+            # Preserve the continuous user journey in a separate, tracked page.
+            page, _ = tracked_page(ctx, js)
             page.set_viewport_size({'width': 390, 'height': 844})
             page.goto(origin + '/', wait_until='load')
             page.locator('.br-menu summary').click()
@@ -100,8 +233,7 @@ try:
             page.goto(origin + '/ko/', wait_until='load')
             check(page.url.endswith('/ko/') and page.locator('html').get_attribute('lang') == 'ko', engine + ' explicit Korean URL remains localized')
             page.goto(origin + '/', wait_until='load')
-            sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
-            check(all(has for _, has in sections), engine + ' every top-page section has a background ' + str([c for c, h in sections if not h]))
+            check_home_sections(page, engine)
             page.goto(origin + '/reelmake.html', wait_until='load')
             sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
             check(all(has for _, has in sections), engine + ' every detail-page section has a background ' + str([c for c, h in sections if not h]))
@@ -117,7 +249,8 @@ try:
 finally:
     server.shutdown()
 
-result = {'passed': len(passed), 'errors': errors, 'pages': PAGES}
+result = {'passed': len(passed), 'errors': errors, 'pages': PAGES,
+          'mode': 'camping_probe' if CAMPING_PROBE else 'full'}
 (OUT / 'results.json').write_text(json.dumps(result, ensure_ascii=False, indent=2))
 print(json.dumps(result, ensure_ascii=False, indent=2))
 raise SystemExit(bool(errors))

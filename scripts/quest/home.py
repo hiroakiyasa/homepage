@@ -5,6 +5,7 @@ Free vs Pro wording follows the in-app comparison table: levels 40/50 free, 60/7
 voice for the first 5 units, atlas preview pages. Never say "everything free".
 """
 import html
+from content_consistency import course_counts
 
 H = {}
 
@@ -91,9 +92,9 @@ def school4():
     cards = ''
     for c in H['COURSES'][:4]:
         cid, slug, name, *_ = c
-        d = H['STATS']['courses'][cid]
+        d = {**H['STATS']['courses'][cid], **course_counts(cid)}
         fg, bg = SUBJECT[cid]
-        chips = ''.join(f'<li>{esc(g["name"])}<small>{len(g["units"])}</small></li>' for g in d['domains'])
+        chips = ''.join(f'<li>{esc(g["name"])}' + ('' if cid == 'junior-science' else f'<small>{len(g["units"])}</small>') + '</li>' for g in d['domains'])
         cards += f'''<article class="subj" style="--c:{fg};--bg:{bg}">
 <header><h3>{name}</h3><p><b>{d["questions"]:,}</b>問<span>・</span><b>{d["atlasPages"]:,}</b>ページの図鑑<span>・</span><b>{d["unitCount"]:,}</b>単元</p></header>
 <div class="subj-media">{H["preview"](cid + "-atlas", name + "の図鑑：" + c[7])}<div class="phone-mini">{H["image"](cid + "-quiz", name + "の問題と解説の実画面")}</div></div>
@@ -133,7 +134,7 @@ def levels():
 
 def card(c):
     cid, slug, name, group, _headline, lead, _topics, sample, _use, _tint = c
-    d = H['STATS']['courses'][cid]
+    d = course_counts(cid)
     return (f'<a class="ccard" data-course-category="{group}" href="/quest/courses/{slug}/" style="--c:{color(cid, group)}">'
             f'<div class="ccard-img">{H["image"](cid + "-atlas", name + "の図鑑・" + sample)}</div>'
             f'<div class="ccard-body"><small>{H["GROUP"][group]}</small><h3>{name}</h3>'
@@ -209,7 +210,7 @@ def download():
 {rika("rika-wave", "", "rika dl-rika")}
 <p class="tag-star">ダウンロード無料</p>
 <h2>まずは1問、<br><mark>やってみよう！</mark></h2>
-<p>12教材のどれからでも。気になる教材の無料の問題から始められます。</p>
+<p>気になる教材の無料の問題から始められます。</p>
 {H["stores"]("bottom")}
 <p class="fine">ダウンロード無料・アプリ内課金あり。無料範囲では広告が表示される場合があります。<br>対応端末・教材・機能は、OSや配信バージョンによって異なります。</p>
 </div></div></section>'''

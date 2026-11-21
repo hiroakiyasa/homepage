@@ -1,10 +1,14 @@
 """Subject guides for 中学受験 (science / social studies / Japanese / math), the 暗記 guide, the hub and the FAQ.
 
 These pages exist so that people (and AI assistants) searching for a 中学受験 study app by subject find
-合格！クエスト and the single-subject apps by name. Every number comes from docs/quest/course-stats.json
-(release manifest, 2026-10-25) and the App Store lookup; prices are intentionally not written here.
+合格！クエスト and the single-subject apps by name. Aggregate counts use the released-gallery evidence;
+the dated unit lists retain docs/quest/course-stats.json. Prices are intentionally not written here.
 """
 import html, json
+from content_consistency import course_counts, COUNT_DATE_JA, MIGRATION_NOTE
+
+SCIENCE = course_counts('junior-science')
+SCI_Q, SCI_UNITS = f'{SCIENCE["questions"]:,}', SCIENCE['unitCount']
 
 BASE = 'https://trailfusionai.com'
 IOS = 'https://apps.apple.com/jp/app/id'
@@ -18,7 +22,7 @@ SUBJECTS = [
     dict(
         slug='science', cid='junior-science', name='理科', ruby='りか',
         title='中学受験 理科アプリ｜図鑑とクイズで生物・地球・物質・エネルギーを復習｜合格！クエスト',
-        desc='中学受験の理科を、イラスト図鑑と4択クイズで復習するアプリ。36単元7,742問、偏差値40・50・60・70の4段階。まちがい直しと読み上げ音声つき。合格！クエスト（合格理科クエスト）。',
+        desc=f'中学受験の理科を、イラスト図鑑と4択クイズで復習するアプリ。{SCI_UNITS}単元{SCI_Q}問、難易度40・50・60・70の4段階。まちがい直しと読み上げ音声つき。合格！クエスト（合格理科クエスト）。',
         h1_a='中学受験の理科アプリ。', h1_b='絵で見て、解いて、<br>「なぜ？」までつなげる。',
         lead='生命・地球・物質・エネルギーの4分野を、イラスト図鑑と4択クイズで。言葉だけでは覚えにくい実験や自然現象を、場面の絵で確かめながら復習できます。',
         scope=[
@@ -34,9 +38,9 @@ SUBJECTS = [
         weak='計算を含む単元（溶解度・濃度・てこ・ばね・滑車・電流回路）は、つまずく家庭が多い分野です。解説で考え方を確かめ、まちがえた問題は「まちがい直し」で解き直せます。',
         faqs=[
             ('中学受験の理科は、アプリだけで足りますか？', 'アプリは塾の授業や過去問演習を置き換えるものではなく、習った単元の復習と「覚えたつもり」の確認に使う教材です。志望校の出題傾向に合わせた演習は、塾や過去問と併用してください。'),
-            ('理科は何問ありますか？', '36単元・7,742問です（2026年10月25日確認、無料・Pro対象を含む）。各問題は偏差値の目安で40・50・60・70の4段階に分かれ、イラスト図鑑は539ページあります。'),
-            ('小学4年生でも使えますか？', '使えます。小4〜小6を想定した作りで、単元と難易度を選べます。まずは偏差値40の問題から始め、慣れたら50〜70に進むと無理がありません。'),
-            ('「合格理科クエスト」とはどう違いますか？', '合格理科クエストは理科だけの単体アプリで、合格！クエストは同じ理科に加えて社会・国語・算数などを1つのアプリで学べる統合版です。理科の問題数は同じです。単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。'),
+            ('理科は何問ありますか？', f'{SCI_UNITS}単元・{SCI_Q}問です（{COUNT_DATE_JA}確認、無料・Pro対象を含む）。各問題は難易度の目安で40・50・60・70の4段階に分かれ、イラスト図鑑は539ページあります。'),
+            ('小学4年生でも使えますか？', '使えます。小4〜小6を想定した作りで、単元と難易度を選べます。まずは難易度40の問題から始め、慣れたら50〜70に進むと無理がありません。'),
+            ('「合格理科クエスト」とはどう違いますか？', '合格理科クエストは理科だけの単体アプリで、合格！クエストは理科に加えて社会・国語・算数などを1つのアプリで学べる統合版です。収録内容はアプリや配信バージョンにより異なります。' + MIGRATION_NOTE),
         ],
     ),
     dict(
@@ -55,7 +59,7 @@ SUBJECTS = [
         ],
         weak='暗記量が多い社会は、同じ用語を何度も見ることが近道です。まちがえた問題がたまるので、テスト前にまとめて解き直せます。',
         faqs=[
-            ('社会は何問ありますか？', '53単元・5,327問です（2026年10月25日確認、無料・Pro対象を含む）。偏差値40・50・60・70の4段階で、イラスト図鑑は630ページあります。'),
+            ('社会は何問ありますか？', '53単元・5,327問です（2026年10月25日確認、無料・Pro対象を含む）。難易度40・50・60・70の4段階で、イラスト図鑑は630ページあります。'),
             ('以前の「合格！社会クエスト」はどうなりましたか？', '社会クエストのストア掲載ページが、現在は合格！クエスト（統合版）になっています。以前に購入した対象商品は、購入時と同じストアアカウントで復元できます。お困りの場合はサポートへご連絡ください。'),
             ('社会は地方ごとに学べますか？', '学べます。社会のホームから「地方別に学ぶ・復習する」を開くと、北海道・東北・関東・中部・近畿・中国四国・九州沖縄の7地方ごとに、地理の問題の学習とまちがい直しができます（バージョン1.3.2〜）。解答の記録は元の単元に残るので、進み具合は変わりません。'),
             ('時事問題や最新の統計にも対応していますか？', '教材は定期的に更新しますが、年ごとに変わる時事・統計は塾の教材や最新の資料も併せて確認してください。'),
@@ -78,10 +82,10 @@ SUBJECTS = [
         ],
         weak='国語は「何を勉強すればよいか分かりにくい」教科です。語彙・漢字・文法は知識として積み上げられるので、まずは毎日の短い復習で土台を固めます。',
         faqs=[
-            ('国語は何問ありますか？', '94単元・4,550問です（2026年10月25日確認、無料・Pro対象を含む）。偏差値40・50・60・70の4段階で、図鑑は500ページあります。'),
+            ('国語は何問ありますか？', '94単元・4,550問です（2026年10月25日確認、無料・Pro対象を含む）。難易度40・50・60・70の4段階で、図鑑は500ページあります。'),
             ('長文読解の練習になりますか？', '読解の単元（物語の心情、説明文の指示語・要旨、長文読解など）を4択で確認できます。ただし何本も長文を読み込む練習や記述の採点はしないので、塾の教材や過去問と併用してください。'),
             ('読み上げ音声はありますか？', '対応する問題には問題文の読み上げがあります。読み上げは最初の5単元が無料、全対象はProです。'),
-            ('「合格！国語クエスト」とはどう違いますか？', '合格！国語クエストは国語だけの単体アプリ、合格！クエストは国語に加えて理科・社会・算数などを学べる統合版です。単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。'),
+            ('「合格！国語クエスト」とはどう違いますか？', '合格！国語クエストは国語だけの単体アプリ、合格！クエストは国語に加えて理科・社会・算数などを学べる統合版です。' + MIGRATION_NOTE),
         ],
     ),
     dict(
@@ -99,10 +103,10 @@ SUBJECTS = [
         ],
         weak='算数は「解き方を知る」ことと「自力で式を立てる」ことの間に距離があります。アプリは4択で考え方を確認する復習用で、記述の途中式は紙と鉛筆で練習してください。',
         faqs=[
-            ('算数は何問ありますか？', '55単元・6,600問です（2026年10月25日確認、無料・Pro対象を含む）。偏差値40・50・60・70の4段階で、図鑑は540ページあります。'),
+            ('算数は何問ありますか？', '55単元・6,600問です（2026年10月25日確認、無料・Pro対象を含む）。難易度40・50・60・70の4段階で、図鑑は540ページあります。'),
             ('途中式を書く練習はできますか？', 'アプリは4択で答えを選ぶ形式で、途中式を書く記述の採点はしません。考え方は解説で確認し、書く練習は紙のノートと併用してください。'),
             ('算数の単体アプリはありますか？', '算数は合格！クエスト（統合版）で学べます。理科・社会・国語・算数をまとめて切り替えられる「中学受験4科Pro」もあります。'),
-            ('難しい問題（偏差値50〜70）はどこまでの内容ですか？', '偏差値50・60・70の問題はProの対象で、段階が上がるほど応用的な条件の問題が増えます。まずは無料の偏差値40で基礎の抜けを確認するのがおすすめです。'),
+            ('難しい問題（難易度50〜70）はどこまでの内容ですか？', '難易度50・60・70の問題はProの対象で、段階が上がるほど応用的な条件の問題が増えます。まずは無料の難易度40で基礎の抜けを確認するのがおすすめです。'),
         ],
     ),
 ]
@@ -116,9 +120,9 @@ STEPS = [
 ]
 
 HUB_FAQ = [
-    ('中学受験の理科・社会・国語・算数をまとめて学べるアプリはありますか？', '合格！クエストで、理科（36単元7,742問）・社会（53単元5,327問）・国語（94単元4,550問）・算数（55単元6,600問）の4科を1つのアプリで学べます。教科は切り替えて使え、学習記録は教科ごとに残ります。'),
+    ('中学受験の理科・社会・国語・算数をまとめて学べるアプリはありますか？', f'合格！クエストで、理科（{SCI_UNITS}単元{SCI_Q}問）・社会（53単元5,327問）・国語（94単元4,550問）・算数（55単元6,600問）の4科を1つのアプリで学べます。教科は切り替えて使え、学習記録は教科ごとに残ります。'),
     ('中学受験向けの暗記アプリとして使えますか？', 'はい。イラスト図鑑で「見て理解」し、4択クイズで「思い出して確認」し、まちがえた問題を解き直す流れで、暗記を定着させる使い方ができます。くわしくは暗記アプリのページをご覧ください。'),
-    ('何年生から使えますか？', '小学4年生〜6年生の中学受験を想定しています。難易度は偏差値の目安で40・50・60・70に分かれており、基礎から段階的に進められます。'),
+    ('何年生から使えますか？', '小学4年生〜6年生の中学受験を想定しています。難易度は40・50・60・70の4段階を目安としており、基礎から段階的に進められます。'),
     ('解説の漢字にふりがなは付きますか？', '付きます。解説の中で、小学校で習わない難しい漢字には小さくふりがなを表示します（設定でオフにできます）。問題の読み上げは「自動で読む」のスイッチ1つで、毎回ボタンを押さずに聞けます（対象の問題・バージョン1.3.2〜）。'),
     ('塾の勉強の代わりになりますか？', 'いいえ。塾や過去問演習の代わりではなく、習った単元の復習と「覚えたつもり」の確認を補う教材です。合格を保証するものでもありません。'),
 ]
@@ -128,8 +132,8 @@ SITE_FAQ_EXTRA = [
     ('どんな人が対象ですか？', '中心は中学受験に取り組む小学4〜6年生とその保護者です。そのほか、資格試験・語学・運転免許の学習者も同じアプリを使えます。'),
     ('対応端末は？', 'iPhone・iPad（App Store）とAndroid（Google Play）で配信しています。提供する教材や機能はOS・配信バージョンにより異なる場合があるため、各ストアの掲載情報をご確認ください。'),
     ('合格を保証しますか？', 'いいえ。合格や成績向上を保証するものではありません。学習の補助教材としてお使いください。'),
-    ('偏差値40・50・60・70とは何ですか？', '問題の難易度の目安です。基礎の40は無料範囲、50・60・70はProの対象です。実際の模試の偏差値とは異なる、問題の難易度区分です。'),
-    ('合格理科クエスト・合格！国語クエストを使っています。', '単体アプリの購入と学習記録は、アプリ内の案内に沿って合格！クエストへ引き継げます。単体アプリは当面そのまま使えます。'),
+    ('難易度40・50・60・70とは何ですか？', '問題の難易度の目安です。基礎の40は無料範囲、50・60・70はProの対象です。実際の模試の偏差値とは異なる、問題の難易度区分です。'),
+    ('合格理科クエスト・合格！国語クエストを使っています。', MIGRATION_NOTE),
 ]
 
 
@@ -138,14 +142,13 @@ def esc(s):
 
 
 def app_schema(sub):
-    """Extra JSON-LD for the single-subject app when this subject has one (real App Store lookup numbers only)."""
+    """Single-subject app facts; externally sourced Store ratings stay in visible copy only."""
     s = SINGLE.get(sub['cid'])
     if not s:
         return []
     return [{'@type': 'MobileApplication', 'name': s['name'], 'operatingSystem': 'iOS, iPadOS',
              'applicationCategory': 'EducationalApplication', 'downloadUrl': f'{IOS}{s["id"]}',
-             'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'JPY'},
-             'aggregateRating': {'@type': 'AggregateRating', 'ratingValue': s['rating'], 'ratingCount': s['ratings']}}]
+             'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'JPY'}}]
 
 
 def breadcrumb(items):
@@ -161,9 +164,9 @@ def crumbs(items):
 def single_note(sub):
     s = SINGLE.get(sub['cid'])
     if s:
-        return (f'<section class="section white"><div class="wrap split"><div><span class="kicker">単体アプリとの関係</span><h2>{s["name"]}も、<br>同じ内容です。</h2></div>'
+        return (f'<section class="section white"><div class="wrap split"><div><span class="kicker">単体アプリとの関係</span><h2>{s["name"]}は、<br>単体アプリです。</h2></div>'
                 f'<div><p>{sub["name"]}だけを学びたい方向けに、単体アプリ「{s["name"]}」（App Store）があります。合格！クエストは{sub["name"]}に加えて他の教科・教材も1つのアプリで学べる統合版で、'
-                f'{sub["name"]}の問題数は同じです。単体アプリの購入と学習記録は、アプリ内の案内に沿って統合版へ引き継げます。</p>'
+                f'収録内容はアプリや配信バージョンにより異なります。{MIGRATION_NOTE}</p>'
                 f'<a class="text-link" href="{IOS}{s["id"]}" data-store="apple" data-placement="juken-single">{s["name"]}（App Store） ↗</a></div></div></section>')
     if sub['slug'] == 'social':
         return ('<section class="section white"><div class="wrap split"><div><span class="kicker">以前の社会クエストをお使いの方へ</span><h2>社会クエストは、<br>統合版になりました。</h2></div>'
@@ -177,8 +180,8 @@ def single_note(sub):
 def free_pro():
     return ('<section class="section"><div class="wrap"><div class="section-head"><div><span class="kicker">無料とPro</span><h2>無料でできること、<br>Proでできること。</h2></div>'
             '<p>金額はアプリの購入画面（App Store・Google Play）の表示が正です。</p></div>'
-            '<div class="topic-grid"><article class="topic"><h3>無料でできること</h3><p>全教材（各単元のいちばんやさしい段）の偏差値40の問題、まちがい直し、王国マップ、読み上げ（最初の5単元）、図鑑のプレビュー。無料範囲では広告が表示される場合があります。</p></article>'
-            '<article class="topic"><h3>Proでできること</h3><p>偏差値50・60・70の問題、全対象範囲の読み上げ、図鑑の全ページ、高画質の問題イラスト、広告なし。1科目Pro・中学受験4科Pro・全科目Proから選べます。</p></article>'
+            '<div class="topic-grid"><article class="topic"><h3>無料でできること</h3><p>全教材（各単元のいちばんやさしい段）の難易度40の問題、まちがい直し、王国マップ、読み上げ（最初の5単元）、図鑑のプレビュー。無料範囲では広告が表示される場合があります。</p></article>'
+            '<article class="topic"><h3>Proでできること</h3><p>難易度50・60・70の問題、全対象範囲の読み上げ、図鑑の全ページ、高画質の問題イラスト、広告なし。1科目Pro・中学受験4科Pro・全科目Proから選べます。</p></article>'
             '<article class="topic"><h3>おすすめの始め方</h3><p>まず無料の問題を数日使ってみて、お子さんに合うか確かめてから、必要な教科だけProにする進め方がおすすめです。</p></article></div>'
             '<p class="fine" style="margin-top:15px">対象教材・機能・無料範囲は配信バージョンにより異なる場合があります。<a href="/quest/plans/">料金・購入ガイド</a></p></div></section>')
 
@@ -247,20 +250,20 @@ def subject_page(sub, ctx):
 
 def hub_page(ctx):
     stores, faq, card, COURSES = ctx['stores'], ctx['faq'], ctx['card'], ctx['COURSES']
-    st = ctx['STATS']['courses']
+    st = {s['cid']: course_counts(s['cid']) for s in SUBJECTS}
     trail = [('Quest', '/quest/'), ('中学受験ガイド', '/quest/juken/')]
     rows = ''.join(
         f'<tr><th scope="row"><a href="/quest/juken/{s["slug"]}/">{s["name"]}</a></th><td>{st[s["cid"]]["unitCount"]}単元</td><td>{st[s["cid"]]["questions"]:,}問</td><td>{st[s["cid"]]["atlasPages"]}ページ</td>'
         f'<td>{"、".join(d for d, _, _ in s["scope"])}</td></tr>' for s in SUBJECTS)
-    table = ('<div class="table-scroll"><table class="juken-table"><caption>合格！クエストの中学受験4科（2026年10月25日確認、無料・Pro対象を含む）</caption>'
+    table = (f'<div class="table-scroll"><table class="juken-table"><caption>合格！クエストの中学受験4科（{COUNT_DATE_JA}確認、無料・Pro対象を含む）</caption>'
              '<thead><tr><th scope="col">教科</th><th scope="col">単元</th><th scope="col">問題</th><th scope="col">図鑑</th><th scope="col">分野</th></tr></thead>'
              f'<tbody>{rows}</tbody></table></div>')
     cards = ''.join(card(c) for c in COURSES[:4])
     hero = ('<section class="hero"><div class="wrap"><span class="eyebrow">中学受験・小学4〜6年生の家庭学習</span><h1>中学受験の理科・社会・国語・算数アプリ。<br>図鑑とクイズで、4科をまとめて復習。</h1>'
-            '<p class="hero-lead">合格！クエストは、中学受験の4科を1つのアプリで学べる学習アプリです。イラスト図鑑で理解し、4択クイズで確かめ、まちがいは解き直す。偏差値40・50・60・70の4段階で、基礎から段階的に進められます。</p>'
+            '<p class="hero-lead">合格！クエストは、中学受験の4科を1つのアプリで学べる学習アプリです。イラスト図鑑で理解し、4択クイズで確かめ、まちがいは解き直す。難易度40・50・60・70の4段階で、基礎から段階的に進められます。</p>'
             f'{stores("juken-hub")}<p class="fine">ダウンロード無料・アプリ内課金あり。塾や過去問演習を置き換えるものではなく、復習と確認の補助教材です。合格を保証するものではありません。</p></div></section>')
     why = ('<section class="section"><div class="wrap"><div class="section-head"><div><span class="kicker">選ばれ方</span><h2>中学受験の学習アプリを選ぶときの見方。</h2></div></div>'
-           '<div class="topic-grid"><article class="topic"><h3>範囲が合っているか</h3><p>単元と問題数、難易度の段階が、お子さんの現在地に合うかを確認します。このアプリは小4〜小6の4科を、偏差値の目安40〜70で用意しています。</p></article>'
+           '<div class="topic-grid"><article class="topic"><h3>範囲が合っているか</h3><p>単元と問題数、難易度の段階が、お子さんの現在地に合うかを確認します。このアプリは小4〜小6の4科を、難易度の目安40〜70で用意しています。</p></article>'
            '<article class="topic"><h3>理由まで分かるか</h3><p>正解・不正解だけでなく、絵と解説で理由を確かめられるか。図鑑と解説イラストで「なぜ」まで確認できます。</p></article>'
            '<article class="topic"><h3>続けられるか</h3><p>1問1画面・タップで即判定。まちがい直しや、学ぶほど育つ王国マップで、毎日続ける動機づけを助けます。</p></article></div></div></section>')
     subjects = ('<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">科目別ガイド</span><h2>教科から選ぶ。</h2></div><p>各教科の出題範囲・学び方・保護者向けの使い方をまとめています。</p></div>'
@@ -269,7 +272,7 @@ def hub_page(ctx):
     body = (crumbs(trail) + hero + why + subjects + free_pro()
             + f'<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">よくある質問</span><h2>中学受験アプリのよくある質問。</h2></div></div>{faq(HUB_FAQ)}</div></section>')
     return dict(path='/quest/juken/', title='中学受験 理科・社会・国語・算数アプリ｜4科を図鑑とクイズで復習｜合格！クエスト',
-                desc='中学受験の理科・社会・国語・算数を1つのアプリで。理科7,742問・社会5,327問・国語4,550問・算数6,600問、偏差値40〜70の4段階。イラスト図鑑・まちがい直し・読み上げつき。',
+                desc=f'中学受験の理科・社会・国語・算数を1つのアプリで。理科{SCI_Q}問・社会5,327問・国語4,550問・算数6,600問、難易度40〜70の4段階。イラスト図鑑・まちがい直し・読み上げつき。',
                 body=body, faqs=HUB_FAQ, extra=[breadcrumb(trail)])
 
 
@@ -290,7 +293,7 @@ def anki_page(ctx):
               '<article class="flow-card"><span class="num">02</span><h3>思い出して答える</h3><p>見るだけより、4択から選ぶ「思い出す」作業のほうが記憶に残りやすいと言われます。タップですぐ正誤が分かります。</p></article>'
               '<article class="flow-card"><span class="num">03</span><h3>まちがいを解き直す</h3><p>まちがえた問題だけをためて、あとでまとめて解き直し。覚えにくいものだけを繰り返せます。</p></article></div></div></section>')
     subs = ('<section class="section"><div class="wrap"><div class="section-head"><h2>教科別に暗記する。</h2></div><div class="topic-grid">'
-            + ''.join(f'<article class="topic"><h3><a href="/quest/juken/{s["slug"]}/">{s["name"]}</a></h3><p>{s["scope"][0][0]}ほか{len(s["scope"])}分野。{ctx["STATS"]["courses"][s["cid"]]["questions"]:,}問。</p></article>' for s in SUBJECTS)
+            + ''.join(f'<article class="topic"><h3><a href="/quest/juken/{s["slug"]}/">{s["name"]}</a></h3><p>{s["scope"][0][0]}ほか{len(s["scope"])}分野。{course_counts(s["cid"])["questions"]:,}問。</p></article>' for s in SUBJECTS)
             + '</div></div></section>')
     body = (crumbs(trail) + hero + method + subs
             + f'<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">よくある質問</span><h2>暗記アプリのよくある質問。</h2></div></div>{faq(faqs)}</div></section>'
@@ -314,7 +317,7 @@ def faq_page(ctx):
     body = (crumbs(trail) + hero + f'<section class="section white"><div class="wrap">{faq(uniq)}</div></section>' + other_links('faq')
             + '<section class="section"><div class="wrap"><p class="fine">価格はアプリの購入画面の表示が正です。内容は2026年10月27日時点。問い合わせは<a href="/support/">サポート</a>へ。</p></div></section>')
     return dict(path='/quest/faq/', title='よくある質問｜対象・料金・対応端末・単体アプリとの関係｜合格！クエスト',
-                desc='合格！クエストのよくある質問。中学受験4科から資格・語学まで12教材、無料とProの違い、対応端末、合格理科クエスト・合格！国語クエストとの関係。',
+                desc='合格！クエストのよくある質問。中学受験・大学受験・資格・語学など18教材、無料とProの違い、対応端末、合格理科クエスト・合格！国語クエストとの関係。',
                 body=body, faqs=uniq, extra=[breadcrumb(trail)])
 
 

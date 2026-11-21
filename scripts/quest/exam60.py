@@ -9,15 +9,17 @@ Four pages that answer what parents search for in the last two months before the
 Rules agreed with the owner (2026-11-15): do not promote the 図鑑 feature or use its screens; never say the app
 "contains past exam questions" or name real schools; no guarantee wording. The app is described as
 "original one-question-one-answer drills built from an analysis of past exam trends".
-Facts are the standard 中学受験 textbook facts; numbers about the app come from docs/quest/course-stats.json.
+Facts are the standard 中学受験 textbook facts; app totals come from docs/quest/released-gallery-counts.json.
 """
 import html, json
+from content_consistency import course_counts, COUNT_DATE_JA
 
 BASE = 'https://trailfusionai.com'
 APPLE = 'https://apps.apple.com/jp/app/id6775411516'
 DATE = '2026-11-15'
 DATE_JA = '2026年11月15日'
-SCI_Q, SOC_Q = '7,742', '5,327'
+SCI_Q, SOC_Q = (f'{course_counts(cid)["questions"]:,}' for cid in ['junior-science', 'junior-social'])
+SCI_UNITS = course_counts('junior-science')['unitCount']
 
 PAGES = ['science-plants', 'science-animals', 'social-anki', 'last-2-months']
 TITLES = {
@@ -83,10 +85,10 @@ def table(caption, heads, rows):
 
 def cta(ctx, slug, sub):
     return (f'<section class="section mint"><div class="wrap split"><div><span class="kicker">合格！クエストで復習する</span><h2>知識を、<br>一問一答で確かめる。</h2></div>'
-            f'<div><p>合格！クエストは、中学受験の理科（36単元・{SCI_Q}問）と社会（53単元・{SOC_Q}問）などを、1問1画面の4択で復習するアプリです。'
-            '過去の入試の出題傾向を分析して作った、オリジナルの一問一答。問題は偏差値の目安で40・50・60・70の4段階に分かれ、まちがえた問題はためて、あとから解き直せます。'
+            f'<div><p>合格！クエストは、中学受験の理科（{SCI_UNITS}単元・{SCI_Q}問）と社会（53単元・{SOC_Q}問）などを、1問1画面の4択で復習するアプリです。'
+            '過去の入試の出題傾向を分析して作った、オリジナルの一問一答。問題は難易度の目安で40・50・60・70の4段階に分かれ、まちがえた問題はためて、あとから解き直せます。'
             f'{sub}</p>{store_buttons(ctx, slug)}'
-            '<p class="fine">問題の数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。無料は各単元のいちばんやさしい段（偏差値40）の問題。50・60・70はProの対象で、価格はアプリの購入画面が正です。</p></div></div></section>')
+            f'<p class="fine">問題の数は{COUNT_DATE_JA}確認の収録データ（無料・Pro対象を含む）。無料は各単元のいちばんやさしい段（難易度40）の問題。50・60・70はProの対象で、価格はアプリの購入画面が正です。</p></div></div></section>')
 
 
 def related(current):
@@ -190,7 +192,7 @@ def plants(ctx):
         ('中学受験の理科で、植物は入試直前に何から見直せばよいですか？', '①花のつくり（子房→実、胚珠→種子）、②発芽の3条件と種子のつくり、③光合成・呼吸・蒸散の関係、④水と養分の通り道、の順がおすすめです。実験問題が多いので、結果から何が言えるかまで確かめてください。'),
         ('光合成の実験で、なぜ前日から暗いところに置くのですか？', '葉に前からたまっているでんぷんを使い切らせるためです。そうしないと、実験中に光合成でできたでんぷんと区別できなくなります。'),
         ('植物の暗記は、いつまでに終えればよいですか？', '入試の1か月前までに一度ひと通り確認し、残りの期間はまちがえた問題の解き直しに使うと安定します。くわしくは「直前2か月の進め方」のページをご覧ください。'),
-        ('このページの内容は、アプリの問題と同じですか？', 'このページは入試直前の整理用の要点で、アプリは同じ範囲を一問一答で確かめる教材です。アプリの理科は36単元・' + SCI_Q + '問（2026年10月25日確認）。過去の入試の出題傾向を分析して作ったオリジナル問題で、過去問そのものではありません。'),
+        ('このページの内容は、アプリの問題と同じですか？', f'このページは入試直前の整理用の要点で、アプリは同じ範囲を一問一答で確かめる教材です。アプリの理科は{SCI_UNITS}単元・{SCI_Q}問（{COUNT_DATE_JA}確認）。過去の入試の出題傾向を分析して作ったオリジナル問題で、過去問そのものではありません。'),
     ]
     title = '中学受験 理科 植物のまとめ｜花のつくり・光合成・蒸散を入試直前に確認｜合格！クエスト'
     desc = '中学受験の理科・植物を入試直前に総復習。花のつくりと受粉、種子と発芽の条件、光合成・呼吸・蒸散、道管と師管、ふえ方と散布を表で整理。確認問題6問つき。'
@@ -289,7 +291,7 @@ def animals(ctx):
         ('中学受験の理科で、動物・人体は入試直前に何から確認すればよいですか？', '①こん虫の体のつくりと変態、②セキツイ動物5グループの表、③消化液とそのはたらき、④心臓と血液の流れ、⑤呼吸、の順がおすすめです。どれも表にして覚えると、まとめて思い出せます。'),
         ('動脈血と静脈血のちがいは何ですか？', '酸素を多くふくむ血液が動脈血、二酸化炭素を多くふくむ血液が静脈血です。血管の名前（動脈・静脈）とは別の分け方で、肺動脈には静脈血、肺静脈には動脈血が流れます。'),
         ('人体の分野が苦手です。どう復習すればよいですか？', '図や言葉をそのまま覚えるより、「通り道を順番に口で言う」「消化液・血管を表に書き出す」と定着しやすくなります。一問一答でまちがえたものだけを、日をおいて解き直す方法も有効です。'),
-        ('このページの内容は、アプリの問題と同じですか？', 'このページは入試直前の整理用の要点で、アプリは同じ範囲を一問一答で確かめる教材です。アプリの理科は36単元・' + SCI_Q + '問（2026年10月25日確認）。過去の入試の出題傾向を分析して作ったオリジナル問題で、過去問そのものではありません。'),
+        ('このページの内容は、アプリの問題と同じですか？', f'このページは入試直前の整理用の要点で、アプリは同じ範囲を一問一答で確かめる教材です。アプリの理科は{SCI_UNITS}単元・{SCI_Q}問（{COUNT_DATE_JA}確認）。過去の入試の出題傾向を分析して作ったオリジナル問題で、過去問そのものではありません。'),
     ]
     title = '中学受験 理科 動物・人体のまとめ｜こん虫・セキツイ動物・消化・血液を入試直前に確認｜合格！クエスト'
     desc = '中学受験の理科・動物と人体を入試直前に総復習。こん虫のからだと変態、セキツイ動物5グループの比較表、消化液と吸収、心臓と血液の流れ、呼吸、人のたんじょう。確認問題6問つき。'
