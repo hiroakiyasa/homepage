@@ -24,6 +24,52 @@ def check(ok, label):
     (passed if ok else errors).append(label)
 
 
+def check_page_header(page, route, label, origin):
+    if route == '/eigo-quest.html':
+        # This legacy URL intentionally redirects to the integrated Quest course.
+        destination = origin + '/quest/courses/english/'
+        page.wait_for_url(destination, wait_until='load')
+        header = page.locator('body > header.header')
+        brand = header.locator('a.brand[href="/quest/"]')
+        check(page.url == destination and header.count() == 1 and header.is_visible()
+              and brand.count() == 1 and brand.is_visible()
+              and brand.locator('strong').all_text_contents() == ['合格！Quest'],
+              label + ' redirects to the English course with its Quest header')
+    else:
+        check(page.locator('header.br-header').count() == 1, label + ' brand header')
+
+
+def check_home_sections(page, engine):
+    # Material cards have their own layout and background, not a brand picture.bg.
+    images = page.locator('main > section.material-entry img')
+    images.evaluate_all('(images)=>images.forEach(image=>image.loading="eager")')
+    images.evaluate_all('(images)=>Promise.all(images.map(image=>image.decode().catch(()=>{})))')
+    sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(section=>{
+        const material = section.classList.contains('material-entry');
+        if (!material) return {name:section.className, material, ok:!!section.querySelector(':scope > picture.bg img')};
+        const visible = element => {
+            if (!element) return false;
+            const rect = element.getBoundingClientRect(), style = getComputedStyle(element);
+            return rect.width > 0 && rect.height > 0 && style.display !== 'none'
+                && style.visibility !== 'hidden' && Number(style.opacity) > 0;
+        };
+        const heading = section.querySelector(':scope > .material-wrap > h2');
+        const cards = [...section.querySelectorAll('.material-art-card')];
+        const routes = ['/quest/juken/', '/quest/university/', '/quest/qualifications/'];
+        const cardsOK = cards.length === routes.length && cards.every((card, index)=>{
+            const title = card.querySelector('h3'), image = card.querySelector('picture img');
+            const link = card.querySelector(`a[href="${routes[index]}"]`);
+            return visible(title) && !!title.textContent.trim() && visible(image)
+                && image.complete && image.naturalWidth > 0 && visible(link);
+        });
+        return {name:section.className, material,
+            ok:visible(heading) && !!heading.textContent.trim() && cardsOK};
+    })''')
+    check(sum(row['material'] for row in sections) == 1 and all(row['ok'] for row in sections),
+          engine + ' top-page sections show backgrounds or visible material cards '
+          + str([row['name'] for row in sections if not row['ok']]))
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *a, **k):
         super().__init__(*a, directory=str(ROOT), **k)
@@ -67,15 +113,15 @@ try:
                     res = page.goto(origin + route, wait_until='load')
                     label = f'{engine} {route} {width}px'
                     check(res.status == 200, label + ' HTTP 200')
+                    check_page_header(page, route, label, origin)
                     page.locator('img').evaluate_all('(i)=>i.forEach(x=>x.loading="eager")')
                     page.evaluate('Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))')
                     st = page.evaluate('''()=>({o:document.documentElement.scrollWidth>innerWidth+1,
                         b:[...document.images].filter(i=>!i.naturalWidth&&i.src.startsWith(location.origin)).map(i=>i.getAttribute('src')),
-                        h:document.querySelectorAll('h1').length, hd:document.querySelectorAll('header.br-header').length})''')
+                        h:document.querySelectorAll('h1').length})''')
                     check(not st['o'], label + ' no horizontal overflow')
                     check(not st['b'], label + ' images load ' + str(st['b'][:3]))
                     check(st['h'] >= 1, label + ' has an h1')
-                    check(st['hd'] == 1, label + ' brand header')
                     if width in (390, 1440) and route in ('/', '/en/', '/apps.html', '/garage/'):
                         page.screenshot(path=str(OUT / f'{engine}-{route.strip("/").replace("/", "-") or "home"}-{width}.png'), full_page=True)
             page.set_viewport_size({'width': 390, 'height': 844})
@@ -100,8 +146,7 @@ try:
             page.goto(origin + '/ko/', wait_until='load')
             check(page.url.endswith('/ko/') and page.locator('html').get_attribute('lang') == 'ko', engine + ' explicit Korean URL remains localized')
             page.goto(origin + '/', wait_until='load')
-            sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
-            check(all(has for _, has in sections), engine + ' every top-page section has a background ' + str([c for c, h in sections if not h]))
+            check_home_sections(page, engine)
             page.goto(origin + '/reelmake.html', wait_until='load')
             sections = page.evaluate('''()=>[...document.querySelectorAll('main > section')].map(s=>[s.className, !!s.querySelector(':scope > picture.bg img')])''')
             check(all(has for _, has in sections), engine + ' every detail-page section has a background ' + str([c for c, h in sections if not h]))

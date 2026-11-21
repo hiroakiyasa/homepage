@@ -36,7 +36,7 @@ SITE_LEGAL = {'privacy': '/privacy-policy.html', 'terms': '/terms-of-service.htm
 JP_ONLY = {'car-concierge'}  # not distributed on other App Store regions
 
 APPS = [
-    app('quest', 'learn', '合格！クエスト', 'Gokaku! Quest', '中学受験の4科から、資格・語学まで。12教材をひとつのアプリで。',
+    app('quest', 'learn', '合格！クエスト', 'Gokaku! Quest', '中学受験・大学受験・資格・語学を、ひとつのアプリで。',
         'Entrance-exam science, social studies, Japanese and math, plus certifications and languages. 12 courses in one app.',
         '/quest/', 'com.gokakushakaiquest.app', legal={'privacy': '/gokaku-quest-privacy.html', 'terms': '/gokaku-quest-terms.html', 'support': '/support/'}),
     app('mochi', 'heart', 'もちのへや', 'Mochi', 'もちもちの相棒と話して、気持ちをことばにする。毎日いっしょに過ごすペットアプリ。',
@@ -66,11 +66,11 @@ APPS = [
         'A strategy puzzle built on the classic stick-taking game, with a golem who grows as you win.', '/wood-golem.html', legal=SITE_LEGAL),
     app('hacking-timer', 'focus', 'ハッキングタイマー', 'Hacking Timer', 'Apple Watchで使うインターバルタイマー。集中と休憩のリズムをつくる。',
         'An interval timer for Apple Watch that keeps a rhythm of focus and rest.', '/hacking-timer.html', legal=SITE_LEGAL),
-    app('rika-quest', 'learn', '合格理科クエスト', 'Gokaku Rika Quest', '以前の理科の単科アプリ。学習記録と購入は合格！クエストへ引き継げます。',
-        'The earlier single-subject science app. Progress and purchases can move to Gokaku! Quest.',
+    app('rika-quest', 'learn', '合格理科クエスト', 'Gokaku Rika Quest', '以前の理科の単科アプリ。購入・学習記録の扱いはアプリ内の案内をご確認ください。',
+        'The earlier single-subject science app. Check the in-app guidance for how purchases and progress are handled.',
         '/rika-quest.html', 'com.gokakurikaquest.app', group='legacy', legal={'privacy': '/rika-quest-privacy.html', 'terms': '/rika-quest-terms.html', 'support': '/rika-quest-support.html'}),
-    app('kokugo-quest', 'learn', '合格！国語クエスト', 'Gokaku! Kokugo Quest', '以前の国語の単科アプリ。学習記録と購入は合格！クエストへ引き継げます。',
-        'The earlier single-subject Japanese-language app. Progress and purchases can move to Gokaku! Quest.',
+    app('kokugo-quest', 'learn', '合格！国語クエスト', 'Gokaku! Kokugo Quest', '以前の国語の単科アプリ。購入・学習記録の扱いはアプリ内の案内をご確認ください。',
+        'The earlier single-subject Japanese-language app. Check the in-app guidance for how purchases and progress are handled.',
         '/kokugo-quest.html', 'com.gokakukokugoquest.app', group='legacy', legal={'privacy': '/kokugo-quest-privacy.html', 'support': '/kokugo-quest-support.html'}),
 ]
 BY = {a['slug']: a for a in APPS}
@@ -191,7 +191,7 @@ def footer(lang):
             f'<div class="br-footer-bottom"><span>© 2026 TrailFusion AI</span><span>{t("アプリの提供者名（App Store）：hiroaki yuasa", "Publisher on the App Store: hiroaki yuasa")}</span></div></div></footer>')
 
 
-def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand/og.jpg', noindex=False):
+def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand/og.jpg', noindex=False, has_translation=True):
     url = BASE + ('/' + path.removesuffix('index.html') if path != 'index.html' else '/')
     alt_url = BASE + alt_path
     if lang == 'en' and og == '/assets/brand/og.jpg':
@@ -203,7 +203,8 @@ def page(path, lang, title, desc, body, alt_path, schema=None, og='/assets/brand
              {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title, 'description': desc, 'inLanguage': lang,
               'isPartOf': {'@type': 'WebSite', '@id': BASE + '/#site', 'name': 'TrailFusion AI', 'url': BASE + '/'}}]
     graph += schema or []
-    hreflang = '' if noindex else (f'<link rel="alternate" hreflang="{lang}" href="{url}"><link rel="alternate" hreflang="{"en" if lang == "ja" else "ja"}" href="{alt_url}">'
+    # Navigation may link to a language's home or catalog without being a translation.
+    hreflang = '' if noindex or not has_translation else (f'<link rel="alternate" hreflang="{lang}" href="{url}"><link rel="alternate" hreflang="{"en" if lang == "ja" else "ja"}" href="{alt_url}">'
                                    f'<link rel="alternate" hreflang="x-default" href="{url if lang == "ja" else alt_url}">')
     text = f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -232,12 +233,10 @@ def app_schema(lang):
         return schema()
     out = []
     for a in LIVE:
-        s = STORE[a['slug']]
         item = {'@type': 'MobileApplication', 'name': a['ja'] if lang == 'ja' else a['en'], 'operatingSystem': 'iOS' + (', Android' if a['android'] else ''),
                 'applicationCategory': 'EducationalApplication' if a['cat'] == 'learn' else 'TravelApplication' if a['cat'] == 'travel' else 'GameApplication' if a['cat'] == 'play' else 'UtilitiesApplication',
                 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'JPY'}, 'publisher': {'@id': BASE + '/#org'},
                 'downloadUrl': f'https://apps.apple.com/jp/app/id{a["ios"]}'}
-        if s['ratings'] >= 5:
-            item['aggregateRating'] = {'@type': 'AggregateRating', 'ratingValue': s['rating'], 'ratingCount': s['ratings']}
+        # Store ratings remain visible with attribution; they are not reviews collected on this site.
         out.append(item)
     return out

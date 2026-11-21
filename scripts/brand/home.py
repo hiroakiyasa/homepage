@@ -52,7 +52,7 @@ def proof(lang):
     latest = max(STORE[a['slug']]['updated'] for a in LIVE)
     y, m, d = latest.split('-')
     latest_txt = t(f'{int(m)}月{int(d)}日', f'{["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][int(m)]} {int(d)}')
-    cells = [(t('公開中のアプリ', 'Apps on the App Store'), str(len(LIVE)), t('すべて無料でダウンロード', 'All free to download')),
+    cells = [(t('App Store掲載数', 'App Store listings'), str(len(STORE)), t('2026/10/25時点・日本', 'Japan, as of October 25, 2026')),
              (t('App Store の評価', 'App Store ratings'), f'{RATINGS:,}', t('件（全アプリの合計）', 'ratings across all apps')),
              (t('合格！クエストの問題', 'Questions in Gokaku! Quest'), f'{Q_QUESTIONS:,}', t('問（12教材の合計）', 'across 12 courses')),
              (t('いちばん新しい更新', 'Latest update'), latest_txt, t(f'{y}年', y))]
@@ -168,7 +168,7 @@ def maker(lang):
 <div>{head(t("つくり手", "The maker"), t("ひとりの親が、<br><mark>家族と一緒に</mark>、<br>つくっています。", "Made by one parent,<br><mark>with the family</mark>."),
            t("TrailFusion AI は、湯浅 浩章（Hiro）の個人開発スタジオです。家族で中学受験に向き合い、親子で日本中を車で旅し、キャンピングカーを自分の手で作ってきました。その「困った」と「楽しい」を、アプリにしています。",
              "TrailFusion AI is the indie studio of Hiroaki Yuasa (Hiro). Facing entrance exams as a family, driving across Japan with the kids and building a camper van by hand: the troubles and the fun become apps."))}
-<dl class="maker-nums"><div><dt>{t("公開中のアプリ", "Live apps")}</dt><dd>{len(LIVE)}</dd></div><div><dt>{t("車で旅した都道府県", "Prefectures driven")}</dt><dd>47</dd></div><div><dt>{t("走った距離", "Distance driven")}</dt><dd>{t("約5万km", "~50,000 km")}</dd></div></dl>
+<dl class="maker-nums"><div><dt>{t("App Store掲載数", "App Store listings")}<br><small>{t("2026/10/25時点・日本", "Japan, October 25, 2026")}</small></dt><dd>{len(STORE)}</dd></div><div><dt>{t("車で旅した都道府県", "Prefectures driven")}</dt><dd>47</dd></div><div><dt>{t("走った距離", "Distance driven")}</dt><dd>{t("約5万km", "~50,000 km")}</dd></div></dl>
 <div class="actions"><a class="btn btn-sub" href="{about}">{t("つくり手について", "About the maker (Japanese)")} →</a><a class="btn btn-sub" href="/partners/">{t("協業のご相談", "Partnerships (Japanese)")} →</a></div></div>
 <div class="garage">{bg("garage", cls="bg garage-bg")}<div class="garage-in"><span class="tag">{t("つくり手のガレージ", "From the garage")}</span>
 <h3>{t("アプリの外の、<br>つくり手の時間。", "Life outside the apps.")}</h3><p>{t("アプリではありませんが、アプリづくりの原点になった趣味の記録です。", "Not apps, but the hobbies that started them.")}</p>
@@ -181,7 +181,7 @@ FAQ = {
            ('アプリは無料ですか？', 'すべて無料でダウンロードできます。一部の機能や教材はアプリ内課金です。内容と価格は各アプリの購入画面でご確認ください。'),
            ('問い合わせはどこからできますか？', 'サポートページ、またはメール（trailfusionai@gmail.com）からお問い合わせください。アプリ別の利用規約とプライバシーポリシーもサポートページにまとめています。'),
            ('ハイエース整備やキャンピングカーDIYのページはどこにありますか？', 'このページの「つくり手のガレージ」にある「キャンピングカーDIY」から3Dの間取り、「整備」から3Dで愛車の仕組みを直接開けます。制作ガイドや整備記録も、それぞれのページから使えます。'),
-           ('以前の理科・国語のアプリを使っています。', '学習記録と購入は、合格！クエストへ引き継げます。引き継ぎ方は合格！クエストの料金・購入ガイドをご覧ください。')],
+           ('以前の理科・国語のアプリを使っています。', '購入・学習記録の扱いはアプリや購入商品によって異なります。アプリ内の案内と料金・購入ガイドをご確認ください。')],
     'en': [('Who is TrailFusion AI?', 'An indie studio run by Hiroaki Yuasa. On the App Store, the publisher name is "hiroaki yuasa".'),
            ('Are the apps free?', 'All apps are free to download. Some features and courses are in-app purchases; check the purchase screen in each app for details and prices.'),
            ('How do I contact you?', 'Use the support page or email trailfusionai@gmail.com. App-specific terms and privacy policies are listed on the support page.'),
