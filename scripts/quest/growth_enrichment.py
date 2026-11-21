@@ -162,6 +162,8 @@ def enrich_university(config):
         route = '/quest/university/' + (c['slug'] + '/' if c else '')
         path = ROOT / route.lstrip('/') / 'index.html'
         text = path.read_text()
+        text = text.replace('2026年11月21日確認の配信対象は、この6科目です。公開対象の収録単元を掲載しています。', '現在学べる大学受験の6科目をご紹介しています。気になる科目から、収録単元を確認できます。')
+        text = text.replace('2026年11月21日確認の公開対象教材に基づく単元一覧です。', '学べる単元の一覧です（2026年11月21日確認）。')
         crumbs = '<nav class="growth-breadcrumb" aria-label="パンくず"><div class="growth-wrap"><a href="/quest/">合格！クエスト</a><span aria-hidden="true"> / </span>' + ('<a href="/quest/university/">大学受験</a><span aria-hidden="true"> / </span><span>' + esc(c['name']) + '</span>' if c else '<span>大学受験</span>') + '</div></nav>'
         text = insert(text, 'breadcrumbs', crumbs, '<section class="growth-hero">')
         if c:
@@ -173,8 +175,8 @@ def enrich_university(config):
             related = '<section class="growth-section"><div class="growth-wrap"><h2>ほかの大学受験科目も確認する</h2><div class="growth-links">' + ''.join('<a href="/quest/university/' + x['slug'] + '/" data-growth-route="university" data-course="' + x['id'] + '">' + esc(x['name']) + ' →</a>' for x in config['universityCourses'] if x['id'] != c['id']) + '</div><p class="growth-note">大学受験教材は日本語で学ぶ教材です。学習する言語を選びたい方は、<a href="/quest/languages/">日本語クエスト・English Quest</a>をご覧ください。</p></div></section>'
             text = insert(text, 'related-subjects', related, '<section class="growth-section" id="download">')
         else:
-            rows = ''.join('<tr><th scope="row"><a href="/quest/university/' + x['slug'] + '/">' + esc(x['name']) + '</a></th><td>' + esc(course_units(x)) + '</td><td>' + esc('・'.join(d['name'] for d in x['domains'] if d['name'] != 'オリジナル模試')) + '</td></tr>' for x in config['universityCourses'])
-            overview = '<section class="growth-section soft"><div class="growth-wrap"><h2>6科目の収録範囲を比べる</h2><p class="growth-section-lead">公開対象の収録一覧は、315の学習単元と数学ⅠAのオリジナル模試4回、合計319項目です。各科目のページで単元名をすべて確認できます。</p><div class="growth-table-wrap"><table class="growth-table"><caption>大学受験の公開対象教材（2026年11月21日確認）</caption><thead><tr><th scope="col">科目</th><th scope="col">収録内容</th><th scope="col">主な分野</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="growth-note">この6科目は日本語で学ぶ教材です。受験する試験の全範囲を保証するものではありません。学校や参考書の学習、実際の過去問演習と組み合わせ、単元ごとの理解確認にお使いください。</p></div></section>'
+            rows = ''.join('<tr><th scope="row"><a href="/quest/university/' + x['slug'] + '/">' + esc(x['name']) + '</a></th><td>' + esc(course_units(x)) + '</td><td><span class="growth-mobile-label">主な分野</span>' + esc('・'.join(d['name'] for d in x['domains'] if d['name'] != 'オリジナル模試')) + '</td></tr>' for x in config['universityCourses'])
+            overview = '<section class="growth-section soft"><div class="growth-wrap"><h2>6科目の収録範囲を比べる</h2><p class="growth-section-lead">6科目で学べるのは、315の学習単元と4回の数学ⅠAオリジナル模試。合計319項目の内容を、各科目のページで確認できます。</p><div class="growth-table-wrap"><table class="growth-table"><caption>学べる科目と収録内容（2026年11月21日確認）</caption><thead><tr><th scope="col">科目</th><th scope="col">収録内容</th><th scope="col">主な分野</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="growth-note">この6科目は日本語で学ぶ教材です。受験する試験の全範囲を保証するものではありません。学校や参考書の学習、実際の過去問演習と組み合わせ、単元ごとの理解確認にお使いください。</p></div></section>'
             text = insert(text, 'coverage-table', overview, '<section class="growth-section soft"><div class="growth-wrap"><h2>まとまった勉強の合間に、ひとつ復習。</h2>')
         path.write_text(assets(text))
         changed.append(route)
