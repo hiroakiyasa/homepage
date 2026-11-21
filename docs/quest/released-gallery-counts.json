@@ -1,0 +1,97 @@
+{
+  "sourceCommit": "fb3473df88d2431a1b35b46f0f818ffdc0647693",
+  "releaseManifestSha256": "3bd30cb49707a2cd0cbd6105ad49888b51a41c66049727018a2d08a1571c4166",
+  "releaseStructureSha256": "549bf0bca413b68c6797e3dcde489601d9316e3340f95a473993a27fb67b8b14",
+  "courses": {
+    "junior-science": {
+      "unitCount": 38,
+      "uniqueQuestionCount": 7964,
+      "pageCount": 539
+    },
+    "junior-social": {
+      "unitCount": 53,
+      "uniqueQuestionCount": 5327,
+      "pageCount": 630
+    },
+    "junior-kokugo": {
+      "unitCount": 94,
+      "uniqueQuestionCount": 4550,
+      "pageCount": 500
+    },
+    "junior-math": {
+      "unitCount": 55,
+      "uniqueQuestionCount": 6600,
+      "pageCount": 540
+    },
+    "fp-japan": {
+      "unitCount": 64,
+      "uniqueQuestionCount": 3840,
+      "pageCount": 240
+    },
+    "bookkeeping-japan": {
+      "unitCount": 267,
+      "uniqueQuestionCount": 2164,
+      "pageCount": 318
+    },
+    "it-passport-japan": {
+      "unitCount": 46,
+      "uniqueQuestionCount": 2760,
+      "pageCount": 552
+    },
+    "japanese-everyday": {
+      "unitCount": 91,
+      "uniqueQuestionCount": 10124,
+      "pageCount": 766
+    },
+    "spi3-japan": {
+      "unitCount": 86,
+      "uniqueQuestionCount": 7004,
+      "pageCount": 430
+    },
+    "english-travel": {
+      "unitCount": 1733,
+      "uniqueQuestionCount": 42464,
+      "pageCount": 426
+    },
+    "takken-japan": {
+      "unitCount": 83,
+      "uniqueQuestionCount": 4980,
+      "pageCount": 753
+    },
+    "driver-license-japan": {
+      "unitCount": 76,
+      "uniqueQuestionCount": 1520,
+      "pageCount": 380
+    },
+    "joho1-kyotsu-japan": {
+      "unitCount": 45,
+      "uniqueQuestionCount": 6512,
+      "pageCount": 211
+    },
+    "math-ia-kyotsu-japan": {
+      "unitCount": 52,
+      "uniqueQuestionCount": 2000,
+      "pageCount": 208
+    },
+    "chiri-kyotsu-japan": {
+      "unitCount": 55,
+      "uniqueQuestionCount": 7800,
+      "pageCount": 384
+    },
+    "japanhistory-kyotsu-japan": {
+      "unitCount": 60,
+      "uniqueQuestionCount": 8400,
+      "pageCount": 239
+    },
+    "chemistry-kyotsu-japan": {
+      "unitCount": 52,
+      "uniqueQuestionCount": 6240,
+      "pageCount": 234
+    },
+    "physics-kyotsu-japan": {
+      "unitCount": 55,
+      "uniqueQuestionCount": 6600,
+      "pageCount": 259
+    }
+  }
+}

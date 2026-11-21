@@ -37,5 +37,9 @@
   "/quest/university/chemistry/",
   "/quest/university/physics/",
   "/quest/languages/",
-  "/en/quest/"
+  "/en/quest/",
+  "/quest/materials/",
+  "/quest/study/science-observation/",
+  "/quest/study/information-binary/",
+  "/quest/study/bookkeeping-journal/"
 ]

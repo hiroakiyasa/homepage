@@ -1,0 +1,1663 @@
+{
+  "schema": "quest-material-gallery-v1",
+  "asOf": "2026-11-21",
+  "sourceCommit": "fb3473df88d2431a1b35b46f0f818ffdc0647693",
+  "runtimeInputLockSha256": "b25b69c5a04107af19bb15edef0e2053e03d8ff454b17a18c8e7d9fad49cac06",
+  "sourceManifestSha256": "5da3afcf1560ba64b19abc4efbe58f346b7acdd2d1c0c6a409ff60f99dcf0f91",
+  "releasedCourseCount": 18,
+  "courses": [
+    {
+      "courseId": "junior-science",
+      "title": "中学受験・理科",
+      "group": "school",
+      "href": "/quest/courses/science/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 38,
+      "question": {
+        "unitId": "life-observation",
+        "unitTitle": "生物の観察と分類",
+        "sourceKey": "life-observation-l40-q02",
+        "visualKind": "life-observation-l40-q02",
+        "packPath": "junior-science/life-observation.json",
+        "packRawSha256": "d0dd99f10e1a1c8ecefe438b0c892d131164aabbaa1bd2266bd3e2f4204fe752",
+        "packCanonicalSha256": "a3b39cc5030d36c68a03509047dc9a8b1ace3f719eeb80edaabb86a2c895394b",
+        "question": {
+          "sourceId": "life-observation-l40-q02",
+          "question": "顕微鏡でプレパラートをのせる場所はどれですか。",
+          "options": [
+            {
+              "label": "鏡筒",
+              "sub": ""
+            },
+            {
+              "label": "ステージ",
+              "sub": ""
+            },
+            {
+              "label": "接眼レンズ",
+              "sub": ""
+            },
+            {
+              "label": "反射鏡",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 1,
+          "hint": "観察した事実と、生き物の体のつくりを結びつけて考えよう。",
+          "explanation": "正解の「ステージ」が正しい理由は、ステージはプレパラートを平らに置いて固定する台です。標本を動かさずに観察するための場所なので、最初にここへ置きます。 この問題の「顕微鏡でプレパラートをのせる場所はどれですか」という条件が、その判断の根拠です。次に似た問題では、見つけた場所、形、数、時刻などを具体的に記録し、体のつくりやくらしと結びつけて考えましょう。",
+          "visualKind": "life-observation-l40-q02",
+          "level": 40,
+          "coverageTags": [
+            "microscope",
+            "equipment"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/junior-science-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "中学受験・理科「生物の観察と分類」の問題の図解",
+          "source": "external/rika-app/content/science-quiz-images/v1/life-observation/life-observation-l40-q02-before.webp",
+          "sourceSha256": "8c369d0629f5a53bdfec820115c8cba4ddab719baa70bdfa66365a04670bc3fe",
+          "sha256": "8c369d0629f5a53bdfec820115c8cba4ddab719baa70bdfa66365a04670bc3fe",
+          "bytes": 22398,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "life-observation",
+        "title": "1身近な生き物の観察",
+        "pageKey": "study:life-observation:p23-79E21B02",
+        "assetKey": null,
+        "asset": {
+          "src": "/assets/quest/materials/junior-science-atlas.webp",
+          "width": 720,
+          "height": 1280,
+          "alt": "中学受験・理科「1身近な生き物の観察」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/291e529a00a5b9f5d80e7d7d59c27ab60b214147ce84c4126c969c25971c0656.webp",
+          "sourceSha256": "6e04d0f253d05e0b3743b40c6d9b62063a84f62d4c0241048dc59fa49a1fcdcb",
+          "sha256": "6e04d0f253d05e0b3743b40c6d9b62063a84f62d4c0241048dc59fa49a1fcdcb",
+          "bytes": 295676,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "junior-social",
+      "title": "中学受験・社会",
+      "group": "school",
+      "href": "/quest/courses/social/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 53,
+      "question": {
+        "unitId": "edo-sakoku",
+        "unitTitle": "江戸幕府の成立と鎖国",
+        "sourceKey": "edo-sakoku-01",
+        "visualKind": "edo-sakoku-01",
+        "packPath": "junior-social/edo-sakoku.json",
+        "packRawSha256": "fe32fa47dae7968d37bde5397986d5373e9cb1e795d7b8f4a493e4fbba53550f",
+        "packCanonicalSha256": "27d545962fd92c6c674c2571045729da4c9ce210e236df4abb41b7c5beac6086",
+        "question": {
+          "question": "徳川家康が征夷大将軍に任命され、江戸幕府を開いたのは何年か。",
+          "options": [
+            {
+              "label": "1600年",
+              "sub": "関ヶ原の戦いの年"
+            },
+            {
+              "label": "1603年",
+              "sub": "幕府成立の年"
+            },
+            {
+              "label": "1615年",
+              "sub": "大阪の陣の年"
+            },
+            {
+              "label": "1635年",
+              "sub": "参勤交代制度化の年"
+            }
+          ],
+          "correctIndex": 1,
+          "hint": "関ヶ原の戦いの3年後に開かれた。",
+          "explanation": "1603年に徳川家康が征夷大将軍となり江戸幕府を開いた。1600年は関ヶ原の戦い、1615年は大阪夏の陣、1635年は参勤交代の制度化の年。",
+          "visualKind": "edo-sakoku-01",
+          "level": 40
+        },
+        "asset": {
+          "src": "/assets/quest/materials/junior-social-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "中学受験・社会「江戸幕府の成立と鎖国」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/shakai-quiz-images/v1/edo-sakoku/edo-sakoku-01-before.webp",
+          "sourceSha256": "cad93fa81ff5557cfab6f011407a56c360602bc5d6ed3c3338418931f8e637b1",
+          "sha256": "cad93fa81ff5557cfab6f011407a56c360602bc5d6ed3c3338418931f8e637b1",
+          "bytes": 32804,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public versioned runtime URL, observed bytes SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "agriculture-region",
+        "title": "米づくり",
+        "pageKey": "study:agriculture-region:agriculture-region-074",
+        "assetKey": null,
+        "asset": {
+          "src": "/assets/quest/materials/junior-social-atlas.webp",
+          "width": 720,
+          "height": 1216,
+          "alt": "中学受験・社会「米づくり」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/7a277fde3cf520bd8aea7f563b608f2b5a0f98edc5f1d04b3c86c5918ae35d0f.webp",
+          "sourceSha256": "85cbf851c5ab8dfb76179c145ae6f32d198f593d404e29048a62bcdeb926f049",
+          "sha256": "85cbf851c5ab8dfb76179c145ae6f32d198f593d404e29048a62bcdeb926f049",
+          "bytes": 162986,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "junior-kokugo",
+      "title": "中学受験・国語",
+      "group": "school",
+      "href": "/quest/courses/japanese-language/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 94,
+      "question": {
+        "unitId": "bushu-kakusu",
+        "unitTitle": "部首・画数・筆順",
+        "sourceKey": "bushu-kakusu-q1",
+        "visualKind": "bushu-kakusu-q1",
+        "packPath": "junior-kokugo/bushu-kakusu.json",
+        "packRawSha256": "87289233309c1f94e34177978cb3f251e61fc640925ae9681e0600be2c1e72e1",
+        "packCanonicalSha256": "595bea44c23c12c4834becc3cf00982b3facf94825de282459615aa7d0e85feb",
+        "question": {
+          "question": "「花」の部首はどれですか。",
+          "options": [
+            {
+              "label": "にんべん",
+              "sub": "人に関係する部首"
+            },
+            {
+              "label": "さんずい",
+              "sub": "水に関係する部首"
+            },
+            {
+              "label": "きへん",
+              "sub": "木に関係する部首"
+            },
+            {
+              "label": "くさかんむり",
+              "sub": "植物に関係する部首"
+            }
+          ],
+          "correctIndex": 3,
+          "hint": "「花」を構成する二つの部分を観察し、どちらが部首に使われるか考えましょう。",
+          "explanation": "「花」は上に「艹」があるので部首は「くさかんむり」です。「にんべん」「さんずい」「きへん」は、字の左側に付くことが多い部首です。草や葉など、植物に関係する字にも「艹」が使われます。",
+          "visualKind": "bushu-kakusu-q1",
+          "level": 40,
+          "visualProps": {
+            "kw": "花",
+            "sub": "くさかんむり（艹）"
+          }
+        },
+        "asset": null,
+        "rasterAvailability": "No raster mapped for this representative item"
+      },
+      "atlas": {
+        "unitId": "kanji-write-1",
+        "title": "国語図鑑｜全体地図",
+        "pageKey": "generated:kokugo-zukan-p001",
+        "assetKey": "kokugo-app:kokugo-zukan-p001",
+        "asset": {
+          "src": "/assets/quest/materials/junior-kokugo-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "中学受験・国語「国語図鑑｜全体地図」の図鑑",
+          "source": "external/kokugo-app/content/kokugo-zukan-image-pipeline/v2/generated/final/kokugo-zukan-p001.webp",
+          "sourceSha256": "5da1c520b751f480880f790f40641a2d4e69a081add7654a0ee474b7182c9e23",
+          "sha256": "5da1c520b751f480880f790f40641a2d4e69a081add7654a0ee474b7182c9e23",
+          "bytes": 344432,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "atlas"
+    },
+    {
+      "courseId": "junior-math",
+      "title": "中学受験・算数",
+      "group": "school",
+      "href": "/quest/courses/math/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 55,
+      "question": {
+        "unitId": "seisu-keisan",
+        "unitTitle": "整数の計算と計算のくふう",
+        "sourceKey": "seisu-keisan-l40-q01",
+        "visualKind": "seisu-keisan-l40-q01",
+        "packPath": "junior-math/seisu-keisan.json",
+        "packRawSha256": "d2e96267353d47820b55d56b3a487d19d25d5c245b0823d0f037c8681cb9306a",
+        "packCanonicalSha256": "9970ff1b8e300e97db088f92343da7d0b04ef28c7754d6bde75b7fde27790615",
+        "question": {
+          "question": "48÷6×5を左から正しく計算した答えは？",
+          "options": [
+            {
+              "label": "40",
+              "sub": ""
+            },
+            {
+              "label": "13",
+              "sub": ""
+            },
+            {
+              "label": "18",
+              "sub": ""
+            },
+            {
+              "label": "30",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "かけ算とわり算だけなら左から進めよう。",
+          "explanation": "かけ算とわり算だけの式は左から計算します。48÷6=8、8×5=40です。",
+          "visualKind": "seisu-keisan-l40-q01",
+          "level": 40
+        },
+        "asset": {
+          "src": "/assets/quest/materials/junior-math-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "中学受験・算数「整数の計算と計算のくふう」の問題の図解",
+          "source": "external/sansu_quest/content/math-quiz-images/v3-grid/seisu-keisan/seisu-keisan-l40-q01-before.webp",
+          "sourceSha256": "52f986285b7bae86201d8fdc9f568dbaf8aac67140c55c4dfabc173ad64c3e1b",
+          "sha256": "52f986285b7bae86201d8fdc9f568dbaf8aac67140c55c4dfabc173ad64c3e1b",
+          "bytes": 15446,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "seisu-keisan",
+        "title": "算数の世界をつなぐ地図",
+        "pageKey": "generated:sansu-zukan-0001",
+        "assetKey": "sansu_quest:sansu-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/junior-math-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "中学受験・算数「算数の世界をつなぐ地図」の図鑑",
+          "source": "external/sansu-app/sansu_normalized/image_generation_v2/generated/IMG_0001.png",
+          "sourceSha256": "7c679baec9e1fb94655407d07ee18f6a7ccb657973129056fb19bf9291447ab9",
+          "sha256": "b70436faa4df8d63161c004115dbf7206f966689d99298f1e260e3ffb795b3f4",
+          "bytes": 2412276,
+          "transform": "lossless WebP format conversion, original dimensions retained",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "fp-japan",
+      "title": "FP",
+      "group": "qualification",
+      "href": "/quest/courses/fp/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 64,
+      "question": {
+        "unitId": "life-01",
+        "unitTitle": "ライフプランニングの基礎",
+        "sourceKey": "life-01-l40-01",
+        "visualKind": "life-01-l40-q01",
+        "packPath": "fp-japan/life-01.json",
+        "packRawSha256": "f10163b2a2b9e4aa0e4958690dd65010ff299ac7ae61ec0acdd2eb0318b67caa",
+        "packCanonicalSha256": "909046bf4f04f8a3c237664851ce41af274fef7edcb4f7eaab60a525ed7404dd",
+        "question": {
+          "sourceId": "life-01-l40-01",
+          "question": "ファイナンシャル・プランナーが顧客対応で最優先すべき原則はどれか。",
+          "options": [
+            {
+              "label": "顧客利益の優先",
+              "sub": ""
+            },
+            {
+              "label": "自社商品の販売",
+              "sub": ""
+            },
+            {
+              "label": "契約成立の重視",
+              "sub": ""
+            },
+            {
+              "label": "手数料の最大化",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "何のために助言するかを考えよう",
+          "explanation": "FPは顧客の利益を最優先し、公正・誠実に業務を行う職業倫理が求められる。自社の利益を優先してはならない。",
+          "visualKind": "life-01-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "職業倫理"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/fp-japan-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "FP「ライフプランニングの基礎」の問題の図解",
+          "source": "external/fp_quest/content/quiz-images/v1/life-01/life-01-l40-q01-before.webp",
+          "sourceSha256": "7ffa165f51d63236ebd568299e0920131395750b7e1e3a7243895996643acd4a",
+          "sha256": "7ffa165f51d63236ebd568299e0920131395750b7e1e3a7243895996643acd4a",
+          "bytes": 26246,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "life-01",
+        "title": "FP参考書 1ページ",
+        "pageKey": "fp-page-001",
+        "assetKey": null,
+        "asset": {
+          "src": "/assets/quest/materials/fp-japan-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "FP「FP参考書 1ページ」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/e32085d1f37905225ffdeed9ffd6f030565805e0ba6fdaa76a5e744308df0692.png",
+          "sourceSha256": "d8412c02a3cc9ce249e444bab2f375c47cabf39778f3206b29adc055868384e3",
+          "sha256": "a93afc2862c31b70dc30982ff2ab9bc15905edf0013180087ed41c2bf2d0c325",
+          "bytes": 1245966,
+          "transform": "lossless WebP format conversion, original dimensions retained",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "bookkeeping-japan",
+      "title": "簿記",
+      "group": "qualification",
+      "href": "/quest/courses/bookkeeping/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 267,
+      "question": {
+        "unitId": "bk-intro-purpose",
+        "unitTitle": "簿記の目的",
+        "sourceKey": "bq-bk-intro-purpose-001",
+        "visualKind": "bookkeeping-bq-bk-intro-purpose-001-d58c17e3d5",
+        "packPath": "bookkeeping-japan/bk-intro-purpose.json",
+        "packRawSha256": "ca5c2b85415911bd5b45c53f9930ded9a7403009c446bd4da3f60156cfb4cbdf",
+        "packCanonicalSha256": "419438d8b8dfeb0ef2a2da45971a978e7f2dc8db1b0f15fe68aba1e29efb5441",
+        "question": {
+          "sourceId": "bq-bk-intro-purpose-001",
+          "question": "【簿記初級｜簿記の目的】青葉商事の演習ケース1：青葉商事の月次締めで「簿記の目的」の定義を確認しています。最も適切な説明はどれですか。",
+          "options": [
+            {
+              "label": "中心となる定義・考え方は「仕訳を勘定口座へ転記し残高を把握する。」である。",
+              "sub": ""
+            },
+            {
+              "label": "中心となる定義・考え方は「貸借対照表を構成する資産・負債・純資産の意味と増減を区別する。」である。",
+              "sub": ""
+            },
+            {
+              "label": "中心となる定義・考え方は「企業活動を記録・集計し、財政状態と経営成績を報告する目的を理解する。」である。",
+              "sub": ""
+            },
+            {
+              "label": "中心となる定義・考え方は「一つの取引を借方科目・貸方科目と金額に分解する。」である。",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 2,
+          "hint": "「簿記の目的」の中心論点を、今回は「定義」の観点に限定して判断しましょう。",
+          "explanation": "正解は「中心となる定義・考え方は「企業活動を記録・集計し、財政状態と経営成績を報告する目的を理解する。」である。」です。この問題は「簿記の目的」を定義の観点から確認しています。ほかの選択肢は主に「仕訳、総勘定元帳、資産・負債・純資産」など別論点を同じ観点で説明したもので、この単元には当てはまりません。単元の中心論点である「企業活動を記録・集計し、財政状態と経営成績を報告する目的を理解する。」を、認識→測定・計算→記帳→表示へつなげて理解してください。",
+          "visualKind": "bookkeeping-bq-bk-intro-purpose-001-d58c17e3d5",
+          "level": 40,
+          "questionFamily": "definition",
+          "coverageTags": [
+            "intro",
+            "bk-intro-purpose",
+            "definition",
+            "level-40"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/bookkeeping-japan-question.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "簿記「簿記の目的」の問題の図解",
+          "source": "external/bookkeeping_quest/content/bookkeeping-quiz-image-pipeline/v2-16x9/split/batch-001/bookkeeping-bq-bk-intro-purpose-001-d58c17e3d5-before.webp",
+          "sourceSha256": "9124821978bcc5849cf21baedaebb82006abbcaaa4fc4e7ea8760dd513622393",
+          "sha256": "9124821978bcc5849cf21baedaebb82006abbcaaa4fc4e7ea8760dd513622393",
+          "bytes": 292856,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "bk-intro-purpose",
+        "title": "簿記の目的",
+        "pageKey": "generated:bookkeeping-zukan-001-bk-intro-purpose",
+        "assetKey": "bookkeeping_quest:bookkeeping-zukan-001-bk-intro-purpose",
+        "asset": {
+          "src": "/assets/quest/materials/bookkeeping-japan-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "簿記「簿記の目的」の図鑑",
+          "source": "external/bookkeeping_quest/content/bookkeeping-zukan-image-pipeline/v1/output/webp/bookkeeping-zukan-001-bk-intro-purpose.webp",
+          "sourceSha256": "384d68912f03461b2a866c3e6cd4bbf38129362e9cebc6d9ad40edf9914a0fa9",
+          "sha256": "384d68912f03461b2a866c3e6cd4bbf38129362e9cebc6d9ad40edf9914a0fa9",
+          "bytes": 271884,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "it-passport-japan",
+      "title": "ITパスポート",
+      "group": "qualification",
+      "href": "/quest/courses/it-passport/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 46,
+      "question": {
+        "unitId": "strategy-company",
+        "unitTitle": "企業活動と企業の責任",
+        "sourceKey": "strategy-company-l40-q01",
+        "visualKind": "strategy-company-l40-q01",
+        "packPath": "it-passport-japan/strategy-company.json",
+        "packRawSha256": "6cf7025af71a8894cdc825906654d76a12e3f99f6664ab6a4c8eadf8639b78f3",
+        "packCanonicalSha256": "729c0dfeaa7010ee21a6536fe2e2041bb2d453a74d746ca6eac572b809ede617",
+        "question": {
+          "sourceId": "strategy-company-l40-q01",
+          "question": "企業経営の根本となる価値観や基本的な考え方。この用語はどれか。",
+          "options": [
+            {
+              "label": "経営理念",
+              "sub": ""
+            },
+            {
+              "label": "3C分析",
+              "sub": ""
+            },
+            {
+              "label": "RFID",
+              "sub": ""
+            },
+            {
+              "label": "SaaS",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "用語の定義と目的を対応させる。",
+          "explanation": "経営理念は、企業経営の根本となる価値観や基本的な考え方。",
+          "visualKind": "strategy-company-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "経営理念"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/it-passport-japan-question.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "ITパスポート「企業活動と企業の責任」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/itq-quiz-images/v1/strategy-company/strategy-company-l40-q01-before.webp",
+          "sourceSha256": "fc7ed3eb19f5d0a88e6979b76754b9aa65a9ae9c0c1b7e2166e1d482e8975a36",
+          "sha256": "fc7ed3eb19f5d0a88e6979b76754b9aa65a9ae9c0c1b7e2166e1d482e8975a36",
+          "bytes": 407300,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public versioned runtime URL, observed bytes SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "strategy-company",
+        "title": "企業活動と企業の責任",
+        "pageKey": "generated:it-zukan-p0001",
+        "assetKey": "IT_quest:it-zukan-p0001",
+        "asset": {
+          "src": "/assets/quest/materials/it-passport-japan-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "ITパスポート「企業活動と企業の責任」の図鑑",
+          "source": "external/IT_quest/content/it-zukan-image-pipeline/v1/output/webp/it-zukan-p0001.webp",
+          "sourceSha256": "ded5197052c2c95e6a76415d65bf20986873238f884f2a56568242460d6e277c",
+          "sha256": "ded5197052c2c95e6a76415d65bf20986873238f884f2a56568242460d6e277c",
+          "bytes": 240722,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "japanese-everyday",
+      "title": "日本語クエスト",
+      "group": "language",
+      "href": "/quest/courses/japanese/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "en",
+        "ja",
+        "vi",
+        "zh-Hans",
+        "fil",
+        "ne",
+        "pt",
+        "id",
+        "ko",
+        "th",
+        "es",
+        "ar",
+        "hi"
+      ],
+      "unitCount": 91,
+      "question": {
+        "unitId": "a1-l01",
+        "unitTitle": "あいさつ",
+        "sourceKey": "a1-l01-040-01",
+        "visualKind": "a1-l01-l40-q01",
+        "packPath": "japanese-everyday/a1-l01.json",
+        "packRawSha256": "ff4c5e50f450b1e5a5791b71cdf1f0e5af09bf33d2085afa2444954bf1d893c7",
+        "packCanonicalSha256": "bf6ca43a86650d0bb3341b97c86891d7c8d8f5f0172e0f1c72bf15665d9a5564",
+        "question": {
+          "sourceId": "a1-l01-040-01",
+          "question": "朝[あさ]、会社[かいしゃ]で同僚[どうりょう]に会[あ]いました。「＿＿。」",
+          "romaji": "Asa, kaisha de dōryō ni aimashita. \"＿＿.\"",
+          "options": [
+            {
+              "label": "おはようございます",
+              "romaji": "Ohayō gozaimasu"
+            },
+            {
+              "label": "こんにちは",
+              "romaji": "Konnichiwa"
+            },
+            {
+              "label": "こんばんは",
+              "romaji": "Konbanwa"
+            },
+            {
+              "label": "おやすみなさい",
+              "romaji": "Oyasuminasai"
+            }
+          ],
+          "correctIndex": 0,
+          "hint": {
+            "en": "Think about the greeting used when arriving at work in the morning.",
+            "id": "Pikirkan salam yang diucapkan saat tiba di tempat kerja pada pagi hari.",
+            "ko": "아침에 직장에 출근했을 때 하는 인사를 떠올려 보세요.",
+            "ne": "बिहान काममा पुग्दा गरिने अभिवादनबारे सोच्नुहोस्।",
+            "pt": "Pense na saudação usada ao chegar ao trabalho pela manhã.",
+            "th": "ลองนึกถึงคำทักทายที่ใช้เมื่อมาถึงที่ทำงานในตอนเช้าดูนะ",
+            "tl": "Isipin mo kung anong bati ang ginagamit pagdating sa trabaho sa umaga.",
+            "vi": "Hãy nhớ lại lời chào được dùng khi bạn đến chỗ làm vào buổi sáng.",
+            "zh": "想想早上到公司上班时打招呼用的问候语。"
+          },
+          "explanation": {
+            "en": "'Ohayō gozaimasu' is the standard morning greeting. 'Konnichiwa' is for daytime, 'Konbanwa' for the evening, and 'Oyasuminasai' is said before going to bed.",
+            "id": "'Ohayō gozaimasu' adalah salam standar di pagi hari. 'Konnichiwa' digunakan pada siang hari, 'Konbanwa' pada malam hari, dan 'Oyasuminasai' diucapkan sebelum tidur.",
+            "ko": "'Ohayō gozaimasu'는 표준적인 아침 인사예요. 'Konnichiwa'는 낮에, 'Konbanwa'는 저녁에 쓰며, 'Oyasuminasai'는 자기 전에 하는 인사예요.",
+            "ne": "'Ohayō gozaimasu' बिहान गरिने सामान्य अभिवादन हो। 'Konnichiwa' दिउँसोको लागि, 'Konbanwa' साँझको लागि र 'Oyasuminasai' सुत्न जानुअघि भनिन्छ।",
+            "pt": "'Ohayō gozaimasu' é a saudação matinal padrão. 'Konnichiwa' é para o período do dia/tarde, 'Konbanwa' para a noite e 'Oyasuminasai' é dito antes de ir dormir.",
+            "th": "'Ohayō gozaimasu' คือคำทักทายมาตรฐานในตอนเช้า ส่วน 'Konnichiwa' ใช้ตอนกลางวัน 'Konbanwa' ใช้ตอนเย็น และ 'Oyasuminasai' ใช้พูดก่อนเข้านอน",
+            "tl": "Ang 'Ohayō gozaimasu' ang standard na bati sa umaga. Ang 'Konnichiwa' ay para sa hapon, 'Konbanwa' naman sa gabi, at 'Oyasuminasai' ay sinasabi bago matulog.",
+            "vi": "'Ohayō gozaimasu' là lời chào chuẩn vào buổi sáng. 'Konnichiwa' dùng vào ban ngày, 'Konbanwa' dùng vào buổi tối, còn 'Oyasuminasai' được nói trước khi đi ngủ.",
+            "zh": "'Ohayō gozaimasu' 是标准的早晨问候语。'Konnichiwa' 用于白天，'Konbanwa' 用于晚上，而 'Oyasuminasai' 则在睡觉前说。"
+          },
+          "visualKind": "a1-l01-l40-q01",
+          "level": 40,
+          "unitId": "a1-l01",
+          "jlptLevel": "N5",
+          "jlptDomain": "vocabulary",
+          "jlptItemType": "context",
+          "jlptConfidence": "low",
+          "examReviewState": "provisional",
+          "examContentHash": "fdf55268e637a466b0fc3c55f574f160412dd7186fcad88dd528746be35723dd",
+          "mappingBasis": "CEFR A1 / Irodori Starter; curriculum prior, not item-level review",
+          "examTargets": [
+            "life",
+            "JLPT",
+            "JFT"
+          ],
+          "jftEligible": true,
+          "jftLevel": "A1",
+          "jftSection": "script-vocabulary",
+          "jftCategory": "word-usage"
+        },
+        "asset": {
+          "src": "/assets/quest/materials/japanese-everyday-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "日本語クエスト「あいさつ」の問題の図解",
+          "source": "external/nihongo_quest/content/nihongo-quiz-images/v2-grid/a1-l01/a1-l01-l40-q01-before.webp",
+          "sourceSha256": "388ed6d2e32b0ed57d38aabba0d07b9ee82c6bd5434bfbc2c17ccb59fb7d7bf3",
+          "sha256": "388ed6d2e32b0ed57d38aabba0d07b9ee82c6bd5434bfbc2c17ccb59fb7d7bf3",
+          "bytes": 26220,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "a1-l01",
+        "title": "あいさつ · 1",
+        "pageKey": "nihongo-page-1",
+        "assetKey": null,
+        "asset": {
+          "src": "/assets/quest/materials/japanese-everyday-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "日本語クエスト「あいさつ · 1」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/28b6654c16c9d72dad5865673cc9d6fe71ec40b296f97643cb04b1d3c20e1b93.webp",
+          "sourceSha256": "b52185a2834d09f8c2a949af4233b5f7fe0562082b29806475f3de04746db35f",
+          "sha256": "b52185a2834d09f8c2a949af4233b5f7fe0562082b29806475f3de04746db35f",
+          "bytes": 271006,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "spi3-japan",
+      "title": "SPI3",
+      "group": "qualification",
+      "href": "/quest/courses/spi3/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 86,
+      "question": {
+        "unitId": "two-word-relations",
+        "unitTitle": "二語の関係",
+        "sourceKey": "spi-two-word-relations-001",
+        "visualKind": "two-word-relations-q001",
+        "packPath": "spi3-japan/two-word-relations.json",
+        "packRawSha256": "b5792282efe43cf5bb3dbb823a22e86f0aabd3a55c95025ac79053467127db79",
+        "packCanonicalSha256": "6ffef541ee8a1c40638334219441d7b2e6fbeb2cad65fb01c0106ab95fd01220",
+        "question": {
+          "sourceId": "spi-two-word-relations-001",
+          "question": "社内文書を正確に読み取るために、「果物：りんご」と同じ二語関係のものを選んでください。",
+          "options": [
+            {
+              "label": "動物：犬",
+              "sub": ""
+            },
+            {
+              "label": "はさみ：切る",
+              "sub": ""
+            },
+            {
+              "label": "木材：机",
+              "sub": ""
+            },
+            {
+              "label": "ページ：本",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "条件を整理してから選びましょう。",
+          "explanation": "基準の二語は「上位下位」の関係です。同じ関係になるのは「動物：犬」です。",
+          "visualKind": "two-word-relations-q001",
+          "level": 40,
+          "coverageTags": [
+            "two-word-relations",
+            "あ-verbal-relation-and-usage",
+            "reference-covered"
+          ],
+          "archetypeId": "あ-verbal-relation-and-usage",
+          "archetypeVariantId": "あ-verbal-relation-and-usage::definition-check",
+          "solutionMethod": "語句の役割を定義する",
+          "commonTrap": "表面的な語形だけで対応する",
+          "formTags": [
+            "test-center",
+            "paper",
+            "web"
+          ],
+          "referenceCoverage": [
+            "あ:5",
+            "あ:23"
+          ],
+          "scenarioFamily": "語句同士の関係分類"
+        },
+        "asset": {
+          "src": "/assets/quest/materials/spi3-japan-question.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "SPI3「二語の関係」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/spi3-quiz-images/v1/two-word-relations/two-word-relations-q001-before.webp",
+          "sourceSha256": "194e23ccac57bf3e099d425edaccc1229c9d1d6b6abac5edb07fe58c4cc64f2c",
+          "sha256": "194e23ccac57bf3e099d425edaccc1229c9d1d6b6abac5edb07fe58c4cc64f2c",
+          "bytes": 346638,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public versioned runtime URL, observed bytes SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "two-word-relations",
+        "title": "二語の関係｜全体像",
+        "pageKey": "generated:spi3-japan-zukan-0001",
+        "assetKey": "spi_quest:spi3-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/spi3-japan-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "SPI3「二語の関係｜全体像」の図鑑",
+          "source": "external/spi_quest/content/spi-zukan-image-pipeline/v1/output/webp/spi3-japan-zukan-0001.webp",
+          "sourceSha256": "ea35bc7771398e698d2230e91109c9fb04e1a4e2982e107b923e2aa3f7053cde",
+          "sha256": "ea35bc7771398e698d2230e91109c9fb04e1a4e2982e107b923e2aa3f7053cde",
+          "bytes": 221624,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "english-travel",
+      "title": "English Quest",
+      "group": "language",
+      "href": "/quest/courses/english/",
+      "learningLocale": "en",
+      "explanationLocales": [
+        "en",
+        "ja"
+      ],
+      "unitCount": 1733,
+      "question": {
+        "unitId": "conv-directions",
+        "unitTitle": "会話: 道案内の聞き方・教え方",
+        "sourceKey": "conv-directions-q1",
+        "visualKind": "conv-directions-q1",
+        "packPath": "english-travel/conv-directions.json",
+        "packRawSha256": "6bdeeade9a04422fb6418a83209c9a2f1f3e2c4b726794a6caea4615441998fe",
+        "packCanonicalSha256": "1380c5393a06f947b168dd52125185d1add471a8bf65ecd349e222345c2308a2",
+        "question": {
+          "question": "A: \"Excuse me, how do I get to the train station?\" B: \"______\"",
+          "options": [
+            {
+              "label": "Go straight and turn left at the traffic lights."
+            },
+            {
+              "label": "Yes, I like trains very much."
+            },
+            {
+              "label": "The station is my favourite place."
+            },
+            {
+              "label": "I go to the station every day."
+            }
+          ],
+          "correctIndex": 0,
+          "hint": {
+            "en": "The person is asking for directions. Give a clear route.",
+            "ja": "相手は道を聞いています。明確な道順を教えましょう。",
+            "es": "La persona pide indicaciones. Da una ruta clara.",
+            "pt": "A pessoa está pedindo direções. Dê uma rota clara.",
+            "id": "Orang tersebut meminta petunjuk arah. Berikan rute yang jelas.",
+            "vi": "Người đó đang hỏi đường. Hãy chỉ rõ tuyến đường.",
+            "th": "คนนั้นกำลังถามทาง ให้เส้นทางที่ชัดเจน",
+            "ko": "상대방이 길을 묻고 있어요. 명확한 경로를 알려주세요.",
+            "zh": "对方在问路，请给出清晰的路线。",
+            "ar": "يسأل الشخص عن الطريق. أعطِه مسارًا واضحًا.",
+            "hi": "व्यक्ति रास्ता पूछ रहा है। स्पष्ट मार्ग बताएं।",
+            "fil": "Direksiyon ang hinihingi ng tao. Magbigay ng malinaw na ruta.",
+            "ne": "व्यक्तिले बाटो सोधिरहेको छ। स्पष्ट मार्ग बताउनुहोस्।"
+          },
+          "explanation": {
+            "en": "\"Go straight and turn left at the traffic lights\" is a direct, useful response to \"How do I get to...?\" The other options do not give directions.",
+            "ja": "\"Go straight and turn left at the traffic lights\" は道順の質問への直接的な答えです。他の選択肢は道案内になっていません。",
+            "es": "\"Go straight and turn left at the traffic lights\" es la respuesta útil. Las demás opciones no dan indicaciones.",
+            "pt": "\"Go straight and turn left at the traffic lights\" é a resposta útil. As outras não dão direções.",
+            "id": "\"Go straight and turn left at the traffic lights\" adalah jawaban langsung. Pilihan lain tidak memberi petunjuk arah.",
+            "vi": "\"Go straight and turn left at the traffic lights\" là câu trả lời trực tiếp. Các lựa chọn khác không chỉ đường.",
+            "th": "\"Go straight and turn left at the traffic lights\" ตอบตรงประเด็น ตัวเลือกอื่นไม่ได้บอกเส้นทาง",
+            "ko": "\"Go straight and turn left at the traffic lights\"는 길 안내에 직접적인 답입니다. 나머지는 길을 알려주지 않아요.",
+            "zh": "\"Go straight and turn left at the traffic lights\" 直接回答了问路请求，其他选项未给出路线。",
+            "ar": "\"Go straight and turn left at the traffic lights\" هو الردّ المباشر على سؤال الاتجاهات. البدائل الأخرى لا تعطي إرشادات.",
+            "hi": "\"Go straight and turn left at the traffic lights\" रास्ता पूछने का सीधा जवाब है। अन्य विकल्प दिशा-निर्देश नहीं देते।",
+            "fil": "Direkta at kapaki-pakinabang na sagot sa \"How do I get to...?\" ang \"Go straight and turn left at the traffic lights\". Hindi nagbibigay ng direksiyon ang ibang opsyon.",
+            "ne": "\"Go straight and turn left at the traffic lights\" भनेको \"How do I get to...?\" को सीधा र उपयोगी जवाफ हो। अरू विकल्पहरूले बाटो बताउँदैनन्।"
+          },
+          "visualKind": "conv-directions-q1",
+          "level": 40
+        },
+        "asset": {
+          "src": "/assets/quest/materials/english-travel-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "English Quest「会話: 道案内の聞き方・教え方」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/eigo/v1/quiz-images/conv-directions-q1-before.webp",
+          "sourceSha256": "a0419367126feaa9a6bb906a2fb191857e9c5ab90bfdf40b8a0dda417b7ea3b2",
+          "sha256": "a0419367126feaa9a6bb906a2fb191857e9c5ab90bfdf40b8a0dda417b7ea3b2",
+          "bytes": 41468,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public versioned runtime URL, observed bytes SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "grammar-be",
+        "title": "文の穴が、名詞を呼ぶ",
+        "pageKey": "grammar:grammar-master-0009",
+        "assetKey": null,
+        "asset": {
+          "src": "/assets/quest/materials/english-travel-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "English Quest「文の穴が、名詞を呼ぶ」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/864a6ca98cb2f40f39bb5f3e5107cd4da03c9fb8f94b9aa786ce879a9a59624e.webp",
+          "sourceSha256": "3acc46f49ee1a2cba91f5ab6d4c047ac06a40bd062f7405554602cc72824b0a9",
+          "sha256": "3acc46f49ee1a2cba91f5ab6d4c047ac06a40bd062f7405554602cc72824b0a9",
+          "bytes": 513684,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "takken-japan",
+      "title": "宅建士",
+      "group": "qualification",
+      "href": "/quest/courses/takken/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 83,
+      "question": {
+        "unitId": "takken-urban-areas",
+        "unitTitle": "都市計画法① 都市計画区域・準都市計画区域",
+        "sourceKey": "takken-urban-areas-intro-q01",
+        "visualKind": "takken-urban-areas-intro-q01",
+        "packPath": "takken-japan/takken-urban-areas.json",
+        "packRawSha256": "cc9863042a171abb0b868fc07bb639f6f50c022dbe807487af85e0723050a3f1",
+        "packCanonicalSha256": "a7c25031bc9c8f1ba9d8ad80dbc53e0378629e057490192d9f1085528b70138a",
+        "question": {
+          "sourceId": "takken-urban-areas-intro-q01",
+          "question": "都市計画区域の基本的な役割はどれか。",
+          "options": [
+            {
+              "label": "農地だけを保護する区域",
+              "sub": ""
+            },
+            {
+              "label": "計画的な街づくりを行う区域",
+              "sub": ""
+            },
+            {
+              "label": "税率を統一する区域",
+              "sub": ""
+            },
+            {
+              "label": "建築を全面禁止する区域",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 1,
+          "hint": "都市計画区域の意味の主体・区域・目的を整理する。",
+          "explanation": "都市計画区域は一体の都市として整備・開発・保全する必要のある区域。",
+          "visualKind": "takken-urban-areas-intro-q01",
+          "level": 40,
+          "coverageTags": [
+            "都市計画区域の意味"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/takken-japan-question.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "宅建士「都市計画法① 都市計画区域・準都市計画区域」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/a0beb555e0a20c4675f20982508f99fb2352b019fdd5eb1a66927c73cc38060f.webp",
+          "sourceSha256": "a0beb555e0a20c4675f20982508f99fb2352b019fdd5eb1a66927c73cc38060f",
+          "sha256": "a0beb555e0a20c4675f20982508f99fb2352b019fdd5eb1a66927c73cc38060f",
+          "bytes": 63406,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "takken-rights-capacity",
+        "title": "民法総則・権利能力・行為能力｜全体像",
+        "pageKey": "generated:takken-zukan-v2-rights-capacity-01",
+        "assetKey": "takken_quest:takken-zukan-v2-rights-capacity-01",
+        "asset": {
+          "src": "/assets/quest/materials/takken-japan-atlas.webp",
+          "width": 941,
+          "height": 1672,
+          "alt": "宅建士「民法総則・権利能力・行為能力｜全体像」の図鑑",
+          "source": "runtime/apps/mobile/assets/starter/4302cfb1535374a52347b746be674ca8a1601d591361c5be717ed03c96fa4523.webp",
+          "sourceSha256": "5e26fd5d49084cef13827c331c85ad2a803c6867e235c67ff9b73af92ac12c36",
+          "sha256": "5e26fd5d49084cef13827c331c85ad2a803c6867e235c67ff9b73af92ac12c36",
+          "bytes": 258020,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "exact production runtime input",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "driver-license-japan",
+      "title": "運転免許",
+      "group": "qualification",
+      "href": "/quest/courses/driver-license/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 76,
+      "question": {
+        "unitId": "safe-mindset",
+        "unitTitle": "安全運転の基本姿勢",
+        "sourceKey": "dlq-safe-mindset-01-a",
+        "visualKind": "dlq-safe-mindset-01-a",
+        "packPath": "driver-license-japan/safe-mindset.json",
+        "packRawSha256": "c5bbab56cbcbdced34b22825f3c150e3e0bf3f6c3b496d16ddbaf638c30b5866",
+        "packCanonicalSha256": "1c26bc366ed084e7992f296b1ce152e2f802bee420cd9424ed0271eabd6766c5",
+        "question": {
+          "sourceId": "dlq-safe-mindset-01-a",
+          "question": "次の記述は正しいですか。\n運転者は交通法令を守るだけでなく、周囲への思いやりを持って安全を優先する。",
+          "options": [
+            {
+              "label": "正しい",
+              "sub": ""
+            },
+            {
+              "label": "誤り",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "「法令遵守」の条件と例外を確認しましょう。",
+          "explanation": "正しい記述です。法令遵守と他者への配慮の両方が安全運転の基本です。 要点は「運転者は交通法令を守るだけでなく、周囲への思いやりを持って安全を優先する。」です。",
+          "visualKind": "dlq-safe-mindset-01-a",
+          "level": 40,
+          "coverageTags": [
+            "法令遵守"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/driver-license-japan-question.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "運転免許「安全運転の基本姿勢」の問題の図解",
+          "source": "external/driver_license_quest/content/driver-license-quiz-image-pipeline/v2-grid/split/batch-001/dlq-safe-mindset-01-a-before.webp",
+          "sourceSha256": "a9fe54f483b2ae440d28df01d748853bb5a2fabdb06ccb0d39ee515ee774b525",
+          "sha256": "a9fe54f483b2ae440d28df01d748853bb5a2fabdb06ccb0d39ee515ee774b525",
+          "bytes": 451206,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "safe-mindset",
+        "title": "安全運転の基本姿勢｜法令遵守",
+        "pageKey": "generated:driver-license-japan-zukan-0001",
+        "assetKey": "driver_license_quest:driver-license-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/driver-license-japan-atlas.webp",
+          "width": 960,
+          "height": 540,
+          "alt": "運転免許「安全運転の基本姿勢｜法令遵守」の図鑑",
+          "source": "external/driver_license_quest/content/driver-license-zukan-image-pipeline/v4-current-grid/output/webp/driver-license-japan-zukan-0001.webp",
+          "sourceSha256": "e8b118e4deff5af3903f73a3f4726a6aae70112441ce47c8c56ca706992425bd",
+          "sha256": "e8b118e4deff5af3903f73a3f4726a6aae70112441ce47c8c56ca706992425bd",
+          "bytes": 72358,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "frozen external runtime image",
+          "runtimeReference": "apps/mobile/src/data/starter-bundle.generated.cjs",
+          "runtimeReferenceSha256": "4545328398a4cb6e2dda9aca346787316bd2f2871a4109ec837ba62a4facc6a8"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "joho1-kyotsu-japan",
+      "title": "大学受験・情報Ⅰ",
+      "group": "university",
+      "href": "/quest/university/information/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 45,
+      "question": {
+        "unitId": "joho-d1-information",
+        "unitTitle": "情報の特性と信頼性の判断",
+        "sourceKey": "joho-d1-information-l40-q01",
+        "visualKind": "joho-d1-information-l40-q01",
+        "packPath": "joho1-kyotsu-japan/joho-d1-information.json",
+        "packRawSha256": "8952ae49a865abcda1d42420069888491cbd340df73d6fc6a1d649456a9e3a5a",
+        "packCanonicalSha256": "a9653b62165e1e50ff3ec4b781f85f49d1bbbc37f50934b5f70d593b5c2bc42a",
+        "question": {
+          "sourceId": "joho-d1-information-l40-q01",
+          "question": "気温計が記録した数値に、測定場所と時刻を付けて暑さ対策の判断に使った。この例で、データを情報として役立てるために加えたものはどれか。",
+          "options": [
+            {
+              "label": "数値を複製するための変換規則",
+              "sub": ""
+            },
+            {
+              "label": "数値を送信するための通信速度",
+              "sub": ""
+            },
+            {
+              "label": "数値を解釈するための文脈や意味",
+              "sub": ""
+            },
+            {
+              "label": "数値を保存するための空き容量",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 2,
+          "hint": "同じ数値でも、何をいつ測ったかで受け取り方が変わります。",
+          "explanation": "測定場所や時刻という文脈を与えることで、数値を状況の判断に役立つ情報として解釈できます。保存容量や通信速度は、数値の意味を説明するものではありません。",
+          "visualKind": "joho-d1-information-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "データと情報",
+            "文脈と意味"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/joho1-kyotsu-japan-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "大学受験・情報Ⅰ「情報の特性と信頼性の判断」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/a9d7dc294452aa18abd0ab85267d4ebe762180c67ac58cb1dd9ba6fb2a098dc3.webp",
+          "sourceSha256": "a9d7dc294452aa18abd0ab85267d4ebe762180c67ac58cb1dd9ba6fb2a098dc3",
+          "sha256": "a9d7dc294452aa18abd0ab85267d4ebe762180c67ac58cb1dd9ba6fb2a098dc3",
+          "bytes": 18234,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "joho-d1-information",
+        "title": "データに意味を与える・情報が広がる",
+        "pageKey": "study:joho-d1-information:joho1-kyotsu-japan-zukan-0001",
+        "assetKey": "joho1-review:joho1-kyotsu-japan-zukan-0001",
+        "asset": null,
+        "rasterAvailability": "No raster mapped for this representative item"
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "math-ia-kyotsu-japan",
+      "title": "大学受験・数学ⅠA",
+      "group": "university",
+      "href": "/quest/university/math-ia/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 52,
+      "question": {
+        "unitId": "I01",
+        "unitTitle": "実数・絶対値・数の大小",
+        "sourceKey": "I01-40-Q01",
+        "visualKind": "I01-40-Q01",
+        "packPath": "math-ia-kyotsu-japan/I01.json",
+        "packRawSha256": "37a79d178ab6cbd325bdbb736217c12c972e1a4a8fe33b1bfbf036fce250813c",
+        "packCanonicalSha256": "939f6181dd9625c4bdf4c06e2c5d9e99dc4389a148bdb491ba2ba394ab8a5a5c",
+        "question": {
+          "sourceId": "I01-40-Q01",
+          "visualKind": "I01-40-Q01",
+          "type": "math-mark",
+          "level": 40,
+          "question": "【4枚の数カード】4枚のカードに書かれた数のうち、有理数は何個あるか。",
+          "title": "4枚の数カード",
+          "options": [],
+          "hint": "整数も有理数に含まれる。循環小数は、10の累乗をかけて元の小数を引くと分数に直せる。",
+          "explanation": "有理数とは整数の比で表せる実数である。負の整数や循環小数も有理数であり、根号が書かれているだけで無理数とは限らない。今回は根号を整理してから分類する。",
+          "math": {
+            "setId": "I01-40-S01",
+            "setTitle": "4枚の数カード",
+            "setPosition": [
+              1,
+              4
+            ],
+            "stimulus": "4枚のカードに、$p=-\\sqrt{25}$、$q=\\dfrac{(\\sqrt2)^2}{4}$、$r=\\dfrac{\\sqrt{18}}3$、$s=0.272727\\ldots$ と書かれている。$s$ は「27」が限りなく繰り返される循環小数である。平方根の記号は0以上の平方根を表す。",
+            "prompt": "4枚のカードに書かれた数のうち、有理数は何個あるか。",
+            "slots": [
+              {
+                "id": "I01-40-Q01-a",
+                "label": "有理数の個数",
+                "inputType": "integer",
+                "answer": "3",
+                "points": 1,
+                "accepted": [],
+                "display": "3"
+              }
+            ],
+            "attachments": [],
+            "steps": [
+              "$p=-5$ は整数なので有理数。$q=2/4=1/2$ も有理数である。",
+              "$r=\\sqrt{18}/3=3\\sqrt2/3=\\sqrt2$ は無理数である。",
+              "$100s=27.272727\\ldots$ から $s$ を引くと $99s=27$。したがって $s=27/99=3/11$ は有理数。",
+              "有理数はp、q、sの3個である。"
+            ],
+            "pitfalls": [
+              "根号を含む見た目だけで無理数と決めない。",
+              "無限小数でも循環小数は有理数。"
+            ],
+            "estimatedSeconds": 70,
+            "dependsOn": [],
+            "mock": null
+          }
+        },
+        "asset": null,
+        "rasterAvailability": "Excluded from web display after visual review: numerical labels do not match the selected question text.",
+        "excludedCandidateSourceSha256": "f0ceaae814dcfb0ead3d86ff3b11ddce697b7197e0539bd54057d07a8eec1b86"
+      },
+      "atlas": {
+        "unitId": "I01",
+        "title": "実数を並べる数直線",
+        "pageKey": "generated:math-ia-kyotsu-japan-zukan-0001",
+        "assetKey": "kyotsu_math_ia_quest:math-ia-kyotsu-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/math-ia-kyotsu-japan-atlas.webp",
+          "width": 981,
+          "height": 1602,
+          "alt": "大学受験・数学ⅠA「実数を並べる数直線」の図鑑",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/609f227d6b3fbd751a20f986f18ae224ceacdbaf290ee0349e63fb0967269b67.webp",
+          "sourceSha256": "609f227d6b3fbd751a20f986f18ae224ceacdbaf290ee0349e63fb0967269b67",
+          "sha256": "609f227d6b3fbd751a20f986f18ae224ceacdbaf290ee0349e63fb0967269b67",
+          "bytes": 101642,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-library-media.references.js",
+          "runtimeReferenceSha256": "e8d9cee0a1160ef485f76619d8a8374cd7f834725eeb3f666b4663eeb952f7a6"
+        }
+      },
+      "primary": "atlas"
+    },
+    {
+      "courseId": "chiri-kyotsu-japan",
+      "title": "大学受験・地理",
+      "group": "university",
+      "href": "/quest/university/geography/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 55,
+      "question": {
+        "unitId": "chiri-d1-globe",
+        "unitTitle": "地球上の位置と時差",
+        "sourceKey": "chiri-d1-globe-l40-q01",
+        "visualKind": "chiri-d1-globe-l40-q01",
+        "packPath": "chiri-kyotsu-japan/chiri-d1-globe.json",
+        "packRawSha256": "076554ee05f9fc88133b060a22d68d056cf321cc4f837961983906f5d32bbfa6",
+        "packCanonicalSha256": "eccbd67d7ec8c1c314a6a4943aee4764e9d775ff6781f0b65ef7722037f78865",
+        "question": {
+          "sourceId": "chiri-d1-globe-l40-q01",
+          "question": "標準時の基準となる経線が45度異なる二つの地域では、標準時の差は何時間か。両地域ともサマータイムは考えない。",
+          "options": [
+            {
+              "label": "4時間",
+              "sub": ""
+            },
+            {
+              "label": "1時間",
+              "sub": ""
+            },
+            {
+              "label": "3時間",
+              "sub": ""
+            },
+            {
+              "label": "6時間",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 2,
+          "hint": "地球は24時間で360度回る。1時間あたり何度か。",
+          "explanation": "地球は24時間で360度回転するので、基準経線の経度差15度が標準時の1時間の差に対応する。45度÷15度＝3時間。4時間と6時間は、基準経線がそれぞれ60度、90度異なる場合の差である。",
+          "visualKind": "chiri-d1-globe-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "経度15度で1時間",
+            "時差"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/chiri-kyotsu-japan-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "大学受験・地理「地球上の位置と時差」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/59a9fafb2b8b87a6edf8e9250f75c489825144e2a721ff8435951c79c065483d.webp",
+          "sourceSha256": "59a9fafb2b8b87a6edf8e9250f75c489825144e2a721ff8435951c79c065483d",
+          "sha256": "59a9fafb2b8b87a6edf8e9250f75c489825144e2a721ff8435951c79c065483d",
+          "bytes": 24492,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "chiri-d1-globe",
+        "title": "地球上の位置と時差：緯度・経度と地球上の位置",
+        "pageKey": "generated:chiri-kyotsu-japan-zukan-0001",
+        "assetKey": "chiri_quest:chiri-kyotsu-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/chiri-kyotsu-japan-atlas.webp",
+          "width": 981,
+          "height": 1602,
+          "alt": "大学受験・地理「地球上の位置と時差：緯度・経度と地球上の位置」の図鑑",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/e4d57ab8e2029deba580e1c3f0265b1b2bb45ba8c3326e615e3839e5c687e8c4.webp",
+          "sourceSha256": "e4d57ab8e2029deba580e1c3f0265b1b2bb45ba8c3326e615e3839e5c687e8c4",
+          "sha256": "e4d57ab8e2029deba580e1c3f0265b1b2bb45ba8c3326e615e3839e5c687e8c4",
+          "bytes": 144966,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-library-media.references.js",
+          "runtimeReferenceSha256": "e8d9cee0a1160ef485f76619d8a8374cd7f834725eeb3f666b4663eeb952f7a6"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "japanhistory-kyotsu-japan",
+      "title": "大学受験・日本史",
+      "group": "university",
+      "href": "/quest/university/japanese-history/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 60,
+      "question": {
+        "unitId": "jh-sources-inquiry",
+        "unitTitle": "史料の読み方と歴史探究",
+        "sourceKey": "jh-sources-inquiry-l40-q01",
+        "visualKind": "jh-sources-inquiry-l40-q01",
+        "packPath": "japanhistory-kyotsu-japan/jh-sources-inquiry.json",
+        "packRawSha256": "626189ec5d6d1d40be015d07a63e275d03b041a03f536791d927d1141e6f22a7",
+        "packCanonicalSha256": "e997ba4d6b725e02c3e1a7d999e7d467182c5a1d3f8fd8d62d50f407e7a27d54",
+        "question": {
+          "sourceId": "jh-sources-inquiry-l40-q01",
+          "question": "『元禄八年』の日付と村役人の署名がある年貢控えを見つけた。村の納税状況を調べる際の扱いとして適切なのはどれか。",
+          "options": [
+            {
+              "label": "同時代の記録として1695年の立場を吟味する",
+              "sub": ""
+            },
+            {
+              "label": "後世の創作として1695年の事実を退ける",
+              "sub": ""
+            },
+            {
+              "label": "同時代の記録として1795年の立場を吟味する",
+              "sub": ""
+            },
+            {
+              "label": "後世の編著として1795年の事実を信じる",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "元号の開始年と、帳面を記した役人の役割を調べよう。",
+          "explanation": "元禄八年は西暦1695年であり、村役人の署名入りの年貢控えは当時に作られた一次史料とみなせる。ただし納税の状況を示す内容も役人の仕事や立場に左右されうる。1795年への換算は百年違いで、同時代の記録を後世の創作と決めつけることもできない。",
+          "visualKind": "jh-sources-inquiry-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "一次史料",
+            "年号と西暦"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/japanhistory-kyotsu-japan-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "大学受験・日本史「史料の読み方と歴史探究」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/57603381de489e1b82de421a9a3d3c923bf1bfcaad16a6515ada28d08b8c4500.webp",
+          "sourceSha256": "57603381de489e1b82de421a9a3d3c923bf1bfcaad16a6515ada28d08b8c4500",
+          "sha256": "57603381de489e1b82de421a9a3d3c923bf1bfcaad16a6515ada28d08b8c4500",
+          "bytes": 47336,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "jh-sources-inquiry",
+        "title": "史料の読み方と歴史探究｜史料の視点を見抜く",
+        "pageKey": "generated:japanhistory-kyotsu-japan-zukan-0001",
+        "assetKey": "kyotsu_japanhistory_quest:japanhistory-kyotsu-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/japanhistory-kyotsu-japan-atlas.webp",
+          "width": 981,
+          "height": 1602,
+          "alt": "大学受験・日本史「史料の読み方と歴史探究｜史料の視点を見抜く」の図鑑",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/0f1644e4b7cd689fb2e40e755a3ce8ec30a5d96fe1bfcb04d5286a41a15d1de2.webp",
+          "sourceSha256": "0f1644e4b7cd689fb2e40e755a3ce8ec30a5d96fe1bfcb04d5286a41a15d1de2",
+          "sha256": "0f1644e4b7cd689fb2e40e755a3ce8ec30a5d96fe1bfcb04d5286a41a15d1de2",
+          "bytes": 213534,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-library-media.references.js",
+          "runtimeReferenceSha256": "e8d9cee0a1160ef485f76619d8a8374cd7f834725eeb3f666b4663eeb952f7a6"
+        }
+      },
+      "primary": "question"
+    },
+    {
+      "courseId": "chemistry-kyotsu-japan",
+      "title": "大学受験・化学",
+      "group": "university",
+      "href": "/quest/university/chemistry/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 52,
+      "question": {
+        "unitId": "ch-measurement-inquiry",
+        "unitTitle": "実験操作・データと安全",
+        "sourceKey": "ch-measurement-inquiry-l40-q01",
+        "visualKind": "ch-measurement-inquiry-l40-q01",
+        "packPath": "chemistry-kyotsu-japan/ch-measurement-inquiry.json",
+        "packRawSha256": "308e990da975b52eb92b0f06c2ca482f3125e576e7a549120c749ebef28360b9",
+        "packCanonicalSha256": "4a175ffeae3944a64e3ef67f33652ea81ebaaaca1aff710d54b4c14097614430",
+        "question": {
+          "sourceId": "ch-measurement-inquiry-l40-q01",
+          "question": "同じ試料を電子天秤で3回量ると、2.13 g、2.11 g、2.12 gだった。有効数字を保ちながら反復測定をまとめる操作として、適切でないものはどれか。",
+          "options": [
+            {
+              "label": "平均を2.12000 gと記録して残す",
+              "sub": ""
+            },
+            {
+              "label": "平均を2.12 gと記録して残しておく",
+              "sub": ""
+            },
+            {
+              "label": "同じ電子天秤で測定を繰り返す",
+              "sub": ""
+            },
+            {
+              "label": "測定条件をそろえて値を比較する",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "平均の計算で桁数を無制限に増やせるだろうか。",
+          "explanation": "3回の値の平均は2.12 gである。電子天秤の表示が小数第2位までなので、平均だけを2.12000 gと記すと、測定していない桁まで確定したように見える。同一条件での繰り返しや比較、適切な桁数での記録は妥当である。",
+          "visualKind": "ch-measurement-inquiry-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "測定値の有効数字",
+            "反復測定"
+          ]
+        },
+        "asset": null,
+        "rasterAvailability": "Excluded from web display after visual review: numerical labels do not match the selected question text.",
+        "excludedCandidateSourceSha256": "fcb425fd805cde42e8a70516a1b35f89ea65e07f5c9e20823f1bf7dd06626de1"
+      },
+      "atlas": {
+        "unitId": "ch-measurement-inquiry",
+        "title": "実験は条件をそろえて比べる",
+        "pageKey": "generated:chemistry-kyotsu-japan-zukan-0001",
+        "assetKey": "kyotsu_chemistry_quest:chemistry-kyotsu-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/chemistry-kyotsu-japan-atlas.webp",
+          "width": 981,
+          "height": 1602,
+          "alt": "大学受験・化学「実験は条件をそろえて比べる」の図鑑",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/5a1b104e5e734d7c00940f944c58a81609d4d79869104caea7402021d0f5bcde.webp",
+          "sourceSha256": "5a1b104e5e734d7c00940f944c58a81609d4d79869104caea7402021d0f5bcde",
+          "sha256": "5a1b104e5e734d7c00940f944c58a81609d4d79869104caea7402021d0f5bcde",
+          "bytes": 176608,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-library-media.references.js",
+          "runtimeReferenceSha256": "e8d9cee0a1160ef485f76619d8a8374cd7f834725eeb3f666b4663eeb952f7a6"
+        }
+      },
+      "primary": "atlas"
+    },
+    {
+      "courseId": "physics-kyotsu-japan",
+      "title": "大学受験・物理",
+      "group": "university",
+      "href": "/quest/university/physics/",
+      "learningLocale": "ja",
+      "explanationLocales": [
+        "ja"
+      ],
+      "unitCount": 55,
+      "question": {
+        "unitId": "ph-measurement-inquiry",
+        "unitTitle": "物理量・測定・グラフと探究",
+        "sourceKey": "ph-measurement-inquiry-l40-q01",
+        "visualKind": "ph-measurement-inquiry-l40-q01",
+        "packPath": "physics-kyotsu-japan/ph-measurement-inquiry.json",
+        "packRawSha256": "f2271a23b144c17e0f2fdf8ada670313786722e963388a57ad4a52142820fac2",
+        "packCanonicalSha256": "5f052851a5829be6532679e24ac65a1b9671c23f784f5dda2d190b3c73697219",
+        "question": {
+          "sourceId": "ph-measurement-inquiry-l40-q01",
+          "question": "台車の移動距離をm、所要時間をsで測る。時計は毎回、既知の一定時間だけ大きく表示される。速さの単位と、この偏りを除く操作の適切な組合せはどれか。",
+          "options": [
+            {
+              "label": "m/s・時計のずれを差し引く",
+              "sub": ""
+            },
+            {
+              "label": "m/s・反復して平均を求める",
+              "sub": ""
+            },
+            {
+              "label": "m·s・時計のずれを差し引く",
+              "sub": ""
+            },
+            {
+              "label": "m·s・反復して平均を求める",
+              "sub": ""
+            }
+          ],
+          "correctIndex": 0,
+          "hint": "長さと時間の演算、同じ向きの偏りを分けて考える。",
+          "explanation": "速さは移動距離を所要時間で割るので、単位はm/sとなる。時計が実際より一定時間だけ大きく示すなら、その差を各測定値から引いて補正する。同じずれは何回測っても残るため、平均だけでは取り除けない。",
+          "visualKind": "ph-measurement-inquiry-l40-q01",
+          "level": 40,
+          "coverageTags": [
+            "ＳＩ単位の組立て",
+            "系統誤差"
+          ]
+        },
+        "asset": {
+          "src": "/assets/quest/materials/physics-kyotsu-japan-question.webp",
+          "width": 864,
+          "height": 384,
+          "alt": "大学受験・物理「物理量・測定・グラフと探究」の問題の図解",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/678223a46065d330a971de64616e41a4165811f2331fb943ff8c49c3e70a4637.webp",
+          "sourceSha256": "678223a46065d330a971de64616e41a4165811f2331fb943ff8c49c3e70a4637",
+          "sha256": "678223a46065d330a971de64616e41a4165811f2331fb943ff8c49c3e70a4637",
+          "bytes": 11718,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-media.references.android.js",
+          "runtimeReferenceSha256": "ec3b2931318f25149bf467f5aa514af92d1fb41ae14da4473fe946d663d73a8d"
+        }
+      },
+      "atlas": {
+        "unitId": "ph-measurement-inquiry",
+        "title": "単位と測定値の表し方",
+        "pageKey": "generated:physics-kyotsu-japan-zukan-0001",
+        "assetKey": "kyotsu_physics_quest:physics-kyotsu-japan-zukan-0001",
+        "asset": {
+          "src": "/assets/quest/materials/physics-kyotsu-japan-atlas.webp",
+          "width": 981,
+          "height": 1602,
+          "alt": "大学受験・物理「単位と測定値の表し方」の図鑑",
+          "source": "https://cdn.trailfusionai.com/quest-media/sha256/31eb5a2b3fd2cce53fdff8a8c8688d414f42864d3097126219ad029d46d14c04.webp",
+          "sourceSha256": "31eb5a2b3fd2cce53fdff8a8c8688d414f42864d3097126219ad029d46d14c04",
+          "sha256": "31eb5a2b3fd2cce53fdff8a8c8688d414f42864d3097126219ad029d46d14c04",
+          "bytes": 119824,
+          "transform": "original WebP bytes copied unchanged",
+          "provenance": "public runtime content-hash URL, exact SHA256",
+          "runtimeReference": "apps/mobile/src/data/shared-library-media.references.js",
+          "runtimeReferenceSha256": "e8d9cee0a1160ef485f76619d8a8374cd7f834725eeb3f666b4663eeb952f7a6"
+        }
+      },
+      "primary": "question"
+    }
+  ],
+  "decorativeArt": [
+    {
+      "id": "01-junior-learning",
+      "group": "school",
+      "role": "decorative learning illustration",
+      "generator": "Codex GPT-6 Luna image generation",
+      "originalSha256": "88ae8013b1b451e3e2948697bc8a2d405f1eae99921ccb0c8f923241ae83c9cb",
+      "independentReviewSha256": "808152764ec0ed1e832c25a224d4b92fe4fab21291d5abcfb582570974f4c6a7",
+      "variants": [
+        {
+          "src": "/assets/quest/materials/01-junior-learning-768.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "d833f64940fbabccf90c99a7ad6687f59f77ee4aad0b026e5803fd544f778548",
+          "bytes": 119620
+        },
+        {
+          "src": "/assets/quest/materials/01-junior-learning-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "d42985eb25a273094b673dd9bd57b8f4a83c846cb17aa9206d11a49cef12f8b5",
+          "bytes": 331588
+        }
+      ]
+    },
+    {
+      "id": "02-university-learning",
+      "group": "university",
+      "role": "decorative learning illustration",
+      "generator": "Codex GPT-6 Luna image generation",
+      "originalSha256": "c8de7b654288d69171e934eb2c42cbf1ca544d1f30a8d7d590a7f53ec854d93c",
+      "independentReviewSha256": "808152764ec0ed1e832c25a224d4b92fe4fab21291d5abcfb582570974f4c6a7",
+      "variants": [
+        {
+          "src": "/assets/quest/materials/02-university-learning-768.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "73b48618952b70b0c4026dbb2d5feac3ac33fd29f69ed70eef5912a12bd1d872",
+          "bytes": 100698
+        },
+        {
+          "src": "/assets/quest/materials/02-university-learning-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "57d786423da474d466d57099008bba93020b767ff75f2b5d8480748359ddb7dc",
+          "bytes": 294508
+        }
+      ]
+    },
+    {
+      "id": "03-qualification-learning",
+      "group": "qualification",
+      "role": "decorative learning illustration",
+      "generator": "Codex GPT-6 Luna image generation",
+      "originalSha256": "576c8dd0dd4dbc4b4b200823d61c0f75c84a24e349dae0715d4f0db2448bd914",
+      "independentReviewSha256": "808152764ec0ed1e832c25a224d4b92fe4fab21291d5abcfb582570974f4c6a7",
+      "variants": [
+        {
+          "src": "/assets/quest/materials/03-qualification-learning-768.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "d6b9842168739c1b44a68fd7ba0d3e41e48d721bc7cd1471044d33c2efdc4e1d",
+          "bytes": 101956
+        },
+        {
+          "src": "/assets/quest/materials/03-qualification-learning-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "69025ceb0a0c3deb21f289bbd8248f67ad2d91f8c708d6cb5b8d24cf61dab5e0",
+          "bytes": 306958
+        }
+      ]
+    }
+  ],
+  "scope": "Representative actual question diagrams and atlas pages from released content. Decorative art is separately identified. These are teaching materials, not synthesized application screens."
+}

@@ -107,3 +107,14 @@ The Japanese university-entrance section lists the six released courses: Informa
 
 Free download with in-app purchases. Do not infer that every feature or lesson is free or included in one plan. A website translation does not mean every course is translated. This file is supplementary; the public HTML pages are the primary source.
 <!-- quest-expansion:language-facts:end -->
+<!-- quest-material:study-links:start -->
+
+## Actual material previews and learning examples
+
+- [実際の問題と図鑑：18教材](https://trailfusionai.com/quest/materials/)
+- [中学受験理科：観察・実験の3問](https://trailfusionai.com/quest/study/science-observation/)
+- [情報Ⅰ：二進数・ビットの3問](https://trailfusionai.com/quest/study/information-binary/)
+- [簿記3級：仕訳の3問](https://trailfusionai.com/quest/study/bookkeeping-journal/)
+
+The previews show real released teaching materials, not reconstructed native app screens. The three study pages retain original questions and explanations, provide extra study guidance, and link to relevant courses. Website samples are not proof of free access to every corresponding app lesson. Original study questions are not official past exam questions. Public visible HTML is the primary source.
+<!-- quest-material:study-links:end -->

@@ -1,0 +1,532 @@
+{
+  "schema": "quest-website-real-samples-v1",
+  "extractedAt": "2026-11-21T04:22:38.423021+00:00",
+  "source": "Current production source commit fb3473df88d2431a1b35b46f0f818ffdc0647693",
+  "releaseManifestSha256": "3bd30cb49707a2cd0cbd6105ad49888b51a41c66049727018a2d08a1571c4166",
+  "canonicalHashRule": "Publisher manifest hashes/bytes exclude one final LF; raw source separately recorded",
+  "questionsTotal": 9,
+  "pages": [
+    {
+      "slug": "science-observation",
+      "route": "/quest/study/science-observation/",
+      "courseId": "junior-science",
+      "questions": [
+        {
+          "courseId": "junior-science",
+          "unitId": "life-observation",
+          "unitTitle": "生物の観察と分類",
+          "sourceId": "life-observation-l40-q02",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/junior-science/life-observation.json",
+          "rawPackSha256": "d0dd99f10e1a1c8ecefe438b0c892d131164aabbaa1bd2266bd3e2f4204fe752",
+          "publishedManifestPackSha256": "a3b39cc5030d36c68a03509047dc9a8b1ace3f719eeb80edaabb86a2c895394b",
+          "publishedManifestPackBytes": 152207,
+          "questionObjectSha256": "17f494f287e4d1404878c67e35e8cb41920fdfdde88a6ad40503d9b6e5bf53a4",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "life-observation-l40-q02",
+            "question": "顕微鏡でプレパラートをのせる場所はどれですか。",
+            "options": [
+              {
+                "label": "鏡筒",
+                "sub": ""
+              },
+              {
+                "label": "ステージ",
+                "sub": ""
+              },
+              {
+                "label": "接眼レンズ",
+                "sub": ""
+              },
+              {
+                "label": "反射鏡",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "観察した事実と、生き物の体のつくりを結びつけて考えよう。",
+            "explanation": "正解の「ステージ」が正しい理由は、ステージはプレパラートを平らに置いて固定する台です。標本を動かさずに観察するための場所なので、最初にここへ置きます。 この問題の「顕微鏡でプレパラートをのせる場所はどれですか」という条件が、その判断の根拠です。次に似た問題では、見つけた場所、形、数、時刻などを具体的に記録し、体のつくりやくらしと結びつけて考えましょう。",
+            "visualKind": "life-observation-l40-q02",
+            "level": 40,
+            "coverageTags": [
+              "microscope",
+              "equipment"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-life-observation-l40-q02.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "中学受験理科「生物の観察と分類」の問題の図解",
+            "sourceSha256": "8c369d0629f5a53bdfec820115c8cba4ddab719baa70bdfa66365a04670bc3fe",
+            "sha256": "8c369d0629f5a53bdfec820115c8cba4ddab719baa70bdfa66365a04670bc3fe",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "existing frozen production runtime reference"
+          }
+        },
+        {
+          "courseId": "junior-science",
+          "unitId": "life-observation",
+          "unitTitle": "生物の観察と分類",
+          "sourceId": "life-observation-l40-q03",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/junior-science/life-observation.json",
+          "rawPackSha256": "d0dd99f10e1a1c8ecefe438b0c892d131164aabbaa1bd2266bd3e2f4204fe752",
+          "publishedManifestPackSha256": "a3b39cc5030d36c68a03509047dc9a8b1ace3f719eeb80edaabb86a2c895394b",
+          "publishedManifestPackBytes": 152207,
+          "questionObjectSha256": "be228c8e3f87d0fb701661a8f82908931f8835393e6765551df19abc32a950dd",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "life-observation-l40-q03",
+            "question": "生き物を見つけた場所も記録する一番の理由はどれですか。",
+            "options": [
+              {
+                "label": "体の色が変化した原因を決められる",
+                "sub": ""
+              },
+              {
+                "label": "名前をその場で必ず特定できる",
+                "sub": ""
+              },
+              {
+                "label": "くらし方を考える手がかりになる",
+                "sub": ""
+              },
+              {
+                "label": "観察した生き物の年齢を計算できる",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "観察した事実と、生き物の体のつくりを結びつけて考えよう。",
+            "explanation": "正解の「くらし方を考える手がかりになる」が正しい理由は、見つけた場所には光、水分、温度などの違いがあります。場所を記録すると、その生き物がどんな環境を好むかを後で考えられます。 この問題の「生き物を見つけた場所も記録する一番の理由はどれですか」という条件が、その判断の根拠です。次に似た問題では、見つけた場所、形、数、時刻などを具体的に記録し、体のつくりやくらしと結びつけて考えましょう。",
+            "visualKind": "life-observation-l40-q03",
+            "level": 40,
+            "coverageTags": [
+              "observation",
+              "habitat"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-life-observation-l40-q03.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "中学受験理科「生物の観察と分類」の問題の図解",
+            "sourceSha256": "00796453dabc95a445eb1db667a32bed4c9d6bb8aa69731547c8c2e949f55f21",
+            "sha256": "00796453dabc95a445eb1db667a32bed4c9d6bb8aa69731547c8c2e949f55f21",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "existing frozen production runtime reference"
+          }
+        },
+        {
+          "courseId": "junior-science",
+          "unitId": "life-observation",
+          "unitTitle": "生物の観察と分類",
+          "sourceId": "life-observation-l40-q06",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/junior-science/life-observation.json",
+          "rawPackSha256": "d0dd99f10e1a1c8ecefe438b0c892d131164aabbaa1bd2266bd3e2f4204fe752",
+          "publishedManifestPackSha256": "a3b39cc5030d36c68a03509047dc9a8b1ace3f719eeb80edaabb86a2c895394b",
+          "publishedManifestPackBytes": 152207,
+          "questionObjectSha256": "31d4600462e591429dc9afa42d5e30c8538f64d983496481899210128ce2dbd4",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "life-observation-l40-q06",
+            "question": "葉の表と裏のちがいを調べるとき、同じ葉で比べるよさはどれですか。",
+            "options": [
+              {
+                "label": "葉についた虫の影響をすべて除ける",
+                "sub": ""
+              },
+              {
+                "label": "葉ごとのちがいを除いて比べられる",
+                "sub": ""
+              },
+              {
+                "label": "表と裏で葉の色を同じにそろえられる",
+                "sub": ""
+              },
+              {
+                "label": "葉を切らずに内側のつくりまで見える",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "観察した事実と、生き物の体のつくりを結びつけて考えよう。",
+            "explanation": "正解の「葉ごとのちがいを除いて比べられる」が正しい理由は、同じ葉の表と裏を比べれば、葉の種類・育ち方・日当たりなど、葉ごとのちがいをできるだけ除けるからです。表と裏そのものの違いを調べやすくなります。 この問題の「葉の表と裏のちがいを調べるとき、同じ葉で比べるよさはどれですか」という条件が、その判断の根拠です。次に似た問題では、見つけた場所、形、数、時刻などを具体的に記録し、体のつくりやくらしと結びつけて考えましょう。",
+            "visualKind": "life-observation-l40-q06",
+            "level": 40,
+            "coverageTags": [
+              "observation",
+              "comparison"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-life-observation-l40-q06.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "中学受験理科「生物の観察と分類」の問題の図解",
+            "sourceSha256": "37a4c08175e4a152497b05a408cb4a86aae58a7e03efcf743abc7291b99ef1d0",
+            "sha256": "37a4c08175e4a152497b05a408cb4a86aae58a7e03efcf743abc7291b99ef1d0",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "information-binary",
+      "route": "/quest/study/information-binary/",
+      "courseId": "joho1-kyotsu-japan",
+      "questions": [
+        {
+          "courseId": "joho1-kyotsu-japan",
+          "unitId": "joho-d3-numbers",
+          "unitTitle": "数値の内部表現と計算の限界",
+          "sourceId": "joho-d3-numbers-l40-q01",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/joho1-kyotsu-japan/joho-d3-numbers.json",
+          "rawPackSha256": "7d1fd8733eacbc964504e0018dd118643d99af3201be96118b0548e7f1762de3",
+          "publishedManifestPackSha256": "86ea1329b80b8ffe86068a01acae7ee8ac97de265351304f05834594a1df8332",
+          "publishedManifestPackBytes": 151579,
+          "questionObjectSha256": "6045a5cca6f921102ae1c061e2a7b629a69aed8c61352666c478dcb625c60267",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "joho-d3-numbers-l40-q01",
+            "question": "2進数10110を10進数で表したものはどれか。",
+            "options": [
+              {
+                "label": "30",
+                "sub": ""
+              },
+              {
+                "label": "20",
+                "sub": ""
+              },
+              {
+                "label": "26",
+                "sub": ""
+              },
+              {
+                "label": "22",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 3,
+            "hint": "1がある桁の重みを足し合わせる。",
+            "explanation": "各桁の重みは右から1、2、4、8、16である。10110は1の桁の重みを足し、16＋4＋2＝22となる。0の桁の重みを含めると30となり、正しく計算できない。",
+            "visualKind": "joho-d3-numbers-l40-q01",
+            "level": 40,
+            "coverageTags": [
+              "2進数から10進数",
+              "整数",
+              "位取り"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-joho-d3-numbers-l40-q01.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "情報Ⅰ「数値の内部表現と計算の限界」の問題の図解",
+            "sourceSha256": "d981156ff7350a2e1bd6dfb9979fe2166123d86e2b92c3927694ea15f8643689",
+            "sha256": "d981156ff7350a2e1bd6dfb9979fe2166123d86e2b92c3927694ea15f8643689",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        },
+        {
+          "courseId": "joho1-kyotsu-japan",
+          "unitId": "joho-d3-numbers",
+          "unitTitle": "数値の内部表現と計算の限界",
+          "sourceId": "joho-d3-numbers-l40-q02",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/joho1-kyotsu-japan/joho-d3-numbers.json",
+          "rawPackSha256": "7d1fd8733eacbc964504e0018dd118643d99af3201be96118b0548e7f1762de3",
+          "publishedManifestPackSha256": "86ea1329b80b8ffe86068a01acae7ee8ac97de265351304f05834594a1df8332",
+          "publishedManifestPackBytes": 151579,
+          "questionObjectSha256": "a9e854db44a67b34045c3cecf37a5cf0b9d3036dedec7ff800b4e6c860c16d3e",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "joho-d3-numbers-l40-q02",
+            "question": "5ビットの符号なし整数で表せる最大値を、10進数で示したものはどれか。",
+            "options": [
+              {
+                "label": "63",
+                "sub": ""
+              },
+              {
+                "label": "31",
+                "sub": ""
+              },
+              {
+                "label": "16",
+                "sub": ""
+              },
+              {
+                "label": "32",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "0も表現する値の一つに含まれる。",
+            "explanation": "最大のビット列11111は16＋8＋4＋2＋1＝31を表す。32は0を含む表現可能な値の個数であり、最大値ではない。63を表すには6ビット必要で、16は最大値より小さい。",
+            "visualKind": "joho-d3-numbers-l40-q02",
+            "level": 40,
+            "coverageTags": [
+              "符号なし整数",
+              "最大値",
+              "固定長"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-joho-d3-numbers-l40-q02.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "情報Ⅰ「数値の内部表現と計算の限界」の問題の図解",
+            "sourceSha256": "736f165d4c2673e413ccc7dd31aaf55583a79f13d25efb6cbcb38b530f1abc0f",
+            "sha256": "736f165d4c2673e413ccc7dd31aaf55583a79f13d25efb6cbcb38b530f1abc0f",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        },
+        {
+          "courseId": "joho1-kyotsu-japan",
+          "unitId": "joho-d2-characters",
+          "unitTitle": "情報量と文字・記号の符号化",
+          "sourceId": "joho-d2-characters-l40-q06",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/joho1-kyotsu-japan/joho-d2-characters.json",
+          "rawPackSha256": "3f747a6d994c25f55962c6935845628a24172625e1746a4a955f32e0cc52323b",
+          "publishedManifestPackSha256": "92adb32cdb67dac459b7f060b590ca12cb083ca0eb11c01bd19d3929025beee2",
+          "publishedManifestPackBytes": 115386,
+          "questionObjectSha256": "d6eae61cf089c846fba1c05820c691e6698ffc1a2e11e876fc7223e2ca808a67",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "joho-d2-characters-l40-q06",
+            "question": "21種類のスタンプに、それぞれ異なる固定長の2進符号を付ける。1種類当たり最低何ビット必要か。",
+            "options": [
+              {
+                "label": "4ビット",
+                "sub": ""
+              },
+              {
+                "label": "5ビット",
+                "sub": ""
+              },
+              {
+                "label": "6ビット",
+                "sub": ""
+              },
+              {
+                "label": "3ビット",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "2の累乗のうち、21以上になる最小のものを探そう。",
+            "explanation": "4ビットでは2⁴＝16種類までで、21種類には足りない。5ビットなら2⁵＝32種類を表せるため、最小は5ビットである。6ビットでも表せるが、最小ではない。",
+            "visualKind": "joho-d2-characters-l40-q06",
+            "level": 40,
+            "coverageTags": [
+              "必要ビット数",
+              "固定長符号",
+              "切上げ"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-joho-d2-characters-l40-q06.webp",
+            "width": 864,
+            "height": 384,
+            "alt": "情報Ⅰ「情報量と文字・記号の符号化」の問題の図解",
+            "sourceSha256": "3d6e27bb2fa40e0ffc0a439cf1f65dda3d58afd5d3a4028fee38bec6e8c84bd6",
+            "sha256": "3d6e27bb2fa40e0ffc0a439cf1f65dda3d58afd5d3a4028fee38bec6e8c84bd6",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "bookkeeping-journal",
+      "route": "/quest/study/bookkeeping-journal/",
+      "courseId": "bookkeeping-japan",
+      "questions": [
+        {
+          "courseId": "bookkeeping-japan",
+          "unitId": "bk3-comprehensive-journal",
+          "unitTitle": "3級・仕訳総合演習",
+          "sourceId": "bq-bk3-comprehensive-journal-003",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/bookkeeping-japan/bk3-comprehensive-journal.json",
+          "rawPackSha256": "7ca1165ad4b8e13c7f8391207e1bd912153116788b6d548f976c2e6062dc7840",
+          "publishedManifestPackSha256": "769b66e6ca52de189b0125d58ba5806fd930a279332249f86e6f8ad70b2f1ef8",
+          "publishedManifestPackBytes": 21556,
+          "questionObjectSha256": "89ba0610db7e8b46005b6ee1979b5f39350d28c08ca9627761a185f817158262",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "bq-bk3-comprehensive-journal-003",
+            "question": "【日商簿記3級｜3級・仕訳総合演習】桜井サービスの演習ケース1：売掛金を普通預金で回収した。金額は44,000円です。最も適切な仕訳はどれですか。",
+            "options": [
+              {
+                "label": "仕訳を行わない",
+                "sub": ""
+              },
+              {
+                "label": "仕訳なし",
+                "sub": ""
+              },
+              {
+                "label": "借：売掛金 44,000円 ／ 貸：普通預金 44,000円",
+                "sub": ""
+              },
+              {
+                "label": "借：普通預金 44,000円 ／ 貸：売掛金 44,000円",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 3,
+            "hint": "資産・負債・収益・費用のどれが増減したかを先に判定します。",
+            "explanation": "取引の増減を勘定要素へ分解すると、借方は「普通預金」44,000円、貸方は「売掛金」44,000円です。",
+            "visualKind": "bookkeeping-bq-bk3-comprehensive-journal-003-7b73550a91",
+            "level": 40,
+            "questionFamily": "integrated-journal",
+            "coverageTags": [
+              "grade3",
+              "bk3-comprehensive-journal",
+              "integrated-journal",
+              "level-40"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-bq-bk3-comprehensive-journal-003.webp",
+            "width": 960,
+            "height": 540,
+            "alt": "簿記3級「3級・仕訳総合演習」の問題の図解",
+            "sourceSha256": "374214b45602f7d433278e05f6f9b14f33f0ea28f0f84f4cf6806d81e0dcbb97",
+            "sha256": "374214b45602f7d433278e05f6f9b14f33f0ea28f0f84f4cf6806d81e0dcbb97",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        },
+        {
+          "courseId": "bookkeeping-japan",
+          "unitId": "bk3-comprehensive-journal",
+          "unitTitle": "3級・仕訳総合演習",
+          "sourceId": "bq-bk3-comprehensive-journal-006",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/bookkeeping-japan/bk3-comprehensive-journal.json",
+          "rawPackSha256": "7ca1165ad4b8e13c7f8391207e1bd912153116788b6d548f976c2e6062dc7840",
+          "publishedManifestPackSha256": "769b66e6ca52de189b0125d58ba5806fd930a279332249f86e6f8ad70b2f1ef8",
+          "publishedManifestPackBytes": 21556,
+          "questionObjectSha256": "0671e96a3145bcda1dd70aa6eceb2e1b2ffe914b1846f7e0c26da55d1c84460c",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "bq-bk3-comprehensive-journal-006",
+            "question": "【日商簿記3級｜3級・仕訳総合演習】若葉テックの演習ケース1：銀行から借り入れ、普通預金へ入金された。金額は86,000円です。最も適切な仕訳はどれですか。",
+            "options": [
+              {
+                "label": "借：普通預金 86,000円 ／ 貸：借入金 86,000円",
+                "sub": ""
+              },
+              {
+                "label": "借：借入金 86,000円 ／ 貸：普通預金 86,000円",
+                "sub": ""
+              },
+              {
+                "label": "仕訳なし",
+                "sub": ""
+              },
+              {
+                "label": "借：現金 86,000円 ／ 貸：借入金 86,000円",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "資産・負債・収益・費用のどれが増減したかを先に判定します。",
+            "explanation": "取引の増減を勘定要素へ分解すると、借方は「普通預金」86,000円、貸方は「借入金」86,000円です。",
+            "visualKind": "bookkeeping-bq-bk3-comprehensive-journal-006-87ce79e950",
+            "level": 50,
+            "questionFamily": "integrated-journal",
+            "coverageTags": [
+              "grade3",
+              "bk3-comprehensive-journal",
+              "integrated-journal",
+              "level-50"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-bq-bk3-comprehensive-journal-006.webp",
+            "width": 960,
+            "height": 540,
+            "alt": "簿記3級「3級・仕訳総合演習」の問題の図解",
+            "sourceSha256": "c2e754d505db58e517393a84cd70369ac8324f3fdbfa88db4872ba55b768a8e5",
+            "sha256": "c2e754d505db58e517393a84cd70369ac8324f3fdbfa88db4872ba55b768a8e5",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        },
+        {
+          "courseId": "bookkeeping-japan",
+          "unitId": "bk3-comprehensive-journal",
+          "unitTitle": "3級・仕訳総合演習",
+          "sourceId": "bq-bk3-comprehensive-journal-009",
+          "sourcePackPath": "runtime/apps/mobile/public/course-packs/v1/bookkeeping-japan/bk3-comprehensive-journal.json",
+          "rawPackSha256": "7ca1165ad4b8e13c7f8391207e1bd912153116788b6d548f976c2e6062dc7840",
+          "publishedManifestPackSha256": "769b66e6ca52de189b0125d58ba5806fd930a279332249f86e6f8ad70b2f1ef8",
+          "publishedManifestPackBytes": 21556,
+          "questionObjectSha256": "85ebe6bda19d38c1cbd0a53fe5c7a6fb5579475d4f376ebcaedcea420872c78e",
+          "sourceQuestionUnchanged": true,
+          "question": {
+            "sourceId": "bq-bk3-comprehensive-journal-009",
+            "question": "【日商簿記3級｜3級・仕訳総合演習】光栄物流の演習ケース1：商品を掛けで仕入れた。金額は42,000円です。最も適切な仕訳はどれですか。",
+            "options": [
+              {
+                "label": "仕訳を行わない",
+                "sub": ""
+              },
+              {
+                "label": "仕訳なし",
+                "sub": ""
+              },
+              {
+                "label": "借：仕入 42,000円 ／ 貸：買掛金 42,000円",
+                "sub": ""
+              },
+              {
+                "label": "借：買掛金 42,000円 ／ 貸：仕入 42,000円",
+                "sub": ""
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "資産・負債・収益・費用のどれが増減したかを先に判定します。",
+            "explanation": "取引の増減を勘定要素へ分解すると、借方は「仕入」42,000円、貸方は「買掛金」42,000円です。",
+            "visualKind": "bookkeeping-bq-bk3-comprehensive-journal-009-6c23cd0cf5",
+            "level": 60,
+            "questionFamily": "integrated-journal",
+            "coverageTags": [
+              "grade3",
+              "bk3-comprehensive-journal",
+              "integrated-journal",
+              "level-60"
+            ]
+          },
+          "websiteImage": {
+            "src": "/assets/quest/materials/sample-bq-bk3-comprehensive-journal-009.webp",
+            "width": 960,
+            "height": 540,
+            "alt": "簿記3級「3級・仕訳総合演習」の問題の図解",
+            "sourceSha256": "ddf22e787ef5f096651d2294df8c3d638e96ea896991d7fd36656e1651402395",
+            "sha256": "ddf22e787ef5f096651d2294df8c3d638e96ea896991d7fd36656e1651402395",
+            "transform": "unchanged original WebP bytes",
+            "provenance": "published content hash URL, exact SHA256"
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Questions, options, answer indexes, hints and explanations are unchanged source objects.",
+    "Bookkeeping contains original near-equivalent incorrect distractors; preserve source without pretending this page is a native screen.",
+    "Bookkeeping samples include paid app levels50 and60; clearly distinguish website samples from the app free-level entitlement.",
+    "These are original app learning samples, not official past exam questions or guaranteed current examination coverage."
+  ],
+  "sourceSamplesSha256": "b924bc18f3bb314ccf72b7b14b11766e75b59da4fedca13992c3a8cfdeed3c8c",
+  "visualReview": {
+    "allNineSourceReferencesMatch": true,
+    "diagramContentInspected": true,
+    "nativeScreenReconstruction": false
+  }
+}

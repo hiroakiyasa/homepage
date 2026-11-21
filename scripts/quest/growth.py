@@ -275,7 +275,9 @@ def apply():
     update_indexes(routes, changed, config)
     from growth_enrichment import apply as enrich
     enrich(config)
-    print(json.dumps({'growthPages': routes, 'updatedEntryPages': changed, 'protectedEntranceExamPages': 'not modified', 'asOf': DAY}, ensure_ascii=False))
+    from material_gallery import apply as add_materials
+    add_materials()
+    print(json.dumps({'growthPages': routes, 'updatedEntryPages': changed, 'protectedEntranceExamPages': 'dedicated pages unchanged; FAQ/plans current course counts corrected by material layer', 'asOf': DAY}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
