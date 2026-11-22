@@ -33,10 +33,11 @@ jobs:
           python scripts/seo/audit.py
           python scripts/quest/content_consistency.py --check
 
-      - name: Check per-page view counters
+      - name: Check per-page view counters and official SNS links
         run: |
           node scripts/add-visitor-counters.mjs --check
-          node --test tests/visitor-counter.test.mjs tests/global-locale.test.mjs
+          node scripts/add-social-links.mjs --check
+          node --test tests/visitor-counter.test.mjs tests/global-locale.test.mjs tests/social-links.test.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

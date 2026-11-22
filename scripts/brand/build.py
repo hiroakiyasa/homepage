@@ -300,6 +300,7 @@ def main():
         localized = render_global(chosen)
         import subprocess
         subprocess.run([sys.executable, str(ROOT / "scripts/quest/growth_enrichment.py")], check=True)
+        subprocess.run(['node', str(ROOT / 'scripts/add-social-links.mjs'), '--write'], check=True)
         print(json.dumps({'english_pages': generated, 'global_pages': len(localized), 'japanese_and_hobby_content': 'English course links and language metadata aligned; other content preserved'}, indent=2))
         return
     generated = new_pages()
@@ -316,6 +317,7 @@ def main():
     # Reapply reviewed Japanese Quest audience routes after generic generation.
     import subprocess
     subprocess.run([sys.executable, str(ROOT / 'scripts/quest/growth.py')], check=True)
+    subprocess.run(['node', str(ROOT / 'scripts/add-social-links.mjs'), '--write'], check=True)
     print(json.dumps({'new_pages': generated, 'chrome_swapped': len(legacy), 'direct_3d_redirects': hobby_redirects, 'retired_locale_files': retired, 'sitemap_urls': urls}, ensure_ascii=False, indent=1))
 
 

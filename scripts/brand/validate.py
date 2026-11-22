@@ -138,6 +138,21 @@ try:
                         raise
                     check(res.status == 200, label + ' HTTP 200')
                     check_page_header(page, route, label, origin)
+                    if route != '/404.html':
+                        shortcut = page.locator('details.tf-social-quick')
+                        footer_social = page.locator('footer nav.tf-social-footer')
+                        check(shortcut.count() == 1 and shortcut.locator('summary').is_visible(),
+                              label + ' persistent SNS menu visible')
+                        check(footer_social.count() == 1 and footer_social.locator('a.tf-social-link').count() == 5,
+                              label + ' all five direct footer SNS links')
+                        check(shortcut.evaluate('(e)=>getComputedStyle(e).position') == 'fixed',
+                              label + ' SNS shortcut stays fixed while scrolling')
+                        if width in (320, 390):
+                            shortcut.locator('summary').click()
+                            check(shortcut.get_attribute('open') is not None and
+                                  shortcut.locator('a.tf-social-link:visible').count() == 5,
+                                  label + ' SNS menu opens to five links on mobile')
+                            shortcut.locator('summary').click()
                     page.locator('img').evaluate_all('(i)=>i.forEach(x=>x.loading="eager")')
                     page.evaluate('Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))')
                     st = page.evaluate('''()=>({o:document.documentElement.scrollWidth>innerWidth+1,

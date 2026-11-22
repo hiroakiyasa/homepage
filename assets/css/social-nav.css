@@ -1,0 +1,138 @@
+/* Official TrailFusion AI SNS shortcuts, shared by all content pages.
+ * CSS is intentionally independent of brand/Quest/legacy page styles. */
+.tf-social-quick,
+.tf-social-quick *,
+.tf-social-footer,
+.tf-social-footer * { box-sizing: border-box; }
+
+.tf-social-quick {
+  position: fixed;
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 95;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+  direction: ltr;
+}
+.tf-social-quick > summary {
+  display: grid;
+  place-items: center;
+  list-style: none;
+  cursor: pointer;
+  width: 58px;
+  height: 58px;
+  border: 2px solid #fff;
+  border-radius: 21px;
+  color: #fff;
+  background: linear-gradient(145deg, #1769d8, #6849bc);
+  box-shadow: 0 8px 24px rgba(21, 51, 110, .28);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  user-select: none;
+}
+.tf-social-quick > summary::-webkit-details-marker { display: none; }
+.tf-social-quick > summary:hover,
+.tf-social-quick[open] > summary { background: linear-gradient(145deg, #1055bc, #58359f); }
+.tf-social-quick > summary:focus-visible,
+.tf-social-quick a.tf-social-link:focus-visible,
+.tf-social-footer a.tf-social-link:focus-visible {
+  outline: 3px solid #eaa100;
+  outline-offset: 4px;
+}
+.tf-social-quick > nav {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  display: grid;
+  gap: 4px;
+  width: min(260px, calc(100vw - 28px));
+  padding: 12px;
+  border: 1px solid #c9d9f3;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(16, 31, 68, .22);
+}
+.tf-social-quick a.tf-social-link,
+.tf-social-footer a.tf-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 39px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #fff;
+  color: #15325e;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.35;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.tf-social-quick a.tf-social-link:hover,
+.tf-social-footer a.tf-social-link:hover {
+  background: #eaf3ff;
+  color: #104aa1;
+  text-decoration: none;
+}
+.tf-social-quick a.tf-social-link::before,
+.tf-social-footer a.tf-social-link::before {
+  content: "";
+  flex: 0 0 19px;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  color: #fff;
+  background: #304c76;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: -.03em;
+}
+.tf-social-quick a.tf-social-link[data-platform="instagram"]::before,
+.tf-social-footer a.tf-social-link[data-platform="instagram"]::before { content: "IG"; background: linear-gradient(140deg, #aa30bf, #e1516b, #e59a45); }
+.tf-social-quick a.tf-social-link[data-platform="threads"]::before,
+.tf-social-footer a.tf-social-link[data-platform="threads"]::before { content: "@"; background: #20202a; }
+.tf-social-quick a.tf-social-link[data-platform="x"]::before,
+.tf-social-footer a.tf-social-link[data-platform="x"]::before { content: "X"; background: #151515; }
+.tf-social-quick a.tf-social-link[data-platform="youtube"]::before,
+.tf-social-footer a.tf-social-link[data-platform="youtube"]::before { content: "▶"; background: #e02132; }
+.tf-social-quick a.tf-social-link[data-platform="tiktok"]::before,
+.tf-social-footer a.tf-social-link[data-platform="tiktok"]::before { content: "♪"; background: #17191f; text-shadow: -1px 0 #3bced0, 1px 0 #ff5f93; }
+
+.tf-social-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  width: min(1120px, calc(100% - 32px));
+  margin: 30px auto 8px;
+  padding: 20px 12px 0;
+  border-top: 1px solid #c7d8ee;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+}
+.tf-social-footer .tf-social-heading {
+  flex: 0 0 auto;
+  padding: 8px 14px 8px 0;
+  color: #25406c;
+  font-size: 14px;
+  font-weight: 800;
+}
+.tf-social-footer a.tf-social-link {
+  border: 1px solid #dbe5f4;
+  font-weight: 750;
+  padding: 8px 12px;
+  box-shadow: 0 2px 4px rgba(34, 69, 121, .04);
+}
+.tf-social-standalone-footer {
+  padding: 16px 0 32px;
+  background: #eef5ff;
+}
+@media (max-width: 680px) {
+  .tf-social-quick { right: max(12px, env(safe-area-inset-right)); bottom: max(88px, calc(76px + env(safe-area-inset-bottom))); }
+  .tf-social-quick > summary { width: 51px; height: 51px; border-radius: 17px; }
+  .tf-social-footer { justify-content: flex-start; gap: 6px; padding: 18px 0 0; }
+  .tf-social-footer .tf-social-heading { flex-basis: 100%; }
+}
+@media print { .tf-social-quick { display: none !important; } }

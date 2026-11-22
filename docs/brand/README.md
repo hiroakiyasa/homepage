@@ -71,6 +71,18 @@ python3 scripts/brand/validate.py     # Chrome/WebKit・320/390/768/1440px・操
   もちのへや＝桃色のおへや、車旅＝海沿いの道と車中泊の車内、一覧＝模型の棚、FAQ＝丘のポスト、信頼＝紙飛行機）。合格！クエストの節は /quest/ の王国の絵を使う。
 - 背景の生成は Codex。追加16＋1枚の出典とSHAは `docs/brand/assets.json`。
 
+## SNS公式リンクの共通ナビ（2026-11-22）
+
+全コンテンツページの共通ヘッダー直後に常時開ける「SNS」メニュー、フッターに5つの公式プロフィールへの直接リンクを静的HTMLとして配置する。共通フッターのないページは独立フッターを補う。404と即時転送ページは除外する。外部リンクは `noopener noreferrer` で開き、名前はプラットフォーム名を使用する。YouTube/TikTokはAI活用・車旅・DIYも扱う総合アカウントであり、合格！クエストの専用チャンネルとは説明しない。
+
+- Instagram: https://www.instagram.com/trailfusionai/
+- Threads: https://www.threads.com/@shevchenkofun
+- X: https://x.com/trailfusionai
+- YouTube: https://www.youtube.com/@VAN_OASIS
+- TikTok: https://www.tiktok.com/@trailfusionai
+
+正本は `scripts/add-social-links.mjs`、デザインは `assets/css/social-nav.css`。ページ生成の後に `node scripts/add-social-links.mjs --write`、変更確認とデプロイでは `node scripts/add-social-links.mjs --check` と `node --test tests/social-links.test.mjs`。再生成時もこの処理を呼ぶため、SNS導線が消えない。既存コンテンツ・canonical・公開URLは変更しない。
+
 ## 未対応
 
 - 英語版の無いページ: つくり手・ガレージ・車旅コンシェルジュ・理科／国語の単科。
