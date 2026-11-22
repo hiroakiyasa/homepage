@@ -9,6 +9,8 @@ import html
 import json
 import re
 
+import past_exam
+
 ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://trailfusionai.com'
 APPLE = 'https://apps.apple.com/jp/app/id6775411516'
@@ -134,10 +136,10 @@ def qualifications(config):
         ('中学受験をしていない大人でも使えますか？', 'はい。資格・就職の教材は、中学受験の理科・社会・国語・算数とは別に選べます。学びたい教材から始めてください。'),
         ('無料で試せますか？', '無料でダウンロードでき、無料で試せる問題があります。追加問題や機能は教材・プランにより異なります。価格と利用範囲はアプリの購入画面でご確認ください。'),
         ('試験の年度や級はどこで確認できますか？', '教材の単元一覧を確認し、受験する試験の級・年度の範囲と照らし合わせてください。法令や制度が関わる内容は、試験実施団体が案内する基準日と最新の公式情報も確認しましょう。'),
-        ('過去問集や公式アプリですか？', '本アプリは独自の問題・解説を使う学習補助アプリです。試験実施団体の公式アプリではなく、合格や得点の向上を保証するものではありません。'),
+        ('過去問集や公式アプリですか？', '本アプリは独自の問題・解説を使う学習補助アプリです。試験実施団体の公式アプリではなく、合格や得点の向上を保証するものではありません。' + past_exam.full()),
     ]
     body = '<section class="growth-hero"><div class="growth-wrap growth-hero-inner"><div><span class="growth-kicker">資格・就職の学び直し｜合格！クエスト</span><h1>仕事の合間に、<br>資格の一問を。</h1><p class="growth-lead">宅建士・FP・簿記・ITパスポート・SPI3。<br>図鑑でつながりをつかみ、問題で確かめ、まちがいを解き直す。目標の教材を選んで、自分のペースで学べます。</p><div class="growth-actions">' + button('学びたい資格を選ぶ', '#qualification-courses', 'qualification', 'hero') + button('無料範囲と料金を見る', '/quest/plans/', 'qualification', 'hero', secondary=True) + '</div><p class="growth-note">iPhone・iPad / Android。ダウンロード無料・アプリ内課金あり。</p></div><figure class="growth-cover"><img src="/assets/quest/takken-japan-atlas.webp" alt="宅建士教材の図鑑：権利能力・行為能力" width="788" height="1400" loading="eager"><figcaption>宅建士教材の図鑑の一例。ほかの教材の実画像は詳細ページで確認できます。</figcaption></figure></div></section>'
-    body += '<section class="growth-section" id="qualification-courses"><div class="growth-wrap"><h2>いまの目標から選ぶ。</h2><p class="growth-section-lead">資格の知識を身につけたい方も、就職・転職の準備をしたい方も。教材ごとの単元と実画像を確認してから始められます。</p><div class="growth-course-grid">' + ''.join(cards) + '</div><div class="growth-links"><a href="/quest/courses/english/">英語の教材を見る →</a><a href="/quest/courses/driver-license/">運転免許の学科対策を見る →</a></div></div></section>'
+    body += '<section class="growth-section" id="qualification-courses"><div class="growth-wrap"><h2>いまの目標から選ぶ。</h2><p class="growth-section-lead">資格の知識を身につけたい方も、就職・転職の準備をしたい方も。教材ごとの単元と実画像を確認してから始められます。</p><div class="growth-course-grid">' + ''.join(cards) + '</div>' + past_exam.growth_box(past_exam.ONE_LINE_QUALIFICATION) + '<div class="growth-links"><a href="/quest/courses/english/">英語の教材を見る →</a><a href="/quest/courses/driver-license/">運転免許の学科対策を見る →</a></div></div></section>'
     return render('/quest/qualifications/', '資格勉強アプリ｜宅建・FP・簿記・ITパスポート・SPI3｜合格！クエスト', '宅建士・FP・簿記・ITパスポート・SPI3を、図鑑と問題、まちがい直しで学ぶ合格！クエスト。収録単元と実教材を確認し、目標の資格から始められます。', body, 'qualification', faqs, items, config)
 
 
@@ -149,13 +151,13 @@ def university(config):
     items = [(c['name'], '/quest/university/' + c['slug'] + '/') for c in courses]
     faqs = [
         ('大学受験向けには、どの科目がありますか？', names + 'の6科目があります。中学受験の4科とは別の教材です。各科目のページで収録単元を確認できます。'),
-        ('共通テストや大学入試の過去問を収録していますか？', '本アプリは独自作成の問題で知識や考え方を復習する学習補助です。実際の過去問集ではありません。学校・参考書での学習や、志望校の過去問演習と合わせてお使いください。'),
+        ('共通テストや大学入試の過去問を収録していますか？', '本アプリは独自作成の問題で知識や考え方を復習する学習補助です。実際の過去問集ではありません。学校・参考書での学習や、志望校の過去問演習と合わせてお使いください。' + past_exam.brief()),
         ('すべての機能や問題を無料で使えますか？', 'ダウンロードは無料ですが、利用できる問題、図鑑、画像、読み上げ、プランの範囲は教材や配信版によって異なります。現在使える範囲はアプリでご確認ください。'),
         ('英語や中学受験の教材も使えますか？', '同じアプリ内に英語や、中学受験の理科・社会・国語・算数の教材があります。数学ⅠAと中学受験の算数は別の教材として選べます。'),
     ]
     cards = ''.join(f'<article class="growth-course"><span class="growth-topic">大学受験・高校の復習</span><h3>{esc(c["name"])}</h3><p>{esc(c["lead"])}</p><a class="growth-text-link" href="/quest/university/{c["slug"]}/" data-growth-route="university" data-course="{c["id"]}">{esc(c["name"])}の収録単元を見る →</a></article>' for c in courses)
     body = '<section class="growth-hero"><div class="growth-wrap growth-hero-inner"><div><span class="growth-kicker">大学受験・共通テストの基礎固め｜合格！クエスト</span><h1 class="growth-university-title"><span>あいまいな理解を、</span><br><span>一問ずつ</span><span>確かな知識に。</span></h1><p class="growth-lead">' + esc(names) + '。<br>授業や参考書で学んだ単元を選んで、問題と解説で確認。まちがい直しを、毎日の復習に。</p><div class="growth-actions">' + button('学びたい科目を選ぶ', '#university-courses', 'university', 'hero') + button('アプリで始める', '#download', 'university', 'hero', secondary=True) + '</div><p class="growth-note">iPhone・iPad / Android。教材の利用範囲はアプリで確認できます。</p></div><figure class="growth-cover"><img src="/assets/quest/university-info-real.png" alt="大学受験の情報Ⅰ：情報の特性と信頼性を学ぶ実際の問題画面" width="1320" height="2868" loading="eager"><figcaption>情報Ⅰ「情報の特性と信頼性の判断」の実画面。画面と画像は問題・配信版により異なります。</figcaption></figure></div></section>'
-    body += '<section class="growth-section" id="university-courses"><div class="growth-wrap"><h2>必要な科目・単元から。</h2><p class="growth-section-lead">高校の復習から大学受験の基礎固めまで。試験全体の演習は学校の教材や過去問で進めながら、苦手単元の確認に使えます。</p><div class="growth-course-grid">' + cards + '</div><div class="growth-scope">2026年11月21日確認の配信対象は、この6科目です。公開対象の収録単元を掲載しています。図鑑・問題画像・読み上げの対応や利用できる問題は、教材・配信版によって異なります。</div></div></section>'
+    body += '<section class="growth-section" id="university-courses"><div class="growth-wrap"><h2>必要な科目・単元から。</h2><p class="growth-section-lead">高校の復習から大学受験の基礎固めまで。試験全体の演習は学校の教材や過去問で進めながら、苦手単元の確認に使えます。</p><div class="growth-course-grid">' + cards + '</div><div class="growth-scope">2026年11月21日確認の配信対象は、この6科目です。公開対象の収録単元を掲載しています。図鑑・問題画像・読み上げの対応や利用できる問題は、教材・配信版によって異なります。</div>' + past_exam.growth_box() + '</div></section>'
     routes = [render('/quest/university/', '大学受験・共通テストの勉強アプリ｜6科目を単元別に復習｜合格！クエスト', '大学受験向けの情報Ⅰ・数学ⅠA・地理・日本史・化学・物理を、短い問題と解説、まちがい直しで復習。合格！クエストの収録単元と学び方を紹介します。', body, 'university', faqs, items, config)]
     for c in courses:
         units = ''.join('<details class="unit-group"><summary><span>' + esc(g['name']) + '</span><small>' + str(len(g['units'])) + '単元 ＋</small></summary><ul>' + ''.join('<li><span>' + esc(u['title']) + '</span></li>' for u in g['units']) + '</ul></details>' for g in c['domains'])
@@ -164,6 +166,9 @@ def university(config):
         body = '<section class="growth-hero"><div class="growth-wrap"><span class="growth-kicker"><a href="/quest/university/">大学受験の教材</a> / ' + esc(c['name']) + '</span><h1>' + esc(c['headline']) + '</h1><p class="growth-lead">' + esc(c['lead']) + '</p><div class="growth-actions">' + button('収録単元を見る', '#units', 'university', 'course-hero', course=c['id']) + button('アプリで始める', '#download', 'university', 'course-hero', course=c['id'], secondary=True) + '</div></div></section>'
         body += '<section class="growth-section" id="units"><div class="growth-wrap"><h2>' + esc(c['name']) + 'で学べる単元</h2><p class="growth-section-lead">' + str(c['unitCount']) + '単元を掲載。知りたい分野を開くと、収録単元を確認できます。</p><div class="unit-groups">' + units + '</div><p class="growth-note">2026年11月21日確認の公開対象教材に基づく単元一覧です。無料・有料の利用範囲、画像・図鑑・音声の対応はアプリでご確認ください。</p><div class="growth-links"><a href="/quest/university/">大学受験の6科目に戻る →</a><a href="/quest/qualifications/">資格・就職の教材を見る →</a></div></div></section>'
         ownfaq = [('この教材では何を学べますか？', c['lead']), *faqs[1:3]]
+        if c['id'] == 'joho1-kyotsu-japan':
+            # 情報Ⅰ uses its own one-liner (2025 main tests + the predecessor 情報関係基礎).
+            ownfaq[1] = (ownfaq[1][0], ownfaq[1][1].replace(past_exam.brief(), past_exam.brief(past_exam.ONE_LINE_INFORMATION)))
         routes.append(render('/quest/university/' + c['slug'] + '/', title, description, body, 'university', ownfaq, [], config, c['id']))
     return routes
 
@@ -267,6 +272,21 @@ def update_indexes(routes, changed, config):
         path.write_text(text)
 
 
+def upsert_sitemap(route, day):
+    """Keep exactly one sitemap entry for a route rendered by scripts/quest/build.py."""
+    path = ROOT / 'sitemap.xml'
+    text = path.read_text()
+    url = BASE + route
+    pattern = r'<url>\s*<loc>' + re.escape(url) + r'</loc>.*?</url>'
+    found = re.search(r'<url>\s*<loc>' + re.escape(url) + r'</loc>\s*<lastmod>(.*?)</lastmod>', text)
+    entry = f'<url><loc>{url}</loc><lastmod>{max(day, found.group(1) if found else day)}</lastmod></url>'
+    if found:
+        text = re.sub(pattern, lambda _: entry, text, flags=re.S)
+    else:
+        text = text.replace('</urlset>', '  ' + entry + '\n</urlset>')
+    path.write_text(text)
+
+
 def apply():
     config = json.loads((ROOT / 'docs/quest/growth-release.json').read_text())
     assert len(config['universityCourses']) == 6, 'Confirm the six publicly delivered university courses before rendering.'
@@ -277,6 +297,10 @@ def apply():
     enrich(config)
     from material_gallery import apply as add_materials
     add_materials()
+    # Last, so the enrichment/material layers cannot reset these dates.
+    # The six university course pages reuse the updated FAQ.
+    for route in past_exam.UPDATED_ROUTES + ['/quest/university/' + c['slug'] + '/' for c in config['universityCourses']]:
+        upsert_sitemap(route, past_exam.DAY)
     print(json.dumps({'growthPages': routes, 'updatedEntryPages': changed, 'protectedEntranceExamPages': 'dedicated pages unchanged; FAQ/plans current course counts corrected by material layer', 'asOf': DAY}, ensure_ascii=False))
 
 

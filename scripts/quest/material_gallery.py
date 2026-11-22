@@ -8,6 +8,14 @@ from html import escape
 import json
 import re
 
+import past_exam
+
+
+def past_exam_note(course_id):
+    """Planned past-exam wording for in-scope courses only (COPY.md rev. 3)."""
+    line = past_exam.line_for(course_id)
+    return ' ' + esc(past_exam.brief(line)) + ' <a href="' + past_exam.ROUTE + '">問題の作り方</a>' if line else ''
+
 ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://trailfusionai.com'
 STYLE = '<link rel="stylesheet" href="/assets/quest/quest-materials.css?v=20261121">'
@@ -123,7 +131,7 @@ def gallery(data, copy):
     body += study_links(copy)
     for group, label, route in GROUPS:
         body += '<section class="material-section" id="' + group + '"><div class="material-wrap"><h2>' + label + '</h2><p class="material-section-lead"><a href="' + route + '">' + label + 'の教材ガイドを見る →</a></p><div class="material-grid">' + ''.join(material_card(c) for c in data['courses'] if c['group'] == group) + '</div></div></section>'
-    faqs = [('画像は実際にアプリで使う教材ですか？', 'はい。公開対象の教材で使われている問題の図解・図鑑から選んでいます。このページでは画像を見やすい大きさで掲載しており、アプリの画面全体を再現したものではありません。'), ('大学受験向けには何がありますか？', '情報Ⅰ・数学ⅠA・地理・日本史・化学・物理の6科目です。高校の授業や参考書で学んだ単元を、問題と解説で復習するための教材です。実際の過去問集や試験全範囲の網羅を表すものではありません。'), ('英語の解説で学べる教材はどれですか？', '英語の解説に対応する語学教材は、日本語クエスト（Japanese Quest）とEnglish Questです。日本語の中学受験・大学受験・資格教材がすべて英語で学べるわけではありません。一部の画面表示や図解には日本語が残っています。'), ('このページの画像や例題はアプリで全部無料ですか？', 'このウェブページでは見本を閲覧できますが、アプリ内の利用権とは異なります。アプリには無料で試せる問題があり、追加問題や図鑑などの利用条件は教材・プランによって異なります。アプリ内で範囲と価格をご確認ください。')]
+    faqs = [('画像は実際にアプリで使う教材ですか？', 'はい。公開対象の教材で使われている問題の図解・図鑑から選んでいます。このページでは画像を見やすい大きさで掲載しており、アプリの画面全体を再現したものではありません。'), ('大学受験向けには何がありますか？', '情報Ⅰ・数学ⅠA・地理・日本史・化学・物理の6科目です。高校の授業や参考書で学んだ単元を、問題と解説で復習するための教材です。実際の過去問集や試験全範囲の網羅を表すものではありません。' + past_exam.brief()), ('英語の解説で学べる教材はどれですか？', '英語の解説に対応する語学教材は、日本語クエスト（Japanese Quest）とEnglish Questです。日本語の中学受験・大学受験・資格教材がすべて英語で学べるわけではありません。一部の画面表示や図解には日本語が残っています。'), ('このページの画像や例題はアプリで全部無料ですか？', 'このウェブページでは見本を閲覧できますが、アプリ内の利用権とは異なります。アプリには無料で試せる問題があり、追加問題や図鑑などの利用条件は教材・プランによって異なります。アプリ内で範囲と価格をご確認ください。')]
     body += faq(faqs) + download('general')
     render('/quest/materials/', title, description, body, faqs, '/assets/quest/materials/junior-science-question.webp')
 
@@ -135,7 +143,7 @@ def study_pages(copy, samples, data):
     for p in copy['pages']:
         questions = sample_pages[p['slug']]['questions']
         c = courses[p['courseId']]
-        body = '<section class="material-hero"><div class="material-wrap"><nav class="material-breadcrumb" aria-label="パンくず"><a href="/quest/">合格！クエスト</a><span>›</span><a href="/quest/materials/">実際の問題と図鑑</a><span>›</span><span>' + esc(p['h1']) + '</span></nav><p class="material-eyebrow">実際の教材から、3問と解説</p><h1>' + esc(p['h1']) + '</h1><p class="material-lead">' + esc(p['lead']) + '</p><div class="material-actions">' + link('3問に取り組む', '#samples', True) + link(c['title'] + 'の単元を見る', c['href']) + '</div><p class="material-note">合格！クエスト独自の学習問題です。試験実施団体の公式問題・過去問ではありません。</p></div></section>'
+        body = '<section class="material-hero"><div class="material-wrap"><nav class="material-breadcrumb" aria-label="パンくず"><a href="/quest/">合格！クエスト</a><span>›</span><a href="/quest/materials/">実際の問題と図鑑</a><span>›</span><span>' + esc(p['h1']) + '</span></nav><p class="material-eyebrow">実際の教材から、3問と解説</p><h1>' + esc(p['h1']) + '</h1><p class="material-lead">' + esc(p['lead']) + '</p><div class="material-actions">' + link('3問に取り組む', '#samples', True) + link(c['title'] + 'の単元を見る', c['href']) + '</div><p class="material-note">合格！クエスト独自の学習問題です。試験実施団体の公式問題・過去問ではありません。' + past_exam_note(p['courseId']) + '</p></div></section>'
         body += '<section class="material-section" id="samples"><div class="material-wrap"><h2>' + esc(p['sampleHeading']) + '</h2><p class="material-section-lead">選択肢を見て考えてから「答えと解説を読む」を開きましょう。問題文・選択肢・ヒント・解説は実際の教材のまま掲載しています。</p>'
         if p.get('sampleAccessNote'):
             body += '<p class="material-inline-note">' + esc(p['sampleAccessNote']) + '</p>'

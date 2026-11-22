@@ -312,8 +312,10 @@ def update_indexes(routes,config):
     text=path.read_text()
     for route in routes:
         url=BASE+route
-        entry='<url><loc>'+url+'</loc><lastmod>'+DAY+'</lastmod></url>'
         pattern=r'<url>\s*<loc>'+re.escape(url)+r'</loc>.*?</url>'
+        found=re.search(r'<url>\s*<loc>'+re.escape(url)+r'</loc>\s*<lastmod>(.*?)</lastmod>',text)
+        # Never move a lastmod backwards (later layers such as past_exam.py set newer dates).
+        entry='<url><loc>'+url+'</loc><lastmod>'+max(DAY,found.group(1) if found else DAY)+'</lastmod></url>'
         if re.search(pattern,text,re.S): text=re.sub(pattern,lambda _:entry,text,flags=re.S)
         else: text=text.replace('</urlset>','  '+entry+'\n</urlset>')
     path.write_text(text)

@@ -17,6 +17,11 @@ from brandsite import ROOT, BASE, CSS_VERSION, APPS, BY, LIVE, STORE, header, fo
 import home, pages, detail  # noqa: E402
 from apps_content import C  # noqa: E402
 from global_i18n import LANGUAGES, render as render_global  # noqa: E402
+import importlib.util  # noqa: E402
+# Loaded by path: scripts/quest also has a home.py that must not shadow the brand one.
+_spec = importlib.util.spec_from_file_location('past_exam', Path(__file__).resolve().parents[1] / 'quest/past_exam.py')
+past_exam = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(past_exam)
 
 TODAY = datetime.date(2026, 10, 25).isoformat()
 QUEST_TODAY = datetime.date(2026, 11, 15).isoformat()  # pre-exam guides added
@@ -188,7 +193,7 @@ def sitemap(changed):
 
 
 LLMS_JA = """## 日本語の要約（{today}）
-合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、過去の入試の出題傾向を分析して作ったオリジナルの一問一答（4択・偏差値の目安で40・50・60・70の4段階）で復習する学習アプリです。まちがえた問題をためて解き直せるので、入試直前の暗記の仕上げに向いています。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
+合格！クエスト（TrailFusion AI・提供者名 hiroaki yuasa）は、中学受験（小学4〜6年生）の理科・社会・国語・算数を、問題文を自作した一問一答（4択・アプリ独自の難易度40・50・60・70の4段階）で復習する学習アプリです。{past_line}{past_description}{past_note}調べ方は[問題の作り方]({base}{past_route})にまとめています。まちがえた問題をためて解き直せるので、入試直前の暗記の仕上げに向いています。同じアプリで資格・語学（ITパスポート・FP・簿記・宅建士・SPI3・日本語・英語・運転免許）も学べます。iPhone・iPad（App Store）とAndroid（Google Play）で配信。ダウンロード無料・アプリ内課金あり。塾や過去問演習の代わりではなく、復習と確認の補助教材で、合格を保証するものではありません。
 
 ### 中学受験の科目別ガイド
 - [中学受験 理科・社会・国語・算数アプリ（総合）]({base}/quest/juken/)
@@ -197,8 +202,8 @@ LLMS_JA = """## 日本語の要約（{today}）
 - [中学受験 国語アプリ]({base}/quest/juken/kokugo/)：94単元・4,550問。語彙・ことわざ慣用句・漢字・ことばのきまり・読解。
 - [中学受験 算数アプリ]({base}/quest/juken/math/)：55単元・6,600問。数と計算・変化と関係・データの活用・図形・文章題。
 - [中学受験 暗記アプリ]({base}/quest/juken/anki/)：4択で思い出し、まちがい直しで定着。
-- [よくある質問]({base}/quest/faq/)、[料金・購入ガイド]({base}/quest/plans/)、[中学受験4科]({base}/quest/school4/)
-数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。各問題は偏差値の目安で40・50・60・70の4段階（難易度区分であり模試の偏差値とは別）。
+- [よくある質問]({base}/quest/faq/)、[料金・購入ガイド]({base}/quest/plans/)、[中学受験4科]({base}/quest/school4/)、[問題の作り方]({base}{past_route})
+数は2026年10月25日確認の収録データ（無料・Pro対象を含む）。各問題はアプリ独自の難易度40・50・60・70の4段階（模試の偏差値とは別）。
 
 ### 入試直前の要点ガイド（2026-11-15）
 - [中学受験 理科 植物のまとめ]({base}/quest/juken/science-plants/)：花のつくり・種子と発芽・光合成と蒸散・道管と師管。
@@ -222,7 +227,7 @@ LLMS_JA = """## 日本語の要約（{today}）
 
 LLMS_FULL = """
 ## Gokaku! Quest for Japanese junior-high entrance exams (chugaku juken), in English
-Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with original one-question-per-screen four-choice quizzes built from an analysis of past exam trends, a mistakes review and a kingdom-building map that grows as you study.
+Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance exams (grades 4 to 6) with one-question-per-screen four-choice quizzes whose question text is self-written (not past exam papers), a mistakes review and a kingdom-building map that grows as you study.
 - Science: 36 units, 7,742 questions. {base}/quest/juken/science/
 - Social studies: 53 units, 5,327 questions. {base}/quest/juken/social/
 - Japanese language: 94 units, 4,550 questions. {base}/quest/juken/kokugo/
@@ -230,6 +235,7 @@ Gokaku! Quest teaches the four school subjects of Japanese junior-high entrance 
 - Questions come in four difficulty bands labelled 40, 50, 60 and 70 (a difficulty label, not a mock-exam deviation score). Band 40 (the easiest band of each unit) is free; 50, 60 and 70 are Pro. Prices are shown on the app's purchase screen.
 - Pre-exam guides for the last two months before the exams (Japanese): plants {base}/quest/juken/science-plants/ , animals and the human body {base}/quest/juken/science-animals/ , social studies memorization {base}/quest/juken/social-anki/ , and a two-month study plan {base}/quest/juken/last-2-months/
 - It is a review aid, not a replacement for cram school or past-paper practice, and it does not guarantee admission.
+- Planned work (decided November 2026, course by course): for junior-high entrance exams, the Common Test and some certification exams, the maker plans to study published past papers from roughly the last ten years and revise units and questions. Exam names and years will be announced as each course is finished. Where fewer than ten years of papers are published, the available years are studied; the Common Test Information I main exam exists only from the 2025 exam year (its predecessor subject is also studied). Exams without published past papers (such as the driving licence and SPI3) and languages are out of scope. Details (Japanese): {base}/quest/how-we-make/
 - Single-subject predecessors: Gokaku Rika Quest (science) and Gokaku! Kokugo Quest (Japanese language). Their purchases and progress can move to Gokaku! Quest from inside the app.
 - Figures as of 2026-10-25 (release manifest). App Store Japan rating 4.37 from 114 ratings (2026-10-27).
 """
@@ -266,7 +272,8 @@ App Store publisher name: hiroaki yuasa
 - [Camper van DIY: interactive 3D floor plan]({BASE}/camping.html) (Japanese)
 - [Maintenance: understand your van in 3D]({BASE}/maintenance.html) (Japanese)
 '''
-    ja = LLMS_JA.format(base=BASE, today=QUEST_TODAY)
+    ja = LLMS_JA.format(base=BASE, today=QUEST_TODAY, past_line=past_exam.sentence(), past_description=past_exam.DESCRIPTION,
+                        past_note=past_exam.NOTE, past_route=past_exam.ROUTE)
     full = text + '\n' + ja + LLMS_FULL.format(base=BASE)
     (ROOT / 'llms.txt').write_text(text + '\n' + ja)
     (ROOT / 'llms-full.txt').write_text(full)

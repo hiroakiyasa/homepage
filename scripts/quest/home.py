@@ -6,6 +6,8 @@ voice for the first 5 units, atlas preview pages. Never say "everything free".
 """
 import html
 from content_consistency import course_counts
+from past_exam import ROUTE as PAST_ROUTE, ONE_LINE_GENERAL as _PAST_LINE, NOTE as PAST_NOTE
+PAST_LINE = _PAST_LINE.replace('過去10年分を目安に過去問', '<b>過去10年分を目安に過去問</b>', 1)
 
 H = {}
 
@@ -62,7 +64,8 @@ def hero():
 <p class="mega-line"><span class="mega" data-n="12">12</span><span class="mega-unit">教材</span><span class="mega" data-n="{q:,}">{q:,}</span><span class="mega-unit">問</span></p>
 <p class="mega-note">収録数は無料・Pro対象の合計（2026年10月25日時点）</p>
 <p class="banner"><span>12教材が、ひとつのアプリに！</span></p>
-<ul class="checks"><li>{CHECK}全12教材に<b>イラスト図鑑</b>（{pages:,}ページ）</li><li>{CHECK}<b>問題の絵</b>と<b>イラスト解説</b>で、理由までわかる</li><li>{CHECK}問題の<b>読み上げ</b>で、耳からも確かめられる</li></ul>
+<ul class="checks"><li>{CHECK}全12教材に<b>イラスト図鑑</b>（{pages:,}ページ）</li><li>{CHECK}<b>問題の絵</b>と<b>イラスト解説</b>で、理由までわかる</li><li>{CHECK}問題の<b>読み上げ</b>で、耳からも確かめられる</li><li>{CHECK}{PAST_LINE} <a class="text-link" href="{PAST_ROUTE}">問題の作り方 ›</a></li></ul>
+<p class="fine">{PAST_NOTE}</p>
 {H["stores"]("hero")}
 <p class="fine">ダウンロード無料。難易度40の問題、図鑑のプレビュー、最初の5単元の読み上げは無料。50・60・70の問題、図鑑の全ページ、読み上げの全対象などはPro。<br>iPhone・iPad / Android　アプリ内課金・広告あり</p>
 </div>

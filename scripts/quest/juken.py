@@ -6,6 +6,7 @@ the dated unit lists retain docs/quest/course-stats.json. Prices are intentional
 """
 import html, json
 from content_consistency import course_counts, COUNT_DATE_JA, MIGRATION_NOTE
+import past_exam
 
 SCIENCE = course_counts('junior-science')
 SCI_Q, SCI_UNITS = f'{SCIENCE["questions"]:,}', SCIENCE['unitCount']
@@ -132,6 +133,8 @@ SITE_FAQ_EXTRA = [
     ('どんな人が対象ですか？', '中心は中学受験に取り組む小学4〜6年生とその保護者です。そのほか、資格試験・語学・運転免許の学習者も同じアプリを使えます。'),
     ('対応端末は？', 'iPhone・iPad（App Store）とAndroid（Google Play）で配信しています。提供する教材や機能はOS・配信バージョンにより異なる場合があるため、各ストアの掲載情報をご確認ください。'),
     ('合格を保証しますか？', 'いいえ。合格や成績向上を保証するものではありません。学習の補助教材としてお使いください。'),
+    ('問題はどのように作っていますか？', past_exam.DESCRIPTION + past_exam.NOTE + 'くわしくは「問題の作り方」のページをご覧ください。'),
+    past_exam.FAQ[0],
     ('難易度40・50・60・70とは何ですか？', '問題の難易度の目安です。基礎の40は無料範囲、50・60・70はProの対象です。実際の模試の偏差値とは異なる、問題の難易度区分です。'),
     ('合格理科クエスト・合格！国語クエストを使っています。', MIGRATION_NOTE),
 ]
@@ -269,7 +272,7 @@ def hub_page(ctx):
     subjects = ('<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">科目別ガイド</span><h2>教科から選ぶ。</h2></div><p>各教科の出題範囲・学び方・保護者向けの使い方をまとめています。</p></div>'
                 f'{table}<div class="ccard-grid" style="margin-top:24px">{cards}</div>'
                 '<p style="margin-top:20px"><a class="text-link" href="/quest/juken/anki/">暗記アプリとしての使い方 ↗</a> <a class="text-link" href="/quest/juken/last-2-months/">入試直前2か月の暗記の進め方 ↗</a> <a class="text-link" href="/quest/school4/">中学受験4科 ↗</a> <a class="text-link" href="/quest/faq/">よくある質問 ↗</a></p></div></section>')
-    body = (crumbs(trail) + hero + why + subjects + free_pro()
+    body = (crumbs(trail) + hero + why + past_exam.section() + subjects + free_pro()
             + f'<section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">よくある質問</span><h2>中学受験アプリのよくある質問。</h2></div></div>{faq(HUB_FAQ)}</div></section>')
     return dict(path='/quest/juken/', title='中学受験 理科・社会・国語・算数アプリ｜4科を図鑑とクイズで復習｜合格！クエスト',
                 desc=f'中学受験の理科・社会・国語・算数を1つのアプリで。理科{SCI_Q}問・社会5,327問・国語4,550問・算数6,600問、難易度40〜70の4段階。イラスト図鑑・まちがい直し・読み上げつき。',
